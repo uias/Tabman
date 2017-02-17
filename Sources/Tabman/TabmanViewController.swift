@@ -9,6 +9,6 @@
 import UIKit
 import Pageboy
 
-class TabmanViewController: PageboyViewController {
+open class TabmanViewController: PageboyViewController {
     
 }

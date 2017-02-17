@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
-		D62AC0DB1E5733A80020B8AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0DA1E5733A80020B8AE /* ViewController.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
 		D62AC0E31E5733A80020B8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */; };
+		D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1041E5736A10020B8AE /* ChildViewController.swift */; };
+		D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1051E5736A10020B8AE /* GradientView.swift */; };
+		D62AC10B1E5736A10020B8AE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* PageViewController.swift */; };
+		D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */; };
+		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
+		D62AC1101E5737590020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0FC1E5734260020B8AE /* Tabman.framework */; };
+		D62AC1111E5737590020B8AE /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0FC1E5734260020B8AE /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,17 +35,42 @@
 			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
 			remoteInfo = TabmanTests;
 		};
+		D62AC1121E5737590020B8AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D62AC0F61E5734260020B8AE /* Tabman.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
+			remoteInfo = Tabman;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D62AC1141E5737590020B8AE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D62AC1111E5737590020B8AE /* Tabman.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D62AC0DA1E5733A80020B8AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D62AC0DF1E5733A80020B8AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D62AC0E21E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D62AC0E41E5733A80020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0F61E5734260020B8AE /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
+		D62AC1041E5736A10020B8AE /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		D62AC1051E5736A10020B8AE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D62AC1061E5736A10020B8AE /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewControllerAppearance.swift; sourceTree = "<group>"; };
+		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62AC1101E5737590020B8AE /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				D62AC0D81E5733A80020B8AE /* AppDelegate.swift */,
-				D62AC0DA1E5733A80020B8AE /* ViewController.swift */,
+				D62AC1061E5736A10020B8AE /* PageViewController.swift */,
+				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
-				D62AC0DF1E5733A80020B8AE /* Assets.xcassets */,
-				D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */,
-				D62AC0E41E5733A80020B8AE /* Info.plist */,
+				D62AC10E1E5736B20020B8AE /* Example Components */,
+				D62AC10F1E5736BE0020B8AE /* Resources */,
 			);
 			path = "Tabman-Example";
 			sourceTree = "<group>";
@@ -92,6 +124,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D62AC10E1E5736B20020B8AE /* Example Components */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC1051E5736A10020B8AE /* GradientView.swift */,
+				D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */,
+				D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */,
+			);
+			name = "Example Components";
+			sourceTree = "<group>";
+		};
+		D62AC10F1E5736BE0020B8AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC0DF1E5733A80020B8AE /* Assets.xcassets */,
+				D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */,
+				D62AC0E41E5733A80020B8AE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,10 +154,12 @@
 				D62AC0D11E5733A80020B8AE /* Sources */,
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
+				D62AC1141E5737590020B8AE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D62AC1131E5737590020B8AE /* PBXTargetDependency */,
 			);
 			name = "Tabman-Example";
 			productName = "Tabman-Example";
@@ -187,12 +241,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62AC0DB1E5733A80020B8AE /* ViewController.swift in Sources */,
 				D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */,
+				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
+				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
+				D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */,
+				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,
+				D62AC10B1E5736A10020B8AE /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D62AC1131E5737590020B8AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Tabman;
+			targetProxy = D62AC1121E5737590020B8AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D62AC0DC1E5733A80020B8AE /* Main.storyboard */ = {
@@ -308,6 +374,7 @@
 		D62AC0E81E5733A80020B8AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -320,6 +387,7 @@
 		D62AC0E91E5733A80020B8AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
