@@ -10,5 +10,9 @@ import Foundation
 
 public struct TabmanBarItem: Any {
     
-    let displayTitle: String
+    public let displayTitle: String
+    
+    public init(title: String) {
+        self.displayTitle = title
+    }
 }

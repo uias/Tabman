@@ -86,11 +86,15 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         var viewControllers = [UIViewController]()
+        var tabBarItems = [TabmanBarItem]()
         for i in 0..<numberOfPages {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
             viewController.index = i + 1
+            tabBarItems.append(TabmanBarItem(title: String(format: "Page %i", viewController.index!)))
             viewControllers.append(viewController)
         }
+        
+        self.tabBarItems = tabBarItems
         return viewControllers
     }
     

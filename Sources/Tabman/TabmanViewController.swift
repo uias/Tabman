@@ -32,6 +32,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    public var tabBarItems: [TabmanBarItem]? {
+        didSet {
+            self.tabBar?.reloadData()
+        }
+    }
+    
     // MARK: Lifecycle
     
     open override func loadView() {
@@ -105,6 +111,6 @@ internal extension TabmanViewController {
 extension TabmanViewController: TabmanBarDataSource {
     
     public func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]? {
-        return nil
+        return self.tabBarItems
     }
 }

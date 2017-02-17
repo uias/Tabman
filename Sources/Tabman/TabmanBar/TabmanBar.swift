@@ -34,10 +34,25 @@ public class TabmanBar: UIView {
     // MARK: Properties
     //
     
-    public var dataSource: TabmanBarDataSource?
+    public var dataSource: TabmanBarDataSource? {
+        didSet {
+            self.reloadData()
+        }
+    }
+    
+    var items: [TabmanBarItem]?
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
+    }
+    
+    //
+    // MARK: Data
+    //
+    
+    public func reloadData() {
+        self.items = self.dataSource?.items(forTabBar: self)
+        
     }
 }
 
