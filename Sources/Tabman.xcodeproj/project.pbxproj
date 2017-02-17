@@ -12,6 +12,9 @@
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D62AC0F31E5733E40020B8AE /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0F01E5733D80020B8AE /* Pageboy.framework */; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
+		D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11B1E573AA00020B8AE /* TabmanBar.swift */; };
+		D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */; };
+		D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pageboy.xcodeproj; path = ../Dependencies/Pageboy/Sources/Pageboy.xcodeproj; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
+		D62AC11B1E573AA00020B8AE /* TabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBar.swift; sourceTree = "<group>"; };
+		D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanButtonBar.swift; sourceTree = "<group>"; };
+		D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			children = (
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
+				D62AC11A1E573AA00020B8AE /* TabmanBar */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
 			path = Tabman;
@@ -114,6 +121,16 @@
 				D62AC0F21E5733D80020B8AE /* PageboyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D62AC11A1E573AA00020B8AE /* TabmanBar */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */,
+				D62AC11B1E573AA00020B8AE /* TabmanBar.swift */,
+				D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */,
+			);
+			path = TabmanBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */,
+				D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */,
+				D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
