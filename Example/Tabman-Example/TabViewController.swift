@@ -1,6 +1,6 @@
 //
-//  PageViewController.swift
-//  Pageboy-Example
+//  TabViewController.swift
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 04/01/2017.
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import Tabman
 import Pageboy
 
-class PageViewController: TabmanViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
+class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     // MARK: Types
     
@@ -104,7 +104,7 @@ class PageViewController: TabmanViewController, PageboyViewControllerDataSource,
     
     
     
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPosition position: CGPoint,
                                direction: PageboyViewController.NavigationDirection) {
         
@@ -112,13 +112,13 @@ class PageViewController: TabmanViewController, PageboyViewControllerDataSource,
         self.updateAppearance(pageOffset: position.x)
     }
     
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                willScrollToPageAtIndex index: Int,
                                direction: PageboyViewController.NavigationDirection) {
         self.updateBarButtonStates(index: index)
     }
     
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPageWithIndex index: Int,
                                direction: PageboyViewController.NavigationDirection) {
         

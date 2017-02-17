@@ -13,7 +13,7 @@
         <scene sceneID="oLa-tx-E4R">
             <objects>
                 <navigationController id="GWJ-y4-xki" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJT-EI-cjH" customClass="TransparentNavigationBar" customModule="Pageboy_Example" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJT-EI-cjH" customClass="TransparentNavigationBar" customModule="Tabman_Example" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-844" y="37"/>
         </scene>
-        <!--Pageboy-->
+        <!--Tabman-->
         <scene sceneID="fRi-Jx-IOR">
             <objects>
-                <viewController id="Y3B-UK-iWz" customClass="PageViewController" customModule="Pageboy_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y3B-UK-iWz" customClass="TabViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gN0-DI-ib6"/>
                         <viewControllerLayoutGuide type="bottom" id="NTf-cz-yeb"/>
@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88R-O5-360" customClass="GradientView" customModule="Pageboy_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88R-O5-360" customClass="GradientView" customModule="Tabman_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -76,7 +76,7 @@
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="top" secondItem="CBZ-3O-Ovm" secondAttribute="top" id="v7L-LY-vON"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pageboy" id="UcL-mG-QB9"/>
+                    <navigationItem key="navigationItem" title="Tabman" id="UcL-mG-QB9"/>
                     <connections>
                         <outlet property="gradientView" destination="88R-O5-360" id="eIM-cX-kVm"/>
                         <outlet property="offsetLabel" destination="DI3-f1-tUV" id="WHv-MA-78K"/>
@@ -90,7 +90,7 @@
         <!--Child View Controller-->
         <scene sceneID="qbT-Z9-bjv">
             <objects>
-                <viewController storyboardIdentifier="ChildViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hab-QH-68l" customClass="ChildViewController" customModule="Pageboy_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChildViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hab-QH-68l" customClass="ChildViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JOY-iU-XKI"/>
                         <viewControllerLayoutGuide type="bottom" id="6NA-6H-g3U"/>

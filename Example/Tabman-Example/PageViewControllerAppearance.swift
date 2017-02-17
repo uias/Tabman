@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PageViewController {
+extension TabViewController {
     
     //
     // MARK: Bar buttons

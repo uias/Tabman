@@ -13,7 +13,7 @@
 		D62AC0E31E5733A80020B8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */; };
 		D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1041E5736A10020B8AE /* ChildViewController.swift */; };
 		D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1051E5736A10020B8AE /* GradientView.swift */; };
-		D62AC10B1E5736A10020B8AE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* PageViewController.swift */; };
+		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
 		D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
 		D62AC1101E5737590020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0FC1E5734260020B8AE /* Tabman.framework */; };
@@ -68,7 +68,7 @@
 		D62AC0F61E5734260020B8AE /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 		D62AC1041E5736A10020B8AE /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		D62AC1051E5736A10020B8AE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		D62AC1061E5736A10020B8AE /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewControllerAppearance.swift; sourceTree = "<group>"; };
 		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D62AC0D81E5733A80020B8AE /* AppDelegate.swift */,
-				D62AC1061E5736A10020B8AE /* PageViewController.swift */,
+				D62AC1061E5736A10020B8AE /* TabViewController.swift */,
 				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
 				D62AC10E1E5736B20020B8AE /* Example Components */,
@@ -246,7 +246,7 @@
 				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
 				D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */,
 				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,
-				D62AC10B1E5736A10020B8AE /* PageViewController.swift in Sources */,
+				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
