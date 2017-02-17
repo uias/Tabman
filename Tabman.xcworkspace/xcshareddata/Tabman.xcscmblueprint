@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E5F0E81232759AF1971B67A3B1832E8FE24A37DA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E5F0E81232759AF1971B67A3B1832E8FE24A37DA" : 9223372036854775807,
+    "5EAF35CE4BAF1F2954906692E85F4F33D0A586BE" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2A0F3E59-3670-41EC-A4EB-8599A1093647",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E5F0E81232759AF1971B67A3B1832E8FE24A37DA" : "Tabman\/",
+    "5EAF35CE4BAF1F2954906692E85F4F33D0A586BE" : "Tabman\/Dependencies\/Pageboy\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Tabman",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tabman.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MerrickSapsford\/Pageboy",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5EAF35CE4BAF1F2954906692E85F4F33D0A586BE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MerrickSapsford\/Tabman.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E5F0E81232759AF1971B67A3B1832E8FE24A37DA"
+    }
+  ]
+}
