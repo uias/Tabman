@@ -15,6 +15,7 @@
 		D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11B1E573AA00020B8AE /* TabmanBar.swift */; };
 		D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */; };
 		D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */; };
+		D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D62AC11B1E573AA00020B8AE /* TabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBar.swift; sourceTree = "<group>"; };
 		D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanButtonBar.swift; sourceTree = "<group>"; };
 		D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarItem.swift; sourceTree = "<group>"; };
+		D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanAutoLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
 				D62AC11A1E573AA00020B8AE /* TabmanBar */,
+				D62AC1211E5748C80020B8AE /* Utilities */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
 			path = Tabman;
@@ -131,6 +134,14 @@
 				D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */,
 			);
 			path = TabmanBar;
+			sourceTree = "<group>";
+		};
+		D62AC1211E5748C80020B8AE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 				D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */,
 				D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */,
 				D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */,
+				D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

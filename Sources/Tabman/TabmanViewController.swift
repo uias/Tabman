@@ -14,7 +14,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     // MARK: Properties
     
     internal(set) public var tabBar: TabmanBar?
-    internal(set) public var tabBarContainer: UIView?
     
     public var tabBarStyle: TabmanBar.Style = .buttonBar {
         didSet {
@@ -77,10 +76,29 @@ internal extension TabmanViewController {
         // re create the tab bar with a new style
         let bar = barType.init()
         bar.dataSource = self
+        bar.backgroundColor = .red
+        
+        self.tabBar = bar
     }
     
     func updateTabBar(withLocation location: TabmanBar.Location) {
+        guard let tabBar = self.tabBar else {
+            return
+        }
+        
+        if tabBar.superview == nil {
+            self.view.addSubview(tabBar)
+        }
+        
         // move tab bar to location
+        switch location {
+            
+        case .top:
+            tabBar.tabBarAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
+        case .bottom:
+            tabBar.tabBarAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
+            
+        }
     }
 }
 

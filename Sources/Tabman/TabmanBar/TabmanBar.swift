@@ -36,6 +36,9 @@ public class TabmanBar: UIView {
     
     public var dataSource: TabmanBarDataSource?
     
+    public override var intrinsicContentSize: CGSize {
+        return CGSize(width: 0.0, height: 44.0)
+    }
 }
 
 internal extension TabmanBar.Style {
