@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 internal extension TabmanBar {
     
@@ -17,7 +16,6 @@ internal extension TabmanBar {
         }
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.removeAllConstraints()
         var constraints = [NSLayoutConstraint]()
         
         let margins = self.layoutMargins
@@ -41,7 +39,6 @@ internal extension TabmanBar {
         }
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        self.removeAllConstraints()
         var constraints = [NSLayoutConstraint]()
         
         let margins = self.layoutMargins
@@ -57,23 +54,5 @@ internal extension TabmanBar {
         
         self.superview?.addConstraints(constraints)
         return constraints
-    }
-}
-
-internal extension UIView {
-    
-    /// Remove all constraints from a view.
-    func removeAllConstraints() {
-        var superview = self.superview
-        while superview != nil {
-            for constraint in superview!.constraints {
-                if constraint.firstItem === self || constraint.secondItem === self {
-                    superview?.removeConstraint(constraint)
-                }
-            }
-            superview = superview?.superview
-        }
-        
-        self.removeConstraints(self.constraints)
     }
 }

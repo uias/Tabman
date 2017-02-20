@@ -36,7 +36,7 @@ public class TabmanBar: UIView {
     //
     
     internal var items: [TabmanBarItem]?
-    internal var containerView: UIView!
+    internal var containerView = UIView()
     
     //
     // MARK: Properties
@@ -56,23 +56,20 @@ public class TabmanBar: UIView {
     // MARK: Init
     //
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.initTabBar()
-    }
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initTabBar()
+        initTabBar()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        initTabBar()
     }
     
     private func initTabBar() {
-                
-        let containerView = UIView()
+        
         self.addSubview(containerView)
         containerView.autoPinEdgesToSuperviewEdges()
-        containerView.backgroundColor = .green
-        self.containerView = containerView
     }
     
     //
@@ -89,6 +86,8 @@ public class TabmanBar: UIView {
     }
     
     private func clearAndConstructTabBar() {
+        guard self.containerView.superview != nil else { return } // have not yet laid out
+        
         self.clearTabBar()
         self.constructTabBar()
     }
@@ -97,7 +96,7 @@ public class TabmanBar: UIView {
 internal extension TabmanBar {
 
     func clearTabBar() {
-        for subview in self.containerView.subviews {
+        for subview in containerView.subviews {
             subview.removeFromSuperview()
         }
     }

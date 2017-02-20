@@ -18,8 +18,8 @@ public class TabmanButtonBar: TabmanBar {
     override func constructTabBar() {
         super.constructTabBar()
         
-//        self.containerView.addSubview(scrollView)
-//        scrollView.edges(to: containerView)
-//        scrollView.backgroundColor = .blue
+        // add scroll view
+        self.containerView.addSubview(scrollView)
+        scrollView.autoPinEdgesToSuperviewEdges()
     }
 }

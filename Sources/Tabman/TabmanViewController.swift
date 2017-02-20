@@ -92,10 +92,9 @@ internal extension TabmanViewController {
             return
         }
         
-        if tabBar.superview == nil {
-            self.view.addSubview(tabBar)
-        }
-        
+        tabBar.removeFromSuperview()
+        self.view.addSubview(tabBar)
+
         // move tab bar to location
         switch location {
             
@@ -103,8 +102,8 @@ internal extension TabmanViewController {
             tabBar.tabBarAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
         case .bottom:
             tabBar.tabBarAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
-            
         }
+        
     }
 }
 
