@@ -18,10 +18,13 @@ public class TabmanButtonBar: TabmanBar {
     
     private lazy var scrollView = UIScrollView()
     private var buttons = [UIButton]()
+    private var indicator = TabmanLineIndicator()
     
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
-
+    private var indicatorLeftMargin: NSLayoutConstraint?
+    private var indicatorWidth: NSLayoutConstraint?
+    
     public var edgeInset: CGFloat = Defaults.edgeInset {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
@@ -46,6 +49,12 @@ public class TabmanButtonBar: TabmanBar {
         // add scroll view
         self.containerView.addSubview(scrollView)
         scrollView.autoPinEdgesToSuperviewEdges()
+        
+        // add indicator
+        self.containerView.addSubview(self.indicator)
+        self.indicator.autoPinEdge(toSuperviewEdge: .bottom)
+        self.indicatorLeftMargin = self.indicator.autoPinEdge(toSuperviewEdge: .left)
+        self.indicatorWidth = self.indicator.autoSetDimension(.width, toSize: 0.0)
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
