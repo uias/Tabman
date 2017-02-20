@@ -103,9 +103,9 @@
 		D62AC0CC1E5733A80020B8AE = {
 			isa = PBXGroup;
 			children = (
-				D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */,
 				D62AC0F61E5734260020B8AE /* Tabman.xcodeproj */,
 				D62AC0D71E5733A80020B8AE /* Tabman-Example */,
+				D62AC1741E5AF9B50020B8AE /* Dependencies */,
 				D62AC0D61E5733A80020B8AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,6 +167,14 @@
 				D62AC1521E5AF5440020B8AE /* PageboyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D62AC1741E5AF9B50020B8AE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

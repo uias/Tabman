@@ -1,3 +1,6 @@
 [submodule "Dependencies/Pageboy"]
 	path = Example/Dependencies/Pageboy
 	url = https://github.com/MerrickSapsford/Pageboy
+[submodule "Example/Dependencies/TinyConstraints"]
+	path = Example/Dependencies/TinyConstraints
+	url = https://github.com/roberthein/TinyConstraints
