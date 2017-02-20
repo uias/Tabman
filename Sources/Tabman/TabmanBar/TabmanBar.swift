@@ -78,30 +78,27 @@ public class TabmanBar: UIView {
     
     public func reloadData() {
         self.items = self.dataSource?.items(forTabBar: self)
-        guard self.items != nil else {
-            return
-        }
-        
         self.clearAndConstructTabBar()
     }
     
     private func clearAndConstructTabBar() {
-        guard self.containerView.superview != nil else { return } // have not yet laid out
+        guard let items = self.items else { return } // no items yet
         
         self.clearTabBar()
-        self.constructTabBar()
+        self.constructTabBar(items: items)
     }
-}
-
-internal extension TabmanBar {
-
+    
+    //
+    // MARK: TabBar content
+    //
+    
     func clearTabBar() {
         for subview in containerView.subviews {
             subview.removeFromSuperview()
         }
     }
     
-    func constructTabBar() {
+    func constructTabBar(items: [TabmanBarItem]) {
         
     }
 }
