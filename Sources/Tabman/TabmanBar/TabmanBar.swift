@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 public protocol TabmanBarDataSource {
     
@@ -31,6 +32,13 @@ public class TabmanBar: UIView {
     }
     
     //
+    // MARK: Variables
+    //
+    
+    internal var items: [TabmanBarItem]?
+    internal var containerView: UIView!
+    
+    //
     // MARK: Properties
     //
     
@@ -40,10 +48,31 @@ public class TabmanBar: UIView {
         }
     }
     
-    var items: [TabmanBarItem]?
-    
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
+    }
+    
+    //
+    // MARK: Init
+    //
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.initTabBar()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.initTabBar()
+    }
+    
+    private func initTabBar() {
+                
+        let containerView = UIView()
+        self.addSubview(containerView)
+        containerView.autoPinEdgesToSuperviewEdges()
+        containerView.backgroundColor = .green
+        self.containerView = containerView
     }
     
     //
@@ -56,13 +85,24 @@ public class TabmanBar: UIView {
             return
         }
         
-        self.reloadTabBar()
+        self.clearAndConstructTabBar()
+    }
+    
+    private func clearAndConstructTabBar() {
+        self.clearTabBar()
+        self.constructTabBar()
     }
 }
 
 internal extension TabmanBar {
+
+    func clearTabBar() {
+        for subview in self.containerView.subviews {
+            subview.removeFromSuperview()
+        }
+    }
     
-    func reloadTabBar() {
+    func constructTabBar() {
         
     }
 }

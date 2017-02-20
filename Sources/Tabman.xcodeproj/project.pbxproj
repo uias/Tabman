@@ -16,6 +16,7 @@
 		D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */; };
 		D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */; };
 		D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1541E5AF5500020B8AE /* Pageboy.framework */; };
+		D62AC19F1E5B03BB0020B8AE /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC19E1E5B03BB0020B8AE /* PureLayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarItem.swift; sourceTree = "<group>"; };
 		D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanAutoLayout.swift; sourceTree = "<group>"; };
 		D62AC1541E5AF5500020B8AE /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = "../Example/Dependencies/Pageboy/Sources/build/Debug-iphoneos/Pageboy.framework"; sourceTree = "<group>"; };
+		D62AC19E1E5B03BB0020B8AE /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = "../Example/Dependencies/PureLayout/PureLayout/build/Debug-iphoneos/PureLayout.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62AC19F1E5B03BB0020B8AE /* PureLayout.framework in Frameworks */,
 				D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +127,7 @@
 		D62AC1531E5AF5500020B8AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D62AC19E1E5B03BB0020B8AE /* PureLayout.framework */,
 				D62AC1541E5AF5500020B8AE /* Pageboy.framework */,
 			);
 			name = Frameworks;

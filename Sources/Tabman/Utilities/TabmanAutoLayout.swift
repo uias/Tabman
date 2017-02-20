@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 internal extension TabmanBar {
     
