@@ -19,5 +19,6 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
   s.dependency 'Pageboy'
+  s.dependency 'TinyConstraints', '~> 1.2.0'
 
 end
