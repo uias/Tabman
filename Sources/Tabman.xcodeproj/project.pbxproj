@@ -10,12 +10,12 @@
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C11E5733810020B8AE /* TabmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0C01E5733810020B8AE /* TabmanTests.swift */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D62AC0F31E5733E40020B8AE /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0F01E5733D80020B8AE /* Pageboy.framework */; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
 		D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11B1E573AA00020B8AE /* TabmanBar.swift */; };
 		D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */; };
 		D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */; };
 		D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */; };
+		D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1541E5AF5500020B8AE /* Pageboy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,20 +26,6 @@
 			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
 			remoteInfo = Tabman;
 		};
-		D62AC0EF1E5733D80020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D623B1B71E1D0C6A00527F3D;
-			remoteInfo = Pageboy;
-		};
-		D62AC0F11E5733D80020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D623B1C01E1D0C6B00527F3D;
-			remoteInfo = PageboyTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +35,12 @@
 		D62AC0BB1E5733810020B8AE /* TabmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0C01E5733810020B8AE /* TabmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanTests.swift; sourceTree = "<group>"; };
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pageboy.xcodeproj; path = ../Dependencies/Pageboy/Sources/Pageboy.xcodeproj; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
 		D62AC11B1E573AA00020B8AE /* TabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBar.swift; sourceTree = "<group>"; };
 		D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanButtonBar.swift; sourceTree = "<group>"; };
 		D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarItem.swift; sourceTree = "<group>"; };
 		D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanAutoLayout.swift; sourceTree = "<group>"; };
+		D62AC1541E5AF5500020B8AE /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = "../Example/Dependencies/Pageboy/Sources/build/Debug-iphoneos/Pageboy.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62AC0F31E5733E40020B8AE /* Pageboy.framework in Frameworks */,
+				D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +66,10 @@
 		D62AC0A81E5733810020B8AE = {
 			isa = PBXGroup;
 			children = (
-				D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */,
 				D62AC0B41E5733810020B8AE /* Tabman */,
 				D62AC0BF1E5733810020B8AE /* TabmanTests */,
 				D62AC0B31E5733810020B8AE /* Products */,
+				D62AC1531E5AF5500020B8AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,15 +103,6 @@
 			path = TabmanTests;
 			sourceTree = "<group>";
 		};
-		D62AC0EB1E5733D80020B8AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC0F01E5733D80020B8AE /* Pageboy.framework */,
-				D62AC0F21E5733D80020B8AE /* PageboyTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D62AC11A1E573AA00020B8AE /* TabmanBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +119,14 @@
 				D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D62AC1531E5AF5500020B8AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D62AC1541E5AF5500020B8AE /* Pageboy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,12 +210,6 @@
 			mainGroup = D62AC0A81E5733810020B8AE;
 			productRefGroup = D62AC0B31E5733810020B8AE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D62AC0EB1E5733D80020B8AE /* Products */;
-					ProjectRef = D62AC0EA1E5733D80020B8AE /* Pageboy.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D62AC0B11E5733810020B8AE /* Tabman */,
@@ -238,23 +217,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D62AC0F01E5733D80020B8AE /* Pageboy.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pageboy.framework;
-			remoteRef = D62AC0EF1E5733D80020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC0F21E5733D80020B8AE /* PageboyTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PageboyTests.xctest;
-			remoteRef = D62AC0F11E5733D80020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D62AC0B01E5733810020B8AE /* Resources */ = {
