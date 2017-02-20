@@ -12,17 +12,27 @@ import PureLayout
 public class TabmanButtonBar: TabmanBar {
     
     private struct Defaults {
-        static let horizontalSpacing: CGFloat = 16.0
+        static let edgeInset: CGFloat = 16.0
+        static let horizontalSpacing: CGFloat = 20.0
     }
     
     private lazy var scrollView = UIScrollView()
-    
     private var buttons = [UIButton]()
-    private var horizontalMarginConstraints = [NSLayoutConstraint]()
     
-    public var horizontalSpacing: CGFloat = Defaults.horizontalSpacing {
+    private var horizontalMarginConstraints = [NSLayoutConstraint]()
+    private var edgeMarginConstraints = [NSLayoutConstraint]()
+
+    public var edgeInset: CGFloat = Defaults.edgeInset {
         didSet {
-            self.updateHorizontalSpacing(spacing: horizontalSpacing)
+            self.updateConstraints(self.edgeMarginConstraints,
+                                   withValue: edgeInset)
+        }
+    }
+    
+    public var interItemSpacing: CGFloat = Defaults.horizontalSpacing {
+        didSet {
+            self.updateConstraints(self.horizontalMarginConstraints,
+                                   withValue: interItemSpacing)
         }
     }
     
@@ -39,6 +49,7 @@ public class TabmanButtonBar: TabmanBar {
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
+        self.edgeMarginConstraints.removeAll()
         
         // add buttons to view
         var previousButton: UIButton?
@@ -52,11 +63,15 @@ public class TabmanButtonBar: TabmanBar {
                 button.autoAlignAxis(toSuperviewAxis: .horizontal)
                 
                 if previousButton == nil { // pin to left
-                    self.horizontalMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .left))
+                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .left,
+                                                                         withInset: self.edgeInset))
                 } else {
-                    self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
+                    self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right,
+                                                                               of: previousButton!,
+                                                                               withOffset: self.interItemSpacing))
                     if index == items.count - 1 {
-                        self.horizontalMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .right))
+                        self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .right,
+                                                                             withInset: self.edgeInset))
                     }
                 }
                 
@@ -64,17 +79,19 @@ public class TabmanButtonBar: TabmanBar {
                 previousButton = button
             }
         }
-        
-        self.updateHorizontalSpacing(spacing: self.horizontalSpacing)
     }
     
     //
     // MARK: Layout
     //
     
-    private func updateHorizontalSpacing(spacing: CGFloat) {
-        for constraint in self.horizontalMarginConstraints {
-            constraint.constant = spacing
+    private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
+        for constraint in constraints {
+            var value = value
+            if constraint.constant < 0.0 {
+                value = -value
+            }
+            constraint.constant = value
         }
         self.layoutIfNeeded()
     }
