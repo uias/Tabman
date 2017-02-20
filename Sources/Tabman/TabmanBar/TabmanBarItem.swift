@@ -10,7 +10,7 @@ import Foundation
 
 public struct TabmanBarItem: Any {
     
-    public let displayTitle: String
+    public var displayTitle: String?
     
     public init(title: String) {
         self.displayTitle = title

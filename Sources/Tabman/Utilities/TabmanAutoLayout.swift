@@ -57,7 +57,6 @@ internal extension TabmanBar {
         self.superview?.addConstraints(constraints)
         return constraints
     }
-    
 }
 
 internal extension UIView {

@@ -52,6 +52,17 @@ public class TabmanBar: UIView {
     
     public func reloadData() {
         self.items = self.dataSource?.items(forTabBar: self)
+        guard self.items != nil else {
+            return
+        }
+        
+        self.reloadTabBar()
+    }
+}
+
+internal extension TabmanBar {
+    
+    func reloadTabBar() {
         
     }
 }

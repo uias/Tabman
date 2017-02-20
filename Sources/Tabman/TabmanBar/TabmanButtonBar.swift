@@ -10,4 +10,11 @@ import UIKit
 
 public class TabmanButtonBar: TabmanBar {
     
+    // MARK: TabmanBar Lifecycle
+    
+    override func reloadTabBar() {
+        super.reloadTabBar()
+        
+        
+    }
 }
