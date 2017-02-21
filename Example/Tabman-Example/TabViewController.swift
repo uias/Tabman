@@ -111,6 +111,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPosition position: CGPoint,
                                direction: PageboyViewController.NavigationDirection) {
+        super.pageboyViewController(pageboyViewController,
+                                    didScrollToPosition: position,
+                                    direction: direction)
         
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", position.x)
         self.updateAppearance(pageOffset: position.x)
@@ -119,12 +122,19 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                willScrollToPageAtIndex index: Int,
                                direction: PageboyViewController.NavigationDirection) {
+        super.pageboyViewController(pageboyViewController,
+                                    willScrollToPageAtIndex: index,
+                                    direction: direction)
+        
         self.updateBarButtonStates(index: index)
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPageWithIndex index: Int,
                                direction: PageboyViewController.NavigationDirection) {
+        super.pageboyViewController(pageboyViewController,
+                                    didScrollToPageWithIndex: index,
+                                    direction: direction)
         
         self.pageLabel.text = "Current Page: " + String(describing: index)
         self.updateAppearance(pageOffset: CGFloat(index))

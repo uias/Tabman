@@ -67,6 +67,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPosition position: CGPoint,
                                       direction: PageboyViewController.NavigationDirection) {
+        self.tabBar?.position = pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y
         
     }
     

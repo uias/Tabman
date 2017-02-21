@@ -16,7 +16,7 @@ public class TabmanButtonBar: TabmanBar {
         static let horizontalSpacing: CGFloat = 20.0
     }
     
-    private lazy var scrollView = UIScrollView()
+    private lazy var scrollView: TabmanScrollView = TabmanScrollView()
     private var buttons = [UIButton]()
     private var indicator = TabmanLineIndicator()
     
@@ -49,12 +49,8 @@ public class TabmanButtonBar: TabmanBar {
         // add scroll view
         self.containerView.addSubview(scrollView)
         scrollView.autoPinEdgesToSuperviewEdges()
-        
-        // add indicator
-        self.containerView.addSubview(self.indicator)
-        self.indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = self.indicator.autoPinEdge(toSuperviewEdge: .left)
-        self.indicatorWidth = self.indicator.autoSetDimension(.width, toSize: 0.0)
+        scrollView.match(parent: self, onDimension: .height)
+        scrollView.contentView.removeAllSubviews()
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
@@ -68,7 +64,7 @@ public class TabmanButtonBar: TabmanBar {
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
                 
-                self.scrollView.addSubview(button)
+                self.scrollView.contentView.addSubview(button)
                 button.autoAlignAxis(toSuperviewAxis: .horizontal)
                 
                 if previousButton == nil { // pin to left
@@ -88,6 +84,41 @@ public class TabmanButtonBar: TabmanBar {
                 previousButton = button
             }
         }
+        
+        // add indicator
+        self.scrollView.contentView.addSubview(self.indicator)
+        self.indicator.autoPinEdge(toSuperviewEdge: .bottom)
+        self.indicatorLeftMargin = self.indicator.autoPinEdge(toSuperviewEdge: .left)
+        self.indicatorWidth = self.indicator.autoSetDimension(.width, toSize: 0.0)
+        
+        self.scrollView.layoutIfNeeded()
+    }
+    
+    override func update(forPosition position: CGFloat, min: CGFloat, max: CGFloat) {
+        super.update(forPosition: position, min: min, max: max)
+        
+        let (lowerIndex, upperIndex) = lowerAndUpperIndex(forPosition: position, minimum: min, maximum: max)
+        let lowerButton = self.buttons[lowerIndex]
+        let upperButton = self.buttons[upperIndex]
+        
+        var integral: Float = 0.0
+        let progress = CGFloat(modff(Float(position), &integral))
+        
+        let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
+        let interpolatedWidth = lowerButton.frame.size.width + widthDiff
+        self.indicatorWidth?.constant = interpolatedWidth
+        
+        let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
+        let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
+        self.indicatorLeftMargin?.constant = interpolatedXOrigin
+    }
+    
+    func lowerAndUpperIndex(forPosition position: CGFloat, minimum: CGFloat, maximum: CGFloat) -> (Int, Int) {
+        let lowerIndex = floor(position)
+        let upperIndex = ceil(position)
+ 
+        return (Int(max(minimum, lowerIndex)),
+                Int(min(maximum, upperIndex)))
     }
     
     //

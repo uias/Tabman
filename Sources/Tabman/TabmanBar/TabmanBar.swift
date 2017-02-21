@@ -36,7 +36,7 @@ public class TabmanBar: UIView {
     //
     
     internal var items: [TabmanBarItem]?
-    internal var containerView = UIView()
+    internal var containerView = UIView(forAutoLayout: ())
     
     //
     // MARK: Properties
@@ -45,6 +45,17 @@ public class TabmanBar: UIView {
     public var dataSource: TabmanBarDataSource? {
         didSet {
             self.reloadData()
+        }
+    }
+    
+    internal var position: CGFloat = 0.0 {
+        didSet {
+            guard let items = self.items else {
+                return
+            }
+            
+            self.update(forPosition: position,
+                        min: 0.0, max: CGFloat(items.count - 1))
         }
     }
     
@@ -99,6 +110,10 @@ public class TabmanBar: UIView {
     }
     
     func constructTabBar(items: [TabmanBarItem]) {
+        
+    }
+    
+    func update(forPosition position: CGFloat, min: CGFloat, max: CGFloat) {
         
     }
 }
