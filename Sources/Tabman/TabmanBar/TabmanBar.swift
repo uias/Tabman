@@ -42,12 +42,14 @@ public class TabmanBar: UIView {
     // MARK: Properties
     //
     
+    /// The object that acts as a data source to the tab bar.
     public var dataSource: TabmanBarDataSource? {
         didSet {
             self.reloadData()
         }
     }
     
+    /// The current relative selected position of the tab bar.
     internal var position: CGFloat = 0.0 {
         didSet {
             guard let items = self.items else {
@@ -55,7 +57,7 @@ public class TabmanBar: UIView {
             }
             
             self.update(forPosition: position,
-                        min: 0.0, max: CGFloat(items.count - 1))
+                        minimumIndex: 0, maximumIndex: items.count - 1)
         }
     }
     
@@ -87,11 +89,13 @@ public class TabmanBar: UIView {
     // MARK: Data
     //
     
+    /// Reload and reconstruct the contents of the tab bar.
     public func reloadData() {
         self.items = self.dataSource?.items(forTabBar: self)
         self.clearAndConstructTabBar()
     }
     
+    /// Reconstruct the tab bar for a new style or data set.
     private func clearAndConstructTabBar() {
         guard let items = self.items else { return } // no items yet
         
@@ -103,17 +107,25 @@ public class TabmanBar: UIView {
     // MARK: TabBar content
     //
     
+    /// Remove all components and subviews from the tab bar.
     func clearTabBar() {
-        for subview in containerView.subviews {
-            subview.removeFromSuperview()
-        }
+        self.containerView.removeAllSubviews()
     }
     
+    /// Construct the contents of the tab bar for the current style and given items.
+    ///
+    /// - Parameter items: The items to display.
     func constructTabBar(items: [TabmanBarItem]) {
         
     }
     
-    func update(forPosition position: CGFloat, min: CGFloat, max: CGFloat) {
+    /// Update the tab bar for a positional update.
+    ///
+    /// - Parameters:
+    ///   - position: The new position.
+    ///   - minimumIndex: The minimum possible index.
+    ///   - maximumIndex: The maximum possible index.
+    func update(forPosition position: CGFloat, minimumIndex: Int, maximumIndex: Int) {
         
     }
 }

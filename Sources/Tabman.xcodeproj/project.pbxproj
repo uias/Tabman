@@ -20,6 +20,7 @@
 		D62AC1A41E5B51320020B8AE /* TabmanLineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A31E5B51320020B8AE /* TabmanLineIndicator.swift */; };
 		D62AC1A91E5C54570020B8AE /* TabmanViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */; };
 		D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */; };
+		D62AC1AD1E5C801F0020B8AE /* TabmanBarCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AC1E5C801F0020B8AE /* TabmanBarCalculations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D62AC1A31E5B51320020B8AE /* TabmanLineIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanLineIndicator.swift; sourceTree = "<group>"; };
 		D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewUtils.swift; sourceTree = "<group>"; };
 		D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanScrollView.swift; sourceTree = "<group>"; };
+		D62AC1AC1E5C801F0020B8AE /* TabmanBarCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */,
 				D62AC11B1E573AA00020B8AE /* TabmanBar.swift */,
 				D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */,
+				D62AC1AC1E5C801F0020B8AE /* TabmanBarCalculations.swift */,
 				D62AC1A31E5B51320020B8AE /* TabmanLineIndicator.swift */,
 			);
 			path = TabmanBar;
@@ -260,6 +263,7 @@
 				D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */,
 				D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */,
 				D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */,
+				D62AC1AD1E5C801F0020B8AE /* TabmanBarCalculations.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

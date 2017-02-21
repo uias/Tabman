@@ -94,10 +94,14 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollView.layoutIfNeeded()
     }
     
-    override func update(forPosition position: CGFloat, min: CGFloat, max: CGFloat) {
-        super.update(forPosition: position, min: min, max: max)
+    override func update(forPosition position: CGFloat, minimumIndex: Int, maximumIndex: Int) {
+        super.update(forPosition: position,
+                     minimumIndex: minimumIndex,
+                     maximumIndex: maximumIndex)
         
-        let (lowerIndex, upperIndex) = lowerAndUpperIndex(forPosition: position, minimum: min, maximum: max)
+        let (lowerIndex, upperIndex) = self.lowerAndUpperIndex(forPosition: position,
+                                                               minimum: minimumIndex,
+                                                               maximum: maximumIndex)
         let lowerButton = self.buttons[lowerIndex]
         let upperButton = self.buttons[upperIndex]
         
@@ -111,14 +115,6 @@ public class TabmanButtonBar: TabmanBar {
         let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
         let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
         self.indicatorLeftMargin?.constant = interpolatedXOrigin
-    }
-    
-    func lowerAndUpperIndex(forPosition position: CGFloat, minimum: CGFloat, maximum: CGFloat) -> (Int, Int) {
-        let lowerIndex = floor(position)
-        let upperIndex = ceil(position)
- 
-        return (Int(max(minimum, lowerIndex)),
-                Int(min(maximum, upperIndex)))
     }
     
     //
