@@ -61,14 +61,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPageWithIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection) {
-        
+        self.tabBar?.position = CGFloat(index)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPosition position: CGPoint,
                                       direction: PageboyViewController.NavigationDirection) {
         self.tabBar?.position = pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y
-        
     }
     
 }
@@ -83,7 +82,6 @@ internal extension TabmanViewController {
         // re create the tab bar with a new style
         let bar = barType.init()
         bar.dataSource = self
-        bar.backgroundColor = .red
         
         self.tabBar = bar
     }
