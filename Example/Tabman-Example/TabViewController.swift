@@ -68,6 +68,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
         
+        self.tabBarStyle = .progressiveBar
         self.tabBar?.appearance = TabmanBar.AppearanceConfig({ (config) in
             config.textColor = UIColor.white.withAlphaComponent(0.6)
             config.selectedTextColor = UIColor.white

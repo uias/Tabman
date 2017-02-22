@@ -20,7 +20,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             guard tabBarStyle != oldValue else {
                 return
             }
+            self.clearUpTabBar(tabBar: &self.tabBar)
             self.reloadTabBar(withStyle: tabBarStyle)
+            self.updateTabBar(withLocation: self.tabBarLocation)
         }
     }
     public var tabBarLocation: TabmanBar.Location = .top {
@@ -76,6 +78,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 
 internal extension TabmanViewController {
     
+    func clearUpTabBar(tabBar: inout TabmanBar?) {
+        tabBar?.removeFromSuperview()
+        tabBar = nil
+    }
+    
     func reloadTabBar(withStyle style: TabmanBar.Style) {
         guard let barType = style.rawType else {
             return
@@ -106,6 +113,8 @@ internal extension TabmanViewController {
             tabBar.tabBarAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
         }
         
+        let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
+        tabBar.updatePosition(position ?? 0.0, direction: .neutral)
     }
 }
 

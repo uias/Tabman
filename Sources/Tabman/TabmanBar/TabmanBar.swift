@@ -148,6 +148,8 @@ public class TabmanBar: UIView {
         guard let items = self.items else {
             return
         }
+        
+        self.layoutIfNeeded()
         self.currentPosition = position
         self.update(forPosition: position,
                     direction: direction,
@@ -186,6 +188,9 @@ internal extension TabmanBar.Style {
             
         case .buttonBar:
             return TabmanButtonBar.self
+            
+        case .progressiveBar:
+            return TabmanProgressiveBar.self
             
         default:()
         }
