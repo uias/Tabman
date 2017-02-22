@@ -12,10 +12,20 @@ import Pageboy
 
 public class TabmanButtonBar: TabmanBar {
     
+    //
+    // MARK: Constants
+    //
+    
     private struct Defaults {
         static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
     }
+    
+    //
+    // MARK: Properties
+    //
+    
+    // Private
     
     private lazy var scrollView: TabmanScrollView = TabmanScrollView()
     private var buttons = [UIButton]()
@@ -26,6 +36,9 @@ public class TabmanButtonBar: TabmanBar {
     private var indicatorLeftMargin: NSLayoutConstraint?
     private var indicatorWidth: NSLayoutConstraint?
     
+    // Public
+    
+    /// The inset at the edge of the tab bar items. (Default = 16.0)
     public var edgeInset: CGFloat = Defaults.edgeInset {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
@@ -33,6 +46,7 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
+    /// The spacing between each tab bar item. (Default = 20.0)
     public var interItemSpacing: CGFloat = Defaults.horizontalSpacing {
         didSet {
             self.updateConstraints(self.horizontalMarginConstraints,
