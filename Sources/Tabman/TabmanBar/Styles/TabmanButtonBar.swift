@@ -34,7 +34,11 @@ public class TabmanButtonBar: TabmanBar {
     
     // Private
     
-    private lazy var scrollView: TabmanScrollView = TabmanScrollView()
+    private lazy var scrollView: TabmanScrollView = {
+        let scrollView = TabmanScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
     private var buttons = [UIButton]()
     private var indicator = TabmanLineIndicator()
     
@@ -74,6 +78,16 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
+    /// Whether scroll is enabled on the tab bar. (Default = false)
+    public var isScrollEnabled: Bool {
+        get {
+            return self.scrollView.isScrollEnabled
+        }
+        set {
+            self.scrollView.isScrollEnabled = isScrollEnabled
+        }
+    }
+    
     //
     // MARK: Lifecycle
     //
@@ -96,6 +110,7 @@ public class TabmanButtonBar: TabmanBar {
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
+        self.isScrollEnabled = false
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
