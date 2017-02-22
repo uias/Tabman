@@ -36,7 +36,7 @@ public extension TabmanBar {
         
         static var defaultAppearance: AppearanceConfig {
             return AppearanceConfig({ (config) in
-                config.textColor = UIColor.white.withAlphaComponent(0.7)
+                // default config
             })
         }
     }

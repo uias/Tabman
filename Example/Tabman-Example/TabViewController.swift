@@ -67,6 +67,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.updateAppearance(pageOffset: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
+        
+        self.tabBar?.appearance = TabmanBar.AppearanceConfig({ (config) in
+            config.textColor = UIColor.white.withAlphaComponent(0.6)
+            config.selectedTextColor = UIColor.white
+        })
     }
     
     func updateStatusLabels() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D6020A941E5DB57400C2B7BA /* TabmanBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A931E5DB57400C2B7BA /* TabmanBarAppearance.swift */; };
+		D6020A981E5DC59500C2B7BA /* TabmanColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* TabmanColorUtils.swift */; };
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C11E5733810020B8AE /* TabmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0C01E5733810020B8AE /* TabmanTests.swift */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		D6020A931E5DB57400C2B7BA /* TabmanBarAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearance.swift; sourceTree = "<group>"; };
+		D6020A971E5DC59500C2B7BA /* TabmanColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanColorUtils.swift; sourceTree = "<group>"; };
 		D62AC0B21E5733810020B8AE /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0B51E5733810020B8AE /* Tabman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tabman.h; sourceTree = "<group>"; };
 		D62AC0B61E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */,
 				D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */,
 				D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */,
+				D6020A971E5DC59500C2B7BA /* TabmanColorUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6020A981E5DC59500C2B7BA /* TabmanColorUtils.swift in Sources */,
 				D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */,
 				D62AC1A91E5C54570020B8AE /* TabmanViewUtils.swift in Sources */,
 				D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */,

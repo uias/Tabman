@@ -19,6 +19,9 @@ public class TabmanButtonBar: TabmanBar {
     private struct Defaults {
         static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
+        
+        static let selectedTextColor: UIColor = .black
+        static let textColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     }
     
     //
@@ -35,6 +38,18 @@ public class TabmanButtonBar: TabmanBar {
     private var edgeMarginConstraints = [NSLayoutConstraint]()
     private var indicatorLeftMargin: NSLayoutConstraint?
     private var indicatorWidth: NSLayoutConstraint?
+    
+    private var textColor: UIColor = Defaults.textColor
+    private var selectedTextColor: UIColor = Defaults.selectedTextColor
+    
+    private var currentTargetButton: UIButton? {
+        didSet {
+            guard currentTargetButton !== oldValue else { return }
+            
+            currentTargetButton?.setTitleColor(self.selectedTextColor, for: .normal)
+            oldValue?.setTitleColor(self.textColor, for: .normal)
+        }
+    }
     
     // Public
     
@@ -88,6 +103,7 @@ public class TabmanButtonBar: TabmanBar {
                 
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
+                button.setTitleColor(self.textColor, for: .normal)
                 
                 self.scrollView.contentView.addSubview(button)
                 button.autoAlignAxis(toSuperviewAxis: .horizontal)
@@ -134,18 +150,39 @@ public class TabmanButtonBar: TabmanBar {
         let lowerButton = self.buttons[lowerIndex]
         let upperButton = self.buttons[upperIndex]
         
+        let targetButton = direction == .forward ? upperButton : lowerButton
+        let oldTargetButton = direction == .forward ? lowerButton : upperButton
+        
         var integral: Float = 0.0
         let transitionProgress = CGFloat(modff(Float(position), &integral))
+        
+        let relativeProgress = direction == .forward ? transitionProgress : 1.0 - transitionProgress
         
         self.updateIndicator(forTransitionProgress: transitionProgress,
                              lowerButton: lowerButton,
                              upperButton: upperButton)
-        
+        self.updateButtons(withTargetButton: targetButton,
+                           oldTargetButton: oldTargetButton,
+                           progress: relativeProgress)
         self.scrollIndicatorPositionToVisible()
     }
     
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
+        
+        if let textColor = appearance.textColor {
+            self.textColor = textColor
+            for button in self.buttons {
+                if button !== self.currentTargetButton {
+                    button.setTitleColor(textColor, for: .normal)
+                }
+            }
+        }
+        
+        if let selectedTextColor = appearance.selectedTextColor {
+            self.selectedTextColor = selectedTextColor
+            self.currentTargetButton?.setTitleColor(selectedTextColor, for: .normal)
+        }
         
         if let indicatorColor = appearance.indicatorColor {
             self.indicator.tintColor = indicatorColor
@@ -178,6 +215,22 @@ public class TabmanButtonBar: TabmanBar {
         let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
         let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
         self.indicatorLeftMargin?.constant = interpolatedXOrigin
+    }
+    
+    private func updateButtons(withTargetButton targetButton: UIButton,
+                               oldTargetButton: UIButton,
+                               progress: CGFloat) {
+        guard targetButton !== oldTargetButton else {
+            self.currentTargetButton = targetButton
+            return
+        }
+        
+        targetButton.setTitleColor(UIColor.interpolate(betweenColor: self.textColor,
+                                                       and: self.selectedTextColor,
+                                                       percent: progress), for: .normal)
+        oldTargetButton.setTitleColor(UIColor.interpolate(betweenColor: self.textColor,
+                                                          and: self.selectedTextColor,
+                                                          percent: 1.0 - progress), for: .normal)
     }
     
     private func scrollIndicatorPositionToVisible() {
