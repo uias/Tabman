@@ -64,7 +64,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.dataSource = self
         self.delegate = self
         
-        self.updateAppearance(pageOffset: 0.0)
+        self.updateAppearance(pageOffset: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
     }
