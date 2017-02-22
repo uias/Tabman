@@ -101,9 +101,11 @@ public class TabmanButtonBar: TabmanBar {
         for (index, item) in items.enumerated() {
             if let displayTitle = item.displayTitle {
                 
+                // configure button
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
                 button.setTitleColor(self.textColor, for: .normal)
+                button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
                 
                 self.scrollView.contentView.addSubview(button)
                 button.autoAlignAxis(toSuperviewAxis: .horizontal)
@@ -246,5 +248,15 @@ public class TabmanButtonBar: TabmanBar {
         let offset = max(0.0, min(maxOffset, indicatorXOffset - indicatorWidthOffset))
         
         self.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
+    }
+    
+    //
+    // MARK: Actions
+    //
+    
+    func tabButtonPressed(_ sender: UIButton) {
+        if let index = self.buttons.index(of: sender) {
+            self.delegate?.tabBar(self, didSelectTabAtIndex: index)
+        }
     }
 }

@@ -84,6 +84,7 @@ internal extension TabmanViewController {
         // re create the tab bar with a new style
         let bar = barType.init()
         bar.dataSource = self
+        bar.delegate = self
         
         self.tabBar = bar
     }
@@ -108,9 +109,13 @@ internal extension TabmanViewController {
     }
 }
 
-extension TabmanViewController: TabmanBarDataSource {
+extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     
     public func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]? {
         return self.tabBarItems
+    }
+    
+    public func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int) {
+        self.scrollToPage(.atIndex(index: index), animated: true)
     }
 }

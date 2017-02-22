@@ -15,6 +15,11 @@ public protocol TabmanBarDataSource {
     func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]?
 }
 
+public protocol TabmanBarDelegate {
+    
+    func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
+}
+
 public class TabmanBar: UIView {
     
     //
@@ -51,12 +56,18 @@ public class TabmanBar: UIView {
         }
     }
     
+    /// The object that acts as a delegate to the tab bar.
+    public var delegate: TabmanBarDelegate?
+    
     /// Appearance configuration for the tab bar.
     public var appearance: AppearanceConfig = .defaultAppearance {
         didSet {
             self.update(forAppearance: appearance)
         }
     }
+    
+    /// Background view of the tab bar.
+    public private(set) var backgroundView: UIView = UIView(forAutoLayout: ())
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
@@ -77,6 +88,8 @@ public class TabmanBar: UIView {
     }
     
     private func initTabBar() {
+        self.addSubview(backgroundView)
+        backgroundView.autoPinEdgesToSuperviewEdges()
         
         self.addSubview(containerView)
         containerView.autoPinEdgesToSuperviewEdges()
