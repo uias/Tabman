@@ -61,7 +61,7 @@ public class TabmanButtonBar: TabmanBar {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.scrollIndicatorPositionToVisible()
+        self.scrollIndicatorPositionToVisible()        
     }
     
     //
