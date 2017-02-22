@@ -43,6 +43,15 @@ class TabmanLineIndicator: UIView {
         }
     }
     
+    /// Whether to use rounded corners for the indicator line.
+    ///
+    /// Default is false
+    var useRoundedCorners: Bool = false {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
     /// The color of the indicator line.
     override var tintColor: UIColor! {
         didSet {
@@ -74,5 +83,14 @@ class TabmanLineIndicator: UIView {
     
     func initIndicator() {
         self.backgroundColor = self.tintColor
+    }
+    
+    // MARK: Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layoutIfNeeded()
+        self.layer.cornerRadius = useRoundedCorners ? self.bounds.size.height / 2.0 : 0.0
     }
 }
