@@ -20,6 +20,7 @@ public class TabmanButtonBar: TabmanBar {
         static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
         
+        static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
         static let selectedTextColor: UIColor = .black
         static let textColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     }
@@ -39,6 +40,7 @@ public class TabmanButtonBar: TabmanBar {
     private var indicatorLeftMargin: NSLayoutConstraint?
     private var indicatorWidth: NSLayoutConstraint?
     
+    private var textFont: UIFont = Defaults.textFont
     private var textColor: UIColor = Defaults.textColor
     private var selectedTextColor: UIColor = Defaults.selectedTextColor
     
@@ -105,6 +107,7 @@ public class TabmanButtonBar: TabmanBar {
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
                 button.setTitleColor(self.textColor, for: .normal)
+                button.titleLabel?.font = self.textFont
                 button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
                 
                 self.scrollView.contentView.addSubview(button)
@@ -174,16 +177,21 @@ public class TabmanButtonBar: TabmanBar {
         
         if let textColor = appearance.textColor {
             self.textColor = textColor
-            for button in self.buttons {
-                if button !== self.currentTargetButton {
-                    button.setTitleColor(textColor, for: .normal)
-                }
-            }
+            self.updateButtons(withContext: .unselected, update: { button in
+                button.setTitleColor(textColor, for: .normal)
+            })
         }
         
         if let selectedTextColor = appearance.selectedTextColor {
             self.selectedTextColor = selectedTextColor
             self.currentTargetButton?.setTitleColor(selectedTextColor, for: .normal)
+        }
+        
+        if let textFont = appearance.textFont {
+            self.textFont = textFont
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = textFont
+            })
         }
         
         if let indicatorColor = appearance.indicatorColor {
@@ -257,6 +265,26 @@ public class TabmanButtonBar: TabmanBar {
     func tabButtonPressed(_ sender: UIButton) {
         if let index = self.buttons.index(of: sender) {
             self.delegate?.tabBar(self, didSelectTabAtIndex: index)
+        }
+    }
+    
+    //
+    // MARK: Utilities
+    //
+    
+    private enum ButtonContext {
+        case all
+        case target
+        case unselected
+    }
+    
+    private func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> ()) {
+        for button in self.buttons {
+            if context == .all ||
+                (context == .target && button === self.currentTargetButton) ||
+                (context == .unselected && button !== self.currentTargetButton) {
+                update(button)
+            }
         }
     }
 }

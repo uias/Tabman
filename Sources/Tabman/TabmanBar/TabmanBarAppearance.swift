@@ -21,6 +21,7 @@ public extension TabmanBar {
         public var indicatorWeight: TabmanLineIndicator.Weight?
         
         // Text
+        public var textFont: UIFont?
         public var selectedTextColor: UIColor?
         public var textColor: UIColor?
         
