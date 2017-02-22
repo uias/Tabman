@@ -67,7 +67,7 @@ public class TabmanBar: UIView {
     }
     
     /// Background view of the tab bar.
-    public private(set) var backgroundView: UIView = UIView(forAutoLayout: ())
+    public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
@@ -163,7 +163,10 @@ public class TabmanBar: UIView {
     ///
     /// - Parameter appearance: The new configuration.
     internal func update(forAppearance appearance: AppearanceConfig) {
-        // Abstract function
+        
+        if let backgroundStyle = appearance.backgroundStyle {
+            self.backgroundView.backgroundStyle = backgroundStyle
+        }
     }
 }
 

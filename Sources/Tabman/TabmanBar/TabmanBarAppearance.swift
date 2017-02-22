@@ -23,8 +23,9 @@ public extension TabmanBar {
         // Text
         public var selectedTextColor: UIColor?
         public var textColor: UIColor?
-        public var textFont: UIFont?
-        public var selectedTextFont: UIFont?
+        
+        // Background
+        public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
         
         //
         // MARK: Init
