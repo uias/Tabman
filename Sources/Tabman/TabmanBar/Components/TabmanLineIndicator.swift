@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabmanLineIndicator: UIView {
+public class TabmanLineIndicator: UIView {
     
     //
     // MARK: Types
@@ -19,7 +19,7 @@ class TabmanLineIndicator: UIView {
     /// - thin: Thin - 1pt
     /// - normal: Normal - 2pt
     /// - thick: Thick - 4pt
-    enum Weight: CGFloat {
+    public enum Weight: CGFloat {
         case thin = 1.0
         case normal = 2.0
         case thick = 4.0
@@ -32,7 +32,7 @@ class TabmanLineIndicator: UIView {
     /// The thickness of the indicator line.
     ///
     /// Default is .normal
-    var weight: Weight = .normal {
+    public var weight: Weight = .normal {
         didSet {
             guard weight != oldValue else {
                 return
@@ -46,20 +46,20 @@ class TabmanLineIndicator: UIView {
     /// Whether to use rounded corners for the indicator line.
     ///
     /// Default is false
-    var useRoundedCorners: Bool = false {
+    public var useRoundedCorners: Bool = false {
         didSet {
             self.setNeedsLayout()
         }
     }
     
     /// The color of the indicator line.
-    override var tintColor: UIColor! {
+    override public var tintColor: UIColor! {
         didSet {
             self.backgroundColor = tintColor
         }
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: self.weight.rawValue)
     }
     
@@ -67,12 +67,12 @@ class TabmanLineIndicator: UIView {
     // MARK: Init
     //
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initIndicator()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.initIndicator()
     }
@@ -87,7 +87,7 @@ class TabmanLineIndicator: UIView {
     
     // MARK: Lifecycle
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.layoutIfNeeded()

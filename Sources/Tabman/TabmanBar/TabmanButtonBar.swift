@@ -144,6 +144,14 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()
     }
     
+    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+        super.update(forAppearance: appearance)
+        
+        if let indicatorColor = appearance.indicatorColor {
+            self.indicator.tintColor = indicatorColor
+        }
+    }
+    
     //
     // MARK: Layout
     //

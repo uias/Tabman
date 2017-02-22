@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6020A941E5DB57400C2B7BA /* TabmanBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A931E5DB57400C2B7BA /* TabmanBarAppearance.swift */; };
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C11E5733810020B8AE /* TabmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0C01E5733810020B8AE /* TabmanTests.swift */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6020A931E5DB57400C2B7BA /* TabmanBarAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearance.swift; sourceTree = "<group>"; };
 		D62AC0B21E5733810020B8AE /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0B51E5733810020B8AE /* Tabman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tabman.h; sourceTree = "<group>"; };
 		D62AC0B61E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */,
 				D62AC11B1E573AA00020B8AE /* TabmanBar.swift */,
+				D6020A931E5DB57400C2B7BA /* TabmanBarAppearance.swift */,
 				D62AC11D1E573E5D0020B8AE /* TabmanButtonBar.swift */,
 				D62AC1AE1E5C84CB0020B8AE /* Components */,
 				D62AC1B01E5C84CB0020B8AE /* Utilities */,
@@ -276,6 +279,7 @@
 				D62AC1A91E5C54570020B8AE /* TabmanViewUtils.swift in Sources */,
 				D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */,
 				D62AC11E1E573E5D0020B8AE /* TabmanButtonBar.swift in Sources */,
+				D6020A941E5DB57400C2B7BA /* TabmanBarAppearance.swift in Sources */,
 				D62AC1B21E5C84CB0020B8AE /* TabmanLineIndicator.swift in Sources */,
 				D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */,
 				D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */,

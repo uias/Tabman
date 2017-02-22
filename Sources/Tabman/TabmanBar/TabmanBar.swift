@@ -33,15 +33,16 @@ public class TabmanBar: UIView {
     }
     
     //
-    // MARK: Variables
+    // MARK: Properties
     //
+    
+    // Private
     
     internal var items: [TabmanBarItem]?
     internal var containerView = UIView(forAutoLayout: ())
+    internal private(set) var currentPosition: CGFloat = 0.0
     
-    //
-    // MARK: Properties
-    //
+    // Public
     
     /// The object that acts as a data source to the tab bar.
     public var dataSource: TabmanBarDataSource? {
@@ -50,12 +51,16 @@ public class TabmanBar: UIView {
         }
     }
     
+    /// Appearance configuration for the tab bar.
+    public var appearance: AppearanceConfig = .defaultAppearance {
+        didSet {
+            self.update(forAppearance: appearance)
+        }
+    }
+    
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
     }
-    
-    /// The current relative selected position of the tab bar.
-    internal private(set) var currentPosition: CGFloat = 0.0
     
     //
     // MARK: Init
@@ -93,6 +98,7 @@ public class TabmanBar: UIView {
         
         self.clearTabBar()
         self.constructTabBar(items: items)
+        self.update(forAppearance: self.appearance)
     }
     
     //
@@ -137,7 +143,14 @@ public class TabmanBar: UIView {
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
-        
+        // Abstract function
+    }
+    
+    /// Update the appearance of the tab bar for a new configuration.
+    ///
+    /// - Parameter appearance: The new configuration.
+    internal func update(forAppearance appearance: AppearanceConfig) {
+        // Abstract function
     }
 }
 
