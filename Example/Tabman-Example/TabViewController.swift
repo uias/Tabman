@@ -140,8 +140,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         super.pageboyViewController(pageboyViewController,
                                     willScrollToPageAtIndex: index,
                                     direction: direction)
-        
-        self.updateBarButtonStates(index: index)
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
