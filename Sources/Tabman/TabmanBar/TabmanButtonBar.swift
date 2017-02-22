@@ -41,6 +41,16 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     //
+    // MARK: Lifecycle
+    //
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.scrollIndicatorPositionToVisible()
+    }
+    
+    //
     // MARK: TabmanBar Lifecycle
     //
     
@@ -117,8 +127,7 @@ public class TabmanButtonBar: TabmanBar {
                              lowerButton: lowerButton,
                              upperButton: upperButton)
         
-        self.scrollPositionToVisible(position,
-                                     direction: direction)
+        self.scrollIndicatorPositionToVisible()
     }
     
     //
@@ -149,8 +158,18 @@ public class TabmanButtonBar: TabmanBar {
         self.indicatorLeftMargin?.constant = interpolatedXOrigin
     }
     
-    private func scrollPositionToVisible(_ position: CGFloat,
-                                         direction: PageboyViewController.NavigationDirection) {
-        // TODO
+    private func scrollIndicatorPositionToVisible() {
+        
+        let indicatorXOffset = self.indicatorLeftMargin?.constant ?? 0.0
+        let indicatorWidthOffset = (self.bounds.size.width - (self.indicatorWidth?.constant ?? 0)) / 2.0
+        let maxOffset = self.scrollView.contentSize.width - self.bounds.size.width
+        
+        guard indicatorWidthOffset > 0.0 else {
+            return
+        }
+        
+        let offset = max(0.0, min(maxOffset, indicatorXOffset - indicatorWidthOffset))
+        
+        self.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
     }
 }
