@@ -12,11 +12,20 @@ import Pageboy
 
 public protocol TabmanBarDataSource {
     
+    /// The items to display in the tab bar.
+    ///
+    /// - Parameter tabBar: The tab bar.
+    /// - Returns: Items to display in the tab bar.
     func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]?
 }
 
 public protocol TabmanBarDelegate {
     
+    /// The tab bar did select a tab at an index.
+    ///
+    /// - Parameters:
+    ///   - tabBar: The tab bar.
+    ///   - index: The selected index.
     func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
 }
 
