@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pageboy
 
 internal extension TabmanBar {
     
@@ -25,4 +26,20 @@ internal extension TabmanBar {
                 Int(min(CGFloat(maximum), upperIndex)))
     }
     
+    /// Get the target index that a transition is travelling toward.
+    ///
+    /// - Parameters:
+    ///   - position: The current position.
+    ///   - direction: The current travel direction.
+    /// - Returns: The target index.
+    func targetIndex(forPosition position: CGFloat, direction: PageboyViewController.NavigationDirection) -> Int {
+        var index: Int!
+        switch direction {
+        case .reverse:
+            index = Int(floor(position))
+        default:
+            index = Int(ceil(position))
+        }
+        return max(0, min((self.items?.count ?? 1) - 1, index))
+    }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import PureLayout
+import Pageboy
 
 public protocol TabmanBarDataSource {
     
@@ -49,21 +50,12 @@ public class TabmanBar: UIView {
         }
     }
     
-    /// The current relative selected position of the tab bar.
-    internal var position: CGFloat = 0.0 {
-        didSet {
-            guard let items = self.items else {
-                return
-            }
-            
-            self.update(forPosition: position,
-                        minimumIndex: 0, maximumIndex: items.count - 1)
-        }
-    }
-    
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
     }
+    
+    /// The current relative selected position of the tab bar.
+    internal private(set) var currentPosition: CGFloat = 0.0
     
     //
     // MARK: Init
@@ -108,24 +100,43 @@ public class TabmanBar: UIView {
     //
     
     /// Remove all components and subviews from the tab bar.
-    func clearTabBar() {
+    internal func clearTabBar() {
         self.containerView.removeAllSubviews()
     }
     
     /// Construct the contents of the tab bar for the current style and given items.
     ///
     /// - Parameter items: The items to display.
-    func constructTabBar(items: [TabmanBarItem]) {
+    internal func constructTabBar(items: [TabmanBarItem]) {
         
+    }
+    
+    //
+    // MARK: Updating
+    //
+    
+    internal func updatePosition(_ position: CGFloat,
+                                 direction: PageboyViewController.NavigationDirection) {
+        guard let items = self.items else {
+            return
+        }
+        self.currentPosition = position
+        self.update(forPosition: position,
+                    direction: direction,
+                    minimumIndex: 0, maximumIndex: items.count - 1)
     }
     
     /// Update the tab bar for a positional update.
     ///
     /// - Parameters:
     ///   - position: The new position.
+    ///   - direction: The direction of travel.
     ///   - minimumIndex: The minimum possible index.
     ///   - maximumIndex: The maximum possible index.
-    func update(forPosition position: CGFloat, minimumIndex: Int, maximumIndex: Int) {
+    internal func update(forPosition position: CGFloat,
+                         direction: PageboyViewController.NavigationDirection,
+                         minimumIndex: Int,
+                         maximumIndex: Int) {
         
     }
 }

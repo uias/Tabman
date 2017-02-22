@@ -61,13 +61,15 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPageWithIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection) {
-        self.tabBar?.position = CGFloat(index)
+        self.tabBar?.updatePosition(CGFloat(index),
+                                    direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPosition position: CGPoint,
                                       direction: PageboyViewController.NavigationDirection) {
-        self.tabBar?.position = pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y
+        self.tabBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
+                                    direction: direction)
     }
     
 }

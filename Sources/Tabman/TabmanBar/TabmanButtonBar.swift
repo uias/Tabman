@@ -8,6 +8,7 @@
 
 import UIKit
 import PureLayout
+import Pageboy
 
 public class TabmanButtonBar: TabmanBar {
     
@@ -94,8 +95,12 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollView.layoutIfNeeded()
     }
     
-    override func update(forPosition position: CGFloat, minimumIndex: Int, maximumIndex: Int) {
+    override func update(forPosition position: CGFloat,
+                         direction: PageboyViewController.NavigationDirection,
+                         minimumIndex: Int,
+                         maximumIndex: Int) {
         super.update(forPosition: position,
+                     direction: direction,
                      minimumIndex: minimumIndex,
                      maximumIndex: maximumIndex)
         
@@ -106,15 +111,14 @@ public class TabmanButtonBar: TabmanBar {
         let upperButton = self.buttons[upperIndex]
         
         var integral: Float = 0.0
-        let progress = CGFloat(modff(Float(position), &integral))
+        let transitionProgress = CGFloat(modff(Float(position), &integral))
         
-        let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
-        let interpolatedWidth = lowerButton.frame.size.width + widthDiff
-        self.indicatorWidth?.constant = interpolatedWidth
+        self.updateIndicator(forTransitionProgress: transitionProgress,
+                             lowerButton: lowerButton,
+                             upperButton: upperButton)
         
-        let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
-        let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
-        self.indicatorLeftMargin?.constant = interpolatedXOrigin
+        self.scrollPositionToVisible(position,
+                                     direction: direction)
     }
     
     //
@@ -130,5 +134,23 @@ public class TabmanButtonBar: TabmanBar {
             constraint.constant = value
         }
         self.layoutIfNeeded()
+    }
+    
+    private func updateIndicator(forTransitionProgress progress: CGFloat,
+                                 lowerButton: UIButton,
+                                 upperButton: UIButton) {
+        
+        let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
+        let interpolatedWidth = lowerButton.frame.size.width + widthDiff
+        self.indicatorWidth?.constant = interpolatedWidth
+        
+        let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
+        let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
+        self.indicatorLeftMargin?.constant = interpolatedXOrigin
+    }
+    
+    private func scrollPositionToVisible(_ position: CGFloat,
+                                         direction: PageboyViewController.NavigationDirection) {
+        // TODO
     }
 }
