@@ -121,7 +121,17 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     // MARK: PageboyViewControllerDelegate
     //
     
-    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                        willScrollToPageAtIndex index: Int,
+                                        direction: PageboyViewController.NavigationDirection,
+                                        animated: Bool) {
+        super.pageboyViewController(pageboyViewController,
+                                    willScrollToPageAtIndex: index,
+                                    direction: direction,
+                                    animated: animated)
+        
+        self.updateBarButtonStates(index: index)
+    }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPosition position: CGPoint,
@@ -132,16 +142,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         
         self.updateAppearance(pageOffset: position.x)
         self.updateStatusLabels()
-    }
-    
-    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               willScrollToPageAtIndex index: Int,
-                               direction: PageboyViewController.NavigationDirection,
-                               animated: Bool) {
-        super.pageboyViewController(pageboyViewController,
-                                    willScrollToPageAtIndex: index,
-                                    direction: direction,
-                                    animated: animated)
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
