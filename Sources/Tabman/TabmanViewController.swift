@@ -58,7 +58,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       willScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
-        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.tabBar?.updatePosition(CGFloat(index), direction: direction)
+                self.tabBar?.layoutIfNeeded()
+            })
+        }
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -71,11 +76,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didScrollToPosition position: CGPoint,
-                                      direction: PageboyViewController.NavigationDirection) {
-        self.tabBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
-                                    direction: direction)
+                                      direction: PageboyViewController.NavigationDirection,
+                                      animated: Bool) {
+        if !animated {
+            self.tabBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
+                                        direction: direction)
+        }
     }
-    
 }
 
 internal extension TabmanViewController {

@@ -135,10 +135,12 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                didScrollToPosition position: CGPoint,
-                               direction: PageboyViewController.NavigationDirection) {
+                               direction: PageboyViewController.NavigationDirection,
+                               animated: Bool) {
         super.pageboyViewController(pageboyViewController,
                                     didScrollToPosition: position,
-                                    direction: direction)
+                                    direction: direction,
+                                    animated: animated)
         
         self.updateAppearance(pageOffset: position.x)
         self.updateStatusLabels()
