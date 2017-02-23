@@ -13,7 +13,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
-    internal(set) public var tabBar: TabmanBar?
+    internal(set) var tabBar: TabmanBar?
     
     public var barStyle: TabmanBar.Style = .buttonBar {
         didSet {
