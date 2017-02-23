@@ -25,7 +25,7 @@ public class TabmanProgressiveBar: TabmanBar {
     // Public
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 4.0)
+        return CGSize(width: 0.0, height: 2.0)
     }
     
     //
