@@ -40,6 +40,18 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    public var barAppearance: TabmanBar.AppearanceConfig? {
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            self.tabBar?.appearance = newValue
+        }
+        get {
+            return self.tabBar?.appearance
+        }
+    }
+    
     // MARK: Lifecycle
     
     open override func loadView() {
