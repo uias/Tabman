@@ -15,13 +15,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     internal(set) public var tabBar: TabmanBar?
     
-    public var tabBarStyle: TabmanBar.Style = .buttonBar {
+    public var barStyle: TabmanBar.Style = .buttonBar {
         didSet {
-            guard tabBarStyle != oldValue else {
+            guard barStyle != oldValue else {
                 return
             }
             self.clearUpTabBar(tabBar: &self.tabBar)
-            self.reloadTabBar(withStyle: tabBarStyle)
+            self.reloadTabBar(withStyle: self.barStyle)
             self.updateTabBar(withLocation: self.barLocation)
         }
     }
@@ -48,7 +48,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.delegate = self
         
         // add tab bar to view
-        self.reloadTabBar(withStyle: self.tabBarStyle)
+        self.reloadTabBar(withStyle: self.barStyle)
         self.updateTabBar(withLocation: self.barLocation)
     }
     
