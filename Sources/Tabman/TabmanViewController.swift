@@ -34,7 +34,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
-    public var tabBarItems: [TabmanBarItem]? {
+    public var barItems: [TabmanBarItem]? {
         didSet {
             self.tabBar?.reloadData()
         }
@@ -130,7 +130,7 @@ internal extension TabmanViewController {
 extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     
     public func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]? {
-        return self.tabBarItems
+        return self.barItems
     }
     
     public func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int) {

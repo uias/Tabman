@@ -109,7 +109,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             viewControllers.append(viewController)
         }
         
-        self.tabBarItems = tabBarItems
+        self.barItems = tabBarItems
         return viewControllers
     }
     
