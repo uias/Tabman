@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6020AC31E602BB500C2B7BA /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC18D1E5B03B50020B8AE /* PureLayout.framework */; };
+		D6020AC41E602BB500C2B7BA /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC18D1E5B03B50020B8AE /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D6020AC71E602BBB00C2B7BA /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1501E5AF5440020B8AE /* Pageboy.framework */; };
+		D6020AC81E602BBB00C2B7BA /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1501E5AF5440020B8AE /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
@@ -21,6 +25,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D6020AC51E602BB500C2B7BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B1046AAF1A7F32380017187F;
+			remoteInfo = PureLayout_iOS;
+		};
+		D6020AC91E602BBB00C2B7BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D623B1B61E1D0C6A00527F3D;
+			remoteInfo = Pageboy;
+		};
 		D62AC0FB1E5734260020B8AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D62AC0F61E5734260020B8AE /* Tabman.xcodeproj */;
@@ -128,6 +146,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D6020AC81E602BBB00C2B7BA /* Pageboy.framework in Embed Frameworks */,
+				D6020AC41E602BB500C2B7BA /* PureLayout.framework in Embed Frameworks */,
 				D62AC1111E5737590020B8AE /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -157,6 +177,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6020AC71E602BBB00C2B7BA /* Pageboy.framework in Frameworks */,
+				D6020AC31E602BB500C2B7BA /* PureLayout.framework in Frameworks */,
 				D62AC1101E5737590020B8AE /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +296,8 @@
 			);
 			dependencies = (
 				D62AC1131E5737590020B8AE /* PBXTargetDependency */,
+				D6020AC61E602BB500C2B7BA /* PBXTargetDependency */,
+				D6020ACA1E602BBB00C2B7BA /* PBXTargetDependency */,
 			);
 			name = "Tabman-Example";
 			productName = "Tabman-Example";
@@ -452,6 +476,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D6020AC61E602BB500C2B7BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout_iOS;
+			targetProxy = D6020AC51E602BB500C2B7BA /* PBXContainerItemProxy */;
+		};
+		D6020ACA1E602BBB00C2B7BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Pageboy;
+			targetProxy = D6020AC91E602BBB00C2B7BA /* PBXContainerItemProxy */;
+		};
 		D62AC1131E5737590020B8AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Tabman;
@@ -575,6 +609,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
@@ -588,6 +623,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
