@@ -32,21 +32,6 @@ public protocol TabmanBarDelegate {
 public class TabmanBar: UIView {
     
     //
-    // MARK: Types
-    //
-    
-    public enum Style {
-        case buttonBar
-        case progressiveBar
-        case segmented
-    }
-    
-    public enum Location {
-        case top
-        case bottom
-    }
-    
-    //
     // MARK: Properties
     //
     
@@ -181,7 +166,7 @@ public class TabmanBar: UIView {
     }
 }
 
-internal extension TabmanBar.Style {
+internal extension TabmanBarConfig.Style {
     
     var rawType: TabmanBar.Type? {
         switch self {

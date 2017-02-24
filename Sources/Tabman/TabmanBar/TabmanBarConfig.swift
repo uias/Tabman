@@ -19,7 +19,7 @@ internal protocol TabmanBarConfigDelegate {
     func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.AppearanceConfig)
 }
 
-class TabmanBarConfig: Any {
+public class TabmanBarConfig: Any {
     
     //
     // MARK: Types
@@ -42,6 +42,8 @@ class TabmanBarConfig: Any {
     
     internal var delegate: TabmanBarConfigDelegate?
     
+    
+    /// The style to use for the bar. Default = .buttonBar
     public var style: Style = .buttonBar {
         didSet {
             guard style != oldValue else { return }
@@ -49,6 +51,8 @@ class TabmanBarConfig: Any {
             self.delegate?.config(self, didUpdateStyle: style)
         }
     }
+    
+    /// The location of the bar on screen. Default = .top
     public var location: Location = .top {
         didSet {
             guard location != oldValue else {
@@ -58,12 +62,14 @@ class TabmanBarConfig: Any {
         }
     }
     
+    /// The items to display in the bar.
     public var items: [TabmanBarItem]? {
         didSet {
             self.delegate?.config(self, didUpdateItems: items)
         }
     }
     
+    /// The appearance configuration of the bar.
     public var appearance: TabmanBar.AppearanceConfig? {
         didSet {
             self.delegate?.config(self, didUpdateAppearance: appearance ?? .defaultAppearance)
