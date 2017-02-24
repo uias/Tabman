@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/MerrickSapsford/Tabman.git", :tag => s.version.to_s }
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
-  s.dependency 'Pageboy'
-  s.dependency 'TinyConstraints', '~> 1.2.0'
+  s.dependency 'Pageboy', '~> 0.4.0'
+  s.dependency 'PureLayout', '~> 3.0.0'
 
 end
