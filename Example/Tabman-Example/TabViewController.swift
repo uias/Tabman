@@ -64,7 +64,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.dataSource = self
         self.delegate = self
         
-        self.updateAppearance(pageOffset: self.currentPosition?.x ?? 0.0)
+        self.updateAppearance(pageOffset: self.currentPosition?.x ?? 0.0,
+                              targetIndex: self.currentIndex ?? 0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
         
@@ -121,6 +122,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     // MARK: PageboyViewControllerDelegate
     //
     
+    private var targetIndex: Int?
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                         willScrollToPageAtIndex index: Int,
                                         direction: PageboyViewController.NavigationDirection,
@@ -129,6 +131,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     willScrollToPageAtIndex: index,
                                     direction: direction,
                                     animated: animated)
+        
+        self.targetIndex = index
         
         self.updateBarButtonStates(index: index)
     }
@@ -142,7 +146,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pageOffset: position.x)
+        self.updateAppearance(pageOffset: position.x, targetIndex: self.targetIndex)
         self.updateStatusLabels()
     }
     
@@ -155,10 +159,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pageOffset: CGFloat(index))
+        self.updateAppearance(pageOffset: CGFloat(index), targetIndex: self.targetIndex)
         self.updateStatusLabels()
-        
         self.updateBarButtonStates(index: index)
+        
+        self.targetIndex = nil
     }
 }
 

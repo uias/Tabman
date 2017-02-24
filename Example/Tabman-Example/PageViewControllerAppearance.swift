@@ -35,8 +35,7 @@ extension TabViewController {
     // MARK: Appearance
     //
     
-    func updateAppearance(pageOffset: CGFloat) {
-        
+    func updateAppearance(pageOffset: CGFloat, targetIndex: Int?) {
         var offset = pageOffset
         if offset < 0.0 {
             offset = 1.0 + offset
@@ -44,8 +43,10 @@ extension TabViewController {
         
         var integral: Double = 0.0
         let percentage = CGFloat(modf(Double(offset), &integral))
-        let lowerIndex = Int(floor(pageOffset))
-        let upperIndex = Int(ceil(pageOffset))
+        let floorOffset = Int(floor(pageOffset))
+        let ceilOffset = Int(ceil(pageOffset))
+        let lowerIndex = min(floorOffset, targetIndex ?? floorOffset)
+        let upperIndex = max(ceilOffset, targetIndex ?? ceilOffset)
         
         let lowerGradient = self.gradient(forIndex: lowerIndex)
         let upperGradient = self.gradient(forIndex: upperIndex)
