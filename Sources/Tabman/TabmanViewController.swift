@@ -70,11 +70,17 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 // MARK: - Bar Reloading / Layout
 internal extension TabmanViewController {
     
+    /// Clear the existing bar from the screen.
+    ///
+    /// - Parameter bar: The bar to clear.
     func clearUpBar(_ bar: inout TabmanBar?) {
         bar?.removeFromSuperview()
         bar = nil
     }
     
+    /// Reload the tab bar for a new style.
+    ///
+    /// - Parameter style: The new style.
     func reloadBar(withStyle style: TabmanBarConfig.Style) {
         guard let barType = style.rawType else {
             return
@@ -91,6 +97,10 @@ internal extension TabmanViewController {
         self.tabmanBar = bar
     }
     
+    
+    /// Update the bar with a new screen location.
+    ///
+    /// - Parameter location: The new location.
     func updateBar(withLocation location: TabmanBarConfig.Location) {
         guard let bar = self.tabmanBar else {
             return

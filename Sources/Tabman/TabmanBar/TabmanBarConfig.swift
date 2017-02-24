@@ -8,17 +8,39 @@
 
 import Foundation
 
+/// Update handler protocol for TabmanBarConfig updates.
 internal protocol TabmanBarConfigDelegate {
     
+    /// The config had its style updated.
+    ///
+    /// - Parameters:
+    ///   - config: The config.
+    ///   - style: The new style.
     func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBarConfig.Style)
     
+    /// The config had its location updated.
+    ///
+    /// - Parameters:
+    ///   - config: The config.
+    ///   - location: The new location.
     func config(_ config: TabmanBarConfig, didUpdateLocation location: TabmanBarConfig.Location)
     
+    /// The config had its items updated.
+    ///
+    /// - Parameters:
+    ///   - config: The config.
+    ///   - items: The new items.
     func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?)
     
+    /// The config had its appearance config updated.
+    ///
+    /// - Parameters:
+    ///   - config: The config.
+    ///   - appearance: The new appearance config.
     func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.AppearanceConfig)
 }
 
+/// Configuration object for adjusting appearance and contents of a TabmanBar.
 public class TabmanBarConfig: Any {
     
     //
@@ -31,6 +53,10 @@ public class TabmanBarConfig: Any {
         case segmented
     }
     
+    /// The location of the bar on screen.
+    ///
+    /// - top: At the top. (Note: this will take account of UINavigationBar etc.)
+    /// - bottom: At the bottom. (Note: this will take account of UITabBar etc.)
     public enum Location {
         case top
         case bottom
