@@ -16,32 +16,34 @@ public extension TabmanBar {
         // MARK: Properties
         //
         
+        
         //
         // Indicator
         
         /// The color of the tab indicator.
         public var indicatorColor: UIColor?
-        
         /// The weight (thickness) of the tab indicator.
         public var indicatorWeight: TabmanLineIndicator.Weight?
+        
         
         //
         // Text
         
         /// The font to use for text labels in the tab bar.
         public var textFont: UIFont?
-        
         /// The text color to use for selected tabs in the tab bar.
         public var selectedTextColor: UIColor?
-        
         /// The text color to use for tabs in the tab bar.
         public var textColor: UIColor?
         
+        
         //
-        // Background
+        // Bar
         
         /// The background style for the tab bar.
         public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
+        /// Whether to show a fade on the items at the bounds edge of the tab bar.
+        public var showEdgeFade: Bool?
         
         //
         // MARK: Init

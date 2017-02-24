@@ -40,6 +40,7 @@ public class TabmanBar: UIView {
     internal var items: [TabmanBarItem]?
     internal var containerView = UIView(forAutoLayout: ())
     internal private(set) var currentPosition: CGFloat = 0.0
+    internal var fadeGradientLayer: CAGradientLayer?
     
     // Public
     
@@ -87,6 +88,16 @@ public class TabmanBar: UIView {
         
         self.addSubview(containerView)
         containerView.autoPinEdgesToSuperviewEdges()
+    }
+    
+    //
+    // MARK: Lifecycle
+    //
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.fadeGradientLayer?.frame = self.bounds
     }
     
     //
@@ -162,6 +173,30 @@ public class TabmanBar: UIView {
         
         if let backgroundStyle = appearance.backgroundStyle {
             self.backgroundView.backgroundStyle = backgroundStyle
+        }
+        
+        self.updateEdgeFade(visible: appearance.showEdgeFade ?? false)
+    }
+}
+
+// MARK: - Bar appearance configuration
+internal extension TabmanBar {
+    
+    func updateEdgeFade(visible: Bool) {
+        if visible {
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.bounds
+            gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+            gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
+            self.containerView.layer.mask = gradientLayer
+            self.fadeGradientLayer = gradientLayer
+            
+        } else {
+            self.containerView.layer.mask = nil
+            self.fadeGradientLayer = nil
         }
     }
 }
