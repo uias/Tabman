@@ -10,7 +10,7 @@ import UIKit
 
 internal extension TabmanBar {
     
-    @discardableResult func tabBarAutoPinToTop(topLayoutGuide: UILayoutSupport) -> [NSLayoutConstraint]? {
+    @discardableResult func barAutoPinToTop(topLayoutGuide: UILayoutSupport) -> [NSLayoutConstraint]? {
         guard self.superview != nil else {
             return nil
         }
@@ -33,7 +33,7 @@ internal extension TabmanBar {
         return constraints
     }
     
-    @discardableResult func tabBarAutoPinToBotton(bottomLayoutGuide: UILayoutSupport) -> [NSLayoutConstraint]? {
+    @discardableResult func barAutoPinToBotton(bottomLayoutGuide: UILayoutSupport) -> [NSLayoutConstraint]? {
         guard self.superview != nil else {
             return nil
         }

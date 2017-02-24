@@ -13,16 +13,16 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
-    internal(set) var tabBar: TabmanBar?
+    internal(set) var bar: TabmanBar?
     
     public var barStyle: TabmanBar.Style = .buttonBar {
         didSet {
             guard barStyle != oldValue else {
                 return
             }
-            self.clearUpTabBar(tabBar: &self.tabBar)
-            self.reloadTabBar(withStyle: self.barStyle)
-            self.updateTabBar(withLocation: self.barLocation)
+            self.clearUpBar(&self.bar)
+            self.reloadBar(withStyle: self.barStyle)
+            self.updateBar(withLocation: self.barLocation)
         }
     }
     public var barLocation: TabmanBar.Location = .top {
@@ -30,13 +30,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             guard barLocation != oldValue else {
                 return
             }
-            self.updateTabBar(withLocation: barLocation)
+            self.updateBar(withLocation: barLocation)
         }
     }
     
     public var barItems: [TabmanBarItem]? {
         didSet {
-            self.tabBar?.reloadData()
+            self.bar?.reloadData()
         }
     }
     
@@ -45,10 +45,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             guard let newValue = newValue else {
                 return
             }
-            self.tabBar?.appearance = newValue
+            self.bar?.appearance = newValue
         }
         get {
-            return self.tabBar?.appearance
+            return self.bar?.appearance
         }
     }
     
@@ -59,9 +59,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         
         self.delegate = self
         
-        // add tab bar to view
-        self.reloadTabBar(withStyle: self.barStyle)
-        self.updateTabBar(withLocation: self.barLocation)
+        // add bar to view
+        self.reloadBar(withStyle: self.barStyle)
+        self.updateBar(withLocation: self.barLocation)
     }
     
     // MARK: PageboyViewControllerDelegate
@@ -72,8 +72,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.3, animations: {
-                self.tabBar?.updatePosition(CGFloat(index), direction: direction)
-                self.tabBar?.layoutIfNeeded()
+                self.bar?.updatePosition(CGFloat(index), direction: direction)
+                self.bar?.layoutIfNeeded()
             })
         }
     }
@@ -82,7 +82,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       didScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
-        self.tabBar?.updatePosition(CGFloat(index),
+        self.bar?.updatePosition(CGFloat(index),
                                     direction: direction)
     }
     
@@ -91,20 +91,20 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
         if !animated {
-            self.tabBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
-                                        direction: direction)
+            self.bar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
+                                     direction: direction)
         }
     }
 }
 
 internal extension TabmanViewController {
     
-    func clearUpTabBar(tabBar: inout TabmanBar?) {
-        tabBar?.removeFromSuperview()
-        tabBar = nil
+    func clearUpBar(_ bar: inout TabmanBar?) {
+        bar?.removeFromSuperview()
+        bar = nil
     }
     
-    func reloadTabBar(withStyle style: TabmanBar.Style) {
+    func reloadBar(withStyle style: TabmanBar.Style) {
         guard let barType = style.rawType else {
             return
         }
@@ -114,28 +114,28 @@ internal extension TabmanViewController {
         bar.dataSource = self
         bar.delegate = self
         
-        self.tabBar = bar
+        self.bar = bar
     }
     
-    func updateTabBar(withLocation location: TabmanBar.Location) {
-        guard let tabBar = self.tabBar else {
+    func updateBar(withLocation location: TabmanBar.Location) {
+        guard let bar = self.bar else {
             return
         }
         
-        tabBar.removeFromSuperview()
-        self.view.addSubview(tabBar)
+        bar.removeFromSuperview()
+        self.view.addSubview(bar)
 
         // move tab bar to location
         switch location {
             
         case .top:
-            tabBar.tabBarAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
+            bar.barAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
         case .bottom:
-            tabBar.tabBarAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
+            bar.barAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
         }
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
-        tabBar.updatePosition(position ?? 0.0, direction: .neutral)
+        bar.updatePosition(position ?? 0.0, direction: .neutral)
     }
 }
 
