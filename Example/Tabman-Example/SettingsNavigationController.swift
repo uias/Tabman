@@ -27,5 +27,6 @@ class SettingsNavigationController: UINavigationController {
         self.view.addSubview(blurView)
         self.view.sendSubview(toBack: blurView)
         blurView.autoPinEdgesToSuperviewEdges()
+        blurView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
     }
 }

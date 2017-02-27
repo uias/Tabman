@@ -77,11 +77,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         })
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        segue.destination.transitioningDelegate = self
-    }
-    
     func updateStatusLabels() {
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)

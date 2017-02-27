@@ -12,6 +12,16 @@ class TransparentNavigationBar: UINavigationBar {
     
     private var separatorView: UIView!
     
+    override var tintColor: UIColor! {
+        didSet {
+            guard self.separatorView != nil else {
+                return
+            }
+            
+            self.separatorView.backgroundColor = tintColor.withAlphaComponent(0.8)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,7 +34,7 @@ class TransparentNavigationBar: UINavigationBar {
         self.isTranslucent = true
         
         let separatorView = UIView()
-        separatorView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        separatorView.backgroundColor = self.tintColor.withAlphaComponent(0.8)
         self.addSubview(separatorView)
         separatorView.frame = CGRect(x: 0.0,
                                      y: self.bounds.size.height - 1.0,
@@ -35,6 +45,9 @@ class TransparentNavigationBar: UINavigationBar {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        guard self.separatorView != nil else {
+            return
+        }
         
         self.separatorView.frame = CGRect(x: 0.0,
                                           y: self.bounds.size.height - 1.0,

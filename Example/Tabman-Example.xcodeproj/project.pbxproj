@@ -196,6 +196,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D61E50CF1E647F0000AC8C75 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
+				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
+				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
+				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		D62AC0CC1E5733A80020B8AE = {
 			isa = PBXGroup;
 			children = (
@@ -239,10 +250,7 @@
 		D62AC10E1E5736B20020B8AE /* Example Components */ = {
 			isa = PBXGroup;
 			children = (
-				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
-				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
-				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
-				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
+				D61E50CF1E647F0000AC8C75 /* Settings */,
 				D62AC1051E5736A10020B8AE /* GradientView.swift */,
 				D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */,
 				D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */,

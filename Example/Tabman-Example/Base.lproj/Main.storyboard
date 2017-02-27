@@ -29,7 +29,7 @@
         <scene sceneID="5Z5-LD-5kM">
             <objects>
                 <navigationController id="zcO-z6-lsK" customClass="SettingsNavigationController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G47-5D-VOU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="G47-5D-VOU" customClass="TransparentNavigationBar" customModule="Tabman_Example" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
