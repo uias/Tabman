@@ -209,6 +209,14 @@ public class TabmanButtonBar: TabmanBar {
         if let isScrollEnabled = appearance.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
         }
+        
+        if let interItemSpacing = appearance.interItemSpacing {
+            self.interItemSpacing = interItemSpacing
+        }
+        
+        if let edgeInset = appearance.edgeInset {
+            self.edgeInset = edgeInset
+        }
     }
     
     //
