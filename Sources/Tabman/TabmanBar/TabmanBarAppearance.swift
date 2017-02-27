@@ -44,6 +44,8 @@ public extension TabmanBar {
         public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
         /// Whether to show a fade on the items at the bounds edge of the tab bar.
         public var showEdgeFade: Bool?
+        /// Whether scroll is enabled on the scroll view in the tab bar.
+        public var isScrollEnabled: Bool?
         
         //
         // MARK: Init

@@ -78,16 +78,6 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
-    /// Whether scroll is enabled on the tab bar. (Default = false)
-    public var isScrollEnabled: Bool {
-        get {
-            return self.scrollView.isScrollEnabled
-        }
-        set {
-            self.scrollView.isScrollEnabled = isScrollEnabled
-        }
-    }
-    
     //
     // MARK: Lifecycle
     //
@@ -110,7 +100,7 @@ public class TabmanButtonBar: TabmanBar {
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
-        self.isScrollEnabled = false
+        scrollView.isScrollEnabled = false
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
@@ -214,6 +204,10 @@ public class TabmanButtonBar: TabmanBar {
         
         if let indicatorColor = appearance.indicatorColor {
             self.indicator.tintColor = indicatorColor
+        }
+        
+        if let isScrollEnabled = appearance.isScrollEnabled {
+            self.scrollView.isScrollEnabled = isScrollEnabled
         }
     }
     
