@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,22 +48,38 @@
                                     <constraint firstAttribute="width" constant="1" id="qUw-Vk-nu9"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-f1-tUV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-f1-tUV">
                                 <rect key="frame" x="24" y="609" width="150" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Y5-Lkw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Y5-Lkw">
                                 <rect key="frame" x="24" y="630" width="102" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-kP-mjs" customClass="CircularButton" customModule="Tabman_Example" customModuleProvider="target">
+                                <rect key="frame" x="303" y="591" width="56" height="56"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="i8L-kP-mjs" secondAttribute="height" id="MKs-zq-n8A"/>
+                                    <constraint firstAttribute="width" constant="56" id="YUB-yK-GGW"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" image="ic_settings"/>
+                                <connections>
+                                    <action selector="showSettingsScreenWithSender:" destination="Y3B-UK-iWz" eventType="touchUpInside" id="42k-Eh-5dg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
+                            <constraint firstAttribute="trailing" secondItem="i8L-kP-mjs" secondAttribute="trailing" constant="16" id="F8w-QM-rZt"/>
+                            <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="i8L-kP-mjs" secondAttribute="bottom" constant="20" id="Ii3-7s-BcH"/>
                             <constraint firstItem="CBZ-3O-Ovm" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="16" id="KJY-DC-FmK"/>
                             <constraint firstAttribute="trailing" secondItem="88R-O5-360" secondAttribute="trailing" id="WEJ-9S-7Tp"/>
                             <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="a1Y-Y5-Lkw" secondAttribute="bottom" constant="20" id="Wa8-gm-cJ3"/>
@@ -130,4 +146,7 @@
             <point key="canvasLocation" x="817" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_settings" width="60" height="71"/>
+    </resources>
 </document>
