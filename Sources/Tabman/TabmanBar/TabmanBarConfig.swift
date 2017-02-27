@@ -47,10 +47,13 @@ public class TabmanBarConfig: Any {
     // MARK: Types
     //
     
+    /// The style of the bar.
+    ///
+    /// - buttonBar: A scrolling horizontal bar with text buttons for each page index.
+    /// - progressiveBar: A horizontal progress bar that increments toward completion with each page transition.
     public enum Style {
         case buttonBar
         case progressiveBar
-        case segmented
     }
     
     /// The location of the bar on screen.

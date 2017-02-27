@@ -225,9 +225,7 @@ internal extension TabmanBarConfig.Style {
         case .progressiveBar:
             return TabmanProgressiveBar.self
             
-        default:()
         }
-        return nil
     }
     
 }
