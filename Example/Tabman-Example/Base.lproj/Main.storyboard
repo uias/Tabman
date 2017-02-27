@@ -74,19 +74,19 @@
                                                     <rect key="frame" x="16" y="16" width="278" height="62.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIY-Qi-mAF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="278" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="278" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="150" text="This is a description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-03-fRU">
-                                                            <rect key="frame" x="0.0" y="25" width="278" height="37.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="150" text="This is a description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-03-fRU">
+                                                            <rect key="frame" x="0.0" y="23.5" width="278" height="39"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="m6e-03-fRU" secondAttribute="bottom" id="1La-dt-uCA"/>
                                                         <constraint firstAttribute="trailing" secondItem="m6e-03-fRU" secondAttribute="trailing" id="1Lo-v2-lHG"/>
@@ -98,6 +98,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="imF-Ae-XRl" firstAttribute="leading" secondItem="wNM-AS-oba" secondAttribute="leading" constant="16" id="1yM-cV-fK6"/>
                                                 <constraint firstItem="qv1-ao-Yqu" firstAttribute="centerY" secondItem="wNM-AS-oba" secondAttribute="centerY" id="81v-PT-9Xp"/>
@@ -108,6 +109,7 @@
                                                 <constraint firstItem="imF-Ae-XRl" firstAttribute="centerY" secondItem="wNM-AS-oba" secondAttribute="centerY" id="pPg-Gm-7t2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="m6e-03-fRU" id="Lvf-Or-wic"/>
                                             <outlet property="titleLabel" destination="OIY-Qi-mAF" id="pXv-S4-gTT"/>

@@ -30,6 +30,9 @@ class SettingsViewController: UIViewController {
         let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = closeButton
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50.0
+        
         self.addItems()
     }
 
@@ -38,7 +41,7 @@ class SettingsViewController: UIViewController {
         let pageVCSection = SettingsSection(title: "Page View Controller")
         pageVCSection.add(item: SettingsItem(type: .toggle,
                                              title: "Infinite Scrolling",
-                                             description: nil,
+                                             description: "Whether the page view controller should infinitely scroll between page ranges.",
                                              value: self.tabViewController?.isInfiniteScrollEnabled,
                                              update:
             { (value) in
