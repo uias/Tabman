@@ -61,11 +61,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
         
-        self.bar.appearance = TabmanBar.AppearanceConfig({ (config) in
-            config.textColor = UIColor.white.withAlphaComponent(0.6)
-            config.selectedTextColor = UIColor.white
-            config.backgroundStyle = .blur(style: .light)
-            config.indicatorColor = .white
+        self.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
+            appearance.textColor = UIColor.white.withAlphaComponent(0.6)
+            appearance.selectedTextColor = UIColor.white
+            appearance.backgroundStyle = .blur(style: .light)
+            appearance.indicatorColor = .white
         })
     }
     
