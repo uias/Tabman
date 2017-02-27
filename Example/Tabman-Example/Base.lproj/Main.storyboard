@@ -25,6 +25,41 @@
             </objects>
             <point key="canvasLocation" x="-844" y="37"/>
         </scene>
+        <!--Settings Navigation Controller-->
+        <scene sceneID="5Z5-LD-5kM">
+            <objects>
+                <navigationController id="zcO-z6-lsK" customClass="SettingsNavigationController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G47-5D-VOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6xv-FU-HvM" kind="relationship" relationship="rootViewController" id="1JD-J3-oyH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sih-FO-Uhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-752"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Aui-O0-XUR">
+            <objects>
+                <viewController id="6xv-FU-HvM" customClass="SettingsViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zpK-Xv-POn"/>
+                        <viewControllerLayoutGuide type="bottom" id="dPd-cf-3MD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZBH-1o-GHw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Yl-NY-ocN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwW-8g-qPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="-752"/>
+        </scene>
         <!--Tabman-->
         <scene sceneID="fRi-Jx-IOR">
             <objects>
@@ -71,7 +106,7 @@
                                 <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                                 <state key="normal" image="ic_settings"/>
                                 <connections>
-                                    <action selector="showSettingsScreenWithSender:" destination="Y3B-UK-iWz" eventType="touchUpInside" id="42k-Eh-5dg"/>
+                                    <segue destination="zcO-z6-lsK" kind="presentation" id="mb7-0d-jkO"/>
                                 </connections>
                             </button>
                         </subviews>

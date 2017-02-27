@@ -94,10 +94,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.scrollToPage(.previous, animated: true)
     }
     
-    @IBAction func showSettingsScreen(sender: UIButton) {
-    
-    }
-    
     //
     // MARK: PageboyViewControllerDataSource
     //
