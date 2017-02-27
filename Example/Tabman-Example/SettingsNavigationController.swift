@@ -11,9 +11,7 @@ import PureLayout
 
 class SettingsNavigationController: UINavigationController {
     
-    //
     // MARK: Init
-    //
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

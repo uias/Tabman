@@ -22,11 +22,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             return GradientConfig(topColor: .black, bottomColor: .black)
         }
     }
-    
-    //
+
     // MARK: Constants
-    //
-    
+
     let numberOfPages = 5
     
     let gradients: [GradientConfig] = [
@@ -37,24 +35,18 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         GradientConfig(topColor: UIColor(red:0.20, green:0.00, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.00, blue:0.00, alpha:1.0))
     ]
     
-    //
     // MARK: Outlets
-    //
     
     @IBOutlet weak var offsetLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var gradientView: GradientView!
 
-    //
     // MARK: Properties
-    //
-    
+
     var previousBarButton: UIBarButtonItem?
     var nextBarButton: UIBarButtonItem?
     
-    //
     // MARK: Lifecycle
-    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +74,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
     }
     
-    // 
     // MARK: Actions
-    //
     
     @objc func nextPage(_ sender: UIBarButtonItem) {
         self.scrollToPage(.next, animated: true)
@@ -94,10 +84,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.scrollToPage(.previous, animated: true)
     }
     
-    //
     // MARK: PageboyViewControllerDataSource
-    //
-    
+
     func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
@@ -118,9 +106,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         return .atIndex(index: 2)
     }
     
-    //
     // MARK: PageboyViewControllerDelegate
-    //
     
     private var targetIndex: Int?
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
