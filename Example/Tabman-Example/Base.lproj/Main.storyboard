@@ -66,6 +66,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qv1-ao-Yqu">
                                                     <rect key="frame" x="310" y="32" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleSwitched:" destination="EMF-xG-ee9" eventType="valueChanged" id="rsr-rb-TFz"/>
+                                                    </connections>
                                                 </switch>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imF-Ae-XRl">
                                                     <rect key="frame" x="16" y="16" width="278" height="62.5"/>

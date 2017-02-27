@@ -13,7 +13,11 @@ class SettingsViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
-    var sections = [SettingsSection]()
+    
+    // MARK: Properties
+    
+    weak var tabViewController: TabViewController?
+    fileprivate var sections = [SettingsSection]()
     
     // MARK: Lifecycle
     
@@ -32,8 +36,13 @@ class SettingsViewController: UIViewController {
     func addItems() {
         
         let pageVCSection = SettingsSection(title: "Page View Controller")
-        pageVCSection.add(item: SettingsItem(type: .toggle, title: "Infinite Scrolling", description: nil, update: { (value) in
-            
+        pageVCSection.add(item: SettingsItem(type: .toggle,
+                                             title: "Infinite Scrolling",
+                                             description: nil,
+                                             value: self.tabViewController?.isInfiniteScrollEnabled,
+                                             update:
+            { (value) in
+                self.tabViewController?.isInfiniteScrollEnabled = value as! Bool
         }))
         sections.append(pageVCSection)
         
@@ -63,6 +72,13 @@ extension SettingsViewController: UITableViewDataSource {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+        if let toggleCell = cell as? SettingsToggleCell {
+            toggleCell.titleLabel.text = item?.title
+            toggleCell.descriptionLabel.text = item?.description
+            toggleCell.toggle.isOn =  (item?.value as? Bool) ?? false
+            toggleCell.delegate = item
+        }
         
         return cell
     }

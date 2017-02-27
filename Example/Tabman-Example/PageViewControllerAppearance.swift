@@ -9,26 +9,7 @@
 import UIKit
 
 extension TabViewController {
-    
-    //
-    // MARK: Transitioning
-    //
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        segue.destination.transitioningDelegate = self
-        
-        // use current gradient as tint
-        if let navigationController = segue.destination as? UINavigationController,
-            let navigationBar = navigationController.navigationBar as? TransparentNavigationBar {
-            let gradient = self.gradients[self.currentIndex ?? 0]
-            let color = self.interpolate(betweenColor: gradient.topColor,
-                                         and: gradient.bottomColor,
-                                         percent: 0.5)
-            navigationBar.tintColor = color
-        }
-    }
-    
+
     //
     // MARK: Bar buttons
     //

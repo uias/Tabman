@@ -24,13 +24,20 @@ class SettingsItem: Any {
     let title: String
     let description: String?
     let update: ItemUpdateClosure
+    var value: Any?
     
     // MARK: Init
     
-    init(type: CellType, title: String, description: String?, update: @escaping ItemUpdateClosure) {
+    init(type: CellType,
+         title: String,
+         description: String?,
+         value: Any?,
+         update: @escaping ItemUpdateClosure) {
+        
         self.type = type
         self.title = title
         self.description = description
+        self.value = value
         self.update = update
     }
 }
@@ -42,5 +49,13 @@ extension SettingsItem.CellType {
         case .toggle:
             return "SettingsToggleCell"
         }
+    }
+}
+
+extension SettingsItem: SettingsToggleCellDelegate {
+    
+    func settingsToggleCell(_ cell: SettingsToggleCell, didUpdateValue value: Bool) {
+        self.value = value
+        update(value)
     }
 }

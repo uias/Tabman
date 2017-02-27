@@ -69,6 +69,26 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        segue.destination.transitioningDelegate = self
+        
+        if let navigationController = segue.destination as? SettingsNavigationController,
+            let settingsViewController = navigationController.viewControllers.first as? SettingsViewController {
+            settingsViewController.tabViewController = self
+        }
+        
+        // use current gradient as tint
+        if let navigationController = segue.destination as? UINavigationController,
+            let navigationBar = navigationController.navigationBar as? TransparentNavigationBar {
+            let gradient = self.gradients[self.currentIndex ?? 0]
+            let color = self.interpolate(betweenColor: gradient.topColor,
+                                         and: gradient.bottomColor,
+                                         percent: 0.5)
+            navigationBar.tintColor = color
+        }
+    }
+    
     func updateStatusLabels() {
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
