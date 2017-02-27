@@ -14,6 +14,8 @@
 		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
 		D61E50C81E644A2200AC8C75 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */; };
 		D61E50CA1E644A7500AC8C75 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */; };
+		D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */; };
+		D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
@@ -162,6 +164,8 @@
 		D61E50BB1E64452D00AC8C75 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
+		D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentTransitionController.swift; sourceTree = "<group>"; };
+		D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDismissTransitionController.swift; sourceTree = "<group>"; };
 		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 		D62AC10E1E5736B20020B8AE /* Example Components */ = {
 			isa = PBXGroup;
 			children = (
+				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
+				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
 				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
 				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
 				D62AC1051E5736A10020B8AE /* GradientView.swift */,
@@ -478,9 +484,11 @@
 				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
 				D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */,
 				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,
+				D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */,
 				D61E50CA1E644A7500AC8C75 /* SettingsNavigationController.swift in Sources */,
 				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
 				D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */,
+				D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */,
 				D61E50C81E644A2200AC8C75 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
