@@ -29,7 +29,32 @@ public protocol TabmanBarDelegate {
     func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
 }
 
-public class TabmanBar: UIView {
+internal protocol TabmanBarLifecycle {
+    
+    /// Construct the contents of the tab bar for the current style and given items.
+    ///
+    /// - Parameter items: The items to display.
+    func constructTabBar(items: [TabmanBarItem])
+    
+    /// Update the tab bar for a positional update.
+    ///
+    /// - Parameters:
+    ///   - position: The new position.
+    ///   - direction: The direction of travel.
+    ///   - minimumIndex: The minimum possible index.
+    ///   - maximumIndex: The maximum possible index.
+    func update(forPosition position: CGFloat,
+                direction: PageboyViewController.NavigationDirection,
+                minimumIndex: Int,
+                maximumIndex: Int)
+    
+    /// Update the appearance of the tab bar for a new configuration.
+    ///
+    /// - Parameter appearance: The new configuration.
+    func update(forAppearance appearance: TabmanBar.AppearanceConfig)
+}
+
+public class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
     // MARK: Properties
@@ -112,9 +137,10 @@ public class TabmanBar: UIView {
     
     /// Reconstruct the tab bar for a new style or data set.
     private func clearAndConstructTabBar() {
+        self.clearTabBar()
+
         guard let items = self.items else { return } // no items yet
         
-        self.clearTabBar()
         self.constructTabBar(items: items)
         self.update(forAppearance: self.appearance)
     }
@@ -127,17 +153,6 @@ public class TabmanBar: UIView {
     internal func clearTabBar() {
         self.containerView.removeAllSubviews()
     }
-    
-    /// Construct the contents of the tab bar for the current style and given items.
-    ///
-    /// - Parameter items: The items to display.
-    internal func constructTabBar(items: [TabmanBarItem]) {
-        
-    }
-    
-    //
-    // MARK: Updating
-    //
     
     internal func updatePosition(_ position: CGFloat,
                                  direction: PageboyViewController.NavigationDirection) {
@@ -152,13 +167,14 @@ public class TabmanBar: UIView {
                     minimumIndex: 0, maximumIndex: items.count - 1)
     }
     
-    /// Update the tab bar for a positional update.
-    ///
-    /// - Parameters:
-    ///   - position: The new position.
-    ///   - direction: The direction of travel.
-    ///   - minimumIndex: The minimum possible index.
-    ///   - maximumIndex: The maximum possible index.
+    //
+    // MARK: TabmanBarLifecycle
+    //
+    
+    internal func constructTabBar(items: [TabmanBarItem]) {
+        
+    }
+    
     internal func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
@@ -166,9 +182,6 @@ public class TabmanBar: UIView {
         // Abstract function
     }
     
-    /// Update the appearance of the tab bar for a new configuration.
-    ///
-    /// - Parameter appearance: The new configuration.
     internal func update(forAppearance appearance: AppearanceConfig) {
         
         if let backgroundStyle = appearance.backgroundStyle {
