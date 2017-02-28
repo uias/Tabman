@@ -208,6 +208,9 @@ public class TabmanButtonBar: TabmanBar {
         
         if let isScrollEnabled = appearance.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
+            UIView.animate(withDuration: 0.3, animations: { // reset scroll position
+                self.scrollIndicatorPositionToVisible()
+            })
         }
         
         if let interItemSpacing = appearance.interItemSpacing {

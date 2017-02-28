@@ -47,8 +47,22 @@ class SettingsViewController: UIViewController {
             { (value) in
                 self.tabViewController?.isInfiniteScrollEnabled = value as! Bool
         }))
-        sections.append(pageVCSection)
         
+        let barSection = SettingsSection(title: "Bar")
+        barSection.add(item: SettingsItem(type: .toggle,
+                                          title: "Scroll Enabled",
+                                          description: "Whether user scroll is enabled on the bar.",
+                                          value: self.tabViewController?.bar.appearance?.isScrollEnabled,
+                                          update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.isScrollEnabled = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
+        
+        sections.append(barSection)
+        sections.append(pageVCSection)
+
         self.tableView.reloadData()
     }
     
@@ -75,6 +89,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        cell.selectionStyle = .none
         
         if let toggleCell = cell as? SettingsToggleCell {
             toggleCell.titleLabel.text = item?.title
