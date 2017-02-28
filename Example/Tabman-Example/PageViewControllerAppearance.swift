@@ -16,8 +16,8 @@ extension TabViewController {
     
     func addBarButtons() {
         
-        let previousBarButton = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(previousPage(_:)))
-        let nextBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextPage(_:)))
+        let previousBarButton = UIBarButtonItem(title: "First", style: .plain, target: self, action: #selector(firstPage(_:)))
+        let nextBarButton = UIBarButtonItem(title: "Last", style: .plain, target: self, action: #selector(lastPage(_:)))
         self.navigationItem.setLeftBarButton(previousBarButton, animated: false)
         self.navigationItem.setRightBarButton(nextBarButton, animated: false)
         self.previousBarButton = previousBarButton

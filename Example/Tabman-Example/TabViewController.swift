@@ -26,7 +26,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     // MARK: Constants
 
     let numberOfPages = 5
-    
     let gradients: [GradientConfig] = [
         GradientConfig(topColor: UIColor(red:0.01, green:0.00, blue:0.18, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.53, blue:0.80, alpha:1.0)),
         GradientConfig(topColor: UIColor(red:0.20, green:0.08, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.36, blue:0.00, alpha:1.0)),
@@ -96,12 +95,12 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     // MARK: Actions
     
-    @objc func nextPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.next, animated: true)
+    @objc func firstPage(_ sender: UIBarButtonItem) {
+        self.scrollToPage(.first, animated: true)
     }
     
-    @objc func previousPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.previous, animated: true)
+    @objc func lastPage(_ sender: UIBarButtonItem) {
+        self.scrollToPage(.last, animated: true)
     }
     
     // MARK: PageboyViewControllerDataSource
