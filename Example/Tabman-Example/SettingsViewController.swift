@@ -50,7 +50,7 @@ class SettingsViewController: UIViewController {
             guard let selectedItem = self.selectedItem else { return }
             if case let .options(values, selectedValue) = selectedItem.type {
                 optionsViewController.indexPath = self.selectedIndexPath
-                optionsViewController.selectedOption = selectedValue
+                optionsViewController.selectedOption = selectedValue()
                 optionsViewController.options = values
             }
         }
@@ -91,7 +91,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         } else if let optionCell = cell as? SettingsOptionCell {
             optionCell.titleLabel.text = item.title
             if case let .options(_, selectedValue) = item.type {
-                optionCell.valueLabel.text = selectedValue
+                optionCell.valueLabel.text = selectedValue()
             }
         }
         

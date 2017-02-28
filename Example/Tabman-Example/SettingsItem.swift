@@ -12,9 +12,11 @@ class SettingsItem: Any {
     
     // MARK: Types
     
+    typealias SelectedValueLoad = () -> String?
+    
     enum CellType {
         case toggle
-        case options(values: [String], selectedValue: String?)
+        case options(values: [String], selectedValue: SelectedValueLoad)
     }
     
     typealias ItemUpdateClosure = (_ value: Any) -> Void

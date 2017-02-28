@@ -27,7 +27,7 @@ extension SettingsViewController {
         let appearanceSection = SettingsSection(title: "Appearance")
         appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.buttonBar.description,
                                                                          TabmanBarConfig.Style.progressiveBar.description],
-                                                                selectedValue: self.tabViewController?.bar.style.description),
+                                                                selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
                                                  value: nil, update:
