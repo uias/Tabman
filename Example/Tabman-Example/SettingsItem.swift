@@ -14,7 +14,7 @@ class SettingsItem: Any {
     
     enum CellType {
         case toggle
-        case options
+        case options(values: [String], selectedValue: String?)
     }
     
     typealias ItemUpdateClosure = (_ value: Any) -> Void

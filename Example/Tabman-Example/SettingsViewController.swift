@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController {
     weak var tabViewController: TabViewController?
     fileprivate var sections = [SettingsSection]()
     
+    var selectedIndexPath: IndexPath?
     var selectedItem: SettingsItem?
     
     // MARK: Lifecycle
@@ -44,6 +45,14 @@ class SettingsViewController: UIViewController {
         
         if let optionsViewController = segue.destination as? SettingsOptionsViewController {
             optionsViewController.navigationItem.title = self.selectedItem?.title
+            optionsViewController.delegate = self
+            
+            guard let selectedItem = self.selectedItem else { return }
+            if case let .options(values, selectedValue) = selectedItem.type {
+                optionsViewController.indexPath = self.selectedIndexPath
+                optionsViewController.selectedOption = selectedValue
+                optionsViewController.options = values
+            }
         }
     }
     
@@ -65,21 +74,25 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = self.sections[indexPath.section].item(atIndex: indexPath.row)
-        guard let reuseIdentifier = item?.type.reuseIdentifier else {
+        
+        guard let item = self.sections[indexPath.section].item(atIndex: indexPath.row) else {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: item.type.reuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
         if let toggleCell = cell as? SettingsToggleCell {
-            toggleCell.titleLabel.text = item?.title
-            toggleCell.descriptionLabel.text = item?.description
-            toggleCell.toggle.isOn =  (item?.value as? Bool) ?? false
+            toggleCell.titleLabel.text = item.title
+            toggleCell.descriptionLabel.text = item.description
+            toggleCell.toggle.isOn =  (item.value as? Bool) ?? false
             toggleCell.delegate = item
             
         } else if let optionCell = cell as? SettingsOptionCell {
-            optionCell.titleLabel.text = item?.title
+            optionCell.titleLabel.text = item.title
+            if case let .options(_, selectedValue) = item.type {
+                optionCell.valueLabel.text = selectedValue
+            }
         }
         
         return cell
@@ -100,7 +113,24 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        self.selectedIndexPath = indexPath
         self.selectedItem = self.sections[indexPath.section].item(atIndex: indexPath.row)
         return indexPath
+    }
+}
+
+extension SettingsViewController: SettingsOptionsViewControllerDelegate {
+    
+    func optionsViewController(_ viewController: SettingsOptionsViewController,
+                               didSelectOption option: String) {
+        let _ = self.navigationController?.popViewController(animated: true)
+        
+        if let selectedIndexPath = self.selectedIndexPath,
+            let cell = self.tableView.cellForRow(at: selectedIndexPath) as? SettingsOptionCell {
+            cell.valueLabel?.text = option
+        }
+        
+        self.selectedItem?.update(option)
+        self.selectedItem = nil
     }
 }

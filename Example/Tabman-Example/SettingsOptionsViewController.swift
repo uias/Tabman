@@ -11,7 +11,7 @@ import UIKit
 protocol SettingsOptionsViewControllerDelegate: class {
     
     func optionsViewController(_ viewController: SettingsOptionsViewController,
-                               didSelectOptionAtIndex index: Int)
+                               didSelectOption option: String)
 }
 
 class SettingsOptionsViewController: UIViewController {
@@ -23,14 +23,20 @@ class SettingsOptionsViewController: UIViewController {
     // MARK: Properties
     
     weak var delegate: SettingsOptionsViewControllerDelegate?
+    
+    var indexPath: IndexPath?
+    var selectedOption: String?
     var options: [String]? {
         didSet {
+            guard self.tableView != nil else { return }
             self.tableView.reloadData()
         }
     }
+    
+    var selectedCell: UITableViewCell?
 }
 
-extension SettingsOptionsViewController: UITableViewDataSource {
+extension SettingsOptionsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -47,6 +53,26 @@ extension SettingsOptionsViewController: UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
         }
         
+        let option = self.options?[indexPath.row]
+        cell?.textLabel?.text = option
+        if self.selectedOption == option {
+            cell?.accessoryType = .checkmark
+            self.selectedCell = cell
+        } else {
+            cell?.accessoryType = .none
+        }
+        cell?.backgroundColor = .clear
+        
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let option = self.options?[indexPath.row] else { return }
+        
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        self.selectedCell?.accessoryType = .none
+        selectedCell?.accessoryType = .checkmark
+        
+        self.delegate?.optionsViewController(self, didSelectOption: option)
     }
 }

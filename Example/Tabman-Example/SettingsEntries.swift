@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Tabman
 
 extension SettingsViewController {
     
@@ -24,12 +25,15 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options,
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.buttonBar.description,
+                                                                         TabmanBarConfig.Style.progressiveBar.description],
+                                                                selectedValue: self.tabViewController?.bar.style.description),
                                                  title: "Bar Style",
                                                  description: nil,
                                                  value: nil, update:
             { (value) in
-                
+                let style = TabmanBarConfig.Style.fromDescription(value as! String)
+                self.tabViewController?.bar.style = style
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",
@@ -60,3 +64,25 @@ extension SettingsViewController {
 
 }
 
+fileprivate extension TabmanBarConfig.Style {
+    
+    static func fromDescription(_ description: String) -> TabmanBarConfig.Style {
+        switch description {
+            
+        case "Progressive Bar":
+            return .progressiveBar
+            
+        default:
+            return .buttonBar
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .buttonBar:
+            return "Button Bar"
+        case .progressiveBar:
+            return "Progressive Bar"
+        }
+    }
+}
