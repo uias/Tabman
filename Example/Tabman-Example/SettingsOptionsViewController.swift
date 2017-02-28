@@ -34,6 +34,14 @@ class SettingsOptionsViewController: UIViewController {
     }
     
     var selectedCell: UITableViewCell?
+    
+    // MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.tableView.tableFooterView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 1.0))
+    }
 }
 
 extension SettingsOptionsViewController: UITableViewDataSource, UITableViewDelegate {

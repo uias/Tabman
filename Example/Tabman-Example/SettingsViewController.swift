@@ -36,6 +36,7 @@ class SettingsViewController: UIViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50.0
+        self.tableView.tableFooterView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 1.0))
         
         self.sections = self.addItems()
         self.tableView.reloadData()
