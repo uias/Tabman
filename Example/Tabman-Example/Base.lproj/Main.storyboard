@@ -29,7 +29,7 @@
         <scene sceneID="5Z5-LD-5kM">
             <objects>
                 <navigationController id="zcO-z6-lsK" customClass="SettingsNavigationController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="G47-5D-VOU" customClass="TransparentNavigationBar" customModule="Tabman_Example" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G47-5D-VOU" customClass="TransparentNavigationBar" customModule="Tabman_Example" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -71,7 +71,7 @@
                                                     </connections>
                                                 </switch>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imF-Ae-XRl">
-                                                    <rect key="frame" x="16" y="16" width="278" height="62.5"/>
+                                                    <rect key="frame" x="16" y="10" width="278" height="74.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIY-Qi-mAF">
                                                             <rect key="frame" x="0.0" y="0.0" width="278" height="19.5"/>
@@ -80,7 +80,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="150" text="This is a description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-03-fRU">
-                                                            <rect key="frame" x="0.0" y="23.5" width="278" height="39"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="278" height="51"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -104,8 +104,8 @@
                                                 <constraint firstItem="qv1-ao-Yqu" firstAttribute="centerY" secondItem="wNM-AS-oba" secondAttribute="centerY" id="81v-PT-9Xp"/>
                                                 <constraint firstAttribute="trailing" secondItem="qv1-ao-Yqu" secondAttribute="trailing" constant="16" id="BeN-wI-bxf"/>
                                                 <constraint firstItem="qv1-ao-Yqu" firstAttribute="leading" secondItem="imF-Ae-XRl" secondAttribute="trailing" constant="16" id="G9j-o1-fvw"/>
-                                                <constraint firstAttribute="bottom" secondItem="imF-Ae-XRl" secondAttribute="bottom" constant="16" id="Taz-xc-N3H"/>
-                                                <constraint firstItem="imF-Ae-XRl" firstAttribute="top" secondItem="wNM-AS-oba" secondAttribute="top" constant="16" id="YkO-nU-BwC"/>
+                                                <constraint firstAttribute="bottom" secondItem="imF-Ae-XRl" secondAttribute="bottom" constant="10" id="Taz-xc-N3H"/>
+                                                <constraint firstItem="imF-Ae-XRl" firstAttribute="top" secondItem="wNM-AS-oba" secondAttribute="top" constant="10" id="YkO-nU-BwC"/>
                                                 <constraint firstItem="imF-Ae-XRl" firstAttribute="centerY" secondItem="wNM-AS-oba" secondAttribute="centerY" id="pPg-Gm-7t2"/>
                                             </constraints>
                                         </tableViewCellContentView>

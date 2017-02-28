@@ -23,19 +23,29 @@ extension SettingsViewController {
                 self.tabViewController?.isInfiniteScrollEnabled = value as! Bool
         }))
         
-        let barSection = SettingsSection(title: "Bar")
-        barSection.add(item: SettingsItem(type: .toggle,
-                                          title: "Scroll Enabled",
-                                          description: "Whether user scroll is enabled on the bar.",
-                                          value: self.tabViewController?.bar.appearance?.isScrollEnabled,
-                                          update:
+        let appearanceSection = SettingsSection(title: "Appearance")
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Scroll Enabled",
+                                                 description: "Whether user scroll is enabled on the bar.",
+                                                value: self.tabViewController?.bar.appearance?.isScrollEnabled,
+                                                update:
             { (value) in
                 let appearance = self.tabViewController?.bar.appearance
                 appearance?.isScrollEnabled = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Edge Fade",
+                                                 description: "Whether to fade bar items at the edges of the bar.",
+                                                 value: self.tabViewController?.bar.appearance?.showEdgeFade,
+                                            update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.showEdgeFade = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
         
-        sections.append(barSection)
+        sections.append(appearanceSection)
         sections.append(pageVCSection)
         
         return sections

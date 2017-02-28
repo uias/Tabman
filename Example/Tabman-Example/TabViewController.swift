@@ -123,7 +123,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     }
     
     func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
-        return .atIndex(index: 2)
+        return nil
     }
     
     // MARK: PageboyViewControllerDelegate
