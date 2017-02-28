@@ -84,6 +84,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: item.type.reuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
+        let selectedView = UIView()
+        selectedView.backgroundColor = self.navigationController?.navigationBar.tintColor.withAlphaComponent(0.6)
+        cell.selectedBackgroundView = selectedView
+        
         if let toggleCell = cell as? SettingsToggleCell {
             toggleCell.titleLabel.text = item.title
             toggleCell.descriptionLabel.text = item.description
@@ -95,6 +99,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             if case let .options(_, selectedValue) = item.type {
                 optionCell.valueLabel.text = selectedValue()
             }
+            cell.selectionStyle = .default
         }
         
         return cell
@@ -118,6 +123,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         self.selectedIndexPath = indexPath
         self.selectedItem = self.sections[indexPath.section].item(atIndex: indexPath.row)
         return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
