@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: UITableViewDataSource {
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
@@ -84,5 +84,19 @@ extension SettingsViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       return self.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        
+        headerView.contentView.backgroundColor = self.navigationController?.navigationBar.tintColor
+        headerView.textLabel?.textColor = .white
+        headerView.textLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
     }
 }
