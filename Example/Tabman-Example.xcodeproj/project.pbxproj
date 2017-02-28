@@ -21,6 +21,8 @@
 		D61E50D51E6485D000AC8C75 /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D41E6485D000AC8C75 /* SettingsCells.swift */; };
 		D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */; };
 		D629EBBF1E6598B400CDF88F /* SettingsOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */; };
+		D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */; };
+		D629EBC31E65D52C00CDF88F /* SettingsPopTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
@@ -176,6 +178,8 @@
 		D61E50D41E6485D000AC8C75 /* SettingsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
 		D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntries.swift; sourceTree = "<group>"; };
 		D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionsViewController.swift; sourceTree = "<group>"; };
+		D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPushTransitionController.swift; sourceTree = "<group>"; };
+		D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPopTransitionController.swift; sourceTree = "<group>"; };
 		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 			children = (
 				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
 				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
+				D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */,
+				D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */,
 			);
 			name = Transitions;
 			sourceTree = "<group>";
@@ -519,9 +525,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */,
+				D629EBC31E65D52C00CDF88F /* SettingsPopTransitionController.swift in Sources */,
 				D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */,
 				D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */,
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
+				D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */,
 				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
 				D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */,
 				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,

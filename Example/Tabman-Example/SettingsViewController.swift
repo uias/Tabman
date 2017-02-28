@@ -26,7 +26,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.delegate = self
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.black]
         
@@ -132,5 +133,24 @@ extension SettingsViewController: SettingsOptionsViewControllerDelegate {
         
         self.selectedItem?.update(option)
         self.selectedItem = nil
+    }
+}
+
+extension SettingsViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              animationControllerFor operation: UINavigationControllerOperation,
+                              from fromVC: UIViewController,
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .push:
+            return SettingsPushTransitionController()
+
+        case .pop:
+            return SettingsPopTransitionController()
+            
+        default:
+            return nil
+        }
     }
 }
