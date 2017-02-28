@@ -24,6 +24,13 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
+        appearanceSection.add(item: SettingsItem(type: .options,
+                                                 title: "Bar Style",
+                                                 description: nil,
+                                                 value: nil, update:
+            { (value) in
+                
+        }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",
                                                  description: "Whether user scroll is enabled on the bar.",

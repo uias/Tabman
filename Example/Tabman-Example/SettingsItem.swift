@@ -14,6 +14,7 @@ class SettingsItem: Any {
     
     enum CellType {
         case toggle
+        case options
     }
     
     typealias ItemUpdateClosure = (_ value: Any) -> Void
@@ -48,6 +49,8 @@ extension SettingsItem.CellType {
         switch self {
         case .toggle:
             return "SettingsToggleCell"
+        case .options:
+            return "SettingsOptionCell"
         }
     }
 }

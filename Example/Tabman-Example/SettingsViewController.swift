@@ -67,6 +67,9 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             toggleCell.descriptionLabel.text = item?.description
             toggleCell.toggle.isOn =  (item?.value as? Bool) ?? false
             toggleCell.delegate = item
+            
+        } else if let optionCell = cell as? SettingsOptionCell {
+            optionCell.titleLabel.text = item?.title
         }
         
         return cell

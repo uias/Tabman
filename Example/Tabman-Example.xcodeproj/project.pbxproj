@@ -208,10 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */,
+				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
+				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
 				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
 				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
-				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
-				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
 				D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */,
 				D61E50D01E6481C300AC8C75 /* SettingsItem.swift */,
 				D61E50D41E6485D000AC8C75 /* SettingsCells.swift */,

@@ -25,3 +25,10 @@ class SettingsToggleCell: UITableViewCell {
         self.delegate?.settingsToggleCell(self, didUpdateValue: sender.isOn)
     }
 }
+
+class SettingsOptionCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    
+}

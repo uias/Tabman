@@ -116,6 +116,51 @@
                                             <outlet property="toggle" destination="qv1-ao-Yqu" id="ypv-Gl-1LO"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsOptionCell" id="LDS-Db-8rv" customClass="SettingsOptionCell" customModule="Tabman_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="123" width="375" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LDS-Db-8rv" id="cfm-Rp-GYP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-tG-d55">
+                                                    <rect key="frame" x="16" y="16" width="33" height="62.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="NMS-Ae-bzR">
+                                                    <rect key="frame" x="343" y="30.5" width="22" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="PC3-Mv-ap5"/>
+                                                        <constraint firstAttribute="width" constant="22" id="rM0-I4-Jqu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiG-Rf-d3d">
+                                                    <rect key="frame" x="65" y="37.5" width="274" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="NMS-Ae-bzR" firstAttribute="leading" secondItem="yiG-Rf-d3d" secondAttribute="trailing" constant="4" id="Frj-wD-sAl"/>
+                                                <constraint firstItem="3Ij-tG-d55" firstAttribute="top" secondItem="cfm-Rp-GYP" secondAttribute="top" constant="16" id="Spx-CU-edf"/>
+                                                <constraint firstItem="yiG-Rf-d3d" firstAttribute="centerY" secondItem="cfm-Rp-GYP" secondAttribute="centerY" id="Wc1-0g-Cn5"/>
+                                                <constraint firstAttribute="bottom" secondItem="3Ij-tG-d55" secondAttribute="bottom" constant="16" id="X7q-1U-FAK"/>
+                                                <constraint firstItem="3Ij-tG-d55" firstAttribute="leading" secondItem="cfm-Rp-GYP" secondAttribute="leading" constant="16" id="dtQ-WO-3mN"/>
+                                                <constraint firstItem="yiG-Rf-d3d" firstAttribute="leading" secondItem="3Ij-tG-d55" secondAttribute="trailing" constant="16" id="ecw-Wc-oq2"/>
+                                                <constraint firstItem="NMS-Ae-bzR" firstAttribute="centerY" secondItem="cfm-Rp-GYP" secondAttribute="centerY" id="o1Y-Rm-cFD"/>
+                                                <constraint firstAttribute="trailing" secondItem="NMS-Ae-bzR" secondAttribute="trailing" constant="10" id="wDJ-Py-ZUQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="3Ij-tG-d55" id="vjA-zb-B63"/>
+                                            <outlet property="valueLabel" destination="yiG-Rf-d3d" id="Ebl-WX-sQ5"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="6xv-FU-HvM" id="glC-IE-FpF"/>
@@ -263,6 +308,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_chevron_right" width="256" height="256"/>
         <image name="ic_settings" width="60" height="71"/>
     </resources>
 </document>
