@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EMF-xG-ee9" id="wNM-AS-oba">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qv1-ao-Yqu">
@@ -120,7 +120,7 @@
                                         <rect key="frame" x="0.0" y="123" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LDS-Db-8rv" id="cfm-Rp-GYP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-tG-d55">
@@ -159,6 +159,7 @@
                                         <connections>
                                             <outlet property="titleLabel" destination="3Ij-tG-d55" id="vjA-zb-B63"/>
                                             <outlet property="valueLabel" destination="yiG-Rf-d3d" id="Ebl-WX-sQ5"/>
+                                            <segue destination="IeO-V8-H1g" kind="show" id="3Ub-T5-dWY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -185,6 +186,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwW-8g-qPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="-752.47376311844084"/>
+        </scene>
+        <!--Settings Options View Controller-->
+        <scene sceneID="UCA-Ag-NWn">
+            <objects>
+                <viewController id="IeO-V8-H1g" customClass="SettingsOptionsViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3H-0w-QDG"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgU-q3-Mui"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sNv-XT-iCd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FDT-nC-pxZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IeO-V8-H1g" id="bCF-rD-lmj"/>
+                                    <outlet property="delegate" destination="IeO-V8-H1g" id="rk1-Eg-NGN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FDT-nC-pxZ" firstAttribute="top" secondItem="sNv-XT-iCd" secondAttribute="top" id="PsE-bW-3RT"/>
+                            <constraint firstAttribute="trailing" secondItem="FDT-nC-pxZ" secondAttribute="trailing" id="U2k-ns-Cuk"/>
+                            <constraint firstItem="FDT-nC-pxZ" firstAttribute="leading" secondItem="sNv-XT-iCd" secondAttribute="leading" id="lke-Sb-xBd"/>
+                            <constraint firstItem="GgU-q3-Mui" firstAttribute="top" secondItem="FDT-nC-pxZ" secondAttribute="bottom" id="zpp-mR-ev1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="FDT-nC-pxZ" id="mdO-zk-D38"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmi-60-bbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="-752.47376311844084"/>
         </scene>
         <!--Tabman-->
         <scene sceneID="fRi-Jx-IOR">

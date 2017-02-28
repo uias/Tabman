@@ -20,6 +20,7 @@
 		D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */; };
 		D61E50D51E6485D000AC8C75 /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D41E6485D000AC8C75 /* SettingsCells.swift */; };
 		D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */; };
+		D629EBBF1E6598B400CDF88F /* SettingsOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
@@ -174,6 +175,7 @@
 		D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D61E50D41E6485D000AC8C75 /* SettingsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
 		D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntries.swift; sourceTree = "<group>"; };
+		D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionsViewController.swift; sourceTree = "<group>"; };
 		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,14 +211,31 @@
 			children = (
 				D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */,
 				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
+				D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */,
 				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
-				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
-				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
-				D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */,
-				D61E50D01E6481C300AC8C75 /* SettingsItem.swift */,
 				D61E50D41E6485D000AC8C75 /* SettingsCells.swift */,
+				D629EBB21E65989D00CDF88F /* Transitions */,
+				D629EBBD1E6598A400CDF88F /* Model */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		D629EBB21E65989D00CDF88F /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
+				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		D629EBBD1E6598A400CDF88F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */,
+				D61E50D01E6481C300AC8C75 /* SettingsItem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D62AC0CC1E5733A80020B8AE = {
@@ -509,6 +528,7 @@
 				D61E50D11E6481C300AC8C75 /* SettingsItem.swift in Sources */,
 				D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */,
 				D61E50CA1E644A7500AC8C75 /* SettingsNavigationController.swift in Sources */,
+				D629EBBF1E6598B400CDF88F /* SettingsOptionsViewController.swift in Sources */,
 				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
 				D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */,
 				D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */,

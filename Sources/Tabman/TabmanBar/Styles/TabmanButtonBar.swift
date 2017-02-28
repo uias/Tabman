@@ -62,7 +62,7 @@ public class TabmanButtonBar: TabmanBar {
     
     // Public
     
-    /// The inset at the edge of the tab bar items. (Default = 16.0)
+    /// The inset at the edge of the bar items. (Default = 16.0)
     public var edgeInset: CGFloat = Defaults.edgeInset {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
@@ -70,11 +70,21 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
-    /// The spacing between each tab bar item. (Default = 20.0)
+    /// The spacing between each bar item. (Default = 20.0)
     public var interItemSpacing: CGFloat = Defaults.horizontalSpacing {
         didSet {
             self.updateConstraints(self.horizontalMarginConstraints,
                                    withValue: interItemSpacing)
+        }
+    }
+    
+    /// Whether scroll is enabled on the bar.
+    public var isScrollEnabled: Bool {
+        set(isScrollEnabled) {
+            self.scrollView.isScrollEnabled = isScrollEnabled
+        }
+        get {
+            return self.scrollView.isScrollEnabled
         }
     }
     

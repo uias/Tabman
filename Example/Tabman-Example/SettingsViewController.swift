@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController {
     weak var tabViewController: TabViewController?
     fileprivate var sections = [SettingsSection]()
     
+    var selectedItem: SettingsItem?
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -37,6 +39,14 @@ class SettingsViewController: UIViewController {
         self.tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let optionsViewController = segue.destination as? SettingsOptionsViewController {
+            optionsViewController.navigationItem.title = self.selectedItem?.title
+        }
+    }
+    
     // MARK: Actions
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -87,5 +97,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.contentView.backgroundColor = self.navigationController?.navigationBar.tintColor
         headerView.textLabel?.textColor = .white
         headerView.textLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        self.selectedItem = self.sections[indexPath.section].item(atIndex: indexPath.row)
+        return indexPath
     }
 }
