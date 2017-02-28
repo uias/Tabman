@@ -33,39 +33,10 @@ class SettingsViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50.0
         
-        self.addItems()
-    }
-
-    func addItems() {
-        
-        let pageVCSection = SettingsSection(title: "Page View Controller")
-        pageVCSection.add(item: SettingsItem(type: .toggle,
-                                             title: "Infinite Scrolling",
-                                             description: "Whether the page view controller should infinitely scroll between page ranges.",
-                                             value: self.tabViewController?.isInfiniteScrollEnabled,
-                                             update:
-            { (value) in
-                self.tabViewController?.isInfiniteScrollEnabled = value as! Bool
-        }))
-        
-        let barSection = SettingsSection(title: "Bar")
-        barSection.add(item: SettingsItem(type: .toggle,
-                                          title: "Scroll Enabled",
-                                          description: "Whether user scroll is enabled on the bar.",
-                                          value: self.tabViewController?.bar.appearance?.isScrollEnabled,
-                                          update:
-            { (value) in
-                let appearance = self.tabViewController?.bar.appearance
-                appearance?.isScrollEnabled = value as? Bool
-                self.tabViewController?.bar.appearance = appearance
-        }))
-        
-        sections.append(barSection)
-        sections.append(pageVCSection)
-
+        self.sections = self.addItems()
         self.tableView.reloadData()
     }
-    
+
     // MARK: Actions
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
