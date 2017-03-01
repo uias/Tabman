@@ -28,6 +28,8 @@ class SettingsNavigationController: UINavigationController {
         blurView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
     }
     
+    // MARK: Lifecycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

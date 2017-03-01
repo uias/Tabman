@@ -35,7 +35,7 @@ class SettingsPresentTransitionController: NSObject, UIViewControllerAnimatedTra
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, options: .curveEaseOut,
                        animations: { 
                         toViewController.view.frame = finalFrame
-                        fromViewController.view.alpha = 0.5
+                        fromViewController.view.alpha = 0.3
         }) { (finished) in
             transitionContext.completeTransition(finished)
         }
