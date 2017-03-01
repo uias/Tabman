@@ -55,8 +55,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.dataSource = self
         self.delegate = self
         
-        self.updateAppearance(pageOffset: self.currentPosition?.x ?? 0.0,
-                              targetIndex: self.currentIndex ?? 0)
+        self.updateAppearance(pagePosition: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
         
@@ -151,7 +150,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pageOffset: position.x, targetIndex: self.targetIndex)
+        self.updateAppearance(pagePosition: position.x)
         self.updateStatusLabels()
     }
     
@@ -164,7 +163,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pageOffset: CGFloat(index), targetIndex: self.targetIndex)
+        self.updateAppearance(pagePosition: CGFloat(index))
         self.updateStatusLabels()
         self.updateBarButtonStates(index: index)
         
