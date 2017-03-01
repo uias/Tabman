@@ -27,4 +27,13 @@ class SettingsNavigationController: UINavigationController {
         blurView.autoPinEdgesToSuperviewEdges()
         blurView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : UIColor.black,
+            NSFontAttributeName : UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+        ]
+    }
 }

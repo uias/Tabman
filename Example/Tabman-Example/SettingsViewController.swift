@@ -29,7 +29,6 @@ class SettingsViewController: UIViewController {
         
         self.navigationController?.delegate = self
         self.navigationItem.title = "Settings"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.black]
         
         let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = closeButton
