@@ -1,6 +1,6 @@
 //
-//  PageViewControllerAppearance.swift
-//  Pageboy-Example
+//  TabViewControllerExtras.swift
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 15/02/2017.
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.

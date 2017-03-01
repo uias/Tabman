@@ -30,7 +30,7 @@
 		D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1041E5736A10020B8AE /* ChildViewController.swift */; };
 		D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1051E5736A10020B8AE /* GradientView.swift */; };
 		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
-		D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */; };
+		D62AC10C1E5736A10020B8AE /* TabViewControllerExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
 		D62AC1101E5737590020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0FC1E5734260020B8AE /* Tabman.framework */; };
 		D62AC1111E5737590020B8AE /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0FC1E5734260020B8AE /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -190,7 +190,7 @@
 		D62AC1041E5736A10020B8AE /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		D62AC1051E5736A10020B8AE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewControllerAppearance.swift; sourceTree = "<group>"; };
+		D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewControllerExtras.swift; sourceTree = "<group>"; };
 		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
 		D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pageboy.xcodeproj; path = Dependencies/Pageboy/Sources/Pageboy.xcodeproj; sourceTree = "<group>"; };
 		D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureLayout.xcodeproj; path = Dependencies/PureLayout/PureLayout/PureLayout.xcodeproj; sourceTree = "<group>"; };
@@ -287,9 +287,9 @@
 		D62AC10E1E5736B20020B8AE /* Example Components */ = {
 			isa = PBXGroup;
 			children = (
+				D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */,
 				D61E50CF1E647F0000AC8C75 /* Settings */,
 				D62AC1051E5736A10020B8AE /* GradientView.swift */,
-				D62AC1071E5736A10020B8AE /* PageViewControllerAppearance.swift */,
 				D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */,
 				D61E50BB1E64452D00AC8C75 /* CircularButton.swift */,
 			);
@@ -531,7 +531,7 @@
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
 				D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */,
 				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
-				D62AC10C1E5736A10020B8AE /* PageViewControllerAppearance.swift in Sources */,
+				D62AC10C1E5736A10020B8AE /* TabViewControllerExtras.swift in Sources */,
 				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,
 				D61E50D11E6481C300AC8C75 /* SettingsItem.swift in Sources */,
 				D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */,

@@ -83,9 +83,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: item.type.reuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
+        cell.tintColor = self.navigationController?.navigationBar.tintColor
         
         let selectedView = UIView()
-        selectedView.backgroundColor = self.navigationController?.navigationBar.tintColor.withAlphaComponent(0.6)
+        selectedView.backgroundColor = self.navigationController?.navigationBar.tintColor.withAlphaComponent(0.3)
         cell.selectedBackgroundView = selectedView
         
         if let toggleCell = cell as? SettingsToggleCell {

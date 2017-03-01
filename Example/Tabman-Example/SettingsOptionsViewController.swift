@@ -70,6 +70,11 @@ extension SettingsOptionsViewController: UITableViewDataSource, UITableViewDeleg
             cell?.accessoryType = .none
         }
         cell?.backgroundColor = .clear
+        cell?.tintColor = self.navigationController?.navigationBar.tintColor
+
+        let selectedView = UIView()
+        selectedView.backgroundColor = self.navigationController?.navigationBar.tintColor.withAlphaComponent(0.3)
+        cell?.selectedBackgroundView = selectedView
         
         return cell!
     }
