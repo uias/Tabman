@@ -106,6 +106,9 @@ public class TabmanBarConfig: Any {
             self.delegate?.config(self, didUpdateAppearance: appearance ?? .defaultAppearance)
         }
     }
+    
+    /// The content inset required for content underneath the bar.
+    public internal(set) var requiredContentInset: UIEdgeInsets = .zero
 }
 
 // MARK: - Additional Style properties for internal use

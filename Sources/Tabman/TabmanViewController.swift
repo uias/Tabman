@@ -114,17 +114,21 @@ internal extension TabmanViewController {
         
         bar.removeFromSuperview()
         self.view.addSubview(bar)
-
+        
         // move tab bar to location
+        var requiredInsets = UIEdgeInsets.zero
         switch location {
             
         case .top:
             bar.barAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
+            requiredInsets.top = bar.intrinsicContentSize.height
         case .bottom:
             bar.barAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
+            requiredInsets.bottom = bar.intrinsicContentSize.height
             
         default:()
         }
+        self.bar.requiredContentInset = requiredInsets
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
