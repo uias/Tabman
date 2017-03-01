@@ -112,7 +112,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         for i in 0..<numberOfPages {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
             viewController.index = i + 1
-            tabBarItems.append(TabmanBarItem(title: String(format: "Page Index %i", viewController.index!)))
+            tabBarItems.append(TabmanBarItem(title: String(format: "Page No. %i", viewController.index!)))
             viewControllers.append(viewController)
         }
         

@@ -125,6 +125,7 @@ public class TabmanButtonBar: TabmanBar {
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
                 button.setTitleColor(self.textColor, for: .normal)
+                button.setTitleColor(self.textColor.withAlphaComponent(0.3), for: .highlighted)
                 button.titleLabel?.font = self.textFont
                 button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
                 
@@ -197,6 +198,7 @@ public class TabmanButtonBar: TabmanBar {
             self.textColor = textColor
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(textColor, for: .normal)
+                button.setTitleColor(textColor.withAlphaComponent(0.3), for: .highlighted)
             })
         }
         
