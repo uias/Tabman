@@ -106,6 +106,12 @@ internal extension TabmanViewController {
             return
         }
         
+        // use style preferred location if no exact location specified.
+        var location = location
+        if location == .preferred {
+            location = self.bar.style.preferredLocation
+        }
+        
         bar.removeFromSuperview()
         self.view.addSubview(bar)
 
@@ -116,6 +122,8 @@ internal extension TabmanViewController {
             bar.barAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
         case .bottom:
             bar.barAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
+            
+        default:()
         }
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y

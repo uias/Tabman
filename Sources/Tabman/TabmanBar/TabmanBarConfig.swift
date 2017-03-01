@@ -58,9 +58,11 @@ public class TabmanBarConfig: Any {
     
     /// The location of the bar on screen.
     ///
+    /// - perferred: Use the preferred location for the current style.
     /// - top: At the top. (Note: this will take account of UINavigationBar etc.)
     /// - bottom: At the bottom. (Note: this will take account of UITabBar etc.)
     public enum Location {
+        case preferred
         case top
         case bottom
     }
@@ -81,8 +83,8 @@ public class TabmanBarConfig: Any {
         }
     }
     
-    /// The location of the bar on screen. Default = .top
-    public var location: Location = .top {
+    /// The location of the bar on screen. Default = .preferred
+    public var location: Location = .preferred {
         didSet {
             guard location != oldValue else {
                 return
@@ -104,5 +106,20 @@ public class TabmanBarConfig: Any {
             self.delegate?.config(self, didUpdateAppearance: appearance ?? .defaultAppearance)
         }
     }
+}
+
+// MARK: - Additional Style properties for internal use
+internal extension TabmanBarConfig.Style {
     
+    /// Where the bar is preferred to be displayed for the style.
+    var preferredLocation: TabmanBarConfig.Location {
+        switch self {
+            
+        case .progressiveBar:
+            return .bottom
+            
+        default:
+            return .top
+        }
+    }
 }
