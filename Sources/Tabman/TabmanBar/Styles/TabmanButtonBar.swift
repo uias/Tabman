@@ -192,7 +192,7 @@ public class TabmanButtonBar: TabmanBar {
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
-        if let textColor = appearance.textColor {
+        if let textColor = appearance.text.color {
             self.textColor = textColor
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(textColor, for: .normal)
@@ -200,12 +200,12 @@ public class TabmanButtonBar: TabmanBar {
             })
         }
         
-        if let selectedTextColor = appearance.selectedTextColor {
+        if let selectedTextColor = appearance.text.selectedColor {
             self.selectedTextColor = selectedTextColor
             self.currentTargetButton?.setTitleColor(selectedTextColor, for: .normal)
         }
         
-        if let textFont = appearance.textFont {
+        if let textFont = appearance.text.font {
             self.textFont = textFont
             self.updateButtons(update: { (button) in
                 button.titleLabel?.font = textFont
@@ -223,11 +223,11 @@ public class TabmanButtonBar: TabmanBar {
             })
         }
         
-        if let interItemSpacing = appearance.interItemSpacing {
+        if let interItemSpacing = appearance.layout.interItemSpacing {
             self.interItemSpacing = interItemSpacing
         }
         
-        if let edgeInset = appearance.edgeInset {
+        if let edgeInset = appearance.layout.edgeInset {
             self.edgeInset = edgeInset
         }
         
