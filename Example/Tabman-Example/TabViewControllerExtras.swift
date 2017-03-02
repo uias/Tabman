@@ -10,10 +10,8 @@ import UIKit
 
 extension TabViewController {
 
-    //
     // MARK: Bar buttons
-    //
-    
+
     func addBarButtons() {
         
         let previousBarButton = UIBarButtonItem(title: "First", style: .plain, target: self, action: #selector(firstPage(_:)))
@@ -31,9 +29,14 @@ extension TabViewController {
         self.nextBarButton?.isEnabled = index != (self.viewControllers?.count ?? 0) - 1
     }
     
-    //
+    // MARK: Labels
+    
+    func updateStatusLabels() {
+        self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
+        self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
+    }
+    
     // MARK: Appearance
-    //
     
     func updateAppearance(pagePosition: CGFloat) {
         var relativePosition = pagePosition
@@ -99,3 +102,15 @@ extension TabViewController {
     }
 }
 
+extension TabViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SettingsPresentTransitionController()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SettingsDismissTransitionController()
+    }
+}

@@ -87,11 +87,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         }
     }
     
-    func updateStatusLabels() {
-        self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
-        self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
-    }
-    
     // MARK: Actions
     
     @objc func firstPage(_ sender: UIBarButtonItem) {
@@ -168,18 +163,5 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.updateBarButtonStates(index: index)
         
         self.targetIndex = nil
-    }
-}
-
-extension TabViewController: UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController,
-                             presenting: UIViewController,
-                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SettingsPresentTransitionController()
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SettingsDismissTransitionController()
     }
 }
