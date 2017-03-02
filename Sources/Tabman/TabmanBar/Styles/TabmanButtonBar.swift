@@ -44,8 +44,6 @@ public class TabmanButtonBar: TabmanBar {
     
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
-    private var indicatorLeftMargin: NSLayoutConstraint?
-    private var indicatorWidth: NSLayoutConstraint?
     
     private var textFont: UIFont = Defaults.textFont
     private var textColor: UIColor = Defaults.textColor
@@ -253,13 +251,24 @@ public class TabmanButtonBar: TabmanBar {
                                  lowerButton: UIButton,
                                  upperButton: UIButton) {
         
-        let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
-        let interpolatedWidth = lowerButton.frame.size.width + widthDiff
-        self.indicatorWidth?.constant = interpolatedWidth
-        
-        let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
-        let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
-        self.indicatorLeftMargin?.constant = interpolatedXOrigin
+        if self.indicatorIsProgressive {
+            
+            let indicatorStartFrame = lowerButton.frame.origin.x + lowerButton.frame.size.width
+            let indicatorEndFrame = upperButton.frame.origin.x + upperButton.frame.size.width
+            let endFrameDiff = indicatorEndFrame - indicatorStartFrame
+            
+            self.indicatorWidth?.constant = indicatorStartFrame + (endFrameDiff * progress)
+            
+        } else {
+            
+            let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
+            let interpolatedWidth = lowerButton.frame.size.width + widthDiff
+            self.indicatorWidth?.constant = interpolatedWidth
+            
+            let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
+            let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
+            self.indicatorLeftMargin?.constant = interpolatedXOrigin
+        }
     }
     
     private func updateButtons(withTargetButton targetButton: UIButton,
@@ -279,17 +288,29 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     private func scrollIndicatorPositionToVisible() {
-        
-        let indicatorXOffset = self.indicatorLeftMargin?.constant ?? 0.0
-        let indicatorWidthOffset = (self.bounds.size.width - (self.indicatorWidth?.constant ?? 0)) / 2.0
+        var offset: CGFloat = 0.0
         let maxOffset = self.scrollView.contentSize.width - self.bounds.size.width
+
         
-        guard indicatorWidthOffset > 0.0 else {
-            return
+        if self.indicatorIsProgressive {
+            
+            let index = Int(ceil(self.currentPosition))
+            let buttonFrame = self.buttons[index].frame
+            offset = ((indicatorWidth?.constant ?? 0.0) - (self.bounds.size.width / 2.0)) - (buttonFrame.size.width / 2.0)
+            
+        } else {
+            
+            let indicatorXOffset = self.indicatorLeftMargin?.constant ?? 0.0
+            let indicatorWidthOffset = (self.bounds.size.width - (self.indicatorWidth?.constant ?? 0)) / 2.0
+            
+            guard indicatorWidthOffset > 0.0 else {
+                return
+            }
+            
+            offset = indicatorXOffset - indicatorWidthOffset
         }
         
-        let offset = max(0.0, min(maxOffset, indicatorXOffset - indicatorWidthOffset))
-        
+        offset = max(0.0, min(maxOffset, offset))
         self.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
     }
     

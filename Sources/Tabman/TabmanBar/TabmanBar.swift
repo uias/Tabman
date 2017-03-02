@@ -67,6 +67,10 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     internal private(set) var currentPosition: CGFloat = 0.0
     internal var fadeGradientLayer: CAGradientLayer?
     
+    internal var indicatorLeftMargin: NSLayoutConstraint?
+    internal var indicatorWidth: NSLayoutConstraint?
+    internal var indicatorIsProgressive: Bool = false
+    
     // Public
     
     /// The object that acts as a data source to the tab bar.
@@ -186,6 +190,10 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
         
         if let backgroundStyle = appearance.backgroundStyle {
             self.backgroundView.backgroundStyle = backgroundStyle
+        }
+        
+        if let indicatorIsProgressive = appearance.indicatorIsProgressive {
+            self.indicatorIsProgressive = indicatorIsProgressive
         }
         
         self.updateEdgeFade(visible: appearance.showEdgeFade ?? false)

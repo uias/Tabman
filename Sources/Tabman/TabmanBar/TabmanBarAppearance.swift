@@ -51,6 +51,10 @@ public extension TabmanBar {
         /// The spacing at the edge of the items in the bar.
         public var edgeInset: CGFloat?
         
+        //
+        // Indicator
+        
+        public var indicatorIsProgressive: Bool?
         
         //
         // MARK: Init

@@ -20,8 +20,6 @@ public class TabmanProgressiveBar: TabmanBar {
     
     private var indicator = TabmanLineIndicator(forAutoLayout: ())
     
-    private var indicatorWidthConstraint: NSLayoutConstraint!
-    
     // Public
     
     public override var intrinsicContentSize: CGSize {
@@ -37,7 +35,7 @@ public class TabmanProgressiveBar: TabmanBar {
         
         self.containerView.addSubview(indicator)
         indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)
-        self.indicatorWidthConstraint = indicator.autoSetDimension(.width, toSize: 0.0)
+        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
     override func update(forPosition position: CGFloat,
@@ -53,7 +51,7 @@ public class TabmanProgressiveBar: TabmanBar {
         let relativePosition = (position + 1.0) / CGFloat((self.items?.count ?? 1))
         
         let indicatorWidth = max(0.0, min(screenWidth, screenWidth * relativePosition))
-        self.indicatorWidthConstraint.constant = indicatorWidth
+        self.indicatorWidth?.constant = indicatorWidth
     }
     
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
