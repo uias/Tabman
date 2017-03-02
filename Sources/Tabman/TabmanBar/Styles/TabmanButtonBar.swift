@@ -305,6 +305,10 @@ public class TabmanButtonBar: TabmanBar {
         if self.indicatorIsProgressive {
             
             let index = Int(ceil(self.currentPosition))
+            guard self.buttons.count > index else {
+                return
+            }
+                
             let buttonFrame = self.buttons[index].frame
             offset = ((indicatorWidth?.constant ?? 0.0) - (self.bounds.size.width / 2.0)) - (buttonFrame.size.width / 2.0)
             
