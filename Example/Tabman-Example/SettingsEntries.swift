@@ -55,6 +55,16 @@ extension SettingsViewController {
                 appearance?.showEdgeFade = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Progressive Indicator",
+                                                 description: "Whether the indicator should transition in a progressive manner.",
+                                                 value: self.tabViewController?.bar.appearance?.indicator.isProgressive,
+                                                 update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.isProgressive = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
         
         sections.append(appearanceSection)
         sections.append(pageVCSection)
