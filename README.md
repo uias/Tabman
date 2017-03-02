@@ -4,7 +4,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/MerrickSapsford/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/MerrickSapsford/Tabman)
 
-**Tabman** is a powerful ViewPager-esque component for iOS.
+**Tabman** is a powerful paging view controller with indicator bar component, for iOS.
 
 ## Features
 - [x] Ridiculously easy to implement page view controller with indicator bar.
