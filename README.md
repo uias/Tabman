@@ -7,7 +7,7 @@
 **Tabman** is a powerful paging view controller with indicator bar component, for iOS.
 
 ## Features
-- [x] Ridiculously easy to implement page view controller with indicator bar.
+- [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
 - [x] Simplistic and powerful customisation.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
@@ -111,51 +111,52 @@ To set a custom appearance definition do this on a `TabmanViewController`:
 ```swift
 tabViewController.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
 	// customise appearance here
-	appearance.textColor = UIColor.red
+	appearance.text.color = UIColor.red
+	appearance.indicator.isProgressive = true
 }) 
 ```
 
 The following properties are available:
 
 ```swift
-//
-// Indicator
-
-/// The color of the bar indicator.
-public var indicatorColor: UIColor?
-
-/// The weight (thickness) of the bar indicator.
-public var indicatorWeight: TabmanLineIndicator.Weight?
-
-//
-// Text
+/// Indicator configuration
+public struct Indicator {
+	/// The color of the bar indicator.
+	public var color: UIColor?
+	/// The weight (thickness) of the bar indicator.
+	public var weight: TabmanLineIndicator.Weight?
+	/// Whether the indicator transiton is progressive.
+	public var isProgressive: Bool?
+}
         
-/// The font to use for text labels in the bar.
-public var textFont: UIFont?
-
-/// The text color to use for selected tabs in the bar.
-public var selectedTextColor: UIColor?
-
-/// The text color to use for tabs in the bar.
-public var textColor: UIColor?
-
-//
-// Bar
+/// Text configuration
+public struct Text {
+	/// The font to use for text labels in the bar.
+	public var font: UIFont?
+	/// The text color to use for selected tabs in the bar.
+	public var selectedColor: UIColor?
+	/// The text color to use for tabs in the bar.
+	public var color: UIColor?
+}
         
+/// Layout configuration
+public struct Layout {
+	/// The spacing between items in the bar.
+	public var interItemSpacing: CGFloat?
+	/// The spacing at the edge of the items in the bar.
+	public var edgeInset: CGFloat?
+}
+
 /// The background style for the bar.
 public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
-
+        
 /// Whether to show a fade on the items at the bounds edge of the bar.
 public var showEdgeFade: Bool?
-
+        
 /// Whether scroll is enabled on the scroll view in the bar.
 public var isScrollEnabled: Bool?
 
-/// The spacing between items in the bar.
-public var interItemSpacing: CGFloat?
 
-/// The spacing at the edge of the items in the bar.
-public var edgeInset: CGFloat?
 ```
 
 `TabmanBar` itself is available as a sub-component of `Tabman` - more advanced documentation is available [here]().
