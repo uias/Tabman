@@ -49,11 +49,11 @@ public class TabmanBarConfig: Any {
     
     /// The style of the bar.
     ///
+    /// - bar: A simple horizontal bar only.
     /// - buttonBar: A scrolling horizontal bar with text buttons for each page index.
-    /// - progressiveBar: A horizontal progress bar that increments toward completion with each page transition.
     public enum Style {
+        case bar
         case buttonBar
-        case progressiveBar
     }
     
     /// The location of the bar on screen.
@@ -118,7 +118,7 @@ internal extension TabmanBarConfig.Style {
     var preferredLocation: TabmanBarConfig.Location {
         switch self {
             
-        case .progressiveBar:
+        case .bar:
             return .bottom
             
         default:

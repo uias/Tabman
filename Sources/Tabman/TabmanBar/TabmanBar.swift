@@ -230,8 +230,8 @@ internal extension TabmanBarConfig.Style {
         case .buttonBar:
             return TabmanButtonBar.self
             
-        case .progressiveBar:
-            return TabmanProgressiveBar.self
+        case .bar:
+            return TabmanOnlyBar.self
             
         }
     }

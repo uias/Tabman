@@ -1,5 +1,5 @@
 //
-//  TabmanProgressiveBar.swift
+//  TabmanOnlyBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 22/02/2017.
@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-public class TabmanProgressiveBar: TabmanBar {
+public class TabmanOnlyBar: TabmanBar {
 
     //
     // MARK: Properties

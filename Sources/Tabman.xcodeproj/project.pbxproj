@@ -11,7 +11,7 @@
 		D6020A981E5DC59500C2B7BA /* TabmanColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* TabmanColorUtils.swift */; };
 		D6020A9F1E5DD42600C2B7BA /* TabmanBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A9E1E5DD42600C2B7BA /* TabmanBarBackgroundView.swift */; };
 		D6020AA71E5DE4A800C2B7BA /* TabmanButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020AA61E5DE4A800C2B7BA /* TabmanButtonBar.swift */; };
-		D6020AA91E5DE4D600C2B7BA /* TabmanProgressiveBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020AA81E5DE4D600C2B7BA /* TabmanProgressiveBar.swift */; };
+		D6020AA91E5DE4D600C2B7BA /* TabmanOnlyBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020AA81E5DE4D600C2B7BA /* TabmanOnlyBar.swift */; };
 		D6020ACC1E6030E900C2B7BA /* TabmanBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020ACB1E6030E900C2B7BA /* TabmanBarConfig.swift */; };
 		D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */; };
 		D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */; };
@@ -46,7 +46,7 @@
 		D6020A971E5DC59500C2B7BA /* TabmanColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanColorUtils.swift; sourceTree = "<group>"; };
 		D6020A9E1E5DD42600C2B7BA /* TabmanBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarBackgroundView.swift; sourceTree = "<group>"; };
 		D6020AA61E5DE4A800C2B7BA /* TabmanButtonBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanButtonBar.swift; sourceTree = "<group>"; };
-		D6020AA81E5DE4D600C2B7BA /* TabmanProgressiveBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanProgressiveBar.swift; sourceTree = "<group>"; };
+		D6020AA81E5DE4D600C2B7BA /* TabmanOnlyBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanOnlyBar.swift; sourceTree = "<group>"; };
 		D6020ACB1E6030E900C2B7BA /* TabmanBarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfig.swift; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
 		D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestBar.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D6020AA61E5DE4A800C2B7BA /* TabmanButtonBar.swift */,
-				D6020AA81E5DE4D600C2B7BA /* TabmanProgressiveBar.swift */,
+				D6020AA81E5DE4D600C2B7BA /* TabmanOnlyBar.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */,
 				D6020A941E5DB57400C2B7BA /* TabmanBarAppearance.swift in Sources */,
 				D62AC1B21E5C84CB0020B8AE /* TabmanLineIndicator.swift in Sources */,
-				D6020AA91E5DE4D600C2B7BA /* TabmanProgressiveBar.swift in Sources */,
+				D6020AA91E5DE4D600C2B7BA /* TabmanOnlyBar.swift in Sources */,
 				D6020A9F1E5DD42600C2B7BA /* TabmanBarBackgroundView.swift in Sources */,
 				D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */,
 				D6020ACC1E6030E900C2B7BA /* TabmanBarConfig.swift in Sources */,
