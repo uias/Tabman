@@ -48,20 +48,30 @@ public class TabmanOnlyBar: TabmanBar {
                      maximumIndex: maximumIndex)
         
         let screenWidth = self.bounds.size.width
+        let itemCount = CGFloat(self.items?.count ?? 0)
+        let itemWidth = screenWidth / itemCount
 
         if self.indicatorIsProgressive {
             
             let relativePosition = (position + 1.0) / CGFloat((self.items?.count ?? 1))
             let indicatorWidth = max(0.0, min(screenWidth, screenWidth * relativePosition))
-            self.indicatorWidth?.constant = indicatorWidth
+            
+            var bouncyIndicatorWidth = indicatorWidth
+            if !self.indicatorBounces {
+                bouncyIndicatorWidth = max(itemWidth, min(screenWidth, bouncyIndicatorWidth))
+            }
+            self.indicatorWidth?.constant = bouncyIndicatorWidth
             
         } else {
             
-            let itemCount = CGFloat(self.items?.count ?? 0)
-            let itemWidth = screenWidth / itemCount
-            
             let relativePosition = position / CGFloat((self.items?.count ?? 1))
-            self.indicatorLeftMargin?.constant = relativePosition * screenWidth
+            let leftMargin = relativePosition * screenWidth
+            
+            var bouncyIndicatorPosition = leftMargin
+            if !self.indicatorBounces {
+                bouncyIndicatorPosition = max(0.0, min(screenWidth - itemWidth, bouncyIndicatorPosition))
+            }
+            self.indicatorLeftMargin?.constant = bouncyIndicatorPosition
             self.indicatorWidth?.constant = itemWidth
         }
     }

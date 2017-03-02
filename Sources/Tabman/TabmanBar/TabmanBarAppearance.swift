@@ -22,6 +22,8 @@ public extension TabmanBar {
             public var weight: TabmanLineIndicator.Weight?
             /// Whether the indicator transiton is progressive.
             public var isProgressive: Bool?
+            /// Whether the indicator bounces at the end of page ranges.
+            public var bounces: Bool?
         }
         
         /// Text configuration

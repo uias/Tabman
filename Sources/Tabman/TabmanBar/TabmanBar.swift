@@ -70,6 +70,7 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
     internal var indicatorIsProgressive: Bool = false
+    internal var indicatorBounces: Bool = true
     
     // Public
     
@@ -194,6 +195,10 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
         
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive
+        }
+        
+        if let indicatorBounces = appearance.indicator.bounces {
+            self.indicatorBounces = indicatorBounces
         }
         
         self.updateEdgeFade(visible: appearance.showEdgeFade ?? false)
