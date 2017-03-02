@@ -26,7 +26,7 @@ extension SettingsViewController {
         
         let appearanceSection = SettingsSection(title: "Appearance")
         appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.buttonBar.description,
-                                                                         TabmanBarConfig.Style.progressiveBar.description],
+                                                                         TabmanBarConfig.Style.bar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
@@ -69,11 +69,11 @@ fileprivate extension TabmanBarConfig.Style {
     static func fromDescription(_ description: String) -> TabmanBarConfig.Style {
         switch description {
             
-        case "Progressive Bar":
-            return .progressiveBar
+        case "Button Bar":
+            return .buttonBar
             
         default:
-            return .buttonBar
+            return .bar
         }
     }
     
@@ -81,8 +81,8 @@ fileprivate extension TabmanBarConfig.Style {
         switch self {
         case .buttonBar:
             return "Button Bar"
-        case .progressiveBar:
-            return "Progressive Bar"
+        case .bar:
+            return "Bar"
         }
     }
 }
