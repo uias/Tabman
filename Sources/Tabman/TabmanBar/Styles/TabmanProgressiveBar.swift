@@ -57,7 +57,7 @@ public class TabmanProgressiveBar: TabmanBar {
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
-        if let indicatorColor = appearance.indicatorColor {
+        if let indicatorColor = appearance.indicator.color {
             self.indicator.tintColor = indicatorColor
         }
     }

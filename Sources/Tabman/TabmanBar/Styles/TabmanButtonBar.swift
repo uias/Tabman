@@ -212,7 +212,7 @@ public class TabmanButtonBar: TabmanBar {
             })
         }
         
-        if let indicatorColor = appearance.indicatorColor {
+        if let indicatorColor = appearance.indicator.color {
             self.indicator.tintColor = indicatorColor
         }
         
@@ -231,7 +231,7 @@ public class TabmanButtonBar: TabmanBar {
             self.edgeInset = edgeInset
         }
         
-        if let indicatorIsProgressive = appearance.indicatorIsProgressive {
+        if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
             UIView.animate(withDuration: 0.3, animations: {
                 self.update(forPosition: self.currentPosition,

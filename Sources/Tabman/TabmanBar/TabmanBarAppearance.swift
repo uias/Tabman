@@ -12,19 +12,22 @@ public extension TabmanBar {
     
     public class AppearanceConfig: Any {
         
-        //
+        // MARK: Structs
+        
+        /// Indicator configuration
+        public struct Indicator {
+            /// The color of the bar indicator.
+            public var color: UIColor?
+            /// The weight (thickness) of the bar indicator.
+            public var weight: TabmanLineIndicator.Weight?
+            /// Whether the indicator transiton is progressive.
+            public var isProgressive: Bool?
+        }
+        
         // MARK: Properties
-        //
         
-        
-        //
-        // Indicator
-        
-        /// The color of the bar indicator.
-        public var indicatorColor: UIColor?
-        /// The weight (thickness) of the bar indicator.
-        public var indicatorWeight: TabmanLineIndicator.Weight?
-        
+        /// The indicator configuration.
+        public lazy var indicator = Indicator()
         
         //
         // Text
@@ -50,11 +53,6 @@ public extension TabmanBar {
         public var interItemSpacing: CGFloat?
         /// The spacing at the edge of the items in the bar.
         public var edgeInset: CGFloat?
-        
-        //
-        // Indicator
-        
-        public var indicatorIsProgressive: Bool?
         
         //
         // MARK: Init

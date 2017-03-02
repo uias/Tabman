@@ -192,7 +192,7 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
         
-        if let indicatorIsProgressive = appearance.indicatorIsProgressive {
+        if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive
         }
         
