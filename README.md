@@ -7,6 +7,10 @@
 **Tabman** is a powerful ViewPager-esque component for iOS.
 
 ## Features
+- [x] Ridiculously easy to implement page view controller with indicator bar.
+- [x] Multiple indicator bar styles.
+- [x] Simplistic and powerful customisation.
+- [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
 
 ## Installation
 ### CocoaPods
