@@ -1,3 +1,5 @@
+**NOTE: This is still a work in progress, and is not yet available on CocoaPods.**
+
 [![Build Status](https://travis-ci.org/MerrickSapsford/Tabman.svg?branch=develop)](https://travis-ci.org/MerrickSapsford/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/MerrickSapsford/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/MerrickSapsford/Tabman)
@@ -7,15 +9,20 @@
 ## Features
 
 ## Installation
+### CocoaPods
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 ```ruby
 pod 'Tabman'
 ```
 And run `pod install`.
 
-#### Dependencies
+**Dependencies**
+
 - [Pageboy](http://github.com/msaps/Pageboy) by Merrick Sapsford
 - [PureLayout](https://github.com/PureLayout/PureLayout) by PureLayout
+
+### Example
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode. 
 
 ## Usage
 ### Getting Started
