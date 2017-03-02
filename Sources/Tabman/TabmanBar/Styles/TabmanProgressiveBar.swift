@@ -34,7 +34,7 @@ public class TabmanProgressiveBar: TabmanBar {
         super.constructTabBar(items: items)
         
         self.containerView.addSubview(indicator)
-        indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)
+        self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
@@ -48,10 +48,22 @@ public class TabmanProgressiveBar: TabmanBar {
                      maximumIndex: maximumIndex)
         
         let screenWidth = self.bounds.size.width
-        let relativePosition = (position + 1.0) / CGFloat((self.items?.count ?? 1))
-        
-        let indicatorWidth = max(0.0, min(screenWidth, screenWidth * relativePosition))
-        self.indicatorWidth?.constant = indicatorWidth
+
+        if self.indicatorIsProgressive {
+            
+            let relativePosition = (position + 1.0) / CGFloat((self.items?.count ?? 1))
+            let indicatorWidth = max(0.0, min(screenWidth, screenWidth * relativePosition))
+            self.indicatorWidth?.constant = indicatorWidth
+            
+        } else {
+            
+            let itemCount = CGFloat(self.items?.count ?? 0)
+            let itemWidth = screenWidth / itemCount
+            
+            let relativePosition = position / CGFloat((self.items?.count ?? 1))
+            self.indicatorLeftMargin?.constant = relativePosition * screenWidth
+            self.indicatorWidth?.constant = itemWidth
+        }
     }
     
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {

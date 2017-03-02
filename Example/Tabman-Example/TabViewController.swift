@@ -63,7 +63,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             appearance.selectedTextColor = UIColor.white
             appearance.backgroundStyle = .blur(style: .light)
             appearance.indicator.color = .white
-            appearance.indicator.isProgressive = true
+            appearance.indicator.isProgressive = false
         })
     }
     
