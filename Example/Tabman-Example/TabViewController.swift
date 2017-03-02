@@ -53,7 +53,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.view.sendSubview(toBack: self.gradientView)
         
         self.dataSource = self
-        self.delegate = self
         
         self.updateAppearance(pagePosition: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
