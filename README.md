@@ -1,5 +1,6 @@
-**NOTE: This is still a work in progress, and is not yet available on CocoaPods.**
-
+<p align="center">
+    <img src="Artwork/logo.png" width="890" alt="Pageboy"/>
+</p>
 [![Build Status](https://travis-ci.org/MerrickSapsford/Tabman.svg?branch=develop)](https://travis-ci.org/MerrickSapsford/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/MerrickSapsford/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/MerrickSapsford/Tabman)
