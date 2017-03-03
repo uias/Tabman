@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D6020AC31E602BB500C2B7BA /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC18D1E5B03B50020B8AE /* PureLayout.framework */; };
 		D6020AC41E602BB500C2B7BA /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC18D1E5B03B50020B8AE /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6020AC71E602BBB00C2B7BA /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1501E5AF5440020B8AE /* Pageboy.framework */; };
@@ -168,6 +169,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D601367C1E6990650013CD42 /* CustomTabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabmanBar.swift; sourceTree = "<group>"; };
 		D61E50BB1E64452D00AC8C75 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				D62AC0D81E5733A80020B8AE /* AppDelegate.swift */,
 				D62AC1061E5736A10020B8AE /* TabViewController.swift */,
 				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
+				D601367C1E6990650013CD42 /* CustomTabmanBar.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
 				D62AC10E1E5736B20020B8AE /* Example Components */,
 				D62AC10F1E5736BE0020B8AE /* Resources */,
@@ -530,6 +533,7 @@
 				D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */,
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
 				D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */,
+				D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */,
 				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
 				D62AC10C1E5736A10020B8AE /* TabViewControllerExtras.swift in Sources */,
 				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,

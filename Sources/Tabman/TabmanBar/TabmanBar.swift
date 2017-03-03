@@ -49,7 +49,7 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
                 maximumIndex: Int)
 }
 
-public class TabmanBar: UIView, TabmanBarLifecycle {
+open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
     // MARK: Types
@@ -98,7 +98,7 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     /// Indicator for the bar.
     public var indicator: TabmanIndicator?
     
-    public override var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
     }
     
@@ -132,13 +132,13 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: Lifecycle
     //
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         self.fadeGradientLayer?.frame = self.bounds
     }
     
-    public func indicatorStyle() -> TabmanIndicator.Style {
+    open func indicatorStyle() -> TabmanIndicator.Style {
         print("indicatorStyle() returning default. This should be overridden in subclass")
         return .none
     }
@@ -189,18 +189,18 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     //
     
-    public func constructTabBar(items: [TabmanBarItem]) {
-        
+    open func constructTabBar(items: [TabmanBarItem]) {
+        // Override in subclass
     }
     
-    public func update(forPosition position: CGFloat,
+    open func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
-        // Abstract function
+        // Override in subclass
     }
     
-    public func update(forAppearance appearance: AppearanceConfig) {
+    open func update(forAppearance appearance: AppearanceConfig) {
         
         if let backgroundStyle = appearance.backgroundStyle {
             self.backgroundView.backgroundStyle = backgroundStyle
