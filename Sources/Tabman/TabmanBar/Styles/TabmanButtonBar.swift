@@ -269,6 +269,12 @@ public class TabmanButtonBar: TabmanBar {
             
             self.indicatorWidth?.constant = indicatorStartFrame + (endFrameDiff * progress)
             
+            guard self.indicatorBounces else { return }
+            if (lowerButton === upperButton) {
+                let indicatorWidth = self.indicatorWidth?.constant ?? 0.0
+                self.indicatorWidth?.constant = indicatorWidth + (indicatorWidth * progress)
+            }
+            
         } else {
             
             let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
@@ -278,6 +284,13 @@ public class TabmanButtonBar: TabmanBar {
             let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
             let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
             self.indicatorLeftMargin?.constant = interpolatedXOrigin
+            
+            // bounce indicator at boundaries if required
+            guard self.indicatorBounces else { return }
+            if (lowerButton === upperButton) {
+                let indicatorWidth = self.indicatorWidth?.constant ?? 0.0
+                self.indicatorLeftMargin?.constant = (self.indicatorLeftMargin?.constant ?? 0.0) + (indicatorWidth * progress)
+            }
         }
     }
     
