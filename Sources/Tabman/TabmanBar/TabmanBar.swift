@@ -29,7 +29,7 @@ public protocol TabmanBarDelegate {
     func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
 }
 
-internal protocol TabmanBarLifecycle {
+internal protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     
     /// Construct the contents of the tab bar for the current style and given items.
     ///
@@ -47,11 +47,6 @@ internal protocol TabmanBarLifecycle {
                 direction: PageboyViewController.NavigationDirection,
                 minimumIndex: Int,
                 maximumIndex: Int)
-    
-    /// Update the appearance of the tab bar for a new configuration.
-    ///
-    /// - Parameter appearance: The new configuration.
-    func update(forAppearance appearance: TabmanBar.AppearanceConfig)
 }
 
 public class TabmanBar: UIView, TabmanBarLifecycle {

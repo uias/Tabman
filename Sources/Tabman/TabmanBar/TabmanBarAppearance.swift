@@ -85,3 +85,12 @@ public extension TabmanBar {
         }
     }
 }
+
+/// Appearance updating
+internal protocol TabmanAppearanceUpdateable {
+    
+    /// Update the appearance of the tab bar for a new configuration.
+    ///
+    /// - Parameter appearance: The new configuration.
+    func update(forAppearance appearance: TabmanBar.AppearanceConfig)
+}
