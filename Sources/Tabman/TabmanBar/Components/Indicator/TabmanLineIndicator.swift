@@ -64,29 +64,15 @@ public class TabmanLineIndicator: TabmanIndicator {
     }
     
     //
-    // MARK: Init
+    // MARK: Lifecycle
     //
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.initIndicator()
-    }
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        self.initIndicator()
-    }
-    
-    convenience init() {
-        self.init(frame: .zero)
-    }
-    
-    func initIndicator() {
+    public override func constructIndicator() {
+        super.constructIndicator()
+        
         self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
         self.backgroundColor = self.tintColor
     }
-    
-    // MARK: Lifecycle
     
     override public func layoutSubviews() {
         super.layoutSubviews()

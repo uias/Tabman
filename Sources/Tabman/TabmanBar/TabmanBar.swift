@@ -106,15 +106,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initTabBar()
+        initTabBar(coder: aDecoder)
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        initTabBar()
+        initTabBar(coder: nil)
     }
     
-    private func initTabBar() {
+    private func initTabBar(coder aDecoder: NSCoder?) {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
