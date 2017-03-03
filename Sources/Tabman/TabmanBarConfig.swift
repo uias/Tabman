@@ -54,6 +54,7 @@ public class TabmanBarConfig: Any {
     public enum Style {
         case bar
         case buttonBar
+        case custom(type: TabmanBar.Type)
     }
     
     /// The location of the bar on screen.
@@ -77,7 +78,7 @@ public class TabmanBarConfig: Any {
     /// The style to use for the bar. Default = .buttonBar
     public var style: Style = .buttonBar {
         didSet {
-            guard style != oldValue else { return }
+            guard style.rawType != oldValue.rawType else { return }
             
             self.delegate?.config(self, didUpdateStyle: style)
         }
@@ -123,6 +124,24 @@ internal extension TabmanBarConfig.Style {
             
         default:
             return .top
+        }
+    }
+}
+
+// MARK: - TabmanBarConfig.Style Typing
+internal extension TabmanBarConfig.Style {
+    
+    var rawType: TabmanBar.Type? {
+        switch self {
+            
+        case .buttonBar:
+            return TabmanButtonBar.self
+            
+        case .bar:
+            return TabmanOnlyBar.self
+            
+        case .custom(let type):
+            return type
         }
     }
 }

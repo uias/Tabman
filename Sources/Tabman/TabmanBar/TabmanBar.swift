@@ -246,6 +246,8 @@ internal extension TabmanIndicator.Style {
         switch self {
         case .line:
             return TabmanLineIndicator.self
+        case .custom(let type):
+            return type
         default:
             return nil
         }

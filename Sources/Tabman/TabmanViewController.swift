@@ -174,20 +174,3 @@ extension TabmanViewController: TabmanBarConfigDelegate {
         self.tabmanBar?.reloadData()
     }
 }
-
-// MARK: - TabmanBarConfig.Style Typing
-internal extension TabmanBarConfig.Style {
-    
-    var rawType: TabmanBar.Type? {
-        switch self {
-            
-        case .buttonBar:
-            return TabmanButtonBar.self
-            
-        case .bar:
-            return TabmanOnlyBar.self
-            
-        }
-    }
-    
-}

@@ -17,5 +17,6 @@ public class TabmanIndicator: UIView {
     public enum Style {
         case none
         case line
+        case custom(type: TabmanIndicator.Type)
     }
 }

@@ -103,6 +103,9 @@ fileprivate extension TabmanBarConfig.Style {
             return "Button Bar"
         case .bar:
             return "Bar"
+            
+        default:
+            return "Custom"
         }
     }
 }
