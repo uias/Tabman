@@ -63,7 +63,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             appearance.text.selectedColor = UIColor.white
             appearance.backgroundStyle = .blur(style: .light)
             appearance.indicator.color = .white
-            appearance.indicator.isProgressive = false
         })
     }
     
@@ -132,8 +131,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     animated: animated)
         
         self.targetIndex = index
-        
-        self.updateBarButtonStates(index: index)
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
