@@ -56,6 +56,8 @@ internal protocol TabmanBarLifecycle {
 
 public class TabmanBar: UIView, TabmanBarLifecycle {
     
+    internal typealias Appearance = TabmanBar.AppearanceConfig
+    
     //
     // MARK: Properties
     //
@@ -69,8 +71,8 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = false
-    internal var indicatorBounces: Bool = true
+    internal var indicatorIsProgressive: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorBounces: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.bounces ?? false
     
     // Public
     

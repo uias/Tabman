@@ -25,7 +25,7 @@ public class TabmanBarBackgroundView: UIView {
     // MARK: Properties
     //
     
-    var backgroundStyle: BackgroundStyle = .none {
+    var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.backgroundStyle ?? .none {
         didSet {
             self.updateBackground(forStyle: backgroundStyle)
         }

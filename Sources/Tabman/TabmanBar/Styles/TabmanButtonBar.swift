@@ -14,7 +14,7 @@ import Pageboy
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
 public class TabmanButtonBar: TabmanBar {
-    
+        
     //
     // MARK: Constants
     //
@@ -45,9 +45,9 @@ public class TabmanButtonBar: TabmanBar {
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
     
-    private var textFont: UIFont = Defaults.textFont
-    private var textColor: UIColor = Defaults.textColor
-    private var selectedTextColor: UIColor = Defaults.selectedTextColor
+    private var textFont: UIFont = Appearance.defaultAppearance.text.font ?? Defaults.textFont
+    private var textColor: UIColor = Appearance.defaultAppearance.text.color ?? Defaults.textColor
+    private var selectedTextColor: UIColor = Appearance.defaultAppearance.text.selectedColor ?? Defaults.selectedTextColor
     
     private var currentTargetButton: UIButton? {
         didSet {
@@ -61,7 +61,7 @@ public class TabmanButtonBar: TabmanBar {
     // Public
     
     /// The inset at the edge of the bar items. (Default = 16.0)
-    public var edgeInset: CGFloat = Defaults.edgeInset {
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset ?? Defaults.edgeInset {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
                                    withValue: edgeInset)
@@ -69,7 +69,7 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     /// The spacing between each bar item. (Default = 20.0)
-    public var interItemSpacing: CGFloat = Defaults.horizontalSpacing {
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing {
         didSet {
             self.updateConstraints(self.horizontalMarginConstraints,
                                    withValue: interItemSpacing)
@@ -108,7 +108,7 @@ public class TabmanButtonBar: TabmanBar {
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
-        scrollView.isScrollEnabled = false
+        scrollView.isScrollEnabled = self.isScrollEnabled
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()

@@ -24,6 +24,8 @@ public extension TabmanBar {
             public var isProgressive: Bool?
             /// Whether the indicator bounces at the end of page ranges.
             public var bounces: Bool?
+            /// Whether to use rounded corners on line indicators.
+            public var useRoundedCorners: Bool?
         }
         
         /// Text configuration
@@ -67,13 +69,19 @@ public extension TabmanBar {
         // MARK: Init
 
         public init(_ configurer: (AppearanceConfig) -> ()) {
+            self.setDefaultValues()
             configurer(self)
         }
         
         static var defaultAppearance: AppearanceConfig {
-            return AppearanceConfig({ (config) in
-                // default config
-            })
+            let config = AppearanceConfig({ _ in })
+            config.setDefaultValues()
+            return config
+        }
+        
+        private func setDefaultValues() {
+            
+            self.indicator.bounces = true
         }
     }
 }

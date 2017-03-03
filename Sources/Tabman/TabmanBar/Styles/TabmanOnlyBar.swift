@@ -18,7 +18,7 @@ public class TabmanOnlyBar: TabmanBar {
     
     // Private
     
-    private var indicator = TabmanLineIndicator(forAutoLayout: ())
+    private var indicator = TabmanLineIndicator()
     
     // Public
     
@@ -33,6 +33,7 @@ public class TabmanOnlyBar: TabmanBar {
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
+        self.indicator.tintColor = self.appearance.indicator.color
         self.containerView.addSubview(indicator)
         self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)

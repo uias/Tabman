@@ -65,6 +65,16 @@ extension SettingsViewController {
                 appearance?.indicator.isProgressive = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Bouncing Indicator",
+                                                 description: "Whether the indicator should bounce at the end of page ranges.",
+                                                 value: self.tabViewController?.bar.appearance?.indicator.bounces,
+                                                 update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.bounces = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
         
         sections.append(appearanceSection)
         sections.append(pageVCSection)

@@ -32,7 +32,7 @@ public class TabmanLineIndicator: UIView {
     /// The thickness of the indicator line.
     ///
     /// Default is .normal
-    public var weight: Weight = .normal {
+    public var weight: Weight = TabmanBar.Appearance.defaultAppearance.indicator.weight ?? .normal {
         didSet {
             guard weight != oldValue else {
                 return
@@ -46,7 +46,7 @@ public class TabmanLineIndicator: UIView {
     /// Whether to use rounded corners for the indicator line.
     ///
     /// Default is false
-    public var useRoundedCorners: Bool = false {
+    public var useRoundedCorners: Bool = TabmanBar.Appearance.defaultAppearance.indicator.useRoundedCorners ?? false {
         didSet {
             self.setNeedsLayout()
         }
@@ -82,6 +82,7 @@ public class TabmanLineIndicator: UIView {
     }
     
     func initIndicator() {
+        self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
         self.backgroundColor = self.tintColor
     }
     
