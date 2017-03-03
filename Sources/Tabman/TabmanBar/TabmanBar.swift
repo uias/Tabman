@@ -64,7 +64,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // Private
     
     internal var items: [TabmanBarItem]?
-    internal var containerView = UIView(forAutoLayout: ())
     internal private(set) var currentPosition: CGFloat = 0.0
     internal var fadeGradientLayer: CAGradientLayer?
     
@@ -95,6 +94,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Background view of the bar.
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     
+    /// The content view for the bar.
+    public private(set) var contentView = UIView(forAutoLayout: ())
+    
     /// Indicator for the bar.
     public var indicator: TabmanIndicator?
     
@@ -120,8 +122,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
-        self.addSubview(containerView)
-        containerView.autoPinEdgesToSuperviewEdges()
+        self.addSubview(contentView)
+        contentView.autoPinEdgesToSuperviewEdges()
         
         if let indicatorType = self.indicatorStyle().rawType {
             self.indicator = indicatorType.init()
@@ -141,6 +143,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     open func indicatorStyle() -> TabmanIndicator.Style {
         print("indicatorStyle() returning default. This should be overridden in subclass")
         return .none
+    }
+    
+    open override func addSubview(_ view: UIView) {
+        if view !== self.backgroundView && view !== self.contentView {
+            print("Please add subviews to the contentView rather than directly onto the TabmanBar")
+        }
+        super.addSubview(view)
     }
     
     //
@@ -169,7 +178,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// Remove all components and subviews from the bar.
     internal func clearBar() {
-        self.containerView.removeAllSubviews()
+        self.contentView.removeAllSubviews()
     }
     
     internal func updatePosition(_ position: CGFloat,
@@ -230,11 +239,11 @@ internal extension TabmanBar {
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
             gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
-            self.containerView.layer.mask = gradientLayer
+            self.contentView.layer.mask = gradientLayer
             self.fadeGradientLayer = gradientLayer
             
         } else {
-            self.containerView.layer.mask = nil
+            self.contentView.layer.mask = nil
             self.fadeGradientLayer = nil
         }
     }

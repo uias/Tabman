@@ -107,7 +107,7 @@ public class TabmanButtonBar: TabmanBar {
         super.constructTabBar(items: items)
         
         // add scroll view
-        self.containerView.addSubview(scrollView)
+        self.contentView.addSubview(scrollView)
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()

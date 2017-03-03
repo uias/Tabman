@@ -9,6 +9,7 @@
 import UIKit
 import Tabman
 import Pageboy
+import PureLayout
 
 class CustomTabmanBar: TabmanBar {
 
@@ -19,12 +20,23 @@ class CustomTabmanBar: TabmanBar {
         return super.intrinsicContentSize
     }
     
+    override func indicatorStyle() -> TabmanIndicator.Style {
+        // declare indicator style here
+        return .none
+    }
+    
     // MARK: TabmanBar Lifecycle
     
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
         // create your tab here
+        let label = UILabel()
+        label.text = "This is a custom TabmanBar"
+        label.textAlignment = .center
+        label.textColor = .white
+        self.contentView.addSubview(label)
+        label.autoPinEdgesToSuperviewEdges()
     }
     
     override func update(forPosition position: CGFloat,

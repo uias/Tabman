@@ -39,7 +39,7 @@ public class TabmanOnlyBar: TabmanBar {
         
         if let indicator = self.indicator {
             indicator.tintColor = self.appearance.indicator.color
-            self.containerView.addSubview(indicator)
+            self.contentView.addSubview(indicator)
             self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
             self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
         }
