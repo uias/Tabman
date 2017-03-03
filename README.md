@@ -24,8 +24,8 @@ And run `pod install`.
 
 **Dependencies**
 
-- [Pageboy](http://github.com/msaps/Pageboy) by Merrick Sapsford
-- [PureLayout](https://github.com/PureLayout/PureLayout) by PureLayout
+- [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
+- [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
 A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode. 
@@ -81,7 +81,7 @@ public func scrollToPage(_ pageIndex: PageIndex,
 public func reloadPages()
 ```
 
-Read up on the `Pageboy` docs to find out a bit more [here](https://github.com/msaps/Pageboy/blob/master/README.md).
+Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/msaps/Pageboy/blob/master/README.md).
 
 ## Customisation
 The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
