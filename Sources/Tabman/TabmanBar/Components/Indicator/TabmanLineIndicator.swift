@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TabmanLineIndicator: UIView {
+public class TabmanLineIndicator: TabmanIndicator {
     
     //
     // MARK: Types
