@@ -58,4 +58,42 @@ override func viewDidLoad() {
 }
 ```
 
-## Creating a custom TabmanIndicator
+### Using a custom TabmanIndicator
+As seen above, when creating a `TabmanBar` subclass you can specify the style for the indicator in `indicatorStyle()`.
+
+```swift
+override func indicatorStyle() -> TabmanIndicator.Style {
+	return .line
+}
+```
+
+This can be used to return a custom view to use as the `TabmanIndicator`:
+
+1) Create an object that inherits from `TabmanIndicator`.
+
+```swift
+import UIKit
+import Tabman
+import Pageboy
+
+class MyCustomIndicator: TabmanIndicator {
+}
+```
+
+2) Implement and override the following methods:
+
+```swift
+public override func constructIndicator() {
+        super.constructIndicator()
+        
+        // create your indicator here
+}
+```
+
+3) Configure your custom `TabmanBar` to use your custom indicator.
+
+```swift
+override func indicatorStyle() -> TabmanIndicator.Style {
+	return .custom(type: MyCustomIndicator.self)
+}
+```
