@@ -34,7 +34,7 @@ public class TabmanOnlyBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    override func constructTabBar(items: [TabmanBarItem]) {
+    override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
         if let indicator = self.indicator {
@@ -45,7 +45,7 @@ public class TabmanOnlyBar: TabmanBar {
         }
     }
     
-    override func update(forPosition position: CGFloat,
+    override public func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
@@ -83,7 +83,7 @@ public class TabmanOnlyBar: TabmanBar {
         }
     }
     
-    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override public func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
         if let indicatorColor = appearance.indicator.color {

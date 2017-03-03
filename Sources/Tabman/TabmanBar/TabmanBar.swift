@@ -29,7 +29,7 @@ public protocol TabmanBarDelegate {
     func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
 }
 
-internal protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
+public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     
     /// Construct the contents of the tab bar for the current style and given items.
     ///
@@ -189,18 +189,18 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     //
     
-    internal func constructTabBar(items: [TabmanBarItem]) {
+    public func constructTabBar(items: [TabmanBarItem]) {
         
     }
     
-    internal func update(forPosition position: CGFloat,
+    public func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
         // Abstract function
     }
     
-    internal func update(forAppearance appearance: AppearanceConfig) {
+    public func update(forAppearance appearance: AppearanceConfig) {
         
         if let backgroundStyle = appearance.backgroundStyle {
             self.backgroundView.backgroundStyle = backgroundStyle

@@ -103,7 +103,7 @@ public class TabmanButtonBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    override func constructTabBar(items: [TabmanBarItem]) {
+    override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
         // add scroll view
@@ -163,7 +163,7 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollView.layoutIfNeeded()
     }
     
-    override func update(forPosition position: CGFloat,
+    override public func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
@@ -195,7 +195,7 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()
     }
     
-    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override public func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
         if let textColor = appearance.text.color {

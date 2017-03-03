@@ -87,7 +87,7 @@ public extension TabmanBar {
 }
 
 /// Appearance updating
-internal protocol TabmanAppearanceUpdateable {
+public protocol TabmanAppearanceUpdateable {
     
     /// Update the appearance of the tab bar for a new configuration.
     ///
