@@ -16,14 +16,18 @@ public class TabmanOnlyBar: TabmanBar {
     // MARK: Properties
     //
     
-    // Private
-    
-    private var indicator = TabmanLineIndicator()
-    
     // Public
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 2.0)
+    }
+    
+    //
+    // MARK: Lifecycle
+    //
+    
+    public override func indicatorStyle() -> TabmanIndicator.Style {
+        return .line
     }
     
     //
@@ -33,10 +37,12 @@ public class TabmanOnlyBar: TabmanBar {
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
-        self.indicator.tintColor = self.appearance.indicator.color
-        self.containerView.addSubview(indicator)
-        self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        if let indicator = self.indicator {
+            indicator.tintColor = self.appearance.indicator.color
+            self.containerView.addSubview(indicator)
+            self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
+            self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        }
     }
     
     override func update(forPosition position: CGFloat,
@@ -81,7 +87,7 @@ public class TabmanOnlyBar: TabmanBar {
         super.update(forAppearance: appearance)
         
         if let indicatorColor = appearance.indicator.color {
-            self.indicator.tintColor = indicatorColor
+            self.indicator?.tintColor = indicatorColor
         }
     }
 }

@@ -40,7 +40,6 @@ public class TabmanButtonBar: TabmanBar {
         return scrollView
     }()
     private var buttons = [UIButton]()
-    private var indicator = TabmanLineIndicator()
     
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
@@ -96,6 +95,10 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()        
     }
     
+    public override func indicatorStyle() -> TabmanIndicator.Style {
+        return .line
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
@@ -149,10 +152,13 @@ public class TabmanButtonBar: TabmanBar {
         }
         
         // add indicator
-        self.scrollView.contentView.addSubview(self.indicator)
-        self.indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = self.indicator.autoPinEdge(toSuperviewEdge: .left)
-        self.indicatorWidth = self.indicator.autoSetDimension(.width, toSize: 0.0)
+        if let indicator = self.indicator {
+            self.scrollView.contentView.addSubview(indicator)
+            indicator.autoPinEdge(toSuperviewEdge: .bottom)
+            self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
+            self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        }
+
         
         self.scrollView.layoutIfNeeded()
     }
@@ -213,7 +219,7 @@ public class TabmanButtonBar: TabmanBar {
         }
         
         if let indicatorColor = appearance.indicator.color {
-            self.indicator.tintColor = indicatorColor
+            self.indicator?.tintColor = indicatorColor
         }
         
         if let isScrollEnabled = appearance.isScrollEnabled {

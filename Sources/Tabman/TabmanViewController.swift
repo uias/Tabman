@@ -11,7 +11,9 @@ import Pageboy
 
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
+    //
     // MARK: Properties
+    //
     
     /// The Tabman bar.
     fileprivate(set) var tabmanBar: TabmanBar?
@@ -20,7 +22,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Able to set items, appearance, location and style through this object.
     public lazy var bar = TabmanBarConfig()
     
+    //
     // MARK: Lifecycle
+    //
     
     open override func loadView() {
         super.loadView()
@@ -33,7 +37,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.updateBar(withLocation: self.bar.location)
     }
     
+    //
     // MARK: PageboyViewControllerDelegate
+    //
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       willScrollToPageAtIndex index: Int,
@@ -167,4 +173,21 @@ extension TabmanViewController: TabmanBarConfigDelegate {
     func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?) {
         self.tabmanBar?.reloadData()
     }
+}
+
+// MARK: - TabmanBarConfig.Style Typing
+internal extension TabmanBarConfig.Style {
+    
+    var rawType: TabmanBar.Type? {
+        switch self {
+            
+        case .buttonBar:
+            return TabmanButtonBar.self
+            
+        case .bar:
+            return TabmanOnlyBar.self
+            
+        }
+    }
+    
 }

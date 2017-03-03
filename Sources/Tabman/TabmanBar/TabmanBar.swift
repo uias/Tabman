@@ -56,6 +56,10 @@ internal protocol TabmanBarLifecycle {
 
 public class TabmanBar: UIView, TabmanBarLifecycle {
     
+    //
+    // MARK: Types
+    //
+    
     internal typealias Appearance = TabmanBar.AppearanceConfig
     
     //
@@ -96,6 +100,8 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     /// Background view of the tab bar.
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     
+    public var indicator: TabmanIndicator?
+    
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 44.0)
     }
@@ -120,6 +126,10 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
         
         self.addSubview(containerView)
         containerView.autoPinEdgesToSuperviewEdges()
+        
+        if let indicatorType = self.indicatorStyle().rawType {
+            self.indicator = indicatorType.init()
+        }
     }
     
     //
@@ -130,6 +140,11 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
         super.layoutSubviews()
         
         self.fadeGradientLayer?.frame = self.bounds
+    }
+    
+    public func indicatorStyle() -> TabmanIndicator.Style {
+        print("indicatorStyle() returning default. This should be overridden in subclass")
+        return .none
     }
     
     //
@@ -229,18 +244,14 @@ internal extension TabmanBar {
     }
 }
 
-internal extension TabmanBarConfig.Style {
+internal extension TabmanIndicator.Style {
     
-    var rawType: TabmanBar.Type? {
+    var rawType: TabmanIndicator.Type? {
         switch self {
-            
-        case .buttonBar:
-            return TabmanButtonBar.self
-            
-        case .bar:
-            return TabmanOnlyBar.self
-            
+        case .line:
+            return TabmanLineIndicator.self
+        default:
+            return nil
         }
     }
-    
 }

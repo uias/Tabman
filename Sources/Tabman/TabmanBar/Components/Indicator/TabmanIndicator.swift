@@ -10,4 +10,12 @@ import UIKit
 
 public class TabmanIndicator: UIView {
     
+    //
+    // MARK: Types
+    //
+    
+    public enum Style {
+        case none
+        case line
+    }
 }
