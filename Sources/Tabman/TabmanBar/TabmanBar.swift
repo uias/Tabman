@@ -80,26 +80,27 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     
     // Public
     
-    /// The object that acts as a data source to the tab bar.
+    /// The object that acts as a data source to the bar.
     public var dataSource: TabmanBarDataSource? {
         didSet {
             self.reloadData()
         }
     }
     
-    /// The object that acts as a delegate to the tab bar.
+    /// The object that acts as a delegate to the bar.
     public var delegate: TabmanBarDelegate?
     
-    /// Appearance configuration for the tab bar.
+    /// Appearance configuration for the bar.
     public var appearance: AppearanceConfig = .defaultAppearance {
         didSet {
             self.update(forAppearance: appearance)
         }
     }
     
-    /// Background view of the tab bar.
+    /// Background view of the bar.
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     
+    /// Indicator for the bar.
     public var indicator: TabmanIndicator?
     
     public override var intrinsicContentSize: CGSize {
@@ -151,15 +152,15 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: Data
     //
     
-    /// Reload and reconstruct the contents of the tab bar.
+    /// Reload and reconstruct the contents of the bar.
     public func reloadData() {
         self.items = self.dataSource?.items(forTabBar: self)
-        self.clearAndConstructTabBar()
+        self.clearAndConstructBar()
     }
     
-    /// Reconstruct the tab bar for a new style or data set.
-    private func clearAndConstructTabBar() {
-        self.clearTabBar()
+    /// Reconstruct the bar for a new style or data set.
+    private func clearAndConstructBar() {
+        self.clearBar()
 
         guard let items = self.items else { return } // no items yet
         
@@ -171,8 +172,8 @@ public class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabBar content
     //
     
-    /// Remove all components and subviews from the tab bar.
-    internal func clearTabBar() {
+    /// Remove all components and subviews from the bar.
+    internal func clearBar() {
         self.containerView.removeAllSubviews()
     }
     
