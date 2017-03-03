@@ -14,6 +14,7 @@
 - [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
 - [x] Simplistic but powerful customisation.
+- [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
 
 ## Installation
