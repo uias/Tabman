@@ -11,7 +11,7 @@
 ## Features
 - [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
-- [x] Simplistic and powerful customisation.
+- [x] Simplistic but powerful customisation.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
 
 ## Installation
@@ -129,6 +129,10 @@ public struct Indicator {
 	public var weight: TabmanLineIndicator.Weight?
 	/// Whether the indicator transiton is progressive.
 	public var isProgressive: Bool?
+	/// Whether the indicator bounces at the end of page ranges.
+	public var bounces: Bool?
+	/// Whether to use rounded corners on line indicators.
+	public var useRoundedCorners: Bool?
 }
         
 /// Text configuration
@@ -158,10 +162,9 @@ public var showEdgeFade: Bool?
 /// Whether scroll is enabled on the scroll view in the bar.
 public var isScrollEnabled: Bool?
 
-
 ```
 
-##### Advanced
+### Advanced
 
 For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
 
