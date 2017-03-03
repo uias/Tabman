@@ -85,6 +85,10 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(width: 0.0, height: 44.0)
+    }
+    
     //
     // MARK: Lifecycle
     //

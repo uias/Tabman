@@ -30,7 +30,7 @@ class CustomTabmanBar: TabmanBar {
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
-        // create your tab here
+        // create your bar here
         let label = UILabel()
         label.text = "This is a custom TabmanBar"
         label.textAlignment = .center
@@ -45,12 +45,12 @@ class CustomTabmanBar: TabmanBar {
         super.update(forPosition: position, direction: direction,
                      minimumIndex: minimumIndex, maximumIndex: maximumIndex)
         
-        // update the tab bar for a position here
+        // update your bar for a positional update here
     }
     
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
-        // update the tab bar appearance here
+        // update the bar appearance here
     }
 }
