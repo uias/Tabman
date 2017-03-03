@@ -1,6 +1,7 @@
 <p align="center">
     <img src="Artwork/logo.png" width="890" alt="Pageboy"/>
 </p>
+
 [![Build Status](https://travis-ci.org/MerrickSapsford/Tabman.svg?branch=develop)](https://travis-ci.org/MerrickSapsford/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/MerrickSapsford/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/MerrickSapsford/Tabman)
@@ -88,12 +89,12 @@ The `TabmanBar` in Tabman can be completely customised to your liking, by simply
 #### Style
 The style of bar to display, by default this is set to `.buttonBar`.  
 
-**Available Styles:**
+#####Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-**Upcoming Styles:**
+#####Upcoming Styles:
 
 - `.segmentedBar` - UISegmentedControl style bar.
 - `.blockButtonBar` - Non-scrolling Button bar with solid indicator.
@@ -160,7 +161,9 @@ public var isScrollEnabled: Bool?
 
 ```
 
-`TabmanBar` itself is available as a sub-component of `Tabman` - more advanced documentation is available [here]().
+##### Advanced
+
+For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
 
 ## Getting In Touch
 Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
