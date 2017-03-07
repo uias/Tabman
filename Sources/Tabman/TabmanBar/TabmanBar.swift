@@ -12,21 +12,21 @@ import Pageboy
 
 public protocol TabmanBarDataSource {
     
-    /// The items to display in the tab bar.
+    /// The items to display in a bar.
     ///
-    /// - Parameter tabBar: The tab bar.
+    /// - Parameter bar: The bar.
     /// - Returns: Items to display in the tab bar.
-    func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]?
+    func items(forBar bar: TabmanBar) -> [TabmanBarItem]?
 }
 
-public protocol TabmanBarDelegate {
+internal protocol TabmanBarDelegate {
     
-    /// The tab bar did select a tab at an index.
+    /// The bar did select an item at an index.
     ///
     /// - Parameters:
-    ///   - tabBar: The tab bar.
+    ///   - bar: The bar.
     ///   - index: The selected index.
-    func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int)
+    func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int)
 }
 
 public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
@@ -72,6 +72,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal var indicatorIsProgressive: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.isProgressive ?? false
     internal var indicatorBounces: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.bounces ?? false
     
+    /// The object that acts as a delegate to the bar.
+    internal var delegate: TabmanBarDelegate?
+    
     // Public
     
     /// The object that acts as a data source to the bar.
@@ -80,9 +83,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.reloadData()
         }
     }
-    
-    /// The object that acts as a delegate to the bar.
-    public var delegate: TabmanBarDelegate?
     
     /// Appearance configuration for the bar.
     public var appearance: AppearanceConfig = .defaultAppearance {
@@ -154,7 +154,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// Reload and reconstruct the contents of the bar.
     public func reloadData() {
-        self.items = self.dataSource?.items(forTabBar: self)
+        self.items = self.dataSource?.items(forBar: self)
         self.clearAndConstructBar()
     }
     

@@ -144,11 +144,11 @@ internal extension TabmanViewController {
 // MARK: - TabmanBarDataSource, TabmanBarDelegate
 extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     
-    public func items(forTabBar tabBar: TabmanBar) -> [TabmanBarItem]? {
+    public func items(forBar bar: TabmanBar) -> [TabmanBarItem]? {
         return self.bar.items
     }
     
-    public func tabBar(_ tabBar: TabmanBar, didSelectTabAtIndex index: Int) {
+    public func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int) {
         self.scrollToPage(.atIndex(index: index), animated: true)
     }
 }

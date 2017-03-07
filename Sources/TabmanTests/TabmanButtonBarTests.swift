@@ -12,4 +12,15 @@ import Pageboy
 
 class TabmanButtonBarTests: XCTestCase {
 
+    // MARK: Properties
+    
+    var buttonBar: TabmanButtonBar!
+    
+    // MARK: Lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        
+        self.buttonBar = TabmanButtonBar()
+    }
 }
