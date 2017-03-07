@@ -29,6 +29,7 @@ internal protocol TabmanBarDelegate {
     func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int)
 }
 
+/// Lifecycle functions of TabmanBar
 public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     
     /// Construct the contents of the tab bar for the current style and given items.

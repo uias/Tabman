@@ -9,6 +9,7 @@
 import UIKit
 import PureLayout
 
+/// View that displays background styles for a TabmanBar.
 public class TabmanBarBackgroundView: UIView {
     
     //

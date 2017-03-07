@@ -10,6 +10,7 @@ import UIKit
 
 public extension TabmanBar {
     
+    /// Appearance configuration for a TabmanBar.
     public class AppearanceConfig: Any {
         
         // MARK: Structs
