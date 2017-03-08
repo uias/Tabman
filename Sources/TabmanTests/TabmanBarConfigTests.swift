@@ -31,4 +31,14 @@ class TabmanBarConfigTests: TabmanViewControllerTests {
         XCTAssert(self.tabmanViewController.tabmanBar?.frame.origin.y ?? 0.0 > self.tabmanViewController.view.frame.size.height / 2.0,
                   "TabmanBarConfig does not update bar location correctly.")
     }
+    
+    /// Test that the TabmanBarConfig updates bar appearance correctly.
+    func testBarConfigAppearanceSet() {
+        let textColor = UIColor.yellow
+        self.tabmanViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
+            appearance.text.color = textColor
+        })
+        XCTAssert(self.tabmanViewController.bar.appearance?.text.color == textColor,
+                  "TabmanBarConfig does not update bar appearance correctly.")
+    }
 }
