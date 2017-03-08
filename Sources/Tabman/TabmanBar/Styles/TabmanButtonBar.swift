@@ -99,7 +99,7 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()        
     }
     
-    public override func indicatorStyle() -> TabmanIndicator.Style {
+    public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
     }
     
@@ -155,16 +155,16 @@ public class TabmanButtonBar: TabmanBar {
             }
         }
         
-        // add indicator
-        if let indicator = self.indicator {
-            self.scrollView.contentView.addSubview(indicator)
-            indicator.autoPinEdge(toSuperviewEdge: .bottom)
-            self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
-            self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-        }
-
-        
         self.scrollView.layoutIfNeeded()
+    }
+    
+    public override func addIndicatorToBar(indicator: TabmanIndicator) {
+        super.addIndicatorToBar(indicator: indicator)
+        
+        self.scrollView.contentView.addSubview(indicator)
+        indicator.autoPinEdge(toSuperviewEdge: .bottom)
+        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
+        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
     override public func update(forPosition position: CGFloat,

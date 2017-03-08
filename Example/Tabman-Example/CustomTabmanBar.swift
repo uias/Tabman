@@ -20,9 +20,14 @@ class CustomTabmanBar: TabmanBar {
         return super.intrinsicContentSize
     }
     
-    override func indicatorStyle() -> TabmanIndicator.Style {
+    override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         // declare indicator style here
         return .none
+    }
+    
+    override func usePreferredIndicatorStyle() -> Bool {
+        // Whether to use prefferedIndicatorStyle
+        return true
     }
     
     // MARK: TabmanBar Lifecycle
