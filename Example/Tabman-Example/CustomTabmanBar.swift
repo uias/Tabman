@@ -26,7 +26,7 @@ class CustomTabmanBar: TabmanBar {
     }
     
     override func usePreferredIndicatorStyle() -> Bool {
-        // Whether to use prefferedIndicatorStyle
+        // Whether to use preferredIndicatorStyle
         return true
     }
     
