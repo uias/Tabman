@@ -115,7 +115,7 @@ public class TabmanButtonBar: TabmanBar {
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
-        scrollView.isScrollEnabled = self.isScrollEnabled
+        scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
