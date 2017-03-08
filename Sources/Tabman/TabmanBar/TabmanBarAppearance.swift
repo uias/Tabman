@@ -17,7 +17,6 @@ public extension TabmanBar {
         
         /// Indicator configuration
         public struct Indicator {
-            
             /// The preferred style to use for the indicator. 
             /// This is optionally conformed to by the bar.
             public var preferredStyle: TabmanIndicator.Style?

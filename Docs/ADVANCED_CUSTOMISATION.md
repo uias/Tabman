@@ -17,9 +17,14 @@ class MyCustomBar: TabmanBar {
 2) Implement and override the following methods:
 
 ```swift
-override func indicatorStyle() -> TabmanIndicator.Style {
-	// declare indicator style here
+override func defaultIndicatorStyle() -> TabmanIndicator.Style {
+	// declare default indicator style here
 	return .line
+}
+
+override func usePreferredIndicatorStyle() -> Bool {
+	// whether the bar should use preferredIndicatorStyle
+	return true
 }
 
 override func constructTabBar(items: [TabmanBarItem]) {
