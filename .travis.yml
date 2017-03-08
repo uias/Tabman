@@ -1,0 +1,22 @@
+language: objective-c
+osx_image: xcode8.2
+branches:
+  only:
+  - master
+  - develop
+
+script:
+- cd Tabman
+- git submodule update --init
+- xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
+  Simulator,name=iPhone 7,OS=10.1' build test
+- pod lib lint --quick
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  slack:
+    on_success: change
+    on_failure: always
+    secure: QmQzW3v8D5DQTsYztvBwpZVDxU/B8aWhdwiwj6kjwQ7/BYtKdgndXtgYpIDHNTytrFB7LKnH5xxq2sDdbn9qr85ICi4cdatzPwb3uty8LnbV92KSxnjM1D7Ze1zDp86U773yfJZWlsb/Bz9/AXKxBCOlr9QiU/cbqrLZjufIRI9vHsrC+eLQlQrKNKNRfFZAUdFuCsbFqk05Cg6MVAtNXa+SSWbyCJBmxu4IGkfEpo2IbIeD17gYxmnu9yRH1s/8/U86uSyZw4bmaDIfE1vM911lyZtIqE7BFXUUc+dQ2DgjlOC0FdE8Oa2Nni0B8P6cHkQijJo8XVixDTvpK03I9wPuiwpIQ5waOpx1e2UIkymKovyf4N2i2SM/g+KU4xmNrREYPZpS8NwMh7tYO6Y3/eBc3Oa0MkJiPdZmk7oUQqEKRo5krstFgS05gqhb1ycOdpGEou05n/8xXxS7ccsTexu6H8sjGV49NPvG4s2mX7Ps2UjZkL68SAY6GUOLAPrt8YE9vWC4Jhyn11xL+JhdACa+K/Pcd9IazfeT3zjt8F7juF2KFJwLuMBOnK3MbhinJA+n3VFfV4VKPA1IVTpjPGzsje9a50SloUOismsk9Ls0dViPsQmeFixjFw4ZfMUZXqruLXH7RdNfLrslE2H/1eLEsKMvnA1YlzQXL7PM5ao=
