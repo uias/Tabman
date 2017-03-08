@@ -4,7 +4,7 @@
     <img src="Artwork/logo.png" width="890" alt="Pageboy"/>
 </p>
 
-[![Build Status](https://travis-ci.org/msaps/Tabman.svg?branch=develop)](https://travis-ci.org/msaps/Tabman)
+[![Build Status](https://travis-ci.org/msaps/Tabman.svg?branch=master)](https://travis-ci.org/msaps/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/msaps/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/msaps/Tabman)
 
@@ -126,7 +126,7 @@ The following properties are available:
 ```swift
 /// Indicator configuration
 public struct Indicator {
-	/// The preferred style to use for the indicator. 
+	/// The preferred style to use for the indicator.
 	/// This is optionally conformed to by the bar.
 	public var preferredStyle: TabmanIndicator.Style?
 	/// The color of the bar indicator.
