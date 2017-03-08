@@ -6,7 +6,6 @@ branches:
   - develop
 
 script:
-- cd Tabman
 - git submodule update --init
 - xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
   Simulator,name=iPhone 7,OS=10.1' build test
