@@ -30,6 +30,10 @@ public class TabmanOnlyBar: TabmanBar {
         return .line
     }
     
+    public override func usePreferredIndicatorStyle() -> Bool {
+        return false
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //

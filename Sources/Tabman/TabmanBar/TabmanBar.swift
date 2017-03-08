@@ -99,7 +99,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
-    public var indicator: TabmanIndicator?
+    public private(set) var indicator: TabmanIndicator?
+    
+    public var preferredIndicatorStyle: TabmanIndicator.Style? {
+        didSet {
+            guard self.usePreferredIndicatorStyle() else { return }
+            
+            
+        }
+    }
     
     //
     // MARK: Init
@@ -137,16 +145,26 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.fadeGradientLayer?.frame = self.bounds
     }
     
-    open func indicatorStyle() -> TabmanIndicator.Style {
-        print("indicatorStyle() returning default. This should be overridden in subclass")
-        return .none
-    }
-    
     open override func addSubview(_ view: UIView) {
         if view !== self.backgroundView && view !== self.contentView {
             print("Please add subviews to the contentView rather than directly onto the TabmanBar")
         }
         super.addSubview(view)
+    }
+    
+    /// The default indicator style for the bar.
+    ///
+    /// - Returns: The default indicator style.
+    open func indicatorStyle() -> TabmanIndicator.Style {
+        print("indicatorStyle() returning default. This should be overridden in subclass")
+        return .none
+    }
+    
+    /// Whether the bar should use preferredIndicatorStyle if available
+    ///
+    /// - Returns: Whether to use preferredIndicatorStyle
+    open func usePreferredIndicatorStyle() -> Bool {
+        return true
     }
     
     //
