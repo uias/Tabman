@@ -100,7 +100,7 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     public override func indicatorStyle() -> TabmanIndicator.Style {
-        return .line
+        return .dot
     }
     
     //
