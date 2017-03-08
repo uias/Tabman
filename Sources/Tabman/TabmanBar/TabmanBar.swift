@@ -208,7 +208,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open func update(forAppearance appearance: AppearanceConfig) {
         
-        if let backgroundStyle = appearance.backgroundStyle {
+        if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
         
@@ -220,7 +220,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.indicatorBounces = indicatorBounces
         }
         
-        self.updateEdgeFade(visible: appearance.showEdgeFade ?? false)
+        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
     }
 }
 

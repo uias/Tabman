@@ -38,21 +38,21 @@ extension SettingsViewController {
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",
                                                  description: "Whether user scroll is enabled on the bar.",
-                                                value: self.tabViewController?.bar.appearance?.isScrollEnabled,
+                                                value: self.tabViewController?.bar.appearance?.interaction.isScrollEnabled,
                                                 update:
             { (value) in
                 let appearance = self.tabViewController?.bar.appearance
-                appearance?.isScrollEnabled = value as? Bool
+                appearance?.interaction.isScrollEnabled = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Edge Fade",
                                                  description: "Whether to fade bar items at the edges of the bar.",
-                                                 value: self.tabViewController?.bar.appearance?.showEdgeFade,
+                                                 value: self.tabViewController?.bar.appearance?.style.showEdgeFade,
                                             update:
             { (value) in
                 let appearance = self.tabViewController?.bar.appearance
-                appearance?.showEdgeFade = value as? Bool
+                appearance?.style.showEdgeFade = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,

@@ -226,7 +226,7 @@ public class TabmanButtonBar: TabmanBar {
             self.indicator?.tintColor = indicatorColor
         }
         
-        if let isScrollEnabled = appearance.isScrollEnabled {
+        if let isScrollEnabled = appearance.interaction.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
             UIView.animate(withDuration: 0.3, animations: { // reset scroll position
                 self.scrollIndicatorPositionToVisible()

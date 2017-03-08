@@ -47,25 +47,32 @@ public extension TabmanBar {
             public var edgeInset: CGFloat?
         }
         
+        /// Bar style configuration.
+        public struct Style {
+            /// The background style for the bar.
+            public var background: TabmanBarBackgroundView.BackgroundStyle?
+            /// Whether to show a fade on the items at the bounds edge of the bar.
+            public var showEdgeFade: Bool?
+        }
+        
+        /// Bar interaction configuration
+        public struct Interaction {
+            /// Whether scroll is enabled on the scroll view in the bar.
+            public var isScrollEnabled: Bool?
+        }
+        
         // MARK: Properties
         
         /// The indicator configuration.
         public lazy var indicator = Indicator()
-        
         /// Text display configuration.
         public lazy var text = Text()
-
         /// Layout configuration.
         public lazy var layout = Layout()
-        
-        /// The background style for the bar.
-        public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
-        
-        /// Whether to show a fade on the items at the bounds edge of the bar.
-        public var showEdgeFade: Bool?
-        
-        /// Whether scroll is enabled on the scroll view in the bar.
-        public var isScrollEnabled: Bool?
+        /// Bar style configuration.
+        public lazy var style = Style()
+        /// Bar interaction configuration
+        public lazy var interaction = Interaction()
         
         // MARK: Init
 

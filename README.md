@@ -31,7 +31,7 @@ And run `pod install`.
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode. 
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode.
 
 ## Usage
 ### Getting Started
@@ -40,10 +40,10 @@ A nice pretty example project is available to take a look at some of the feature
 
 ```swift
 class YourTabViewController: TabmanViewController, PageboyViewControllerDataSource {
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		self.dataSource = self
 	}
 }
@@ -55,11 +55,11 @@ class YourTabViewController: TabmanViewController, PageboyViewControllerDataSour
 func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
     // return array of view controllers
     let viewControllers = [viewController1, viewController2]
-    
+
     // configure the bar
-    self.bar.items = [TabmanBarItem(title: "Page 1"), 
+    self.bar.items = [TabmanBarItem(title: "Page 1"),
 					  TabmanBarItem(title: "Page 2")]
-    
+
     return viewControllers
 }
 
@@ -118,7 +118,7 @@ tabViewController.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
 	// customise appearance here
 	appearance.text.color = UIColor.red
 	appearance.indicator.isProgressive = true
-}) 
+})
 ```
 
 The following properties are available:
@@ -137,7 +137,7 @@ public struct Indicator {
 	/// Whether to use rounded corners on line indicators.
 	public var useRoundedCorners: Bool?
 }
-        
+
 /// Text configuration
 public struct Text {
 	/// The font to use for text labels in the bar.
@@ -147,7 +147,7 @@ public struct Text {
 	/// The text color to use for tabs in the bar.
 	public var color: UIColor?
 }
-        
+
 /// Layout configuration
 public struct Layout {
 	/// The spacing between items in the bar.
@@ -156,15 +156,19 @@ public struct Layout {
 	public var edgeInset: CGFloat?
 }
 
-/// The background style for the bar.
-public var backgroundStyle: TabmanBarBackgroundView.BackgroundStyle?
-        
-/// Whether to show a fade on the items at the bounds edge of the bar.
-public var showEdgeFade: Bool?
-        
-/// Whether scroll is enabled on the scroll view in the bar.
-public var isScrollEnabled: Bool?
+/// Bar style configuration.
+public struct Style {
+  /// The background style for the bar.
+  public var background: TabmanBarBackgroundView.BackgroundStyle?
+  /// Whether to show a fade on the items at the bounds edge of the bar.
+  public var showEdgeFade: Bool?
+}
 
+/// Bar interaction configuration
+public struct Interaction {
+    // Whether scroll is enabled on the scroll view in the bar.
+    public var isScrollEnabled: Bool?
+}
 ```
 
 ### Advanced
