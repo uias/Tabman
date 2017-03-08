@@ -28,6 +28,10 @@
 		D62AC1A91E5C54570020B8AE /* TabmanViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */; };
 		D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */; };
 		D62AC1B31E5C84CB0020B8AE /* TabmanBarCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1B11E5C84CB0020B8AE /* TabmanBarCalculations.swift */; };
+		D68FBA761E700E2400B96EC0 /* TabmanIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */; };
+		D68FBA781E700F1300B96EC0 /* TabmanTestIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA771E700F1300B96EC0 /* TabmanTestIndicator.swift */; };
+		D68FBA7A1E70159400B96EC0 /* TabmanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA791E70159400B96EC0 /* TabmanViewControllerTests.swift */; };
+		D68FBA7C1E7015ED00B96EC0 /* TabmanTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA7B1E7015ED00B96EC0 /* TabmanTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewUtils.swift; sourceTree = "<group>"; };
 		D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanScrollView.swift; sourceTree = "<group>"; };
 		D62AC1B11E5C84CB0020B8AE /* TabmanBarCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarCalculations.swift; sourceTree = "<group>"; };
+		D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanIndicatorTests.swift; sourceTree = "<group>"; };
+		D68FBA771E700F1300B96EC0 /* TabmanTestIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestIndicator.swift; sourceTree = "<group>"; };
+		D68FBA791E70159400B96EC0 /* TabmanViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewControllerTests.swift; sourceTree = "<group>"; };
+		D68FBA7B1E7015ED00B96EC0 /* TabmanTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */,
+				D68FBA771E700F1300B96EC0 /* TabmanTestIndicator.swift */,
+				D68FBA7B1E7015ED00B96EC0 /* TabmanTestViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -157,7 +167,9 @@
 		D62AC0BF1E5733810020B8AE /* TabmanTests */ = {
 			isa = PBXGroup;
 			children = (
+				D68FBA791E70159400B96EC0 /* TabmanViewControllerTests.swift */,
 				D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */,
+				D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */,
 				D61E50B21E6438A000AC8C75 /* Components */,
 				D62AC0C21E5733810020B8AE /* Info.plist */,
 			);
@@ -347,8 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68FBA781E700F1300B96EC0 /* TabmanTestIndicator.swift in Sources */,
+				D68FBA7A1E70159400B96EC0 /* TabmanViewControllerTests.swift in Sources */,
 				D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */,
+				D68FBA761E700E2400B96EC0 /* TabmanIndicatorTests.swift in Sources */,
 				D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */,
+				D68FBA7C1E7015ED00B96EC0 /* TabmanTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
