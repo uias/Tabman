@@ -34,6 +34,7 @@
 		D68FBA7C1E7015ED00B96EC0 /* TabmanTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA7B1E7015ED00B96EC0 /* TabmanTestViewController.swift */; };
 		D68FBA7E1E701B3F00B96EC0 /* TabmanDotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA7D1E701B3F00B96EC0 /* TabmanDotIndicator.swift */; };
 		D68FBA811E701D1A00B96EC0 /* TabmanCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA801E701D1A00B96EC0 /* TabmanCircularView.swift */; };
+		D6E5C1AF1E705CF1003FF39D /* TabmanBarConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		D68FBA7B1E7015ED00B96EC0 /* TabmanTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestViewController.swift; sourceTree = "<group>"; };
 		D68FBA7D1E701B3F00B96EC0 /* TabmanDotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanDotIndicator.swift; sourceTree = "<group>"; };
 		D68FBA801E701D1A00B96EC0 /* TabmanCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanCircularView.swift; sourceTree = "<group>"; };
+		D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfigTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D68FBA791E70159400B96EC0 /* TabmanViewControllerTests.swift */,
+				D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */,
 				D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */,
 				D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */,
 				D61E50B21E6438A000AC8C75 /* Components */,
@@ -378,6 +381,7 @@
 				D68FBA781E700F1300B96EC0 /* TabmanTestIndicator.swift in Sources */,
 				D68FBA7A1E70159400B96EC0 /* TabmanViewControllerTests.swift in Sources */,
 				D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */,
+				D6E5C1AF1E705CF1003FF39D /* TabmanBarConfigTests.swift in Sources */,
 				D68FBA761E700E2400B96EC0 /* TabmanIndicatorTests.swift in Sources */,
 				D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */,
 				D68FBA7C1E7015ED00B96EC0 /* TabmanTestViewController.swift in Sources */,

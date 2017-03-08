@@ -16,7 +16,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     //
     
     /// The Tabman bar.
-    fileprivate(set) var tabmanBar: TabmanBar?
+    internal fileprivate(set) var tabmanBar: TabmanBar?
     
     /// Configuration for the bar.
     /// Able to set items, appearance, location and style through this object.
@@ -135,6 +135,7 @@ internal extension TabmanViewController {
         default:()
         }
         self.bar.requiredContentInset = requiredInsets
+        self.view.layoutIfNeeded()
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)

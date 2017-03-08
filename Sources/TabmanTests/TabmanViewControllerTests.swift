@@ -25,13 +25,4 @@ class TabmanViewControllerTests: XCTestCase {
         self.tabmanViewController.loadViewIfNeeded()
     }
     
-    //
-    // MARK: Lifecycle Tests
-    //
-    
-    /// Test that the TabmanBarConfig can have items set.
-    func testBarConfigItemsSet() {
-        XCTAssert(self.tabmanViewController.bar.items?.count == self.tabmanViewController.numberOfPages,
-                  "TabmanBarConfig does not get items set correctly.")
-    }
 }
