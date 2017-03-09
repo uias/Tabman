@@ -26,7 +26,8 @@ extension SettingsViewController {
         
         let appearanceSection = SettingsSection(title: "Appearance")
         appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.buttonBar.description,
-                                                                         TabmanBarConfig.Style.bar.description],
+                                                                         TabmanBarConfig.Style.bar.description,
+                                                                         TabmanBarConfig.Style.blockTabBar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
@@ -90,7 +91,9 @@ fileprivate extension TabmanBarConfig.Style {
         switch description {
             
         case "Button Bar":
-            return .buttonBar
+            return .buttonBar    
+        case "Block Tab Bar":
+            return .blockTabBar
             
         default:
             return .bar
@@ -103,6 +106,8 @@ fileprivate extension TabmanBarConfig.Style {
             return "Button Bar"
         case .bar:
             return "Bar"
+        case .blockTabBar:
+            return "Block Tab Bar"
             
         default:
             return "Custom"
