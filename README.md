@@ -8,6 +8,10 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/msaps/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/msaps/Tabman)
 
+<p align="center">
+    <img src="Artwork/tabman_header.png" width="220" alt="Tabman"/>
+</p>
+
 **Tabman** is a powerful paging view controller with indicator bar component, for iOS.
 
 ## Features
@@ -16,10 +20,6 @@
 - [x] Simplistic but powerful customisation.
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
-
-<p align="center">
-<img src="Artwork/tabman.gif" width="200" alt="Tabman" style="border-radius:6px" />
-</p>
 
 ## Installation
 ### CocoaPods
