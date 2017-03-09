@@ -10,4 +10,8 @@ import UIKit
 
 class TabmanBlockTabBar: TabmanBar {
     
+    override var itemCountLimit: Int? {
+        return 5
+    }
+    
 }

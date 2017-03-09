@@ -67,6 +67,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // Private
     
     internal var items: [TabmanBarItem]?
+    
     internal private(set) var currentPosition: CGFloat = 0.0
     internal var fadeGradientLayer: CAGradientLayer?
     
@@ -115,6 +116,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
             self.addIndicatorToBar(indicator: indicator!)
             self.updateForCurrentPosition()
+        }
+    }
+    
+    /// The limit that the bar has for the number of items it can display.
+    public var itemCountLimit: Int? {
+        get {
+            return nil
         }
     }
     
