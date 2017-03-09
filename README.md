@@ -17,10 +17,6 @@
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
 
-<p align="center">
-    <img src="Artwork/tabman_header.png" width="220" alt="Tabman"/>
-</p>
-
 ## Installation
 ### CocoaPods
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
