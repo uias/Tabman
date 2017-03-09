@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabmanBlockIndicator: TabmanIndicator {
+internal class TabmanBlockIndicator: TabmanIndicator {
     
     override var intrinsicContentSize: CGSize {
         self.superview?.layoutIfNeeded()

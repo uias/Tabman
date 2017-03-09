@@ -332,8 +332,6 @@ internal extension TabmanIndicator.Style {
             return TabmanLineIndicator.self
         case .dot:
             return TabmanDotIndicator.self
-        case .block:
-            return TabmanBlockIndicator.self
         case .custom(let type):
             return type
         case .none:
