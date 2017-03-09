@@ -1,4 +1,4 @@
-**Note: This is a work in progress and is not yet available on CocoaPods.**
+**Note: This is currently a work in progress. Beta releases are available.**
 
 <p align="center">
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
