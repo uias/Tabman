@@ -27,12 +27,23 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     /// - none: No indicator.
     /// - line: Horizontal line pinned to bottom of bar.
     /// - dot: Circular centered dot pinned to the bottom of the bar.
+    /// - block: Block color background indicator, pinned to the top and bottom of the bar.
     /// - custom: A custom defined indicator.
     public enum Style {
         case none
         case line
         case dot
+        case block
         case custom(type: TabmanIndicator.Type)
+    }
+    
+    /// The layer (Z) position of the indicator in relation to the bar contents.
+    ///
+    /// - background: Behind bar contents.
+    /// - foreground: In front of bar contents.
+    internal enum LayerPosition {
+        case background
+        case foreground
     }
     
     //
@@ -57,7 +68,26 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     // MARK: Lifecycle
     //
     
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        let layerPosition = self.preferredLayerPosition()
+        switch layerPosition {
+        case .background:
+            self.superview?.sendSubview(toBack: self)
+        default:
+            self.superview?.bringSubview(toFront: self)
+        }
+    }
+    
     open func constructIndicator() {
         // Implement in subclass
+    }
+    
+    /// The preferred layer position for the indicator.
+    ///
+    /// - Returns: Preferred layer position.
+    internal func preferredLayerPosition() -> LayerPosition {
+        return .foreground
     }
 }

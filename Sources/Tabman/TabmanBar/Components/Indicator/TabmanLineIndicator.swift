@@ -71,7 +71,6 @@ public class TabmanLineIndicator: TabmanIndicator {
         super.constructIndicator()
         
         self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
-        self.backgroundColor = self.tintColor
     }
     
     override public func layoutSubviews() {
