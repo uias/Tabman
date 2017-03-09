@@ -124,7 +124,7 @@ public class TabmanButtonBar: TabmanBar {
         // add buttons to view
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
-            if let displayTitle = item.displayTitle {
+            if let displayTitle = item.title {
                 
                 // configure button
                 let button = UIButton(forAutoLayout: ())
