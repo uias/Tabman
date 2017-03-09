@@ -54,6 +54,7 @@ public class TabmanBarConfig: Any {
     public enum Style {
         case bar
         case buttonBar
+        case blockTabBar
         case custom(type: TabmanBar.Type)
     }
     
@@ -139,6 +140,9 @@ internal extension TabmanBarConfig.Style {
             
         case .bar:
             return TabmanOnlyBar.self
+            
+        case .blockTabBar:
+            return TabmanBlockTabBar.self
             
         case .custom(let type):
             return type
