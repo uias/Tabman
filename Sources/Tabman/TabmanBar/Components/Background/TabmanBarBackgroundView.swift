@@ -9,6 +9,7 @@
 import UIKit
 import PureLayout
 
+/// View that displays background styles for a TabmanBar.
 public class TabmanBarBackgroundView: UIView {
     
     //
@@ -25,7 +26,7 @@ public class TabmanBarBackgroundView: UIView {
     // MARK: Properties
     //
     
-    var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.backgroundStyle ?? .none {
+    var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.style.background ?? .none {
         didSet {
             self.updateBackground(forStyle: backgroundStyle)
         }

@@ -26,8 +26,12 @@ public class TabmanOnlyBar: TabmanBar {
     // MARK: Lifecycle
     //
     
-    public override func indicatorStyle() -> TabmanIndicator.Style {
+    public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
+    }
+    
+    public override func usePreferredIndicatorStyle() -> Bool {
+        return false
     }
     
     //

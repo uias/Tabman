@@ -99,7 +99,7 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()        
     }
     
-    public override func indicatorStyle() -> TabmanIndicator.Style {
+    public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
     }
     
@@ -115,7 +115,7 @@ public class TabmanButtonBar: TabmanBar {
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
-        scrollView.isScrollEnabled = self.isScrollEnabled
+        scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
@@ -155,16 +155,16 @@ public class TabmanButtonBar: TabmanBar {
             }
         }
         
-        // add indicator
-        if let indicator = self.indicator {
-            self.scrollView.contentView.addSubview(indicator)
-            indicator.autoPinEdge(toSuperviewEdge: .bottom)
-            self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
-            self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-        }
-
-        
         self.scrollView.layoutIfNeeded()
+    }
+    
+    public override func addIndicatorToBar(indicator: TabmanIndicator) {
+        super.addIndicatorToBar(indicator: indicator)
+        
+        self.scrollView.contentView.addSubview(indicator)
+        indicator.autoPinEdge(toSuperviewEdge: .bottom)
+        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
+        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
     override public func update(forPosition position: CGFloat,
@@ -226,7 +226,7 @@ public class TabmanButtonBar: TabmanBar {
             self.indicator?.tintColor = indicatorColor
         }
         
-        if let isScrollEnabled = appearance.isScrollEnabled {
+        if let isScrollEnabled = appearance.interaction.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
             UIView.animate(withDuration: 0.3, animations: { // reset scroll position
                 self.scrollIndicatorPositionToVisible()
@@ -357,7 +357,7 @@ public class TabmanButtonBar: TabmanBar {
     
     func tabButtonPressed(_ sender: UIButton) {
         if let index = self.buttons.index(of: sender) {
-            self.delegate?.tabBar(self, didSelectTabAtIndex: index)
+            self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
     }
     
