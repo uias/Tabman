@@ -29,12 +29,9 @@ class TabmanBlockTabBar: TabmanBar {
     // MARK: Properties
     //
     
-    private var maskContentView: UIView = {
-        let view = UIView(forAutoLayout: ())
-        view.isUserInteractionEnabled = false
-        return view
-    }()
-    private var buttonContentView = UIView()
+    private var buttonContentView: UIView?
+    private var maskContentView: UIView?
+    
     private var indicatorMaskView: UIView = {
         let maskView = UIView()
         maskView.backgroundColor = .black
@@ -73,13 +70,17 @@ class TabmanBlockTabBar: TabmanBar {
         
         self.buttons.removeAll()
         
-        self.contentView.addSubview(self.buttonContentView)
-        self.buttonContentView.autoPinEdgesToSuperviewEdges()
-        self.contentView.addSubview(self.maskContentView)
-        self.maskContentView.autoPinEdgesToSuperviewEdges()
-        self.maskContentView.mask = self.indicatorMaskView
+        let buttonContentView = UIView(forAutoLayout: ())
+        let maskContentView = UIView(forAutoLayout: ())
+        maskContentView.isUserInteractionEnabled = false
         
-        self.addBarButtons(toView: self.buttonContentView, items: items) { (button) in
+        self.contentView.addSubview(buttonContentView)
+        buttonContentView.autoPinEdgesToSuperviewEdges()
+        self.contentView.addSubview(maskContentView)
+        maskContentView.autoPinEdgesToSuperviewEdges()
+        maskContentView.mask = self.indicatorMaskView
+        
+        self.addBarButtons(toView: buttonContentView, items: items) { (button) in
             let color = self.appearance.state.color ?? Defaults.color
             button.tintColor = color
             button.setTitleColor(color, for: .normal)
@@ -88,11 +89,14 @@ class TabmanBlockTabBar: TabmanBar {
             self.buttons.append(button)
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
-        self.addBarButtons(toView: self.maskContentView, items: items) { (button) in
+        self.addBarButtons(toView: maskContentView, items: items) { (button) in
             let selectedColor = self.appearance.state.selectedColor ?? Defaults.selectedColor
             button.tintColor = selectedColor
             button.setTitleColor(selectedColor, for: .normal)
         }
+        
+        self.buttonContentView = buttonContentView
+        self.maskContentView = maskContentView
     }
     
     override func addIndicatorToBar(indicator: TabmanIndicator) {
@@ -206,7 +210,11 @@ class TabmanBlockTabBar: TabmanBar {
         }
     }
     
-    private func updateButtonsInView(view: UIView, update: (UIButton) -> Void) {
+    private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
+        guard let view = view else {
+            return
+        }
+        
         for subview in view.subviews {
             if let button = subview as? UIButton {
                 update(button)
