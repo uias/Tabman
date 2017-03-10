@@ -103,6 +103,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Indicator for the bar.
     public private(set) var indicator: TabmanIndicator? {
         didSet {
+            indicator?.delegate = self
             self.clear(indicator: oldValue)
         }
     }
@@ -299,6 +300,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+    }
+}
+
+extension TabmanBar: TabmanIndicatorDelegate {
+    
+    func indicator(requiresLayoutInvalidation indicator: TabmanIndicator) {
+        self.invalidateIntrinsicContentSize()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
 }
 

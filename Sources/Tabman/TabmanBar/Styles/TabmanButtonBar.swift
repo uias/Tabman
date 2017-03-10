@@ -20,6 +20,9 @@ public class TabmanButtonBar: TabmanBar {
     //
     
     private struct Defaults {
+        static let height: CGFloat = 42.0
+        static let indicatorHeight: CGFloat = 2.0
+        
         static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
         
@@ -86,7 +89,7 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     open override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 44.0)
+        return CGSize(width: 0.0, height: Defaults.height + (self.indicator?.intrinsicContentSize.height ?? Defaults.indicatorHeight))
     }
     
     //
@@ -249,6 +252,11 @@ public class TabmanButtonBar: TabmanBar {
                             minimumIndex: Int(floor(self.currentPosition)),
                             maximumIndex: Int(ceil(self.currentPosition)))
             })
+        }
+        
+        if let indicatorWeight = appearance.indicator.lineWeight,
+            let lineIndicator = self.indicator as? TabmanLineIndicator {
+            lineIndicator.weight = indicatorWeight
         }
     }
     

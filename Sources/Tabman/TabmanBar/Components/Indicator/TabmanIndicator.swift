@@ -15,6 +15,11 @@ public protocol TabmanIndicatorLifecycle {
     func constructIndicator()
 }
 
+internal protocol TabmanIndicatorDelegate: class {
+    
+    func indicator(requiresLayoutInvalidation indicator: TabmanIndicator)
+}
+
 /// Indicator that highlights the currently visible page.
 open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     
@@ -43,6 +48,12 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
         case background
         case foreground
     }
+    
+    //
+    // MARK: Properties
+    //
+    
+    weak var delegate: TabmanIndicatorDelegate?
     
     //
     // MARK: Init
