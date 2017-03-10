@@ -162,7 +162,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open override func addSubview(_ view: UIView) {
         if view !== self.backgroundView && view !== self.contentView {
-            print("Please add subviews to the contentView rather than directly onto the TabmanBar")
+            fatalError("Please add subviews to the contentView rather than directly onto the TabmanBar")
         }
         super.addSubview(view)
     }

@@ -13,8 +13,30 @@ import Pageboy
 class TabmanBlockTabBar: TabmanBar {
     
     //
+    // MARK: Constants
+    //
+    
+    private struct Defaults {
+        
+        static let selectedColor: UIColor = .black
+        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
+    }
+    
+    //
     // MARK: Properties
     //
+    
+    private var maskContentView: UIView = {
+        let view = UIView(forAutoLayout: ())
+        view.isUserInteractionEnabled = false
+        return view
+    }()
+    private var buttonContentView = UIView()
+    private var indicatorMaskView: UIView = {
+        let maskView = UIView()
+        maskView.backgroundColor = .black
+        return maskView
+    }()
     
     override var itemCountLimit: Int? {
         return 5
@@ -43,32 +65,21 @@ class TabmanBlockTabBar: TabmanBar {
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
-        var previousButton: UIButton?
-        for (index, item) in items.enumerated() {
-            
-            let button = UIButton(forAutoLayout: ())
-            self.contentView.addSubview(button)
-            
-            if let title = item.title {
-                button.setTitle(title, for: .normal)
-            } else if let image = item.image {
-                button.setImage(image, for: .normal)
-            }
-            
-            // layout
-            button.autoPinEdge(toSuperviewEdge: .top)
-            button.autoPinEdge(toSuperviewEdge: .bottom)
-            if previousButton == nil {
-                button.autoPinEdge(toSuperviewEdge: .left)
-            } else {
-                button.autoPinEdge(.left, to: .right, of: previousButton!)
-                button.autoMatch(.width, to: .width, of: previousButton!)
-            }
-            if index == items.count - 1 {
-                button.autoPinEdge(toSuperviewEdge: .right)
-            }
-            
-            previousButton = button
+        self.contentView.addSubview(self.buttonContentView)
+        self.buttonContentView.autoPinEdgesToSuperviewEdges()
+        self.contentView.addSubview(self.maskContentView)
+        self.maskContentView.autoPinEdgesToSuperviewEdges()
+        self.maskContentView.mask = self.indicatorMaskView
+        
+        self.addBarButtons(toView: self.buttonContentView, items: items) { (button) in
+            let color = self.appearance.text.color ?? Defaults.color
+            button.tintColor = color
+            button.setTitleColor(color, for: .normal)
+        }
+        self.addBarButtons(toView: self.maskContentView, items: items) { (button) in
+            let selectedColor = self.appearance.text.selectedColor ?? Defaults.selectedColor
+            button.tintColor = selectedColor
+            button.setTitleColor(selectedColor, for: .normal)
         }
     }
     
@@ -118,6 +129,76 @@ class TabmanBlockTabBar: TabmanBar {
             self.indicatorLeftMargin?.constant = bouncyIndicatorPosition
             self.indicatorWidth?.constant = itemWidth
         }
+        
+        self.contentView.layoutIfNeeded()
+        self.indicatorMaskView.frame = self.indicator?.frame ?? .zero
     }
 
+    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+        super.update(forAppearance: appearance)
+        
+        if let color = appearance.text.color {
+            self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
+                button.tintColor = color
+                button.setTitleColor(color, for: .normal)
+            })
+        }
+        
+        if let selectedColor = appearance.text.selectedColor {
+            self.updateButtonsInView(view: self.maskContentView, update: { (button) in
+                button.tintColor = selectedColor
+                button.setTitleColor(selectedColor, for: .normal)
+            })
+        }
+        
+        if let indicatorColor = appearance.indicator.color {
+            self.indicator?.tintColor = indicatorColor
+        }
+    }
+    
+    //
+    // MARK: Button Manipulation
+    //
+    
+    private func addBarButtons(toView view: UIView,
+                               items: [TabmanBarItem],
+                               customize: (UIButton) -> Void) {
+        
+        var previousButton: UIButton?
+        for (index, item) in items.enumerated() {
+            
+            let button = UIButton(forAutoLayout: ())
+            view.addSubview(button)
+            
+            if let title = item.title {
+                button.setTitle(title, for: .normal)
+            } else if let image = item.image {
+                button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
+            }
+            customize(button)
+            
+            // layout
+            button.autoPinEdge(toSuperviewEdge: .top)
+            button.autoPinEdge(toSuperviewEdge: .bottom)
+            if previousButton == nil {
+                button.autoPinEdge(toSuperviewEdge: .left)
+            } else {
+                button.autoPinEdge(.left, to: .right, of: previousButton!)
+                button.autoMatch(.width, to: .width, of: previousButton!)
+            }
+            if index == items.count - 1 {
+                button.autoPinEdge(toSuperviewEdge: .right)
+            }
+            
+            previousButton = button
+        }
+    }
+    
+    private func updateButtonsInView(view: UIView, update: (UIButton) -> Void) {
+        for subview in view.subviews {
+            if let button = subview as? UIButton {
+                update(button)
+            }
+        }
+    }
 }

@@ -63,7 +63,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             appearance.text.color = UIColor.white.withAlphaComponent(0.6)
             appearance.text.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
-            appearance.indicator.color = .white
+            appearance.indicator.color = UIColor.black.withAlphaComponent(0.5)
         })
     }
     
