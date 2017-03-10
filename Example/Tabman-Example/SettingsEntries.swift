@@ -35,6 +35,8 @@ extension SettingsViewController {
             { (value) in
                 let style = TabmanBarConfig.Style.fromDescription(value as! String)
                 self.tabViewController?.bar.style = style
+                self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
+                                                                                           currentAppearance: self.tabViewController?.bar.appearance)
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",

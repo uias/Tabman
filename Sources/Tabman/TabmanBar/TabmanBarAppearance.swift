@@ -90,7 +90,7 @@ public extension TabmanBar {
             configurer(self)
         }
         
-        static var defaultAppearance: AppearanceConfig {
+        static public var defaultAppearance: AppearanceConfig {
             let config = AppearanceConfig({ _ in })
             config.setDefaultValues()
             return config

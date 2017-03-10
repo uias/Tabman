@@ -54,16 +54,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         
         self.dataSource = self
         
+        self.bar.appearance = PresetAppeareanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         self.updateAppearance(pagePosition: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
-        
-        self.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
-            appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor.white
-            appearance.style.background = .blur(style: .light)
-            appearance.indicator.color = UIColor.white
-        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
