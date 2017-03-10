@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A tab bar with scrolling buttons and line indicator.
+/// A bar with scrolling buttons and line indicator.
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
 public class TabmanButtonBar: TabmanBar {

@@ -10,6 +10,9 @@ import UIKit
 import PureLayout
 import Pageboy
 
+/// A button tab bar with a block style indicator behind each item.
+///
+/// Maximum item limit: 5
 class TabmanBlockTabBar: TabmanBar {
     
     //
@@ -37,6 +40,9 @@ class TabmanBlockTabBar: TabmanBar {
         maskView.backgroundColor = .black
         return maskView
     }()
+    private var buttons = [UIButton]()
+    
+    // Public
     
     override var itemCountLimit: Int? {
         return 5
@@ -65,6 +71,8 @@ class TabmanBlockTabBar: TabmanBar {
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
         
+        self.buttons.removeAll()
+        
         self.contentView.addSubview(self.buttonContentView)
         self.buttonContentView.autoPinEdgesToSuperviewEdges()
         self.contentView.addSubview(self.maskContentView)
@@ -75,6 +83,10 @@ class TabmanBlockTabBar: TabmanBar {
             let color = self.appearance.text.color ?? Defaults.color
             button.tintColor = color
             button.setTitleColor(color, for: .normal)
+            button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
+
+            self.buttons.append(button)
+            button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
         self.addBarButtons(toView: self.maskContentView, items: items) { (button) in
             let selectedColor = self.appearance.text.selectedColor ?? Defaults.selectedColor
@@ -199,6 +211,16 @@ class TabmanBlockTabBar: TabmanBar {
             if let button = subview as? UIButton {
                 update(button)
             }
+        }
+    }
+    
+    //
+    // MARK: Actions
+    //
+    
+    func tabButtonPressed(_ sender: UIButton) {
+        if let index = self.buttons.index(of: sender) {
+            self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
     }
 }
