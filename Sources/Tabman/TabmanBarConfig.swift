@@ -139,7 +139,7 @@ internal extension TabmanBarConfig.Style {
             return TabmanButtonBar.self
             
         case .bar:
-            return TabmanOnlyBar.self
+            return TabmanPlainBar.self
             
         case .blockTabBar:
             return TabmanBlockTabBar.self
