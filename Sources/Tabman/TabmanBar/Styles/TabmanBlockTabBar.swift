@@ -80,7 +80,7 @@ class TabmanBlockTabBar: TabmanBar {
         self.maskContentView.mask = self.indicatorMaskView
         
         self.addBarButtons(toView: self.buttonContentView, items: items) { (button) in
-            let color = self.appearance.text.color ?? Defaults.color
+            let color = self.appearance.state.color ?? Defaults.color
             button.tintColor = color
             button.setTitleColor(color, for: .normal)
             button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
@@ -89,7 +89,7 @@ class TabmanBlockTabBar: TabmanBar {
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
         self.addBarButtons(toView: self.maskContentView, items: items) { (button) in
-            let selectedColor = self.appearance.text.selectedColor ?? Defaults.selectedColor
+            let selectedColor = self.appearance.state.selectedColor ?? Defaults.selectedColor
             button.tintColor = selectedColor
             button.setTitleColor(selectedColor, for: .normal)
         }
@@ -149,14 +149,14 @@ class TabmanBlockTabBar: TabmanBar {
     override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
-        if let color = appearance.text.color {
+        if let color = appearance.state.color {
             self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
                 button.tintColor = color
                 button.setTitleColor(color, for: .normal)
             })
         }
         
-        if let selectedColor = appearance.text.selectedColor {
+        if let selectedColor = appearance.state.selectedColor {
             self.updateButtonsInView(view: self.maskContentView, update: { (button) in
                 button.tintColor = selectedColor
                 button.setTitleColor(selectedColor, for: .normal)

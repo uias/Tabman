@@ -32,14 +32,18 @@ public extension TabmanBar {
             public var useRoundedCorners: Bool?
         }
         
+        /// The state configuration.
+        public struct State {
+            /// The color to use for selected items in the bar (text/images etc.).
+            public var selectedColor: UIColor?
+            /// The text color to use for unselected items in the bar (text/images etc.).
+            public var color: UIColor?
+        }
+        
         /// Text configuration
         public struct Text {
             /// The font to use for text labels in the bar.
             public var font: UIFont?
-            /// The text color to use for selected tabs in the bar.
-            public var selectedColor: UIColor?
-            /// The text color to use for tabs in the bar.
-            public var color: UIColor?
         }
         
         /// Layout configuration
@@ -68,6 +72,8 @@ public extension TabmanBar {
         
         /// The indicator configuration.
         public lazy var indicator = Indicator()
+        /// The state configuration.
+        public lazy var state = State()
         /// Text display configuration.
         public lazy var text = Text()
         /// Layout configuration.

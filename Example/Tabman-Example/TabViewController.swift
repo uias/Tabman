@@ -60,8 +60,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         
         self.bar.style = .blockTabBar
         self.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
-            appearance.text.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.text.selectedColor = UIColor.white
+            appearance.state.color = UIColor.white.withAlphaComponent(0.6)
+            appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.black.withAlphaComponent(0.5)
         })
