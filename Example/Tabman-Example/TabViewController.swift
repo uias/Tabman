@@ -58,12 +58,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
         
-        self.bar.style = .blockTabBar
         self.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
-            appearance.indicator.color = UIColor.black.withAlphaComponent(0.5)
+            appearance.indicator.color = UIColor.white
         })
     }
     
@@ -107,7 +106,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         for i in 0..<numberOfPages {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
             viewController.index = i + 1
-            tabBarItems.append(TabmanBarItem(title: String(format: "%i", viewController.index!)))
+            tabBarItems.append(TabmanBarItem(title: String(format: "Page No. %i", viewController.index!)))
             viewControllers.append(viewController)
         }
         
