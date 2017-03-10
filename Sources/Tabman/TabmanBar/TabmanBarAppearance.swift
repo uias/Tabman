@@ -32,7 +32,7 @@ public extension TabmanBar {
             public var useRoundedCorners: Bool?
         }
         
-        /// The state configuration.
+        /// State configuration.
         public struct State {
             /// The color to use for selected items in the bar (text/images etc.).
             public var selectedColor: UIColor?
