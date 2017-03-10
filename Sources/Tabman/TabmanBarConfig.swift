@@ -51,9 +51,12 @@ public class TabmanBarConfig: Any {
     ///
     /// - bar: A simple horizontal bar only.
     /// - buttonBar: A scrolling horizontal bar with text buttons for each page index.
+    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
+    /// - custom: A custom defined TabmanBar type.
     public enum Style {
         case bar
         case buttonBar
+        case blockTabBar
         case custom(type: TabmanBar.Type)
     }
     
@@ -138,7 +141,10 @@ internal extension TabmanBarConfig.Style {
             return TabmanButtonBar.self
             
         case .bar:
-            return TabmanOnlyBar.self
+            return TabmanPlainBar.self
+            
+        case .blockTabBar:
+            return TabmanBlockTabBar.self
             
         case .custom(let type):
             return type

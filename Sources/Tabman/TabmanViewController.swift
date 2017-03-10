@@ -146,6 +146,14 @@ internal extension TabmanViewController {
 extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     
     public func items(forBar bar: TabmanBar) -> [TabmanBarItem]? {
+        if let itemCountLimit = bar.itemCountLimit {
+            guard self.bar.items?.count ?? 0 <= itemCountLimit else {
+                print("TabmanBar Error:\nItems in bar.items exceed the available count for the current bar style: (\(itemCountLimit)).")
+                print("Either reduce the number of items or use a different style. Escaping now.")
+                return nil
+            }
+        }
+        
         return self.bar.items
     }
     

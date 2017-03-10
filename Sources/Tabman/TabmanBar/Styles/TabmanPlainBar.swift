@@ -1,5 +1,5 @@
 //
-//  TabmanOnlyBar.swift
+//  TabmanPlainBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 22/02/2017.
@@ -10,7 +10,8 @@ import UIKit
 import PureLayout
 import Pageboy
 
-public class TabmanOnlyBar: TabmanBar {
+/// A simple bar containing only an indicator.
+public class TabmanPlainBar: TabmanBar {
 
     //
     // MARK: Properties
@@ -38,15 +39,13 @@ public class TabmanOnlyBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    override public func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
+    override public func addIndicatorToBar(indicator: TabmanIndicator) {
+        super.addIndicatorToBar(indicator: indicator)
         
-        if let indicator = self.indicator {
-            indicator.tintColor = self.appearance.indicator.color
-            self.contentView.addSubview(indicator)
-            self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
-            self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-        }
+        indicator.tintColor = self.appearance.indicator.color
+        self.contentView.addSubview(indicator)
+        self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
+        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
     override public func update(forPosition position: CGFloat,

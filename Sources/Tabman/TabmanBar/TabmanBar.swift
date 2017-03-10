@@ -67,6 +67,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // Private
     
     internal var items: [TabmanBarItem]?
+    
     internal private(set) var currentPosition: CGFloat = 0.0
     internal var fadeGradientLayer: CAGradientLayer?
     
@@ -102,6 +103,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Indicator for the bar.
     public private(set) var indicator: TabmanIndicator? {
         didSet {
+            indicator?.delegate = self
             self.clear(indicator: oldValue)
         }
     }
@@ -115,6 +117,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
             self.addIndicatorToBar(indicator: indicator!)
             self.updateForCurrentPosition()
+        }
+    }
+    
+    /// The limit that the bar has for the number of items it can display.
+    public var itemCountLimit: Int? {
+        get {
+            return nil
         }
     }
     
@@ -154,7 +163,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open override func addSubview(_ view: UIView) {
         if view !== self.backgroundView && view !== self.contentView {
-            print("Please add subviews to the contentView rather than directly onto the TabmanBar")
+            fatalError("Please add subviews to the contentView rather than directly onto the TabmanBar")
         }
         super.addSubview(view)
     }
@@ -190,6 +199,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// Reconstruct the bar for a new style or data set.
     private func clearAndConstructBar() {
+        self.indicatorWidth?.isActive = false
+        self.indicatorLeftMargin?.isActive = false
         self.clearBar()
 
         guard let items = self.items else { return } // no items yet
@@ -291,6 +302,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+    }
+}
+
+extension TabmanBar: TabmanIndicatorDelegate {
+    
+    func indicator(requiresLayoutInvalidation indicator: TabmanIndicator) {
+        self.invalidateIntrinsicContentSize()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
 }
 

@@ -15,6 +15,11 @@ public protocol TabmanIndicatorLifecycle {
     func constructIndicator()
 }
 
+internal protocol TabmanIndicatorDelegate: class {
+    
+    func indicator(requiresLayoutInvalidation indicator: TabmanIndicator)
+}
+
 /// Indicator that highlights the currently visible page.
 open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     
@@ -34,6 +39,21 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
         case dot
         case custom(type: TabmanIndicator.Type)
     }
+    
+    /// The layer (Z) position of the indicator in relation to the bar contents.
+    ///
+    /// - background: Behind bar contents.
+    /// - foreground: In front of bar contents.
+    internal enum LayerPosition {
+        case background
+        case foreground
+    }
+    
+    //
+    // MARK: Properties
+    //
+    
+    weak var delegate: TabmanIndicatorDelegate?
     
     //
     // MARK: Init
@@ -57,7 +77,26 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     // MARK: Lifecycle
     //
     
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        let layerPosition = self.preferredLayerPosition()
+        switch layerPosition {
+        case .background:
+            self.superview?.sendSubview(toBack: self)
+        default:
+            self.superview?.bringSubview(toFront: self)
+        }
+    }
+    
     open func constructIndicator() {
         // Implement in subclass
+    }
+    
+    /// The preferred layer position for the indicator.
+    ///
+    /// - Returns: Preferred layer position.
+    internal func preferredLayerPosition() -> LayerPosition {
+        return .foreground
     }
 }

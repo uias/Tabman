@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A tab bar with scrolling buttons and line indicator.
+/// A bar with scrolling buttons and line indicator.
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
 public class TabmanButtonBar: TabmanBar {
@@ -20,6 +20,9 @@ public class TabmanButtonBar: TabmanBar {
     //
     
     private struct Defaults {
+        static let height: CGFloat = 42.0
+        static let indicatorHeight: CGFloat = 2.0
+        
         static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
         
@@ -45,8 +48,8 @@ public class TabmanButtonBar: TabmanBar {
     private var edgeMarginConstraints = [NSLayoutConstraint]()
     
     private var textFont: UIFont = Appearance.defaultAppearance.text.font ?? Defaults.textFont
-    private var textColor: UIColor = Appearance.defaultAppearance.text.color ?? Defaults.textColor
-    private var selectedTextColor: UIColor = Appearance.defaultAppearance.text.selectedColor ?? Defaults.selectedTextColor
+    private var textColor: UIColor = Appearance.defaultAppearance.state.color ?? Defaults.textColor
+    private var selectedTextColor: UIColor = Appearance.defaultAppearance.state.selectedColor ?? Defaults.selectedTextColor
     
     private var currentTargetButton: UIButton? {
         didSet {
@@ -86,7 +89,7 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     open override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 44.0)
+        return CGSize(width: 0.0, height: Defaults.height + (self.indicator?.intrinsicContentSize.height ?? Defaults.indicatorHeight))
     }
     
     //
@@ -124,7 +127,7 @@ public class TabmanButtonBar: TabmanBar {
         // add buttons to view
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
-            if let displayTitle = item.displayTitle {
+            if let displayTitle = item.title {
                 
                 // configure button
                 let button = UIButton(forAutoLayout: ())
@@ -202,7 +205,7 @@ public class TabmanButtonBar: TabmanBar {
     override public func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
         super.update(forAppearance: appearance)
         
-        if let textColor = appearance.text.color {
+        if let textColor = appearance.state.color {
             self.textColor = textColor
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(textColor, for: .normal)
@@ -210,7 +213,7 @@ public class TabmanButtonBar: TabmanBar {
             })
         }
         
-        if let selectedTextColor = appearance.text.selectedColor {
+        if let selectedTextColor = appearance.state.selectedColor {
             self.selectedTextColor = selectedTextColor
             self.currentTargetButton?.setTitleColor(selectedTextColor, for: .normal)
         }
@@ -249,6 +252,11 @@ public class TabmanButtonBar: TabmanBar {
                             minimumIndex: Int(floor(self.currentPosition)),
                             maximumIndex: Int(ceil(self.currentPosition)))
             })
+        }
+        
+        if let indicatorWeight = appearance.indicator.lineWeight,
+            let lineIndicator = self.indicator as? TabmanLineIndicator {
+            lineIndicator.weight = indicatorWeight
         }
     }
     

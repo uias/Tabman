@@ -32,7 +32,7 @@ public class TabmanLineIndicator: TabmanIndicator {
     /// The thickness of the indicator line.
     ///
     /// Default is .normal
-    public var weight: Weight = TabmanBar.Appearance.defaultAppearance.indicator.weight ?? .normal {
+    public var weight: Weight = TabmanBar.Appearance.defaultAppearance.indicator.lineWeight ?? .normal {
         didSet {
             guard weight != oldValue else {
                 return
@@ -40,6 +40,8 @@ public class TabmanLineIndicator: TabmanIndicator {
             self.invalidateIntrinsicContentSize()
             self.superview?.setNeedsLayout()
             self.superview?.layoutIfNeeded()
+            
+            self.delegate?.indicator(requiresLayoutInvalidation: self)
         }
     }
     
@@ -71,7 +73,6 @@ public class TabmanLineIndicator: TabmanIndicator {
         super.constructIndicator()
         
         self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
-        self.backgroundColor = self.tintColor
     }
     
     override public func layoutSubviews() {

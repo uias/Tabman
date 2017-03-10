@@ -100,7 +100,6 @@ The style of bar to display, by default this is set to `.buttonBar`.
 #####Upcoming Styles:
 
 - `.segmentedBar` - UISegmentedControl style bar.
-- `.blockButtonBar` - Non-scrolling Button bar with solid indicator.
 - `.tabBar` - UITabBar style bar.
 
 #### Location
@@ -131,8 +130,8 @@ public struct Indicator {
 	public var preferredStyle: TabmanIndicator.Style?
 	/// The color of the bar indicator.
 	public var color: UIColor?
-	/// The weight (thickness) of the bar indicator.
-	public var weight: TabmanLineIndicator.Weight?
+	/// The weight (thickness) of the bar indicator if using a line indicator.
+	public var lineWeight: TabmanLineIndicator.Weight?
 	/// Whether the indicator transiton is progressive.
 	public var isProgressive: Bool?
 	/// Whether the indicator bounces at the end of page ranges.
@@ -141,14 +140,18 @@ public struct Indicator {
 	public var useRoundedCorners: Bool?
 }
 
+/// State configuration.
+public struct State {
+	/// The color to use for selected items in the bar (text/images etc.).
+	public var selectedColor: UIColor?
+	/// The text color to use for unselected items in the bar (text/images etc.).
+	public var color: UIColor?
+}
+
 /// Text configuration
 public struct Text {
 	/// The font to use for text labels in the bar.
 	public var font: UIFont?
-	/// The text color to use for selected tabs in the bar.
-	public var selectedColor: UIColor?
-	/// The text color to use for tabs in the bar.
-	public var color: UIColor?
 }
 
 /// Layout configuration
