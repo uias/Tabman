@@ -21,7 +21,7 @@ class TabmanBarConfigTests: TabmanViewControllerTests {
     /// Test that the TabmanBarConfig updates style correctly.
     func testBarConfigStyleSet() {
         self.tabmanViewController.bar.style = .bar
-        XCTAssert(self.tabmanViewController.tabmanBar is TabmanOnlyBar,
+        XCTAssert(self.tabmanViewController.tabmanBar is TabmanPlainBar,
                   "TabmanBarConfig does not update style correctly.")
     }
     
@@ -36,9 +36,9 @@ class TabmanBarConfigTests: TabmanViewControllerTests {
     func testBarConfigAppearanceSet() {
         let textColor = UIColor.yellow
         self.tabmanViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
-            appearance.text.color = textColor
+            appearance.state.color = textColor
         })
-        XCTAssert(self.tabmanViewController.bar.appearance?.text.color == textColor,
+        XCTAssert(self.tabmanViewController.bar.appearance?.state.color == textColor,
                   "TabmanBarConfig does not update bar appearance correctly.")
     }
 }
