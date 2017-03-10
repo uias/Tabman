@@ -199,6 +199,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// Reconstruct the bar for a new style or data set.
     private func clearAndConstructBar() {
+        self.indicatorWidth?.isActive = false
+        self.indicatorLeftMargin?.isActive = false
         self.clearBar()
 
         guard let items = self.items else { return } // no items yet
