@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A button tab bar with a block style indicator behind each item.
+/// A button tab bar with a block style indicator behind selected item.
 ///
 /// Maximum item limit: 5
 class TabmanBlockTabBar: TabmanBar {
