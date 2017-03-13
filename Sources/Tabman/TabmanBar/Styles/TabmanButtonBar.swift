@@ -202,7 +202,7 @@ public class TabmanButtonBar: TabmanBar {
         self.scrollIndicatorPositionToVisible()
     }
     
-    override public func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         if let textColor = appearance.state.color {

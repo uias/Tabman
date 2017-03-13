@@ -55,12 +55,6 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
-    // MARK: Types
-    //
-    
-    internal typealias Appearance = TabmanBar.AppearanceConfig
-    
-    //
     // MARK: Properties
     //
     
@@ -73,8 +67,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.isProgressive ?? false
-    internal var indicatorBounces: Bool = TabmanBar.AppearanceConfig.defaultAppearance.indicator.bounces ?? false
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
@@ -89,7 +83,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     /// Appearance configuration for the bar.
-    public var appearance: AppearanceConfig = .defaultAppearance {
+    public var appearance: Appearance = .defaultAppearance {
         didSet {
             self.update(forAppearance: appearance)
         }
@@ -283,7 +277,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         // Override in subclass
     }
     
-    open func update(forAppearance appearance: AppearanceConfig) {
+    open func update(forAppearance appearance: Appearance) {
         
         if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle

@@ -175,7 +175,7 @@ extension TabmanViewController: TabmanBarConfigDelegate {
         self.updateBar(withLocation: location)
     }
     
-    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.AppearanceConfig) {
+    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.Appearance) {
         self.tabmanBar?.appearance = appearance
     }
     

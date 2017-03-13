@@ -79,3 +79,24 @@ public class TabmanBarBackgroundView: UIView {
         }
     }
 }
+
+extension TabmanBarBackgroundView.BackgroundStyle: CustomStringConvertible, Equatable {
+    
+    public var description: String {
+        switch self {
+        case .blur(let style):
+            return "blur\(style.rawValue)"
+            
+        case .solid(let color):
+            return "color\(color.hashValue)"
+            
+        default:
+            return "none"
+        }
+    }
+    
+    public static func ==(lhs: TabmanBarBackgroundView.BackgroundStyle,
+                          rhs: TabmanBarBackgroundView.BackgroundStyle) -> Bool {
+        return lhs.description == rhs.description
+    }
+}
