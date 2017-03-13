@@ -37,4 +37,15 @@ class TabmanBarAppearanceTests: TabmanViewControllerTests {
         XCTAssertFalse(type(of: indicator) == type,
                        "preferredIndicatorStyle is incorrectly conformed to when using .blockTabBar style")
     }
+    
+    func testBackgroundStyleConformance() {
+        
+        self.tabmanViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
+            appearance.style.background = .blur(style: .dark)
+        })
+        
+        let backgroundStyle = self.tabmanViewController.tabmanBar!.backgroundView.backgroundStyle
+        XCTAssertTrue(backgroundStyle != .none,
+                      "background style in TabmanBarAppearance is ignored incorrectly")
+    }
 }
