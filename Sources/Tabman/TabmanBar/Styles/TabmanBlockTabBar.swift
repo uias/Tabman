@@ -186,6 +186,8 @@ class TabmanBlockTabBar: TabmanBar {
             let button = UIButton(forAutoLayout: ())
             view.addSubview(button)
             
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 4.0)
             if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
