@@ -56,7 +56,7 @@ public class TabmanBarConfig: Any {
     public enum Style {
         case bar
         case buttonBar
-        case blockTabBar
+        case scrollingButtonBar
         case custom(type: TabmanBar.Type)
     }
     
@@ -137,14 +137,14 @@ internal extension TabmanBarConfig.Style {
     var rawType: TabmanBar.Type? {
         switch self {
             
-        case .buttonBar:
-            return TabmanButtonBar.self
-            
         case .bar:
             return TabmanPlainBar.self
             
-        case .blockTabBar:
+        case .buttonBar:
             return TabmanBlockTabBar.self
+            
+        case .scrollingButtonBar:
+            return TabmanButtonBar.self
             
         case .custom(let type):
             return type
