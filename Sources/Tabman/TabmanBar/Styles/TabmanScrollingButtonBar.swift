@@ -318,12 +318,17 @@ public class TabmanScrollingButtonBar: TabmanBar {
             return
         }
         
-        targetButton.setTitleColor(UIColor.interpolate(betweenColor: self.textColor,
-                                                       and: self.selectedTextColor,
-                                                       percent: progress), for: .normal)
-        oldTargetButton.setTitleColor(UIColor.interpolate(betweenColor: self.textColor,
-                                                          and: self.selectedTextColor,
-                                                          percent: 1.0 - progress), for: .normal)
+        let targetColor = UIColor.interpolate(betweenColor: self.textColor,
+                                              and: self.selectedTextColor,
+                                              percent: progress)
+        let oldTargetColor = UIColor.interpolate(betweenColor: self.textColor,
+                                                 and: self.selectedTextColor,
+                                                 percent: 1.0 - progress)
+        
+        targetButton.tintColor = targetColor
+        targetButton.setTitleColor(targetColor, for: .normal)
+        oldTargetButton.tintColor = oldTargetColor
+        oldTargetButton.setTitleColor(oldTargetColor, for: .normal)
     }
     
     private func scrollIndicatorPositionToVisible() {
