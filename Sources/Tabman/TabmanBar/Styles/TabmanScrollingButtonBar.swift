@@ -1,5 +1,5 @@
 //
-//  TabmanButtonBar.swift
+//  TabmanScrollingButtonBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/02/2017.
@@ -13,7 +13,7 @@ import Pageboy
 /// A bar with scrolling buttons and line indicator.
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
-public class TabmanButtonBar: TabmanBar {
+public class TabmanScrollingButtonBar: TabmanBar {
         
     //
     // MARK: Constants

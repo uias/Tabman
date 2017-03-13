@@ -141,10 +141,10 @@ internal extension TabmanBarConfig.Style {
             return TabmanPlainBar.self
             
         case .buttonBar:
-            return TabmanBlockTabBar.self
+            return TabmanButtonBar.self
             
         case .scrollingButtonBar:
-            return TabmanButtonBar.self
+            return TabmanScrollingButtonBar.self
             
         case .custom(let type):
             return type

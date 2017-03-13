@@ -1,5 +1,5 @@
 //
-//  TabmanBlockTabBar.swift
+//  TabmanButtonBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 09/03/2017.
@@ -13,7 +13,7 @@ import Pageboy
 /// A button tab bar with a block style indicator behind selected item.
 ///
 /// Maximum item limit: 5
-class TabmanBlockTabBar: TabmanBar {
+class TabmanButtonBar: TabmanBar {
     
     //
     // MARK: Constants
@@ -55,10 +55,6 @@ class TabmanBlockTabBar: TabmanBar {
     
     override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .custom(type: TabmanBlockIndicator.self)
-    }
-    
-    override func usePreferredIndicatorStyle() -> Bool {
-        return false
     }
     
     //
@@ -104,7 +100,6 @@ class TabmanBlockTabBar: TabmanBar {
         
         self.contentView.addSubview(indicator)
         indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        indicator.autoPinEdge(toSuperviewEdge: .top)
         self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
