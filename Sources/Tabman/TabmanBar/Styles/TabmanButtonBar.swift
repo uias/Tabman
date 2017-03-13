@@ -242,15 +242,13 @@ public class TabmanButtonBar: TabmanBar {
         
         if let edgeInset = appearance.layout.edgeInset {
             self.edgeInset = edgeInset
+            self.updateForCurrentPosition()
         }
         
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
             UIView.animate(withDuration: 0.3, animations: {
-                self.update(forPosition: self.currentPosition,
-                            direction: .neutral,
-                            minimumIndex: Int(floor(self.currentPosition)),
-                            maximumIndex: Int(ceil(self.currentPosition)))
+                self.updateForCurrentPosition()
             })
         }
         
