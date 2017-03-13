@@ -85,9 +85,9 @@ public extension TabmanBar {
         
         // MARK: Init
 
-        public init(_ configurer: (Appearance) -> ()) {
+        public init(_ appearance: (Appearance) -> ()) {
             self.setDefaultValues()
-            configurer(self)
+            appearance(self)
         }
         
         static public var defaultAppearance: Appearance {
