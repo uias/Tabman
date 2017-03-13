@@ -86,7 +86,7 @@ public class TabmanPlainBar: TabmanBar {
         }
     }
     
-    override public func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         if let indicatorColor = appearance.indicator.color {

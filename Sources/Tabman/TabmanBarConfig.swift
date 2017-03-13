@@ -37,7 +37,7 @@ internal protocol TabmanBarConfigDelegate {
     /// - Parameters:
     ///   - config: The config.
     ///   - appearance: The new appearance config.
-    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.AppearanceConfig)
+    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.Appearance)
 }
 
 /// Configuration object for adjusting appearance and contents of a TabmanBar.
@@ -105,7 +105,7 @@ public class TabmanBarConfig: Any {
     }
     
     /// The appearance configuration of the bar.
-    public var appearance: TabmanBar.AppearanceConfig? {
+    public var appearance: TabmanBar.Appearance? {
         didSet {
             self.delegate?.config(self, didUpdateAppearance: appearance ?? .defaultAppearance)
         }

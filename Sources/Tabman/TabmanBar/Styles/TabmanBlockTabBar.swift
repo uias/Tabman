@@ -150,7 +150,7 @@ class TabmanBlockTabBar: TabmanBar {
         self.indicatorMaskView.frame = self.indicator?.frame ?? .zero
     }
 
-    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         if let color = appearance.state.color {
