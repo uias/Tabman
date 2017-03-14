@@ -278,8 +278,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                          maximumIndex: Int) {
         guard self.indicator != nil else { return }
         
-        let transition = self.transitionHandler?.transition(forBar: self, indicator: self.indicator!)
-        
+        let indicatorTransition = self.transitionHandler?.indicatorTransition(forBar: self)
+        indicatorTransition?.transition(withPosition: position, direction: direction,
+                                        minimumIndex: minimumIndex, maximumIndex: maximumIndex)
         // Override in subclass
     }
     

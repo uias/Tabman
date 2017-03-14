@@ -10,7 +10,17 @@ import UIKit
 
 internal class TabmanBarTransitionHandler: Any {
     
-    func transition(forBar bar: TabmanBar, indicator: TabmanIndicator) -> TabmanBarTransition {
-        return TabmanBarTransition()
+    private lazy var scrollingIndicatorTransition = TabmanScrollingBarIndicatorTransition()
+    private lazy var staticIndicatorTransition = TabmanStaticBarIndicatorTransition()
+    
+    func indicatorTransition(forBar bar: TabmanBar) -> TabmanIndicatorTransition {
+        
+        if let scrollingBar = bar as? TabmanScrollingButtonBar {
+            self.scrollingIndicatorTransition.tabmanBar = scrollingBar
+            return self.scrollingIndicatorTransition
+        }
+        
+        self.staticIndicatorTransition.tabmanBar = bar
+        return self.staticIndicatorTransition
     }
 }

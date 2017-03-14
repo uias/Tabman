@@ -37,12 +37,12 @@ public class TabmanScrollingButtonBar: TabmanBar {
     
     // Private
     
-    private lazy var scrollView: TabmanScrollView = {
+    internal lazy var scrollView: TabmanScrollView = {
         let scrollView = TabmanScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    private var buttons = [UIButton]()
+    internal var buttons = [UIButton]()
     
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
@@ -99,7 +99,7 @@ public class TabmanScrollingButtonBar: TabmanBar {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.scrollIndicatorPositionToVisible()        
+//        self.scrollIndicatorPositionToVisible()        
     }
     
     public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
@@ -193,13 +193,9 @@ public class TabmanScrollingButtonBar: TabmanBar {
         
         let relativeProgress = direction == .forward ? transitionProgress : 1.0 - transitionProgress
         
-        self.updateIndicator(forTransitionProgress: transitionProgress,
-                             lowerButton: lowerButton,
-                             upperButton: upperButton)
         self.updateButtons(withTargetButton: targetButton,
                            oldTargetButton: oldTargetButton,
                            progress: relativeProgress)
-        self.scrollIndicatorPositionToVisible()
     }
     
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
@@ -232,7 +228,7 @@ public class TabmanScrollingButtonBar: TabmanBar {
         if let isScrollEnabled = appearance.interaction.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
             UIView.animate(withDuration: 0.3, animations: { // reset scroll position
-                self.scrollIndicatorPositionToVisible()
+//                self.scrollIndicatorPositionToVisible()
             })
         }
         
@@ -273,43 +269,6 @@ public class TabmanScrollingButtonBar: TabmanBar {
         self.layoutIfNeeded()
     }
     
-    private func updateIndicator(forTransitionProgress progress: CGFloat,
-                                 lowerButton: UIButton,
-                                 upperButton: UIButton) {
-        
-        if self.indicatorIsProgressive {
-            
-            let indicatorStartFrame = lowerButton.frame.origin.x + lowerButton.frame.size.width
-            let indicatorEndFrame = upperButton.frame.origin.x + upperButton.frame.size.width
-            let endFrameDiff = indicatorEndFrame - indicatorStartFrame
-            
-            self.indicatorWidth?.constant = indicatorStartFrame + (endFrameDiff * progress)
-            
-            guard self.indicatorBounces else { return }
-            if (lowerButton === upperButton) {
-                let indicatorWidth = self.indicatorWidth?.constant ?? 0.0
-                self.indicatorWidth?.constant = indicatorWidth + (indicatorWidth * progress)
-            }
-            
-        } else {
-            
-            let widthDiff = (upperButton.frame.size.width - lowerButton.frame.size.width) * progress
-            let interpolatedWidth = lowerButton.frame.size.width + widthDiff
-            self.indicatorWidth?.constant = interpolatedWidth
-            
-            let xDiff = (upperButton.frame.origin.x - lowerButton.frame.origin.x) * progress
-            let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
-            self.indicatorLeftMargin?.constant = interpolatedXOrigin
-            
-            // bounce indicator at boundaries if required
-            guard self.indicatorBounces else { return }
-            if (lowerButton === upperButton) {
-                let indicatorWidth = self.indicatorWidth?.constant ?? 0.0
-                self.indicatorLeftMargin?.constant = (self.indicatorLeftMargin?.constant ?? 0.0) + (indicatorWidth * progress)
-            }
-        }
-    }
-    
     private func updateButtons(withTargetButton targetButton: UIButton,
                                oldTargetButton: UIButton,
                                progress: CGFloat) {
@@ -329,37 +288,6 @@ public class TabmanScrollingButtonBar: TabmanBar {
         targetButton.setTitleColor(targetColor, for: .normal)
         oldTargetButton.tintColor = oldTargetColor
         oldTargetButton.setTitleColor(oldTargetColor, for: .normal)
-    }
-    
-    private func scrollIndicatorPositionToVisible() {
-        var offset: CGFloat = 0.0
-        let maxOffset = self.scrollView.contentSize.width - self.bounds.size.width
-
-        
-        if self.indicatorIsProgressive {
-            
-            let index = Int(ceil(self.currentPosition))
-            guard self.buttons.count > index else {
-                return
-            }
-                
-            let buttonFrame = self.buttons[index].frame
-            offset = ((indicatorWidth?.constant ?? 0.0) - (self.bounds.size.width / 2.0)) - (buttonFrame.size.width / 2.0)
-            
-        } else {
-            
-            let indicatorXOffset = self.indicatorLeftMargin?.constant ?? 0.0
-            let indicatorWidthOffset = (self.bounds.size.width - (self.indicatorWidth?.constant ?? 0)) / 2.0
-            
-            guard indicatorWidthOffset > 0.0 else {
-                return
-            }
-            
-            offset = indicatorXOffset - indicatorWidthOffset
-        }
-        
-        offset = max(0.0, min(maxOffset, offset))
-        self.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
     }
     
     //
