@@ -242,6 +242,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// Remove a scroll indicator from the bar.
     internal func clear(indicator: TabmanIndicator?) {
+        self.indicatorMaskView.frame = .zero // reset mask
         indicator?.removeFromSuperview()
         indicator?.removeConstraints(indicator?.constraints ?? [])
     }
