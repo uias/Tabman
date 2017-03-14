@@ -10,4 +10,6 @@ import Foundation
 
 protocol TabmanItemTransition: TabmanTransition {
     
+    var tabmanBar: TabmanBar? { get set }
+    
 }

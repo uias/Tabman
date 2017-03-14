@@ -100,3 +100,23 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
         return .foreground
     }
 }
+
+internal extension TabmanIndicator.Style {
+    
+    static func fromType(_ type: TabmanIndicator.Type?) -> TabmanIndicator.Style {
+        guard let type = type else {
+            return .none
+        }
+        
+        switch type {
+        case is TabmanLineIndicator.Type:
+            return .line
+            
+        case is TabmanDotIndicator.Type:
+            return .dot
+            
+        default:
+            return .custom(type: type)
+        }
+    }
+}

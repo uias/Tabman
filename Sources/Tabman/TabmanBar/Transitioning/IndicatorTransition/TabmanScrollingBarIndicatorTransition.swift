@@ -18,9 +18,9 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                     minimumIndex: Int, maximumIndex: Int) {
         guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
         
-        let (lowerIndex, upperIndex) = self.lowerAndUpperIndex(forPosition: position,
-                                                               minimum: minimumIndex,
-                                                               maximum: maximumIndex)
+        let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
+                                                                               minimum: minimumIndex,
+                                                                               maximum: maximumIndex)
         let lowerButton = scrollingButtonBar.buttons[lowerIndex]
         let upperButton = scrollingButtonBar.buttons[upperIndex]
 
@@ -109,22 +109,5 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
         
         offset = max(0.0, min(maxOffset, offset))
         bar.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
-    }
-    
-    // MARK: Utils
-    
-    /// Get the lower & upper tab indexes for a current relative position.
-    ///
-    /// - Parameters:
-    ///   - position: The current position.
-    ///   - minimum: The minimum possible index.
-    ///   - maximum: The maximum possible index.
-    /// - Returns: The lower and upper indexes for the position.
-    func lowerAndUpperIndex(forPosition position: CGFloat, minimum: Int, maximum: Int) -> (Int, Int) {
-        let lowerIndex = floor(position)
-        let upperIndex = ceil(position)
-        
-        return (Int(max(CGFloat(minimum), lowerIndex)),
-                Int(min(CGFloat(maximum), upperIndex)))
     }
 }

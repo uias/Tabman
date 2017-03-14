@@ -32,11 +32,6 @@ class TabmanButtonBar: TabmanBar {
     private var buttonContentView: UIView?
     private var maskContentView: UIView?
     
-    private var indicatorMaskView: UIView = {
-        let maskView = UIView()
-        maskView.backgroundColor = .black
-        return maskView
-    }()
     private var buttons = [UIButton]()
     
     // Public

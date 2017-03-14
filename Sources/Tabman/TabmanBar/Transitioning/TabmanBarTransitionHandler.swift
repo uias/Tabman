@@ -13,6 +13,9 @@ internal class TabmanBarTransitionHandler: Any {
     private lazy var scrollingIndicatorTransition = TabmanScrollingBarIndicatorTransition()
     private lazy var staticIndicatorTransition = TabmanStaticBarIndicatorTransition()
     
+    private lazy var itemColorTransition = TabmanItemColorTransition()
+    private lazy var itemMaskTransition = TabmanItemMaskTransition()
+    
     func indicatorTransition(forBar bar: TabmanBar) -> TabmanIndicatorTransition? {
         
         if bar is TabmanScrollingButtonBar {
@@ -29,7 +32,15 @@ internal class TabmanBarTransitionHandler: Any {
         return nil
     }
     
-    func itemTransition(forBar bar: TabmanBar, indicator: TabmanIndicator) -> TabmanItemTransition? {
+    func itemTransition(forBar bar: TabmanBar, indicatorStyle: TabmanIndicator.Style) -> TabmanItemTransition? {
+        switch indicatorStyle {
+        case .none:()
+            
+        default:
+            self.itemColorTransition.tabmanBar = bar
+            return self.itemColorTransition
+        }
+        
         return nil
     }
 }

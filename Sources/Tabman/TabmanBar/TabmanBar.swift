@@ -70,6 +70,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     
+    internal var indicatorMaskView: UIView = {
+        let maskView = UIView()
+        maskView.backgroundColor = .black
+        return maskView
+    }()
+    
     internal weak var transitionHandler: TabmanBarTransitionHandler?
     
     /// The object that acts as a delegate to the bar.
@@ -282,7 +288,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         indicatorTransition?.transition(withPosition: position, direction: direction,
                                         minimumIndex: minimumIndex, maximumIndex: maximumIndex)
         
-        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicator: self.indicator!)
+        let indicatorType = type(of: self.indicator!)
+        let indicatorStyle = TabmanIndicator.Style.fromType(indicatorType)
+        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicatorStyle: indicatorStyle)
         itemTransition?.transition(withPosition: position, direction: direction,
                                    minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }

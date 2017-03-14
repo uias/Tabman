@@ -179,9 +179,9 @@ public class TabmanScrollingButtonBar: TabmanBar {
                      minimumIndex: minimumIndex,
                      maximumIndex: maximumIndex)
         
-        let (lowerIndex, upperIndex) = self.lowerAndUpperIndex(forPosition: position,
-                                                               minimum: minimumIndex,
-                                                               maximum: maximumIndex)
+        let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
+                                                                               minimum: minimumIndex,
+                                                                               maximum: maximumIndex)
         let lowerButton = self.buttons[lowerIndex]
         let upperButton = self.buttons[upperIndex]
         
