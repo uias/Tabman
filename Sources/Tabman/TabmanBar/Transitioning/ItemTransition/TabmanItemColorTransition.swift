@@ -16,6 +16,47 @@ class TabmanItemColorTransition: TabmanItemTransition {
     func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
                     minimumIndex: Int, maximumIndex: Int) {
+        guard let bar = tabmanBar as? TabmanButtonBar else { return }
         
+        let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
+                                                                               minimum: minimumIndex,
+                                                                               maximum: maximumIndex)
+        let lowerButton = bar.buttons[lowerIndex]
+        let upperButton = bar.buttons[upperIndex]
+        
+        let targetButton = direction == .forward ? upperButton : lowerButton
+        let oldTargetButton = direction == .forward ? lowerButton : upperButton
+        
+        var integral: Float = 0.0
+        let transitionProgress = CGFloat(modff(Float(position), &integral))
+        
+        let relativeProgress = direction == .forward ? transitionProgress : 1.0 - transitionProgress
+        
+        self.updateButtons(inBar: bar,
+                           withTargetButton: targetButton,
+                           oldTargetButton: oldTargetButton,
+                           progress: relativeProgress)
+    }
+    
+    private func updateButtons(inBar bar: TabmanButtonBar,
+                               withTargetButton targetButton: UIButton,
+                               oldTargetButton: UIButton,
+                               progress: CGFloat) {
+        guard targetButton !== oldTargetButton else {
+            bar.currentTargetButton = targetButton
+            return
+        }
+        
+        let targetColor = UIColor.interpolate(betweenColor: bar.color,
+                                              and: bar.selectedColor,
+                                              percent: progress)
+        let oldTargetColor = UIColor.interpolate(betweenColor: bar.color,
+                                                 and: bar.selectedColor,
+                                                 percent: 1.0 - progress)
+        
+        targetButton.tintColor = targetColor
+        targetButton.setTitleColor(targetColor, for: .normal)
+        oldTargetButton.tintColor = oldTargetColor
+        oldTargetButton.setTitleColor(oldTargetColor, for: .normal)
     }
 }

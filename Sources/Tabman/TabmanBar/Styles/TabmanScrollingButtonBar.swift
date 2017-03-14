@@ -27,8 +27,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         static let horizontalSpacing: CGFloat = 20.0
         
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
-        static let selectedTextColor: UIColor = .black
-        static let textColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     }
     
     //
@@ -47,18 +45,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     private var edgeMarginConstraints = [NSLayoutConstraint]()
     
     private var textFont: UIFont = Appearance.defaultAppearance.text.font ?? Defaults.textFont
-    private var textColor: UIColor = Appearance.defaultAppearance.state.color ?? Defaults.textColor
-    private var selectedTextColor: UIColor = Appearance.defaultAppearance.state.selectedColor ?? Defaults.selectedTextColor
-    
-    private var currentTargetButton: UIButton? {
-        didSet {
-            guard currentTargetButton !== oldValue else { return }
-            
-            currentTargetButton?.setTitleColor(self.selectedTextColor, for: .normal)
-            oldValue?.setTitleColor(self.textColor, for: .normal)
-        }
-    }
-    
+   
     // Public
     
     /// The inset at the edge of the bar items. (Default = 16.0)
@@ -131,8 +118,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
                 // configure button
                 let button = UIButton(forAutoLayout: ())
                 button.setTitle(displayTitle, for: .normal)
-                button.setTitleColor(self.textColor, for: .normal)
-                button.setTitleColor(self.textColor.withAlphaComponent(0.3), for: .highlighted)
+                button.setTitleColor(self.color, for: .normal)
+                button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
                 button.titleLabel?.font = self.textFont
                 button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
                 
@@ -169,48 +156,20 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
-    override public func update(forPosition position: CGFloat,
-                         direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int,
-                         maximumIndex: Int) {
-        super.update(forPosition: position,
-                     direction: direction,
-                     minimumIndex: minimumIndex,
-                     maximumIndex: maximumIndex)
-        
-        let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
-                                                                               minimum: minimumIndex,
-                                                                               maximum: maximumIndex)
-        let lowerButton = self.buttons[lowerIndex]
-        let upperButton = self.buttons[upperIndex]
-        
-        let targetButton = direction == .forward ? upperButton : lowerButton
-        let oldTargetButton = direction == .forward ? lowerButton : upperButton
-        
-        var integral: Float = 0.0
-        let transitionProgress = CGFloat(modff(Float(position), &integral))
-        
-        let relativeProgress = direction == .forward ? transitionProgress : 1.0 - transitionProgress
-        
-        self.updateButtons(withTargetButton: targetButton,
-                           oldTargetButton: oldTargetButton,
-                           progress: relativeProgress)
-    }
-    
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
-        if let textColor = appearance.state.color {
-            self.textColor = textColor
+        if let color = appearance.state.color {
+            self.color = color
             self.updateButtons(withContext: .unselected, update: { button in
-                button.setTitleColor(textColor, for: .normal)
-                button.setTitleColor(textColor.withAlphaComponent(0.3), for: .highlighted)
+                button.setTitleColor(color, for: .normal)
+                button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
             })
         }
         
-        if let selectedTextColor = appearance.state.selectedColor {
-            self.selectedTextColor = selectedTextColor
-            self.currentTargetButton?.setTitleColor(selectedTextColor, for: .normal)
+        if let selectedColor = appearance.state.selectedColor {
+            self.selectedColor = selectedColor
+            self.currentTargetButton?.setTitleColor(selectedColor, for: .normal)
         }
         
         if let textFont = appearance.text.font {
@@ -266,27 +225,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
             constraint.constant = value
         }
         self.layoutIfNeeded()
-    }
-    
-    private func updateButtons(withTargetButton targetButton: UIButton,
-                               oldTargetButton: UIButton,
-                               progress: CGFloat) {
-        guard targetButton !== oldTargetButton else {
-            self.currentTargetButton = targetButton
-            return
-        }
-        
-        let targetColor = UIColor.interpolate(betweenColor: self.textColor,
-                                              and: self.selectedTextColor,
-                                              percent: progress)
-        let oldTargetColor = UIColor.interpolate(betweenColor: self.textColor,
-                                                 and: self.selectedTextColor,
-                                                 percent: 1.0 - progress)
-        
-        targetButton.tintColor = targetColor
-        targetButton.setTitleColor(targetColor, for: .normal)
-        oldTargetButton.tintColor = oldTargetColor
-        oldTargetButton.setTitleColor(oldTargetColor, for: .normal)
     }
     
     //

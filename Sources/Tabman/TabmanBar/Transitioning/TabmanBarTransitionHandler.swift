@@ -36,9 +36,15 @@ internal class TabmanBarTransitionHandler: Any {
         switch indicatorStyle {
         case .none:()
             
+        case .block:
+            self.itemMaskTransition.tabmanBar = bar
+            return self.itemMaskTransition
+            
         default:
-            self.itemColorTransition.tabmanBar = bar
-            return self.itemColorTransition
+            if bar is TabmanButtonBar {
+                self.itemColorTransition.tabmanBar = bar
+                return self.itemColorTransition
+            }
         }
         
         return nil
