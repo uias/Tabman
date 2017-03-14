@@ -110,7 +110,7 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         self.indicatorMaskView.frame = self.indicator?.frame ?? .zero
     }
 
-    override func update(forAppearance appearance: TabmanBar.Appearance) {
+    override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         if let color = appearance.state.color {
