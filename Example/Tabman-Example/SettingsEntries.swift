@@ -38,7 +38,8 @@ extension SettingsViewController {
                 self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
         }))
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanIndicator.Style.line.description,
+        appearanceSection.add(item: SettingsItem(type: .options(values: ["Preferred",
+                                                                         TabmanIndicator.Style.line.description,
                                                                          TabmanIndicator.Style.dot.description,
                                                                          TabmanIndicator.Style.block.description,
                                                                          TabmanIndicator.Style.none.description],
@@ -151,8 +152,10 @@ fileprivate extension TabmanIndicator.Style {
         }
     }
     
-    static func fromDescription(_ description: String) -> TabmanIndicator.Style {
+    static func fromDescription(_ description: String) -> TabmanIndicator.Style? {
         switch description {
+        case "Preferred":
+            return nil
         case "Line":
             return .line
         case "Dot":

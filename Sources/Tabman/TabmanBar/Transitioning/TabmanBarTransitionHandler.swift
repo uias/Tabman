@@ -34,8 +34,7 @@ internal class TabmanBarTransitionHandler: Any {
     
     func itemTransition(forBar bar: TabmanBar, indicatorStyle: TabmanIndicator.Style) -> TabmanItemTransition? {
         switch indicatorStyle {
-        case .none:()
-            
+
         case .block:
             self.itemMaskTransition.tabmanBar = bar
             return self.itemMaskTransition
