@@ -76,12 +76,14 @@ public class TabmanButtonBar: TabmanBar {
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(color, for: .normal)
                 button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
+                button.tintColor = color
             })
         }
         
         if let selectedColor = appearance.state.selectedColor {
             self.selectedColor = selectedColor
             self.currentTargetButton?.setTitleColor(selectedColor, for: .normal)
+            self.currentTargetButton?.tintColor = selectedColor
         }
         
         if let textFont = appearance.text.font {
