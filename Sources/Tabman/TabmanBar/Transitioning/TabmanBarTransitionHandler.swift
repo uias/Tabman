@@ -23,7 +23,7 @@ internal class TabmanBarTransitionHandler: Any {
             self.scrollingIndicatorTransition.tabmanBar = bar
             return self.scrollingIndicatorTransition
             
-        } else if bar is TabmanPlainBar || bar is TabmanButtonBar {
+        } else if bar is TabmanPlainBar || bar is TabmanStaticButtonBar {
             
             self.staticIndicatorTransition.tabmanBar = bar
             return self.staticIndicatorTransition

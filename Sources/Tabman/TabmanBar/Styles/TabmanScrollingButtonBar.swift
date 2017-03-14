@@ -13,7 +13,7 @@ import Pageboy
 /// A bar with scrolling buttons and line indicator.
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
-public class TabmanScrollingButtonBar: TabmanBar {
+public class TabmanScrollingButtonBar: TabmanButtonBar {
         
     //
     // MARK: Constants
@@ -42,7 +42,6 @@ public class TabmanScrollingButtonBar: TabmanBar {
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    internal var buttons = [UIButton]()
     
     private var horizontalMarginConstraints = [NSLayoutConstraint]()
     private var edgeMarginConstraints = [NSLayoutConstraint]()
