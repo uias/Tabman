@@ -25,6 +25,8 @@ public class TabmanButtonBar: TabmanBar {
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
         
         static let height: CGFloat = 50.0
+        static let minimumItemWidth: CGFloat = 44.0
+        static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
     //
@@ -45,7 +47,9 @@ public class TabmanButtonBar: TabmanBar {
             guard currentTargetButton !== oldValue else { return }
             
             currentTargetButton?.setTitleColor(self.selectedColor, for: .normal)
+            currentTargetButton?.tintColor = self.selectedColor
             oldValue?.setTitleColor(self.color, for: .normal)
+            oldValue?.tintColor = self.color
         }
     }
     
@@ -126,7 +130,8 @@ public class TabmanButtonBar: TabmanBar {
             if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
-                let resizedImage = image.resize(toSize: CGSize(width: 25, height: 25))
+                // resize images to fit
+                let resizedImage = image.resize(toSize: Defaults.itemImageSize)
                 button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
             }
             
@@ -141,6 +146,15 @@ public class TabmanButtonBar: TabmanBar {
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
                 }
             }
+            
+            // add a minimum width constraint
+            let minWidthConstraint = NSLayoutConstraint(item: button,
+                                                        attribute: .width,
+                                                        relatedBy: .greaterThanOrEqual,
+                                                        toItem: nil,
+                                                        attribute: .notAnAttribute,
+                                                        multiplier: 1.0, constant: Defaults.minimumItemWidth)
+            button.addConstraint(minWidthConstraint)
             
             customize(button, previousButton)
             previousButton = button
