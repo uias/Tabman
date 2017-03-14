@@ -96,19 +96,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
-    
-    override public func update(forPosition position: CGFloat,
-                                direction: PageboyViewController.NavigationDirection,
-                                minimumIndex: Int,
-                                maximumIndex: Int) {
-        super.update(forPosition: position,
-                     direction: direction,
-                     minimumIndex: minimumIndex,
-                     maximumIndex: maximumIndex)
-        
-        self.contentView.layoutIfNeeded()
-        self.indicatorMaskView.frame = self.indicator?.frame ?? .zero
-    }
 
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
@@ -135,42 +122,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     //
     // MARK: Button Manipulation
     //
-    
-    private func addBarButtons(toView view: UIView,
-                               items: [TabmanBarItem],
-                               customize: (UIButton) -> Void) {
-        
-        var previousButton: UIButton?
-        for (index, item) in items.enumerated() {
-            
-            let button = UIButton(forAutoLayout: ())
-            view.addSubview(button)
-            
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
-            button.titleEdgeInsets = UIEdgeInsetsMake(0.0, 4.0, 0.0, 4.0)
-            if let title = item.title {
-                button.setTitle(title, for: .normal)
-            } else if let image = item.image {
-                button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
-            }
-            customize(button)
-            
-            // layout
-            button.autoPinEdge(toSuperviewEdge: .top)
-            button.autoPinEdge(toSuperviewEdge: .bottom)
-            if previousButton == nil {
-                button.autoPinEdge(toSuperviewEdge: .left)
-            } else {
-                button.autoPinEdge(.left, to: .right, of: previousButton!)
-                button.autoMatch(.width, to: .width, of: previousButton!)
-            }
-            if index == items.count - 1 {
-                button.autoPinEdge(toSuperviewEdge: .right)
-            }
-            
-            previousButton = button
-        }
-    }
     
     private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
         guard let view = view else {

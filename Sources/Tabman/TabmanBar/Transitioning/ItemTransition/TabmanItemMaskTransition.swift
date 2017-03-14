@@ -13,7 +13,12 @@ class TabmanItemMaskTransition: TabmanItemTransition {
     
     var tabmanBar: TabmanBar?
     
-    func transition(withPosition position: CGFloat, direction: PageboyViewController.NavigationDirection, minimumIndex: Int, maximumIndex: Int) {
+    func transition(withPosition position: CGFloat,
+                    direction: PageboyViewController.NavigationDirection,
+                    minimumIndex: Int, maximumIndex: Int) {
+        guard let bar = tabmanBar else { return }
         
+        bar.contentView.layoutIfNeeded()
+        bar.indicatorMaskView.frame = bar.indicator?.frame ?? .zero
     }
 }
