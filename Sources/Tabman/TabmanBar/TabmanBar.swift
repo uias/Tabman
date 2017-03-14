@@ -134,6 +134,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             guard let preferredIndicatorStyle = self.preferredIndicatorStyle else { return }
             
             self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
+            guard self.indicator != nil else { return }
+            
             self.addIndicatorToBar(indicator: indicator!)
             self.updateForCurrentPosition()
         }
