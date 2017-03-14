@@ -43,6 +43,20 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         return CGSize(width: 0.0, height: 50.0)
     }
     
+    public override var interItemSpacing: CGFloat {
+        didSet {
+            let insets = UIEdgeInsets(top: 0.0, left: interItemSpacing / 2, bottom: 0.0, right: interItemSpacing / 2)
+            self.updateButtonsInView(view: self.buttonContentView) { (button) in
+                button.titleEdgeInsets = insets
+                button.imageEdgeInsets = insets
+            }
+            self.updateButtonsInView(view: self.maskContentView) { (button) in
+                button.titleEdgeInsets = insets
+                button.imageEdgeInsets = insets
+            }
+        }
+    }
+    
     //
     // MARK: Lifecycle
     //
@@ -68,12 +82,18 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         maskContentView.autoPinEdgesToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
+        let insets = UIEdgeInsets(top: 0.0,
+                                  left: self.interItemSpacing / 2,
+                                  bottom: 0.0,
+                                  right: self.interItemSpacing / 2)
         self.addBarButtons(toView: buttonContentView, items: items) { (button, previousButton) in
             self.buttons.append(button)
 
             button.tintColor = self.color
             button.setTitleColor(self.color, for: .normal)
             button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
+            button.titleEdgeInsets = insets
+            button.imageEdgeInsets = insets
             
             if let previousButton = previousButton {
                 button.autoMatch(.width, to: .width, of: previousButton)
@@ -84,6 +104,8 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         self.addBarButtons(toView: maskContentView, items: items) { (button, previousButton) in
             button.tintColor = self.selectedColor
             button.setTitleColor(self.selectedColor, for: .normal)
+            button.titleEdgeInsets = insets
+            button.imageEdgeInsets = insets
             
             if let previousButton = previousButton {
                 button.autoMatch(.width, to: .width, of: previousButton)

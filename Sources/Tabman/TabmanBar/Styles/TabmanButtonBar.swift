@@ -20,7 +20,6 @@ public class TabmanButtonBar: TabmanBar {
         static let selectedColor: UIColor = .black
         static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
         
-        static let edgeInset: CGFloat = 16.0
         static let horizontalSpacing: CGFloat = 20.0
         
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
@@ -50,21 +49,8 @@ public class TabmanButtonBar: TabmanBar {
     
     // Public
     
-    /// The inset at the edge of the bar items. (Default = 16.0)
-    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset ?? Defaults.edgeInset {
-        didSet {
-            self.updateConstraints(self.edgeMarginConstraints,
-                                   withValue: edgeInset)
-        }
-    }
-    
     /// The spacing between each bar item. (Default = 20.0)
-    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing {
-        didSet {
-            self.updateConstraints(self.horizontalMarginConstraints,
-                                   withValue: interItemSpacing)
-        }
-    }
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing
     
     //
     // MARK: TabmanBar Lifecycle
@@ -83,11 +69,6 @@ public class TabmanButtonBar: TabmanBar {
         
         if let interItemSpacing = appearance.layout.interItemSpacing {
             self.interItemSpacing = interItemSpacing
-        }
-        
-        if let edgeInset = appearance.layout.edgeInset {
-            self.edgeInset = edgeInset
-            self.updateForCurrentPosition()
         }
         
         if let color = appearance.state.color {
@@ -114,12 +95,12 @@ public class TabmanButtonBar: TabmanBar {
             self.indicator?.tintColor = indicatorColor
         }
         
-        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-            self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
-            UIView.animate(withDuration: 0.3, animations: {
-                self.updateForCurrentPosition()
-            })
-        }
+//        if let indicatorIsProgressive = appearance.indicator.isProgressive {
+//            self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
+//            UIView.animate(withDuration: 0.3, animations: {
+//                self.updateForCurrentPosition()
+//            })
+//        }
         
         if let indicatorWeight = appearance.indicator.lineWeight,
             let lineIndicator = self.indicator as? TabmanLineIndicator {
@@ -151,15 +132,11 @@ public class TabmanButtonBar: TabmanBar {
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
             if previousButton == nil { // pin to left
-                self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .left,
-                                                                     withInset: self.edgeInset))
+                self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .left))
             } else {
-                self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right,
-                                                                           of: previousButton!,
-                                                                           withOffset: self.interItemSpacing))
+                self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
                 if index == items.count - 1 {
-                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .right,
-                                                                         withInset: self.edgeInset))
+                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .right))
                 }
             }
             
@@ -182,20 +159,5 @@ public class TabmanButtonBar: TabmanBar {
                 update(button)
             }
         }
-    }
-    
-    //
-    // MARK: Layout
-    //
-    
-    private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
-        for constraint in constraints {
-            var value = value
-            if constraint.constant < 0.0 {
-                value = -value
-            }
-            constraint.constant = value
-        }
-        self.layoutIfNeeded()
     }
 }

@@ -22,6 +22,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     private struct Defaults {
         static let height: CGFloat = 42.0
         static let indicatorHeight: CGFloat = 2.0
+        
+        static let edgeInset: CGFloat = 16.0
     }
     
     //
@@ -50,6 +52,21 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     
     open override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: Defaults.height + (self.indicator?.intrinsicContentSize.height ?? Defaults.indicatorHeight))
+    }
+    
+    /// The inset at the edge of the bar items. (Default = 16.0)
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset ?? Defaults.edgeInset {
+        didSet {
+            self.updateConstraints(self.edgeMarginConstraints,
+                                   withValue: edgeInset)
+        }
+    }
+    
+    public override var interItemSpacing: CGFloat {
+        didSet {
+            self.updateConstraints(self.horizontalMarginConstraints,
+                                   withValue: interItemSpacing)
+        }
     }
     
     //
@@ -90,6 +107,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
         
+        self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
+        self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
         self.scrollView.layoutIfNeeded()
     }
     
@@ -105,7 +124,10 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
-        
+        if let edgeInset = appearance.layout.edgeInset {
+            self.edgeInset = edgeInset
+            self.updateForCurrentPosition()
+        }
         
         if let isScrollEnabled = appearance.interaction.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
@@ -114,7 +136,12 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
             })
         }
         
-        
+        if let indicatorIsProgressive = appearance.indicator.isProgressive {
+            self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
+        }
     }
     
     //
@@ -125,5 +152,20 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         if let index = self.buttons.index(of: sender) {
             self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
+    }
+    
+    //
+    // MARK: Layout
+    //
+    
+    private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
+        for constraint in constraints {
+            var value = value
+            if constraint.constant < 0.0 {
+                value = -value
+            }
+            constraint.constant = value
+        }
+        self.layoutIfNeeded()
     }
 }
