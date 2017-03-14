@@ -161,7 +161,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
         for constraint in constraints {
             var value = value
-            if constraint.constant < 0.0 {
+            if constraint.constant < 0.0 || constraint.firstAttribute == .trailing {
                 value = -value
             }
             constraint.constant = value
