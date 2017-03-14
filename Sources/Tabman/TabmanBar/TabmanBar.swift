@@ -70,6 +70,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     
+    internal weak var transitionHandler: TabmanBarTransitionHandler?
+    
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
     
@@ -274,6 +276,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
+        guard self.indicator != nil else { return }
+        
+        let transition = self.transitionHandler?.transition(forBar: self, indicator: self.indicator!)
+        
         // Override in subclass
     }
     
