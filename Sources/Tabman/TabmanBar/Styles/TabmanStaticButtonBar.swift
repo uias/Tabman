@@ -39,10 +39,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         return 5
     }
     
-    override public var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 50.0)
-    }
-    
     public override var interItemSpacing: CGFloat {
         didSet {
             let insets = UIEdgeInsets(top: 0.0, left: interItemSpacing / 2, bottom: 0.0, right: interItemSpacing / 2)

@@ -23,6 +23,8 @@ public class TabmanButtonBar: TabmanBar {
         static let horizontalSpacing: CGFloat = 20.0
         
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
+        
+        static let height: CGFloat = 50.0
     }
     
     //
@@ -48,6 +50,10 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     // Public
+    
+    override public var intrinsicContentSize: CGSize {
+        return CGSize(width: 0.0, height: Defaults.height)
+    }
     
     /// The spacing between each bar item. (Default = 20.0)
     public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing
@@ -120,7 +126,8 @@ public class TabmanButtonBar: TabmanBar {
             if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
-                button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
+                let resizedImage = image.resize(toSize: CGSize(width: 25, height: 25))
+                button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
             }
             
             // layout

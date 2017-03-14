@@ -20,8 +20,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     //
     
     private struct Defaults {
-        static let height: CGFloat = 42.0
-        static let indicatorHeight: CGFloat = 2.0
         
         static let edgeInset: CGFloat = 16.0
     }
@@ -48,10 +46,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         get {
             return self.scrollView.isScrollEnabled
         }
-    }
-    
-    open override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: Defaults.height + (self.indicator?.intrinsicContentSize.height ?? Defaults.indicatorHeight))
     }
     
     /// The inset at the edge of the bar items. (Default = 16.0)
