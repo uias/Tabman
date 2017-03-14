@@ -161,6 +161,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         super.layoutSubviews()
         
         self.fadeGradientLayer?.frame = self.bounds
+        
+        // refresh intrinsic size for indicator
+        self.indicator?.invalidateIntrinsicContentSize()
     }
     
     open override func addSubview(_ view: UIView) {
