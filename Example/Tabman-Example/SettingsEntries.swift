@@ -25,9 +25,9 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.bar.description,
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.scrollingButtonBar.description,
                                                                          TabmanBar.Style.buttonBar.description,
-                                                                         TabmanBar.Style.scrollingButtonBar.description],
+                                                                         TabmanBar.Style.bar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
@@ -37,6 +37,22 @@ extension SettingsViewController {
                 self.tabViewController?.bar.style = style
                 self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
+        }))
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanIndicator.Style.line.description,
+                                                                         TabmanIndicator.Style.dot.description,
+                                                                         TabmanIndicator.Style.block.description,
+                                                                         TabmanIndicator.Style.none.description],
+                                                                selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Preferred" }),
+                                                 title: "Preferred Indicator Style",
+                                                 description: nil,
+                                                 value: nil, update:
+            { (value) in
+                guard let description = value as? String else { return }
+                let style = TabmanIndicator.Style.fromDescription(description)
+                
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.preferredStyle = style
+                self.tabViewController?.bar.appearance = appearance
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",
@@ -89,6 +105,20 @@ extension SettingsViewController {
 
 fileprivate extension TabmanBar.Style {
     
+    var description: String {
+        switch self {
+        case .bar:
+            return "Bar"
+        case .buttonBar:
+            return "Button Bar"
+        case .scrollingButtonBar:
+            return "Scrolling Button Bar"
+            
+        default:
+            return "Custom"
+        }
+    }
+    
     static func fromDescription(_ description: String) -> TabmanBar.Style {
         switch description {
             
@@ -101,18 +131,37 @@ fileprivate extension TabmanBar.Style {
             return .bar
         }
     }
+}
+
+fileprivate extension TabmanIndicator.Style {
     
     var description: String {
         switch self {
-        case .bar:
-            return "Bar"
-        case .buttonBar:
-            return "Button Bar"
-        case .scrollingButtonBar:
-            return "Scrolling Button Bar"
+        case .line:
+            return "Line"
+        case .dot:
+            return "Dot"
+        case .block:
+            return "Block"
+        case .none:
+            return "None"
             
         default:
             return "Custom"
+        }
+    }
+    
+    static func fromDescription(_ description: String) -> TabmanIndicator.Style {
+        switch description {
+        case "Line":
+            return .line
+        case "Dot":
+            return .dot
+        case "Block":
+            return .block
+
+        default:
+            return .none
         }
     }
 }
