@@ -42,12 +42,12 @@ public class TabmanButtonBar: TabmanBar {
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
-    internal var currentTargetButton: UIButton? {
+    internal var focussedButton: UIButton? {
         didSet {
-            guard currentTargetButton !== oldValue else { return }
+            guard focussedButton !== oldValue else { return }
             
-            currentTargetButton?.setTitleColor(self.selectedColor, for: .normal)
-            currentTargetButton?.tintColor = self.selectedColor
+            focussedButton?.setTitleColor(self.selectedColor, for: .normal)
+            focussedButton?.tintColor = self.selectedColor
             oldValue?.setTitleColor(self.color, for: .normal)
             oldValue?.tintColor = self.color
         }
@@ -92,8 +92,8 @@ public class TabmanButtonBar: TabmanBar {
         
         if let selectedColor = appearance.state.selectedColor {
             self.selectedColor = selectedColor
-            self.currentTargetButton?.setTitleColor(selectedColor, for: .normal)
-            self.currentTargetButton?.tintColor = selectedColor
+            self.focussedButton?.setTitleColor(selectedColor, for: .normal)
+            self.focussedButton?.tintColor = selectedColor
         }
         
         if let textFont = appearance.text.font {
@@ -170,8 +170,8 @@ public class TabmanButtonBar: TabmanBar {
     private func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> ()) {
         for button in self.buttons {
             if context == .all ||
-                (context == .target && button === self.currentTargetButton) ||
-                (context == .unselected && button !== self.currentTargetButton) {
+                (context == .target && button === self.focussedButton) ||
+                (context == .unselected && button !== self.focussedButton) {
                 update(button)
             }
         }

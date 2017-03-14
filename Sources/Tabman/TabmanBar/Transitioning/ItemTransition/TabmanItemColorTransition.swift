@@ -43,7 +43,7 @@ class TabmanItemColorTransition: TabmanItemTransition {
                                oldTargetButton: UIButton,
                                progress: CGFloat) {
         guard targetButton !== oldTargetButton else {
-            bar.currentTargetButton = targetButton
+            bar.focussedButton = targetButton
             return
         }
         
