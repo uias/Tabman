@@ -25,15 +25,15 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.bar.description,
-                                                                         TabmanBarConfig.Style.buttonBar.description,
-                                                                         TabmanBarConfig.Style.scrollingButtonBar.description],
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.bar.description,
+                                                                         TabmanBar.Style.buttonBar.description,
+                                                                         TabmanBar.Style.scrollingButtonBar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
                                                  value: nil, update:
             { (value) in
-                let style = TabmanBarConfig.Style.fromDescription(value as! String)
+                let style = TabmanBar.Style.fromDescription(value as! String)
                 self.tabViewController?.bar.style = style
                 self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
@@ -87,9 +87,9 @@ extension SettingsViewController {
 
 }
 
-fileprivate extension TabmanBarConfig.Style {
+fileprivate extension TabmanBar.Style {
     
-    static func fromDescription(_ description: String) -> TabmanBarConfig.Style {
+    static func fromDescription(_ description: String) -> TabmanBar.Style {
         switch description {
             
         case "Button Bar":

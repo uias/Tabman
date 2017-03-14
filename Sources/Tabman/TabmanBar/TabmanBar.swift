@@ -55,6 +55,23 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
+    // MARK: Types
+    //
+    
+    /// The style of the bar.
+    ///
+    /// - bar: A simple horizontal bar only.
+    /// - buttonBar: A scrolling horizontal bar with text buttons for each page index.
+    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
+    /// - custom: A custom defined TabmanBar type.
+    public enum Style {
+        case bar
+        case buttonBar
+        case scrollingButtonBar
+        case custom(type: TabmanBar.Type)
+    }
+    
+    //
     // MARK: Properties
     //
     

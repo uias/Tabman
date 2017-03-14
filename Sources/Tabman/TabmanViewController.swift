@@ -89,7 +89,7 @@ internal extension TabmanViewController {
     /// Reload the tab bar for a new style.
     ///
     /// - Parameter style: The new style.
-    func reloadBar(withStyle style: TabmanBarConfig.Style) {
+    func reloadBar(withStyle style: TabmanBar.Style) {
         guard let barType = style.rawType else {
             return
         }
@@ -168,7 +168,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
 // MARK: - TabmanBarConfigDelegate
 extension TabmanViewController: TabmanBarConfigDelegate {
     
-    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBarConfig.Style) {
+    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBar.Style) {
         self.clearUpBar(&self.tabmanBar)
         self.reloadBar(withStyle: style)
         self.updateBar(withLocation: config.location)
