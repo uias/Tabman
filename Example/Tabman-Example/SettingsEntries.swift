@@ -38,12 +38,12 @@ extension SettingsViewController {
                 self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
         }))
-        appearanceSection.add(item: SettingsItem(type: .options(values: ["Preferred",
+        appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
                                                                          TabmanIndicator.Style.line.description,
                                                                          TabmanIndicator.Style.dot.description,
                                                                          TabmanIndicator.Style.block.description,
                                                                          TabmanIndicator.Style.none.description],
-                                                                selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Preferred" }),
+                                                                selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
                                                  description: nil,
                                                  value: nil, update:

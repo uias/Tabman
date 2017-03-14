@@ -10,6 +10,7 @@
 import UIKit
 import Pageboy
 
+/// Abstract concrete class for button bars.
 public class TabmanButtonBar: TabmanBar {
 
     //

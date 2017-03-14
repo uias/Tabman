@@ -9,6 +9,8 @@
 import UIKit
 import Pageboy
 
+/// Transition for updating a static bar.
+/// Handles indicator maintaining current position.
 class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
 
     var tabmanBar: TabmanBar?

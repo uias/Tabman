@@ -9,6 +9,8 @@
 import UIKit
 import Pageboy
 
+/// Transition for updating a scrolling bar.
+/// Handles keeping indicator centred and scrolling for item visibility.
 internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition {
 
     var tabmanBar: TabmanBar?

@@ -9,6 +9,7 @@
 import UIKit
 import Pageboy
 
+/// Transition protocol for indicators.
 internal protocol TabmanIndicatorTransition: TabmanTransition {
     
     var tabmanBar: TabmanBar? { get set }
