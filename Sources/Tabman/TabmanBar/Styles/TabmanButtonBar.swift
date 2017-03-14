@@ -95,13 +95,6 @@ public class TabmanButtonBar: TabmanBar {
             self.indicator?.tintColor = indicatorColor
         }
         
-//        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-//            self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
-//            UIView.animate(withDuration: 0.3, animations: {
-//                self.updateForCurrentPosition()
-//            })
-//        }
-        
         if let indicatorWeight = appearance.indicator.lineWeight,
             let lineIndicator = self.indicator as? TabmanLineIndicator {
             lineIndicator.weight = indicatorWeight

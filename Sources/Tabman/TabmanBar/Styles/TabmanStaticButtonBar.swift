@@ -145,6 +145,12 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         if let indicatorColor = appearance.indicator.color {
             self.indicator?.tintColor = indicatorColor
         }
+        
+        if let _ = appearance.indicator.isProgressive {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
+        }
     }
     
     //
