@@ -22,6 +22,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     private struct Defaults {
         
         static let edgeInset: CGFloat = 16.0
+        static let minimumItemWidth: CGFloat = 44.0
     }
     
     //
@@ -99,10 +100,20 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
             button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
             button.titleLabel?.font = self.textFont
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
+            
+            // add a minimum width constraint to button
+            let minWidthConstraint = NSLayoutConstraint(item: button,
+                                                        attribute: .width,
+                                                        relatedBy: .greaterThanOrEqual,
+                                                        toItem: nil,
+                                                        attribute: .notAnAttribute,
+                                                        multiplier: 1.0, constant: Defaults.minimumItemWidth)
+            button.addConstraint(minWidthConstraint)
         }
         
         self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
         self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
+        
         self.scrollView.layoutIfNeeded()
     }
     

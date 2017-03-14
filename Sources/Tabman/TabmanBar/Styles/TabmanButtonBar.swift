@@ -25,7 +25,6 @@ public class TabmanButtonBar: TabmanBar {
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
         
         static let height: CGFloat = 50.0
-        static let minimumItemWidth: CGFloat = 44.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
@@ -146,15 +145,6 @@ public class TabmanButtonBar: TabmanBar {
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
                 }
             }
-            
-            // add a minimum width constraint
-            let minWidthConstraint = NSLayoutConstraint(item: button,
-                                                        attribute: .width,
-                                                        relatedBy: .greaterThanOrEqual,
-                                                        toItem: nil,
-                                                        attribute: .notAnAttribute,
-                                                        multiplier: 1.0, constant: Defaults.minimumItemWidth)
-            button.addConstraint(minWidthConstraint)
             
             customize(button, previousButton)
             previousButton = button
