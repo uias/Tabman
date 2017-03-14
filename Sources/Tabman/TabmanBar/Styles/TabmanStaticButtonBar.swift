@@ -23,6 +23,7 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         
         static let selectedColor: UIColor = .black
         static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
+
     }
     
     //
@@ -56,9 +57,7 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     
     override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
-        
-        self.buttons.removeAll()
-        
+
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
         maskContentView.isUserInteractionEnabled = false
@@ -69,19 +68,26 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         maskContentView.autoPinEdgesToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
-        self.addBarButtons(toView: buttonContentView, items: items) { (button) in
-            let color = self.appearance.state.color ?? Defaults.color
-            button.tintColor = color
-            button.setTitleColor(color, for: .normal)
-            button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
-
+        self.addBarButtons(toView: buttonContentView, items: items) { (button, previousButton) in
             self.buttons.append(button)
+
+            button.tintColor = self.color
+            button.setTitleColor(self.color, for: .normal)
+            button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
+            
+            if let previousButton = previousButton {
+                button.autoMatch(.width, to: .width, of: previousButton)
+            }
+            
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
-        self.addBarButtons(toView: maskContentView, items: items) { (button) in
-            let selectedColor = self.appearance.state.selectedColor ?? Defaults.selectedColor
-            button.tintColor = selectedColor
-            button.setTitleColor(selectedColor, for: .normal)
+        self.addBarButtons(toView: maskContentView, items: items) { (button, previousButton) in
+            button.tintColor = self.selectedColor
+            button.setTitleColor(self.selectedColor, for: .normal)
+            
+            if let previousButton = previousButton {
+                button.autoMatch(.width, to: .width, of: previousButton)
+            }
         }
         
         self.buttonContentView = buttonContentView
