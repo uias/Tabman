@@ -281,7 +281,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let indicatorTransition = self.transitionHandler?.indicatorTransition(forBar: self)
         indicatorTransition?.transition(withPosition: position, direction: direction,
                                         minimumIndex: minimumIndex, maximumIndex: maximumIndex)
-        // Override in subclass
+        
+        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicator: self.indicator!)
+        itemTransition?.transition(withPosition: position, direction: direction,
+                                   minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }
     
     open func update(forAppearance appearance: Appearance) {

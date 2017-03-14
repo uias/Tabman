@@ -45,6 +45,9 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
             bar.indicatorLeftMargin?.constant = bouncyIndicatorPosition
             bar.indicatorWidth?.constant = itemWidth
         }
-
+    }
+    
+    func updateForCurrentPosition() {
+        
     }
 }

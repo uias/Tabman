@@ -34,6 +34,12 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
         self.scrollIndicatorPositionToVisible(in: scrollingButtonBar)
     }
     
+    func updateForCurrentPosition() {
+        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
+
+        self.scrollIndicatorPositionToVisible(in: scrollingButtonBar)
+    }
+    
     // MARK: Updating
     
     private func updateIndicator(forTransitionProgress progress: CGFloat,

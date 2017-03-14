@@ -13,14 +13,23 @@ internal class TabmanBarTransitionHandler: Any {
     private lazy var scrollingIndicatorTransition = TabmanScrollingBarIndicatorTransition()
     private lazy var staticIndicatorTransition = TabmanStaticBarIndicatorTransition()
     
-    func indicatorTransition(forBar bar: TabmanBar) -> TabmanIndicatorTransition {
+    func indicatorTransition(forBar bar: TabmanBar) -> TabmanIndicatorTransition? {
         
-        if let scrollingBar = bar as? TabmanScrollingButtonBar {
-            self.scrollingIndicatorTransition.tabmanBar = scrollingBar
+        if bar is TabmanScrollingButtonBar {
+            
+            self.scrollingIndicatorTransition.tabmanBar = bar
             return self.scrollingIndicatorTransition
+            
+        } else if bar is TabmanPlainBar || bar is TabmanButtonBar {
+            
+            self.staticIndicatorTransition.tabmanBar = bar
+            return self.staticIndicatorTransition
         }
         
-        self.staticIndicatorTransition.tabmanBar = bar
-        return self.staticIndicatorTransition
+        return nil
+    }
+    
+    func itemTransition(forBar bar: TabmanBar, indicator: TabmanIndicator) -> TabmanItemTransition? {
+        return nil
     }
 }
