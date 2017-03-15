@@ -3,8 +3,8 @@
 Tabman can be customised to your own liking; including the definition of custom bars and indicators.
 
 ## Contents
-- [Creating a custom TabmanBar](##creating-a-custom-tabmanbar)
-- [Using an external TabmanBar](##using-an-external-tabmanbar)
+- [Creating a custom TabmanBar](#creating-a-custom-tabmanbar)
+- [Using an external TabmanBar](#using-an-external-tabmanbar)
 
 ## Creating a custom TabmanBar
 1) Simply create a bar object that inherits from `TabmanBar`.
