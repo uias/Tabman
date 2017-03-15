@@ -13,9 +13,7 @@ import Pageboy
 /// Handles indicator maintaining current position.
 class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
 
-    var tabmanBar: TabmanBar?
-    
-    func transition(withPosition position: CGFloat,
+    override func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
                     minimumIndex: Int, maximumIndex: Int) {
         guard let bar = tabmanBar else { return }
@@ -48,9 +46,5 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
             bar.indicatorLeftMargin?.constant = bouncyIndicatorPosition
             bar.indicatorWidth?.constant = itemWidth
         }
-    }
-    
-    func updateForCurrentPosition() {
-        
     }
 }

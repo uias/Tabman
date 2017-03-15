@@ -7,9 +7,22 @@
 //
 
 import Foundation
+import Pageboy
 
-protocol TabmanItemTransition: TabmanTransition {
+class TabmanItemTransition: TabmanTransition {
     
-    var tabmanBar: TabmanBar? { get set }
+    var tabmanBar: TabmanBar?
     
+    required init() {
+    }
+    
+    func transition(withPosition position: CGFloat,
+                    direction: PageboyViewController.NavigationDirection,
+                    minimumIndex: Int, maximumIndex: Int) {
+        
+    }
+    
+    func updateForCurrentPosition() {
+        
+    }
 }

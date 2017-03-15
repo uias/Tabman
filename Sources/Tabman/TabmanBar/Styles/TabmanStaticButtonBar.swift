@@ -58,7 +58,11 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     //
     
     override public func defaultIndicatorStyle() -> TabmanIndicator.Style {
-        return .block
+        return .custom(type: TabmanBlockIndicator.self)
+    }
+    
+    public override func usePreferredIndicatorStyle() -> Bool {
+        return false
     }
     
     //

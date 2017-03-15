@@ -11,9 +11,7 @@ import Pageboy
 
 class TabmanItemMaskTransition: TabmanItemTransition {
     
-    var tabmanBar: TabmanBar?
-    
-    func transition(withPosition position: CGFloat,
+    override func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
                     minimumIndex: Int, maximumIndex: Int) {
         guard let bar = tabmanBar else { return }

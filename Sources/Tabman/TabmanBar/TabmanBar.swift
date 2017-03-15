@@ -339,9 +339,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         indicatorTransition?.transition(withPosition: position, direction: direction,
                                         minimumIndex: minimumIndex, maximumIndex: maximumIndex)
         
-        let indicatorType = type(of: self.indicator!)
-        let indicatorStyle = TabmanIndicator.Style.fromType(indicatorType)
-        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicatorStyle: indicatorStyle)
+        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicator: self.indicator!)
         itemTransition?.transition(withPosition: position, direction: direction,
                                    minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }
@@ -411,8 +409,6 @@ internal extension TabmanIndicator.Style {
             return TabmanLineIndicator.self
         case .dot:
             return TabmanDotIndicator.self
-        case .block:
-            return TabmanBlockIndicator.self
         case .custom(let type):
             return type
         case .none:

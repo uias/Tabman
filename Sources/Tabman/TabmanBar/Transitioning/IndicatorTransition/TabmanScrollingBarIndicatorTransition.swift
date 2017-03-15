@@ -13,9 +13,7 @@ import Pageboy
 /// Handles keeping indicator centred and scrolling for item visibility.
 internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition {
 
-    var tabmanBar: TabmanBar?
-    
-    func transition(withPosition position: CGFloat,
+    override func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
                     minimumIndex: Int, maximumIndex: Int) {
         guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
@@ -36,7 +34,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
         self.scrollIndicatorPositionToVisible(in: scrollingButtonBar)
     }
     
-    func updateForCurrentPosition() {
+    override func updateForCurrentPosition() {
         guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
 
         self.scrollIndicatorPositionToVisible(in: scrollingButtonBar)

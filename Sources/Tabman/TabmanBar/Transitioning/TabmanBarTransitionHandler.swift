@@ -51,20 +51,13 @@ internal class TabmanBarTransitionHandler: Any {
     ///   - bar: The bar that the indicator is part of.
     ///   - indicatorStyle: The indicator style.
     /// - Returns: The item transition.
-    func itemTransition(forBar bar: TabmanBar, indicatorStyle: TabmanIndicator.Style) -> TabmanItemTransition? {
-        switch indicatorStyle {
-
-        case .block:
-            self.itemMaskTransition.tabmanBar = bar
-            return self.itemMaskTransition
-            
-        default:
-            if bar is TabmanButtonBar {
-                self.itemColorTransition.tabmanBar = bar
-                return self.itemColorTransition
-            }
+    func itemTransition(forBar bar: TabmanBar, indicator: TabmanIndicator) -> TabmanItemTransition? {
+        guard let transitionType = indicator.itemTransitionType() else {
+            return nil
         }
         
-        return nil
+        let transition = transitionType.init()
+        transition.tabmanBar = bar
+        return transition
     }
 }

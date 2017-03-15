@@ -41,7 +41,6 @@ extension SettingsViewController {
         appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
                                                                          TabmanIndicator.Style.line.description,
                                                                          TabmanIndicator.Style.dot.description,
-                                                                         TabmanIndicator.Style.block.description,
                                                                          TabmanIndicator.Style.none.description],
                                                                 selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
@@ -142,8 +141,6 @@ fileprivate extension TabmanIndicator.Style {
             return "Line"
         case .dot:
             return "Dot"
-        case .block:
-            return "Block"
         case .none:
             return "None"
             
@@ -160,8 +157,6 @@ fileprivate extension TabmanIndicator.Style {
             return .line
         case "Dot":
             return .dot
-        case "Block":
-            return .block
 
         default:
             return .none

@@ -10,9 +10,20 @@ import UIKit
 import Pageboy
 
 /// Transition protocol for indicators.
-internal protocol TabmanIndicatorTransition: TabmanTransition {
+internal class TabmanIndicatorTransition: TabmanTransition {
     
-    var tabmanBar: TabmanBar? { get set }
+    var tabmanBar: TabmanBar?
     
-    func updateForCurrentPosition()
+    required init() {
+    }
+    
+    func transition(withPosition position: CGFloat,
+                    direction: PageboyViewController.NavigationDirection,
+                    minimumIndex: Int, maximumIndex: Int) {
+        
+    }
+    
+    func updateForCurrentPosition() {
+        
+    }
 }

@@ -32,13 +32,11 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     /// - none: No indicator.
     /// - line: Horizontal line pinned to bottom of bar.
     /// - dot: Circular centered dot pinned to the bottom of the bar.
-    /// - block: Block indicator behind selected bar item.
     /// - custom: A custom defined indicator.
     public enum Style {
         case none
         case line
         case dot
-        case block
         case custom(type: TabmanIndicator.Type)
     }
     
@@ -101,6 +99,10 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     internal func preferredLayerPosition() -> LayerPosition {
         return .foreground
     }
+    
+    internal func itemTransitionType() -> TabmanItemTransition.Type? {
+        return nil
+    }
 }
 
 internal extension TabmanIndicator.Style {
@@ -116,9 +118,6 @@ internal extension TabmanIndicator.Style {
             
         case is TabmanDotIndicator.Type:
             return .dot
-            
-        case is TabmanBlockIndicator.Type:
-            return .block
             
         default:
             return .custom(type: type)
