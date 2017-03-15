@@ -347,6 +347,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     open func update(forAppearance appearance: Appearance) {
+        self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
         if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle
@@ -354,13 +355,18 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
         }
-        
+
         if let indicatorBounces = appearance.indicator.bounces {
             self.indicatorBounces = indicatorBounces
         }
         
-        self.preferredIndicatorStyle = appearance.indicator.preferredStyle
+        if let indicatorColor = appearance.indicator.color {
+            self.indicator?.tintColor = indicatorColor
+        }
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
     }

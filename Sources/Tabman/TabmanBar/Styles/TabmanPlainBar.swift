@@ -47,12 +47,4 @@ public class TabmanPlainBar: TabmanBar {
         self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
-    
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
-        
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
-        }
-    }
 }

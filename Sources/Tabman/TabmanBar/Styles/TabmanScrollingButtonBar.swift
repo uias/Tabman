@@ -129,6 +129,21 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
+        if let color = appearance.state.color {
+            self.color = color
+            self.updateButtons(withContext: .unselected, update: { button in
+                button.setTitleColor(color, for: .normal)
+                button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
+                button.tintColor = color
+            })
+        }
+        
+        if let selectedColor = appearance.state.selectedColor {
+            self.selectedColor = selectedColor
+            self.focussedButton?.setTitleColor(selectedColor, for: .normal)
+            self.focussedButton?.tintColor = selectedColor
+        }
+        
         if let edgeInset = appearance.layout.edgeInset {
             self.edgeInset = edgeInset
             self.updateForCurrentPosition()

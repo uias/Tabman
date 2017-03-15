@@ -81,30 +81,11 @@ public class TabmanButtonBar: TabmanBar {
             self.interItemSpacing = interItemSpacing
         }
         
-        if let color = appearance.state.color {
-            self.color = color
-            self.updateButtons(withContext: .unselected, update: { button in
-                button.setTitleColor(color, for: .normal)
-                button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
-                button.tintColor = color
-            })
-        }
-        
-        if let selectedColor = appearance.state.selectedColor {
-            self.selectedColor = selectedColor
-            self.focussedButton?.setTitleColor(selectedColor, for: .normal)
-            self.focussedButton?.tintColor = selectedColor
-        }
-        
         if let textFont = appearance.text.font {
             self.textFont = textFont
             self.updateButtons(update: { (button) in
                 button.titleLabel?.font = textFont
             })
-        }
-        
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
         }
         
         if let indicatorWeight = appearance.indicator.lineWeight,
@@ -152,13 +133,13 @@ public class TabmanButtonBar: TabmanBar {
         }
     }
     
-    private enum ButtonContext {
+    internal enum ButtonContext {
         case all
         case target
         case unselected
     }
     
-    private func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> ()) {
+    internal func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> ()) {
         for button in self.buttons {
             if context == .all ||
                 (context == .target && button === self.focussedButton) ||
