@@ -53,7 +53,7 @@ class CustomTabmanBar: TabmanBar {
         // update your bar for a positional update here
     }
     
-    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         // update the bar appearance here

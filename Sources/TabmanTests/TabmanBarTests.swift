@@ -73,7 +73,7 @@ class TabmanBarTests: XCTestCase {
     /// Test that bar correctly updates when setting a custom appearance
     func testUpdateCustomAppearance() {
         
-        let customAppearance = TabmanBar.AppearanceConfig({ (appearance) in
+        let customAppearance = TabmanBar.Appearance({ (appearance) in
             appearance.indicator.color = .green
         })
         

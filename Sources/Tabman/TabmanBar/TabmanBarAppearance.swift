@@ -11,7 +11,7 @@ import UIKit
 public extension TabmanBar {
     
     /// Appearance configuration for a TabmanBar.
-    public class AppearanceConfig: Any {
+    public class Appearance: Any {
         
         // MARK: Structs
         
@@ -85,13 +85,13 @@ public extension TabmanBar {
         
         // MARK: Init
 
-        public init(_ configurer: (AppearanceConfig) -> ()) {
+        public init(_ appearance: (Appearance) -> ()) {
             self.setDefaultValues()
-            configurer(self)
+            appearance(self)
         }
         
-        static public var defaultAppearance: AppearanceConfig {
-            let config = AppearanceConfig({ _ in })
+        static public var defaultAppearance: Appearance {
+            let config = Appearance({ _ in })
             config.setDefaultValues()
             return config
         }
@@ -109,5 +109,5 @@ public protocol TabmanAppearanceUpdateable {
     /// Update the appearance of the tab bar for a new configuration.
     ///
     /// - Parameter appearance: The new configuration.
-    func update(forAppearance appearance: TabmanBar.AppearanceConfig)
+    func update(forAppearance appearance: TabmanBar.Appearance)
 }

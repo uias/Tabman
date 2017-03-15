@@ -21,7 +21,7 @@ class TabmanTestBar: TabmanBar {
     var hasConstructed: Bool = false
     var latestPosition: CGFloat?
     var latestDirection: PageboyViewController.NavigationDirection?
-    var latestAppearanceConfig: TabmanBar.AppearanceConfig?
+    var latestAppearanceConfig: TabmanBar.Appearance?
     
     //
     // MARK: Init
@@ -54,8 +54,11 @@ class TabmanTestBar: TabmanBar {
     }
     
     override func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
         self.hasConstructed = true
+    }
+    
+    override func addIndicatorToBar(indicator: TabmanIndicator) {
+        
     }
     
     override func update(forPosition position: CGFloat,
@@ -68,7 +71,7 @@ class TabmanTestBar: TabmanBar {
         self.latestDirection = direction
     }
     
-    override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
+    override func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
         
         self.latestAppearanceConfig = appearance

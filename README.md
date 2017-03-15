@@ -10,10 +10,14 @@
 
 **Tabman** is a powerful paging view controller with indicator bar component, for iOS.
 
+<p align="center">
+    <img src="Artwork/header.png" width="890" alt="Tabman"/>
+</p>
+
 ## Features
 - [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
-- [x] Simplistic but powerful customisation.
+- [x] Simplistic, yet highly extensive customisation.
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
 
@@ -92,12 +96,12 @@ The `TabmanBar` in Tabman can be completely customised to your liking, by simply
 #### Style
 The style of bar to display, by default this is set to `.buttonBar`.  
 
-#####Available Styles:
+##### Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-#####Upcoming Styles:
+##### Upcoming Styles:
 
 - `.segmentedBar` - UISegmentedControl style bar.
 - `.tabBar` - UITabBar style bar.

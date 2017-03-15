@@ -81,4 +81,8 @@ public class TabmanLineIndicator: TabmanIndicator {
         self.layoutIfNeeded()
         self.layer.cornerRadius = useRoundedCorners ? self.bounds.size.height / 2.0 : 0.0
     }
+    
+    override func itemTransitionType() -> TabmanItemTransition.Type? {
+        return TabmanItemColorTransition.self
+    }
 }

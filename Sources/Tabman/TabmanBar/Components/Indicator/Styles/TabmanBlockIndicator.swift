@@ -33,4 +33,8 @@ internal class TabmanBlockIndicator: TabmanIndicator {
         
         self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
     }
+    
+    override func itemTransitionType() -> TabmanItemTransition.Type? {
+        return TabmanItemMaskTransition.self
+    }
 }

@@ -11,8 +11,8 @@ import Tabman
 
 class PresetAppeareanceConfigs: Any {
     
-    static func forStyle(_ style: TabmanBarConfig.Style, currentAppearance: TabmanBar.AppearanceConfig?) -> TabmanBar.AppearanceConfig? {
-        let appearance = currentAppearance ?? TabmanBar.AppearanceConfig.defaultAppearance
+    static func forStyle(_ style: TabmanBar.Style, currentAppearance: TabmanBar.Appearance?) -> TabmanBar.Appearance? {
+        let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         
         var view: UIView? = UIView()
         let defaultTintColor = view!.tintColor
