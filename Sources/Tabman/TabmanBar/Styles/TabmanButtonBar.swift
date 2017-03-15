@@ -74,6 +74,7 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     public override func update(forAppearance appearance: TabmanBar.Appearance) {
+        super.update(forAppearance: appearance)
         
         if let interItemSpacing = appearance.layout.interItemSpacing {
             self.interItemSpacing = interItemSpacing

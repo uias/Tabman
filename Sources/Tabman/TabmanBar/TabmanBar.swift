@@ -61,6 +61,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
+    /// The masked content view for the tab bar.
     internal private(set) var maskContentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
