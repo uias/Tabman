@@ -87,6 +87,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
+        super.constructTabBar(items: items)
         
         // add scroll view
         self.contentView.addSubview(scrollView)
