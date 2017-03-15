@@ -110,7 +110,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Appearance configuration for the bar.
     public var appearance: Appearance = .defaultAppearance {
         didSet {
-            self.update(forAppearance: appearance)
+            self.updateCore(forAppearance: appearance)
         }
     }
     
@@ -234,7 +234,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.addIndicatorToBar(indicator: indicator)
         }
         
-        self.update(forAppearance: self.appearance)
+        self.updateCore(forAppearance: self.appearance)
         self.updateForCurrentPosition()
     }
     
@@ -351,12 +351,20 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                                    minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }
     
-    open func update(forAppearance appearance: Appearance) {
+    /// Appearance updates that are core to TabmanBar and must always be evaluated
+    ///
+    /// - Parameter appearance: The appearance config
+    private func updateCore(forAppearance appearance: Appearance) {
         self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
         if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
+        
+        self.update(forAppearance: appearance)
+    }
+    
+    open func update(forAppearance appearance: Appearance) {
         
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive
