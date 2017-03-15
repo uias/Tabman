@@ -43,8 +43,11 @@ public class TabmanPlainBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
+    override public func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
+        
+    }
+    
     override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        super.addIndicatorToBar(indicator: indicator)
         
         indicator.tintColor = self.appearance.indicator.color
         self.contentView.addSubview(indicator)

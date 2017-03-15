@@ -31,7 +31,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     //
     
     private var buttonContentView: UIView?
-    private var maskContentView: UIView?
     
     // Public
     
@@ -73,8 +72,7 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    override public func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
+    override public func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
 
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
@@ -82,9 +80,9 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         
         self.contentView.addSubview(buttonContentView)
         buttonContentView.autoPinEdgesToSuperviewEdges()
-        self.contentView.addSubview(maskContentView)
-        maskContentView.autoPinEdgesToSuperviewEdges()
-        maskContentView.mask = self.indicatorMaskView
+//        self.contentView.addSubview(maskContentView)
+//        maskContentView.autoPinEdgesToSuperviewEdges()
+//        maskContentView.mask = self.indicatorMaskView
         
         let insets = UIEdgeInsets(top: 0.0,
                                   left: self.interItemSpacing / 2,
@@ -117,11 +115,10 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         }
         
         self.buttonContentView = buttonContentView
-        self.maskContentView = maskContentView
+//        self.maskContentView = maskContentView
     }
     
     override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        super.addIndicatorToBar(indicator: indicator)
         
         self.contentView.addSubview(indicator)
         indicator.autoPinEdge(toSuperviewEdge: .bottom)

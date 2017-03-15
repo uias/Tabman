@@ -36,28 +36,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // Private
     
     internal var items: [TabmanBarItem]?
-    
     internal private(set) var currentPosition: CGFloat = 0.0
-    internal var fadeGradientLayer: CAGradientLayer?
-    
-    internal var indicatorLeftMargin: NSLayoutConstraint?
-    internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
-    internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
-    
-    internal var indicatorMaskView: UIView = {
-        let maskView = UIView()
-        maskView.backgroundColor = .black
-        return maskView
-    }()
-    
     internal weak var transitionStore: TabmanBarTransitionStore?
+
+    internal var fadeGradientLayer: CAGradientLayer?
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
-    
-    // Public
-    
     /// The object that acts as a data source to the bar.
     public var dataSource: TabmanBarDataSource? {
         didSet {
@@ -76,6 +61,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
+    internal private(set) var maskContentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
@@ -84,6 +70,16 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.clear(indicator: oldValue)
         }
     }
+    internal var indicatorLeftMargin: NSLayoutConstraint?
+    internal var indicatorWidth: NSLayoutConstraint?
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
+    internal var indicatorMaskView: UIView = {
+        let maskView = UIView()
+        maskView.backgroundColor = .black
+        return maskView
+    }()
+    
     /// Preferred style for the indicator. 
     /// Bar conforms at own discretion via usePreferredIndicatorStyle()
     public var preferredIndicatorStyle: TabmanIndicator.Style? {
@@ -207,7 +203,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     //
     
-    open func constructTabBar(items: [TabmanBarItem]) {
+    open func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
         fatalError("constructTabBar should be implemented in TabmanBar subclasses.")
     }
     

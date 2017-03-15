@@ -66,8 +66,7 @@ public class TabmanButtonBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    public override func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
+    public override func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
@@ -75,7 +74,6 @@ public class TabmanButtonBar: TabmanBar {
     }
     
     public override func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
         
         if let interItemSpacing = appearance.layout.interItemSpacing {
             self.interItemSpacing = interItemSpacing
