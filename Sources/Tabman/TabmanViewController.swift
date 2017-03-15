@@ -74,7 +74,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
 }
 
-
 // MARK: - Bar Reloading / Layout
 internal extension TabmanViewController {
     
@@ -143,6 +142,26 @@ internal extension TabmanViewController {
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
+    }
+}
+
+// MARK: - TabmanBar attach/detachment
+public extension TabmanViewController {
+    
+    /// Attach a TabmanBar that is somewhere in the view hierarchy.
+    /// This will replace the TabmanViewController managed instance.
+    ///
+    /// - Parameter bar: The bar to attach.
+    public func attach(bar: TabmanBar) {
+        // TODO
+    }
+    
+    /// Detach a currently attached external TabmanBar.
+    /// This will reinstate the TabmanViewController managed instance.
+    ///
+    /// - Parameter bar: The bar to detach.
+    public func detach(bar: TabmanBar) {
+        // TODO
     }
 }
 
