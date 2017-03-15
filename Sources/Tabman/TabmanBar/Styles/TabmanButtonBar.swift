@@ -67,7 +67,6 @@ public class TabmanButtonBar: TabmanBar {
     //
     
     public override func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()

@@ -74,7 +74,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
 
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
@@ -121,7 +120,6 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
     }
     
     override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        super.addIndicatorToBar(indicator: indicator)
         
         self.contentView.addSubview(indicator)
         indicator.autoPinEdge(toSuperviewEdge: .bottom)
