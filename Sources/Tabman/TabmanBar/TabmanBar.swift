@@ -61,8 +61,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
-    /// The masked content view for the tab bar.
-    internal private(set) var maskContentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
@@ -204,7 +202,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     //
     
-    open func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
+    open func constructTabBar(items: [TabmanBarItem]) {
         fatalError("constructTabBar should be implemented in TabmanBar subclasses.")
     }
     

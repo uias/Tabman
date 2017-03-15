@@ -32,15 +32,15 @@ class CustomTabmanBar: TabmanBar {
     
     // MARK: TabmanBar Lifecycle
     
-    override func constructTabBar(items: [TabmanBarItem], inView contentView: UIView) {
-        super.constructTabBar(items: items, inView: contentView)
+    override func constructTabBar(items: [TabmanBarItem]) {
+        super.constructTabBar(items: items)
         
         // create your bar here
         let label = UILabel()
         label.text = "This is a custom TabmanBar"
         label.textAlignment = .center
         label.textColor = .white
-        contentView.addSubview(label)
+        self.contentView.addSubview(label)
         label.autoPinEdgesToSuperviewEdges()
     }
     
