@@ -176,37 +176,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     //
-    // MARK: Bar
-    //
-    
-    /// Reconstruct the bar for a new style or data set.
-    private func clearAndConstructBar() {
-        self.indicatorWidth?.isActive = false
-        self.indicatorLeftMargin?.isActive = false
-        self.clearBar()
-
-        guard let items = self.items else { return } // no items yet
-        
-        self.constructTabBar(items: items)
-        if let indicator = self.indicator {
-            self.addIndicatorToBar(indicator: indicator)
-        }
-        
-        self.updateCore(forAppearance: self.appearance)
-        self.updateForCurrentPosition()
-    }
-    
-    /// Remove all components and subviews from the bar.
-    internal func clearBar() {
-        self.contentView.removeAllSubviews()
-    }
-    
-    //
-    // MARK: Indicator
-    //
-    
-    //
-    // MARK: Positioning
+    // MARK: Updating
     //
     
     internal func updatePosition(_ position: CGFloat,
@@ -263,7 +233,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Appearance updates that are core to TabmanBar and must always be evaluated
     ///
     /// - Parameter appearance: The appearance config
-    private func updateCore(forAppearance appearance: Appearance) {
+    internal func updateCore(forAppearance appearance: Appearance) {
         self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
         if let backgroundStyle = appearance.style.background {
