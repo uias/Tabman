@@ -100,6 +100,9 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
         return .foreground
     }
     
+    /// The type of item transition to use with this indicator. (Internal use only)
+    ///
+    /// - Returns: The item transition type.
     internal func itemTransitionType() -> TabmanItemTransition.Type? {
         return nil
     }

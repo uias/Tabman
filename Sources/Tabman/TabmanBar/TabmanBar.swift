@@ -10,48 +10,6 @@ import UIKit
 import PureLayout
 import Pageboy
 
-public protocol TabmanBarDataSource {
-    
-    /// The items to display in a bar.
-    ///
-    /// - Parameter bar: The bar.
-    /// - Returns: Items to display in the tab bar.
-    func items(forBar bar: TabmanBar) -> [TabmanBarItem]?
-}
-
-internal protocol TabmanBarDelegate {
-    
-    /// The bar did select an item at an index.
-    ///
-    /// - Parameters:
-    ///   - bar: The bar.
-    ///   - index: The selected index.
-    func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int)
-}
-
-/// Lifecycle functions of TabmanBar
-public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
-    
-    /// Construct the contents of the tab bar for the current style and given items.
-    ///
-    /// - Parameter items: The items to display.
-    func constructTabBar(items: [TabmanBarItem])
-    
-    func addIndicatorToBar(indicator: TabmanIndicator)
-    
-    /// Update the tab bar for a positional update.
-    ///
-    /// - Parameters:
-    ///   - position: The new position.
-    ///   - direction: The direction of travel.
-    ///   - minimumIndex: The minimum possible index.
-    ///   - maximumIndex: The maximum possible index.
-    func update(forPosition position: CGFloat,
-                direction: PageboyViewController.NavigationDirection,
-                minimumIndex: Int,
-                maximumIndex: Int)
-}
-
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
@@ -120,7 +78,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
-    public private(set) var indicator: TabmanIndicator? {
+    public internal(set) var indicator: TabmanIndicator? {
         didSet {
             indicator?.delegate = self
             self.clear(indicator: oldValue)
@@ -246,55 +204,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     //
     // MARK: Indicator
     //
-    
-    /// Remove a scroll indicator from the bar.
-    internal func clear(indicator: TabmanIndicator?) {
-        self.indicatorMaskView.frame = .zero // reset mask
-        indicator?.removeFromSuperview()
-        indicator?.removeConstraints(indicator?.constraints ?? [])
-    }
-    
-    /// Create a new indicator for a style.
-    ///
-    /// - Parameter style: The style.
-    /// - Returns: The new indicator.
-    internal func create(indicatorForStyle style: TabmanIndicator.Style) -> TabmanIndicator? {
-        if let indicatorType = style.rawType {
-            return indicatorType.init()
-        }
-        return nil
-    }
-    
-    /// Update the current indicator for a preferred style.
-    ///
-    /// - Parameter preferredStyle: The new preferred style.
-    private func updateIndicator(forPreferredStyle preferredStyle: TabmanIndicator.Style?) {
-        guard let preferredIndicatorStyle = self.preferredIndicatorStyle else {
-            
-            // restore default if no preferred style
-            self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())
-            guard self.indicator != nil else { return }
-            self.addIndicatorToBar(indicator: indicator!)
-            self.updateForCurrentPosition()
-            
-            return
-        }
-        guard self.usePreferredIndicatorStyle() else { return }
-        
-        // return nil if same type as current indicator
-        if let indicator = self.indicator {
-            guard type(of: indicator) != preferredStyle?.rawType else {
-                return
-            }
-        }
-        
-        // Create new preferred style indicator.
-        self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
-        guard self.indicator != nil else { return }
-        
-        self.addIndicatorToBar(indicator: indicator!)
-        self.updateForCurrentPosition()
-    }
     
     //
     // MARK: Positioning
