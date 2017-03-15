@@ -9,7 +9,7 @@
 import Foundation
 import Pageboy
 
-internal protocol TabmanTransition {
+internal protocol TabmanTransitionLifecycle {
     
     var tabmanBar: TabmanBar? { get set }
     
@@ -19,4 +19,33 @@ internal protocol TabmanTransition {
                     maximumIndex: Int)
     
     func updateForCurrentPosition()
+}
+
+internal class TabmanTransition: Any, TabmanTransitionLifecycle {
+    
+    var tabmanBar: TabmanBar?
+    
+    required init() {
+    }
+    
+    func transition(withPosition position: CGFloat,
+                    direction: PageboyViewController.NavigationDirection,
+                    minimumIndex: Int, maximumIndex: Int) {
+        
+    }
+    
+    func updateForCurrentPosition() {
+        
+    }
+}
+
+extension TabmanTransition: Hashable, Equatable {
+    
+    static func ==(lhs: TabmanTransition, rhs: TabmanTransition) -> Bool {
+        return String(describing: lhs) == String(describing: rhs)
+    }
+    
+    var hashValue: Int {
+        return String(describing: type(of: self)).hashValue
+    }
 }

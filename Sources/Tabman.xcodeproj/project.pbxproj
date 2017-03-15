@@ -19,7 +19,7 @@
 		D616D06B1E72C1FC00C7AA32 /* TabmanDotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0681E72C1FC00C7AA32 /* TabmanDotIndicator.swift */; };
 		D616D06C1E72C1FC00C7AA32 /* TabmanLineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0691E72C1FC00C7AA32 /* TabmanLineIndicator.swift */; };
 		D616D0841E73058600C7AA32 /* TabmanBarAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */; };
-		D616D0A31E77EFC600C7AA32 /* TabmanBarTransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionHandler.swift */; };
+		D616D0A31E77EFC600C7AA32 /* TabmanBarTransitionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionStore.swift */; };
 		D616D0AC1E77FA9300C7AA32 /* TabmanIndicatorTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0A91E77FA9300C7AA32 /* TabmanIndicatorTransition.swift */; };
 		D616D0AD1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0AA1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift */; };
 		D616D0AE1E77FA9300C7AA32 /* TabmanStaticBarIndicatorTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0AB1E77FA9300C7AA32 /* TabmanStaticBarIndicatorTransition.swift */; };
@@ -73,7 +73,7 @@
 		D616D0681E72C1FC00C7AA32 /* TabmanDotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanDotIndicator.swift; sourceTree = "<group>"; };
 		D616D0691E72C1FC00C7AA32 /* TabmanLineIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanLineIndicator.swift; sourceTree = "<group>"; };
 		D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearanceTests.swift; sourceTree = "<group>"; };
-		D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTransitionHandler.swift; sourceTree = "<group>"; };
+		D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTransitionStore.swift; sourceTree = "<group>"; };
 		D616D0A91E77FA9300C7AA32 /* TabmanIndicatorTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanIndicatorTransition.swift; sourceTree = "<group>"; };
 		D616D0AA1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanScrollingBarIndicatorTransition.swift; sourceTree = "<group>"; };
 		D616D0AB1E77FA9300C7AA32 /* TabmanStaticBarIndicatorTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanStaticBarIndicatorTransition.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		D616D09F1E77EFC600C7AA32 /* Transitioning */ = {
 			isa = PBXGroup;
 			children = (
-				D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionHandler.swift */,
+				D616D0A11E77EFC600C7AA32 /* TabmanBarTransitionStore.swift */,
 				D616D0B21E77FD5000C7AA32 /* TabmanTransition.swift */,
 				D616D0A81E77FA9300C7AA32 /* IndicatorTransition */,
 				D616D0AF1E77FCCE00C7AA32 /* ItemTransition */,
@@ -438,7 +438,7 @@
 				D616D0AC1E77FA9300C7AA32 /* TabmanIndicatorTransition.swift in Sources */,
 				D616D0B51E77FF6D00C7AA32 /* TabmanItemColorTransition.swift in Sources */,
 				D601367B1E6989B50013CD42 /* TabmanBarConfig.swift in Sources */,
-				D616D0A31E77EFC600C7AA32 /* TabmanBarTransitionHandler.swift in Sources */,
+				D616D0A31E77EFC600C7AA32 /* TabmanBarTransitionStore.swift in Sources */,
 				D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */,
 				D68FBA811E701D1A00B96EC0 /* TabmanCircularView.swift in Sources */,
 				D616D06C1E72C1FC00C7AA32 /* TabmanLineIndicator.swift in Sources */,

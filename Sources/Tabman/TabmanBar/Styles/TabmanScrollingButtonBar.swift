@@ -71,11 +71,15 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.transitionHandler?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
+        self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
     }
     
     public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
+    }
+    
+    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return TabmanScrollingBarIndicatorTransition.self
     }
     
     //
@@ -152,7 +156,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         if let isScrollEnabled = appearance.interaction.isScrollEnabled {
             self.scrollView.isScrollEnabled = isScrollEnabled
             UIView.animate(withDuration: 0.3, animations: { // reset scroll position
-                self.transitionHandler?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
+                self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
             })
         }
         

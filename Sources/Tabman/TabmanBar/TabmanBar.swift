@@ -93,7 +93,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         return maskView
     }()
     
-    internal weak var transitionHandler: TabmanBarTransitionHandler?
+    internal weak var transitionStore: TabmanBarTransitionStore?
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
@@ -198,6 +198,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// - Returns: Whether to use preferredIndicatorStyle
     open func usePreferredIndicatorStyle() -> Bool {
         return true
+    }
+    
+    /// The type of transition to use for the indicator (Internal use only).
+    ///
+    /// - Returns: The transition type.
+    internal func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return nil
     }
     
     //
@@ -335,11 +342,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                          maximumIndex: Int) {
         guard self.indicator != nil else { return }
         
-        let indicatorTransition = self.transitionHandler?.indicatorTransition(forBar: self)
+        let indicatorTransition = self.transitionStore?.indicatorTransition(forBar: self)
         indicatorTransition?.transition(withPosition: position, direction: direction,
                                         minimumIndex: minimumIndex, maximumIndex: maximumIndex)
         
-        let itemTransition = self.transitionHandler?.itemTransition(forBar: self, indicator: self.indicator!)
+        let itemTransition = self.transitionStore?.itemTransition(forBar: self, indicator: self.indicator!)
         itemTransition?.transition(withPosition: position, direction: direction,
                                    minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }

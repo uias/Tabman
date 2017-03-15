@@ -65,6 +65,10 @@ public class TabmanStaticButtonBar: TabmanButtonBar {
         return false
     }
     
+    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return TabmanStaticBarIndicatorTransition.self
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
