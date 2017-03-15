@@ -96,12 +96,12 @@ The `TabmanBar` in Tabman can be completely customised to your liking, by simply
 #### Style
 The style of bar to display, by default this is set to `.buttonBar`.  
 
-#####Available Styles:
+##### Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-#####Upcoming Styles:
+##### Upcoming Styles:
 
 - `.segmentedBar` - UISegmentedControl style bar.
 - `.tabBar` - UITabBar style bar.
