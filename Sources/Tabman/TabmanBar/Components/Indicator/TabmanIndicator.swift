@@ -99,4 +99,31 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     internal func preferredLayerPosition() -> LayerPosition {
         return .foreground
     }
+    
+    /// The type of item transition to use with this indicator. (Internal use only)
+    ///
+    /// - Returns: The item transition type.
+    internal func itemTransitionType() -> TabmanItemTransition.Type? {
+        return nil
+    }
+}
+
+internal extension TabmanIndicator.Style {
+    
+    static func fromType(_ type: TabmanIndicator.Type?) -> TabmanIndicator.Style {
+        guard let type = type else {
+            return .none
+        }
+        
+        switch type {
+        case is TabmanLineIndicator.Type:
+            return .line
+            
+        case is TabmanDotIndicator.Type:
+            return .dot
+            
+        default:
+            return .custom(type: type)
+        }
+    }
 }

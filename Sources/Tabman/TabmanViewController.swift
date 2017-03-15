@@ -22,6 +22,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Able to set items, appearance, location and style through this object.
     public lazy var bar = TabmanBarConfig()
     
+    internal lazy var barTransitionStore = TabmanBarTransitionStore()
+    
     //
     // MARK: Lifecycle
     //
@@ -87,13 +89,14 @@ internal extension TabmanViewController {
     /// Reload the tab bar for a new style.
     ///
     /// - Parameter style: The new style.
-    func reloadBar(withStyle style: TabmanBarConfig.Style) {
+    func reloadBar(withStyle style: TabmanBar.Style) {
         guard let barType = style.rawType else {
             return
         }
         
         // re create the tab bar with a new style
         let bar = barType.init()
+        bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
         bar.delegate = self
         if let appearance = self.bar.appearance {
@@ -165,7 +168,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
 // MARK: - TabmanBarConfigDelegate
 extension TabmanViewController: TabmanBarConfigDelegate {
     
-    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBarConfig.Style) {
+    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBar.Style) {
         self.clearUpBar(&self.tabmanBar)
         self.reloadBar(withStyle: style)
         self.updateBar(withLocation: config.location)

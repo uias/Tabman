@@ -1,15 +1,15 @@
 //
-//  TabmanBarCalculations.swift
+//  PositionalUtils.swift
 //  Tabman
 //
-//  Created by Merrick Sapsford on 21/02/2017.
+//  Created by Merrick Sapsford on 14/03/2017.
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Pageboy
 
-internal extension TabmanBar {
+internal class TabmanPositionalUtil {
     
     /// Get the lower & upper tab indexes for a current relative position.
     ///
@@ -18,7 +18,7 @@ internal extension TabmanBar {
     ///   - minimum: The minimum possible index.
     ///   - maximum: The maximum possible index.
     /// - Returns: The lower and upper indexes for the position.
-    func lowerAndUpperIndex(forPosition position: CGFloat, minimum: Int, maximum: Int) -> (Int, Int) {
+    static func lowerAndUpperIndex(forPosition position: CGFloat, minimum: Int, maximum: Int) -> (Int, Int) {
         let lowerIndex = floor(position)
         let upperIndex = ceil(position)
         
@@ -31,8 +31,11 @@ internal extension TabmanBar {
     /// - Parameters:
     ///   - position: The current position.
     ///   - direction: The current travel direction.
+    ///   - range: The valid range of indexes.
     /// - Returns: The target index.
-    func targetIndex(forPosition position: CGFloat, direction: PageboyViewController.NavigationDirection) -> Int {
+    static func targetIndex(forPosition position: CGFloat,
+                            direction: PageboyViewController.NavigationDirection,
+                            range: Range<Int>) -> Int {
         var index: Int!
         switch direction {
         case .reverse:
@@ -40,6 +43,6 @@ internal extension TabmanBar {
         default:
             index = Int(ceil(position))
         }
-        return max(0, min((self.items?.count ?? 1) - 1, index))
+        return max(range.lowerBound, min(range.upperBound - 1, index))
     }
 }

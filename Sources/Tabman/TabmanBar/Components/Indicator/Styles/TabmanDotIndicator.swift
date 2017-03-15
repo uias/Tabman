@@ -40,4 +40,8 @@ public class TabmanDotIndicator: TabmanIndicator {
         dotView.autoAlignAxis(toSuperviewAxis: .vertical)
         dotView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 2.0)
     }
+    
+    override func itemTransitionType() -> TabmanItemTransition.Type? {
+        return TabmanItemColorTransition.self
+    }
 }

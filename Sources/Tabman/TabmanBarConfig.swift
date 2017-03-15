@@ -16,7 +16,7 @@ internal protocol TabmanBarConfigDelegate {
     /// - Parameters:
     ///   - config: The config.
     ///   - style: The new style.
-    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBarConfig.Style)
+    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBar.Style)
     
     /// The config had its location updated.
     ///
@@ -47,19 +47,6 @@ public class TabmanBarConfig: Any {
     // MARK: Types
     //
     
-    /// The style of the bar.
-    ///
-    /// - bar: A simple horizontal bar only.
-    /// - buttonBar: A scrolling horizontal bar with text buttons for each page index.
-    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
-    /// - custom: A custom defined TabmanBar type.
-    public enum Style {
-        case bar
-        case buttonBar
-        case blockTabBar
-        case custom(type: TabmanBar.Type)
-    }
-    
     /// The location of the bar on screen.
     ///
     /// - perferred: Use the preferred location for the current style.
@@ -78,8 +65,8 @@ public class TabmanBarConfig: Any {
     internal var delegate: TabmanBarConfigDelegate?
     
     
-    /// The style to use for the bar. Default = .buttonBar
-    public var style: Style = .buttonBar {
+    /// The style to use for the bar. Default = .scrollingButtonBar
+    public var style: TabmanBar.Style = .buttonBar {
         didSet {
             guard style.rawType != oldValue.rawType else { return }
             
@@ -116,7 +103,7 @@ public class TabmanBarConfig: Any {
 }
 
 // MARK: - Additional Style properties for internal use
-internal extension TabmanBarConfig.Style {
+internal extension TabmanBar.Style {
     
     /// Where the bar is preferred to be displayed for the style.
     var preferredLocation: TabmanBarConfig.Location {
@@ -132,16 +119,16 @@ internal extension TabmanBarConfig.Style {
 }
 
 // MARK: - TabmanBarConfig.Style Typing
-internal extension TabmanBarConfig.Style {
+internal extension TabmanBar.Style {
     
     var rawType: TabmanBar.Type? {
         switch self {
             
-        case .buttonBar:
-            return TabmanButtonBar.self
-            
         case .bar:
             return TabmanPlainBar.self
+            
+        case .buttonBar:
+            return TabmanScrollingButtonBar.self
             
         case .blockTabBar:
             return TabmanBlockTabBar.self

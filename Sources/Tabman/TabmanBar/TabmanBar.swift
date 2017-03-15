@@ -10,49 +10,24 @@ import UIKit
 import PureLayout
 import Pageboy
 
-public protocol TabmanBarDataSource {
-    
-    /// The items to display in a bar.
-    ///
-    /// - Parameter bar: The bar.
-    /// - Returns: Items to display in the tab bar.
-    func items(forBar bar: TabmanBar) -> [TabmanBarItem]?
-}
-
-internal protocol TabmanBarDelegate {
-    
-    /// The bar did select an item at an index.
-    ///
-    /// - Parameters:
-    ///   - bar: The bar.
-    ///   - index: The selected index.
-    func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int)
-}
-
-/// Lifecycle functions of TabmanBar
-public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
-    
-    /// Construct the contents of the tab bar for the current style and given items.
-    ///
-    /// - Parameter items: The items to display.
-    func constructTabBar(items: [TabmanBarItem])
-    
-    func addIndicatorToBar(indicator: TabmanIndicator)
-    
-    /// Update the tab bar for a positional update.
-    ///
-    /// - Parameters:
-    ///   - position: The new position.
-    ///   - direction: The direction of travel.
-    ///   - minimumIndex: The minimum possible index.
-    ///   - maximumIndex: The maximum possible index.
-    func update(forPosition position: CGFloat,
-                direction: PageboyViewController.NavigationDirection,
-                minimumIndex: Int,
-                maximumIndex: Int)
-}
-
 open class TabmanBar: UIView, TabmanBarLifecycle {
+    
+    //
+    // MARK: Types
+    //
+    
+    /// The style of the bar.
+    ///
+    /// - bar: A simple horizontal bar only.
+    /// - buttonBar: A scrolling horizontal bar with buttons for each page index.
+    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
+    /// - custom: A custom defined TabmanBar type.
+    public enum Style {
+        case bar
+        case buttonBar
+        case blockTabBar
+        case custom(type: TabmanBar.Type)
+    }
     
     //
     // MARK: Properties
@@ -61,20 +36,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // Private
     
     internal var items: [TabmanBarItem]?
-    
     internal private(set) var currentPosition: CGFloat = 0.0
+    internal weak var transitionStore: TabmanBarTransitionStore?
+
     internal var fadeGradientLayer: CAGradientLayer?
-    
-    internal var indicatorLeftMargin: NSLayoutConstraint?
-    internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
-    internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
-    
-    // Public
-    
     /// The object that acts as a data source to the bar.
     public var dataSource: TabmanBarDataSource? {
         didSet {
@@ -85,7 +53,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Appearance configuration for the bar.
     public var appearance: Appearance = .defaultAppearance {
         didSet {
-            self.update(forAppearance: appearance)
+            self.updateCore(forAppearance: appearance)
         }
     }
     
@@ -95,22 +63,27 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     
     /// Indicator for the bar.
-    public private(set) var indicator: TabmanIndicator? {
+    public internal(set) var indicator: TabmanIndicator? {
         didSet {
             indicator?.delegate = self
             self.clear(indicator: oldValue)
         }
     }
+    internal var indicatorLeftMargin: NSLayoutConstraint?
+    internal var indicatorWidth: NSLayoutConstraint?
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
+    internal var indicatorMaskView: UIView = {
+        let maskView = UIView()
+        maskView.backgroundColor = .black
+        return maskView
+    }()
+    
     /// Preferred style for the indicator. 
     /// Bar conforms at own discretion via usePreferredIndicatorStyle()
     public var preferredIndicatorStyle: TabmanIndicator.Style? {
         didSet {
-            guard self.usePreferredIndicatorStyle() else { return }
-            guard let preferredIndicatorStyle = self.preferredIndicatorStyle else { return }
-            
-            self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
-            self.addIndicatorToBar(indicator: indicator!)
-            self.updateForCurrentPosition()
+            self.updateIndicator(forPreferredStyle: preferredIndicatorStyle)
         }
     }
     
@@ -153,6 +126,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         super.layoutSubviews()
         
         self.fadeGradientLayer?.frame = self.bounds
+        
+        // refresh intrinsic size for indicator
+        self.indicator?.invalidateIntrinsicContentSize()
     }
     
     open override func addSubview(_ view: UIView) {
@@ -177,6 +153,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         return true
     }
     
+    /// The type of transition to use for the indicator (Internal use only).
+    ///
+    /// - Returns: The transition type.
+    internal func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return nil
+    }
+    
     //
     // MARK: Data
     //
@@ -188,50 +171,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     //
-    // MARK: Bar
-    //
-    
-    /// Reconstruct the bar for a new style or data set.
-    private func clearAndConstructBar() {
-        self.indicatorWidth?.isActive = false
-        self.indicatorLeftMargin?.isActive = false
-        self.clearBar()
-
-        guard let items = self.items else { return } // no items yet
-        
-        self.constructTabBar(items: items)
-        if let indicator = self.indicator {
-            self.addIndicatorToBar(indicator: indicator)
-        }
-        
-        self.update(forAppearance: self.appearance)
-        self.updateForCurrentPosition()
-    }
-    
-    /// Remove all components and subviews from the bar.
-    internal func clearBar() {
-        self.contentView.removeAllSubviews()
-    }
-    
-    //
-    // MARK: Indicator
-    //
-    
-    /// Remove a scroll indicator from the bar.
-    internal func clear(indicator: TabmanIndicator?) {
-        indicator?.removeFromSuperview()
-        indicator?.removeConstraints(indicator?.constraints ?? [])
-    }
-    
-    internal func create(indicatorForStyle style: TabmanIndicator.Style) -> TabmanIndicator? {
-        if let indicatorType = style.rawType {
-            return indicatorType.init()
-        }
-        return nil
-    }
-    
-    //
-    // MARK: Positioning
+    // MARK: Updating
     //
     
     internal func updatePosition(_ position: CGFloat,
@@ -263,36 +203,56 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     //
     
     open func constructTabBar(items: [TabmanBarItem]) {
-        // Override in subclass
+        fatalError("constructTabBar should be implemented in TabmanBar subclasses.")
     }
     
     public func addIndicatorToBar(indicator: TabmanIndicator) {
-        // Override in subclass
+        fatalError("addIndicatorToBar should be implemented in TabmanBar subclasses.")
     }
     
     open func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
                          minimumIndex: Int,
                          maximumIndex: Int) {
-        // Override in subclass
+        guard self.indicator != nil else { return }
+        
+        let indicatorTransition = self.transitionStore?.indicatorTransition(forBar: self)
+        indicatorTransition?.transition(withPosition: position, direction: direction,
+                                        minimumIndex: minimumIndex, maximumIndex: maximumIndex)
+        
+        let itemTransition = self.transitionStore?.itemTransition(forBar: self, indicator: self.indicator!)
+        itemTransition?.transition(withPosition: position, direction: direction,
+                                   minimumIndex: minimumIndex, maximumIndex: maximumIndex)
     }
     
-    open func update(forAppearance appearance: Appearance) {
+    /// Appearance updates that are core to TabmanBar and must always be evaluated
+    ///
+    /// - Parameter appearance: The appearance config
+    internal func updateCore(forAppearance appearance: Appearance) {
+        self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
         if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
         
+        self.update(forAppearance: appearance)
+    }
+    
+    open func update(forAppearance appearance: Appearance) {
+        
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
         }
-        
+
         if let indicatorBounces = appearance.indicator.bounces {
             self.indicatorBounces = indicatorBounces
         }
         
-        if let preferredIndicatorStyle = appearance.indicator.preferredStyle {
-            self.preferredIndicatorStyle = preferredIndicatorStyle
+        if let indicatorColor = appearance.indicator.color {
+            self.indicator?.tintColor = indicatorColor
         }
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)

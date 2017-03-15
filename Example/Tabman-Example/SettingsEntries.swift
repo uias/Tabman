@@ -25,18 +25,34 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBarConfig.Style.buttonBar.description,
-                                                                         TabmanBarConfig.Style.bar.description,
-                                                                         TabmanBarConfig.Style.blockTabBar.description],
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.buttonBar.description,
+                                                                         TabmanBar.Style.blockTabBar.description,
+                                                                         TabmanBar.Style.bar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
                                                  value: nil, update:
             { (value) in
-                let style = TabmanBarConfig.Style.fromDescription(value as! String)
+                let style = TabmanBar.Style.fromDescription(value as! String)
                 self.tabViewController?.bar.style = style
                 self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
+        }))
+        appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
+                                                                         TabmanIndicator.Style.line.description,
+                                                                         TabmanIndicator.Style.dot.description,
+                                                                         TabmanIndicator.Style.none.description],
+                                                                selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
+                                                 title: "Preferred Indicator Style",
+                                                 description: nil,
+                                                 value: nil, update:
+            { (value) in
+                guard let description = value as? String else { return }
+                let style = TabmanIndicator.Style.fromDescription(description)
+                
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.preferredStyle = style
+                self.tabViewController?.bar.appearance = appearance
         }))
         appearanceSection.add(item: SettingsItem(type: .toggle,
                                                  title: "Scroll Enabled",
@@ -87,9 +103,23 @@ extension SettingsViewController {
 
 }
 
-fileprivate extension TabmanBarConfig.Style {
+fileprivate extension TabmanBar.Style {
     
-    static func fromDescription(_ description: String) -> TabmanBarConfig.Style {
+    var description: String {
+        switch self {
+        case .bar:
+            return "Bar"
+        case .buttonBar:
+            return "Button Bar"
+        case .blockTabBar:
+            return "Block Tab Bar"
+            
+        default:
+            return "Custom"
+        }
+    }
+    
+    static func fromDescription(_ description: String) -> TabmanBar.Style {
         switch description {
             
         case "Button Bar":
@@ -101,18 +131,35 @@ fileprivate extension TabmanBarConfig.Style {
             return .bar
         }
     }
+}
+
+fileprivate extension TabmanIndicator.Style {
     
     var description: String {
         switch self {
-        case .buttonBar:
-            return "Button Bar"
-        case .bar:
-            return "Bar"
-        case .blockTabBar:
-            return "Block Tab Bar"
+        case .line:
+            return "Line"
+        case .dot:
+            return "Dot"
+        case .none:
+            return "None"
             
         default:
             return "Custom"
+        }
+    }
+    
+    static func fromDescription(_ description: String) -> TabmanIndicator.Style? {
+        switch description {
+        case "Preferred":
+            return nil
+        case "Line":
+            return .line
+        case "Dot":
+            return .dot
+
+        default:
+            return .none
         }
     }
 }

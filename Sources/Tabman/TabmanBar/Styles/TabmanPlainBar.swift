@@ -35,62 +35,23 @@ public class TabmanPlainBar: TabmanBar {
         return false
     }
     
+    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return TabmanStaticBarIndicatorTransition.self
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
     
-    override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        super.addIndicatorToBar(indicator: indicator)
+    public override func constructTabBar(items: [TabmanBarItem]) {
+        
+    }
+    
+    public override func addIndicatorToBar(indicator: TabmanIndicator) {
         
         indicator.tintColor = self.appearance.indicator.color
         self.contentView.addSubview(indicator)
         self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-    }
-    
-    override public func update(forPosition position: CGFloat,
-                         direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int,
-                         maximumIndex: Int) {
-        super.update(forPosition: position,
-                     direction: direction,
-                     minimumIndex: minimumIndex,
-                     maximumIndex: maximumIndex)
-        
-        let screenWidth = self.bounds.size.width
-        let itemCount = CGFloat(self.items?.count ?? 0)
-        let itemWidth = screenWidth / itemCount
-
-        if self.indicatorIsProgressive {
-            
-            let relativePosition = (position + 1.0) / CGFloat((self.items?.count ?? 1))
-            let indicatorWidth = max(0.0, min(screenWidth, screenWidth * relativePosition))
-            
-            var bouncyIndicatorWidth = indicatorWidth
-            if !self.indicatorBounces {
-                bouncyIndicatorWidth = max(itemWidth, min(screenWidth, bouncyIndicatorWidth))
-            }
-            self.indicatorWidth?.constant = bouncyIndicatorWidth
-            
-        } else {
-            
-            let relativePosition = position / CGFloat((self.items?.count ?? 1))
-            let leftMargin = relativePosition * screenWidth
-            
-            var bouncyIndicatorPosition = leftMargin
-            if !self.indicatorBounces {
-                bouncyIndicatorPosition = max(0.0, min(screenWidth - itemWidth, bouncyIndicatorPosition))
-            }
-            self.indicatorLeftMargin?.constant = bouncyIndicatorPosition
-            self.indicatorWidth?.constant = itemWidth
-        }
-    }
-    
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
-        
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
-        }
     }
 }
