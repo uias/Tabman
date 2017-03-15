@@ -33,6 +33,7 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
             if !bar.indicatorBounces {
                 bouncyIndicatorWidth = max(itemWidth, min(screenWidth, bouncyIndicatorWidth))
             }
+            bar.indicatorLeftMargin?.constant = 0.0
             bar.indicatorWidth?.constant = bouncyIndicatorWidth
             
         } else {
