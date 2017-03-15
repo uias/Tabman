@@ -99,6 +99,7 @@ internal extension TabmanViewController {
         bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
         bar.delegate = self
+        bar.isHidden = true // hidden by default
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
         }
@@ -184,5 +185,6 @@ extension TabmanViewController: TabmanBarConfigDelegate {
     
     func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?) {
         self.tabmanBar?.reloadData()
+        self.tabmanBar?.isHidden = items?.count == 0
     }
 }
