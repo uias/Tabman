@@ -1,5 +1,5 @@
 //
-//  TabmanButtonBar.swift
+//  TabmanBlockTabBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 09/03/2017.
@@ -13,7 +13,7 @@ import Pageboy
 /// A button tab bar with a block style indicator behind selected item.
 ///
 /// Maximum item limit: 5
-public class TabmanStaticButtonBar: TabmanButtonBar {
+public class TabmanBlockTabBar: TabmanButtonBar {
     
     //
     // MARK: Constants

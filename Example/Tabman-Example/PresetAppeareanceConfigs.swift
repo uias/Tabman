@@ -20,13 +20,13 @@ class PresetAppeareanceConfigs: Any {
         
         switch style {
 
-        case .scrollingButtonBar, .bar:
+        case .buttonBar, .bar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
 
-        case .buttonBar:
+        case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = defaultTintColor
             appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
