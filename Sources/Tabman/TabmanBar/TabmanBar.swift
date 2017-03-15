@@ -238,11 +238,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     //
     
     open func constructTabBar(items: [TabmanBarItem]) {
-        // Override in subclass
+        fatalError("constructTabBar should be implemented in TabmanBar subclasses.")
     }
     
     public func addIndicatorToBar(indicator: TabmanIndicator) {
-        // Override in subclass
+        fatalError("addIndicatorToBar should be implemented in TabmanBar subclasses.")
     }
     
     open func update(forPosition position: CGFloat,
