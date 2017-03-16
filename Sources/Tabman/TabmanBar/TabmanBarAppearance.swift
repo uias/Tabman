@@ -125,5 +125,6 @@ public protocol TabmanAppearanceUpdateable {
     /// Update the appearance of the tab bar for a new configuration.
     ///
     /// - Parameter appearance: The new configuration.
-    func update(forAppearance appearance: TabmanBar.Appearance)
+    /// - Parameter default: The default appearance configuration.
+    func update(forAppearance appearance: TabmanBar.Appearance, defaultAppearance: TabmanBar.Appearance)
 }

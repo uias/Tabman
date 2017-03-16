@@ -63,8 +63,10 @@ public class TabmanButtonBar: TabmanBar {
         self.edgeMarginConstraints.removeAll()
     }
     
-    public override func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    public override func update(forAppearance appearance: Appearance,
+                                defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
         if let interItemSpacing = appearance.layout.interItemSpacing {
             self.interItemSpacing = interItemSpacing

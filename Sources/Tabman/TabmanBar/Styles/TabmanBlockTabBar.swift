@@ -99,8 +99,10 @@ public class TabmanBlockTabBar: TabmanStaticButtonBar {
         self.maskContentView = maskContentView
     }
 
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    override public func update(forAppearance appearance: Appearance,
+                                defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
         if let color = appearance.state.color {
             self.updateButtonsInView(view: self.buttonContentView, update: { (button) in

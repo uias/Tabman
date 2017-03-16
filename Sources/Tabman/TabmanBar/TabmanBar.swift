@@ -267,10 +267,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         self.height = appearance.layout.height ?? .auto
         
-        self.update(forAppearance: appearance)
+        self.update(forAppearance: appearance,
+                    defaultAppearance: Appearance.defaultAppearance)
     }
     
-    open func update(forAppearance appearance: Appearance) {
+    open func update(forAppearance appearance: Appearance,
+                     defaultAppearance: Appearance) {
         
         if let indicatorIsProgressive = appearance.indicator.isProgressive {
             self.indicatorIsProgressive = indicatorIsProgressive

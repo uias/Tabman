@@ -128,8 +128,10 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    override public func update(forAppearance appearance: Appearance,
+                                defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
         if let color = appearance.state.color {
             self.color = color
