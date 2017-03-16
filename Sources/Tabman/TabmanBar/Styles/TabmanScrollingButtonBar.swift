@@ -167,8 +167,15 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
+        // update left margin for progressive style
         let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
-        self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
+        let leftMargin = self.indicatorLeftMargin?.constant ?? 0.0
+        let indicatorWasProgressive = leftMargin == 0.0
+        if indicatorWasProgressive && !indicatorIsProgressive {
+            self.indicatorLeftMargin?.constant = leftMargin - self.edgeInset
+        } else if !indicatorWasProgressive && indicatorIsProgressive {
+            self.indicatorLeftMargin?.constant = 0.0
+        }
     }
     
     //
