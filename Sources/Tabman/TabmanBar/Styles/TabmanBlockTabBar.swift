@@ -74,6 +74,7 @@ public class TabmanBlockTabBar: TabmanButtonBar {
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
+        super.constructTabBar(items: items)
 
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())

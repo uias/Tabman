@@ -167,6 +167,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Reload and reconstruct the contents of the bar.
     public func reloadData() {
         self.items = self.dataSource?.items(forBar: self)
+        self.isHidden = self.items?.count == 0
         self.clearAndConstructBar()
     }
     

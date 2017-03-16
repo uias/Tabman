@@ -58,4 +58,29 @@ class TabmanViewControllerTests: XCTestCase {
         XCTAssertNil(self.tabmanViewController.tabmanBar?.items,
                      "TabmanBar itemCountLimit is not evaluated correctly for invalid item count.")
     }
+    
+    /// Test that TabmanViewController allows attaching of an external TabmanBar correctly.
+    func testAttachExternalBar() {
+        let testBar = TabmanTestBar()
+        
+        self.tabmanViewController.attach(bar: testBar)
+        
+        XCTAssertTrue(self.tabmanViewController.attachedTabmanBar != nil &&
+            self.tabmanViewController.tabmanBar?.isHidden ?? false &&
+            self.tabmanViewController.attachedTabmanBar!.dataSource != nil,
+                      "Attaching external TabmanBar does not work correctly.")
+    }
+    
+    /// Test that TabmanViewController handles detaching of an external TabmanBar correctly.
+    func testDetachExternalBar() {
+        let testBar = TabmanTestBar()
+        self.tabmanViewController.attach(bar: testBar)
+        
+        let detachedBar = self.tabmanViewController.detachAttachedBar()
+        
+        XCTAssertTrue(self.tabmanViewController.attachedTabmanBar == nil &&
+            self.tabmanViewController.tabmanBar?.isHidden ?? true == false &&
+            detachedBar?.dataSource == nil,
+                      "Detaching external TabmanBar does not clean up correctly.")
+    }
 }
