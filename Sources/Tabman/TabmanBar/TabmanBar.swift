@@ -66,6 +66,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
+    /// The height for the bar. Default: .auto
     public var height: Height = .auto {
         didSet {
             self.invalidateIntrinsicContentSize()
@@ -263,6 +264,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         if let backgroundStyle = appearance.style.background {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
+        
+        self.height = appearance.layout.height ?? .auto
         
         self.update(forAppearance: appearance)
     }

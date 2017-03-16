@@ -52,6 +52,8 @@ public extension TabmanBar {
             public var interItemSpacing: CGFloat?
             /// The spacing at the edge of the items in the bar.
             public var edgeInset: CGFloat?
+            /// The height for the bar.
+            public var height: TabmanBar.Height?
         }
         
         /// Bar style configuration.
@@ -97,8 +99,11 @@ public extension TabmanBar {
         }
         
         private func setDefaultValues() {
-            
+            // indicator
             self.indicator.bounces = true
+            
+            // layout
+            self.layout.height = .auto
         }
     }
 }

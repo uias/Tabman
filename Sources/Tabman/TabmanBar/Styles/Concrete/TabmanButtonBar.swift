@@ -25,7 +25,7 @@ public class TabmanButtonBar: TabmanBar {
         
         static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
         
-        static let height: CGFloat = 50.0
+        static let itemHeight: CGFloat = 50.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
@@ -112,8 +112,12 @@ public class TabmanButtonBar: TabmanBar {
             }
             
             // layout
+            NSLayoutConstraint.autoSetPriority(500, forConstraints: {
+                button.autoSetDimension(.height, toSize: Defaults.itemHeight)
+            })
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
+            
             if previousButton == nil { // pin to left
                 self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
             } else {
