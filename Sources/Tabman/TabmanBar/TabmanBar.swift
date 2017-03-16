@@ -29,6 +29,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         case custom(type: TabmanBar.Type)
     }
     
+    public enum Height {
+        case auto
+        case explicit(height: CGFloat)
+    }
+    
     //
     // MARK: Properties
     //
@@ -58,6 +63,26 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public var appearance: Appearance = .defaultAppearance {
         didSet {
             self.updateCore(forAppearance: appearance)
+        }
+    }
+    
+    public var height: Height = .auto {
+        didSet {
+            self.invalidateIntrinsicContentSize()
+            self.superview?.setNeedsLayout()
+            self.superview?.layoutIfNeeded()
+        }
+    }
+    open override var intrinsicContentSize: CGSize {
+        var autoSize = super.intrinsicContentSize
+        switch self.height {
+    
+        case .explicit(let height):
+            autoSize.height = height
+            return autoSize
+            
+        default:
+            return autoSize
         }
     }
     

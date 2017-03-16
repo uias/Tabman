@@ -55,10 +55,6 @@ public class TabmanButtonBar: TabmanBar {
     
     // Public
     
-    override public var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: Defaults.height)
-    }
-    
     /// The spacing between each bar item. (Default = 20.0)
     public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing
     
