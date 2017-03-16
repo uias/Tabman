@@ -10,6 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
+/// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
@@ -29,9 +30,13 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         case custom(type: TabmanBar.Type)
     }
     
+    /// The height for the bar.
+    ///
+    /// - auto: Autosize the bar according to its contents.
+    /// - explicit: Explicit value for the bar height.
     public enum Height {
         case auto
-        case explicit(height: CGFloat)
+        case explicit(value: CGFloat)
     }
     
     //
