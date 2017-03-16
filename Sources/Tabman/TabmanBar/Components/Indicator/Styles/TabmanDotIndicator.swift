@@ -25,6 +25,10 @@ public class TabmanDotIndicator: TabmanIndicator {
         }
     }
     
+    public override var isProgressiveCapable: Bool {
+        return false
+    }
+    
     // MARK: Lifecycle
     
     public override var intrinsicContentSize: CGSize {

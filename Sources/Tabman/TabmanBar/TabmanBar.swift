@@ -287,8 +287,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     open func update(forAppearance appearance: Appearance,
                      defaultAppearance: Appearance) {
         
-        let indicatorIsProgressive = appearance.indicator.isProgressive
-        self.indicatorIsProgressive = indicatorIsProgressive ?? defaultAppearance.indicator.isProgressive!
+        let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        self.indicatorIsProgressive = indicatorIsProgressive ? self.indicator?.isProgressiveCapable ?? false : false
 
         let indicatorBounces = appearance.indicator.bounces
         self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!

@@ -58,6 +58,11 @@ extension TabmanBar {
         self.indicator = self.create(indicatorForStyle: preferredIndicatorStyle)
         guard self.indicator != nil else { return }
         
+        // disable progressive indicator if indicator does not support it. 
+        if self.indicator?.isProgressiveCapable == false && self.indicatorIsProgressive {
+            self.indicatorIsProgressive = false
+        }
+        
         self.addIndicatorToBar(indicator: indicator!)
         self.updateForCurrentPosition()
     }
