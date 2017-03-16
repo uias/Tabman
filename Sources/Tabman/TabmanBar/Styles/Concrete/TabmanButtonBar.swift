@@ -111,6 +111,9 @@ public class TabmanButtonBar: TabmanBar {
                 button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
             }
             
+            // appearance
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            
             // layout
             NSLayoutConstraint.autoSetPriority(500, forConstraints: {
                 button.autoSetDimension(.height, toSize: Defaults.itemHeight)
