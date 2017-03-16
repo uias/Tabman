@@ -147,4 +147,14 @@ public class TabmanButtonBar: TabmanBar {
             }
         }
     }
+    
+    //
+    // MARK: Actions
+    //
+    
+    internal func tabButtonPressed(_ sender: UIButton) {
+        if let index = self.buttons.index(of: sender) {
+            self.delegate?.bar(self, didSelectItemAtIndex: index)
+        }
+    }
 }

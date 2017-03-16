@@ -167,15 +167,7 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    //
-    // MARK: Actions
-    //
     
-    func tabButtonPressed(_ sender: UIButton) {
-        if let index = self.buttons.index(of: sender) {
-            self.delegate?.bar(self, didSelectItemAtIndex: index)
-        }
-    }
     
     //
     // MARK: Layout

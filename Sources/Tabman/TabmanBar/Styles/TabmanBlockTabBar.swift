@@ -10,10 +10,8 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A button tab bar with a block style indicator behind selected item.
-///
-/// Maximum item limit: 5
-public class TabmanBlockTabBar: TabmanButtonBar {
+/// A button tab bar with a block style indicator behind the selected item.
+public class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     //
     // MARK: Constants
@@ -34,10 +32,6 @@ public class TabmanBlockTabBar: TabmanButtonBar {
     private var maskContentView: UIView?
     
     // Public
-    
-    override public var itemCountLimit: Int? {
-        return 5
-    }
     
     public override var interItemSpacing: CGFloat {
         didSet {
@@ -63,10 +57,6 @@ public class TabmanBlockTabBar: TabmanButtonBar {
     
     public override func usePreferredIndicatorStyle() -> Bool {
         return false
-    }
-    
-    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
-        return TabmanStaticBarIndicatorTransition.self
     }
     
     //
@@ -119,14 +109,6 @@ public class TabmanBlockTabBar: TabmanButtonBar {
         self.buttonContentView = buttonContentView
         self.maskContentView = maskContentView
     }
-    
-    override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        
-        self.contentView.addSubview(indicator)
-        indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-    }
 
     override public func update(forAppearance appearance: TabmanBar.Appearance) {
         super.update(forAppearance: appearance)
@@ -143,32 +125,6 @@ public class TabmanBlockTabBar: TabmanButtonBar {
                 button.tintColor = selectedColor
                 button.setTitleColor(selectedColor, for: .normal)
             })
-        }
-    }
-    
-    //
-    // MARK: Button Manipulation
-    //
-    
-    private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
-        guard let view = view else {
-            return
-        }
-        
-        for subview in view.subviews {
-            if let button = subview as? UIButton {
-                update(button)
-            }
-        }
-    }
-    
-    //
-    // MARK: Actions
-    //
-    
-    func tabButtonPressed(_ sender: UIButton) {
-        if let index = self.buttons.index(of: sender) {
-            self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
     }
 }
