@@ -18,12 +18,6 @@ public class TabmanButtonBar: TabmanBar {
     //
     
     private struct Defaults {
-        static let selectedColor: UIColor = .black
-        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
-        
-        static let horizontalSpacing: CGFloat = 20.0
-        
-        static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
         
         static let itemHeight: CGFloat = 50.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
@@ -35,9 +29,9 @@ public class TabmanButtonBar: TabmanBar {
     
     internal var buttons = [UIButton]()
     
-    internal var textFont: UIFont = Appearance.defaultAppearance.text.font ?? Defaults.textFont
-    internal var color: UIColor = Appearance.defaultAppearance.state.color ?? Defaults.color
-    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor ?? Defaults.selectedColor
+    internal var textFont: UIFont = Appearance.defaultAppearance.text.font!
+    internal var color: UIColor = Appearance.defaultAppearance.state.color!
+    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
     
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
@@ -55,8 +49,8 @@ public class TabmanButtonBar: TabmanBar {
     
     // Public
     
-    /// The spacing between each bar item. (Default = 20.0)
-    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing
+    /// The spacing between each bar item.
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing!
     
     //
     // MARK: TabmanBar Lifecycle

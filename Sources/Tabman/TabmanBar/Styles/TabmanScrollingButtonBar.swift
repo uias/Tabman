@@ -21,7 +21,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     
     private struct Defaults {
         
-        static let edgeInset: CGFloat = 16.0
         static let minimumItemWidth: CGFloat = 44.0
     }
     
@@ -49,8 +48,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    /// The inset at the edge of the bar items. (Default = 16.0)
-    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset ?? Defaults.edgeInset {
+    /// The inset at the edge of the bar items.
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
                                    withValue: edgeInset)

@@ -99,11 +99,22 @@ public extension TabmanBar {
         }
         
         private func setDefaultValues() {
+            
             // indicator
             self.indicator.bounces = true
             
+            // state
+            self.state.selectedColor = .black
+            self.state.color = UIColor.black.withAlphaComponent(0.5)
+            
+            // text
+            self.text.font = UIFont.systemFont(ofSize: 16.0)
+            
             // layout
             self.layout.height = .auto
+            self.layout.interItemSpacing = 20.0
+            self.layout.edgeInset = 16.0
+            
         }
     }
 }

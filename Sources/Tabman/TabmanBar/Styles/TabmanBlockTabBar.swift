@@ -14,17 +14,6 @@ import Pageboy
 public class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     //
-    // MARK: Constants
-    //
-    
-    private struct Defaults {
-        
-        static let selectedColor: UIColor = .black
-        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
-
-    }
-    
-    //
     // MARK: Properties
     //
     
