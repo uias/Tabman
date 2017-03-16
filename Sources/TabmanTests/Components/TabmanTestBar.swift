@@ -71,8 +71,10 @@ class TabmanTestBar: TabmanBar {
         self.latestDirection = direction
     }
     
-    override func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    override func update(forAppearance appearance: Appearance,
+                         defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
         self.latestAppearanceConfig = appearance
     }
