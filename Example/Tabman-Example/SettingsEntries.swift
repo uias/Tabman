@@ -35,7 +35,7 @@ extension SettingsViewController {
             { (value) in
                 let style = TabmanBar.Style.fromDescription(value as! String)
                 self.tabViewController?.bar.style = style
-                self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
+                self.tabViewController?.bar.appearance = PresetAppearanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
         }))
         appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",

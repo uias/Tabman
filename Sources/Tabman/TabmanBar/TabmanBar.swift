@@ -10,6 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
+/// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
@@ -27,6 +28,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         case buttonBar
         case blockTabBar
         case custom(type: TabmanBar.Type)
+    }
+    
+    /// The height for the bar.
+    ///
+    /// - auto: Autosize the bar according to its contents.
+    /// - explicit: Explicit value for the bar height.
+    public enum Height {
+        case auto
+        case explicit(value: CGFloat)
     }
     
     //
@@ -61,6 +71,27 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
+    /// The height for the bar. Default: .auto
+    public var height: Height = .auto {
+        didSet {
+            self.invalidateIntrinsicContentSize()
+            self.superview?.setNeedsLayout()
+            self.superview?.layoutIfNeeded()
+        }
+    }
+    open override var intrinsicContentSize: CGSize {
+        var autoSize = super.intrinsicContentSize
+        switch self.height {
+    
+        case .explicit(let height):
+            autoSize.height = height
+            return autoSize
+            
+        default:
+            return autoSize
+        }
+    }
+    
     /// Background view of the bar.
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
@@ -75,7 +106,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
+        didSet {
+            guard indicatorIsProgressive != oldValue else { return }
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
+        }
+    }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorMaskView: UIView = {
         let maskView = UIView()
@@ -239,25 +278,23 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
         
-        self.update(forAppearance: appearance)
+        self.height = appearance.layout.height ?? .auto
+        
+        self.update(forAppearance: appearance,
+                    defaultAppearance: Appearance.defaultAppearance)
     }
     
-    open func update(forAppearance appearance: Appearance) {
+    open func update(forAppearance appearance: Appearance,
+                     defaultAppearance: Appearance) {
         
-        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-            self.indicatorIsProgressive = indicatorIsProgressive
-            UIView.animate(withDuration: 0.3, animations: {
-                self.updateForCurrentPosition()
-            })
-        }
+        let indicatorIsProgressive = appearance.indicator.isProgressive
+        self.indicatorIsProgressive = indicatorIsProgressive ?? defaultAppearance.indicator.isProgressive!
 
-        if let indicatorBounces = appearance.indicator.bounces {
-            self.indicatorBounces = indicatorBounces
-        }
+        let indicatorBounces = appearance.indicator.bounces
+        self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
-        }
+        let indicatorColor = appearance.indicator.color
+        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
     }

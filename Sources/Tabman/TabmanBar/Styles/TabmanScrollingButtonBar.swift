@@ -21,7 +21,6 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     
     private struct Defaults {
         
-        static let edgeInset: CGFloat = 16.0
         static let minimumItemWidth: CGFloat = 44.0
     }
     
@@ -42,18 +41,25 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
         set(isScrollEnabled) {
+            guard isScrollEnabled != self.scrollView.isScrollEnabled else { return }
+
             self.scrollView.isScrollEnabled = isScrollEnabled
+            UIView.animate(withDuration: 0.3, animations: { // reset scroll position
+                self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
+            })
         }
         get {
             return self.scrollView.isScrollEnabled
         }
     }
     
-    /// The inset at the edge of the bar items. (Default = 16.0)
-    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset ?? Defaults.edgeInset {
+    /// The inset at the edge of the bar items.
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
         didSet {
             self.updateConstraints(self.edgeMarginConstraints,
                                    withValue: edgeInset)
+            self.layoutIfNeeded()
+            self.updateForCurrentPosition()
         }
     }
     
@@ -61,6 +67,27 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         didSet {
             self.updateConstraints(self.horizontalMarginConstraints,
                                    withValue: interItemSpacing)
+        }
+    }
+    
+    override var color: UIColor {
+        didSet {
+            guard color != oldValue else { return }
+            
+            self.updateButtons(withContext: .unselected, update: { button in
+                button.setTitleColor(color, for: .normal)
+                button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
+                button.tintColor = color
+            })
+        }
+    }
+    
+    override var selectedColor: UIColor {
+        didSet {
+            guard selectedColor != oldValue else { return }
+            
+            self.focussedButton?.setTitleColor(selectedColor, for: .normal)
+            self.focussedButton?.tintColor = selectedColor
         }
     }
     
@@ -129,45 +156,20 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    override public func update(forAppearance appearance: Appearance,
+                                defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
-        if let color = appearance.state.color {
-            self.color = color
-            self.updateButtons(withContext: .unselected, update: { button in
-                button.setTitleColor(color, for: .normal)
-                button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
-                button.tintColor = color
-            })
-        }
+        let edgeInset = appearance.layout.edgeInset
+        self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
         
-        if let selectedColor = appearance.state.selectedColor {
-            self.selectedColor = selectedColor
-            self.focussedButton?.setTitleColor(selectedColor, for: .normal)
-            self.focussedButton?.tintColor = selectedColor
-        }
+        let isScrollEnabled = appearance.interaction.isScrollEnabled
+        self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
-        if let edgeInset = appearance.layout.edgeInset {
-            self.edgeInset = edgeInset
-            self.updateForCurrentPosition()
-        }
-        
-        if let isScrollEnabled = appearance.interaction.isScrollEnabled {
-            self.scrollView.isScrollEnabled = isScrollEnabled
-            UIView.animate(withDuration: 0.3, animations: { // reset scroll position
-                self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
-            })
-        }
-        
-        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-            self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
-            UIView.animate(withDuration: 0.3, animations: {
-                self.updateForCurrentPosition()
-            })
-        }
+        let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        self.indicatorLeftMargin?.constant = indicatorIsProgressive ? 0.0 : self.edgeInset
     }
-    
-    
     
     //
     // MARK: Layout

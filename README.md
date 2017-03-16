@@ -117,7 +117,7 @@ The `TabmanBarAppearance` object provides all the available properties for appea
 To set a custom appearance definition do this on a `TabmanViewController`:
 
 ```swift
-tabViewController.bar.appearance = TabmanBar.AppearanceConfig({ (appearance) in
+tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 	// customise appearance here
 	appearance.text.color = UIColor.red
 	appearance.indicator.isProgressive = true

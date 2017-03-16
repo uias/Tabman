@@ -14,24 +14,11 @@ import Pageboy
 public class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     //
-    // MARK: Constants
-    //
-    
-    private struct Defaults {
-        
-        static let selectedColor: UIColor = .black
-        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
-
-    }
-    
-    //
     // MARK: Properties
     //
     
     private var buttonContentView: UIView?
     private var maskContentView: UIView?
-    
-    // Public
     
     public override var interItemSpacing: CGFloat {
         didSet {
@@ -44,6 +31,28 @@ public class TabmanBlockTabBar: TabmanStaticButtonBar {
                 button.titleEdgeInsets = insets
                 button.imageEdgeInsets = insets
             }
+        }
+    }
+    
+    override var color: UIColor {
+        didSet {
+            guard color != oldValue else { return }
+            
+            self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
+                button.tintColor = color
+                button.setTitleColor(color, for: .normal)
+            })
+        }
+    }
+    
+    override var selectedColor: UIColor {
+        didSet {
+            guard selectedColor != oldValue else { return }
+            
+            self.updateButtonsInView(view: self.maskContentView, update: { (button) in
+                button.tintColor = selectedColor
+                button.setTitleColor(selectedColor, for: .normal)
+            })
         }
     }
     
@@ -108,23 +117,5 @@ public class TabmanBlockTabBar: TabmanStaticButtonBar {
         
         self.buttonContentView = buttonContentView
         self.maskContentView = maskContentView
-    }
-
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
-        
-        if let color = appearance.state.color {
-            self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
-                button.tintColor = color
-                button.setTitleColor(color, for: .normal)
-            })
-        }
-        
-        if let selectedColor = appearance.state.selectedColor {
-            self.updateButtonsInView(view: self.maskContentView, update: { (button) in
-                button.tintColor = selectedColor
-                button.setTitleColor(selectedColor, for: .normal)
-            })
-        }
     }
 }
