@@ -1,5 +1,5 @@
 //
-//  PresetAppeareanceConfigs.swift
+//  PresetAppearanceConfigs.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 10/03/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import Tabman
 
-class PresetAppeareanceConfigs: Any {
+class PresetAppearanceConfigs: Any {
     
     static func forStyle(_ style: TabmanBar.Style, currentAppearance: TabmanBar.Appearance?) -> TabmanBar.Appearance? {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance

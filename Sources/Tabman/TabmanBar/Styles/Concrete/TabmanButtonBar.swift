@@ -29,7 +29,15 @@ public class TabmanButtonBar: TabmanBar {
     
     internal var buttons = [UIButton]()
     
-    internal var textFont: UIFont = Appearance.defaultAppearance.text.font!
+    internal var textFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            guard textFont != oldValue else { return }
+            
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = textFont
+            })
+        }
+    }
     internal var color: UIColor = Appearance.defaultAppearance.state.color!
     internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
     
@@ -68,19 +76,20 @@ public class TabmanButtonBar: TabmanBar {
         super.update(forAppearance: appearance,
                      defaultAppearance: defaultAppearance)
         
-        if let interItemSpacing = appearance.layout.interItemSpacing {
-            self.interItemSpacing = interItemSpacing
-        }
+        let color = appearance.state.color
+        self.color = color ?? defaultAppearance.state.color!
         
-        if let textFont = appearance.text.font {
-            self.textFont = textFont
-            self.updateButtons(update: { (button) in
-                button.titleLabel?.font = textFont
-            })
-        }
+        let selectedColor = appearance.state.selectedColor
+        self.selectedColor = selectedColor ?? defaultAppearance.state.selectedColor!
         
-        if let indicatorWeight = appearance.indicator.lineWeight,
-            let lineIndicator = self.indicator as? TabmanLineIndicator {
+        let interItemSpacing = appearance.layout.interItemSpacing
+        self.interItemSpacing = interItemSpacing ?? defaultAppearance.layout.interItemSpacing!
+        
+        let textFont = appearance.text.font
+        self.textFont = textFont ?? defaultAppearance.text.font!
+        
+        let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
+        if let lineIndicator = self.indicator as? TabmanLineIndicator {
             lineIndicator.weight = indicatorWeight
         }
     }

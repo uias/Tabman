@@ -102,6 +102,10 @@ public extension TabmanBar {
             
             // indicator
             self.indicator.bounces = true
+            self.indicator.isProgressive = false
+            self.indicator.useRoundedCorners = false
+            self.indicator.lineWeight = .normal
+            self.indicator.color = UIView.defaultTintColor
             
             // state
             self.state.selectedColor = .black
@@ -115,6 +119,8 @@ public extension TabmanBar {
             self.layout.interItemSpacing = 20.0
             self.layout.edgeInset = 16.0
             
+            // interaction
+            self.interaction.isScrollEnabled = false
         }
     }
 }

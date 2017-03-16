@@ -101,7 +101,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
+        didSet {
+            guard indicatorIsProgressive != oldValue else { return }
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
+        }
+    }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorMaskView: UIView = {
         let maskView = UIView()
@@ -274,20 +282,14 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     open func update(forAppearance appearance: Appearance,
                      defaultAppearance: Appearance) {
         
-        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-            self.indicatorIsProgressive = indicatorIsProgressive
-            UIView.animate(withDuration: 0.3, animations: {
-                self.updateForCurrentPosition()
-            })
-        }
+        let indicatorIsProgressive = appearance.indicator.isProgressive
+        self.indicatorIsProgressive = indicatorIsProgressive ?? defaultAppearance.indicator.isProgressive!
 
-        if let indicatorBounces = appearance.indicator.bounces {
-            self.indicatorBounces = indicatorBounces
-        }
+        let indicatorBounces = appearance.indicator.bounces
+        self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
-        }
+        let indicatorColor = appearance.indicator.color
+        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
     }
