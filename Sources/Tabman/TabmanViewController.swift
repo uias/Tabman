@@ -106,7 +106,7 @@ internal extension TabmanViewController {
         bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
         bar.delegate = self
-        bar.isHidden = true // hidden by default
+        bar.isHidden = (bar.items?.count ?? 0) == 0 // hidden if no items
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
         }

@@ -35,7 +35,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     // Private
     
-    internal var items: [TabmanBarItem]?
+    internal var items: [TabmanBarItem]? {
+        didSet {
+            self.isHidden = (items?.count ?? 0) == 0
+        }
+    }
     internal private(set) var currentPosition: CGFloat = 0.0
     internal weak var transitionStore: TabmanBarTransitionStore?
 
@@ -167,7 +171,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Reload and reconstruct the contents of the bar.
     public func reloadData() {
         self.items = self.dataSource?.items(forBar: self)
-        self.isHidden = self.items?.count == 0
         self.clearAndConstructBar()
     }
     
