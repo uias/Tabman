@@ -52,8 +52,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal private(set) var currentPosition: CGFloat = 0.0
     internal weak var transitionStore: TabmanBarTransitionStore?
-
-    internal var fadeGradientLayer: CAGradientLayer?
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
@@ -167,9 +165,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.fadeGradientLayer?.frame = self.bounds
-        
+                
         // refresh intrinsic size for indicator
         self.indicator?.invalidateIntrinsicContentSize()
     }
@@ -294,9 +290,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
         let indicatorColor = appearance.indicator.color
-        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
-        
-        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!        
     }
 }
 
@@ -306,28 +300,6 @@ extension TabmanBar: TabmanIndicatorDelegate {
         self.invalidateIntrinsicContentSize()
         self.setNeedsLayout()
         self.layoutIfNeeded()
-    }
-}
-
-// MARK: - Bar appearance configuration
-internal extension TabmanBar {
-    
-    func updateEdgeFade(visible: Bool) {
-        if visible {
-            
-            let gradientLayer = CAGradientLayer()
-            gradientLayer.frame = self.bounds
-            gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-            gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
-            self.contentView.layer.mask = gradientLayer
-            self.fadeGradientLayer = gradientLayer
-            
-        } else {
-            self.contentView.layer.mask = nil
-            self.fadeGradientLayer = nil
-        }
     }
 }
 

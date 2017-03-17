@@ -35,7 +35,9 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-       
+    
+    internal var fadeGradientLayer: CAGradientLayer?
+    
     // Public
     
     /// Whether scroll is enabled on the bar.
@@ -97,6 +99,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.fadeGradientLayer?.frame = self.bounds
         
         self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
     }
@@ -167,6 +171,8 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
+        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+        
         // update left margin for progressive style
         if self.indicator?.isProgressiveCapable ?? false {
             
@@ -196,4 +202,26 @@ public class TabmanScrollingButtonBar: TabmanButtonBar {
         }
         self.layoutIfNeeded()
     }
+}
+
+internal extension TabmanScrollingButtonBar {
+    
+    func updateEdgeFade(visible: Bool) {
+        if visible {
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.bounds
+            gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+            gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
+            self.contentView.layer.mask = gradientLayer
+            self.fadeGradientLayer = gradientLayer
+            
+        } else {
+            self.contentView.layer.mask = nil
+            self.fadeGradientLayer = nil
+        }
+    }
+    
 }
