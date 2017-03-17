@@ -32,11 +32,13 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     /// - none: No indicator.
     /// - line: Horizontal line pinned to bottom of bar.
     /// - dot: Circular centered dot pinned to the bottom of the bar.
+    /// - chevron: Centered chevron pinned to the bottom of the bar.
     /// - custom: A custom defined indicator.
     public enum Style {
         case none
         case line
         case dot
+        case chevron
         case custom(type: TabmanIndicator.Type)
     }
     
