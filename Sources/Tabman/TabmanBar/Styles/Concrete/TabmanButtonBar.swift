@@ -41,6 +41,19 @@ public class TabmanButtonBar: TabmanBar {
     internal var color: UIColor = Appearance.defaultAppearance.state.color!
     internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
     
+    internal var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
+        didSet {
+            guard itemVerticalPadding != oldValue else { return }
+            
+            self.updateButtons { (button) in
+                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
+                                          bottom: itemVerticalPadding, right: 0.0)
+                button.contentEdgeInsets = insets
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
@@ -88,6 +101,9 @@ public class TabmanButtonBar: TabmanBar {
         let textFont = appearance.text.font
         self.textFont = textFont ?? defaultAppearance.text.font!
         
+        let itemVerticalPadding = appearance.layout.itemVerticalPadding
+        self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
+        
         let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
         if let lineIndicator = self.indicator as? TabmanLineIndicator {
             lineIndicator.weight = indicatorWeight
@@ -125,6 +141,10 @@ public class TabmanButtonBar: TabmanBar {
             })
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
+            
+            let verticalPadding = self.itemVerticalPadding
+            let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
+            button.contentEdgeInsets = insets
             
             if previousButton == nil { // pin to left
                 self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))

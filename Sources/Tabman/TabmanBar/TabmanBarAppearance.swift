@@ -54,6 +54,8 @@ public extension TabmanBar {
             public var edgeInset: CGFloat?
             /// The height for the bar.
             public var height: TabmanBar.Height?
+            /// The vertical padding between the item and the bar bounds.
+            public var itemVerticalPadding: CGFloat?
         }
         
         /// Bar style configuration.
@@ -118,6 +120,7 @@ public extension TabmanBar {
             self.layout.height = .auto
             self.layout.interItemSpacing = 20.0
             self.layout.edgeInset = 16.0
+            self.layout.itemVerticalPadding = 12.0
             
             // interaction
             self.interaction.isScrollEnabled = false
