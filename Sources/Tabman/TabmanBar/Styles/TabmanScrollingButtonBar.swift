@@ -13,7 +13,7 @@ import Pageboy
 /// A bar with scrolling buttons and line indicator.
 ///
 /// Akin to Android ViewPager, Instagram notification screen etc.
-public class TabmanScrollingButtonBar: TabmanButtonBar {
+internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
     //
     // MARK: Constants

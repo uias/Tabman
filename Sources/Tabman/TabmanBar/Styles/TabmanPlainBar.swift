@@ -11,7 +11,7 @@ import PureLayout
 import Pageboy
 
 /// A simple bar containing only an indicator.
-public class TabmanPlainBar: TabmanBar {
+internal class TabmanPlainBar: TabmanBar {
 
     //
     // MARK: Properties
