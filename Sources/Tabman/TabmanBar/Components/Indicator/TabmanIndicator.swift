@@ -55,6 +55,9 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     
     weak var delegate: TabmanIndicatorDelegate?
     
+    /// Whether the indicator can support a progressive style.
+    public private(set) var isProgressiveCapable: Bool = true
+    
     //
     // MARK: Init
     //

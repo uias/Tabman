@@ -20,11 +20,18 @@ class PresetAppearanceConfigs: Any {
         
         switch style {
 
-        case .buttonBar, .bar:
+        case .bar:
+            appearance.style.background = .solid(color: .black)
+            appearance.indicator.color = .white
+            appearance.indicator.lineWeight = .thick
+            
+        case .buttonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
+            appearance.layout.itemVerticalPadding = 16.0
+            appearance.indicator.lineWeight = .normal
 
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)

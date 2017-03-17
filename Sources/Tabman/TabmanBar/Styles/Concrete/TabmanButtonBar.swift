@@ -19,7 +19,7 @@ public class TabmanButtonBar: TabmanBar {
     
     private struct Defaults {
         
-        static let itemHeight: CGFloat = 50.0
+        static let minimumItemHeight: CGFloat = 40.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
@@ -40,6 +40,19 @@ public class TabmanButtonBar: TabmanBar {
     }
     internal var color: UIColor = Appearance.defaultAppearance.state.color!
     internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
+    
+    internal var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
+        didSet {
+            guard itemVerticalPadding != oldValue else { return }
+            
+            self.updateButtons { (button) in
+                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
+                                          bottom: itemVerticalPadding, right: 0.0)
+                button.contentEdgeInsets = insets
+                self.layoutIfNeeded()
+            }
+        }
+    }
     
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
@@ -88,10 +101,8 @@ public class TabmanButtonBar: TabmanBar {
         let textFont = appearance.text.font
         self.textFont = textFont ?? defaultAppearance.text.font!
         
-        let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
-        if let lineIndicator = self.indicator as? TabmanLineIndicator {
-            lineIndicator.weight = indicatorWeight
-        }
+        let itemVerticalPadding = appearance.layout.itemVerticalPadding
+        self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
     }
     
     //
@@ -121,10 +132,14 @@ public class TabmanButtonBar: TabmanBar {
             
             // layout
             NSLayoutConstraint.autoSetPriority(500, forConstraints: {
-                button.autoSetDimension(.height, toSize: Defaults.itemHeight)
+                button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
             })
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
+            
+            let verticalPadding = self.itemVerticalPadding
+            let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
+            button.contentEdgeInsets = insets
             
             if previousButton == nil { // pin to left
                 self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))

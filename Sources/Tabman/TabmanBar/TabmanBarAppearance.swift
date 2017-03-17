@@ -54,19 +54,21 @@ public extension TabmanBar {
             public var edgeInset: CGFloat?
             /// The height for the bar.
             public var height: TabmanBar.Height?
+            /// The vertical padding between the item and the bar bounds.
+            public var itemVerticalPadding: CGFloat?
         }
         
         /// Bar style configuration.
         public struct Style {
             /// The background style for the bar.
             public var background: TabmanBarBackgroundView.BackgroundStyle?
-            /// Whether to show a fade on the items at the bounds edge of the bar.
+            /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
             public var showEdgeFade: Bool?
         }
         
         /// Bar interaction configuration
         public struct Interaction {
-            /// Whether scroll is enabled on the scroll view in the bar.
+            /// Whether user scroll is enabled on a scrolling button bar.
             public var isScrollEnabled: Bool?
         }
         
@@ -118,6 +120,7 @@ public extension TabmanBar {
             self.layout.height = .auto
             self.layout.interItemSpacing = 20.0
             self.layout.edgeInset = 16.0
+            self.layout.itemVerticalPadding = 12.0
             
             // interaction
             self.interaction.isScrollEnabled = false
