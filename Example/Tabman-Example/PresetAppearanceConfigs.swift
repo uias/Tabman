@@ -1,5 +1,5 @@
 //
-//  PresetAppeareanceConfigs.swift
+//  PresetAppearanceConfigs.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 10/03/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import Tabman
 
-class PresetAppeareanceConfigs: Any {
+class PresetAppearanceConfigs: Any {
     
     static func forStyle(_ style: TabmanBar.Style, currentAppearance: TabmanBar.Appearance?) -> TabmanBar.Appearance? {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
@@ -20,11 +20,18 @@ class PresetAppeareanceConfigs: Any {
         
         switch style {
 
-        case .buttonBar, .bar:
+        case .bar:
+            appearance.style.background = .solid(color: .black)
+            appearance.indicator.color = .white
+            appearance.indicator.lineWeight = .thick
+            
+        case .buttonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
+            appearance.layout.itemVerticalPadding = 16.0
+            appearance.indicator.lineWeight = .normal
 
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)

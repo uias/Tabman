@@ -10,6 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
+/// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     //
@@ -29,17 +30,28 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         case custom(type: TabmanBar.Type)
     }
     
+    /// The height for the bar.
+    ///
+    /// - auto: Autosize the bar according to its contents.
+    /// - explicit: Explicit value for the bar height.
+    public enum Height {
+        case auto
+        case explicit(value: CGFloat)
+    }
+    
     //
     // MARK: Properties
     //
     
     // Private
     
-    internal var items: [TabmanBarItem]?
+    internal var items: [TabmanBarItem]? {
+        didSet {
+            self.isHidden = (items?.count ?? 0) == 0
+        }
+    }
     internal private(set) var currentPosition: CGFloat = 0.0
     internal weak var transitionStore: TabmanBarTransitionStore?
-
-    internal var fadeGradientLayer: CAGradientLayer?
     
     /// The object that acts as a delegate to the bar.
     internal var delegate: TabmanBarDelegate?
@@ -57,6 +69,27 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
+    /// The height for the bar. Default: .auto
+    public var height: Height = .auto {
+        didSet {
+            self.invalidateIntrinsicContentSize()
+            self.superview?.setNeedsLayout()
+            self.superview?.layoutIfNeeded()
+        }
+    }
+    open override var intrinsicContentSize: CGSize {
+        var autoSize = super.intrinsicContentSize
+        switch self.height {
+    
+        case .explicit(let height):
+            autoSize.height = height
+            return autoSize
+            
+        default:
+            return autoSize
+        }
+    }
+    
     /// Background view of the bar.
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
@@ -71,7 +104,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false
+    internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
+        didSet {
+            guard indicatorIsProgressive != oldValue else { return }
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.updateForCurrentPosition()
+            })
+        }
+    }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorMaskView: UIView = {
         let maskView = UIView()
@@ -124,9 +165,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.fadeGradientLayer?.frame = self.bounds
-        
+                
         // refresh intrinsic size for indicator
         self.indicator?.invalidateIntrinsicContentSize()
     }
@@ -143,7 +182,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// - Returns: The default indicator style.
     open func defaultIndicatorStyle() -> TabmanIndicator.Style {
         print("indicatorStyle() returning default. This should be overridden in subclass")
-        return .none
+        return .clear
     }
     
     /// Whether the bar should use preferredIndicatorStyle if available
@@ -203,11 +242,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     //
     
     open func constructTabBar(items: [TabmanBarItem]) {
-        fatalError("constructTabBar should be implemented in TabmanBar subclasses.")
+        fatalError("constructTabBar() should be implemented in TabmanBar subclasses.")
     }
     
     public func addIndicatorToBar(indicator: TabmanIndicator) {
-        fatalError("addIndicatorToBar should be implemented in TabmanBar subclasses.")
+        fatalError("addIndicatorToBar() should be implemented in TabmanBar subclasses.")
     }
     
     open func update(forPosition position: CGFloat,
@@ -235,27 +274,28 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.backgroundView.backgroundStyle = backgroundStyle
         }
         
-        self.update(forAppearance: appearance)
+        self.height = appearance.layout.height ?? .auto
+        
+        self.update(forAppearance: appearance,
+                    defaultAppearance: Appearance.defaultAppearance)
     }
     
-    open func update(forAppearance appearance: Appearance) {
+    open func update(forAppearance appearance: Appearance,
+                     defaultAppearance: Appearance) {
         
-        if let indicatorIsProgressive = appearance.indicator.isProgressive {
-            self.indicatorIsProgressive = indicatorIsProgressive
-            UIView.animate(withDuration: 0.3, animations: {
-                self.updateForCurrentPosition()
-            })
-        }
+        let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        self.indicatorIsProgressive = indicatorIsProgressive ? self.indicator?.isProgressiveCapable ?? false : false
 
-        if let indicatorBounces = appearance.indicator.bounces {
-            self.indicatorBounces = indicatorBounces
-        }
+        let indicatorBounces = appearance.indicator.bounces
+        self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
-        if let indicatorColor = appearance.indicator.color {
-            self.indicator?.tintColor = indicatorColor
-        }
+        let indicatorColor = appearance.indicator.color
+        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
         
-        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+        let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
+        if let lineIndicator = self.indicator as? TabmanLineIndicator {
+            lineIndicator.weight = indicatorWeight
+        }
     }
 }
 
@@ -268,28 +308,6 @@ extension TabmanBar: TabmanIndicatorDelegate {
     }
 }
 
-// MARK: - Bar appearance configuration
-internal extension TabmanBar {
-    
-    func updateEdgeFade(visible: Bool) {
-        if visible {
-            
-            let gradientLayer = CAGradientLayer()
-            gradientLayer.frame = self.bounds
-            gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-            gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
-            self.contentView.layer.mask = gradientLayer
-            self.fadeGradientLayer = gradientLayer
-            
-        } else {
-            self.contentView.layer.mask = nil
-            self.fadeGradientLayer = nil
-        }
-    }
-}
-
 internal extension TabmanIndicator.Style {
     
     var rawType: TabmanIndicator.Type? {
@@ -298,10 +316,12 @@ internal extension TabmanIndicator.Style {
             return TabmanLineIndicator.self
         case .dot:
             return TabmanDotIndicator.self
+        case .chevron:
+            return TabmanChevronIndicator.self
         case .custom(let type):
             return type
-        case .none:
-            return nil
+        case .clear:
+            return TabmanClearIndicator.self
         }
     }
 }

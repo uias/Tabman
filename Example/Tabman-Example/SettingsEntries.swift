@@ -35,13 +35,14 @@ extension SettingsViewController {
             { (value) in
                 let style = TabmanBar.Style.fromDescription(value as! String)
                 self.tabViewController?.bar.style = style
-                self.tabViewController?.bar.appearance = PresetAppeareanceConfigs.forStyle(style,
+                self.tabViewController?.bar.appearance = PresetAppearanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
         }))
         appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
                                                                          TabmanIndicator.Style.line.description,
                                                                          TabmanIndicator.Style.dot.description,
-                                                                         TabmanIndicator.Style.none.description],
+                                                                         TabmanIndicator.Style.chevron.description,
+                                                                         TabmanIndicator.Style.clear.description],
                                                                 selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
                                                  description: nil,
@@ -141,8 +142,10 @@ fileprivate extension TabmanIndicator.Style {
             return "Line"
         case .dot:
             return "Dot"
-        case .none:
-            return "None"
+        case .chevron:
+            return "Chevron"
+        case .clear:
+            return "Clear"
             
         default:
             return "Custom"
@@ -151,15 +154,17 @@ fileprivate extension TabmanIndicator.Style {
     
     static func fromDescription(_ description: String) -> TabmanIndicator.Style? {
         switch description {
-        case "Preferred":
-            return nil
+        case "Clear":
+            return .clear
         case "Line":
             return .line
         case "Dot":
             return .dot
+        case "Chevron":
+            return .chevron
 
         default:
-            return .none
+            return nil
         }
     }
 }

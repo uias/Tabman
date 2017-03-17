@@ -10,21 +10,8 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A button tab bar with a block style indicator behind selected item.
-///
-/// Maximum item limit: 5
-public class TabmanBlockTabBar: TabmanButtonBar {
-    
-    //
-    // MARK: Constants
-    //
-    
-    private struct Defaults {
-        
-        static let selectedColor: UIColor = .black
-        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
-
-    }
+/// A button tab bar with a block style indicator behind the selected item.
+internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     //
     // MARK: Properties
@@ -32,12 +19,6 @@ public class TabmanBlockTabBar: TabmanButtonBar {
     
     private var buttonContentView: UIView?
     private var maskContentView: UIView?
-    
-    // Public
-    
-    override public var itemCountLimit: Int? {
-        return 5
-    }
     
     public override var interItemSpacing: CGFloat {
         didSet {
@@ -53,6 +34,28 @@ public class TabmanBlockTabBar: TabmanButtonBar {
         }
     }
     
+    override var color: UIColor {
+        didSet {
+            guard color != oldValue else { return }
+            
+            self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
+                button.tintColor = color
+                button.setTitleColor(color, for: .normal)
+            })
+        }
+    }
+    
+    override var selectedColor: UIColor {
+        didSet {
+            guard selectedColor != oldValue else { return }
+            
+            self.updateButtonsInView(view: self.maskContentView, update: { (button) in
+                button.tintColor = selectedColor
+                button.setTitleColor(selectedColor, for: .normal)
+            })
+        }
+    }
+    
     //
     // MARK: Lifecycle
     //
@@ -65,15 +68,12 @@ public class TabmanBlockTabBar: TabmanButtonBar {
         return false
     }
     
-    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
-        return TabmanStaticBarIndicatorTransition.self
-    }
-    
     //
     // MARK: TabmanBar Lifecycle
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
+        super.constructTabBar(items: items)
 
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
@@ -117,57 +117,5 @@ public class TabmanBlockTabBar: TabmanButtonBar {
         
         self.buttonContentView = buttonContentView
         self.maskContentView = maskContentView
-    }
-    
-    override public func addIndicatorToBar(indicator: TabmanIndicator) {
-        
-        self.contentView.addSubview(indicator)
-        indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
-    }
-
-    override public func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
-        
-        if let color = appearance.state.color {
-            self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
-                button.tintColor = color
-                button.setTitleColor(color, for: .normal)
-            })
-        }
-        
-        if let selectedColor = appearance.state.selectedColor {
-            self.updateButtonsInView(view: self.maskContentView, update: { (button) in
-                button.tintColor = selectedColor
-                button.setTitleColor(selectedColor, for: .normal)
-            })
-        }
-    }
-    
-    //
-    // MARK: Button Manipulation
-    //
-    
-    private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
-        guard let view = view else {
-            return
-        }
-        
-        for subview in view.subviews {
-            if let button = subview as? UIButton {
-                update(button)
-            }
-        }
-    }
-    
-    //
-    // MARK: Actions
-    //
-    
-    func tabButtonPressed(_ sender: UIButton) {
-        if let index = self.buttons.index(of: sender) {
-            self.delegate?.bar(self, didSelectItemAtIndex: index)
-        }
     }
 }

@@ -14,7 +14,7 @@ class TabmanTestIndicator: TabmanIndicator {
     private(set) var wasConstructed: Bool = false
     
     override func constructIndicator() {
-        super.constructIndicator()
+        
         self.wasConstructed = true
     }
 }

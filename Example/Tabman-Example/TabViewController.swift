@@ -54,7 +54,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         
         self.dataSource = self
         
-        self.bar.appearance = PresetAppeareanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
+        self.bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         self.updateAppearance(pagePosition: self.currentPosition?.x ?? 0.0)
         self.updateStatusLabels()
         self.updateBarButtonStates(index: self.currentIndex ?? 0)

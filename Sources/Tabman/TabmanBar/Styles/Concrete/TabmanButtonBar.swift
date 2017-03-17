@@ -11,21 +11,15 @@ import UIKit
 import Pageboy
 
 /// Abstract concrete class for button bars.
-public class TabmanButtonBar: TabmanBar {
+internal class TabmanButtonBar: TabmanBar {
 
     //
     // MARK: Constants
     //
     
     private struct Defaults {
-        static let selectedColor: UIColor = .black
-        static let color: UIColor = UIColor.black.withAlphaComponent(0.5)
         
-        static let horizontalSpacing: CGFloat = 20.0
-        
-        static let textFont: UIFont = UIFont.systemFont(ofSize: 16.0)
-        
-        static let height: CGFloat = 50.0
+        static let minimumItemHeight: CGFloat = 40.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
@@ -35,9 +29,30 @@ public class TabmanButtonBar: TabmanBar {
     
     internal var buttons = [UIButton]()
     
-    internal var textFont: UIFont = Appearance.defaultAppearance.text.font ?? Defaults.textFont
-    internal var color: UIColor = Appearance.defaultAppearance.state.color ?? Defaults.color
-    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor ?? Defaults.selectedColor
+    internal var textFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            guard textFont != oldValue else { return }
+            
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = textFont
+            })
+        }
+    }
+    internal var color: UIColor = Appearance.defaultAppearance.state.color!
+    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
+    
+    internal var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
+        didSet {
+            guard itemVerticalPadding != oldValue else { return }
+            
+            self.updateButtons { (button) in
+                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
+                                          bottom: itemVerticalPadding, right: 0.0)
+                button.contentEdgeInsets = insets
+                self.layoutIfNeeded()
+            }
+        }
+    }
     
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
@@ -55,12 +70,8 @@ public class TabmanButtonBar: TabmanBar {
     
     // Public
     
-    override public var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: Defaults.height)
-    }
-    
-    /// The spacing between each bar item. (Default = 20.0)
-    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing ?? Defaults.horizontalSpacing
+    /// The spacing between each bar item.
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing!
     
     //
     // MARK: TabmanBar Lifecycle
@@ -73,24 +84,25 @@ public class TabmanButtonBar: TabmanBar {
         self.edgeMarginConstraints.removeAll()
     }
     
-    public override func update(forAppearance appearance: TabmanBar.Appearance) {
-        super.update(forAppearance: appearance)
+    public override func update(forAppearance appearance: Appearance,
+                                defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance,
+                     defaultAppearance: defaultAppearance)
         
-        if let interItemSpacing = appearance.layout.interItemSpacing {
-            self.interItemSpacing = interItemSpacing
-        }
+        let color = appearance.state.color
+        self.color = color ?? defaultAppearance.state.color!
         
-        if let textFont = appearance.text.font {
-            self.textFont = textFont
-            self.updateButtons(update: { (button) in
-                button.titleLabel?.font = textFont
-            })
-        }
+        let selectedColor = appearance.state.selectedColor
+        self.selectedColor = selectedColor ?? defaultAppearance.state.selectedColor!
         
-        if let indicatorWeight = appearance.indicator.lineWeight,
-            let lineIndicator = self.indicator as? TabmanLineIndicator {
-            lineIndicator.weight = indicatorWeight
-        }
+        let interItemSpacing = appearance.layout.interItemSpacing
+        self.interItemSpacing = interItemSpacing ?? defaultAppearance.layout.interItemSpacing!
+        
+        let textFont = appearance.text.font
+        self.textFont = textFont ?? defaultAppearance.text.font!
+        
+        let itemVerticalPadding = appearance.layout.itemVerticalPadding
+        self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
     }
     
     //
@@ -115,9 +127,20 @@ public class TabmanButtonBar: TabmanBar {
                 button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
             }
             
+            // appearance
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            
             // layout
+            NSLayoutConstraint.autoSetPriority(500, forConstraints: {
+                button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
+            })
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
+            
+            let verticalPadding = self.itemVerticalPadding
+            let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
+            button.contentEdgeInsets = insets
+            
             if previousButton == nil { // pin to left
                 self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
             } else {
@@ -145,6 +168,16 @@ public class TabmanButtonBar: TabmanBar {
                 (context == .unselected && button !== self.focussedButton) {
                 update(button)
             }
+        }
+    }
+    
+    //
+    // MARK: Actions
+    //
+    
+    internal func tabButtonPressed(_ sender: UIButton) {
+        if let index = self.buttons.index(of: sender) {
+            self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
     }
 }

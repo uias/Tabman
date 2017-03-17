@@ -2,6 +2,10 @@
 
 Tabman can be customised to your own liking; including the definition of custom bars and indicators.
 
+## Contents
+- [Creating a custom TabmanBar](#creating-a-custom-tabmanbar)
+- [Using an external TabmanBar](#using-an-external-tabmanbar)
+
 ## Creating a custom TabmanBar
 1) Simply create a bar object that inherits from `TabmanBar`.
 
@@ -42,8 +46,10 @@ override func update(forPosition position: CGFloat,
 	// update your bar for a positional update here              
 }
 
-override func update(forAppearance appearance: TabmanBar.AppearanceConfig) {
-	super.update(forAppearance: appearance)
+override func update(forAppearance appearance: Appearance, 
+                     defaultAppearance: Appearance) {
+	super.update(forAppearance: appearance,
+	             defaultAppearance: defaultAppearance)
         
 	// update the bar appearance here
 }
@@ -101,4 +107,30 @@ public override func constructIndicator() {
 override func indicatorStyle() -> TabmanIndicator.Style {
 	return .custom(type: MyCustomIndicator.self)
 }
+```
+
+## Using an external TabmanBar
+`TabmanViewController` supports the ability to use an external `TabmanBar` rather than the internally managed one if required. 
+
+This is available by calling the `attach(bar:)` function as follows: 
+
+```swift
+class MyTabmanViewController: TabmanViewController {
+
+	func viewDidLoad() {
+		super.viewDidLoad()
+		
+		let customBar = CustomTabmanBar()
+		self.attach(bar: customBar)
+	}
+}
+
+```
+This will hide the internally managed `TabmanBar` and provide updates to the attached bar. 
+
+If required, this bar can also be detached later by calling:
+
+```swift
+// detaches and returns the currently attached TabmanBar
+func detachAttachedBar() -> TabmanBar?
 ```
