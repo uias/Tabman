@@ -23,7 +23,7 @@ public extension TabmanBar {
             /// The color of the bar indicator.
             public var color: UIColor?
             /// The weight (thickness) of the bar indicator if using a line indicator.
-            public var lineWeight: TabmanLineIndicator.Weight?
+            public var lineWeight: TabmanIndicator.LineWeight?
             /// Whether the indicator transiton is progressive.
             public var isProgressive: Bool?
             /// Whether the indicator bounces at the end of page ranges.

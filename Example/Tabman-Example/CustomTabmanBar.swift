@@ -22,7 +22,7 @@ class CustomTabmanBar: TabmanBar {
     
     override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         // declare indicator style here
-        return .none
+        return .clear
     }
     
     override func usePreferredIndicatorStyle() -> Bool {

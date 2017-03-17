@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import PureLayout
 
-public class TabmanDotIndicator: TabmanIndicator {
+internal class TabmanDotIndicator: TabmanIndicator {
     
+    //
     // MARK: Properties
+    //
     
     private lazy var dotView: TabmanCircularView = {
         let dotView = TabmanCircularView()
@@ -29,14 +32,15 @@ public class TabmanDotIndicator: TabmanIndicator {
         return false
     }
     
+    //
     // MARK: Lifecycle
+    //
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 6.0)
     }
     
     public override func constructIndicator() {
-        super.constructIndicator()
         
         self.addSubview(dotView)
         dotView.autoSetDimension(.height, toSize: self.intrinsicContentSize.height)

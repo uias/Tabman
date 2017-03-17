@@ -11,7 +11,7 @@ import Pageboy
 import PureLayout
 
 /// Concrete class for a static button bar with item limit of 5.
-public class TabmanStaticButtonBar: TabmanButtonBar {
+internal class TabmanStaticButtonBar: TabmanButtonBar {
     
     //
     // MARK: Properties
