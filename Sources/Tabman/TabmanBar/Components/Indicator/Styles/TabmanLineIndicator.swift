@@ -8,22 +8,21 @@
 
 import UIKit
 
-public class TabmanLineIndicator: TabmanIndicator {
-    
-    //
-    // MARK: Types
-    //
+public extension TabmanIndicator {
     
     /// Weight of the indicator line.
     ///
     /// - thin: Thin - 1pt
     /// - normal: Normal - 2pt
     /// - thick: Thick - 4pt
-    public enum Weight: CGFloat {
+    public enum LineWeight: CGFloat {
         case thin = 1.0
         case normal = 2.0
         case thick = 4.0
     }
+}
+
+internal class TabmanLineIndicator: TabmanIndicator {
     
     //
     // MARK: Properties
@@ -32,7 +31,7 @@ public class TabmanLineIndicator: TabmanIndicator {
     /// The thickness of the indicator line.
     ///
     /// Default is .normal
-    public var weight: Weight = TabmanBar.Appearance.defaultAppearance.indicator.lineWeight ?? .normal {
+    public var weight: LineWeight = TabmanBar.Appearance.defaultAppearance.indicator.lineWeight ?? .normal {
         didSet {
             guard weight != oldValue else {
                 return

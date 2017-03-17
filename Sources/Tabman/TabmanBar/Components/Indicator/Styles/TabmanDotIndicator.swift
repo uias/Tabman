@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-public class TabmanDotIndicator: TabmanIndicator {
+internal class TabmanDotIndicator: TabmanIndicator {
     
     //
     // MARK: Properties
