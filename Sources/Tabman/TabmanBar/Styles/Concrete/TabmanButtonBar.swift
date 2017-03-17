@@ -103,11 +103,6 @@ public class TabmanButtonBar: TabmanBar {
         
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
-        
-        let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
-        if let lineIndicator = self.indicator as? TabmanLineIndicator {
-            lineIndicator.weight = indicatorWeight
-        }
     }
     
     //

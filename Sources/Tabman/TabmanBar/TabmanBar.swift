@@ -290,7 +290,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
         let indicatorColor = appearance.indicator.color
-        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!        
+        self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
+        
+        let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
+        if let lineIndicator = self.indicator as? TabmanLineIndicator {
+            lineIndicator.weight = indicatorWeight
+        }
     }
 }
 

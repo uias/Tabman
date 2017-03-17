@@ -31,6 +31,7 @@ class PresetAppearanceConfigs: Any {
             appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
             appearance.layout.itemVerticalPadding = 16.0
+            appearance.indicator.lineWeight = .normal
 
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
