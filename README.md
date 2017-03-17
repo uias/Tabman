@@ -135,7 +135,7 @@ public struct Indicator {
 	/// The color of the bar indicator.
 	public var color: UIColor?
 	/// The weight (thickness) of the bar indicator if using a line indicator.
-	public var lineWeight: TabmanLineIndicator.Weight?
+	public var lineWeight: TabmanIndicator.LineWeight?
 	/// Whether the indicator transiton is progressive.
 	public var isProgressive: Bool?
 	/// Whether the indicator bounces at the end of page ranges.
@@ -164,19 +164,23 @@ public struct Layout {
 	public var interItemSpacing: CGFloat?
 	/// The spacing at the edge of the items in the bar.
 	public var edgeInset: CGFloat?
+	/// The height for the bar.
+	public var height: TabmanBar.Height?
+   	/// The vertical padding between the item and the bar bounds.
+	public var itemVerticalPadding: CGFloat?
 }
 
 /// Bar style configuration.
 public struct Style {
   /// The background style for the bar.
   public var background: TabmanBarBackgroundView.BackgroundStyle?
-  /// Whether to show a fade on the items at the bounds edge of the bar.
+  /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
   public var showEdgeFade: Bool?
 }
 
 /// Bar interaction configuration
 public struct Interaction {
-    // Whether scroll is enabled on the scroll view in the bar.
+    /// Whether user scroll is enabled on a scrolling button bar.
     public var isScrollEnabled: Bool?
 }
 ```
