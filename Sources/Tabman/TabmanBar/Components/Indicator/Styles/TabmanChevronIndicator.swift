@@ -11,7 +11,9 @@ import PureLayout
 
 public class TabmanChevronIndicator: TabmanIndicator {
     
+    //
     // MARK: Properties
+    //
     
     private var chevronView = TabmanChevronView()
     
@@ -26,14 +28,15 @@ public class TabmanChevronIndicator: TabmanIndicator {
         return false
     }
     
+    //
     // MARK: Lifecycle
+    //
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 10.0)
     }
     
     public override func constructIndicator() {
-        super.constructIndicator()
         
         chevronView.backgroundColor = self.tintColor
         

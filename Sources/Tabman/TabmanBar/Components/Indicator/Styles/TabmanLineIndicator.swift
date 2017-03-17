@@ -70,7 +70,6 @@ public class TabmanLineIndicator: TabmanIndicator {
     //
     
     public override func constructIndicator() {
-        super.constructIndicator()
         
         self.tintColor = TabmanBar.Appearance.defaultAppearance.indicator.color
     }

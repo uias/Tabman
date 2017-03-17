@@ -95,7 +95,7 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     }
     
     open func constructIndicator() {
-        // Implement in subclass
+        fatalError("constructIndicator() should be implemented in TabmanBar subclasses.")
     }
     
     /// The preferred layer position for the indicator.
