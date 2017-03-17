@@ -182,7 +182,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// - Returns: The default indicator style.
     open func defaultIndicatorStyle() -> TabmanIndicator.Style {
         print("indicatorStyle() returning default. This should be overridden in subclass")
-        return .none
+        return .clear
     }
     
     /// Whether the bar should use preferredIndicatorStyle if available
@@ -320,7 +320,7 @@ internal extension TabmanIndicator.Style {
             return TabmanChevronIndicator.self
         case .custom(let type):
             return type
-        case .none:
+        case .clear:
             return nil
         }
     }

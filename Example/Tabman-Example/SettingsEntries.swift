@@ -42,7 +42,7 @@ extension SettingsViewController {
                                                                          TabmanIndicator.Style.line.description,
                                                                          TabmanIndicator.Style.dot.description,
                                                                          TabmanIndicator.Style.chevron.description,
-                                                                         TabmanIndicator.Style.none.description],
+                                                                         TabmanIndicator.Style.clear.description],
                                                                 selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
                                                  description: nil,
@@ -144,8 +144,8 @@ fileprivate extension TabmanIndicator.Style {
             return "Dot"
         case .chevron:
             return "Chevron"
-        case .none:
-            return "None"
+        case .clear:
+            return "Clear"
             
         default:
             return "Custom"
@@ -154,8 +154,8 @@ fileprivate extension TabmanIndicator.Style {
     
     static func fromDescription(_ description: String) -> TabmanIndicator.Style? {
         switch description {
-        case "Preferred":
-            return nil
+        case "Clear":
+            return .clear
         case "Line":
             return .line
         case "Dot":
@@ -164,7 +164,7 @@ fileprivate extension TabmanIndicator.Style {
             return .chevron
 
         default:
-            return .none
+            return nil
         }
     }
 }

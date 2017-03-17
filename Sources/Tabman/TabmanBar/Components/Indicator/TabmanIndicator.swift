@@ -29,13 +29,13 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     
     /// The style of indicator to display.
     ///
-    /// - none: No indicator.
+    /// - clear: No visible indicator.
     /// - line: Horizontal line pinned to bottom of bar.
     /// - dot: Circular centered dot pinned to the bottom of the bar.
     /// - chevron: Centered chevron pinned to the bottom of the bar.
     /// - custom: A custom defined indicator.
     public enum Style {
-        case none
+        case clear
         case line
         case dot
         case chevron
@@ -117,7 +117,7 @@ internal extension TabmanIndicator.Style {
     
     static func fromType(_ type: TabmanIndicator.Type?) -> TabmanIndicator.Style {
         guard let type = type else {
-            return .none
+            return .clear
         }
         
         switch type {
