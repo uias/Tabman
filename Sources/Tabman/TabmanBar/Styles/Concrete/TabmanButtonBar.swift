@@ -19,7 +19,7 @@ public class TabmanButtonBar: TabmanBar {
     
     private struct Defaults {
         
-        static let itemHeight: CGFloat = 50.0
+        static let minimumItemHeight: CGFloat = 40.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
     }
     
@@ -121,7 +121,7 @@ public class TabmanButtonBar: TabmanBar {
             
             // layout
             NSLayoutConstraint.autoSetPriority(500, forConstraints: {
-                button.autoSetDimension(.height, toSize: Defaults.itemHeight)
+                button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
             })
             button.autoPinEdge(toSuperviewEdge: .top)
             button.autoPinEdge(toSuperviewEdge: .bottom)
