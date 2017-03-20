@@ -21,9 +21,11 @@ internal class TabmanPositionalUtil {
     static func lowerAndUpperIndex(forPosition position: CGFloat, minimum: Int, maximum: Int) -> (Int, Int) {
         let lowerIndex = floor(position)
         let upperIndex = ceil(position)
+        let minimum = CGFloat(minimum)
+        let maximum = CGFloat(maximum)
         
-        return (Int(max(CGFloat(minimum), lowerIndex)),
-                Int(min(CGFloat(maximum), upperIndex)))
+        return (Int(max(minimum, min(maximum, lowerIndex))),
+                Int(min(maximum, max(minimum, upperIndex))))
     }
     
     /// Get the target index that a transition is travelling toward.
