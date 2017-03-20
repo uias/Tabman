@@ -37,6 +37,7 @@ extension SettingsViewController {
                 self.tabViewController?.bar.style = style
                 self.tabViewController?.bar.appearance = PresetAppearanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
+                self.tabViewController?.reloadPages()
         }))
         appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
                                                                          TabmanIndicator.Style.line.description,

@@ -96,12 +96,21 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     // MARK: PageboyViewControllerDataSource
 
+    func numberOfPages(forBarStyle style: TabmanBar.Style) -> Int {
+        switch style {
+        case .blockTabBar:
+            return 2
+        default:
+            return 5
+        }
+    }
+    
     func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         var viewControllers = [UIViewController]()
         var tabBarItems = [TabmanBarItem]()
-        for i in 0..<numberOfPages {
+        for i in 0 ..< self.numberOfPages(forBarStyle: self.bar.style) {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
             viewController.index = i + 1
             tabBarItems.append(TabmanBarItem(title: String(format: "Page No. %i", viewController.index!)))
