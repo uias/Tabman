@@ -1,5 +1,3 @@
-**Note: Tabman is currently in beta; expect a few headaches and potential API changes until we reach stable.**
-
 <p align="center">
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
