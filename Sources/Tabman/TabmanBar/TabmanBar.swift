@@ -216,16 +216,21 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal func updatePosition(_ position: CGFloat,
                                  direction: PageboyViewController.NavigationDirection,
                                  bounds: CGRect? = nil) {
-        guard let items = self.items else {
-            return
-        }
+        guard let items = self.items else { return }
         let bounds = bounds ?? self.bounds
         
         self.layoutIfNeeded()
         self.currentPosition = position
+        
+        let itemRange: ClosedRange<Int> = 0 ... items.count - 1
+        
+        // escape if position is greater than item count
+        let positionIndex = Int(position)
+        guard positionIndex < itemRange.upperBound else { return }
+        
         self.update(forPosition: position,
                     direction: direction,
-                    indexRange: 0 ... items.count - 1,
+                    indexRange: itemRange,
                     bounds: bounds)
     }
     
