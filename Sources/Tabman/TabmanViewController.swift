@@ -51,6 +51,15 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.updateBar(withLocation: self.bar.location)
     }
     
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        let bounds = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+
+        coordinator.animate(alongsideTransition: { (context) in
+            self.activeTabmanBar?.updateForCurrentPosition(bounds: bounds)
+        }, completion: nil)
+    }
+    
     //
     // MARK: PageboyViewControllerDelegate
     //
