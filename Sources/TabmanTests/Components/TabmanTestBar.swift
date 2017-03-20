@@ -63,9 +63,12 @@ class TabmanTestBar: TabmanBar {
     
     override func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int, maximumIndex: Int) {
-        super.update(forPosition: position, direction: direction,
-                     minimumIndex: minimumIndex, maximumIndex: maximumIndex)
+                         indexRange: Range<Int>,
+                         bounds: CGRect) {
+        super.update(forPosition: position,
+                     direction: direction,
+                     indexRange: indexRange,
+                     bounds: bounds)
         
         self.latestPosition = position
         self.latestDirection = direction

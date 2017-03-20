@@ -9,6 +9,7 @@
 import UIKit
 import Pageboy
 
+/// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
     //
@@ -32,6 +33,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Able to set items, appearance, location and style through this object.
     public lazy var bar = TabmanBarConfig()
     
+    /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
     
     //
@@ -47,6 +49,15 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         // add bar to view
         self.reloadBar(withStyle: self.bar.style)
         self.updateBar(withLocation: self.bar.location)
+    }
+    
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        let bounds = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+
+        coordinator.animate(alongsideTransition: { (context) in
+            self.activeTabmanBar?.updateForCurrentPosition(bounds: bounds)
+        }, completion: nil)
     }
     
     //
@@ -69,8 +80,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       didScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
-        self.activeTabmanBar?.updatePosition(CGFloat(index),
-                                    direction: direction)
+        self.updateBar(withPosition: CGFloat(index),
+                       direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -78,9 +89,21 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
         if !animated {
-            self.activeTabmanBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
-                                     direction: direction)
+            self.updateBar(withPosition: pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
+                           direction: direction)
         }
+    }
+    
+    private func updateBar(withPosition position: CGFloat,
+                           direction: PageboyViewController.NavigationDirection) {
+        
+        let viewControllersCount = self.viewControllers?.count ?? 0
+        let barItemsCount = self.activeTabmanBar?.items?.count ?? 0
+        let itemCountsAreEqual = viewControllersCount == barItemsCount
+        
+        if position >= CGFloat(barItemsCount - 1) && !itemCountsAreEqual { return }
+        
+        self.activeTabmanBar?.updatePosition(position, direction: direction)
     }
 }
 

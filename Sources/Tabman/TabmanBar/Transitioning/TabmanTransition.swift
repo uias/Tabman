@@ -15,8 +15,8 @@ internal protocol TabmanTransitionLifecycle {
     
     func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
-                    minimumIndex: Int,
-                    maximumIndex: Int)
+                    indexRange: Range<Int>,
+                    bounds: CGRect)
     
     func updateForCurrentPosition()
 }
@@ -30,7 +30,8 @@ internal class TabmanTransition: Any, TabmanTransitionLifecycle {
     
     func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
-                    minimumIndex: Int, maximumIndex: Int) {
+                    indexRange: Range<Int>,
+                    bounds: CGRect) {
         
     }
     

@@ -8,7 +8,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/msaps/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/msaps/Tabman)
 
-**Tabman** is a powerful paging view controller with indicator bar component, for iOS.
+**Tabman** is a powerful paging view controller with indicator bar, for iOS.
 
 <p align="center">
     <img src="Artwork/header.png" width="890" alt="Tabman"/>

@@ -43,10 +43,10 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     /// - Parameters:
     ///   - position: The new position.
     ///   - direction: The direction of travel.
-    ///   - minimumIndex: The minimum possible index.
-    ///   - maximumIndex: The maximum possible index.
+    ///   - indexRange: The range of available indexes.
+    ///   - bounds: The available bounds in the bar.
     func update(forPosition position: CGFloat,
                 direction: PageboyViewController.NavigationDirection,
-                minimumIndex: Int,
-                maximumIndex: Int)
+                indexRange: Range<Int>,
+                bounds: CGRect)
 }

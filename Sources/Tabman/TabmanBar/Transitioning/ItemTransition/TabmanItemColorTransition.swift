@@ -12,13 +12,14 @@ import Pageboy
 class TabmanItemColorTransition: TabmanItemTransition {
     
     override func transition(withPosition position: CGFloat,
-                    direction: PageboyViewController.NavigationDirection,
-                    minimumIndex: Int, maximumIndex: Int) {
+                             direction: PageboyViewController.NavigationDirection,
+                             indexRange: Range<Int>,
+                             bounds: CGRect) {
         guard let bar = tabmanBar as? TabmanButtonBar else { return }
         
         let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
-                                                                               minimum: minimumIndex,
-                                                                               maximum: maximumIndex)
+                                                                               minimum: indexRange.lowerBound,
+                                                                               maximum: indexRange.upperBound)
         let lowerButton = bar.buttons[lowerIndex]
         let upperButton = bar.buttons[upperIndex]
         

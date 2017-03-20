@@ -33,7 +33,6 @@ class CustomTabmanBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     
     override func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
         
         // create your bar here
         let label = UILabel()
@@ -41,15 +40,21 @@ class CustomTabmanBar: TabmanBar {
         label.textAlignment = .center
         label.textColor = .white
         self.contentView.addSubview(label)
-        label.autoPinEdgesToSuperviewEdges()
+        label.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(12.0, 0.0, 12.0, 0.0))
+    }
+    
+    override func addIndicatorToBar(indicator: TabmanIndicator) {
+        // add indicator to bar here
     }
     
     override func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int, maximumIndex: Int) {
-        super.update(forPosition: position, direction: direction,
-                     minimumIndex: minimumIndex, maximumIndex: maximumIndex)
-        
+                         indexRange: Range<Int>,
+                         bounds: CGRect) {
+        super.update(forPosition: position,
+                     direction: direction,
+                     indexRange: indexRange,
+                     bounds: bounds)
         // update your bar for a positional update here
     }
     

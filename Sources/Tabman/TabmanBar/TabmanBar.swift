@@ -214,27 +214,24 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     //
     
     internal func updatePosition(_ position: CGFloat,
-                                 direction: PageboyViewController.NavigationDirection) {
-        guard let items = self.items else {
-            return
-        }
+                                 direction: PageboyViewController.NavigationDirection,
+                                 bounds: CGRect? = nil) {
+        guard let items = self.items else { return }
+        let bounds = bounds ?? self.bounds
         
         self.layoutIfNeeded()
         self.currentPosition = position
+        
         self.update(forPosition: position,
                     direction: direction,
-                    minimumIndex: 0, maximumIndex: items.count - 1)
+                    indexRange: 0 ..< items.count - 1,
+                    bounds: bounds)
     }
     
-    internal func updateForCurrentPosition() {
-        guard let items = self.items else {
-            return
-        }
-        
-        self.update(forPosition: self.currentPosition,
-                    direction: .neutral,
-                    minimumIndex: 0,
-                    maximumIndex: items.count - 1)
+    internal func updateForCurrentPosition(bounds: CGRect? = nil) {
+        self.updatePosition(self.currentPosition,
+                            direction: .neutral,
+                            bounds: bounds)
     }
     
     //
@@ -245,23 +242,27 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         fatalError("constructTabBar() should be implemented in TabmanBar subclasses.")
     }
     
-    public func addIndicatorToBar(indicator: TabmanIndicator) {
+    open func addIndicatorToBar(indicator: TabmanIndicator) {
         fatalError("addIndicatorToBar() should be implemented in TabmanBar subclasses.")
     }
     
     open func update(forPosition position: CGFloat,
-                         direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int,
-                         maximumIndex: Int) {
+                     direction: PageboyViewController.NavigationDirection,
+                     indexRange: Range<Int>,
+                     bounds: CGRect) {
         guard self.indicator != nil else { return }
         
         let indicatorTransition = self.transitionStore?.indicatorTransition(forBar: self)
-        indicatorTransition?.transition(withPosition: position, direction: direction,
-                                        minimumIndex: minimumIndex, maximumIndex: maximumIndex)
+        indicatorTransition?.transition(withPosition: position,
+                                        direction: direction,
+                                        indexRange: indexRange,
+                                        bounds: bounds)
         
         let itemTransition = self.transitionStore?.itemTransition(forBar: self, indicator: self.indicator!)
-        itemTransition?.transition(withPosition: position, direction: direction,
-                                   minimumIndex: minimumIndex, maximumIndex: maximumIndex)
+        itemTransition?.transition(withPosition: position,
+                                   direction: direction,
+                                   indexRange: indexRange,
+                                   bounds: bounds)
     }
     
     /// Appearance updates that are core to TabmanBar and must always be evaluated
