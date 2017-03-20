@@ -224,7 +224,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         self.update(forPosition: position,
                     direction: direction,
-                    indexRange: 0 ..< items.count,
+                    indexRange: 0 ..< items.count - 1,
                     bounds: bounds)
     }
     
