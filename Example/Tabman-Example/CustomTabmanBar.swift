@@ -49,10 +49,12 @@ class CustomTabmanBar: TabmanBar {
     
     override func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
-                         minimumIndex: Int, maximumIndex: Int) {
-        super.update(forPosition: position, direction: direction,
-                     minimumIndex: minimumIndex, maximumIndex: maximumIndex)
-        
+                         indexRange: ClosedRange<Int>,
+                         bounds: CGRect) {
+        super.update(forPosition: position,
+                     direction: direction,
+                     indexRange: indexRange,
+                     bounds: bounds)
         // update your bar for a positional update here
     }
     

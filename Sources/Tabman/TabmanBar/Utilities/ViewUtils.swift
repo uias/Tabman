@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+internal extension UIView {
     
     /// The default tintColor of UIView
     class var defaultTintColor: UIColor {

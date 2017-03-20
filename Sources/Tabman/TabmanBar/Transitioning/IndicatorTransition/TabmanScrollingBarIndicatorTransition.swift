@@ -14,13 +14,14 @@ import Pageboy
 internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition {
 
     override func transition(withPosition position: CGFloat,
-                    direction: PageboyViewController.NavigationDirection,
-                    minimumIndex: Int, maximumIndex: Int) {
+                             direction: PageboyViewController.NavigationDirection,
+                             indexRange: ClosedRange<Int>,
+                             bounds: CGRect) {
         guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
         
         let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
-                                                                               minimum: minimumIndex,
-                                                                               maximum: maximumIndex)
+                                                                               minimum: indexRange.lowerBound,
+                                                                               maximum: indexRange.upperBound)
         let lowerButton = scrollingButtonBar.buttons[lowerIndex]
         let upperButton = scrollingButtonBar.buttons[upperIndex]
 

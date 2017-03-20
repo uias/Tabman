@@ -14,11 +14,12 @@ import Pageboy
 class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
 
     override func transition(withPosition position: CGFloat,
-                    direction: PageboyViewController.NavigationDirection,
-                    minimumIndex: Int, maximumIndex: Int) {
+                             direction: PageboyViewController.NavigationDirection,
+                             indexRange: ClosedRange<Int>,
+                             bounds: CGRect) {
         guard let bar = tabmanBar else { return }
         
-        let screenWidth = bar.bounds.size.width
+        let screenWidth = bounds.size.width
         let itemCount = CGFloat(bar.items?.count ?? 0)
         let itemWidth = screenWidth / itemCount
         
