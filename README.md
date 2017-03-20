@@ -24,7 +24,7 @@
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Tabman', '0.4.0.beta.4'
+pod 'Tabman'
 ```
 
 And run `pod install`.
