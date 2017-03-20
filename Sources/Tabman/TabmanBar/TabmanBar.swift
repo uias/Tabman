@@ -225,8 +225,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let itemRange: ClosedRange<Int> = 0 ... items.count - 1
         
         // escape if position is greater than item count
-        let positionIndex = Int(position)
-        guard positionIndex < itemRange.upperBound else { return }
+        let positionIndex = Int(ceil(position))
+        guard positionIndex <= itemRange.upperBound else { return }
         
         self.update(forPosition: position,
                     direction: direction,
