@@ -9,6 +9,7 @@
 import UIKit
 import Pageboy
 
+/// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
     //
@@ -32,6 +33,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Able to set items, appearance, location and style through this object.
     public lazy var bar = TabmanBarConfig()
     
+    /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
     
     //
