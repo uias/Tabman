@@ -122,6 +122,9 @@ public extension TabmanBar {
             self.layout.edgeInset = 16.0
             self.layout.itemVerticalPadding = 12.0
             
+            // style
+            self.style.background = .blur(style: .extraLight)
+            
             // interaction
             self.interaction.isScrollEnabled = false
         }
