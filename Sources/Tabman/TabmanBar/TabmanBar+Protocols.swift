@@ -47,6 +47,6 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     ///   - bounds: The available bounds in the bar.
     func update(forPosition position: CGFloat,
                 direction: PageboyViewController.NavigationDirection,
-                indexRange: ClosedRange<Int>,
+                indexRange: Range<Int>,
                 bounds: CGRect)
 }

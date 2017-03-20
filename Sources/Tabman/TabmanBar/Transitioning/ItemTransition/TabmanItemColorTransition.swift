@@ -13,7 +13,7 @@ class TabmanItemColorTransition: TabmanItemTransition {
     
     override func transition(withPosition position: CGFloat,
                              direction: PageboyViewController.NavigationDirection,
-                             indexRange: ClosedRange<Int>,
+                             indexRange: Range<Int>,
                              bounds: CGRect) {
         guard let bar = tabmanBar as? TabmanButtonBar else { return }
         

@@ -49,7 +49,7 @@ class CustomTabmanBar: TabmanBar {
     
     override func update(forPosition position: CGFloat,
                          direction: PageboyViewController.NavigationDirection,
-                         indexRange: ClosedRange<Int>,
+                         indexRange: Range<Int>,
                          bounds: CGRect) {
         super.update(forPosition: position,
                      direction: direction,

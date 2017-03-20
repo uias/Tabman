@@ -222,11 +222,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.layoutIfNeeded()
         self.currentPosition = position
         
-        let itemRange: ClosedRange<Int> = 0 ... items.count - 1
-        let position = self.sanitize(position: position, forIndexRange: itemRange)
         self.update(forPosition: position,
                     direction: direction,
-                    indexRange: itemRange,
+                    indexRange: 0 ..< items.count,
                     bounds: bounds)
     }
     
@@ -234,24 +232,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.updatePosition(self.currentPosition,
                             direction: .neutral,
                             bounds: bounds)
-    }
-    
-    /// Sanitize a position value against a valid index range.
-    ///
-    /// - Parameters:
-    ///   - position: The position.
-    ///   - indexRange: The valid range of indexes.
-    /// - Returns: A valid sanitized version of the position.
-    private func sanitize(position: CGFloat, forIndexRange indexRange: ClosedRange<Int>) -> CGFloat {
-        var position = position
-        
-        // ceil if position is greater than item count
-        let positionCeiling = ceil(position)
-        if positionCeiling > CGFloat(indexRange.upperBound) {
-            position = CGFloat(indexRange.upperBound)
-        }
-        
-        return position
     }
     
     //
@@ -268,7 +248,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     open func update(forPosition position: CGFloat,
                      direction: PageboyViewController.NavigationDirection,
-                     indexRange: ClosedRange<Int>,
+                     indexRange: Range<Int>,
                      bounds: CGRect) {
         guard self.indicator != nil else { return }
         

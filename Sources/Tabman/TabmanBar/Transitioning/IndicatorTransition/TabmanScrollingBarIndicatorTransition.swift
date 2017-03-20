@@ -15,7 +15,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
 
     override func transition(withPosition position: CGFloat,
                              direction: PageboyViewController.NavigationDirection,
-                             indexRange: ClosedRange<Int>,
+                             indexRange: Range<Int>,
                              bounds: CGRect) {
         guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
         
