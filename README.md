@@ -64,7 +64,7 @@ func viewControllers(forPageboyViewController pageboyViewController: PageboyView
 
     // configure the bar
     self.bar.items = [TabmanBarItem(title: "Page 1"),
-					  TabmanBarItem(title: "Page 2")]
+                      TabmanBarItem(title: "Page 2")]
 
     return viewControllers
 }
