@@ -39,7 +39,8 @@ class PresetAppearanceConfigs: Any {
             appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
             appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
             
-        default:()
+        default:
+            appearance.style.background = .blur(style: .light)
         }
         
         return appearance
