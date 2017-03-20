@@ -36,6 +36,9 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     /// - Parameter items: The items to display.
     func constructTabBar(items: [TabmanBarItem])
     
+    /// Add the indicator to the bar.
+    ///
+    /// - Parameter indicator: The indicator to add.
     func addIndicatorToBar(indicator: TabmanIndicator)
     
     /// Update the tab bar for a positional update.

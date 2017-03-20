@@ -32,18 +32,23 @@ override func usePreferredIndicatorStyle() -> Bool {
 }
 
 override func constructTabBar(items: [TabmanBarItem]) {
-	super.constructTabBar(items: items)
 	
 	// create your bar here     
 }
 
+override func addIndicatorToBar(indicator: TabmanIndicator) {
+	// add the indicator to the bar here
+}
+
 override func update(forPosition position: CGFloat,
-					 direction: PageboyViewController.NavigationDirection,
-					 minimumIndex: Int, maximumIndex: Int) {
+                direction: PageboyViewController.NavigationDirection,
+                indexRange: Range<Int>,
+                bounds: CGRect) {
 	super.update(forPosition: position, direction: direction,
-				 minimumIndex: minimumIndex, maximumIndex: maximumIndex)
+				 indexRange: Range<Int>,
+				 bounds: CGRect)
 				 
-	// update your bar for a positional update here              
+	// update your bar contents for a positional update here              
 }
 
 override func update(forAppearance appearance: Appearance, 
