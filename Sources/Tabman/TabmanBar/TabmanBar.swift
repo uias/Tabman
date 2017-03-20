@@ -245,7 +245,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         fatalError("constructTabBar() should be implemented in TabmanBar subclasses.")
     }
     
-    public func addIndicatorToBar(indicator: TabmanIndicator) {
+    open func addIndicatorToBar(indicator: TabmanIndicator) {
         fatalError("addIndicatorToBar() should be implemented in TabmanBar subclasses.")
     }
     
