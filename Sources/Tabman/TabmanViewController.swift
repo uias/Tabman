@@ -80,8 +80,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       didScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
-        self.activeTabmanBar?.updatePosition(CGFloat(index),
-                                    direction: direction)
+        self.updateBar(withPosition: CGFloat(index),
+                       direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -89,9 +89,21 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
         if !animated {
-            self.activeTabmanBar?.updatePosition(pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
-                                     direction: direction)
+            self.updateBar(withPosition: pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y,
+                           direction: direction)
         }
+    }
+    
+    private func updateBar(withPosition position: CGFloat,
+                           direction: PageboyViewController.NavigationDirection) {
+        
+        let viewControllersCount = self.viewControllers?.count ?? 0
+        let barItemsCount = self.activeTabmanBar?.items?.count ?? 0
+        let itemCountsAreEqual = viewControllersCount == barItemsCount
+        
+        if position >= CGFloat(barItemsCount - 1) && !itemCountsAreEqual { return }
+        
+        self.activeTabmanBar?.updatePosition(position, direction: direction)
     }
 }
 

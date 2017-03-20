@@ -27,7 +27,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
 
         var integral: Float = 0.0
         let transitionProgress = CGFloat(modff(Float(position), &integral))
-
+        
         self.updateIndicator(forTransitionProgress: transitionProgress,
                              in: scrollingButtonBar,
                              lowerButton: lowerButton,
