@@ -6,7 +6,7 @@ branches:
   - develop
 
 script:
-- pod repo update
+- pod setup
 - pod install
 - xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
   Simulator,name=iPhone 7,OS=10.1' build test
