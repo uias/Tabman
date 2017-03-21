@@ -276,16 +276,20 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     ///
     /// - Parameter appearance: The appearance config
     internal func updateCore(forAppearance appearance: Appearance) {
+        let defaultAppearance = Appearance.defaultAppearance
+        
         self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
-        if let backgroundStyle = appearance.style.background {
-            self.backgroundView.backgroundStyle = backgroundStyle
-        }
+        let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
+        self.backgroundView.backgroundStyle = backgroundStyle
         
         self.height = appearance.layout.height ?? .auto
         
+        let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
+        self.bottomSeparator.color = bottomSeparatorColor
+        
         self.update(forAppearance: appearance,
-                    defaultAppearance: Appearance.defaultAppearance)
+                    defaultAppearance: defaultAppearance)
     }
     
     open func update(forAppearance appearance: Appearance,
