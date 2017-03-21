@@ -94,6 +94,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
+    /// The bottom separator view for the bar.
+    internal private(set) var bottomSeparator = TabmanSeparator()
     
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
@@ -156,6 +158,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(contentView)
         contentView.autoPinEdgesToSuperviewEdges()
         
+        self.addSubview(bottomSeparator)
+        bottomSeparator.backgroundColor = .blue
+        bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        
         self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())
     }
     
@@ -171,7 +177,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     open override func addSubview(_ view: UIView) {
-        if view !== self.backgroundView && view !== self.contentView {
+        if view !== self.backgroundView &&
+            view !== self.contentView &&
+            view !== self.bottomSeparator {
             fatalError("Please add subviews to the contentView rather than directly onto the TabmanBar")
         }
         super.addSubview(view)
