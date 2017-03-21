@@ -2,9 +2,9 @@
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
 
-[![Build Status](https://travis-ci.org/msaps/Tabman.svg?branch=master)](https://travis-ci.org/msaps/Tabman)
+[![Build Status](https://travis-ci.org/YorkUI/Pageboy.svg?branch=master)](https://travis-ci.org/YorkUI/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
-[![codecov](https://codecov.io/gh/msaps/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/msaps/Tabman)
+[![codecov](https://codecov.io/gh/YorkUI/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/YorkUI/Tabman)
 
 **Tabman** is a powerful paging view controller with indicator bar, for iOS.
 
@@ -35,7 +35,7 @@ And run `pod install`.
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode.
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run `pod install` and build the workspace.
 
 ## Usage
 ### Getting Started
