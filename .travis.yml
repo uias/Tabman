@@ -5,15 +5,15 @@ branches:
   - master
   - develop
 
+before_install:
+  - pod repo update
+
 script:
-- pod setup
-- pod install
-- xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
-  Simulator,name=iPhone 7,OS=10.1' build test
-- pod lib lint --quick
+  - xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' build test
+  - pod lib lint --quick
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   slack:
