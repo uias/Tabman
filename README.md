@@ -106,7 +106,7 @@ The style of bar to display, by default this is set to `.buttonBar`.
 - `.segmentedBar` - UISegmentedControl style bar.
 - `.tabBar` - UITabBar style bar.
 
-For examples on implementing real-world bar styles with `Tabman`, please visit [Tabman-Styles](https://github.com/YorkUI/Tabman-Styles)
+For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/YorkUI/Tabman-Styles).
 
 #### Location
 Where you want the bar to appear, either at the top or bottom of the screen. By default this is set to `.preferred` which will use the predefined preferred location for the active style.
