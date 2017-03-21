@@ -159,7 +159,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         contentView.autoPinEdgesToSuperviewEdges()
         
         self.addSubview(bottomSeparator)
-        bottomSeparator.backgroundColor = .blue
         bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
         
         self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())

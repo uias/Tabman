@@ -11,10 +11,45 @@ import UIKit
 public class TabmanSeparator: UIView {
     
     //
-    // MARK: Lifecycle
+    // MARK: Properties
     //
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 1.0)
+        return CGSize(width: 0.0, height: 0.5)
+    }
+    
+    public override var tintColor: UIColor! {
+        didSet {
+            self.color = tintColor
+        }
+    }
+    /// The color of the separator.
+    public var color: UIColor = .clear {
+        didSet {
+            self.backgroundColor = color
+        }
+    }
+    
+    //
+    // MARK: Init
+    //
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.initSeparator()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.initSeparator()
+    }
+    
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    private func initSeparator() {
+        
+        self.backgroundColor = self.color
     }
 }
