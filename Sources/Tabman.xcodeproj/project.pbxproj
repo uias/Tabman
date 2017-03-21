@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		418FEAE37F28A06F370F88A2 /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8351D0768C00101CB05A87 /* Pods_Tabman.framework */; };
+		3F3FBEC45A4025CB2DAD180A /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04FBA551919D78789054DA7 /* Pods_Tabman.framework */; };
 		D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136781E69893A0013CD42 /* TabmanIndicator.swift */; };
 		D601367B1E6989B50013CD42 /* TabmanBarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367A1E6989B50013CD42 /* TabmanBarConfig.swift */; };
 		D601368A1E6992BB0013CD42 /* TabmanBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136891E6992BB0013CD42 /* TabmanBarBackgroundView.swift */; };
@@ -55,6 +55,7 @@
 		D68FBA811E701D1A00B96EC0 /* TabmanCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA801E701D1A00B96EC0 /* TabmanCircularView.swift */; };
 		D697AB421E7C166800586DCF /* TabmanClearIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697AB411E7C166800586DCF /* TabmanClearIndicator.swift */; };
 		D6E5C1AF1E705CF1003FF39D /* TabmanBarConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */; };
+		E7008672C1E4B88CB32CD0D0 /* Pods_Tabman_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B7C5594C27BD4D2C470997 /* Pods_Tabman_TabmanTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E8351D0768C00101CB05A87 /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BEA45A5AE870DC8195FB013 /* Pods-Tabman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman/Pods-Tabman.release.xcconfig"; sourceTree = "<group>"; };
-		BF68DBD615C8734CAA35BDE6 /* Pods-Tabman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman/Pods-Tabman.debug.xcconfig"; sourceTree = "<group>"; };
+		542F14F62547D80F90AA805C /* Pods-Tabman-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-TabmanTests/Pods-Tabman-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D5DE4D5EEEAB85B547E7FC0 /* Pods-Tabman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman/Pods-Tabman.release.xcconfig"; sourceTree = "<group>"; };
+		C04FBA551919D78789054DA7 /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00CF0DC231AE0A411D98DFE /* Pods-Tabman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman/Pods-Tabman.debug.xcconfig"; sourceTree = "<group>"; };
+		D3B4C0BEC03CD97F13346EC3 /* Pods-Tabman-TabmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-TabmanTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-TabmanTests/Pods-Tabman-TabmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D60136781E69893A0013CD42 /* TabmanIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanIndicator.swift; sourceTree = "<group>"; };
 		D601367A1E6989B50013CD42 /* TabmanBarConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfig.swift; sourceTree = "<group>"; };
 		D60136891E6992BB0013CD42 /* TabmanBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarBackgroundView.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		D68FBA801E701D1A00B96EC0 /* TabmanCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanCircularView.swift; sourceTree = "<group>"; };
 		D697AB411E7C166800586DCF /* TabmanClearIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanClearIndicator.swift; sourceTree = "<group>"; };
 		D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfigTests.swift; sourceTree = "<group>"; };
+		E1B7C5594C27BD4D2C470997 /* Pods_Tabman_TabmanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_TabmanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				418FEAE37F28A06F370F88A2 /* Pods_Tabman.framework in Frameworks */,
+				3F3FBEC45A4025CB2DAD180A /* Pods_Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,17 +143,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */,
+				E7008672C1E4B88CB32CD0D0 /* Pods_Tabman_TabmanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A54D8EDF22991CA484A8C387 /* Pods */ = {
+		D314E9EB7361350B8EA4E0F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF68DBD615C8734CAA35BDE6 /* Pods-Tabman.debug.xcconfig */,
-				5BEA45A5AE870DC8195FB013 /* Pods-Tabman.release.xcconfig */,
+				D00CF0DC231AE0A411D98DFE /* Pods-Tabman.debug.xcconfig */,
+				5D5DE4D5EEEAB85B547E7FC0 /* Pods-Tabman.release.xcconfig */,
+				D3B4C0BEC03CD97F13346EC3 /* Pods-Tabman-TabmanTests.debug.xcconfig */,
+				542F14F62547D80F90AA805C /* Pods-Tabman-TabmanTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -243,7 +250,7 @@
 				D62AC0BF1E5733810020B8AE /* TabmanTests */,
 				D62AC0B31E5733810020B8AE /* Products */,
 				D62AC1531E5AF5500020B8AE /* Frameworks */,
-				A54D8EDF22991CA484A8C387 /* Pods */,
+				D314E9EB7361350B8EA4E0F8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -316,7 +323,8 @@
 			children = (
 				D62AC19E1E5B03BB0020B8AE /* PureLayout.framework */,
 				D62AC1541E5AF5500020B8AE /* Pageboy.framework */,
-				2E8351D0768C00101CB05A87 /* Pods_Tabman.framework */,
+				C04FBA551919D78789054DA7 /* Pods_Tabman.framework */,
+				E1B7C5594C27BD4D2C470997 /* Pods_Tabman_TabmanTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -376,13 +384,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D62AC0C61E5733810020B8AE /* Build configuration list for PBXNativeTarget "Tabman" */;
 			buildPhases = (
-				D09F8BDCC990DDFEB923CB8B /* [CP] Check Pods Manifest.lock */,
+				CD99F4CA7550180E33FC9BA7 /* [CP] Check Pods Manifest.lock */,
 				D62AC0AD1E5733810020B8AE /* Sources */,
 				D62AC0AE1E5733810020B8AE /* Frameworks */,
 				D62AC0AF1E5733810020B8AE /* Headers */,
 				D62AC0B01E5733810020B8AE /* Resources */,
 				D6607C9E1E8023DE00FEB9F4 /* Increment Build Number */,
-				C159490D69DC443DF9DFB3FB /* [CP] Copy Pods Resources */,
+				9505793F243C6BE84DF28493 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,9 +405,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D62AC0C91E5733810020B8AE /* Build configuration list for PBXNativeTarget "TabmanTests" */;
 			buildPhases = (
+				22DFAD8335B2EADD6315DA6E /* [CP] Check Pods Manifest.lock */,
 				D62AC0B71E5733810020B8AE /* Sources */,
 				D62AC0B81E5733810020B8AE /* Frameworks */,
 				D62AC0B91E5733810020B8AE /* Resources */,
+				E2444D3293FC6304D7578FCF /* [CP] Embed Pods Frameworks */,
+				47937725A9CDB8AFCC27F286 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -468,7 +479,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C159490D69DC443DF9DFB3FB /* [CP] Copy Pods Resources */ = {
+		22DFAD8335B2EADD6315DA6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		47937725A9CDB8AFCC27F286 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-TabmanTests/Pods-Tabman-TabmanTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9505793F243C6BE84DF28493 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,7 +524,7 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman/Pods-Tabman-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D09F8BDCC990DDFEB923CB8B /* [CP] Check Pods Manifest.lock */ = {
+		CD99F4CA7550180E33FC9BA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -511,6 +552,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list HEAD --count`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Incremented the build number ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
+		E2444D3293FC6304D7578FCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-TabmanTests/Pods-Tabman-TabmanTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -686,7 +742,7 @@
 		};
 		D62AC0C71E5733810020B8AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF68DBD615C8734CAA35BDE6 /* Pods-Tabman.debug.xcconfig */;
+			baseConfigurationReference = D00CF0DC231AE0A411D98DFE /* Pods-Tabman.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -707,7 +763,7 @@
 		};
 		D62AC0C81E5733810020B8AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BEA45A5AE870DC8195FB013 /* Pods-Tabman.release.xcconfig */;
+			baseConfigurationReference = 5D5DE4D5EEEAB85B547E7FC0 /* Pods-Tabman.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -727,8 +783,8 @@
 		};
 		D62AC0CA1E5733810020B8AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3B4C0BEC03CD97F13346EC3 /* Pods-Tabman-TabmanTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TabmanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;
@@ -739,8 +795,8 @@
 		};
 		D62AC0CB1E5733810020B8AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542F14F62547D80F90AA805C /* Pods-Tabman-TabmanTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TabmanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;

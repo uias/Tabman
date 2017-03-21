@@ -7,6 +7,7 @@ use_frameworks!
 target 'Tabman' do
   project './Sources/Tabman.xcodeproj'
   workspace 'Tabman'
+  target 'TabmanTests'
 
   pod 'Pageboy', '~> 0.4.0'
   pod 'PureLayout', '~> 3.0.0'
