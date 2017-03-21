@@ -35,7 +35,7 @@ And run `pod install`.
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. When checking out the repo, ensure you include submodules. Simply build and run the project in Xcode.
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run `pod install` and build the workspace.
 
 ## Usage
 ### Getting Started
