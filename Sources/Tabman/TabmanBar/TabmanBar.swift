@@ -155,11 +155,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
-        self.addSubview(contentView)
-        contentView.autoPinEdgesToSuperviewEdges()
-        
         self.addSubview(bottomSeparator)
         bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        
+        self.addSubview(contentView)
+        contentView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .bottom)
+        contentView.autoPinEdge(.bottom, to: .top, of: bottomSeparator)
         
         self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())
     }
