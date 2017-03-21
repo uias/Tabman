@@ -38,8 +38,6 @@
 		D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11B1E573AA00020B8AE /* TabmanBar.swift */; };
 		D62AC1201E573FD20020B8AE /* TabmanBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11F1E573FD20020B8AE /* TabmanBarItem.swift */; };
 		D62AC1231E5748D80020B8AE /* TabmanAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1221E5748D80020B8AE /* TabmanAutoLayout.swift */; };
-		D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC1541E5AF5500020B8AE /* Pageboy.framework */; };
-		D62AC19F1E5B03BB0020B8AE /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC19E1E5B03BB0020B8AE /* PureLayout.framework */; };
 		D62AC1A91E5C54570020B8AE /* TabmanViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* TabmanViewUtils.swift */; };
 		D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* TabmanScrollView.swift */; };
 		D66FEEBC1E79662C00E7E87A /* TabmanBar+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66FEEBB1E79662C00E7E87A /* TabmanBar+Indicator.swift */; };
@@ -132,8 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62AC19F1E5B03BB0020B8AE /* PureLayout.framework in Frameworks */,
-				D62AC1551E5AF5500020B8AE /* Pageboy.framework in Frameworks */,
 				AC53A7665A8C8785A2845BB4 /* Pods_Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
