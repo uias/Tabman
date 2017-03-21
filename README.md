@@ -2,9 +2,9 @@
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
 
-[![Build Status](https://travis-ci.org/msaps/Tabman.svg?branch=master)](https://travis-ci.org/msaps/Tabman)
+[![Build Status](https://travis-ci.org/YorkUI/Pageboy.svg?branch=master)](https://travis-ci.org/YorkUI/Tabman)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
-[![codecov](https://codecov.io/gh/msaps/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/msaps/Tabman)
+[![codecov](https://codecov.io/gh/YorkUI/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/YorkUI/Tabman)
 
 **Tabman** is a powerful paging view controller with indicator bar, for iOS.
 
