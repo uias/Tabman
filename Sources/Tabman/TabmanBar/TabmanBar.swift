@@ -94,6 +94,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
+    /// The bottom separator view for the bar.
+    internal private(set) var bottomSeparator = TabmanSeparator()
     
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
@@ -153,6 +155,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
+        self.addSubview(bottomSeparator)
+        bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        
         self.addSubview(contentView)
         contentView.autoPinEdgesToSuperviewEdges()
         
@@ -171,7 +176,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     open override func addSubview(_ view: UIView) {
-        if view !== self.backgroundView && view !== self.contentView {
+        if view !== self.backgroundView &&
+            view !== self.contentView &&
+            view !== self.bottomSeparator {
             fatalError("Please add subviews to the contentView rather than directly onto the TabmanBar")
         }
         super.addSubview(view)
@@ -269,16 +276,20 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     ///
     /// - Parameter appearance: The appearance config
     internal func updateCore(forAppearance appearance: Appearance) {
+        let defaultAppearance = Appearance.defaultAppearance
+        
         self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
-        if let backgroundStyle = appearance.style.background {
-            self.backgroundView.backgroundStyle = backgroundStyle
-        }
+        let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
+        self.backgroundView.backgroundStyle = backgroundStyle
         
         self.height = appearance.layout.height ?? .auto
         
+        let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
+        self.bottomSeparator.color = bottomSeparatorColor
+        
         self.update(forAppearance: appearance,
-                    defaultAppearance: Appearance.defaultAppearance)
+                    defaultAppearance: defaultAppearance)
     }
     
     open func update(forAppearance appearance: Appearance,

@@ -178,6 +178,8 @@ public struct Style {
   public var background: TabmanBarBackgroundView.BackgroundStyle?
   /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
   public var showEdgeFade: Bool?
+  /// Color of the separator at the bottom of the bar.
+  public var bottomSeparatorColor: UIColor?
 }
 
 /// Bar interaction configuration
