@@ -27,7 +27,17 @@ public extension TabmanBar {
             /// Whether the indicator transiton is progressive.
             public var isProgressive: Bool?
             /// Whether the indicator bounces at the end of page ranges.
-            public var bounces: Bool?
+            public var bounces: Bool? {
+                didSet {
+                    self.compresses = !(bounces ?? defaultAppearance.indicator.bounces!)
+                }
+            }
+            /// Whether the indicator compresses at the end of page ranges.
+            public var compresses: Bool? {
+                didSet {
+                    self.bounces = !(compresses ?? defaultAppearance.indicator.compresses!)
+                }
+            }
             /// Whether to use rounded corners on line indicators.
             public var useRoundedCorners: Bool?
         }
@@ -106,6 +116,7 @@ public extension TabmanBar {
             
             // indicator
             self.indicator.bounces = true
+            self.indicator.compresses = false
             self.indicator.isProgressive = false
             self.indicator.useRoundedCorners = false
             self.indicator.lineWeight = .normal
