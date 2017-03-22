@@ -116,6 +116,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
+    internal var indicatorCompresses: Bool = TabmanBar.Appearance.defaultAppearance.indicator.compresses ?? false
     internal var indicatorMaskView: UIView = {
         let maskView = UIView()
         maskView.backgroundColor = .black
@@ -300,6 +301,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
 
         let indicatorBounces = appearance.indicator.bounces
         self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
+        
+        let indicatorCompresses = appearance.indicator.compresses ?? defaultAppearance.indicator.compresses!
+        self.indicatorCompresses = indicatorCompresses
         
         let indicatorColor = appearance.indicator.color
         self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
