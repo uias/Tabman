@@ -29,12 +29,14 @@ public extension TabmanBar {
             /// Whether the indicator bounces at the end of page ranges.
             public var bounces: Bool? {
                 didSet {
+                    guard bounces != oldValue else { return }
                     self.compresses = !(bounces ?? defaultAppearance.indicator.bounces!)
                 }
             }
             /// Whether the indicator compresses at the end of page ranges.
             public var compresses: Bool? {
                 didSet {
+                    guard compresses != oldValue else { return }
                     self.bounces = !(compresses ?? defaultAppearance.indicator.compresses!)
                 }
             }
@@ -115,8 +117,8 @@ public extension TabmanBar {
         private func setDefaultValues() {
             
             // indicator
-            self.indicator.bounces = true
-            self.indicator.compresses = false
+            self.indicator.bounces = false
+            self.indicator.compresses = true
             self.indicator.isProgressive = false
             self.indicator.useRoundedCorners = false
             self.indicator.lineWeight = .normal

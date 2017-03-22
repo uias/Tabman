@@ -72,9 +72,22 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
             let interpolatedXOrigin = lowerButton.frame.origin.x + xDiff
             bar.indicatorLeftMargin?.constant = interpolatedXOrigin
             
+            let isOutOfBounds = lowerButton === upperButton
+            
+            // compress indicator at boundaries if required
+            if bar.indicatorCompresses && isOutOfBounds {
+                let indicatorWidth = bar.indicatorWidth?.constant ?? 0.0
+                let indicatorDiff = (indicatorWidth * fabs(progress))
+                
+                bar.indicatorWidth?.constant = indicatorWidth - indicatorDiff
+                if progress > 0.0 {
+                    let indicatorLeftMargin = bar.indicatorLeftMargin?.constant ?? 0.0
+                    bar.indicatorLeftMargin?.constant = indicatorLeftMargin + indicatorDiff
+                }
+            }
+            
             // bounce indicator at boundaries if required
-            guard bar.indicatorBounces else { return }
-            if (lowerButton === upperButton) {
+            if bar.indicatorBounces && isOutOfBounds {
                 let indicatorWidth = bar.indicatorWidth?.constant ?? 0.0
                 bar.indicatorLeftMargin?.constant = (bar.indicatorLeftMargin?.constant ?? 0.0) + (indicatorWidth * progress)
             }
