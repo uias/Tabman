@@ -126,7 +126,7 @@ public extension TabmanBar {
             
             // style
             self.style.background = .blur(style: .extraLight)
-            self.style.bottomSeparatorColor = .lightText
+            self.style.bottomSeparatorColor = .clear
             
             // interaction
             self.interaction.isScrollEnabled = false
