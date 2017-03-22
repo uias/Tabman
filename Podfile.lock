@@ -1,5 +1,5 @@
 PODS:
-  - Pageboy (0.4.11)
+  - Pageboy (0.4.12)
   - PureLayout (3.0.2)
   - Tabman (0.4.0):
     - Pageboy (~> 0.4.0)
@@ -12,10 +12,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Tabman:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
-  Pageboy: 32d84608c26425cd545c08d71232f7a423aa79c6
+  Pageboy: 4a0a478d78cf5b31a5439828bc8f6519edf4e508
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Tabman: 0add470c5713fcda2db492e2eef2ef0ede753ead
 
