@@ -83,4 +83,28 @@ class TabmanViewControllerTests: XCTestCase {
             detachedBar?.dataSource == nil,
                       "Detaching external TabmanBar does not clean up correctly.")
     }
+    
+    /// Test that TambmanViewController handles embedding internal TabmanBar in an external view.
+    func testEmbedBarExternally() {
+        let testView = UIView()
+        self.tabmanViewController.embedBar(inView: testView)
+        
+        XCTAssertTrue(testView.subviews.count != 0 &&
+            self.tabmanViewController.tabmanBar?.superview === testView &&
+            self.tabmanViewController.embeddingView === testView,
+                      "Embedding TabmanBar in an external view does not embed correctly.")
+    }
+    
+    /// Test that TambmanViewController handles disembedding internal TabmanBar from an external view.
+    func testDisembedBar() {
+        let testView = UIView()
+        self.tabmanViewController.embedBar(inView: testView)
+
+        self.tabmanViewController.disembedBar()
+        
+        XCTAssertTrue(testView.subviews.count == 0 &&
+            self.tabmanViewController.tabmanBar?.superview !== testView &&
+            self.tabmanViewController.embeddingView == nil,
+                      "Disembedding TabmanBar from an external view does not clean up correctly.")
+    }
 }
