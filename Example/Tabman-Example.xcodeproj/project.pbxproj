@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648A830D19F167B986EF7641 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC0D2B4D8925B627AF01AC3 /* Pods_Tabman_Example.framework */; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
 		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
@@ -30,93 +31,52 @@
 		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
 		D62AC10C1E5736A10020B8AE /* TabViewControllerExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
-		F06614C77533491B183E337B /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633C197B6ED3293778403C7 /* Pods_Tabman_Example.framework */; };
+		D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
+		D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D62AC14F1E5AF5440020B8AE /* PBXContainerItemProxy */ = {
+		D6C759741E83CFA300471973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */;
+			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D623B1B71E1D0C6A00527F3D;
-			remoteInfo = Pageboy;
+			remoteGlobalIDString = D62AC0B21E5733810020B8AE;
+			remoteInfo = Tabman;
 		};
-		D62AC1511E5AF5440020B8AE /* PBXContainerItemProxy */ = {
+		D6C759761E83CFA300471973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */;
+			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D623B1C01E1D0C6B00527F3D;
-			remoteInfo = PageboyTests;
+			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
+			remoteInfo = TabmanTests;
 		};
-		D62AC18C1E5B03B50020B8AE /* PBXContainerItemProxy */ = {
+		D6C7597A1E83CFAA00471973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1046AB01A7F32380017187F;
-			remoteInfo = PureLayout_iOS;
-		};
-		D62AC18E1E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1046AD81A7F32790017187F;
-			remoteInfo = PureLayout_Mac;
-		};
-		D62AC1901E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 164C8B831C0D36500007A6B1;
-			remoteInfo = PureLayout_tvOS;
-		};
-		D62AC1921E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B12C23DB17C3FDE4001CF667;
-			remoteInfo = "Example-iOS";
-		};
-		D62AC1941E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A7D4967E1B7B084800A74818;
-			remoteInfo = "Example-iOS-Xcode7";
-		};
-		D62AC1961E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1A290DB19562FDA00D4765E;
-			remoteInfo = "Example-Mac";
-		};
-		D62AC1981E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 164C8B4E1C0D354E0007A6B1;
-			remoteInfo = "Example-tvOS";
-		};
-		D62AC19A1E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1EC855D195662790099293C;
-			remoteInfo = "PureLayoutTests-iOS";
-		};
-		D62AC19C1E5B03B50020B8AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B1EC857C195662B40099293C;
-			remoteInfo = "PureLayoutTests-Mac";
+			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
+			remoteInfo = Tabman;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D6C7597C1E83CFAA00471973 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		10FE522C9A4BE83C53B42608 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6633C197B6ED3293778403C7 /* Pods_Tabman_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3A13238599957E234D45EDA /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
+		04C1035495891866C87981E4 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2BC0D2B4D8925B627AF01AC3 /* Pods_Tabman_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F75EB382CF7502B260DF8C /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
 		D601367C1E6990650013CD42 /* CustomTabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabmanBar.swift; sourceTree = "<group>"; };
 		D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetAppearanceConfigs.swift; sourceTree = "<group>"; };
 		D61E50BB1E64452D00AC8C75 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
@@ -142,8 +102,11 @@
 		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewControllerExtras.swift; sourceTree = "<group>"; };
 		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
-		D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pageboy.xcodeproj; path = Dependencies/Pageboy/Sources/Pageboy.xcodeproj; sourceTree = "<group>"; };
-		D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureLayout.xcodeproj; path = Dependencies/PureLayout/PureLayout/PureLayout.xcodeproj; sourceTree = "<group>"; };
+		D6C759661E83CE6300471973 /* Tabman.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tabman.framework; path = "../../../Library/Developer/Xcode/DerivedData/Tabman-gyemaxzrdxauqidxdarxsnxrvixe/Build/Products/Debug-iphonesimulator/Tabman.framework"; sourceTree = "<group>"; };
+		D6C759681E83CE6900471973 /* Pods_Tabman.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Tabman.framework; path = "../../../Library/Developer/Xcode/DerivedData/Tabman-gyemaxzrdxauqidxdarxsnxrvixe/Build/Products/Debug-iphonesimulator/Pods_Tabman.framework"; sourceTree = "<group>"; };
+		D6C7596A1E83CE6F00471973 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = "../../../Library/Developer/Xcode/DerivedData/Tabman-gyemaxzrdxauqidxdarxsnxrvixe/Build/Products/Debug-iphonesimulator/Pageboy/Pageboy.framework"; sourceTree = "<group>"; };
+		D6C7596C1E83CE7200471973 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = "../../../Library/Developer/Xcode/DerivedData/Tabman-gyemaxzrdxauqidxdarxsnxrvixe/Build/Products/Debug-iphonesimulator/PureLayout/PureLayout.framework"; sourceTree = "<group>"; };
+		D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,18 +114,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F06614C77533491B183E337B /* Pods_Tabman_Example.framework in Frameworks */,
+				648A830D19F167B986EF7641 /* Pods_Tabman_Example.framework in Frameworks */,
+				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		69E2616AFDC79CDF4C88D438 /* Pods */ = {
+		37F43338690A5F84947F6576 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				10FE522C9A4BE83C53B42608 /* Pods-Tabman-Example.debug.xcconfig */,
-				D3A13238599957E234D45EDA /* Pods-Tabman-Example.release.xcconfig */,
+				04C1035495891866C87981E4 /* Pods-Tabman-Example.debug.xcconfig */,
+				C6F75EB382CF7502B260DF8C /* Pods-Tabman-Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -204,11 +168,11 @@
 		D62AC0CC1E5733A80020B8AE = {
 			isa = PBXGroup;
 			children = (
+				D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */,
 				D62AC0D71E5733A80020B8AE /* Tabman-Example */,
-				D62AC1741E5AF9B50020B8AE /* Dependencies */,
 				D62AC0D61E5733A80020B8AE /* Products */,
-				69E2616AFDC79CDF4C88D438 /* Pods */,
-				FA565B8317DC1BB8B3EB1B4B /* Frameworks */,
+				D6C759651E83CE6300471973 /* Frameworks */,
+				37F43338690A5F84947F6576 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,46 +221,25 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		D62AC14B1E5AF5440020B8AE /* Products */ = {
+		D6C759651E83CE6300471973 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D62AC1501E5AF5440020B8AE /* Pageboy.framework */,
-				D62AC1521E5AF5440020B8AE /* PageboyTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D62AC1741E5AF9B50020B8AE /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */,
-				D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		D62AC1811E5B03B50020B8AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC18D1E5B03B50020B8AE /* PureLayout.framework */,
-				D62AC18F1E5B03B50020B8AE /* PureLayout.framework */,
-				D62AC1911E5B03B50020B8AE /* PureLayout.framework */,
-				D62AC1931E5B03B50020B8AE /* Example-iOS.app */,
-				D62AC1951E5B03B50020B8AE /* Example-iOS-Xcode7.app */,
-				D62AC1971E5B03B50020B8AE /* Example-Mac.app */,
-				D62AC1991E5B03B50020B8AE /* Example-tvOS.app */,
-				D62AC19B1E5B03B50020B8AE /* PureLayoutTests-iOS.xctest */,
-				D62AC19D1E5B03B50020B8AE /* PureLayoutTests-Mac.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA565B8317DC1BB8B3EB1B4B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6633C197B6ED3293778403C7 /* Pods_Tabman_Example.framework */,
+				D6C7596C1E83CE7200471973 /* PureLayout.framework */,
+				D6C7596A1E83CE6F00471973 /* Pageboy.framework */,
+				D6C759681E83CE6900471973 /* Pods_Tabman.framework */,
+				D6C759661E83CE6300471973 /* Tabman.framework */,
+				2BC0D2B4D8925B627AF01AC3 /* Pods_Tabman_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6C759701E83CFA300471973 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6C759751E83CFA300471973 /* Tabman.framework */,
+				D6C759771E83CFA300471973 /* TabmanTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,16 +249,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D62AC0E71E5733A80020B8AE /* Build configuration list for PBXNativeTarget "Tabman-Example" */;
 			buildPhases = (
-				E92E5B20941F7A262D17C43E /* [CP] Check Pods Manifest.lock */,
+				2163E8E0024F38991EF8DBF7 /* [CP] Check Pods Manifest.lock */,
 				D62AC0D11E5733A80020B8AE /* Sources */,
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
-				636FD09DC4407731A95A162A /* [CP] Embed Pods Frameworks */,
-				75C684B4784AF49CB7705970 /* [CP] Copy Pods Resources */,
+				8887F6CA40C4AD1DA1F27078 /* [CP] Embed Pods Frameworks */,
+				9A41DBE87A8CB56E632FD7E2 /* [CP] Copy Pods Resources */,
+				D6C7597C1E83CFAA00471973 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D6C7597B1E83CFAA00471973 /* PBXTargetDependency */,
 			);
 			name = "Tabman-Example";
 			productName = "Tabman-Example";
@@ -351,12 +296,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D62AC14B1E5AF5440020B8AE /* Products */;
-					ProjectRef = D62AC14A1E5AF5440020B8AE /* Pageboy.xcodeproj */;
-				},
-				{
-					ProductGroup = D62AC1811E5B03B50020B8AE /* Products */;
-					ProjectRef = D62AC1801E5B03B50020B8AE /* PureLayout.xcodeproj */;
+					ProductGroup = D6C759701E83CFA300471973 /* Products */;
+					ProjectRef = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -367,81 +308,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D62AC1501E5AF5440020B8AE /* Pageboy.framework */ = {
+		D6C759751E83CFA300471973 /* Tabman.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = Pageboy.framework;
-			remoteRef = D62AC14F1E5AF5440020B8AE /* PBXContainerItemProxy */;
+			path = Tabman.framework;
+			remoteRef = D6C759741E83CFA300471973 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D62AC1521E5AF5440020B8AE /* PageboyTests.xctest */ = {
+		D6C759771E83CFA300471973 /* TabmanTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = PageboyTests.xctest;
-			remoteRef = D62AC1511E5AF5440020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC18D1E5B03B50020B8AE /* PureLayout.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PureLayout.framework;
-			remoteRef = D62AC18C1E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC18F1E5B03B50020B8AE /* PureLayout.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PureLayout.framework;
-			remoteRef = D62AC18E1E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC1911E5B03B50020B8AE /* PureLayout.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PureLayout.framework;
-			remoteRef = D62AC1901E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC1931E5B03B50020B8AE /* Example-iOS.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Example-iOS.app";
-			remoteRef = D62AC1921E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC1951E5B03B50020B8AE /* Example-iOS-Xcode7.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Example-iOS-Xcode7.app";
-			remoteRef = D62AC1941E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC1971E5B03B50020B8AE /* Example-Mac.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Example-Mac.app";
-			remoteRef = D62AC1961E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC1991E5B03B50020B8AE /* Example-tvOS.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Example-tvOS.app";
-			remoteRef = D62AC1981E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC19B1E5B03B50020B8AE /* PureLayoutTests-iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PureLayoutTests-iOS.xctest";
-			remoteRef = D62AC19A1E5B03B50020B8AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D62AC19D1E5B03B50020B8AE /* PureLayoutTests-Mac.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PureLayoutTests-Mac.xctest";
-			remoteRef = D62AC19C1E5B03B50020B8AE /* PBXContainerItemProxy */;
+			path = TabmanTests.xctest;
+			remoteRef = D6C759761E83CFA300471973 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -460,7 +338,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		636FD09DC4407731A95A162A /* [CP] Embed Pods Frameworks */ = {
+		2163E8E0024F38991EF8DBF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8887F6CA40C4AD1DA1F27078 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,7 +368,7 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		75C684B4784AF49CB7705970 /* [CP] Copy Pods Resources */ = {
+		9A41DBE87A8CB56E632FD7E2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -488,21 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E92E5B20941F7A262D17C43E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -536,6 +414,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6C7597B1E83CFAA00471973 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Tabman;
+			targetProxy = D6C7597A1E83CFAA00471973 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D62AC0DC1E5733A80020B8AE /* Main.storyboard */ = {
@@ -650,8 +536,9 @@
 		};
 		D62AC0E81E5733A80020B8AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10FE522C9A4BE83C53B42608 /* Pods-Tabman-Example.debug.xcconfig */;
+			baseConfigurationReference = 04C1035495891866C87981E4 /* Pods-Tabman-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
@@ -664,8 +551,9 @@
 		};
 		D62AC0E91E5733A80020B8AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A13238599957E234D45EDA /* Pods-Tabman-Example.release.xcconfig */;
+			baseConfigurationReference = C6F75EB382CF7502B260DF8C /* Pods-Tabman-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";

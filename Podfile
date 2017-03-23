@@ -4,18 +4,22 @@ workspace 'Tabman'
 
 use_frameworks!
 
+def shared_pods
+  pod 'Pageboy', '~> 0.4.0'
+  pod 'PureLayout', '~> 3.0.0'
+end
+
 target 'Tabman' do
   project './Sources/Tabman.xcodeproj'
   workspace 'Tabman'
   target 'TabmanTests'
 
-  pod 'Pageboy', '~> 0.4.0'
-  pod 'PureLayout', '~> 3.0.0'
+  shared_pods
 end
 
 target 'Tabman-Example' do
   project './Example/Tabman-Example.xcodeproj'
   workspace 'Tabman'
 
-  pod 'Tabman', :path => './'
+  shared_pods
 end
