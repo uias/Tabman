@@ -538,7 +538,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04C1035495891866C87981E4 /* Pods-Tabman-Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
@@ -553,7 +552,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6F75EB382CF7502B260DF8C /* Pods-Tabman-Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
