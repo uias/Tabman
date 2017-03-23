@@ -11,7 +11,7 @@ import PureLayout
 import Pageboy
 
 /// A button tab bar with a block style indicator behind the selected item.
-internal class TabmanBlockTabBar: TabmanDistributedButtonBar {
+internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     //
     // MARK: Properties

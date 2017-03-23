@@ -1,5 +1,5 @@
 //
-//  TabmanDistributedButtonBar.swift
+//  TabmanStaticButtonBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 23/03/2017.
@@ -13,7 +13,7 @@ import Pageboy
 /// A bar with static buttons and line indicator.
 ///
 /// Akin to Instagram notification screen etc.
-internal class TabmanDistributedButtonBar: TabmanStaticButtonBar {
+internal class TabmanStaticButtonBar: TabmanButtonBar {
 
     //
     // MARK: Properties
@@ -51,12 +51,20 @@ internal class TabmanDistributedButtonBar: TabmanStaticButtonBar {
         }
     }
     
+    override public var itemCountLimit: Int? {
+        return 5
+    }
+    
     //
     // MARK: Lifecycle
     //
     
     override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
+    }
+    
+    override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
+        return TabmanStaticBarIndicatorTransition.self
     }
     
     //
@@ -71,6 +79,14 @@ internal class TabmanDistributedButtonBar: TabmanStaticButtonBar {
             
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
+    }
+    
+    override public func addIndicatorToBar(indicator: TabmanIndicator) {
+        
+        self.contentView.addSubview(indicator)
+        indicator.autoPinEdge(toSuperviewEdge: .bottom)
+        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
+        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     
     //
