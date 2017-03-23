@@ -5,6 +5,7 @@ Tabman can be customised to your own liking; including the definition of custom 
 ## Contents
 - [Creating a custom TabmanBar](#creating-a-custom-tabmanbar)
 - [Using an external TabmanBar](#using-an-external-tabmanbar)
+- [Embedding TabmanBar in an external view](#embedding-TabmanBar-in-an-external-view)
 
 ## Creating a custom TabmanBar
 1) Simply create a bar object that inherits from `TabmanBar`.
@@ -139,3 +140,32 @@ If required, this bar can also be detached later by calling:
 // detaches and returns the currently attached TabmanBar
 func detachAttachedBar() -> TabmanBar?
 ```
+
+## Embedding TabmanBar in an external view
+You can also embed the internally managed `TabmanBar` in an external view. This allows for all the advantages of internal management (Style switching etc.) but in a specified view elsewhere in the view hierarchy.
+
+This is available with the `embedBar(inView:)` function.
+
+```swift
+class MyTabmanViewController: TabmanViewController {
+
+	let customBarView = UIView()
+
+	func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.embedBar(inView: customBarView)
+	}
+}
+
+```
+
+When called, this will add the `TabmanBar` as a subview within the custom view, and pin it to all four edges (leading, top, trailing, bottom).
+
+You can also disembed the `TabmanBar` from the external view like this:
+
+```swift
+func disembedBar()
+```
+
+This will restore normal behaviour and embed the bar in its original internal location.
