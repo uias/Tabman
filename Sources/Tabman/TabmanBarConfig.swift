@@ -125,7 +125,7 @@ internal extension TabmanBar.Style {
         switch self {
             
         case .bar:
-            return TabmanPlainBar.self
+            return TabmanLineBar.self
             
         case .buttonBar:
             return TabmanStaticButtonBar.self
