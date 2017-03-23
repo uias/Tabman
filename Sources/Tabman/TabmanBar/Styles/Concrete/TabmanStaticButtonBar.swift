@@ -40,20 +40,4 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
         self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
-    
-    //
-    // MARK: Button Manipulation
-    //
-    
-    internal func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
-        guard let view = view else {
-            return
-        }
-        
-        for subview in view.subviews {
-            if let button = subview as? UIButton {
-                update(button)
-            }
-        }
-    }
 }

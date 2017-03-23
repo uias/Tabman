@@ -14,6 +14,12 @@ import Pageboy
 internal class TabmanButtonBar: TabmanBar {
 
     //
+    // MARK: Types
+    //
+    
+    internal typealias TabmanButtonBarItemCustomize = (_ button: UIButton, _ previousButton: UIButton?) -> Void
+    
+    //
     // MARK: Constants
     //
     
@@ -111,7 +117,7 @@ internal class TabmanButtonBar: TabmanBar {
     
     internal func addBarButtons(toView view: UIView,
                                items: [TabmanBarItem],
-                               customize: (_ button: UIButton, _ previousButton: UIButton?) -> Void) {
+                               customize: TabmanButtonBarItemCustomize) {
         
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
