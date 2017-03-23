@@ -26,6 +26,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public enum Style {
         case bar
         case buttonBar
+        case scrollingButtonBar
         case blockTabBar
         case custom(type: TabmanBar.Type)
     }
