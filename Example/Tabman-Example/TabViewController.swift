@@ -98,7 +98,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     func numberOfPages(forBarStyle style: TabmanBar.Style) -> Int {
         switch style {
-        case .blockTabBar:
+        case .blockTabBar, .buttonBar:
             return 2
         default:
             return 5
