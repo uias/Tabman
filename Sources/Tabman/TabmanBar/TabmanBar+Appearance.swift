@@ -27,7 +27,19 @@ public extension TabmanBar {
             /// Whether the indicator transiton is progressive.
             public var isProgressive: Bool?
             /// Whether the indicator bounces at the end of page ranges.
-            public var bounces: Bool?
+            public var bounces: Bool? {
+                didSet {
+                    guard bounces != oldValue else { return }
+                    self.compresses = !(bounces ?? defaultAppearance.indicator.bounces!)
+                }
+            }
+            /// Whether the indicator compresses at the end of page ranges.
+            public var compresses: Bool? {
+                didSet {
+                    guard compresses != oldValue else { return }
+                    self.bounces = !(compresses ?? defaultAppearance.indicator.compresses!)
+                }
+            }
             /// Whether to use rounded corners on line indicators.
             public var useRoundedCorners: Bool?
         }
@@ -64,6 +76,8 @@ public extension TabmanBar {
             public var background: TabmanBarBackgroundView.BackgroundStyle?
             /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
             public var showEdgeFade: Bool?
+            /// Color of the separator at the bottom of the bar.
+            public var bottomSeparatorColor: UIColor?
         }
         
         /// Bar interaction configuration
@@ -104,6 +118,7 @@ public extension TabmanBar {
             
             // indicator
             self.indicator.bounces = true
+            self.indicator.compresses = false
             self.indicator.isProgressive = false
             self.indicator.useRoundedCorners = false
             self.indicator.lineWeight = .normal
@@ -124,6 +139,7 @@ public extension TabmanBar {
             
             // style
             self.style.background = .blur(style: .extraLight)
+            self.style.bottomSeparatorColor = .clear
             
             // interaction
             self.interaction.isScrollEnabled = false

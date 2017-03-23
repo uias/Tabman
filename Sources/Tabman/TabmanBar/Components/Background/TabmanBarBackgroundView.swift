@@ -17,7 +17,7 @@ public class TabmanBarBackgroundView: UIView {
     //
     
     public enum BackgroundStyle {
-        case none
+        case clear
         case blur(style: UIBlurEffectStyle)
         case solid(color: UIColor)
     }
@@ -26,7 +26,7 @@ public class TabmanBarBackgroundView: UIView {
     // MARK: Properties
     //
     
-    var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.style.background ?? .none {
+    var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.style.background ?? .clear {
         didSet {
             self.updateBackground(forStyle: backgroundStyle)
         }

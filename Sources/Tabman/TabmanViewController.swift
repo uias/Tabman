@@ -20,6 +20,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     internal fileprivate(set) var tabmanBar: TabmanBar?
     /// Currently attached TabmanBar if it exists.
     internal fileprivate(set) var attachedTabmanBar: TabmanBar?
+    /// The view that is currently being used to embed the instance managed TabmanBar.
+    internal fileprivate(set) var embeddingView: UIView?
     
     /// Returns the active bar, prefers attachedTabmanBar if available.
     fileprivate var activeTabmanBar: TabmanBar? {
@@ -142,9 +144,13 @@ internal extension TabmanViewController {
     ///
     /// - Parameter location: The new location.
     func updateBar(withLocation location: TabmanBarConfig.Location) {
-        guard let bar = self.tabmanBar else {
+        guard self.embeddingView == nil else {
+            self.embedBar(inView: self.embeddingView!)
             return
         }
+        
+        guard let bar = self.tabmanBar else { return }
+        guard bar.superview == nil || bar.superview === self.view else { return }
         
         // use style preferred location if no exact location specified.
         var location = location
@@ -219,6 +225,34 @@ public extension TabmanViewController {
         self.tabmanBar?.reloadData()
         
         return bar
+    }
+    
+    /// Embed the TabmanBar in an external view.
+    /// This will add the bar to the specified view, and pin the bar edges to the view edges.
+    ///
+    /// - Parameter view: The view to embed the bar in.
+    public func embedBar(inView view: UIView) {
+        guard let bar = self.tabmanBar else { return }
+        guard self.embeddingView == nil || view === self.embeddingView else { return }
+
+        self.embeddingView = view
+        
+        bar.removeFromSuperview()
+        view.addSubview(bar)
+        bar.autoPinEdgesToSuperviewEdges()
+        
+        view.layoutIfNeeded()
+    }
+    
+    /// Disembed the TabmanBar from an external view if it is currently embedded.
+    public func disembedBar() {
+        guard let bar = self.tabmanBar else { return }
+        guard self.embeddingView != nil else { return }
+        
+        bar.removeFromSuperview()
+        self.embeddingView = nil
+        
+        self.updateBar(withLocation: self.bar.location)
     }
 }
 
