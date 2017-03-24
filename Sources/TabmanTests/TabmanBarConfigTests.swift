@@ -21,7 +21,7 @@ class TabmanBarConfigTests: TabmanViewControllerTests {
     /// Test that the TabmanBarConfig updates style correctly.
     func testBarConfigStyleSet() {
         self.tabmanViewController.bar.style = .bar
-        XCTAssert(self.tabmanViewController.tabmanBar is TabmanPlainBar,
+        XCTAssert(self.tabmanViewController.tabmanBar is TabmanLineBar,
                   "TabmanBarConfig does not update style correctly.")
     }
     
