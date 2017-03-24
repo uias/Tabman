@@ -32,6 +32,7 @@ class PresetAppearanceConfigs: Any {
             appearance.indicator.color = UIColor.white
             appearance.layout.itemVerticalPadding = 16.0
             appearance.indicator.lineWeight = .normal
+            appearance.indicator.compresses = true
 
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)

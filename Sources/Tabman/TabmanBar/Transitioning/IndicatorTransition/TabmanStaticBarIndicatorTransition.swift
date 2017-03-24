@@ -40,12 +40,31 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
             let relativePosition = position / CGFloat((bar.items?.count ?? 1))
             let leftMargin = relativePosition * barWidth
             
-            var bouncyIndicatorPosition = leftMargin
-            if !bar.indicatorBounces {
-                bouncyIndicatorPosition = max(0.0, min(barWidth - itemWidth, bouncyIndicatorPosition))
+            let isOutOfBounds = position < 0.0 || position > (itemCount - 1.0)
+            
+            var indicatorLeftMargin = leftMargin
+            var indicatorWidth = itemWidth
+            
+            // dont bounce indicator if required
+            if !bar.indicatorBounces && isOutOfBounds {
+                indicatorLeftMargin = max(0.0, min(barWidth - itemWidth, indicatorLeftMargin))
             }
-            bar.indicatorLeftMargin?.constant = bouncyIndicatorPosition
-            bar.indicatorWidth?.constant = itemWidth
+            
+            // compress indicator at boundaries if required
+            if bar.indicatorCompresses && isOutOfBounds {
+                var integral: Float = 0.0
+                let progress = CGFloat(modff(Float(position), &integral))
+
+                let indicatorDiff = (indicatorWidth * fabs(progress))
+                indicatorWidth = indicatorWidth - indicatorDiff
+                
+                if progress > 0.0 {
+                    indicatorLeftMargin = indicatorLeftMargin + indicatorDiff
+                }
+            }
+            
+            bar.indicatorLeftMargin?.constant = indicatorLeftMargin
+            bar.indicatorWidth?.constant = indicatorWidth
         }
     }
 }
