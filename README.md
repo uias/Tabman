@@ -37,6 +37,9 @@ And run `pod install`.
 ### Example
 A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run `pod install` and build the workspace.
 
+## Requirements
+Tabman requires iOS 9.0 or above.
+
 ## Usage
 ### Getting Started
 
