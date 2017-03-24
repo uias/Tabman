@@ -20,6 +20,8 @@ class TabmanItemColorTransition: TabmanItemTransition {
         let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
                                                                                minimum: indexRange.lowerBound,
                                                                                maximum: indexRange.upperBound)
+        
+        guard bar.buttons.count > max(upperIndex, lowerIndex) else { return }
         let lowerButton = bar.buttons[lowerIndex]
         let upperButton = bar.buttons[upperIndex]
         

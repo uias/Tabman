@@ -25,7 +25,7 @@ class PresetAppearanceConfigs: Any {
             appearance.indicator.color = .white
             appearance.indicator.lineWeight = .thick
             
-        case .buttonBar:
+        case .buttonBar, .scrollingButtonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
             appearance.style.background = .blur(style: .light)

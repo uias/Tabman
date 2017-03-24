@@ -25,7 +25,8 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.buttonBar.description,
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.scrollingButtonBar.description,
+                                                                         TabmanBar.Style.buttonBar.description,
                                                                          TabmanBar.Style.blockTabBar.description,
                                                                          TabmanBar.Style.bar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
@@ -113,6 +114,8 @@ fileprivate extension TabmanBar.Style {
             return "Bar"
         case .buttonBar:
             return "Button Bar"
+        case .scrollingButtonBar:
+            return "Scrolling Button Bar"
         case .blockTabBar:
             return "Block Tab Bar"
             
@@ -124,6 +127,8 @@ fileprivate extension TabmanBar.Style {
     static func fromDescription(_ description: String) -> TabmanBar.Style {
         switch description {
             
+        case "Scrolling Button Bar":
+            return .scrollingButtonBar
         case "Button Bar":
             return .buttonBar    
         case "Block Tab Bar":

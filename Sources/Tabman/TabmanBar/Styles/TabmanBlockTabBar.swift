@@ -73,7 +73,6 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
 
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
@@ -85,37 +84,33 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         maskContentView.autoPinEdgesToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
-        let insets = UIEdgeInsets(top: 0.0,
-                                  left: self.interItemSpacing / 2,
-                                  bottom: 0.0,
-                                  right: self.interItemSpacing / 2)
-        self.addBarButtons(toView: buttonContentView, items: items) { (button, previousButton) in
+        self.addAndLayoutBarButtons(toView: buttonContentView, items: items) { (button, previousButton) in
             self.buttons.append(button)
-
-            button.tintColor = self.color
-            button.setTitleColor(self.color, for: .normal)
-            button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
-            button.titleEdgeInsets = insets
-            button.imageEdgeInsets = insets
-            
-            if let previousButton = previousButton {
-                button.autoMatch(.width, to: .width, of: previousButton)
-            }
             
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
-        self.addBarButtons(toView: maskContentView, items: items) { (button, previousButton) in
+        self.addAndLayoutBarButtons(toView: maskContentView, items: items) { (button, previousButton) in
             button.tintColor = self.selectedColor
             button.setTitleColor(self.selectedColor, for: .normal)
-            button.titleEdgeInsets = insets
-            button.imageEdgeInsets = insets
-            
-            if let previousButton = previousButton {
-                button.autoMatch(.width, to: .width, of: previousButton)
-            }
         }
         
         self.buttonContentView = buttonContentView
         self.maskContentView = maskContentView
+    }
+    
+    //
+    // MARK: Utilities
+    //
+    
+    private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
+        guard let view = view else {
+            return
+        }
+        
+        for subview in view.subviews {
+            if let button = subview as? UIButton {
+                update(button)
+            }
+        }
     }
 }
