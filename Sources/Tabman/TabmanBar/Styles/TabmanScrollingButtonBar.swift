@@ -55,16 +55,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    /// The inset at the edge of the bar items.
-    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
-        didSet {
-            self.updateConstraints(self.edgeMarginConstraints,
-                                   withValue: edgeInset)
-            self.layoutIfNeeded()
-            self.updateForCurrentPosition()
-        }
-    }
-    
     override var color: UIColor {
         didSet {
             guard color != oldValue else { return }
@@ -139,10 +129,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             button.addConstraint(minWidthConstraint)
         }
         
-        // Investigate
-        //self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
-        //self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
-        
         self.scrollView.layoutIfNeeded()
     }
     
@@ -159,27 +145,10 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         super.update(forAppearance: appearance,
                      defaultAppearance: defaultAppearance)
         
-        let edgeInset = appearance.layout.edgeInset
-        self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
-        
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
-        
-        // update left margin for progressive style
-        if self.indicator?.isProgressiveCapable ?? false {
-            
-            let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
-            let leftMargin = self.indicatorLeftMargin?.constant ?? 0.0
-            let indicatorWasProgressive = leftMargin == 0.0
-            
-            if indicatorWasProgressive && !indicatorIsProgressive {
-                self.indicatorLeftMargin?.constant = leftMargin - self.edgeInset
-            } else if !indicatorWasProgressive && indicatorIsProgressive {
-                self.indicatorLeftMargin?.constant = 0.0
-            }
-        }
     }
 }
 

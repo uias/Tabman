@@ -83,6 +83,16 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
+    /// The inset at the edge of the bar items.
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
+        didSet {
+            self.updateConstraints(self.edgeMarginConstraints,
+                                   withValue: edgeInset)
+            self.layoutIfNeeded()
+            self.updateForCurrentPosition()
+        }
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
@@ -113,6 +123,23 @@ internal class TabmanButtonBar: TabmanBar {
         
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
+        
+        let edgeInset = appearance.layout.edgeInset
+        self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
+        
+        // update left margin for progressive style
+        if self.indicator?.isProgressiveCapable ?? false {
+            
+            let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+            let leftMargin = self.indicatorLeftMargin?.constant ?? 0.0
+            let indicatorWasProgressive = leftMargin == 0.0
+            
+            if indicatorWasProgressive && !indicatorIsProgressive {
+                self.indicatorLeftMargin?.constant = leftMargin - self.edgeInset
+            } else if !indicatorWasProgressive && indicatorIsProgressive {
+                self.indicatorLeftMargin?.constant = 0.0
+            }
+        }
     }
     
     //
