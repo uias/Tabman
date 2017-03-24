@@ -87,11 +87,17 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     // MARK: Actions
     
     @objc func firstPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.first, animated: true)
+        let appearance = self.bar.appearance
+        appearance?.layout.interItemSpacing = 40.0
+        self.bar.appearance = appearance
+        //self.scrollToPage(.first, animated: true)
     }
     
     @objc func lastPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.last, animated: true)
+        let appearance = self.bar.appearance
+        appearance?.layout.interItemSpacing = nil
+        self.bar.appearance = appearance
+        //self.scrollToPage(.last, animated: true)
     }
     
     // MARK: PageboyViewControllerDataSource

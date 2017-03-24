@@ -65,13 +65,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    public override var interItemSpacing: CGFloat {
-        didSet {
-            self.updateConstraints(self.horizontalMarginConstraints,
-                                   withValue: interItemSpacing)
-        }
-    }
-    
     override var color: UIColor {
         didSet {
             guard color != oldValue else { return }
@@ -146,8 +139,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             button.addConstraint(minWidthConstraint)
         }
         
-        self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
-        self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
+        // Investigate
+        //self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
+        //self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
         
         self.scrollView.layoutIfNeeded()
     }
@@ -186,21 +180,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
                 self.indicatorLeftMargin?.constant = 0.0
             }
         }
-    }
-    
-    //
-    // MARK: Layout
-    //
-    
-    private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
-        for constraint in constraints {
-            var value = value
-            if constraint.constant < 0.0 || constraint.firstAttribute == .trailing {
-                value = -value
-            }
-            constraint.constant = value
-        }
-        self.layoutIfNeeded()
     }
 }
 

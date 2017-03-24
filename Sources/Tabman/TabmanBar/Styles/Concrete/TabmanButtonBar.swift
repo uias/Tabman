@@ -77,7 +77,14 @@ internal class TabmanButtonBar: TabmanBar {
     // Public
     
     /// The spacing between each bar item.
-    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing!
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing! {
+        didSet {
+            self.updateConstraints(self.horizontalMarginConstraints,
+                                   withValue: interItemSpacing)
+            self.layoutIfNeeded()
+            self.updateForCurrentPosition()
+        }
+    }
     
     //
     // MARK: TabmanBar Lifecycle
@@ -185,5 +192,20 @@ internal class TabmanButtonBar: TabmanBar {
         if let index = self.buttons.index(of: sender) {
             self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
+    }
+    
+    //
+    // MARK: Layout
+    //
+    
+    internal func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
+        for constraint in constraints {
+            var value = value
+            if constraint.constant < 0.0 || constraint.firstAttribute == .trailing {
+                value = -value
+            }
+            constraint.constant = value
+        }
+        self.layoutIfNeeded()
     }
 }
