@@ -73,7 +73,8 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
-
+        super.constructTabBar(items: items)
+        
         let buttonContentView = UIView(forAutoLayout: ())
         let maskContentView = UIView(forAutoLayout: ())
         maskContentView.isUserInteractionEnabled = false
