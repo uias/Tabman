@@ -19,7 +19,15 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                              bounds: CGRect) {
         guard let bar = tabmanBar else { return }
         
-        let barWidth = bounds.size.width
+        var barWidth = bounds.size.width
+        
+        // account for padding if using a button bar.
+        var indicatorPadding: CGFloat = 0.0
+        if let buttonBar = bar as? TabmanButtonBar {
+            indicatorPadding = buttonBar.edgeInset
+            barWidth -= indicatorPadding * 2
+        }
+        
         let itemCount = CGFloat(bar.items?.count ?? 0)
         let itemWidth = barWidth / itemCount
         
@@ -63,8 +71,8 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                 }
             }
             
-            bar.indicatorLeftMargin?.constant = indicatorLeftMargin
-            bar.indicatorWidth?.constant = indicatorWidth
+            bar.indicatorLeftMargin?.constant = indicatorLeftMargin + indicatorPadding
+            bar.indicatorWidth?.constant = max(0.0, indicatorWidth)
         }
     }
 }
