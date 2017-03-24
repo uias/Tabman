@@ -304,8 +304,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let indicatorBounces = appearance.indicator.bounces
         self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
         
-        let indicatorCompresses = appearance.indicator.compresses ?? defaultAppearance.indicator.compresses!
-        self.indicatorCompresses = indicatorCompresses
+        if indicatorBounces != true {
+            let indicatorCompresses = appearance.indicator.compresses ?? defaultAppearance.indicator.compresses!
+            self.indicatorCompresses = indicatorCompresses
+        }
         
         let indicatorColor = appearance.indicator.color
         self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
