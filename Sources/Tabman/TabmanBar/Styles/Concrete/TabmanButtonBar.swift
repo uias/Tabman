@@ -35,31 +35,6 @@ internal class TabmanButtonBar: TabmanBar {
     
     internal var buttons = [UIButton]()
     
-    internal var textFont: UIFont = Appearance.defaultAppearance.text.font! {
-        didSet {
-            guard textFont != oldValue else { return }
-            
-            self.updateButtons(update: { (button) in
-                button.titleLabel?.font = textFont
-            })
-        }
-    }
-    internal var color: UIColor = Appearance.defaultAppearance.state.color!
-    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
-    
-    internal var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
-        didSet {
-            guard itemVerticalPadding != oldValue else { return }
-            
-            self.updateButtons { (button) in
-                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
-                                          bottom: itemVerticalPadding, right: 0.0)
-                button.contentEdgeInsets = insets
-                self.layoutIfNeeded()
-            }
-        }
-    }
-    
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
@@ -74,8 +49,30 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
-    // Public
+    public var textFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            guard textFont != oldValue else { return }
+            
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = textFont
+            })
+        }
+    }
+    public var color: UIColor = Appearance.defaultAppearance.state.color!
+    public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
     
+    public var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
+        didSet {
+            guard itemVerticalPadding != oldValue else { return }
+            
+            self.updateButtons { (button) in
+                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
+                                          bottom: itemVerticalPadding, right: 0.0)
+                button.contentEdgeInsets = insets
+                self.layoutIfNeeded()
+            }
+        }
+    }
     /// The spacing between each bar item.
     public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing! {
         didSet {
