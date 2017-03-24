@@ -28,7 +28,7 @@ public extension TabmanBar {
             public var isProgressive: Bool?
             /// Whether the indicator bounces at the end of page ranges.
             public var bounces: Bool?
-            /// Whether the indicator compresses at the end of page ranges.
+            /// Whether the indicator compresses at the end of page ranges (Unavailable if bounces enabled).
             public var compresses: Bool?
             /// Whether to use rounded corners on line indicators.
             public var useRoundedCorners: Bool?
