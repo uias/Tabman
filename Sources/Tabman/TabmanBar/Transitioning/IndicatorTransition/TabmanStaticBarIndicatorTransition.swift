@@ -34,14 +34,15 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
         if bar.indicatorIsProgressive {
             
             let relativePosition = (position + 1.0) / CGFloat((bar.items?.count ?? 1))
-            let indicatorWidth = max(0.0, min(barWidth, barWidth * relativePosition))
+            let indicatorWidth = max(0.0, barWidth * relativePosition)
             
             var bouncyIndicatorWidth = indicatorWidth
-            if !bar.indicatorBounces {
+            if !bar.indicatorBounces && !bar.indicatorCompresses {
                 bouncyIndicatorWidth = max(itemWidth, min(barWidth, bouncyIndicatorWidth))
             }
+            print(relativePosition)
             bar.indicatorLeftMargin?.constant = 0.0
-            bar.indicatorWidth?.constant = bouncyIndicatorWidth
+            bar.indicatorWidth?.constant = max(0.0, bouncyIndicatorWidth + indicatorPadding)
             
         } else {
             
