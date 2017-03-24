@@ -35,6 +35,8 @@ class PresetAppearanceConfigs: Any {
             appearance.layout.itemVerticalPadding = 16.0
             appearance.indicator.bounces = true
             appearance.indicator.lineWeight = .normal
+            appearance.layout.edgeInset = 16.0
+            appearance.layout.interItemSpacing = 20.0
 
         case .buttonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
@@ -44,13 +46,17 @@ class PresetAppearanceConfigs: Any {
             appearance.indicator.lineWeight = .thin
             appearance.indicator.compresses = true
             appearance.layout.edgeInset = 8.0
+            appearance.layout.interItemSpacing = 0.0
             
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = defaultTintColor
             appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
             appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
-            
+            appearance.layout.edgeInset = 0.0
+            appearance.layout.interItemSpacing = 0.0
+            appearance.indicator.bounces = true
+
         default:
             appearance.style.background = .blur(style: .light)
         }
