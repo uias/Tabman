@@ -107,7 +107,7 @@ public extension TabmanBar {
         private func setDefaultValues() {
             
             // indicator
-            self.indicator.bounces = true
+            self.indicator.bounces = false
             self.indicator.compresses = false
             self.indicator.isProgressive = false
             self.indicator.useRoundedCorners = false

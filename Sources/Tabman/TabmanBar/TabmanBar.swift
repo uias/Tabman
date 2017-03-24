@@ -301,13 +301,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
         self.indicatorIsProgressive = indicatorIsProgressive ? self.indicator?.isProgressiveCapable ?? false : false
 
-        let indicatorBounces = appearance.indicator.bounces
-        self.indicatorBounces = indicatorBounces ?? defaultAppearance.indicator.bounces!
+        let indicatorBounces = appearance.indicator.bounces ?? defaultAppearance.indicator.bounces!
+        self.indicatorBounces = indicatorBounces
         
-        if indicatorBounces != true {
-            let indicatorCompresses = appearance.indicator.compresses ?? defaultAppearance.indicator.compresses!
-            self.indicatorCompresses = indicatorCompresses
-        }
+        let indicatorCompresses = appearance.indicator.compresses ?? defaultAppearance.indicator.compresses!
+        self.indicatorCompresses = indicatorBounces ? false : indicatorCompresses // only allow compression if bouncing disabled
         
         let indicatorColor = appearance.indicator.color
         self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
