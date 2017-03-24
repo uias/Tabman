@@ -34,7 +34,7 @@ And run `pod install`.
 - [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
-## Requirements
+### Requirements
 Tabman requires iOS 9.0 or above.
 
 ### Example
