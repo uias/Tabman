@@ -178,14 +178,18 @@ internal class TabmanButtonBar: TabmanBar {
             let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
             button.contentEdgeInsets = insets
             
-            if previousButton == nil { // pin to left
-                self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
-            } else {
-                self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
-                if index == items.count - 1 {
-                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
+            // Add horizontal pin constraints
+            // These are breakable (For equal width instances etc.)
+            NSLayoutConstraint.autoSetPriority(500, forConstraints: {
+                if previousButton == nil { // pin to left
+                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
+                } else {
+                    self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
+                    if index == items.count - 1 {
+                        self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
+                    }
                 }
-            }
+            })
             
             customize(button, previousButton)
             previousButton = button
