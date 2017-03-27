@@ -10,9 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A bar with static buttons and line indicator.
-///
-/// Akin to Instagram notification screen etc.
+/// Abstract concrete class for static (non-scrolling) button bars.
 internal class TabmanStaticButtonBar: TabmanButtonBar {
 
     //
@@ -70,16 +68,6 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
     //
     // MARK: TabmanBar Lifecycle
     //
-    
-    override func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
-
-        self.addAndLayoutBarButtons(toView: self.contentView, items: items) { (button, previousButton) in
-            self.buttons.append(button)
-            
-            button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
-        }
-    }
     
     override public func addIndicatorToBar(indicator: TabmanIndicator) {
         

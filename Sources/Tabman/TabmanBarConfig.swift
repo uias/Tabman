@@ -128,7 +128,7 @@ internal extension TabmanBar.Style {
             return TabmanLineBar.self
             
         case .buttonBar:
-            return TabmanStaticButtonBar.self
+            return TabmanFixedButtonBar.self
             
         case .scrollingButtonBar:
             return TabmanScrollingButtonBar.self

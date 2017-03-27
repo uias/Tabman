@@ -97,6 +97,16 @@ extension SettingsViewController {
                 appearance?.indicator.bounces = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Compressing Indicator",
+                                                 description: "Whether the indicator should compress at the end of page ranges.",
+                                                 value: self.tabViewController?.bar.appearance?.indicator.compresses,
+                                                 update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.compresses = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
         
         sections.append(appearanceSection)
         sections.append(pageVCSection)
