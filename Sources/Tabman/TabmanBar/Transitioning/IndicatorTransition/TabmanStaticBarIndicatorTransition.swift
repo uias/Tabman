@@ -19,33 +19,61 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                              bounds: CGRect) {
         guard let bar = tabmanBar else { return }
         
-        let barWidth = bounds.size.width
+        var barWidth = bounds.size.width
+        
+        // account for padding if using a button bar.
+        var indicatorPadding: CGFloat = 0.0
+        if let buttonBar = bar as? TabmanButtonBar {
+            indicatorPadding = buttonBar.edgeInset
+            barWidth -= indicatorPadding * 2
+        }
+        
         let itemCount = CGFloat(bar.items?.count ?? 0)
         let itemWidth = barWidth / itemCount
         
         if bar.indicatorIsProgressive {
             
             let relativePosition = (position + 1.0) / CGFloat((bar.items?.count ?? 1))
-            let indicatorWidth = max(0.0, min(barWidth, barWidth * relativePosition))
+            let indicatorWidth = max(0.0, barWidth * relativePosition)
             
             var bouncyIndicatorWidth = indicatorWidth
-            if !bar.indicatorBounces {
+            if !bar.indicatorBounces && !bar.indicatorCompresses {
                 bouncyIndicatorWidth = max(itemWidth, min(barWidth, bouncyIndicatorWidth))
             }
+            print(relativePosition)
             bar.indicatorLeftMargin?.constant = 0.0
-            bar.indicatorWidth?.constant = bouncyIndicatorWidth
+            bar.indicatorWidth?.constant = max(0.0, bouncyIndicatorWidth + indicatorPadding)
             
         } else {
             
             let relativePosition = position / CGFloat((bar.items?.count ?? 1))
             let leftMargin = relativePosition * barWidth
             
-            var bouncyIndicatorPosition = leftMargin
-            if !bar.indicatorBounces {
-                bouncyIndicatorPosition = max(0.0, min(barWidth - itemWidth, bouncyIndicatorPosition))
+            let isOutOfBounds = position < 0.0 || position > (itemCount - 1.0)
+            
+            var indicatorLeftMargin = leftMargin
+            var indicatorWidth = itemWidth
+            
+            // dont bounce indicator if required
+            if !bar.indicatorBounces && isOutOfBounds {
+                indicatorLeftMargin = max(0.0, min(barWidth - itemWidth, indicatorLeftMargin))
             }
-            bar.indicatorLeftMargin?.constant = bouncyIndicatorPosition
-            bar.indicatorWidth?.constant = itemWidth
+            
+            // compress indicator at boundaries if required
+            if bar.indicatorCompresses && isOutOfBounds {
+                var integral: Float = 0.0
+                let progress = CGFloat(modff(Float(position), &integral))
+
+                let indicatorDiff = (indicatorWidth * fabs(progress))
+                indicatorWidth = indicatorWidth - indicatorDiff
+                
+                if progress > 0.0 {
+                    indicatorLeftMargin = indicatorLeftMargin + indicatorDiff
+                }
+            }
+            
+            bar.indicatorLeftMargin?.constant = indicatorLeftMargin + indicatorPadding
+            bar.indicatorWidth?.constant = max(0.0, indicatorWidth)
         }
     }
 }

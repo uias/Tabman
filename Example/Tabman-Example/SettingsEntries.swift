@@ -25,7 +25,8 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.buttonBar.description,
+        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.scrollingButtonBar.description,
+                                                                         TabmanBar.Style.buttonBar.description,
                                                                          TabmanBar.Style.blockTabBar.description,
                                                                          TabmanBar.Style.bar.description],
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
@@ -96,6 +97,16 @@ extension SettingsViewController {
                 appearance?.indicator.bounces = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
+        appearanceSection.add(item: SettingsItem(type: .toggle,
+                                                 title: "Compressing Indicator",
+                                                 description: "Whether the indicator should compress at the end of page ranges.",
+                                                 value: self.tabViewController?.bar.appearance?.indicator.compresses,
+                                                 update:
+            { (value) in
+                let appearance = self.tabViewController?.bar.appearance
+                appearance?.indicator.compresses = value as? Bool
+                self.tabViewController?.bar.appearance = appearance
+        }))
         
         sections.append(appearanceSection)
         sections.append(pageVCSection)
@@ -113,6 +124,8 @@ fileprivate extension TabmanBar.Style {
             return "Bar"
         case .buttonBar:
             return "Button Bar"
+        case .scrollingButtonBar:
+            return "Scrolling Button Bar"
         case .blockTabBar:
             return "Block Tab Bar"
             
@@ -124,6 +137,8 @@ fileprivate extension TabmanBar.Style {
     static func fromDescription(_ description: String) -> TabmanBar.Style {
         switch description {
             
+        case "Scrolling Button Bar":
+            return .scrollingButtonBar
         case "Button Bar":
             return .buttonBar    
         case "Block Tab Bar":

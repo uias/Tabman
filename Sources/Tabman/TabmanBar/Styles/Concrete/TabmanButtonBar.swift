@@ -14,6 +14,12 @@ import Pageboy
 internal class TabmanButtonBar: TabmanBar {
 
     //
+    // MARK: Types
+    //
+    
+    internal typealias TabmanButtonBarItemCustomize = (_ button: UIButton, _ previousButton: UIButton?) -> Void
+    
+    //
     // MARK: Constants
     //
     
@@ -29,31 +35,6 @@ internal class TabmanButtonBar: TabmanBar {
     
     internal var buttons = [UIButton]()
     
-    internal var textFont: UIFont = Appearance.defaultAppearance.text.font! {
-        didSet {
-            guard textFont != oldValue else { return }
-            
-            self.updateButtons(update: { (button) in
-                button.titleLabel?.font = textFont
-            })
-        }
-    }
-    internal var color: UIColor = Appearance.defaultAppearance.state.color!
-    internal var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
-    
-    internal var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
-        didSet {
-            guard itemVerticalPadding != oldValue else { return }
-            
-            self.updateButtons { (button) in
-                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
-                                          bottom: itemVerticalPadding, right: 0.0)
-                button.contentEdgeInsets = insets
-                self.layoutIfNeeded()
-            }
-        }
-    }
-    
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
@@ -68,10 +49,49 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
-    // Public
+    public var textFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            guard textFont != oldValue else { return }
+            
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = textFont
+            })
+        }
+    }
+    public var color: UIColor = Appearance.defaultAppearance.state.color!
+    public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
     
+    public var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
+        didSet {
+            guard itemVerticalPadding != oldValue else { return }
+            
+            self.updateButtons { (button) in
+                let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,
+                                          bottom: itemVerticalPadding, right: 0.0)
+                button.contentEdgeInsets = insets
+                self.layoutIfNeeded()
+            }
+        }
+    }
     /// The spacing between each bar item.
-    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing!
+    public var interItemSpacing: CGFloat = Appearance.defaultAppearance.layout.interItemSpacing! {
+        didSet {
+            self.updateConstraints(self.horizontalMarginConstraints,
+                                   withValue: interItemSpacing)
+            self.layoutIfNeeded()
+            self.updateForCurrentPosition()
+        }
+    }
+    
+    /// The inset at the edge of the bar items.
+    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
+        didSet {
+            self.updateConstraints(self.edgeMarginConstraints,
+                                   withValue: edgeInset)
+            self.layoutIfNeeded()
+            self.updateForCurrentPosition()
+        }
+    }
     
     //
     // MARK: TabmanBar Lifecycle
@@ -103,6 +123,23 @@ internal class TabmanButtonBar: TabmanBar {
         
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
+        
+        let edgeInset = appearance.layout.edgeInset
+        self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
+        
+        // update left margin for progressive style
+        if self.indicator?.isProgressiveCapable ?? false {
+            
+            let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+            let leftMargin = self.indicatorLeftMargin?.constant ?? 0.0
+            let indicatorWasProgressive = leftMargin == 0.0
+            
+            if indicatorWasProgressive && !indicatorIsProgressive {
+                self.indicatorLeftMargin?.constant = leftMargin - self.edgeInset
+            } else if !indicatorWasProgressive && indicatorIsProgressive {
+                self.indicatorLeftMargin?.constant = 0.0
+            }
+        }
     }
     
     //
@@ -111,7 +148,7 @@ internal class TabmanButtonBar: TabmanBar {
     
     internal func addBarButtons(toView view: UIView,
                                items: [TabmanBarItem],
-                               customize: (_ button: UIButton, _ previousButton: UIButton?) -> Void) {
+                               customize: TabmanButtonBarItemCustomize) {
         
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
@@ -141,14 +178,18 @@ internal class TabmanButtonBar: TabmanBar {
             let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
             button.contentEdgeInsets = insets
             
-            if previousButton == nil { // pin to left
-                self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
-            } else {
-                self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
-                if index == items.count - 1 {
-                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
+            // Add horizontal pin constraints
+            // These are breakable (For equal width instances etc.)
+            NSLayoutConstraint.autoSetPriority(500, forConstraints: {
+                if previousButton == nil { // pin to left
+                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
+                } else {
+                    self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
+                    if index == items.count - 1 {
+                        self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
+                    }
                 }
-            }
+            })
             
             customize(button, previousButton)
             previousButton = button
@@ -179,5 +220,20 @@ internal class TabmanButtonBar: TabmanBar {
         if let index = self.buttons.index(of: sender) {
             self.delegate?.bar(self, didSelectItemAtIndex: index)
         }
+    }
+    
+    //
+    // MARK: Layout
+    //
+    
+    internal func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
+        for constraint in constraints {
+            var value = value
+            if constraint.constant < 0.0 || constraint.firstAttribute == .trailing {
+                value = -value
+            }
+            constraint.constant = value
+        }
+        self.layoutIfNeeded()
     }
 }

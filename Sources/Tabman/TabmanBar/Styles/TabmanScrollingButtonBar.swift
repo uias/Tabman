@@ -12,7 +12,7 @@ import Pageboy
 
 /// A bar with scrolling buttons and line indicator.
 ///
-/// Akin to Android ViewPager, Instagram notification screen etc.
+/// Akin to Android ViewPager etc.
 internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
     //
@@ -52,23 +52,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
         get {
             return self.scrollView.isScrollEnabled
-        }
-    }
-    
-    /// The inset at the edge of the bar items.
-    public var edgeInset: CGFloat = Appearance.defaultAppearance.layout.edgeInset! {
-        didSet {
-            self.updateConstraints(self.edgeMarginConstraints,
-                                   withValue: edgeInset)
-            self.layoutIfNeeded()
-            self.updateForCurrentPosition()
-        }
-    }
-    
-    public override var interItemSpacing: CGFloat {
-        didSet {
-            self.updateConstraints(self.horizontalMarginConstraints,
-                                   withValue: interItemSpacing)
         }
     }
     
@@ -146,9 +129,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             button.addConstraint(minWidthConstraint)
         }
         
-        self.updateConstraints(self.edgeMarginConstraints, withValue: self.edgeInset)
-        self.updateConstraints(self.horizontalMarginConstraints, withValue: self.edgeInset)
-        
         self.scrollView.layoutIfNeeded()
     }
     
@@ -165,42 +145,10 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         super.update(forAppearance: appearance,
                      defaultAppearance: defaultAppearance)
         
-        let edgeInset = appearance.layout.edgeInset
-        self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
-        
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
-        
-        // update left margin for progressive style
-        if self.indicator?.isProgressiveCapable ?? false {
-            
-            let indicatorIsProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
-            let leftMargin = self.indicatorLeftMargin?.constant ?? 0.0
-            let indicatorWasProgressive = leftMargin == 0.0
-            
-            if indicatorWasProgressive && !indicatorIsProgressive {
-                self.indicatorLeftMargin?.constant = leftMargin - self.edgeInset
-            } else if !indicatorWasProgressive && indicatorIsProgressive {
-                self.indicatorLeftMargin?.constant = 0.0
-            }
-        }
-    }
-    
-    //
-    // MARK: Layout
-    //
-    
-    private func updateConstraints(_ constraints: [NSLayoutConstraint], withValue value: CGFloat) {
-        for constraint in constraints {
-            var value = value
-            if constraint.constant < 0.0 || constraint.firstAttribute == .trailing {
-                value = -value
-            }
-            constraint.constant = value
-        }
-        self.layoutIfNeeded()
     }
 }
 

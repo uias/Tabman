@@ -66,7 +66,7 @@ public class TabmanBarConfig: Any {
     
     
     /// The style to use for the bar. Default = .scrollingButtonBar
-    public var style: TabmanBar.Style = .buttonBar {
+    public var style: TabmanBar.Style = .scrollingButtonBar {
         didSet {
             guard style.rawType != oldValue.rawType else { return }
             
@@ -125,9 +125,12 @@ internal extension TabmanBar.Style {
         switch self {
             
         case .bar:
-            return TabmanPlainBar.self
+            return TabmanLineBar.self
             
         case .buttonBar:
+            return TabmanFixedButtonBar.self
+            
+        case .scrollingButtonBar:
             return TabmanScrollingButtonBar.self
             
         case .blockTabBar:

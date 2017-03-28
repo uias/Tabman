@@ -56,7 +56,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
             
             bar.indicatorWidth?.constant = indicatorStartFrame + (endFrameDiff * progress)
             
-            guard bar.indicatorBounces else { return }
+            guard bar.indicatorBounces || bar.indicatorCompresses else { return }
             if (lowerButton === upperButton) {
                 let indicatorWidth = bar.indicatorWidth?.constant ?? 0.0
                 bar.indicatorWidth?.constant = indicatorWidth + (indicatorWidth * progress)

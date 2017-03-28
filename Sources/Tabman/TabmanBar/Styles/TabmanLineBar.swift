@@ -1,5 +1,5 @@
 //
-//  TabmanPlainBar.swift
+//  TabmanLineBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 22/02/2017.
@@ -10,8 +10,8 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// A simple bar containing only an indicator.
-internal class TabmanPlainBar: TabmanBar {
+/// A simple bar containing only a line indicator.
+internal class TabmanLineBar: TabmanBar {
 
     //
     // MARK: Properties

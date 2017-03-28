@@ -99,17 +99,12 @@ Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.c
 The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
 
 #### Style
-The style of bar to display, by default this is set to `.buttonBar`.  
+The style of bar to display, by default this is set to `.scrollingButtonBar`.  
 
 ##### Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
-
-##### Upcoming Styles:
-
-- `.segmentedBar` - UISegmentedControl style bar.
-- `.tabBar` - UITabBar style bar.
 
 For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/YorkUI/Tabman-Styles).
 
