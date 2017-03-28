@@ -31,8 +31,8 @@
 		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
 		D62AC10C1E5736A10020B8AE /* TabViewControllerExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewControllerExtras.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
-		D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
-		D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D6C759781E83CFAA00471973 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
+		D6C759791E83CFAA00471973 /* ReferenceProxy in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
+				D6C759791E83CFAA00471973 /* ReferenceProxy in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,7 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				648A830D19F167B986EF7641 /* Pods_Tabman_Example.framework in Frameworks */,
-				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
+				D6C759781E83CFAA00471973 /* ReferenceProxy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8887F6CA40C4AD1DA1F27078 /* [CP] Embed Pods Frameworks */ = {
