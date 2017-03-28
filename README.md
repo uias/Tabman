@@ -19,7 +19,7 @@
 - [x] Multiple indicator bar styles.
 - [x] Simplistic, yet highly extensive customisation.
 - [x] Full support for custom components.
-- [x] Built on a powerful and informative page view controller, [Pageboy](github.com//msaps/pageboy).
+- [x] Built on a powerful and informative page view controller, [Pageboy](https://github.com/uias/pageboy).
 
 ## Installation
 ### CocoaPods
