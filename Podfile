@@ -5,7 +5,7 @@ workspace 'Tabman'
 use_frameworks!
 
 def shared_pods
-  pod 'Pageboy', '~> 0.4.0'
+  pod 'Pageboy', '~> 1.0.0'
   pod 'PureLayout', '~> 3.0.0'
 end
 
