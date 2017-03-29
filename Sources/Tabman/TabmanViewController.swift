@@ -158,6 +158,11 @@ internal extension TabmanViewController {
             location = self.bar.style.preferredLocation
         }
         
+        // ensure bar is always on top
+        // Having to use CGFloat cast due to CGFloat.greatestFiniteMagnitude causing 
+        // "zPosition should be within (-FLT_MAX, FLT_MAX) range" error.
+        bar.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+        
         bar.removeFromSuperview()
         self.view.addSubview(bar)
         
