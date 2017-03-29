@@ -18,11 +18,15 @@ class TabmanBarAppearanceTests: TabmanViewControllerTests {
             appearance.indicator.preferredStyle = .dot
         })
         
+        self.tabmanViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
+            appearance.indicator.preferredStyle = .chevron
+        })
+        
         let indicator = self.tabmanViewController.tabmanBar!.indicator!
-        let type = TabmanIndicator.Style.dot.rawType!
+        let type = TabmanIndicator.Style.chevron.rawType!
         
         XCTAssertTrue(type(of: indicator) == type,
-                      "preferredIndicatorStyle is incorrectly ignored to when using .buttonBar style")
+                      "preferredIndicatorStyle is incorrectly ignored when using .buttonBar style")
     }
     
     func testPreferredIndicatorStyleIgnorance() {

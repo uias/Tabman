@@ -41,4 +41,19 @@ class TabmanBarConfigTests: TabmanViewControllerTests {
         XCTAssert(self.tabmanViewController.bar.appearance?.state.color == textColor,
                   "TabmanBarConfig does not update bar appearance correctly.")
     }
+    
+    /// Test that the TabmanBarConfig allows image items to be set correctly.
+    func testBarConfigImageItemsTest() {
+        
+        let barItemCount = self.tabmanViewController.bar.items?.count ?? 0
+        
+        var barItems = [TabmanBarItem]()
+        for _ in 0 ..< barItemCount {
+            barItems.append(TabmanBarItem(image: UIImage()))
+        }
+        self.tabmanViewController.bar.items = barItems
+        
+        XCTAssertEqual(barItemCount, self.tabmanViewController.bar.items!.count,
+                       "TabmanBarConfig does not support TabmanBarItem with images correctly.")
+    }
 }
