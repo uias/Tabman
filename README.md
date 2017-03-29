@@ -191,6 +191,9 @@ public struct Interaction {
 }
 ```
 
+##### Defaults
+A number of default properties are set on `TabmanBar.Appearance`, these can be viewed [here](Docs/APPEARANCE_DEFAULTS.md).
+
 ### Advanced
 
 For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
