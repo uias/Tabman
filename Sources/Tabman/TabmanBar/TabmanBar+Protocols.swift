@@ -9,7 +9,7 @@
 import Foundation
 import Pageboy
 
-public protocol TabmanBarDataSource {
+public protocol TabmanBarDataSource: class {
     
     /// The items to display in a bar.
     ///
@@ -18,7 +18,7 @@ public protocol TabmanBarDataSource {
     func items(forBar bar: TabmanBar) -> [TabmanBarItem]?
 }
 
-internal protocol TabmanBarDelegate {
+internal protocol TabmanBarDelegate: class {
     
     /// The bar did select an item at an index.
     ///
