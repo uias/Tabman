@@ -56,9 +56,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal weak var transitionStore: TabmanBarTransitionStore?
     
     /// The object that acts as a delegate to the bar.
-    internal var delegate: TabmanBarDelegate?
+    internal weak var delegate: TabmanBarDelegate?
     /// The object that acts as a data source to the bar.
-    public var dataSource: TabmanBarDataSource? {
+    public weak var dataSource: TabmanBarDataSource? {
         didSet {
             self.reloadData()
         }

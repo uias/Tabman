@@ -161,7 +161,9 @@ internal class TabmanButtonBar: TabmanBar {
             } else if let image = item.image {
                 // resize images to fit
                 let resizedImage = image.resize(toSize: Defaults.itemImageSize)
-                button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+                if resizedImage.size != .zero {
+                    button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+                }
             }
             
             // appearance

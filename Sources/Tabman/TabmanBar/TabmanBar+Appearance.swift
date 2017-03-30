@@ -132,7 +132,7 @@ public extension TabmanBar {
             self.style.bottomSeparatorColor = .clear
             
             // interaction
-            self.interaction.isScrollEnabled = false
+            self.interaction.isScrollEnabled = true
         }
     }
 }
