@@ -167,23 +167,50 @@ internal extension TabmanViewController {
         self.view.addSubview(bar)
         
         // move tab bar to location
-        var requiredInsets = UIEdgeInsets.zero
         switch location {
             
         case .top:
             bar.barAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
-            requiredInsets.top = bar.intrinsicContentSize.height
         case .bottom:
             bar.barAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
-            requiredInsets.bottom = bar.intrinsicContentSize.height
             
         default:()
         }
-        self.bar.requiredContentInset = requiredInsets
         self.view.layoutIfNeeded()
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
+    }
+    
+    /// Reload the required bar insets for the current bar.
+    func reloadRequiredBarInsets() {
+        self.bar.requiredContentInset = self.calculateRequiredBarInsets()
+    }
+    
+    /// Calculate the required insets for the current bar.
+    ///
+    /// - Returns: The required bar insets
+    private func calculateRequiredBarInsets() -> UIEdgeInsets {
+        guard self.embeddingView == nil && self.attachedTabmanBar == nil else {
+            return .zero
+        }
+        
+        let frame = self.activeTabmanBar?.frame ?? .zero
+        var insets = UIEdgeInsets.zero
+        
+        var location = self.bar.location
+        if location == .preferred {
+            location = self.bar.style.preferredLocation
+        }
+        
+        switch location {
+        case .bottom:
+            insets.bottom = frame.size.height
+            
+        default:
+            insets.top = frame.size.height
+        }
+        return insets
     }
 }
 
@@ -198,6 +225,7 @@ public extension TabmanViewController {
         guard self.attachedTabmanBar == nil else { return }
         
         self.tabmanBar?.isHidden = true
+        self.reloadRequiredBarInsets()
         
         // hook up new bar
         bar.dataSource = self
@@ -228,6 +256,9 @@ public extension TabmanViewController {
         self.attachedTabmanBar = nil
         
         self.tabmanBar?.reloadData()
+        self.view.layoutIfNeeded()
+
+        self.reloadRequiredBarInsets()
         
         return bar
     }
@@ -245,7 +276,8 @@ public extension TabmanViewController {
         bar.removeFromSuperview()
         view.addSubview(bar)
         bar.autoPinEdgesToSuperviewEdges()
-        
+        self.reloadRequiredBarInsets()
+
         view.layoutIfNeeded()
     }
     
@@ -258,6 +290,7 @@ public extension TabmanViewController {
         self.embeddingView = nil
         
         self.updateBar(withLocation: self.bar.location)
+        self.reloadRequiredBarInsets()
     }
 }
 
@@ -304,5 +337,8 @@ extension TabmanViewController: TabmanBarConfigDelegate {
     
     func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?) {
         self.activeTabmanBar?.reloadData()
+        
+        self.view.layoutIfNeeded()
+        self.reloadRequiredBarInsets()
     }
 }
