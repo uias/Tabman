@@ -27,12 +27,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     let numberOfPages = 5
     let gradients: [GradientConfig] = [
-        GradientConfig(topColor: UIColor(red:0.01, green:0.00, blue:0.18, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.53, blue:0.80, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.20, green:0.08, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.36, blue:0.00, alpha:1.0)),
         GradientConfig(topColor: UIColor(red:0.96, green:0.36, blue:0.26, alpha:1.0), bottomColor: UIColor(red:0.92, green:0.20, blue:0.29, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.00, green:0.13, blue:0.05, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.65, blue:0.33, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.18, green:0.00, blue:0.20, alpha:1.0), bottomColor: UIColor(red:0.64, green:0.00, blue:0.66, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.20, green:0.00, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.00, blue:0.00, alpha:1.0))
+        GradientConfig(topColor: UIColor(red:0.48, green:0.26, blue:0.59, alpha:1.0), bottomColor: UIColor(red:0.86, green:0.14, blue:0.19, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.97, green:0.21, blue:0.00, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.55, blue:0.00, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.20, green:0.20, blue:0.60, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.00, blue:0.80, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.06, green:0.20, blue:0.26, alpha:1.0), bottomColor: UIColor(red:0.20, green:0.91, blue:0.62, alpha:1.0))
     ]
     
     // MARK: Outlets
