@@ -15,15 +15,11 @@ class PresetAppearanceConfigs: Any {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         appearance.indicator.bounces = false
         appearance.indicator.compresses = false
-
-        var view: UIView? = UIView()
-        let defaultTintColor = view!.tintColor
-        view = nil
         
         switch style {
 
         case .bar:
-            appearance.style.background = .solid(color: .black)
+            appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
             appearance.indicator.color = .white
             appearance.indicator.lineWeight = .thick
             
@@ -50,7 +46,7 @@ class PresetAppearanceConfigs: Any {
             
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = defaultTintColor
+            appearance.state.selectedColor = UIColor(red:0.92, green:0.20, blue:0.29, alpha:1.0)
             appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
             appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
             appearance.layout.edgeInset = 0.0
