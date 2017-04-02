@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/uias/Pageboy.svg?branch=master)](https://travis-ci.org/uias/Tabman)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/uias/Tabman)
 [![GitHub release](https://img.shields.io/github/release/uias/Tabman.svg)](https://github.com/uias/Tabman/releases)
@@ -30,6 +31,20 @@ pod 'Tabman'
 ```
 
 And run `pod install`.
+
+### Carthage
+Tabman is available through [Carthage](https://github.com/Carthage/Carthage). Simply install carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+Add Tabman to your `Cartfile`:
+
+```ogdl
+github "uias/Tabman" 
+```
 
 **Dependencies**
 
