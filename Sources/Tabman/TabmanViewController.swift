@@ -53,12 +53,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.updateBar(withLocation: self.bar.location)
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.insetChildViewControllerIfNeeded(self.currentViewController)
-    }
-    
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         let bounds = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
@@ -188,6 +182,8 @@ internal extension TabmanViewController {
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
+        
+        self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
     /// Reload the required bar insets for the current bar.
@@ -228,7 +224,30 @@ internal extension TabmanViewController {
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
         guard let childViewController = childViewController else { return }
         
-        print(childViewController)
+        // if a scroll view is found in child VC subviews inset by the required content inset.
+        for subview in childViewController.view.subviews {
+            if let scrollView = subview as? UIScrollView {
+                var requiredContentInset = self.bar.requiredContentInset
+                let currentContentInset = scrollView.contentInset
+                requiredContentInset.top += self.topLayoutGuide.length
+                
+                // take into account any existing inset values and merge with content inset.
+                /*var topDiff = currentContentInset.top - requiredContentInset.top
+                if topDiff < 0 {
+                    topDiff = currentContentInset.top
+                }
+                var bottomDiff = currentContentInset.bottom - requiredContentInset.bottom
+                if bottomDiff < 0 {
+                    bottomDiff = currentContentInset.bottom
+                }
+                requiredContentInset.top += topDiff
+                requiredContentInset.bottom += bottomDiff */
+ 
+                requiredContentInset.left = currentContentInset.left
+                requiredContentInset.right = currentContentInset.right
+                scrollView.contentInset = requiredContentInset
+            }
+        }
     }
 }
 
