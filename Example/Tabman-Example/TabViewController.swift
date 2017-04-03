@@ -27,11 +27,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     let numberOfPages = 5
     let gradients: [GradientConfig] = [
-        GradientConfig(topColor: UIColor(red:0.01, green:0.00, blue:0.18, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.53, blue:0.80, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.20, green:0.08, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.36, blue:0.00, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.00, green:0.13, blue:0.05, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.65, blue:0.33, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.18, green:0.00, blue:0.20, alpha:1.0), bottomColor: UIColor(red:0.64, green:0.00, blue:0.66, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.20, green:0.00, blue:0.00, alpha:1.0), bottomColor: UIColor(red:0.69, green:0.00, blue:0.00, alpha:1.0))
+        GradientConfig(topColor: UIColor(red:0.89, green:0.30, blue:0.15, alpha:1.0), bottomColor: UIColor(red:0.95, green:0.40, blue:0.16, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.01, green:0.11, blue:0.47, alpha:1.0), bottomColor: UIColor(red:0.02, green:0.46, blue:0.90, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.97, green:0.21, blue:0.00, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.55, blue:0.00, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.20, green:0.20, blue:0.60, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.00, blue:0.80, alpha:1.0)),
+        GradientConfig(topColor: UIColor(red:0.06, green:0.20, blue:0.26, alpha:1.0), bottomColor: UIColor(red:0.20, green:0.91, blue:0.62, alpha:1.0))
     ]
     
     // MARK: Outlets
@@ -55,6 +55,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         self.dataSource = self
         
         // bar customisation
+        self.bar.location = .top
 //        self.bar.style = .custom(type: CustomTabmanBar.self) // uncomment to use CustomTabmanBar as style.
         self.bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
@@ -99,7 +100,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     func numberOfPages(forBarStyle style: TabmanBar.Style) -> Int {
         switch style {
         case .blockTabBar, .buttonBar:
-            return 2
+            return 3
         default:
             return 5
         }
