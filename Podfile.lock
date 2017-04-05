@@ -1,5 +1,5 @@
 PODS:
-  - Pageboy (1.0.0)
+  - Pageboy (1.0.1)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - PureLayout (~> 3.0.0)
 
 SPEC CHECKSUMS:
-  Pageboy: 7efa3ef59ca0601aae7f26980530153f8151704e
+  Pageboy: 711d82b6d099ff7d0188af54f7445be389824392
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
 PODFILE CHECKSUM: fd0820ca8c653c9e1ceb3900d55462536ff3ac55
