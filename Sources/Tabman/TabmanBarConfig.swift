@@ -9,7 +9,7 @@
 import Foundation
 
 /// Update handler protocol for TabmanBarConfig updates.
-internal protocol TabmanBarConfigDelegate {
+internal protocol TabmanBarConfigDelegate: class {
     
     /// The config had its style updated.
     ///
@@ -62,7 +62,7 @@ public class TabmanBarConfig: Any {
     // MARK: Properties
     //
     
-    internal var delegate: TabmanBarConfigDelegate?
+    internal weak var delegate: TabmanBarConfigDelegate?
     
     
     /// The style to use for the bar. Default = .scrollingButtonBar
