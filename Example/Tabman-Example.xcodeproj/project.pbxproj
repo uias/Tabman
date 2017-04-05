@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BDDEF9E1E914DB3007C59C0 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDDEF9C1E914DB3007C59C0 /* Pageboy.framework */; };
-		7BDDEF9F1E914DB3007C59C0 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDDEF9C1E914DB3007C59C0 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7BDDEFA01E914DB3007C59C0 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDDEF9D1E914DB3007C59C0 /* PureLayout.framework */; };
-		7BDDEFA11E914DB3007C59C0 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDDEF9D1E914DB3007C59C0 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; };
+		7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BF6B4981E9555DE00BE68B5 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */; };
+		7BF6B4991E9555DE00BE68B5 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
 		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
@@ -69,8 +69,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7BDDEF9F1E914DB3007C59C0 /* Pageboy.framework in Embed Frameworks */,
-				7BDDEFA11E914DB3007C59C0 /* PureLayout.framework in Embed Frameworks */,
+				7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */,
+				7BF6B4991E9555DE00BE68B5 /* PureLayout.framework in Embed Frameworks */,
 				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -79,8 +79,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7BDDEF9C1E914DB3007C59C0 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Sources/Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
-		7BDDEF9D1E914DB3007C59C0 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Sources/Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		D601367C1E6990650013CD42 /* CustomTabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabmanBar.swift; sourceTree = "<group>"; };
 		D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetAppearanceConfigs.swift; sourceTree = "<group>"; };
 		D61E50BB1E64452D00AC8C75 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BDDEF9E1E914DB3007C59C0 /* Pageboy.framework in Frameworks */,
-				7BDDEFA01E914DB3007C59C0 /* PureLayout.framework in Frameworks */,
+				7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */,
+				7BF6B4981E9555DE00BE68B5 /* PureLayout.framework in Frameworks */,
 				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,8 +215,8 @@
 		D6C759651E83CE6300471973 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BDDEF9C1E914DB3007C59C0 /* Pageboy.framework */,
-				7BDDEF9D1E914DB3007C59C0 /* PureLayout.framework */,
+				7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */,
+				7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Sources/Carthage/Build/iOS/**";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
@@ -490,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Sources/Carthage/Build/iOS/**";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
