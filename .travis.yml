@@ -8,7 +8,7 @@ branches:
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
-  - carthage bootstrap --project-directory Sources  --platform iOS
+  - carthage bootstrap --platform iOS
 
 script:
   - xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' build test
