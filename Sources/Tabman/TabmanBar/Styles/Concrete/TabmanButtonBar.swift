@@ -168,7 +168,8 @@ internal class TabmanButtonBar: TabmanBar {
             
             // appearance
             button.titleLabel?.adjustsFontSizeToFitWidth = true
-            
+            button.titleLabel?.font = self.textFont
+
             // layout
             NSLayoutConstraint.autoSetPriority(500, forConstraints: {
                 button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)

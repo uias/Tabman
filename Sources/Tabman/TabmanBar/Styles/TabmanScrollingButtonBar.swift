@@ -116,7 +116,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             
             button.setTitleColor(self.color, for: .normal)
             button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
-            button.titleLabel?.font = self.textFont
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
             
             // add a minimum width constraint to button

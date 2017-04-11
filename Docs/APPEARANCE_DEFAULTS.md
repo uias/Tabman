@@ -10,20 +10,15 @@ A number of appearance properties are set on `TabmanBar` by default. These can a
 | `.indicator.useRoundedCorners` | `Bool` | `false` |
 | `.indicator.lineWeight` | `LineWeight` | `.normal` |
 | `.indicator.color` | `UIColor` | `defaultTintColor` |
-|
 | `.state.selectedColor` | `UIColor` | `.black` |
 | `.state.color` | `UIColor` | `.black.withAlphaComponent(0.5)` |
-|
 | `.text.font` | `UIFont` | `UIFont.systemFont(ofSize: 16.0)` |
-|
 | `.layout.height` | `Height` | `.auto` |
 | `.layout.interItemSpacing` | `CGFloat` | `20.0` |
 | `.layout.edgeInset` | `CGFloat` | `16.0` |
 | `.layout.itemVerticalPadding` | `CGFloat` | `12.0` |
-|
 | `.style.background` | `BackgroundStyle` | `.blur(style: .extraLight)` |
 | `.style.bottomSeparatorColor` | `UIColor` | `.clear` |
-|
 | `.interaction.isScrollEnabled` | `Bool` | `true` |
 
 
