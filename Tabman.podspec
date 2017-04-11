@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.requires_arc = true
 
-  s.version      = "0.4.6"
+  s.version      = "0.4.7"
   s.summary      = "A powerful paging view controller with indicator bar for iOS"
   s.description  = <<-DESC
   					Tabman is a highly customisable, powerful and extendable paging view controller with indicator bar.
