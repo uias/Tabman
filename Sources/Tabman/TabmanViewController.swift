@@ -56,6 +56,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        self.reloadRequiredBarInsets()
         self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
