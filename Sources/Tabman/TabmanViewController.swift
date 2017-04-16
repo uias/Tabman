@@ -309,7 +309,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
         return self.bar.items
     }
     
-    public func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int) {
+    public func bar(_ bar: TabmanBar, didSelectItemAt index: Int) {
         self.scrollToPage(.at(index: index), animated: true)
     }
 }
