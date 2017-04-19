@@ -40,6 +40,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     internal lazy var viewControllerInsets: [Int : UIEdgeInsets] = [:]
     
+    /// Whether any scroll views in child view controllers should be automatically insetted
+    /// to display below the TabmanBar.
+    public var automaticallyInsetsChildScrollViews: Bool = true
+    
     //
     // MARK: Lifecycle
     //
