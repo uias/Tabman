@@ -24,7 +24,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     internal var embeddingView: UIView?
     
     /// Returns the active bar, prefers attachedTabmanBar if available.
-    fileprivate var activeTabmanBar: TabmanBar? {
+    internal var activeTabmanBar: TabmanBar? {
         if let attachedTabmanBar = self.attachedTabmanBar {
             return attachedTabmanBar
         }
@@ -37,6 +37,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
+    
+    internal lazy var insettedViewControllers = [UIViewController]()
     
     //
     // MARK: Lifecycle
@@ -191,74 +193,6 @@ internal extension TabmanViewController {
         bar.updatePosition(position ?? 0.0, direction: .neutral)
         
         self.insetChildViewControllerIfNeeded(self.currentViewController)
-    }
-    
-    /// Reload the required bar insets for the current bar.
-    func reloadRequiredBarInsets() {
-        self.bar.requiredContentInset = self.calculateRequiredBarInsets()
-    }
-    
-    /// Calculate the required insets for the current bar.
-    ///
-    /// - Returns: The required bar insets
-    private func calculateRequiredBarInsets() -> UIEdgeInsets {
-        guard self.embeddingView == nil && self.attachedTabmanBar == nil else {
-            return .zero
-        }
-        
-        let frame = self.activeTabmanBar?.frame ?? .zero
-        var insets = UIEdgeInsets.zero
-        
-        var location = self.bar.location
-        if location == .preferred {
-            location = self.bar.style.preferredLocation
-        }
-        
-        switch location {
-        case .bottom:
-            insets.bottom = frame.size.height
-            
-        default:
-            insets.top = frame.size.height
-        }
-        return insets
-    }
-}
-
-// MARK: - Child view controller layout
-internal extension TabmanViewController {
-    
-    func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
-        guard let childViewController = childViewController else { return }
-        
-        // if a scroll view is found in child VC subviews inset by the required content inset.
-        for subview in childViewController.view?.subviews ?? [] {
-            if let scrollView = subview as? UIScrollView {
-                var requiredContentInset = self.bar.requiredContentInset
-                let currentContentInset = scrollView.contentInset
-                requiredContentInset.top += self.topLayoutGuide.length
-                
-                // take into account any existing inset values and merge with content inset.
-//                var topDiff = currentContentInset.top - requiredContentInset.top
-//                if topDiff < 0 {
-//                    topDiff = currentContentInset.top
-//                }
-//                var bottomDiff = currentContentInset.bottom - requiredContentInset.bottom
-//                if bottomDiff < 0 {
-//                    bottomDiff = currentContentInset.bottom
-//                }
-//                requiredContentInset.top += topDiff
-//                requiredContentInset.bottom += bottomDiff
- 
-                requiredContentInset.left = currentContentInset.left
-                requiredContentInset.right = currentContentInset.right
-                scrollView.contentInset = requiredContentInset
-                
-                var contentOffset = scrollView.contentOffset
-                contentOffset.y = -requiredContentInset.top
-                scrollView.contentOffset = contentOffset
-            }
-        }
     }
 }
 
