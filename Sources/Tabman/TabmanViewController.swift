@@ -38,7 +38,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
     
-    internal lazy var insettedViewControllers = [UIViewController]()
+    internal lazy var viewControllerInsets: [Int : UIEdgeInsets] = [:]
     
     //
     // MARK: Lifecycle
