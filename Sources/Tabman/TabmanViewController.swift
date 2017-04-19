@@ -232,7 +232,7 @@ internal extension TabmanViewController {
         guard let childViewController = childViewController else { return }
         
         // if a scroll view is found in child VC subviews inset by the required content inset.
-        for subview in childViewController.viewIfLoaded?.subviews ?? [] {
+        for subview in childViewController.view?.subviews ?? [] {
             if let scrollView = subview as? UIScrollView {
                 var requiredContentInset = self.bar.requiredContentInset
                 let currentContentInset = scrollView.contentInset
