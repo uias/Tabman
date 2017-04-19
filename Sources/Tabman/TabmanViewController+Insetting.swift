@@ -49,11 +49,12 @@ internal extension TabmanViewController {
     ///
     /// - Parameter childViewController: The child view controller.
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
+        
         guard let childViewController = childViewController else { return }
         guard self.automaticallyInsetsChildScrollViews else { return }
         
         // if a scroll view is found in child VC subviews inset by the required content inset.
-        for subview in childViewController.view?.subviews ?? [] {
+        for subview in childViewController.viewIfLoaded?.subviews ?? [] {
             guard subview is UICollectionView || subview is UITableView else { continue }
             
             if let scrollView = subview as? UIScrollView {

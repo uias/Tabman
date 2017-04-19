@@ -111,6 +111,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didReload viewControllers: [UIViewController]) {
+        self.insetChildViewControllerIfNeeded(self.currentViewController)
+    }
+    
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
