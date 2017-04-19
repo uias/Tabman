@@ -112,7 +112,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                    didReload viewControllers: [UIViewController]) {
+                                    didReload viewControllers: [UIViewController],
+                                    currentIndex: PageboyViewController.PageIndex) {
         self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
