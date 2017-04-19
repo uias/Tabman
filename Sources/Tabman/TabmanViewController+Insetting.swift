@@ -64,9 +64,15 @@ internal extension TabmanViewController {
                 let currentContentInset = scrollView.contentInset
                 
                 requiredContentInset.top += self.topLayoutGuide.length
-                
-                requiredContentInset.top += isInsetted ? currentContentInset.top - requiredContentInset.top : currentContentInset.top
-                requiredContentInset.bottom += isInsetted ? currentContentInset.bottom - requiredContentInset.bottom : currentContentInset.bottom
+
+                // add support for existing contentInset
+//                if isInsetted {
+//                    requiredContentInset.top = currentContentInset.top
+//                    requiredContentInset.bottom = currentContentInset.bottom
+//                } else {
+//                    requiredContentInset.top += currentContentInset.top
+//                    requiredContentInset.bottom += currentContentInset.bottom
+//                }
                 requiredContentInset.left = currentContentInset.left
                 requiredContentInset.right = currentContentInset.right
                 
