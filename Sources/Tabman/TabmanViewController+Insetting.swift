@@ -58,11 +58,11 @@ internal extension TabmanViewController {
                 requiredContentInset.top += self.topLayoutGuide.length
                 self.viewControllerInsets[childViewController.hash] = requiredContentInset
 
+                // take account of custom top / bottom insets
                 let topInset = scrollView.contentInset.top - currentContentInset.top
                 if topInset != 0.0 {
                     requiredContentInset.top += topInset
                 }
-                
                 let bottomInset = scrollView.contentInset.bottom - currentContentInset.bottom
                 if bottomInset != 0.0 {
                     requiredContentInset.bottom += bottomInset
@@ -71,11 +71,14 @@ internal extension TabmanViewController {
                 requiredContentInset.left = currentContentInset.left
                 requiredContentInset.right = currentContentInset.right
                 
-                scrollView.contentInset = requiredContentInset
-                
-                var contentOffset = scrollView.contentOffset
-                contentOffset.y = -requiredContentInset.top
-                scrollView.contentOffset = contentOffset
+                // dont update if we dont need to
+                if scrollView.contentInset != requiredContentInset {
+                    scrollView.contentInset = requiredContentInset
+                    
+                    var contentOffset = scrollView.contentOffset
+                    contentOffset.y = -requiredContentInset.top
+                    scrollView.contentOffset = contentOffset
+                }
             }
         }        
     }
@@ -84,6 +87,6 @@ internal extension TabmanViewController {
 public extension UIViewController {
     
     public func setNeedsScrollViewInsetUpdate() {
-        
+        // TODO
     }
 }

@@ -150,7 +150,6 @@ internal extension TabmanViewController {
         self.tabmanBar = bar
     }
     
-    
     /// Update the bar with a new screen location.
     ///
     /// - Parameter location: The new location.
