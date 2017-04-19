@@ -45,12 +45,17 @@ internal extension TabmanViewController {
 // MARK: - Child view controller layout
 internal extension TabmanViewController {
     
+    /// Automatically inset any table/collection views in a child view controller for the TabmanBar.
+    ///
+    /// - Parameter childViewController: The child view controller.
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
         guard let childViewController = childViewController else { return }
         guard self.automaticallyInsetsChildScrollViews else { return }
         
         // if a scroll view is found in child VC subviews inset by the required content inset.
         for subview in childViewController.view?.subviews ?? [] {
+            guard subview is UICollectionView || subview is UITableView else { continue }
+            
             if let scrollView = subview as? UIScrollView {
                 
                 var requiredContentInset = self.bar.requiredContentInset
