@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Required Bar inset calculation.
 internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
@@ -42,7 +43,7 @@ internal extension TabmanViewController {
     }
 }
 
-// MARK: - Child view controller layout
+// MARK: - Child view controller insetting.
 internal extension TabmanViewController {
     
     /// Automatically inset any table/collection views in a child view controller for the TabmanBar.
@@ -91,9 +92,16 @@ internal extension TabmanViewController {
     }
 }
 
+// MARK: - UIViewController extension for handling insetting.
 public extension UIViewController {
     
+    /// Indicates to the TabmanViewController that a child scroll view inset 
+    /// needs to be updated.
+    ///
+    /// This should be called if the contentInset of a UITableView or UICollectionView is changed
+    /// after viewDidLoad.
     public func setNeedsScrollViewInsetUpdate() {
-        // TODO
+        guard let tabmanViewController = self.parent?.parent as? TabmanViewController else { return }
+        tabmanViewController.insetChildViewControllerIfNeeded(self)
     }
 }
