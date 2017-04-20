@@ -25,7 +25,7 @@ internal protocol TabmanBarDelegate: class {
     /// - Parameters:
     ///   - bar: The bar.
     ///   - index: The selected index.
-    func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int)
+    func bar(_ bar: TabmanBar, didSelectItemAt index: Int)
 }
 
 /// Lifecycle functions of TabmanBar
