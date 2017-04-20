@@ -96,6 +96,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didReload viewControllers: [UIViewController],
+                                    currentIndex: PageboyViewController.PageIndex) {
+        
+    }
+    
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
@@ -310,7 +316,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     }
     
     public func bar(_ bar: TabmanBar, didSelectItemAtIndex index: Int) {
-        self.scrollToPage(.atIndex(index: index), animated: true)
+        self.scrollToPage(.at(index: index), animated: true)
     }
 }
 
