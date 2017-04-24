@@ -102,7 +102,7 @@ func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyVie
 3) All done! 🍻
 
 ### Doing a bit more
-As `Tabman` is based on [Pageboy](github.com/msaps/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
+As Tabman is based on [Pageboy](github.com/msaps/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
 
 ```swift
 // Scroll the page view controller to a new page.
@@ -117,7 +117,7 @@ public func reloadPages()
 Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/msaps/Pageboy/blob/master/README.md).
 
 ## Child Content Insetting
-`Tabman` will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
+Tabman will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
 
 ```swift
 tabmanViewController.automaticallyInsetsChildScrollViews = false
