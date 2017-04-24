@@ -19,12 +19,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// The instance managed Tabman bar.
     internal fileprivate(set) var tabmanBar: TabmanBar?
     /// Currently attached TabmanBar if it exists.
-    internal fileprivate(set) var attachedTabmanBar: TabmanBar?
+    internal var attachedTabmanBar: TabmanBar?
     /// The view that is currently being used to embed the instance managed TabmanBar.
-    internal fileprivate(set) var embeddingView: UIView?
+    internal var embeddingView: UIView?
     
     /// Returns the active bar, prefers attachedTabmanBar if available.
-    fileprivate var activeTabmanBar: TabmanBar? {
+    internal var activeTabmanBar: TabmanBar? {
         if let attachedTabmanBar = self.attachedTabmanBar {
             return attachedTabmanBar
         }
@@ -37,6 +37,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
+    
+    internal lazy var viewControllerInsets: [Int : UIEdgeInsets] = [:]
+    
+    /// Whether any scroll views in child view controllers should be automatically insetted
+    /// to display below the TabmanBar.
+    public var automaticallyInsetsChildScrollViews: Bool = true
     
     //
     // MARK: Lifecycle
@@ -51,6 +57,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         // add bar to view
         self.reloadBar(withStyle: self.bar.style)
         self.updateBar(withLocation: self.bar.location)
+    }
+    
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.reloadRequiredBarInsets()
+        self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -70,6 +83,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       willScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
+        self.insetChildViewControllerIfNeeded(self.viewControllers?[index])
+        
         if animated {
             UIView.animate(withDuration: 0.3, animations: {
                 self.activeTabmanBar?.updatePosition(CGFloat(index), direction: direction)
@@ -99,7 +114,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReload viewControllers: [UIViewController],
                                     currentIndex: PageboyViewController.PageIndex) {
-        
+        self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
     private func updateBar(withPosition position: CGFloat,
@@ -145,7 +160,6 @@ internal extension TabmanViewController {
         self.tabmanBar = bar
     }
     
-    
     /// Update the bar with a new screen location.
     ///
     /// - Parameter location: The new location.
@@ -186,117 +200,8 @@ internal extension TabmanViewController {
         
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
-    }
-    
-    /// Reload the required bar insets for the current bar.
-    func reloadRequiredBarInsets() {
-        self.bar.requiredContentInset = self.calculateRequiredBarInsets()
-    }
-    
-    /// Calculate the required insets for the current bar.
-    ///
-    /// - Returns: The required bar insets
-    private func calculateRequiredBarInsets() -> UIEdgeInsets {
-        guard self.embeddingView == nil && self.attachedTabmanBar == nil else {
-            return .zero
-        }
         
-        let frame = self.activeTabmanBar?.frame ?? .zero
-        var insets = UIEdgeInsets.zero
-        
-        var location = self.bar.location
-        if location == .preferred {
-            location = self.bar.style.preferredLocation
-        }
-        
-        switch location {
-        case .bottom:
-            insets.bottom = frame.size.height
-            
-        default:
-            insets.top = frame.size.height
-        }
-        return insets
-    }
-}
-
-// MARK: - TabmanBar attach/detachment
-public extension TabmanViewController {
-    
-    /// Attach a TabmanBar that is somewhere in the view hierarchy.
-    /// This will replace the TabmanViewController managed instance.
-    ///
-    /// - Parameter bar: The bar to attach.
-    public func attach(bar: TabmanBar) {
-        guard self.attachedTabmanBar == nil else { return }
-        
-        self.tabmanBar?.isHidden = true
-        self.reloadRequiredBarInsets()
-        
-        // hook up new bar
-        bar.dataSource = self
-        bar.delegate = self
-        bar.transitionStore = self.barTransitionStore
-        if let appearance = self.bar.appearance {
-            bar.appearance = appearance
-        }
-        bar.isHidden = true
-        self.attachedTabmanBar = bar
-        
-        bar.reloadData()
-    }
-    
-    
-    /// Detach a currently attached external TabmanBar.
-    /// This will reinstate the TabmanViewController managed instance.
-    ///
-    /// - Returns: The detached bar.
-    @discardableResult public func detachAttachedBar() -> TabmanBar? {
-        guard let bar = self.attachedTabmanBar else { return nil }
-        guard self.attachedTabmanBar === bar else { return nil }
-        
-        bar.dataSource = nil
-        bar.delegate = nil
-        bar.transitionStore = nil
-        bar.isHidden = false
-        self.attachedTabmanBar = nil
-        
-        self.tabmanBar?.reloadData()
-        self.view.layoutIfNeeded()
-
-        self.reloadRequiredBarInsets()
-        
-        return bar
-    }
-    
-    /// Embed the TabmanBar in an external view.
-    /// This will add the bar to the specified view, and pin the bar edges to the view edges.
-    ///
-    /// - Parameter view: The view to embed the bar in.
-    public func embedBar(inView view: UIView) {
-        guard let bar = self.tabmanBar else { return }
-        guard self.embeddingView == nil || view === self.embeddingView else { return }
-
-        self.embeddingView = view
-        
-        bar.removeFromSuperview()
-        view.addSubview(bar)
-        bar.autoPinEdgesToSuperviewEdges()
-        self.reloadRequiredBarInsets()
-
-        view.layoutIfNeeded()
-    }
-    
-    /// Disembed the TabmanBar from an external view if it is currently embedded.
-    public func disembedBar() {
-        guard let bar = self.tabmanBar else { return }
-        guard self.embeddingView != nil else { return }
-        
-        bar.removeFromSuperview()
-        self.embeddingView = nil
-        
-        self.updateBar(withLocation: self.bar.location)
-        self.reloadRequiredBarInsets()
+        self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
 }
 
@@ -343,7 +248,7 @@ extension TabmanViewController: TabmanBarConfigDelegate {
     
     func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?) {
         self.activeTabmanBar?.reloadData()
-        
+
         self.view.layoutIfNeeded()
         self.reloadRequiredBarInsets()
     }
