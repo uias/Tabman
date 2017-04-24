@@ -52,7 +52,13 @@ github "uias/Tabman"
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run `pod install` and build the workspace.
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run 
+
+```ogdl
+carthage bootstrap --platform ios
+```
+
+and build the workspace.
 
 ## Requirements
 Tabman requires iOS 9.0 or above.
@@ -109,6 +115,15 @@ public func reloadPages()
 ```
 
 Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/msaps/Pageboy/blob/master/README.md).
+
+## Child Content Insetting
+`Tabman` will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
+
+```swift
+tabmanViewController.automaticallyInsetsChildScrollViews = false
+```
+
+A `requiredContentInset` property is also available on `TabmanBarConfig` which provides the `UIEdgeInsets` required by the currently visible `TabmanBar`. Note, this does not does not include any insets for UIKit components such as a `UINavigationBar`.
 
 ## Customisation
 The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
