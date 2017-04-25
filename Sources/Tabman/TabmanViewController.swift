@@ -48,8 +48,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     // MARK: Lifecycle
     //
     
-    open override func loadView() {
-        super.loadView()
+    open override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.delegate = self
         self.bar.delegate = self
