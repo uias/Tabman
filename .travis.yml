@@ -4,21 +4,16 @@ branches:
   only:
   - master
   - develop
-
 before_install:
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
-  - carthage bootstrap --platform iOS
-
+- brew update
+- brew outdated carthage || brew upgrade carthage
+- carthage bootstrap --platform iOS
 script:
-  - xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' build test
-  - pod lib lint --quick
-
+- xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
+  Simulator,name=iPhone 7,OS=10.1' build test
+- pod lib lint --quick
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 notifications:
   slack:
-    on_success: change
-    on_failure: always
-    secure: QmQzW3v8D5DQTsYztvBwpZVDxU/B8aWhdwiwj6kjwQ7/BYtKdgndXtgYpIDHNTytrFB7LKnH5xxq2sDdbn9qr85ICi4cdatzPwb3uty8LnbV92KSxnjM1D7Ze1zDp86U773yfJZWlsb/Bz9/AXKxBCOlr9QiU/cbqrLZjufIRI9vHsrC+eLQlQrKNKNRfFZAUdFuCsbFqk05Cg6MVAtNXa+SSWbyCJBmxu4IGkfEpo2IbIeD17gYxmnu9yRH1s/8/U86uSyZw4bmaDIfE1vM911lyZtIqE7BFXUUc+dQ2DgjlOC0FdE8Oa2Nni0B8P6cHkQijJo8XVixDTvpK03I9wPuiwpIQ5waOpx1e2UIkymKovyf4N2i2SM/g+KU4xmNrREYPZpS8NwMh7tYO6Y3/eBc3Oa0MkJiPdZmk7oUQqEKRo5krstFgS05gqhb1ycOdpGEou05n/8xXxS7ccsTexu6H8sjGV49NPvG4s2mX7Ps2UjZkL68SAY6GUOLAPrt8YE9vWC4Jhyn11xL+JhdACa+K/Pcd9IazfeT3zjt8F7juF2KFJwLuMBOnK3MbhinJA+n3VFfV4VKPA1IVTpjPGzsje9a50SloUOismsk9Ls0dViPsQmeFixjFw4ZfMUZXqruLXH7RdNfLrslE2H/1eLEsKMvnA1YlzQXL7PM5ao=
+    secure: UNjnfbSDI8QtDRvsWE/669wehbEnamcQ4FeWgE3sXB7wz+HC52vSel5GG8HI+qBKj6ZlaPUQWGhBEX/sFY/uIafD0qFA1mdLUBQ8ZL33aPENa9bfF1Caag8ytuacBQd7MlZcDuWzaxBHyAY5aCtGDGppg8D4E/GYJlpIQaLC3V4Ch//A/tjrPXYp40OewmpwBgB/0BJk6xelYS3Q/gPlkzGK0eSw5YP2pCymhPUHfrsluKAd2Rbdv9GztGctHBvPWi6Mf5OYYV72pJPdeWj1DF6TsIp+rgpmznMOcNasQfCkSThH7oZujSVLjpB3m28z0vuXEojj1Hd4pWfRzPb0LYTiMNw0dO43lAywsZPzGgrRw3gJaFIgUtF2odGC31KDkzgwwHzheqHYP7My3qoj29sKSxuTPs+epn6T2DSl4iAUNnf+bFnclvGACMalAGag5+GhEtIYztBkXT1NojMpnXRVc1rClZTWVXQUmHlxWIYmaVIMeO4XLack1HmbumZS1S4STvRV/wff4Ww+rExhpZnsRPv4hFRrUWunkmJIEGhWLUHM3McPiXEuAFl9WQYuOupUmQj7wNBH8k7Wr50WqxeiC4N1FWJ2OTDxQGh9v5wYBDtaVHNIt0VjSe1LRHZR+JUHP2jWHmyrCijw0sE2RM09kY0EjykCdWVuODfqfKA=
