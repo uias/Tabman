@@ -120,7 +120,7 @@ Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.c
 Tabman will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
 
 ```swift
-tabmanViewController.automaticallyInsetsChildScrollViews = false
+tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
 ```
 
 A `requiredContentInset` property is also available on `TabmanBarConfig` which provides the `UIEdgeInsets` required by the currently visible `TabmanBar`. Note, this does not does not include any insets for UIKit components such as a `UINavigationBar`.
