@@ -50,7 +50,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// The current position of the bar.
     internal private(set) var currentPosition: CGFloat = 0.0
-    /// Store of available transitions for bar item transitions.
+    /// Store of available transitions for bar item/indicator transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
     
     /// The object that acts as a delegate to the bar.
