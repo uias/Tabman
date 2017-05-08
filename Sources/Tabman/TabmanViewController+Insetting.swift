@@ -52,7 +52,7 @@ internal extension TabmanViewController {
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
         
         guard let childViewController = childViewController else { return }
-        guard self.shouldAutomaticallyInsetChildScrollViews else { return }
+        guard self.automaticallyAdjustsChildScrollViewInsets else { return }
         
         // if a scroll view is found in child VC subviews inset by the required content inset.
         for subview in childViewController.view?.subviews ?? [] {

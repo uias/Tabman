@@ -42,7 +42,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Whether any UICollectionView / UITableView in child view controllers should be 
     /// automatically insetted to display below the TabmanBar.
-    public var shouldAutomaticallyInsetChildScrollViews: Bool = true
+    public var automaticallyAdjustsChildScrollViewInsets: Bool = true {
+        didSet {
+            if automaticallyAdjustsScrollViewInsets {
+                self.automaticallyAdjustsScrollViewInsets = false
+            }
+        }
+    }
     
     //
     // MARK: Lifecycle
@@ -50,6 +56,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         self.delegate = self
         self.bar.delegate = self
