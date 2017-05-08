@@ -1,19 +1,12 @@
 language: objective-c
 osx_image: xcode8.2
-branches:
-  only:
-  - master
-  - develop
 before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
-- carthage bootstrap --platform iOS
+- gem update fastlane --no-ri --no-rdoc --no-document
 script:
-- xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
-  Simulator,name=iPhone 7,OS=10.1' build test
-- pod lib lint --quick
+- .travis/build.sh
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 notifications:
-  slack:
-    secure: UNjnfbSDI8QtDRvsWE/669wehbEnamcQ4FeWgE3sXB7wz+HC52vSel5GG8HI+qBKj6ZlaPUQWGhBEX/sFY/uIafD0qFA1mdLUBQ8ZL33aPENa9bfF1Caag8ytuacBQd7MlZcDuWzaxBHyAY5aCtGDGppg8D4E/GYJlpIQaLC3V4Ch//A/tjrPXYp40OewmpwBgB/0BJk6xelYS3Q/gPlkzGK0eSw5YP2pCymhPUHfrsluKAd2Rbdv9GztGctHBvPWi6Mf5OYYV72pJPdeWj1DF6TsIp+rgpmznMOcNasQfCkSThH7oZujSVLjpB3m28z0vuXEojj1Hd4pWfRzPb0LYTiMNw0dO43lAywsZPzGgrRw3gJaFIgUtF2odGC31KDkzgwwHzheqHYP7My3qoj29sKSxuTPs+epn6T2DSl4iAUNnf+bFnclvGACMalAGag5+GhEtIYztBkXT1NojMpnXRVc1rClZTWVXQUmHlxWIYmaVIMeO4XLack1HmbumZS1S4STvRV/wff4Ww+rExhpZnsRPv4hFRrUWunkmJIEGhWLUHM3McPiXEuAFl9WQYuOupUmQj7wNBH8k7Wr50WqxeiC4N1FWJ2OTDxQGh9v5wYBDtaVHNIt0VjSe1LRHZR+JUHP2jWHmyrCijw0sE2RM09kY0EjykCdWVuODfqfKA=
+  email: false
