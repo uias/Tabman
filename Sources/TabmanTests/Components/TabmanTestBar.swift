@@ -85,7 +85,7 @@ class TabmanTestBar: TabmanBar {
 
 extension TabmanTestBar: TabmanBarDataSource {
     
-    func items(forBar bar: TabmanBar) -> [TabmanBarItem]? {
+    func items(for bar: TabmanBar) -> [TabmanBarItem]? {
         guard numberOfTabs > 0 else {
             return nil
         }

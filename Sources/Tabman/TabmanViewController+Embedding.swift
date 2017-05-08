@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - TabmanBar embedding + attach/detachment
+// MARK: - External TabmanBar attach/detachment.
 public extension TabmanViewController {
     
     /// Attach a TabmanBar that is somewhere in the view hierarchy.
@@ -34,7 +34,6 @@ public extension TabmanViewController {
         bar.reloadData()
     }
     
-    
     /// Detach a currently attached external TabmanBar.
     /// This will reinstate the TabmanViewController managed instance.
     ///
@@ -56,6 +55,11 @@ public extension TabmanViewController {
         
         return bar
     }
+    
+}
+
+// MARK: - Internal TabmanBar embedding in external view.
+public extension TabmanViewController {
     
     /// Embed the TabmanBar in an external view.
     /// This will add the bar to the specified view, and pin the bar edges to the view edges.
@@ -86,4 +90,5 @@ public extension TabmanViewController {
         self.updateBar(withLocation: self.bar.location)
         self.reloadRequiredBarInsets()
     }
+    
 }

@@ -9,6 +9,8 @@
 import UIKit
 import Pageboy
 
-/// Transition protocol for indicators.
+/// A transition that occurs on the indicator within a TabmanBar when the position is updated.
+///
+/// This should be used to update the position / state of the indicator etc.
 internal class TabmanIndicatorTransition: TabmanTransition {
 }

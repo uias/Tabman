@@ -1,5 +1,5 @@
 //
-//  TabmanItemColorTransition.swift
+//  TabmanItemColorCrossfadeTransition.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 14/03/2017.
@@ -9,7 +9,10 @@
 import UIKit
 import Pageboy
 
-class TabmanItemColorTransition: TabmanItemTransition {
+/// TabmanItemColorCrossfadeTransition
+///
+/// Transition that cross-fades colors on the selected and unselected items to signify the active item.
+class TabmanItemColorCrossfadeTransition: TabmanItemTransition {
     
     override func transition(withPosition position: CGFloat,
                              direction: PageboyViewController.NavigationDirection,

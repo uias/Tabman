@@ -15,7 +15,7 @@ public protocol TabmanBarDataSource: class {
     ///
     /// - Parameter bar: The bar.
     /// - Returns: Items to display in the tab bar.
-    func items(forBar bar: TabmanBar) -> [TabmanBarItem]?
+    func items(for bar: TabmanBar) -> [TabmanBarItem]?
 }
 
 internal protocol TabmanBarDelegate: class {
