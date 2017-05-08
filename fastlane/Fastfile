@@ -23,7 +23,7 @@ platform :ios do
   lane :deploy do
     podspec = "Tabman.podspec"
 
-    # update Podspec version
+    # get Podspec version
     version = version_get_podspec(path: podspec)
 
     # Push new Github release
