@@ -12,13 +12,11 @@ import Pageboy
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
-    //
     // MARK: Properties
-    //
     
-    /// The instance managed Tabman bar.
+    /// The internally managed Tabman bar.
     internal fileprivate(set) var tabmanBar: TabmanBar?
-    /// Currently attached TabmanBar if it exists.
+    /// The currently attached TabmanBar (if it exists).
     internal var attachedTabmanBar: TabmanBar?
     /// The view that is currently being used to embed the instance managed TabmanBar.
     internal var embeddingView: UIView?
@@ -50,9 +48,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +79,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }, completion: nil)
     }
     
-    //
     // MARK: PageboyViewControllerDelegate
-    //
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       willScrollToPageAtIndex index: Int,
@@ -236,7 +230,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
 // MARK: - TabmanBarConfigDelegate
 extension TabmanViewController: TabmanBarConfigDelegate {
     
-    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBar.Style) {
+    func config(_ config: TabmanBarConfig, didUpdate style: TabmanBar.Style) {
         guard self.attachedTabmanBar == nil else { return }
         
         self.clearUpBar(&self.tabmanBar)
@@ -244,17 +238,17 @@ extension TabmanViewController: TabmanBarConfigDelegate {
         self.updateBar(withLocation: config.location)
     }
     
-    func config(_ config: TabmanBarConfig, didUpdateLocation location: TabmanBarConfig.Location) {
+    func config(_ config: TabmanBarConfig, didUpdate location: TabmanBarConfig.Location) {
         guard self.attachedTabmanBar == nil else { return }
 
         self.updateBar(withLocation: location)
     }
     
-    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.Appearance) {
+    func config(_ config: TabmanBarConfig, didUpdate appearance: TabmanBar.Appearance) {
         self.activeTabmanBar?.appearance = appearance
     }
     
-    func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?) {
+    func config(_ config: TabmanBarConfig, didUpdate items: [TabmanBarItem]?) {
         self.activeTabmanBar?.reloadData()
 
         self.view.layoutIfNeeded()
