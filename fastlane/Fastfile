@@ -1,0 +1,46 @@
+
+fastlane_version "2.26.1"
+
+default_platform :ios
+
+platform :ios do
+
+  desc "Bootstrap dependencies"
+  lane :bootstrap do
+    carthage(
+      command: "bootstrap",
+      platform: "iOS"
+    )
+  end
+
+  desc "Run unit tests"
+  lane :test do
+    bootstrap
+    scan(workspace: "Tabman.xcworkspace", scheme: "Tabman", clean: true)
+  end
+
+  desc "Deploy a new version to CocoaPods and GitHub"
+  lane :deploy do
+    podspec = "Tabman.podspec"
+
+    # update Podspec version
+    version = version_get_podspec(path: podspec)
+
+    # Push new Github release
+    github_release = set_github_release(
+      repository_name: "uias/Tabman",
+      api_token: ENV["GITHUB_TOKEN"],
+      name: version,
+      tag_name: version,
+      description: "#{version} release.",
+      commitish: "master"
+    )
+
+    # Push spec
+    pod_push(allow_warnings: true, verbose: true)
+
+    slack(
+      message: "Tabman v#{version} released!" 
+    )
+  end
+end

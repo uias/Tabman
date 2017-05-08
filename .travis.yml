@@ -7,11 +7,8 @@ branches:
 before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
-- carthage bootstrap --platform iOS
 script:
-- xcodebuild -workspace Tabman.xcworkspace -scheme Tabman -destination 'platform=iOS
-  Simulator,name=iPhone 7,OS=10.1' build test
-- pod lib lint --quick
+- .travis/build.sh
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 notifications:
