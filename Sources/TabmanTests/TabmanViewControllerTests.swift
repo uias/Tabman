@@ -13,22 +13,13 @@ import Pageboy
 class TabmanViewControllerTests: XCTestCase {
 
     var tabmanViewController: TabmanTestViewController!
-    
-    //
-    // MARK: Environment
-    //
-    
+
     override func setUp() {
         super.setUp()
         
         self.tabmanViewController = TabmanTestViewController()
         self.tabmanViewController.loadViewIfNeeded()
     }
-    
-    
-    //
-    // MARK: Tests
-    //
     
     /// Test that the item count limit on a TabmanBar is correctly handled
     /// with valid data.
@@ -59,6 +50,8 @@ class TabmanViewControllerTests: XCTestCase {
                      "TabmanBar itemCountLimit is not evaluated correctly for invalid item count.")
     }
     
+    // MARK: Attachment
+    
     /// Test that TabmanViewController allows attaching of an external TabmanBar correctly.
     func testAttachExternalBar() {
         let testBar = TabmanTestBar()
@@ -84,6 +77,8 @@ class TabmanViewControllerTests: XCTestCase {
                       "Detaching external TabmanBar does not clean up correctly.")
     }
     
+    // MARK: Embedding
+    
     /// Test that TambmanViewController handles embedding internal TabmanBar in an external view.
     func testEmbedBarExternally() {
         let testView = UIView()
@@ -106,5 +101,12 @@ class TabmanViewControllerTests: XCTestCase {
             self.tabmanViewController.tabmanBar?.superview !== testView &&
             self.tabmanViewController.embeddingView == nil,
                       "Disembedding TabmanBar from an external view does not clean up correctly.")
+    }
+    
+    // MARK: Insetting
+    
+    /// Test that automaticallyAdjustsScrollViewInsets is set to false.
+    func testAutomaticallyAdjustScrollViewInsetsFlag() {
+        XCTAssertFalse(self.tabmanViewController.automaticallyAdjustsScrollViewInsets)
     }
 }

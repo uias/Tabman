@@ -26,7 +26,7 @@ internal class TabmanBarTransitionStore: Any {
         // initialize available transitions
         let scrollingIndicatorTransition = TabmanScrollingBarIndicatorTransition()
         let staticIndicatorTransition = TabmanStaticBarIndicatorTransition()
-        let itemColorTransition = TabmanItemColorTransition()
+        let itemColorTransition = TabmanItemColorCrossfadeTransition()
         let itemMaskTransition = TabmanItemMaskTransition()
         
         // create transitions hashmap
