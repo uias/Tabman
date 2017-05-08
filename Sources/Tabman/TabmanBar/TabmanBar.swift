@@ -13,9 +13,7 @@ import Pageboy
 /// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
-    //
     // MARK: Types
-    //
     
     /// The style of the bar.
     ///
@@ -41,18 +39,18 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         case explicit(value: CGFloat)
     }
     
-    //
     // MARK: Properties
-    //
     
-    // Private
-    
+    /// The items that are displayed in the bar.
     internal var items: [TabmanBarItem]? {
         didSet {
             self.isHidden = (items?.count ?? 0) == 0
         }
     }
+    
+    /// The current position of the bar.
     internal private(set) var currentPosition: CGFloat = 0.0
+    /// Store of available transitions for bar item transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
     
     /// The object that acts as a delegate to the bar.
@@ -98,7 +96,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     /// The bottom separator view for the bar.
     internal private(set) var bottomSeparator = TabmanSeparator()
-    
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
         didSet {
@@ -106,8 +103,16 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             self.clear(indicator: oldValue)
         }
     }
+    /// Mask view used for indicator.
+    internal var indicatorMaskView: UIView = {
+        let maskView = UIView()
+        maskView.backgroundColor = .black
+        return maskView
+    }()
+    
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
+    
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
         didSet {
             guard indicatorIsProgressive != oldValue else { return }
@@ -119,11 +124,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorCompresses: Bool = TabmanBar.Appearance.defaultAppearance.indicator.compresses ?? false
-    internal var indicatorMaskView: UIView = {
-        let maskView = UIView()
-        maskView.backgroundColor = .black
-        return maskView
-    }()
     
     /// Preferred style for the indicator. 
     /// Bar conforms at own discretion via usePreferredIndicatorStyle()
@@ -140,9 +140,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
-    //
     // MARK: Init
-    //
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -167,9 +165,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     open override func layoutSubviews() {
         super.layoutSubviews()
@@ -209,9 +205,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         return nil
     }
     
-    //
     // MARK: Data
-    //
     
     /// Reload and reconstruct the contents of the bar.
     public func reloadData() {
@@ -219,9 +213,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.clearAndConstructBar()
     }
     
-    //
     // MARK: Updating
-    //
     
     internal func updatePosition(_ position: CGFloat,
                                  direction: PageboyViewController.NavigationDirection,
@@ -244,9 +236,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                             bounds: bounds)
     }
     
-    //
     // MARK: TabmanBarLifecycle
-    //
     
     open func constructTabBar(items: [TabmanBarItem]) {
         fatalError("constructTabBar() should be implemented in TabmanBar subclasses.")
