@@ -11,13 +11,22 @@ import Pageboy
 
 internal protocol TabmanTransitionLifecycle {
     
+    /// The TabmanBar to use for the transition.
     var tabmanBar: TabmanBar? { get set }
     
+    /// Update the transition for a new position.
+    ///
+    /// - Parameters:
+    ///   - position: The new position.
+    ///   - direction: The direction of the scroll.
+    ///   - indexRange: The range of valid indexes.
+    ///   - bounds: The bounds for the TabmanBar.
     func transition(withPosition position: CGFloat,
                     direction: PageboyViewController.NavigationDirection,
                     indexRange: Range<Int>,
                     bounds: CGRect)
     
+    /// Reload the transition for the current bar position.
     func updateForCurrentPosition()
 }
 

@@ -9,6 +9,9 @@
 import UIKit
 import Pageboy
 
+/// TabmanItemColorCrossfadeTransition
+///
+/// Transition that cross-fades colors on the selected and unselected items to signify the active item.
 class TabmanItemColorCrossfadeTransition: TabmanItemTransition {
     
     override func transition(withPosition position: CGFloat,

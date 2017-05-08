@@ -9,6 +9,9 @@
 import UIKit
 import Pageboy
 
+/// TabmanItemMaskTransition
+///
+/// Transition that adjusts the frame of the TabmanBar indicatorMaskView to be over the active item frame.
 class TabmanItemMaskTransition: TabmanItemTransition {
     
     override func transition(withPosition position: CGFloat,
