@@ -102,7 +102,7 @@ func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyVie
 3) All done! 🍻
 
 ### Doing a bit more
-As Tabman is based on [Pageboy](github.com/msaps/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
+As Tabman is based on [Pageboy](github.com/uias/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
 
 ```swift
 // Scroll the page view controller to a new page.
@@ -114,7 +114,7 @@ public func scrollToPage(_ pageIndex: PageIndex,
 public func reloadPages()
 ```
 
-Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/msaps/Pageboy/blob/master/README.md).
+Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/uias/Pageboy/blob/master/README.md).
 
 ## Child Content Insetting
 Tabman will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
@@ -136,7 +136,7 @@ The style of bar to display, by default this is set to `.scrollingButtonBar`.
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/YorkUI/Tabman-Styles).
+For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).
 
 #### Location
 Where you want the bar to appear, either at the top or bottom of the screen. By default this is set to `.preferred` which will use the predefined preferred location for the active style.
@@ -232,7 +232,7 @@ For more advanced customisation, including defining your own indicator and bar s
 Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/MerrickSapsford/Tabman).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/uias/Tabman).
 
 ## License
 
