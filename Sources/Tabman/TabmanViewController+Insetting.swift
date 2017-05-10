@@ -13,7 +13,9 @@ internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
     func reloadRequiredBarInsets() {
-        self.bar.requiredContentInset = self.calculateRequiredBarInsets()
+        self.bar.requiredInsets = TabmanBarInsets(topLayoutGuide: self.topLayoutGuide.length,
+                                                  bottomLayoutGuide: self.bottomLayoutGuide.length,
+                                                  bar: self.calculateRequiredBarInsets())
     }
     
     /// Calculate the required insets for the current bar.
@@ -58,7 +60,7 @@ internal extension TabmanViewController {
         for subview in childViewController.view?.subviews ?? [] {
             if let scrollView = subview as? UIScrollView {
                 
-                var requiredContentInset = self.bar.requiredContentInset
+                var requiredContentInset = self.bar.requiredInsets.barInsets
                 let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
                 
                 requiredContentInset.top += self.topLayoutGuide.length

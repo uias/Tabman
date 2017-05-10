@@ -99,7 +99,14 @@ public class TabmanBarConfig: Any {
     }
     
     /// The content inset required for content underneath the bar.
+    @available(*, deprecated: 0.5.0, message: "Use requiredInsets")
     public internal(set) var requiredContentInset: UIEdgeInsets = .zero
+    
+    public internal(set) var requiredInsets: TabmanBarInsets = .zero {
+        didSet {
+            self.requiredContentInset = requiredInsets.barInsets
+        }
+    }
 }
 
 // MARK: - Additional Style properties for internal use
