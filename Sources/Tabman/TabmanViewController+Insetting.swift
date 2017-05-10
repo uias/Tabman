@@ -13,7 +13,9 @@ internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
     func reloadRequiredBarInsets() {
-        self.bar.requiredContentInset = self.calculateRequiredBarInsets()
+        self.bar.requiredInsets = TabmanBarInsets(topLayoutGuide: self.topLayoutGuide.length,
+                                                  bottomLayoutGuide: self.bottomLayoutGuide.length,
+                                                  bar: self.calculateRequiredBarInsets())
     }
     
     /// Calculate the required insets for the current bar.
@@ -56,15 +58,13 @@ internal extension TabmanViewController {
         
         // if a scroll view is found in child VC subviews inset by the required content inset.
         for subview in childViewController.view?.subviews ?? [] {
-            guard subview is UICollectionView || subview is UITableView else { continue }
-            
             if let scrollView = subview as? UIScrollView {
                 
-                var requiredContentInset = self.bar.requiredContentInset
-                let currentContentInset = self.viewControllerInsets[childViewController.hash] ?? .zero
+                var requiredContentInset = self.bar.requiredInsets.barInsets
+                let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
                 
                 requiredContentInset.top += self.topLayoutGuide.length
-                self.viewControllerInsets[childViewController.hash] = requiredContentInset
+                self.viewControllerInsets[scrollView.hash] = requiredContentInset
 
                 // take account of custom top / bottom insets
                 let topInset = scrollView.contentInset.top - currentContentInset.top
@@ -79,8 +79,17 @@ internal extension TabmanViewController {
                 requiredContentInset.left = currentContentInset.left
                 requiredContentInset.right = currentContentInset.right
                 
+                // ensure scroll view is either at top or full height before doing automatic insetting
+                if requiredContentInset.top > 0.0 {
+                    guard scrollView.frame.minY == 0.0 else { continue }
+                }
+                if requiredContentInset.bottom > 0.0 {
+                    guard scrollView.superview!.bounds.maxY - scrollView.frame.maxY == 0.0 else { continue }
+                }
+                
                 // dont update if we dont need to
                 if scrollView.contentInset != requiredContentInset {
+
                     scrollView.contentInset = requiredContentInset
                     scrollView.scrollIndicatorInsets = requiredContentInset
                     

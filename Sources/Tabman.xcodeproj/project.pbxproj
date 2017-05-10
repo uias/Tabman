@@ -60,6 +60,7 @@
 		D696BFAC1E92531900771F22 /* TabmanViewController+Embedding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696BFAB1E92531900771F22 /* TabmanViewController+Embedding.swift */; };
 		D697AB421E7C166800586DCF /* TabmanClearIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D697AB411E7C166800586DCF /* TabmanClearIndicator.swift */; };
 		D6E5C1AF1E705CF1003FF39D /* TabmanBarConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */; };
+		D6F7FF4C1EC39E050077219B /* TabmanBarInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7FF4B1EC39E050077219B /* TabmanBarInsets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		D696BFAB1E92531900771F22 /* TabmanViewController+Embedding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+Embedding.swift"; sourceTree = "<group>"; };
 		D697AB411E7C166800586DCF /* TabmanClearIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanClearIndicator.swift; sourceTree = "<group>"; };
 		D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfigTests.swift; sourceTree = "<group>"; };
+		D6F7FF4B1EC39E050077219B /* TabmanBarInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarInsets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				D66FEEBB1E79662C00E7E87A /* TabmanBar+Indicator.swift */,
 				D66FEEBD1E79670700E7E87A /* TabmanBar+Protocols.swift */,
 				D6020A931E5DB57400C2B7BA /* TabmanBar+Appearance.swift */,
+				D6F7FF4B1EC39E050077219B /* TabmanBarInsets.swift */,
 				D6020AA51E5DE4A800C2B7BA /* Styles */,
 				D616D09F1E77EFC600C7AA32 /* Transitioning */,
 				D62AC1AE1E5C84CB0020B8AE /* Components */,
@@ -538,6 +541,7 @@
 				D616D0AD1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift in Sources */,
 				463F17C01E81D6B100E5A993 /* TabmanSeparator.swift in Sources */,
 				D66FEEC01E79688000E7E87A /* TabmanBar+Construction.swift in Sources */,
+				D6F7FF4C1EC39E050077219B /* TabmanBarInsets.swift in Sources */,
 				D601368A1E6992BB0013CD42 /* TabmanBarBackgroundView.swift in Sources */,
 				D697AB421E7C166800586DCF /* TabmanClearIndicator.swift in Sources */,
 				D62AC1AB1E5C55290020B8AE /* TabmanScrollView.swift in Sources */,
