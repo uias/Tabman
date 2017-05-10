@@ -98,8 +98,8 @@ public class TabmanBarConfig: Any {
         }
     }
     
-    /// The content inset required for content underneath the bar.
-    public internal(set) var requiredContentInset: UIEdgeInsets = .zero
+    /// The required insets for the bar.
+    public internal(set) var requiredInsets: TabmanBarInsets = .zero
 }
 
 // MARK: - Additional Style properties for internal use
