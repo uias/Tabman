@@ -10,6 +10,7 @@ import Foundation
 
 public extension TabmanBar {
     
+    /// Collection of inset values required to inset child content below TabmanBar.
     public struct Insets {
         
         /// Raw TabmanBar UIEdgeInsets
