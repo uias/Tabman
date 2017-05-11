@@ -13,9 +13,9 @@ internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
     func reloadRequiredBarInsets() {
-        self.bar.requiredInsets = TabmanBarInsets(topLayoutGuide: self.topLayoutGuide.length,
-                                                  bottomLayoutGuide: self.bottomLayoutGuide.length,
-                                                  bar: self.calculateRequiredBarInsets())
+        self.bar.requiredInsets = TabmanBar.Insets(topLayoutGuide: self.topLayoutGuide.length,
+                                                   bottomLayoutGuide: self.bottomLayoutGuide.length,
+                                                   bar: self.calculateRequiredBarInsets())
     }
     
     /// Calculate the required insets for the current bar.

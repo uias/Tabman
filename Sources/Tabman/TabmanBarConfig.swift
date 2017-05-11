@@ -105,7 +105,7 @@ public class TabmanBarConfig: Any {
     }
     
     /// The required insets for the bar.
-    public internal(set) var requiredInsets: TabmanBarInsets = .zero
+    public internal(set) var requiredInsets: TabmanBar.Insets = .zero
 }
 
 // MARK: - Additional Style properties for internal use
