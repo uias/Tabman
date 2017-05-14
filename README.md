@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/uias/Pageboy.svg?branch=master)](https://travis-ci.org/uias/Tabman)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/uias/Tabman)
 [![GitHub release](https://img.shields.io/github/release/uias/Tabman.svg)](https://github.com/uias/Tabman/releases)
@@ -31,13 +32,33 @@ pod 'Tabman'
 
 And run `pod install`.
 
+### Carthage
+Tabman is available through [Carthage](https://github.com/Carthage/Carthage). Simply install carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+Add Tabman to your `Cartfile`:
+
+```ogdl
+github "uias/Tabman" 
+```
+
 **Dependencies**
 
 - [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run `pod install` and build the workspace.
+A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run 
+
+```ogdl
+carthage bootstrap --platform ios
+```
+
+and build the workspace.
 
 ## Requirements
 Tabman requires iOS 9.0 or above.
@@ -81,7 +102,7 @@ func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyVie
 3) All done! 🍻
 
 ### Doing a bit more
-As `Tabman` is based on [Pageboy](github.com/msaps/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
+As Tabman is based on [Pageboy](github.com/uias/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
 
 ```swift
 // Scroll the page view controller to a new page.
@@ -93,7 +114,16 @@ public func scrollToPage(_ pageIndex: PageIndex,
 public func reloadPages()
 ```
 
-Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/msaps/Pageboy/blob/master/README.md).
+Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/uias/Pageboy/blob/master/README.md).
+
+## Child Content Insetting
+Tabman will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
+
+```swift
+tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
+```
+
+A `requiredContentInset` property is also available on `TabmanBarConfig` which provides the `UIEdgeInsets` required by the currently visible `TabmanBar`. Note, this does not does not include any insets for UIKit components such as a `UINavigationBar`.
 
 ## Customisation
 The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
@@ -106,7 +136,7 @@ The style of bar to display, by default this is set to `.scrollingButtonBar`.
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/YorkUI/Tabman-Styles).
+For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).
 
 #### Location
 Where you want the bar to appear, either at the top or bottom of the screen. By default this is set to `.preferred` which will use the predefined preferred location for the active style.
@@ -202,7 +232,7 @@ For more advanced customisation, including defining your own indicator and bar s
 Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/MerrickSapsford/Tabman).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/uias/Tabman).
 
 ## License
 

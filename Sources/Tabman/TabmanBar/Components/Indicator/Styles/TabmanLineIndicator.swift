@@ -81,6 +81,6 @@ internal class TabmanLineIndicator: TabmanIndicator {
     }
     
     override func itemTransitionType() -> TabmanItemTransition.Type? {
-        return TabmanItemColorTransition.self
+        return TabmanItemColorCrossfadeTransition.self
     }
 }

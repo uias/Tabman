@@ -19,6 +19,6 @@ internal class TabmanClearIndicator: TabmanIndicator {
     }
     
     override func itemTransitionType() -> TabmanItemTransition.Type? {
-        return TabmanItemColorTransition.self
+        return TabmanItemColorCrossfadeTransition.self
     }
 }

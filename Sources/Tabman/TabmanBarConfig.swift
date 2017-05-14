@@ -16,28 +16,28 @@ internal protocol TabmanBarConfigDelegate: class {
     /// - Parameters:
     ///   - config: The config.
     ///   - style: The new style.
-    func config(_ config: TabmanBarConfig, didUpdateStyle style: TabmanBar.Style)
+    func config(_ config: TabmanBarConfig, didUpdate style: TabmanBar.Style)
     
     /// The config had its location updated.
     ///
     /// - Parameters:
     ///   - config: The config.
     ///   - location: The new location.
-    func config(_ config: TabmanBarConfig, didUpdateLocation location: TabmanBarConfig.Location)
+    func config(_ config: TabmanBarConfig, didUpdate location: TabmanBarConfig.Location)
     
     /// The config had its items updated.
     ///
     /// - Parameters:
     ///   - config: The config.
     ///   - items: The new items.
-    func config(_ config: TabmanBarConfig, didUpdateItems items: [TabmanBarItem]?)
+    func config(_ config: TabmanBarConfig, didUpdate items: [TabmanBarItem]?)
     
     /// The config had its appearance config updated.
     ///
     /// - Parameters:
     ///   - config: The config.
     ///   - appearance: The new appearance config.
-    func config(_ config: TabmanBarConfig, didUpdateAppearance appearance: TabmanBar.Appearance)
+    func config(_ config: TabmanBarConfig, didUpdate appearance: TabmanBar.Appearance)
 }
 
 /// Configuration object for adjusting appearance and contents of a TabmanBar.
@@ -70,7 +70,7 @@ public class TabmanBarConfig: Any {
         didSet {
             guard style.rawType != oldValue.rawType else { return }
             
-            self.delegate?.config(self, didUpdateStyle: style)
+            self.delegate?.config(self, didUpdate: style)
         }
     }
     
@@ -80,26 +80,32 @@ public class TabmanBarConfig: Any {
             guard location != oldValue else {
                 return
             }
-            self.delegate?.config(self, didUpdateLocation: location)
+            self.delegate?.config(self, didUpdate: location)
         }
     }
     
     /// The items to display in the bar.
     public var items: [TabmanBarItem]? {
         didSet {
-            self.delegate?.config(self, didUpdateItems: items)
+            self.delegate?.config(self, didUpdate: items)
         }
     }
     
     /// The appearance configuration of the bar.
     public var appearance: TabmanBar.Appearance? {
         didSet {
-            self.delegate?.config(self, didUpdateAppearance: appearance ?? .defaultAppearance)
+            self.delegate?.config(self, didUpdate: appearance ?? .defaultAppearance)
         }
     }
     
     /// The content inset required for content underneath the bar.
-    public internal(set) var requiredContentInset: UIEdgeInsets = .zero
+    @available(*, deprecated: 0.5.0, message: "Use requiredInsets")
+    public var requiredContentInset: UIEdgeInsets {
+        return requiredInsets.barInsets
+    }
+    
+    /// The required insets for the bar.
+    public internal(set) var requiredInsets: TabmanBar.Insets = .zero
 }
 
 // MARK: - Additional Style properties for internal use
