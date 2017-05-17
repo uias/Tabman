@@ -28,17 +28,12 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     // MARK: Properties
     //
     
-    // Private
-    
     internal lazy var scrollView: TabmanScrollView = {
         let scrollView = TabmanScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    
     internal var fadeGradientLayer: CAGradientLayer?
-    
-    // Public
     
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
@@ -66,7 +61,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             })
         }
     }
-    
     override var selectedColor: UIColor {
         didSet {
             guard selectedColor != oldValue else { return }
@@ -76,9 +70,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -96,9 +88,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         return TabmanScrollingBarIndicatorTransition.self
     }
     
-    //
     // MARK: TabmanBar Lifecycle
-    //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
@@ -156,6 +146,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
 
 internal extension TabmanScrollingButtonBar {
     
+    /// Updates the visibility of the alpha fade at the edge of scroll view bounds.
+    ///
+    /// - Parameter visible: Whether to show the fade.
     func updateEdgeFade(visible: Bool) {
         if visible {
             
@@ -174,6 +167,9 @@ internal extension TabmanScrollingButtonBar {
         }
     }
     
+    /// Updates scroll view contentInset for an itemDistribution style.
+    ///
+    /// - Parameter itemDistribution: The itemDistribution style.
     func update(for itemDistribution: TabmanBar.Appearance.ItemDistribution) {
         var contentInset = scrollView.contentInset
         switch itemDistribution {

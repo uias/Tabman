@@ -15,9 +15,7 @@ import Pageboy
 /// Akin to Instagram notification screen etc.
 internal class TabmanFixedButtonBar: TabmanStaticButtonBar {
 
-    //
     // MARK: TabmanBar Lifecycle
-    //
     
     override func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
