@@ -11,6 +11,11 @@ import UIKit
 // MARK: - TabmanBar layout appearance properties.
 extension TabmanBar.Appearance {
 
+    public enum ItemDistribution {
+        case leftAligned
+        case centered
+    }
+    
     public struct Layout {
         /// The spacing between items in the bar.
         public var interItemSpacing: CGFloat?
@@ -20,5 +25,7 @@ extension TabmanBar.Appearance {
         public var height: TabmanBar.Height?
         /// The vertical padding between the item and the bar bounds.
         public var itemVerticalPadding: CGFloat?
+        
+        public var itemDistribution: ItemDistribution?
     }
 }

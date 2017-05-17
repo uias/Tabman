@@ -148,6 +148,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+        
+        let itemDistribution = appearance.layout.itemDistribution
+        update(for: itemDistribution ?? defaultAppearance.layout.itemDistribution!)
     }
 }
 
@@ -171,4 +174,20 @@ internal extension TabmanScrollingButtonBar {
         }
     }
     
+    func update(for itemDistribution: TabmanBar.Appearance.ItemDistribution) {
+        var contentInset = scrollView.contentInset
+        switch itemDistribution {
+            
+        case .leftAligned:
+            contentInset.left = 0.0
+            
+        case .centered:
+            let indicatorWidth = indicator?.bounds.size.width ?? 0.0
+            let boundsWidth = bounds.size.width - (2 * edgeInset)
+            contentInset.left = (boundsWidth - indicatorWidth) / 2.0
+            
+        }
+        scrollView.contentInset = contentInset
+        scrollView.contentOffset = CGPoint(x: -contentInset.left, y: 0.0)
+    }
 }

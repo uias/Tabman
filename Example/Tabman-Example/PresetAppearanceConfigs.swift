@@ -33,6 +33,7 @@ class PresetAppearanceConfigs: Any {
             appearance.indicator.lineWeight = .normal
             appearance.layout.edgeInset = 16.0
             appearance.layout.interItemSpacing = 20.0
+            appearance.layout.itemDistribution = .centered
 
         case .buttonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)

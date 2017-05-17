@@ -63,6 +63,7 @@ public extension TabmanBar {
             self.layout.interItemSpacing = 20.0
             self.layout.edgeInset = 16.0
             self.layout.itemVerticalPadding = 12.0
+            self.layout.itemDistribution = .leftAligned
             
             // style
             self.style.background = .blur(style: .extraLight)
