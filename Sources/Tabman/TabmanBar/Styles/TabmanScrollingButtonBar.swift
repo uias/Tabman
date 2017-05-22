@@ -176,11 +176,14 @@ internal extension TabmanScrollingButtonBar {
             
         case .leftAligned:
             contentInset.left = 0.0
+            contentInset.right = 0.0
             
         case .centered:
             let indicatorWidth = indicator?.bounds.size.width ?? 0.0
             let boundsWidth = bounds.size.width - (2 * edgeInset)
-            contentInset.left = (boundsWidth - indicatorWidth) / 2.0
+            let inset = (boundsWidth - indicatorWidth) / 2.0
+            contentInset.left = inset
+            contentInset.right = inset
             
         }
         scrollView.contentInset = contentInset

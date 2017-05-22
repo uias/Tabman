@@ -96,8 +96,9 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
     
     private func scrollIndicatorPositionToVisible(in bar: TabmanScrollingButtonBar) {
         var offset: CGFloat = 0.0
-        let maxOffset = bar.scrollView.contentSize.width - bar.bounds.size.width
-        
+        let contentInset = bar.scrollView.contentInset
+        let maxOffset = (bar.scrollView.contentSize.width + contentInset.right) - bar.bounds.size.width
+        let minOffset = -contentInset.left
         
         if bar.indicatorIsProgressive {
             
@@ -121,7 +122,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
             offset = indicatorXOffset - indicatorWidthOffset
         }
         
-        offset = max(0.0, min(maxOffset, offset))
+        offset = max(minOffset, min(maxOffset, offset))
         bar.scrollView.contentOffset = CGPoint(x: offset, y: 0.0)
     }
 }
