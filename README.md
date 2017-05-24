@@ -99,9 +99,9 @@ func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyVie
 }
 ```
 
-3) All done! 🍻
+3) All done! 🎉
 
-### Doing a bit more
+### Going forward
 As Tabman is based on [Pageboy](github.com/uias/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
 
 ```swift
@@ -123,7 +123,7 @@ Tabman will automatically inset any `UITableView` or `UICollectionView`'s that a
 tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
 ```
 
-A `requiredContentInset` property is also available on `TabmanBarConfig` which provides the `UIEdgeInsets` required by the currently visible `TabmanBar`. Note, this does not does not include any insets for UIKit components such as a `UINavigationBar`.
+A `requiredInsets` property is also available on `TabmanBarConfig` which provides any insets required to inset content correctly for the visible `TabmanBar` manually.
 
 ## Customisation
 The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
