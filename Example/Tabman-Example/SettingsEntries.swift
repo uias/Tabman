@@ -14,6 +14,17 @@ extension SettingsViewController {
     func addItems() -> [SettingsSection] {
         var sections = [SettingsSection]()
         
+        let styleOptions = [TabmanBar.Style.scrollingButtonBar.description,
+                            TabmanBar.Style.buttonBar.description,
+                            TabmanBar.Style.blockTabBar.description,
+                            TabmanBar.Style.bar.description]
+        
+        let indicatorStyleOptions = ["Default",
+                            TabmanIndicator.Style.line.description,
+                            TabmanIndicator.Style.dot.description,
+                            TabmanIndicator.Style.chevron.description,
+                            TabmanIndicator.Style.clear.description]
+        
         let pageVCSection = SettingsSection(title: "Page View Controller")
         pageVCSection.add(item: SettingsItem(type: .toggle,
                                              title: "Infinite Scrolling",
@@ -25,10 +36,7 @@ extension SettingsViewController {
         }))
         
         let appearanceSection = SettingsSection(title: "Appearance")
-        appearanceSection.add(item: SettingsItem(type: .options(values: [TabmanBar.Style.scrollingButtonBar.description,
-                                                                         TabmanBar.Style.buttonBar.description,
-                                                                         TabmanBar.Style.blockTabBar.description,
-                                                                         TabmanBar.Style.bar.description],
+        appearanceSection.add(item: SettingsItem(type: .options(values: styleOptions,
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
                                                  title: "Bar Style",
                                                  description: nil,
@@ -40,11 +48,7 @@ extension SettingsViewController {
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
                 self.tabViewController?.reloadPages()
         }))
-        appearanceSection.add(item: SettingsItem(type: .options(values: ["Default",
-                                                                         TabmanIndicator.Style.line.description,
-                                                                         TabmanIndicator.Style.dot.description,
-                                                                         TabmanIndicator.Style.chevron.description,
-                                                                         TabmanIndicator.Style.clear.description],
+        appearanceSection.add(item: SettingsItem(type: .options(values: indicatorStyleOptions,
                                                                 selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
                                                  description: nil,

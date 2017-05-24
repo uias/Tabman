@@ -33,7 +33,7 @@ pod 'Tabman'
 And run `pod install`.
 
 ### Carthage
-Tabman is available through [Carthage](https://github.com/Carthage/Carthage). Simply install carthage with [Homebrew](http://brew.sh/) using the following command:
+Tabman is also available through [Carthage](https://github.com/Carthage/Carthage). Simply install carthage with [Homebrew](http://brew.sh/) using the following command:
 
 ```bash
 $ brew update
@@ -144,9 +144,9 @@ Where you want the bar to appear, either at the top or bottom of the screen. By 
 The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.
 
 #### Appearance
-The `TabmanBarAppearance` object provides all the available properties for appearance customisation of a `TabmanBar`. Not all of the properties are appropriate for each style `TabmanBar`, therefore the bar will only respond to the properties it adheres to.
+The `TabmanBar.Appearance` object provides all the available properties for appearance customisation of a `TabmanBar`. Not all of the properties are appropriate for each style `TabmanBar`, therefore the bar will only respond to the properties it adheres to.
 
-To set a custom appearance definition do this on a `TabmanViewController`:
+To set a custom appearance definition do the following on a `TabmanViewController`:
 
 ```swift
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
@@ -156,73 +156,7 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 })
 ```
 
-The following properties are available:
-
-```swift
-/// Indicator configuration
-public struct Indicator {
-	/// The preferred style to use for the indicator.
-	/// This is optionally conformed to by the bar.
-	public var preferredStyle: TabmanIndicator.Style?
-	/// The color of the bar indicator.
-	public var color: UIColor?
-	/// The weight (thickness) of the bar indicator if using a line indicator.
-	public var lineWeight: TabmanIndicator.LineWeight?
-	/// Whether the indicator transiton is progressive.
-	public var isProgressive: Bool?
-	/// Whether the indicator bounces at the end of page ranges.
-	public var bounces: Bool?
-	/// Whether the indicator compresses at the end of page ranges.
-	public var compresses: Bool?
-	/// Whether to use rounded corners on line indicators.
-	public var useRoundedCorners: Bool?
-}
-
-/// State configuration.
-public struct State {
-	/// The color to use for selected items in the bar (text/images etc.).
-	public var selectedColor: UIColor?
-	/// The text color to use for unselected items in the bar (text/images etc.).
-	public var color: UIColor?
-}
-
-/// Text configuration
-public struct Text {
-	/// The font to use for text labels in the bar.
-	public var font: UIFont?
-}
-
-/// Layout configuration
-public struct Layout {
-	/// The spacing between items in the bar.
-	public var interItemSpacing: CGFloat?
-	/// The spacing at the edge of the items in the bar.
-	public var edgeInset: CGFloat?
-	/// The height for the bar.
-	public var height: TabmanBar.Height?
-   	/// The vertical padding between the item and the bar bounds.
-	public var itemVerticalPadding: CGFloat?
-}
-
-/// Bar style configuration.
-public struct Style {
-  /// The background style for the bar.
-  public var background: TabmanBarBackgroundView.BackgroundStyle?
-  /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
-  public var showEdgeFade: Bool?
-  /// Color of the separator at the bottom of the bar.
-  public var bottomSeparatorColor: UIColor?
-}
-
-/// Bar interaction configuration
-public struct Interaction {
-    /// Whether user scroll is enabled on a scrolling button bar.
-    public var isScrollEnabled: Bool?
-}
-```
-
-##### Defaults
-A number of default properties are set on `TabmanBar.Appearance`, these can be viewed [here](Docs/APPEARANCE_DEFAULTS.md).
+**Documentation for all the available appearance properties can be found here: [Appearance Docs](Docs/APPEARANCE.md).**
 
 ### Advanced
 
@@ -232,7 +166,7 @@ For more advanced customisation, including defining your own indicator and bar s
 Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/uias/Tabman).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 ## License
 

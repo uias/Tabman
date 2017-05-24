@@ -28,17 +28,12 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     // MARK: Properties
     //
     
-    // Private
-    
     internal lazy var scrollView: TabmanScrollView = {
         let scrollView = TabmanScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    
     internal var fadeGradientLayer: CAGradientLayer?
-    
-    // Public
     
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
@@ -66,7 +61,6 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             })
         }
     }
-    
     override var selectedColor: UIColor {
         didSet {
             guard selectedColor != oldValue else { return }
@@ -76,9 +70,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -96,9 +88,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         return TabmanScrollingBarIndicatorTransition.self
     }
     
-    //
     // MARK: TabmanBar Lifecycle
-    //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
@@ -148,11 +138,23 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+        
+        // dont allow for centered item distribution if indicator is progressive
+        let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
+        if itemDistribution == .centered && isProgressive {
+            itemDistribution = .leftAligned
+            print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
+        }
+        update(for: itemDistribution)
     }
 }
 
 internal extension TabmanScrollingButtonBar {
     
+    /// Updates the visibility of the alpha fade at the edge of scroll view bounds.
+    ///
+    /// - Parameter visible: Whether to show the fade.
     func updateEdgeFade(visible: Bool) {
         if visible {
             
@@ -171,4 +173,28 @@ internal extension TabmanScrollingButtonBar {
         }
     }
     
+    /// Updates scroll view contentInset for an itemDistribution style.
+    ///
+    /// - Parameter itemDistribution: The itemDistribution style.
+    func update(for itemDistribution: TabmanBar.Appearance.Layout.ItemDistribution) {
+        
+        var contentInset = scrollView.contentInset
+        switch itemDistribution {
+            
+        case .leftAligned:
+            contentInset.left = 0.0
+            contentInset.right = 0.0
+            
+        case .centered:
+            let indicatorWidth = indicator?.bounds.size.width ?? 0.0
+            let boundsWidth = bounds.size.width - (2 * edgeInset)
+            let inset = (boundsWidth - indicatorWidth) / 2.0
+            contentInset.left = inset
+            contentInset.right = inset
+            
+        }
+        
+        scrollView.contentInset = contentInset
+        self.updateForCurrentPosition()
+    }
 }

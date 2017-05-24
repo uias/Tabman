@@ -13,19 +13,13 @@ import Pageboy
 /// A simple bar containing only a line indicator.
 internal class TabmanLineBar: TabmanBar {
 
-    //
     // MARK: Properties
-    //
-    
-    // Public
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 2.0)
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
@@ -39,9 +33,7 @@ internal class TabmanLineBar: TabmanBar {
         return TabmanStaticBarIndicatorTransition.self
     }
     
-    //
     // MARK: TabmanBar Lifecycle
-    //
     
     public override func constructTabBar(items: [TabmanBarItem]) {
         

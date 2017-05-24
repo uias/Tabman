@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Pageboy
 
-/// Abstract concrete class for static (non-scrolling) button bars.
+/// Abstract class for static (non-scrolling) button bars.
 internal class TabmanStaticButtonBar: TabmanButtonBar {
 
     //

@@ -13,9 +13,7 @@ import Pageboy
 /// A button tab bar with a block style indicator behind the selected item.
 internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
-    //
     // MARK: Properties
-    //
     
     private var buttonContentView: UIView?
     private var maskContentView: UIView?
@@ -56,10 +54,8 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         }
     }
     
-    //
     // MARK: Lifecycle
-    //
-    
+
     override public func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .custom(type: TabmanBlockIndicator.self)
     }
@@ -68,9 +64,7 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         return false
     }
     
-    //
     // MARK: TabmanBar Lifecycle
-    //
     
     override public func constructTabBar(items: [TabmanBarItem]) {
         super.constructTabBar(items: items)
@@ -99,9 +93,7 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         self.maskContentView = maskContentView
     }
     
-    //
     // MARK: Utilities
-    //
     
     private func updateButtonsInView(view: UIView?, update: (UIButton) -> Void) {
         guard let view = view else {
