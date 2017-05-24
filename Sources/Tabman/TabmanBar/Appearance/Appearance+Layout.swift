@@ -10,17 +10,18 @@ import UIKit
 
 // MARK: - TabmanBar layout appearance properties.
 extension TabmanBar.Appearance {
-
-    /// The distribution of items within a TabmanBar.
-    ///
-    /// - leftAligned: Items will be laid out from the left of the bar.
-    /// - centered: Items will be laid out from the center of the bar.
-    public enum ItemDistribution {
-        case leftAligned
-        case centered
-    }
     
     public struct Layout {
+        
+        /// The distribution of items within a TabmanBar.
+        ///
+        /// - leftAligned: Items will be laid out from the left of the bar.
+        /// - centered: Items will be laid out from the center of the bar.
+        public enum ItemDistribution {
+            case leftAligned
+            case centered
+        }
+        
         /// The spacing between items in the bar.
         public var interItemSpacing: CGFloat?
         /// The spacing at the edge of the items in the bar.

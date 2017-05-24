@@ -139,8 +139,14 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
         
-        let itemDistribution = appearance.layout.itemDistribution
-        update(for: itemDistribution ?? defaultAppearance.layout.itemDistribution!)
+        // dont allow for centered item distribution if indicator is progressive
+        let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
+        if itemDistribution == .centered && isProgressive {
+            itemDistribution = .leftAligned
+            print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
+        }
+        update(for: itemDistribution)
     }
 }
 
@@ -170,7 +176,8 @@ internal extension TabmanScrollingButtonBar {
     /// Updates scroll view contentInset for an itemDistribution style.
     ///
     /// - Parameter itemDistribution: The itemDistribution style.
-    func update(for itemDistribution: TabmanBar.Appearance.ItemDistribution) {
+    func update(for itemDistribution: TabmanBar.Appearance.Layout.ItemDistribution) {
+        
         var contentInset = scrollView.contentInset
         switch itemDistribution {
             
@@ -186,6 +193,7 @@ internal extension TabmanScrollingButtonBar {
             contentInset.right = inset
             
         }
+        
         scrollView.contentInset = contentInset
         scrollView.contentOffset = CGPoint(x: -contentInset.left, y: 0.0)
     }
