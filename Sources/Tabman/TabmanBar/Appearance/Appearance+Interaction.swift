@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - TabmanBar interaction appearance properties.
-extension TabmanBar.Appearance {
+public extension TabmanBar.Appearance {
     
     public struct Interaction {
         /// Whether user scroll is enabled on a scrolling button bar.

@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - TabmanBar state appearance properties.
-extension TabmanBar.Appearance {
+public extension TabmanBar.Appearance {
     
     public struct State {
         /// The color to use for selected items in the bar (text/images etc.).
