@@ -182,13 +182,13 @@
 				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
 				D601367C1E6990650013CD42 /* CustomTabmanBar.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
-				D62AC10E1E5736B20020B8AE /* Example Components */,
+				D62AC10E1E5736B20020B8AE /* Extras */,
 				D62AC10F1E5736BE0020B8AE /* Resources */,
 			);
 			path = "Tabman-Example";
 			sourceTree = "<group>";
 		};
-		D62AC10E1E5736B20020B8AE /* Example Components */ = {
+		D62AC10E1E5736B20020B8AE /* Extras */ = {
 			isa = PBXGroup;
 			children = (
 				D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */,
@@ -196,7 +196,7 @@
 				D61E50CF1E647F0000AC8C75 /* Settings */,
 				D6BF9D191ED6132000F24456 /* Views */,
 			);
-			name = "Example Components";
+			name = Extras;
 			sourceTree = "<group>";
 		};
 		D62AC10F1E5736BE0020B8AE /* Resources */ = {
