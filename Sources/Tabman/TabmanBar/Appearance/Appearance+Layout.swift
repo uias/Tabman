@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - TabmanBar layout appearance properties.
-extension TabmanBar.Appearance {
+public extension TabmanBar.Appearance {
     
     public struct Layout {
         

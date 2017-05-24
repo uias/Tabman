@@ -156,7 +156,7 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 })
 ```
 
-**Documentation for all the available appearance properties can be found here: [Appearance Docs](Docs/APPEARANCE.md).**
+**Documentation for all the available appearance properties can be found here: [Appearance](Docs/APPEARANCE.md).**
 
 ### Advanced
 

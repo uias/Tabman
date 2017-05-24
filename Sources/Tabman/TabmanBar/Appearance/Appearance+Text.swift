@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - TabmanBar text appearance properties.
-extension TabmanBar.Appearance {
+public extension TabmanBar.Appearance {
 
     public struct Text {
         /// The font to use for text labels in the bar.
