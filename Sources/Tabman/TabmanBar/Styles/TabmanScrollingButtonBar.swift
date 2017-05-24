@@ -195,6 +195,6 @@ internal extension TabmanScrollingButtonBar {
         }
         
         scrollView.contentInset = contentInset
-        scrollView.contentOffset = CGPoint(x: -contentInset.left, y: 0.0)
+        self.updateForCurrentPosition()
     }
 }
