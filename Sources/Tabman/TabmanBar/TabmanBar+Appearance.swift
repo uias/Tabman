@@ -13,6 +13,73 @@ public extension TabmanBar {
     /// Appearance configuration for a TabmanBar.
     public class Appearance: Any {
         
+        public struct Indicator {
+            /// The preferred style to use for the indicator.
+            /// This is optionally conformed to by the bar.
+            public var preferredStyle: TabmanIndicator.Style?
+            /// The color of the bar indicator.
+            public var color: UIColor?
+            /// The weight (thickness) of the bar indicator if using a line indicator.
+            public var lineWeight: TabmanIndicator.LineWeight?
+            /// Whether the indicator transiton is progressive.
+            public var isProgressive: Bool?
+            /// Whether the indicator bounces at the end of page ranges.
+            public var bounces: Bool?
+            /// Whether the indicator compresses at the end of page ranges (Unavailable if bounces enabled).
+            public var compresses: Bool?
+            /// Whether to use rounded corners on line indicators.
+            public var useRoundedCorners: Bool?
+        }
+        
+        public struct Interaction {
+            /// Whether user scroll is enabled on a scrolling button bar.
+            public var isScrollEnabled: Bool?
+        }
+        
+        public struct Layout {
+            
+            /// The distribution of items within a TabmanBar.
+            ///
+            /// - leftAligned: Items will be laid out from the left of the bar.
+            /// - centered: Items will be laid out from the center of the bar.
+            public enum ItemDistribution {
+                case leftAligned
+                case centered
+            }
+            
+            /// The spacing between items in the bar.
+            public var interItemSpacing: CGFloat?
+            /// The spacing at the edge of the items in the bar.
+            public var edgeInset: CGFloat?
+            /// The height for the bar.
+            public var height: TabmanBar.Height?
+            /// The vertical padding between the item and the bar bounds.
+            public var itemVerticalPadding: CGFloat?
+            /// How items in the bar should be distributed.
+            public var itemDistribution: ItemDistribution?
+        }
+        
+        public struct State {
+            /// The color to use for selected items in the bar (text/images etc.).
+            public var selectedColor: UIColor?
+            /// The text color to use for unselected items in the bar (text/images etc.).
+            public var color: UIColor?
+        }
+        
+        public struct Style {
+            /// The background style for the bar.
+            public var background: TabmanBarBackgroundView.BackgroundStyle?
+            /// Whether to show a fade on the items at the bounds edge of a scrolling button bar.
+            public var showEdgeFade: Bool?
+            /// Color of the separator at the bottom of the bar.
+            public var bottomSeparatorColor: UIColor?
+        }
+        
+        public struct Text {
+            /// The font to use for text labels in the bar.
+            public var font: UIFont?
+        }
+        
         // MARK: Properties
         
         /// The indicator configuration.
