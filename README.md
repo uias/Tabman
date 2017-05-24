@@ -166,7 +166,7 @@ For more advanced customisation, including defining your own indicator and bar s
 Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [https://github.com/MerrickSapsford/Tabman](https://github.com/uias/Tabman).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 ## License
 
