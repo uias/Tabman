@@ -13,10 +13,11 @@ platform :ios do
     )
   end
 
-  desc "Run unit tests"
+  desc "Run unit tests and check library"
   lane :test do
     bootstrap
     scan(workspace: "Tabman.xcworkspace", scheme: "Tabman", clean: true)
+    pod_lib_lint(verbose: true)
   end
 
   desc "Deploy a new version to CocoaPods and GitHub"
