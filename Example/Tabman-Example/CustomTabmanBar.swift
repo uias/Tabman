@@ -32,7 +32,8 @@ class CustomTabmanBar: TabmanBar {
     
     // MARK: TabmanBar Lifecycle
     
-    override func constructTabBar(items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView,
+                                   for items: [TabmanBarItem]) {
         
         // create your bar here
         let label = UILabel()
@@ -43,7 +44,8 @@ class CustomTabmanBar: TabmanBar {
         label.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(12.0, 0.0, 12.0, 0.0))
     }
     
-    override func addIndicatorToBar(indicator: TabmanIndicator) {
+    public override func add(indicator: TabmanIndicator,
+                             to contentView: UIView) {
         // add indicator to bar here
     }
     
