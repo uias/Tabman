@@ -119,6 +119,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
+    open func tabmanViewController(shouldSelectItemAt index: Int) -> Bool {
+        return true
+    }
+    
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
@@ -220,6 +224,10 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
         }
         
         return self.bar.items
+    }
+    
+    public func bar(_ bar: TabmanBar, shouldSelectItemAt index: Int) -> Bool {
+        return self.tabmanViewController(shouldSelectItemAt: index)
     }
     
     public func bar(_ bar: TabmanBar, didSelectItemAt index: Int) {
