@@ -53,12 +53,11 @@ class TabmanTestBar: TabmanBar {
         super.reloadData()
     }
     
-    override func constructTabBar(items: [TabmanBarItem]) {
+    override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
         self.hasConstructed = true
     }
     
-    override func addIndicatorToBar(indicator: TabmanIndicator) {
-        
+    override func add(indicator: TabmanIndicator, to contentView: UIView) {
     }
     
     override func update(forPosition position: CGFloat,

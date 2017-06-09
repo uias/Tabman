@@ -97,7 +97,7 @@ internal class TabmanButtonBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     //
     
-    public override func constructTabBar(items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
