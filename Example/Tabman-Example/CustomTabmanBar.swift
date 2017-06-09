@@ -15,11 +15,6 @@ class CustomTabmanBar: TabmanBar {
 
     // MARK: Lifecycle
     
-    override var intrinsicContentSize: CGSize {
-        // return your custom size here if required
-        return super.intrinsicContentSize
-    }
-    
     override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         // declare indicator style here
         return .clear
