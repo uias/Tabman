@@ -32,12 +32,12 @@ override func usePreferredIndicatorStyle() -> Bool {
 	return true
 }
 
-override func constructTabBar(items: [TabmanBarItem]) {
-	
+override func construct(in contentView: UIView,
+                        for items: [TabmanBarItem]) {
 	// create your bar here     
 }
 
-override func addIndicatorToBar(indicator: TabmanIndicator) {
+override func add(indicator: TabmanIndicator, to contentView: UIView) {
 	// add the indicator to the bar here
 }
 
