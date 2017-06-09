@@ -21,9 +21,9 @@ extension TabmanBar {
         
         guard let items = self.items else { return } // no items yet
         
-        self.constructTabBar(items: items)
+        construct(in: contentView, for: items)
         if let indicator = self.indicator {
-            self.addIndicatorToBar(indicator: indicator)
+            add(indicator: indicator, to: contentView)
         }
         
         self.updateCore(forAppearance: self.appearance)

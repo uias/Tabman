@@ -40,7 +40,7 @@ extension TabmanBar {
             // restore default if no preferred style
             self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())
             guard self.indicator != nil else { return }
-            self.addIndicatorToBar(indicator: indicator!)
+            add(indicator: indicator!, to: contentView)
             self.updateForCurrentPosition()
             
             return
@@ -63,7 +63,7 @@ extension TabmanBar {
             self.indicatorIsProgressive = false
         }
         
-        self.addIndicatorToBar(indicator: indicator!)
+        add(indicator: indicator!, to: contentView)
         self.updateForCurrentPosition()
     }
 

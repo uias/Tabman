@@ -238,12 +238,20 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     // MARK: TabmanBarLifecycle
     
+    @available(*, deprecated: 0.5.3, message: "Use construct(in:for:) instead.")
     open func constructTabBar(items: [TabmanBarItem]) {
-        fatalError("constructTabBar() should be implemented in TabmanBar subclasses.")
     }
     
+    open func construct(in contentView: UIView,
+                        for items: [TabmanBarItem]) {
+    }
+    
+    @available(*, deprecated: 0.5.3, message: "Use add(indicator:to:) instead.")
     open func addIndicatorToBar(indicator: TabmanIndicator) {
-        fatalError("addIndicatorToBar() should be implemented in TabmanBar subclasses.")
+    }
+    
+    open func add(indicator: TabmanIndicator, to contentView: UIView) {
+        
     }
     
     open func update(forPosition position: CGFloat,
