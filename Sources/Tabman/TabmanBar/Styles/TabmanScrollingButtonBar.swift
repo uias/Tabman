@@ -90,8 +90,8 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     
     // MARK: TabmanBar Lifecycle
     
-    override public func constructTabBar(items: [TabmanBarItem]) {
-        super.constructTabBar(items: items)
+    public override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
+        super.construct(in: contentView, for: items)
         
         // add scroll view
         self.contentView.addSubview(scrollView)
@@ -121,7 +121,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         self.scrollView.layoutIfNeeded()
     }
     
-    public override func addIndicatorToBar(indicator: TabmanIndicator) {
+    public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         self.scrollView.contentView.addSubview(indicator)
         indicator.autoPinEdge(toSuperviewEdge: .bottom)

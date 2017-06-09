@@ -35,14 +35,15 @@ internal class TabmanLineBar: TabmanBar {
     
     // MARK: TabmanBar Lifecycle
     
-    public override func constructTabBar(items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView,
+                                   for items: [TabmanBarItem]) {
         
     }
     
-    public override func addIndicatorToBar(indicator: TabmanIndicator) {
+    public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         indicator.tintColor = self.appearance.indicator.color
-        self.contentView.addSubview(indicator)
+        contentView.addSubview(indicator)
         self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
