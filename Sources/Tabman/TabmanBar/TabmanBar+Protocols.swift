@@ -20,6 +20,13 @@ public protocol TabmanBarDataSource: class {
 
 internal protocol TabmanBarDelegate: class {
     
+    /// Control if the bar should allow the given item to be selected.
+    ///
+    /// - Parameters:
+    ///   - bar: The bar.
+    ///   - index: The item index.
+    func bar(_ bar: TabmanBar, shouldSelectItemAt index: Int) -> Bool
+    
     /// The bar did select an item at an index.
     ///
     /// - Parameters:
