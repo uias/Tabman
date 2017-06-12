@@ -300,6 +300,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let indicatorColor = appearance.indicator.color
         self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
         
+        let indicatorUsesRoundedCorners = appearance.indicator.useRoundedCorners
+        let lineIndicator = self.indicator as? TabmanLineIndicator
+        lineIndicator?.useRoundedCorners = indicatorUsesRoundedCorners ?? defaultAppearance.indicator.useRoundedCorners!
+        
         let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
         if let lineIndicator = self.indicator as? TabmanLineIndicator {
             lineIndicator.weight = indicatorWeight
