@@ -15,7 +15,7 @@ public protocol TabmanBarDataSource: class {
     ///
     /// - Parameter bar: The bar.
     /// - Returns: Items to display in the tab bar.
-    func items(for bar: TabmanBar) -> [TabmanBarItem]?
+    func items(for bar: TabmanBar) -> [TabmanBar.Item]?
 }
 
 internal protocol TabmanBarDelegate: class {
@@ -43,7 +43,7 @@ public protocol TabmanBarLifecycle: TabmanAppearanceUpdateable {
     /// - Parameter contentView: The view to construct the bar in.
     /// - Parameter items: The items to display.
     func construct(in contentView: UIView,
-                   for items: [TabmanBarItem])
+                   for items: [TabmanBar.Item])
     
     /// Add the indicator to the bar.
     ///

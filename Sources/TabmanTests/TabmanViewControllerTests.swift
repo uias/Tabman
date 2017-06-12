@@ -25,11 +25,11 @@ class TabmanViewControllerTests: XCTestCase {
     /// with valid data.
     func testItemCountLimit() {
         self.tabmanViewController.bar.style = .blockTabBar
-        self.tabmanViewController.bar.items = [TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test")]
+        self.tabmanViewController.bar.items = [TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test")]
         
         XCTAssertTrue(self.tabmanViewController.tabmanBar?.items?.count == 5,
                       "TabmanBar itemCountLimit is not evaluated correctly for valid item count.")
@@ -39,12 +39,12 @@ class TabmanViewControllerTests: XCTestCase {
     /// with data that exceeds the limit.
     func testItemCountLimitExceeded() {
         self.tabmanViewController.bar.style = .blockTabBar
-        self.tabmanViewController.bar.items = [TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test"),
-                                               TabmanBarItem(title: "test")]
+        self.tabmanViewController.bar.items = [TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test"),
+                                               TabmanBar.Item(title: "test")]
         
         XCTAssertNil(self.tabmanViewController.tabmanBar?.items,
                      "TabmanBar itemCountLimit is not evaluated correctly for invalid item count.")

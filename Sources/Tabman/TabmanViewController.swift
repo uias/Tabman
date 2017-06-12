@@ -214,7 +214,7 @@ internal extension TabmanViewController {
 // MARK: - TabmanBarDataSource, TabmanBarDelegate
 extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
     
-    public func items(for bar: TabmanBar) -> [TabmanBarItem]? {
+    public func items(for bar: TabmanBar) -> [TabmanBar.Item]? {
         if let itemCountLimit = bar.itemCountLimit {
             guard self.bar.items?.count ?? 0 <= itemCountLimit else {
                 print("TabmanBar Error:\nItems in bar.items exceed the available count for the current bar style: (\(itemCountLimit)).")
@@ -256,7 +256,7 @@ extension TabmanViewController: TabmanBarConfigDelegate {
         self.activeTabmanBar?.appearance = appearance
     }
     
-    func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBarItem]?) {
+    func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBar.Item]?) {
         self.activeTabmanBar?.reloadData()
 
         self.view.layoutIfNeeded()

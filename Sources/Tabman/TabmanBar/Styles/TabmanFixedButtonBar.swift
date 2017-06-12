@@ -17,7 +17,8 @@ internal class TabmanFixedButtonBar: TabmanStaticButtonBar {
 
     // MARK: TabmanBar Lifecycle
     
-    public override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView,
+                                   for items: [TabmanBar.Item]) {
         super.construct(in: contentView, for: items)
         
         self.addAndLayoutBarButtons(toView: self.contentView, items: items) { (button, previousButton) in

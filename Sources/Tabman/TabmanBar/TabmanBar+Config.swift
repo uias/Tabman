@@ -30,7 +30,7 @@ internal protocol TabmanBarConfigDelegate: class {
     /// - Parameters:
     ///   - config: The config.
     ///   - items: The new items.
-    func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBarItem]?)
+    func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBar.Item]?)
     
     /// The config had its appearance config updated.
     ///
@@ -68,7 +68,7 @@ public extension TabmanBar {
         }
         
         /// The items to display in the bar.
-        public var items: [TabmanBarItem]? {
+        public var items: [TabmanBar.Item]? {
             didSet {
                 self.delegate?.config(self, didUpdate: items)
             }

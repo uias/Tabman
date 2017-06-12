@@ -53,7 +53,7 @@ class TabmanTestBar: TabmanBar {
         super.reloadData()
     }
     
-    override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
+    override func construct(in contentView: UIView, for items: [TabmanBar.Item]) {
         self.hasConstructed = true
     }
     
@@ -84,14 +84,14 @@ class TabmanTestBar: TabmanBar {
 
 extension TabmanTestBar: TabmanBarDataSource {
     
-    func items(for bar: TabmanBar) -> [TabmanBarItem]? {
+    func items(for bar: TabmanBar) -> [TabmanBar.Item]? {
         guard numberOfTabs > 0 else {
             return nil
         }
         
-        var items = [TabmanBarItem]()
+        var items: [TabmanBar.Item] = []
         for index in 0 ..< numberOfTabs {
-            items.append(TabmanBarItem(title: "Tab\(index)"))
+            items.append(TabmanBar.Item(title: "Tab\(index)"))
         }
         return items
     }

@@ -31,11 +31,11 @@ extension TabmanTestViewController: PageboyViewControllerDataSource {
     
     func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
         var viewControllers = [UIViewController]()
-        var barItems = [TabmanBarItem]()
+        var barItems: [TabmanBar.Item] = []
         
         for index in 0 ..< self.numberOfPages {
             viewControllers.append(UIViewController())
-            barItems.append(TabmanBarItem(title: "Index \(index)"))
+            barItems.append(TabmanBar.Item(title: "Index \(index)"))
         }
         self.bar.items = barItems
         

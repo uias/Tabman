@@ -42,7 +42,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: Properties
     
     /// The items that are displayed in the bar.
-    internal var items: [TabmanBarItem]? {
+    internal var items: [TabmanBar.Item]? {
         didSet {
             self.isHidden = (items?.count ?? 0) == 0
         }
@@ -239,7 +239,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     
     open func construct(in contentView: UIView,
-                        for items: [TabmanBarItem]) {
+                        for items: [TabmanBar.Item]) {
     }
     
     open func add(indicator: TabmanIndicator, to contentView: UIView) {
