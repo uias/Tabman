@@ -9,7 +9,7 @@
 import Foundation
 
 /// Update handler protocol for TabmanBarConfig updates.
-internal protocol TabmanBarConfigDelegate: class {
+internal protocol TabmanBarConfigHandler: class {
     
     /// The config had its style updated.
     ///
@@ -40,20 +40,29 @@ internal protocol TabmanBarConfigDelegate: class {
     func config(_ config: TabmanBar.Config, didUpdate appearance: TabmanBar.Appearance)
 }
 
+public protocol TabmanBarDelegate: class {
+    
+    /// Whether a bar should select an item at an index.
+    ///
+    /// - Parameters:
+    ///   - index: The proposed selection index.
+    /// - Returns: Whether the index should be selected.
+    func bar(shouldSelectItemAt index: Int) -> Bool
+}
+
 public extension TabmanBar {
     public class Config {
         
         // MARK: Properties
         
-        internal weak var delegate: TabmanBarConfigDelegate?
-        
+        internal weak var handler: TabmanBarConfigHandler?
         
         /// The style to use for the bar. Default = .scrollingButtonBar
         public var style: TabmanBar.Style = .scrollingButtonBar {
             didSet {
                 guard style.rawType != oldValue.rawType else { return }
                 
-                self.delegate?.config(self, didUpdate: style)
+                self.handler?.config(self, didUpdate: style)
             }
         }
         
@@ -63,21 +72,21 @@ public extension TabmanBar {
                 guard location != oldValue else {
                     return
                 }
-                self.delegate?.config(self, didUpdate: location)
+                self.handler?.config(self, didUpdate: location)
             }
         }
         
         /// The items to display in the bar.
         public var items: [TabmanBar.Item]? {
             didSet {
-                self.delegate?.config(self, didUpdate: items)
+                self.handler?.config(self, didUpdate: items)
             }
         }
         
         /// The appearance configuration of the bar.
         public var appearance: TabmanBar.Appearance? {
             didSet {
-                self.delegate?.config(self, didUpdate: appearance ?? .defaultAppearance)
+                self.handler?.config(self, didUpdate: appearance ?? .defaultAppearance)
             }
         }
         
@@ -89,6 +98,9 @@ public extension TabmanBar {
         
         /// The required insets for the bar.
         public internal(set) var requiredInsets: TabmanBar.Insets = .zero
+        
+        /// Object that acts as a delegate to the current TabmanBar.
+        public weak var delegate: TabmanBarDelegate?
     }
 }
 

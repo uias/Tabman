@@ -56,7 +56,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.delegate = self
-        self.bar.delegate = self
+        self.bar.handler = self
         
         // add bar to view
         self.reloadBar(withStyle: self.bar.style)
@@ -117,10 +117,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didReload viewControllers: [UIViewController],
                                     currentIndex: PageboyViewController.PageIndex) {
         self.insetChildViewControllerIfNeeded(self.currentViewController)
-    }
-    
-    open func tabmanViewController(shouldSelectItemAt index: Int) -> Bool {
-        return true
     }
     
     private func updateBar(withPosition position: CGFloat,
@@ -227,7 +223,7 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarResponder {
     }
     
     public func bar(_ bar: TabmanBar, shouldSelectItemAt index: Int) -> Bool {
-        return self.tabmanViewController(shouldSelectItemAt: index)
+        return self.bar.delegate?.bar(shouldSelectItemAt: index) ?? true
     }
     
     public func bar(_ bar: TabmanBar, didSelectItemAt index: Int) {
@@ -235,8 +231,8 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarResponder {
     }
 }
 
-// MARK: - TabmanBarConfigDelegate
-extension TabmanViewController: TabmanBarConfigDelegate {
+// MARK: - TabmanBarConfigHandler
+extension TabmanViewController: TabmanBarConfigHandler {
     
     func config(_ config: TabmanBar.Config, didUpdate style: TabmanBar.Style) {
         guard self.attachedTabmanBar == nil else { return }
