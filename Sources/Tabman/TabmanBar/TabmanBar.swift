@@ -311,7 +311,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Inform the TabmanViewController that an item in the bar was selected.
     ///
     /// - Parameter index: The index of the selected item.
-    public func itemSelected(at index: Int) {
+    open func itemSelected(at index: Int) {
         delegate?.bar(self, didSelectItemAt: index)
     }
 }
