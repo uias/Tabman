@@ -53,8 +53,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Store of available transitions for bar item/indicator transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
     
-    /// The object that acts as a delegate to the bar.
-    internal weak var delegate: TabmanBarDelegate?
+    /// The object that acts as a responder to the bar.
+    internal weak var responder: TabmanBarResponder?
     /// The object that acts as a data source to the bar.
     public weak var dataSource: TabmanBarDataSource? {
         didSet {
@@ -316,7 +316,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     ///
     /// - Parameter index: The index of the selected item.
     open func itemSelected(at index: Int) {
-        delegate?.bar(self, didSelectItemAt: index)
+        responder?.bar(self, didSelectItemAt: index)
     }
 }
 

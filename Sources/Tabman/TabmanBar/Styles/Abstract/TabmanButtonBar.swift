@@ -221,8 +221,8 @@ internal class TabmanButtonBar: TabmanBar {
     //
     
     internal func tabButtonPressed(_ sender: UIButton) {
-        if let index = self.buttons.index(of: sender), (self.delegate?.bar(self, shouldSelectItemAt: index) ?? true) {            
-            self.delegate?.bar(self, didSelectItemAt: index)
+        if let index = self.buttons.index(of: sender), (self.responder?.bar(self, shouldSelectItemAt: index) ?? true) {
+            self.responder?.bar(self, didSelectItemAt: index)
         }
     }
     

@@ -18,7 +18,7 @@ public protocol TabmanBarDataSource: class {
     func items(for bar: TabmanBar) -> [TabmanBar.Item]?
 }
 
-internal protocol TabmanBarDelegate: class {
+internal protocol TabmanBarResponder: class {
     
     /// Control if the bar should allow the given item to be selected.
     ///

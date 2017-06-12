@@ -157,7 +157,7 @@ internal extension TabmanViewController {
         let bar = barType.init()
         bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
-        bar.delegate = self
+        bar.responder = self
         bar.isHidden = (bar.items?.count ?? 0) == 0 // hidden if no items
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
@@ -211,8 +211,8 @@ internal extension TabmanViewController {
     }
 }
 
-// MARK: - TabmanBarDataSource, TabmanBarDelegate
-extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
+// MARK: - TabmanBarDataSource, TabmanBarResponder
+extension TabmanViewController: TabmanBarDataSource, TabmanBarResponder {
     
     public func items(for bar: TabmanBar) -> [TabmanBar.Item]? {
         if let itemCountLimit = bar.itemCountLimit {
