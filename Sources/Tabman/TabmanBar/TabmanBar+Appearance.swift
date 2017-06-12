@@ -57,6 +57,8 @@ public extension TabmanBar {
             public var itemVerticalPadding: CGFloat?
             /// How items in the bar should be distributed.
             public var itemDistribution: ItemDistribution?
+            /// If should hide bar when there is a single item
+            public var hideWhenSingleItem: Bool = false
         }
         
         public struct State {
