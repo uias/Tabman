@@ -93,6 +93,20 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
+    /// Check if a button should response to events
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        guard let button = view as? UIButton, let index = self.buttons.index(of: button) else {
+            return view
+        }
+        
+        guard self.responder?.bar(self, shouldSelectItemAt: index) ?? true else {
+            return nil
+        }
+        
+        return view
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
