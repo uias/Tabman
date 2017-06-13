@@ -72,6 +72,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// The height for the bar. Default: .auto
     public var height: Height = .auto {
         didSet {
+            switch height {
+            case let .explicit(value) where value == 0:
+                removeAllSubviews()
+            default: break
+            }
+            
             self.invalidateIntrinsicContentSize()
             self.superview?.setNeedsLayout()
             self.superview?.layoutIfNeeded()
@@ -276,7 +282,14 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
         self.backgroundView.backgroundStyle = backgroundStyle
         
-        self.height = appearance.layout.height ?? .auto
+        
+        let height : Height
+        if appearance.layout.hideWhenSingleItem && items?.count ?? 0 <= 1 {
+            height = .explicit(value: 0)
+        } else {
+            height = appearance.layout.height ?? .auto
+        }
+        self.height = height
         
         let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
         self.bottomSeparator.color = bottomSeparatorColor
