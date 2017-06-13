@@ -284,7 +284,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         
         let height : Height
-        if appearance.layout.hideWhenSingleItem && items?.count ?? 0 <= 1 {
+        let hideWhenSingleItem = appearance.state.shouldHideWhenSingleItem ?? defaultAppearance.state.shouldHideWhenSingleItem!
+        if hideWhenSingleItem && items?.count ?? 0 <= 1 {
             height = .explicit(value: 0)
         } else {
             height = appearance.layout.height ?? .auto
