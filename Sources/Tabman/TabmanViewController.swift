@@ -82,6 +82,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: PageboyViewControllerDelegate
     
+    private var isScrollingAnimated: Bool = false
+    
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       willScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
@@ -89,6 +91,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.insetChildViewControllerIfNeeded(self.viewControllers?[index])
         
         if animated {
+            isScrollingAnimated = true
             UIView.animate(withDuration: 0.3, animations: {
                 self.activeTabmanBar?.updatePosition(CGFloat(index), direction: direction)
                 self.activeTabmanBar?.layoutIfNeeded()
@@ -100,6 +103,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       didScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
+        isScrollingAnimated = false
         self.updateBar(withPosition: CGFloat(index),
                        direction: direction)
     }
@@ -143,6 +147,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// Called after any layout changes.
     private func reloadBarWithCurrentPosition() {
         guard let currentPosition = self.currentPosition else { return }
+        guard isScrollingAnimated == false else { return }
         
         let position = self.navigationOrientation == .horizontal ? currentPosition.x : currentPosition.y
         updateBar(withPosition: position, direction: .neutral)
