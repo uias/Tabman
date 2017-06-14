@@ -93,11 +93,26 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
+    /// Check if a button should response to events
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        guard let button = view as? UIButton, let index = self.buttons.index(of: button) else {
+            return view
+        }
+        
+        guard self.responder?.bar(self, shouldSelectItemAt: index) ?? true else {
+            return nil
+        }
+        
+        return view
+    }
+    
     //
     // MARK: TabmanBar Lifecycle
     //
     
-    public override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView,
+                                   for items: [TabmanBar.Item]) {
         
         self.buttons.removeAll()
         self.horizontalMarginConstraints.removeAll()
@@ -147,7 +162,7 @@ internal class TabmanButtonBar: TabmanBar {
     //
     
     internal func addBarButtons(toView view: UIView,
-                               items: [TabmanBarItem],
+                               items: [TabmanBar.Item],
                                customize: TabmanButtonBarItemCustomize) {
         
         var previousButton: UIButton?
@@ -220,8 +235,8 @@ internal class TabmanButtonBar: TabmanBar {
     //
     
     internal func tabButtonPressed(_ sender: UIButton) {
-        if let index = self.buttons.index(of: sender) {
-            self.delegate?.bar(self, didSelectItemAt: index)
+        if let index = self.buttons.index(of: sender), (self.responder?.bar(self, shouldSelectItemAt: index) ?? true) {
+            self.responder?.bar(self, didSelectItemAt: index)
         }
     }
     

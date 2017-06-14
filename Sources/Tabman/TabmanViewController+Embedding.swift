@@ -23,7 +23,7 @@ public extension TabmanViewController {
         
         // hook up new bar
         bar.dataSource = self
-        bar.delegate = self
+        bar.responder = self
         bar.transitionStore = self.barTransitionStore
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
@@ -43,7 +43,7 @@ public extension TabmanViewController {
         guard self.attachedTabmanBar === bar else { return nil }
         
         bar.dataSource = nil
-        bar.delegate = nil
+        bar.responder = nil
         bar.transitionStore = nil
         bar.isHidden = false
         self.attachedTabmanBar = nil

@@ -90,7 +90,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     
     // MARK: TabmanBar Lifecycle
     
-    public override func construct(in contentView: UIView, for items: [TabmanBarItem]) {
+    public override func construct(in contentView: UIView, for items: [TabmanBar.Item]) {
         super.construct(in: contentView, for: items)
         
         // add scroll view

@@ -31,7 +31,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Configuration for the bar.
     /// Able to set items, appearance, location and style through this object.
-    public lazy var bar = TabmanBarConfig()
+    public lazy var bar = TabmanBar.Config()
     
     /// Internal store for bar component transitions.
     internal lazy var barTransitionStore = TabmanBarTransitionStore()
@@ -56,7 +56,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.delegate = self
-        self.bar.delegate = self
+        self.bar.handler = self
         
         // add bar to view
         self.reloadBar(withStyle: self.bar.style)
@@ -66,8 +66,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.reloadRequiredBarInsets()
-        self.insetChildViewControllerIfNeeded(self.currentViewController)
+        reloadRequiredBarInsets()
+        insetChildViewControllerIfNeeded(self.currentViewController)
+        reloadBarWithCurrentPosition()
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -81,6 +82,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: PageboyViewControllerDelegate
     
+    private var isScrollingAnimated: Bool = false
+    
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       willScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
@@ -88,6 +91,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.insetChildViewControllerIfNeeded(self.viewControllers?[index])
         
         if animated {
+            isScrollingAnimated = true
             UIView.animate(withDuration: 0.3, animations: {
                 self.activeTabmanBar?.updatePosition(CGFloat(index), direction: direction)
                 self.activeTabmanBar?.layoutIfNeeded()
@@ -99,6 +103,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       didScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
+        isScrollingAnimated = false
         self.updateBar(withPosition: CGFloat(index),
                        direction: direction)
     }
@@ -119,6 +124,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         self.insetChildViewControllerIfNeeded(self.currentViewController)
     }
     
+    // MARK: Positional Updates
+    
+    /// Update the bar with a new position.
+    ///
+    /// - Parameters:
+    ///   - position: The new position.
+    ///   - direction: The direction of travel.
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
@@ -129,6 +141,16 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         if position >= CGFloat(barItemsCount - 1) && !itemCountsAreEqual { return }
         
         self.activeTabmanBar?.updatePosition(position, direction: direction)
+    }
+    
+    /// Reload the bar with the currently active position.
+    /// Called after any layout changes.
+    private func reloadBarWithCurrentPosition() {
+        guard let currentPosition = self.currentPosition else { return }
+        guard isScrollingAnimated == false else { return }
+        
+        let position = self.navigationOrientation == .horizontal ? currentPosition.x : currentPosition.y
+        updateBar(withPosition: position, direction: .neutral)
     }
 }
 
@@ -153,7 +175,7 @@ internal extension TabmanViewController {
         let bar = barType.init()
         bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
-        bar.delegate = self
+        bar.responder = self
         bar.isHidden = (bar.items?.count ?? 0) == 0 // hidden if no items
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
@@ -165,7 +187,7 @@ internal extension TabmanViewController {
     /// Update the bar with a new screen location.
     ///
     /// - Parameter location: The new location.
-    func updateBar(withLocation location: TabmanBarConfig.Location) {
+    func updateBar(withLocation location: TabmanBar.Location) {
         guard self.embeddingView == nil else {
             self.embedBar(inView: self.embeddingView!)
             return
@@ -207,10 +229,10 @@ internal extension TabmanViewController {
     }
 }
 
-// MARK: - TabmanBarDataSource, TabmanBarDelegate
-extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
+// MARK: - TabmanBarDataSource, TabmanBarResponder
+extension TabmanViewController: TabmanBarDataSource, TabmanBarResponder {
     
-    public func items(for bar: TabmanBar) -> [TabmanBarItem]? {
+    public func items(for bar: TabmanBar) -> [TabmanBar.Item]? {
         if let itemCountLimit = bar.itemCountLimit {
             guard self.bar.items?.count ?? 0 <= itemCountLimit else {
                 print("TabmanBar Error:\nItems in bar.items exceed the available count for the current bar style: (\(itemCountLimit)).")
@@ -222,15 +244,19 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarDelegate {
         return self.bar.items
     }
     
+    public func bar(_ bar: TabmanBar, shouldSelectItemAt index: Int) -> Bool {
+        return self.bar.delegate?.bar(shouldSelectItemAt: index) ?? true
+    }
+    
     public func bar(_ bar: TabmanBar, didSelectItemAt index: Int) {
         self.scrollToPage(.at(index: index), animated: true)
     }
 }
 
-// MARK: - TabmanBarConfigDelegate
-extension TabmanViewController: TabmanBarConfigDelegate {
+// MARK: - TabmanBarConfigHandler
+extension TabmanViewController: TabmanBarConfigHandler {
     
-    func config(_ config: TabmanBarConfig, didUpdate style: TabmanBar.Style) {
+    func config(_ config: TabmanBar.Config, didUpdate style: TabmanBar.Style) {
         guard self.attachedTabmanBar == nil else { return }
         
         self.clearUpBar(&self.tabmanBar)
@@ -238,17 +264,17 @@ extension TabmanViewController: TabmanBarConfigDelegate {
         self.updateBar(withLocation: config.location)
     }
     
-    func config(_ config: TabmanBarConfig, didUpdate location: TabmanBarConfig.Location) {
+    func config(_ config: TabmanBar.Config, didUpdate location: TabmanBar.Location) {
         guard self.attachedTabmanBar == nil else { return }
 
         self.updateBar(withLocation: location)
     }
     
-    func config(_ config: TabmanBarConfig, didUpdate appearance: TabmanBar.Appearance) {
+    func config(_ config: TabmanBar.Config, didUpdate appearance: TabmanBar.Appearance) {
         self.activeTabmanBar?.appearance = appearance
     }
     
-    func config(_ config: TabmanBarConfig, didUpdate items: [TabmanBarItem]?) {
+    func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBar.Item]?) {
         self.activeTabmanBar?.reloadData()
 
         self.view.layoutIfNeeded()

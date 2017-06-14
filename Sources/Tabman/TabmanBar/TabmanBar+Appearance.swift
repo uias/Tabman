@@ -64,6 +64,8 @@ public extension TabmanBar {
             public var selectedColor: UIColor?
             /// The text color to use for unselected items in the bar (text/images etc.).
             public var color: UIColor?
+            /// Whether to hide bar when there is only a single item
+            public var shouldHideWhenSingleItem: Bool?
         }
         
         public struct Style {
@@ -121,6 +123,7 @@ public extension TabmanBar {
             // state
             self.state.selectedColor = .black
             self.state.color = UIColor.black.withAlphaComponent(0.5)
+            self.state.shouldHideWhenSingleItem = false
             
             // text
             self.text.font = UIFont.systemFont(ofSize: 16.0)

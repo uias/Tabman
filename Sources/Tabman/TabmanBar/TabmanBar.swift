@@ -42,7 +42,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: Properties
     
     /// The items that are displayed in the bar.
-    internal var items: [TabmanBarItem]? {
+    internal var items: [TabmanBar.Item]? {
         didSet {
             self.isHidden = (items?.count ?? 0) == 0
         }
@@ -53,8 +53,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Store of available transitions for bar item/indicator transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
     
-    /// The object that acts as a delegate to the bar.
-    internal weak var delegate: TabmanBarDelegate?
+    /// The object that acts as a responder to the bar.
+    internal weak var responder: TabmanBarResponder?
     /// The object that acts as a data source to the bar.
     public weak var dataSource: TabmanBarDataSource? {
         didSet {
@@ -72,6 +72,12 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// The height for the bar. Default: .auto
     public var height: Height = .auto {
         didSet {
+            switch height {
+            case let .explicit(value) where value == 0:
+                removeAllSubviews()
+            default: break
+            }
+            
             self.invalidateIntrinsicContentSize()
             self.superview?.setNeedsLayout()
             self.superview?.layoutIfNeeded()
@@ -239,7 +245,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     // MARK: TabmanBarLifecycle
     
     open func construct(in contentView: UIView,
-                        for items: [TabmanBarItem]) {
+                        for items: [TabmanBar.Item]) {
     }
     
     open func add(indicator: TabmanIndicator, to contentView: UIView) {
@@ -276,7 +282,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
         self.backgroundView.backgroundStyle = backgroundStyle
         
-        self.height = appearance.layout.height ?? .auto
+        
+        let height : Height
+        let hideWhenSingleItem = appearance.state.shouldHideWhenSingleItem ?? defaultAppearance.state.shouldHideWhenSingleItem!
+        if hideWhenSingleItem && items?.count ?? 0 <= 1 {
+            height = .explicit(value: 0)
+        } else {
+            height = appearance.layout.height ?? .auto
+        }
+        self.height = height
         
         let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
         self.bottomSeparator.color = bottomSeparatorColor
@@ -300,6 +314,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let indicatorColor = appearance.indicator.color
         self.indicator?.tintColor = indicatorColor ?? defaultAppearance.indicator.color!
         
+        let indicatorUsesRoundedCorners = appearance.indicator.useRoundedCorners
+        let lineIndicator = self.indicator as? TabmanLineIndicator
+        lineIndicator?.useRoundedCorners = indicatorUsesRoundedCorners ?? defaultAppearance.indicator.useRoundedCorners!
+        
         let indicatorWeight = appearance.indicator.lineWeight ?? defaultAppearance.indicator.lineWeight!
         if let lineIndicator = self.indicator as? TabmanLineIndicator {
             lineIndicator.weight = indicatorWeight
@@ -311,8 +329,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// Inform the TabmanViewController that an item in the bar was selected.
     ///
     /// - Parameter index: The index of the selected item.
-    public func itemSelected(at index: Int) {
-        delegate?.bar(self, didSelectItemAt: index)
+    open func itemSelected(at index: Int) {
+        responder?.bar(self, didSelectItemAt: index)
     }
 }
 

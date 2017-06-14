@@ -28,7 +28,7 @@ class CustomTabmanBar: TabmanBar {
     // MARK: TabmanBar Lifecycle
     
     public override func construct(in contentView: UIView,
-                                   for items: [TabmanBarItem]) {
+                                   for items: [TabmanBar.Item]) {
         
         // create your bar here
         let label = UILabel()
