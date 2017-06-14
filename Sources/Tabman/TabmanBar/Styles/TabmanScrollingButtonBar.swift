@@ -114,7 +114,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
                                                         relatedBy: .greaterThanOrEqual,
                                                         toItem: nil,
                                                         attribute: .notAnAttribute,
-                                                        multiplier: 1.0, constant: Defaults.minimumItemWidth)
+                                                        multiplier: 1.0, constant: self.appearance.layout.minimumItemWidth ?? Defaults.minimumItemWidth)
             button.addConstraint(minWidthConstraint)
         }
         
@@ -136,6 +136,14 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
+        
+        if let newWidth = appearance.layout.minimumItemWidth {
+            self.buttons.forEach({ (button) in
+                let constraint = button.constraints.filter({$0.firstAttribute == NSLayoutAttribute.width && $0.isMember(of: NSLayoutConstraint.self)}).first
+                constraint?.constant = newWidth
+            })
+            self.updateConstraints()
+        }
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
         
