@@ -57,6 +57,8 @@ public extension TabmanBar {
             public var itemVerticalPadding: CGFloat?
             /// How items in the bar should be distributed.
             public var itemDistribution: ItemDistribution?
+            /// The minimum width for item
+            public var minimumItemWidth: CGFloat?
         }
         
         public struct State {
@@ -134,6 +136,7 @@ public extension TabmanBar {
             self.layout.edgeInset = 16.0
             self.layout.itemVerticalPadding = 12.0
             self.layout.itemDistribution = .leftAligned
+            self.layout.minimumItemWidth = 44.0
             
             // style
             self.style.background = .blur(style: .extraLight)

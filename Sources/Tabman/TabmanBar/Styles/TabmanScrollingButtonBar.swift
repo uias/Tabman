@@ -14,19 +14,8 @@ import Pageboy
 ///
 /// Akin to Android ViewPager etc.
 internal class TabmanScrollingButtonBar: TabmanButtonBar {
-        
-    //
-    // MARK: Constants
-    //
     
-    private struct Defaults {
-        
-        static let minimumItemWidth: CGFloat = 44.0
-    }
-    
-    //
     // MARK: Properties
-    //
     
     internal lazy var scrollView: TabmanScrollView = {
         let scrollView = TabmanScrollView()
@@ -34,6 +23,8 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         return scrollView
     }()
     internal var fadeGradientLayer: CAGradientLayer?
+    
+    private var itemMinimumWidthConstraints: [NSLayoutConstraint]?
     
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
@@ -100,6 +91,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         scrollView.contentView.removeAllSubviews()
         scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false
         
+        var itemMinimumWidthConstraints = [NSLayoutConstraint]()
         self.addBarButtons(toView: self.scrollView.contentView, items: items)
         { (button, previousButton) in
             self.buttons.append(button)
@@ -108,16 +100,21 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
             
+            let defaultAppearance = TabmanBar.Appearance.defaultAppearance
             // add a minimum width constraint to button
+            let minimumItemWidth = self.appearance.layout.minimumItemWidth ?? defaultAppearance.layout.minimumItemWidth!
             let minWidthConstraint = NSLayoutConstraint(item: button,
                                                         attribute: .width,
                                                         relatedBy: .greaterThanOrEqual,
                                                         toItem: nil,
                                                         attribute: .notAnAttribute,
-                                                        multiplier: 1.0, constant: Defaults.minimumItemWidth)
+                                                        multiplier: 1.0,
+                                                        constant: minimumItemWidth)
+            itemMinimumWidthConstraints.append(minWidthConstraint)
             button.addConstraint(minWidthConstraint)
         }
         
+        self.itemMinimumWidthConstraints = itemMinimumWidthConstraints
         self.scrollView.layoutIfNeeded()
     }
     
@@ -136,6 +133,10 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
+        
+        let minimumItemWidth = appearance.layout.minimumItemWidth ?? defaultAppearance.layout.minimumItemWidth!
+        self.itemMinimumWidthConstraints?.forEach({ $0.constant = minimumItemWidth })
+        layoutIfNeeded()
         
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
         
