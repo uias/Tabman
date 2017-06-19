@@ -202,11 +202,16 @@ internal class TabmanButtonBar: TabmanBar {
                 if previousButton == nil { // pin to left
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
                 } else {
-                    self.horizontalMarginConstraints.append(button.autoPinEdge(.left, to: .right, of: previousButton!))
+                    self.horizontalMarginConstraints.append(button.autoPinEdge(.leading, to: .trailing, of: previousButton!))
                     if index == items.count - 1 {
                         self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
                     }
                 }
+            })
+            
+            // allow button to be compressed
+            NSLayoutConstraint.autoSetPriority(400, forConstraints: { 
+                button.autoSetContentCompressionResistancePriority(for: .horizontal)
             })
             
             customize(button, previousButton)
