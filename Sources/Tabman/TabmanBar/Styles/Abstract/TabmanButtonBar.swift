@@ -209,6 +209,11 @@ internal class TabmanButtonBar: TabmanBar {
                 }
             })
             
+            // allow button to be compressed
+            NSLayoutConstraint.autoSetPriority(400, forConstraints: { 
+                button.autoSetContentCompressionResistancePriority(for: .horizontal)
+            })
+            
             customize(button, previousButton)
             previousButton = button
         }
