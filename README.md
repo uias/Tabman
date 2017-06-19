@@ -3,7 +3,7 @@
 </p>
 
 [![Build Status](https://travis-ci.org/uias/Tabman.svg?branch=master)](https://travis-ci.org/uias/Tabman)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)]()
 [![codecov](https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/uias/Tabman)
@@ -87,8 +87,8 @@ func viewControllers(forPageboyViewController pageboyViewController: PageboyView
     let viewControllers = [viewController1, viewController2]
 
     // configure the bar
-    self.bar.items = [TabmanBarItem(title: "Page 1"),
-                      TabmanBarItem(title: "Page 2")]
+    self.bar.items = [Item(title: "Page 1"),
+                      Item(title: "Page 2")]
 
     return viewControllers
 }
@@ -126,7 +126,7 @@ tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
 A `requiredInsets` property is also available on `TabmanBarConfig` which provides any insets required to inset content correctly for the visible `TabmanBar` manually.
 
 ## Customisation
-The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBarConfig` object.
+The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
 
 #### Style
 The style of bar to display, by default this is set to `.scrollingButtonBar`.  
@@ -162,8 +162,8 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
 For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
 
-## Getting In Touch
-Please feel free to contact me on [Twitter](https://twitter.com/MerrickSapsford).
+## About
+- Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
