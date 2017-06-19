@@ -40,7 +40,6 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
             if !bar.indicatorBounces && !bar.indicatorCompresses {
                 bouncyIndicatorWidth = max(itemWidth, min(barWidth, bouncyIndicatorWidth))
             }
-            print(relativePosition)
             bar.indicatorLeftMargin?.constant = 0.0
             bar.indicatorWidth?.constant = max(0.0, bouncyIndicatorWidth + indicatorPadding)
             
