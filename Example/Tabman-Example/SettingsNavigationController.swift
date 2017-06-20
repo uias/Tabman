@@ -34,8 +34,8 @@ class SettingsNavigationController: UINavigationController {
         super.viewWillAppear(animated)
         
         self.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName : UIColor.black,
-            NSFontAttributeName : UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightRegular)
+            NSAttributedStringKey.foregroundColor.rawValue : UIColor.black,
+            NSAttributedStringKey.font.rawValue : UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         ]
     }
 }
