@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-
+  
   s.name         = "Tabman"
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
   s.requires_arc = true
 
   s.version      = "0.6.2"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/uias/Tabman.git", :tag => s.version.to_s }
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
-  s.dependency 'Pageboy', :git => "https://github.com/farshadmb/Pageboy.git"
+  s.dependency 'Pageboy', '~> 1.2.0'
   s.dependency 'PureLayout', '~> 3.0.0'
 
 end
