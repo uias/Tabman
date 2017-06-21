@@ -6,9 +6,9 @@ Pod::Spec.new do |s|
 
   s.version      = "0.6.2"
   s.summary      = "A powerful paging view controller with indicator bar for iOS"
-  s.description  = <<-DESC
+  s.description  = "<<-DESC
   					Tabman is a highly customisable, powerful and extendable paging view controller with indicator bar.
-                   DESC
+                   DESC"
 
   s.homepage          = "https://github.com/uias/Tabman"
   s.license           = "MIT"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/uias/Tabman.git", :tag => s.version.to_s }
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
-  s.dependency 'Pageboy', :git => "https://github.com/farshadmb/Pageboy"
+  s.dependency 'Pageboy', :git => "https://github.com/farshadmb/Pageboy.git"
   s.dependency 'PureLayout', '~> 3.0.0'
 
 end
