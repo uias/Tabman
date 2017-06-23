@@ -48,11 +48,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                                  lowerButton: UIButton,
                                  upperButton: UIButton) {
         
-        var layoutIsRTL = false
-        
-        if #available(iOS 9.0, *) {
-            layoutIsRTL = UIView.userInterfaceLayoutDirection(for: bar.semanticContentAttribute) == .rightToLeft
-        }
+        let layoutIsRtoL = bar.layoutIsRightToLeft
         if bar.indicatorIsProgressive {
             
             let indicatorStartFrame = lowerButton.frame.origin.x + lowerButton.frame.size.width
@@ -85,7 +81,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                 let indicatorDiff = (indicatorWidth * fabs(progress))
                 
                 bar.indicatorWidth?.constant = indicatorWidth - indicatorDiff
-                if (progress > 0.0 && !layoutIsRTL) || (progress < 0.0 && layoutIsRTL) {
+                if (progress > 0.0 && !layoutIsRtoL) || (progress < 0.0 && layoutIsRtoL) {
                     let indicatorLeftMargin = bar.indicatorLeftMargin?.constant ?? 0.0
                     bar.indicatorLeftMargin?.constant = indicatorLeftMargin + indicatorDiff
                 }
@@ -96,7 +92,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                 let indicatorWidth = bar.indicatorWidth?.constant ?? 0.0
                 let leftMargin = (bar.indicatorLeftMargin?.constant ?? 0.0)
                 let bounceOffset = (indicatorWidth * progress)
-                bar.indicatorLeftMargin?.constant = leftMargin + (layoutIsRTL ? -bounceOffset : bounceOffset)
+                bar.indicatorLeftMargin?.constant = leftMargin + (layoutIsRtoL ? -bounceOffset : bounceOffset)
             }
         }
     }
