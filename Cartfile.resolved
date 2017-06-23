@@ -1,2 +1,2 @@
 github "PureLayout/PureLayout" "v3.0.2"
-github "farshadmb/Pageboy"
+github "uias/Pageboy" "1.3.0"
