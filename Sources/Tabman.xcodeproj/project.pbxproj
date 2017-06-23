@@ -71,6 +71,83 @@
 			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
 			remoteInfo = Tabman;
 		};
+		F881DA0A1EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1046AB01A7F32380017187F;
+			remoteInfo = PureLayout_iOS;
+		};
+		F881DA0C1EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1046AD81A7F32790017187F;
+			remoteInfo = PureLayout_Mac;
+		};
+		F881DA0E1EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 164C8B831C0D36500007A6B1;
+			remoteInfo = PureLayout_tvOS;
+		};
+		F881DA101EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B12C23DB17C3FDE4001CF667;
+			remoteInfo = "Example-iOS";
+		};
+		F881DA121EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7D4967E1B7B084800A74818;
+			remoteInfo = "Example-iOS-Xcode7";
+		};
+		F881DA141EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1A290DB19562FDA00D4765E;
+			remoteInfo = "Example-Mac";
+		};
+		F881DA161EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 164C8B4E1C0D354E0007A6B1;
+			remoteInfo = "Example-tvOS";
+		};
+		F881DA181EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1EC855D195662790099293C;
+			remoteInfo = "PureLayoutTests-iOS";
+		};
+		F881DA1A1EFB02BA0039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1EC857C195662B40099293C;
+			remoteInfo = "PureLayoutTests-Mac";
+		};
+		F881DA211EFB02D30039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881DA1C1EFB02D20039D1D2 /* Pageboy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D623B1B71E1D0C6A00527F3D;
+			remoteInfo = Pageboy;
+		};
+		F881DA231EFB02D30039D1D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F881DA1C1EFB02D20039D1D2 /* Pageboy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D623B1C01E1D0C6B00527F3D;
+			remoteInfo = PageboyTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +208,8 @@
 		D6CC55921ECCF08700A7FBB4 /* TabmanBar+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Appearance.swift"; sourceTree = "<group>"; };
 		D6E5C1AE1E705CF1003FF39D /* TabmanBarConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarConfigTests.swift; sourceTree = "<group>"; };
 		D6F7FF4B1EC39E050077219B /* TabmanBar+Insets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Insets.swift"; sourceTree = "<group>"; };
+		F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureLayout.xcodeproj; path = ../Example/Dependencies/PureLayout/PureLayout/PureLayout.xcodeproj; sourceTree = "<group>"; };
+		F881DA1C1EFB02D20039D1D2 /* Pageboy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pageboy.xcodeproj; path = ../../Pageboy/Sources/Pageboy.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +404,8 @@
 		D62AC1531E5AF5500020B8AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */,
+				F881DA1C1EFB02D20039D1D2 /* Pageboy.xcodeproj */,
 				D65F101C1EAEA2730090980C /* Pageboy.framework */,
 				D68767011EAEA263003C8D11 /* PureLayout.framework */,
 			);
@@ -367,6 +448,31 @@
 				D66FEEF71E7C024E00E7E87A /* TabmanChevronView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F881D9FF1EFB02B90039D1D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F881DA0B1EFB02BA0039D1D2 /* PureLayout.framework */,
+				F881DA0D1EFB02BA0039D1D2 /* PureLayout.framework */,
+				F881DA0F1EFB02BA0039D1D2 /* PureLayout.framework */,
+				F881DA111EFB02BA0039D1D2 /* Example-iOS.app */,
+				F881DA131EFB02BA0039D1D2 /* Example-iOS-Xcode7.app */,
+				F881DA151EFB02BA0039D1D2 /* Example-Mac.app */,
+				F881DA171EFB02BA0039D1D2 /* Example-tvOS.app */,
+				F881DA191EFB02BA0039D1D2 /* PureLayoutTests-iOS.xctest */,
+				F881DA1B1EFB02BA0039D1D2 /* PureLayoutTests-Mac.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F881DA1D1EFB02D20039D1D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F881DA221EFB02D30039D1D2 /* Pageboy.framework */,
+				F881DA241EFB02D30039D1D2 /* PageboyTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +558,16 @@
 			mainGroup = D62AC0A81E5733810020B8AE;
 			productRefGroup = D62AC0B31E5733810020B8AE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F881DA1D1EFB02D20039D1D2 /* Products */;
+					ProjectRef = F881DA1C1EFB02D20039D1D2 /* Pageboy.xcodeproj */;
+				},
+				{
+					ProductGroup = F881D9FF1EFB02B90039D1D2 /* Products */;
+					ProjectRef = F881D9FE1EFB02B90039D1D2 /* PureLayout.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D62AC0B11E5733810020B8AE /* Tabman */,
@@ -459,6 +575,86 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F881DA0B1EFB02BA0039D1D2 /* PureLayout.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PureLayout.framework;
+			remoteRef = F881DA0A1EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA0D1EFB02BA0039D1D2 /* PureLayout.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PureLayout.framework;
+			remoteRef = F881DA0C1EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA0F1EFB02BA0039D1D2 /* PureLayout.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PureLayout.framework;
+			remoteRef = F881DA0E1EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA111EFB02BA0039D1D2 /* Example-iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Example-iOS.app";
+			remoteRef = F881DA101EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA131EFB02BA0039D1D2 /* Example-iOS-Xcode7.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Example-iOS-Xcode7.app";
+			remoteRef = F881DA121EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA151EFB02BA0039D1D2 /* Example-Mac.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Example-Mac.app";
+			remoteRef = F881DA141EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA171EFB02BA0039D1D2 /* Example-tvOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Example-tvOS.app";
+			remoteRef = F881DA161EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA191EFB02BA0039D1D2 /* PureLayoutTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PureLayoutTests-iOS.xctest";
+			remoteRef = F881DA181EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA1B1EFB02BA0039D1D2 /* PureLayoutTests-Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "PureLayoutTests-Mac.xctest";
+			remoteRef = F881DA1A1EFB02BA0039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA221EFB02D30039D1D2 /* Pageboy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pageboy.framework;
+			remoteRef = F881DA211EFB02D30039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F881DA241EFB02D30039D1D2 /* PageboyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PageboyTests.xctest;
+			remoteRef = F881DA231EFB02D30039D1D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D62AC0B01E5733810020B8AE /* Resources */ = {
@@ -711,6 +907,7 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.Tabman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -732,6 +929,7 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.Tabman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
