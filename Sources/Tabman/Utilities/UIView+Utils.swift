@@ -1,5 +1,5 @@
 //
-//  TabmanViewUtils.swift
+//  UIView+Utils.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 21/02/2017.
