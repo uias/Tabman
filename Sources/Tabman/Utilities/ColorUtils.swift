@@ -1,5 +1,5 @@
 //
-//  TabmanColorUtils.swift
+//  ColorUtils.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 22/02/2017.

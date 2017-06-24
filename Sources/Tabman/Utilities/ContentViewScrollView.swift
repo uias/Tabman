@@ -1,5 +1,5 @@
 //
-//  TabmanScrollView.swift
+//  ContentViewScrollView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 21/02/2017.
@@ -9,7 +9,8 @@
 import UIKit
 import PureLayout
 
-internal class TabmanScrollView: UIScrollView {
+/// UIScrollView with internally managed contentView.
+internal class ContentViewScrollView: UIScrollView {
     
     //
     // MARK: Types

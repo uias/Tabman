@@ -1,5 +1,5 @@
 //
-//  TabmanAutoLayout.swift
+//  UIView+AutoLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/02/2017.
