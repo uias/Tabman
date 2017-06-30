@@ -35,5 +35,14 @@ public extension TabmanBar {
         public init(image: UIImage) {
             self.image = image
         }
+      
+        /// Create an item with a title and an image
+        ///
+        /// - Parameter title: The title to display.
+        /// - Parameter image: Image to display.
+        public init(title: String, image: UIImage) {
+            self.title = title
+            self.image = image
+        }
     }
 }
