@@ -72,6 +72,7 @@ internal extension TabmanViewController {
             let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
             
             requiredContentInset.top += self.topLayoutGuide.length
+            requiredContentInset.bottom += self.bottomLayoutGuide.length
             self.viewControllerInsets[scrollView.hash] = requiredContentInset
             
             // take account of custom top / bottom insets
