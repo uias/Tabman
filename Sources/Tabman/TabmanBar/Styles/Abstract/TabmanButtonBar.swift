@@ -12,7 +12,7 @@ import Pageboy
 
 /// Abstract class for button bars.
 internal class TabmanButtonBar: TabmanBar {
-
+    
     //
     // MARK: Types
     //
@@ -24,9 +24,9 @@ internal class TabmanButtonBar: TabmanBar {
     //
     
     private struct Defaults {
-        
         static let minimumItemHeight: CGFloat = 40.0
         static let itemImageSize: CGSize = CGSize(width: 25.0, height: 25.0)
+        static let titleWithImageSize: CGSize = CGSize(width: 20.0, height: 20.0)
     }
     
     //
@@ -162,8 +162,8 @@ internal class TabmanButtonBar: TabmanBar {
     //
     
     internal func addBarButtons(toView view: UIView,
-                               items: [TabmanBar.Item],
-                               customize: TabmanButtonBarItemCustomize) {
+                                items: [TabmanBar.Item],
+                                customize: TabmanButtonBarItemCustomize) {
         
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
@@ -171,7 +171,16 @@ internal class TabmanButtonBar: TabmanBar {
             let button = UIButton(forAutoLayout: ())
             view.addSubview(button)
             
-            if let title = item.title {
+            if let image = item.image, let title = item.title {
+                // resize images to fit
+                let resizedImage = image.resize(toSize: Defaults.titleWithImageSize)
+                if resizedImage.size != .zero {
+                    button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+                }
+                button.setTitle(title, for: .normal)
+                // Nudge it over a little bit
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+            } else if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
                 // resize images to fit
@@ -184,7 +193,7 @@ internal class TabmanButtonBar: TabmanBar {
             // appearance
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.titleLabel?.font = self.textFont
-
+            
             // layout
             NSLayoutConstraint.autoSetPriority(UILayoutPriority(rawValue: 500), forConstraints: {
                 button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)

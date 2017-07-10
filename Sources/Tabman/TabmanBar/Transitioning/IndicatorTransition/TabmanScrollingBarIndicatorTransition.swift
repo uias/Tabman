@@ -48,7 +48,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                                  lowerButton: UIButton,
                                  upperButton: UIButton) {
         
-        let layoutIsRtoL = UIView.userInterfaceLayoutDirection(for: bar.semanticContentAttribute) == .rightToLeft
+        let layoutIsRtoL = bar.layoutIsRightToLeft
         if bar.indicatorIsProgressive {
             
             let indicatorStartFrame = lowerButton.frame.origin.x + lowerButton.frame.size.width

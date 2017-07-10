@@ -17,8 +17,8 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     
     // MARK: Properties
     
-    internal lazy var scrollView: TabmanScrollView = {
-        let scrollView = TabmanScrollView()
+    internal lazy var scrollView: ContentViewScrollView = {
+        let scrollView = ContentViewScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
