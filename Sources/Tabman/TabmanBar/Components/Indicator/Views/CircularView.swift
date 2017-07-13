@@ -1,5 +1,5 @@
 //
-//  TabmanCircularView.swift
+//  CircularView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 08/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class TabmanCircularView: UIView {
+internal class CircularView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -1,5 +1,5 @@
 //
-//  TabmanChevronView.swift
+//  ChevronView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class TabmanChevronView: UIView {
+internal class ChevronView: UIView {
     
     private var chevronLayer = CAShapeLayer()
     

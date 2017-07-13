@@ -15,11 +15,7 @@ internal class TabmanDotIndicator: TabmanIndicator {
     // MARK: Properties
     //
     
-    private lazy var dotView: TabmanCircularView = {
-        let dotView = TabmanCircularView()
-        dotView.backgroundColor = self.tintColor
-        return dotView
-    }()
+    private var dotView = CircularView()
     
     /// The color of the dot.
     override public var tintColor: UIColor! {
@@ -47,6 +43,7 @@ internal class TabmanDotIndicator: TabmanIndicator {
         dotView.autoSetDimension(.width, toSize: self.intrinsicContentSize.height)
         dotView.autoAlignAxis(toSuperviewAxis: .vertical)
         dotView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 2.0)
+        dotView.backgroundColor = self.tintColor
     }
     
     override func itemTransitionType() -> TabmanItemTransition.Type? {
