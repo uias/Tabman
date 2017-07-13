@@ -32,7 +32,7 @@ public class TabmanBarBackgroundView: UIView {
         }
     }
     
-    private lazy var backgroundContainer = UIView()
+    private var backgroundContainer = UIView()
     
     //
     // MARK: Init

@@ -87,17 +87,17 @@ public extension TabmanBar {
         // MARK: Properties
         
         /// The indicator configuration.
-        public lazy var indicator = Indicator()
+        public var indicator = Indicator()
         /// The state configuration.
-        public lazy var state = State()
+        public var state = State()
         /// Text display configuration.
-        public lazy var text = Text()
+        public var text = Text()
         /// Layout configuration.
-        public lazy var layout = Layout()
+        public var layout = Layout()
         /// Bar style configuration.
-        public lazy var style = Style()
+        public var style = Style()
         /// Bar interaction configuration
-        public lazy var interaction = Interaction()
+        public var interaction = Interaction()
         
         // MARK: Init
 
