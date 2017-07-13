@@ -1,5 +1,5 @@
 //
-//  TabmanSeparator.swift
+//  Separator.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 21/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TabmanSeparator: UIView {
+internal class Separator: UIView {
     
     //
     // MARK: Properties

@@ -15,7 +15,7 @@ internal class TabmanChevronIndicator: TabmanIndicator {
     // MARK: Properties
     //
     
-    private var chevronView = TabmanChevronView()
+    private var chevronView = ChevronView()
     
     /// The color of the chevron.
     override public var tintColor: UIColor! {

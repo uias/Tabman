@@ -36,12 +36,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Configuration for the bar.
     /// Able to set items, appearance, location and style through this object.
-    public lazy var bar = TabmanBar.Config()
+    public var bar = TabmanBar.Config()
     
     /// Internal store for bar component transitions.
-    internal lazy var barTransitionStore = TabmanBarTransitionStore()
+    internal var barTransitionStore = TabmanBarTransitionStore()
     
-    internal lazy var viewControllerInsets: [Int : UIEdgeInsets] = [:]
+    internal var viewControllerInsets: [Int : UIEdgeInsets] = [:]
     
     /// Whether any UICollectionView / UITableView in child view controllers should be 
     /// automatically insetted to display below the TabmanBar.

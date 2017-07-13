@@ -97,11 +97,11 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     
     /// Background view of the bar.
-    public private(set) var backgroundView: TabmanBarBackgroundView = TabmanBarBackgroundView(forAutoLayout: ())
+    public private(set) var backgroundView: BackgroundView = BackgroundView(forAutoLayout: ())
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
     /// The bottom separator view for the bar.
-    internal private(set) var bottomSeparator = TabmanSeparator()
+    internal private(set) var bottomSeparator = Separator()
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
         didSet {
