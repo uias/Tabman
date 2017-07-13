@@ -15,7 +15,7 @@ internal class TabmanDotIndicator: TabmanIndicator {
     // MARK: Properties
     //
     
-    private var dotView = TabmanCircularView()
+    private var dotView = CircularView()
     
     /// The color of the dot.
     override public var tintColor: UIColor! {
