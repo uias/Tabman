@@ -12,7 +12,7 @@ You can help us reach that goal by contributing. Here are some ways you can cont
 
 ## Code of conduct
 
-All contributors are expected to follow our [Code of conduct](CONDUCT.md).
+All contributors are expected to follow our [Code of conduct](CODE_OF_CONDUCT.md).
 Please read it before making any contributions.
 
 ## Setting up the project for development
