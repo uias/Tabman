@@ -212,9 +212,10 @@ internal class TabmanButtonBar: TabmanBar {
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
                 } else {
                     self.horizontalMarginConstraints.append(button.autoPinEdge(.leading, to: .trailing, of: previousButton!))
-                    if index == items.count - 1 {
-                        self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
-                    }
+                }
+                
+                if index == items.count - 1 {
+                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
                 }
             })
             
