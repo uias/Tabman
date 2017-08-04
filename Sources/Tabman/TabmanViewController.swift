@@ -139,7 +139,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
-        let viewControllersCount = self.viewControllers?.count ?? 0
+        let viewControllersCount = self.pageCount ?? 0
         let barItemsCount = self.activeTabmanBar?.items?.count ?? 0
         let itemCountsAreEqual = viewControllersCount == barItemsCount
         
