@@ -11,11 +11,17 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [0.8.1](https://github.com/uias/Pageboy/releases/tag/0.8.1)
+Released on 2017-08-04
+
+#### Fixed
+- [#121](https://github.com/uias/Tabman/issues/121) Aligment issues when using a single bar item with `.buttonBar`.
+     - Fixed by [msaps](https://github.com/msaps).
+
 ## [0.8.0](https://github.com/uias/Pageboy/releases/tag/0.8.0)
 Released on 2017-07-25
 
 #### Updated
-
 - Update Pageboy dependency to 1.4.x.
      - Updated by [msaps](https://github.com/msaps).
 
@@ -25,7 +31,6 @@ Released on 2017-07-25
 Released on 2017-07-13
 
 #### Updated
-     
 - [#108](https://github.com/uias/Tabman/issues/108) Remove lazy variables to fix Carthage linker errors.
      - Fixed by [msaps](https://github.com/msaps).
 - Rename `TabmanBarBackgroundView` to `TabmanBar.BackgroundView`.
