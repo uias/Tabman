@@ -22,9 +22,8 @@ platform :ios do
 
   desc "Deploy a new version to CocoaPods and GitHub"
   lane :deploy do
+    
     podspec = "Tabman.podspec"
-
-    # get Podspec version
     version = version_get_podspec(path: podspec)
 
     # Push new Github release
