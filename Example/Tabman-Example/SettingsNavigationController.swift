@@ -33,9 +33,9 @@ class SettingsNavigationController: UINavigationController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var titleTextAttributes: [String : Any] = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]
+        var titleTextAttributes: [NSAttributedStringKey : Any] = [.foregroundColor : UIColor.black]
         if #available(iOS 8.2, *) {
-            titleTextAttributes[NSAttributedStringKey.font.rawValue] = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
+            titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         }
         self.navigationBar.titleTextAttributes = titleTextAttributes
     }
