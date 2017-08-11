@@ -93,7 +93,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                       willScrollToPageAtIndex index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
-        self.insetChildViewControllerIfNeeded(self.viewControllers?[index])
+        let viewController = dataSource?.viewController(for: self, at: index)
+        self.insetChildViewControllerIfNeeded(viewController)
         
         if animated {
             isScrollingAnimated = true
