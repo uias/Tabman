@@ -93,12 +93,12 @@ extension TabViewController {
             return nil
         }
         
-        let iRed = Float(redA + percent * (redB - redA))
-        let iBlue = Float(blueA + percent * (blueB - blueA))
-        let iGreen = Float(greenA + percent * (greenB - greenA))
-        let iAlpha = Float(alphaA + percent * (alphaB - alphaA))
+        let iRed = CGFloat(redA + percent * (redB - redA))
+        let iBlue = CGFloat(blueA + percent * (blueB - blueA))
+        let iGreen = CGFloat(greenA + percent * (greenB - greenA))
+        let iAlpha = CGFloat(alphaA + percent * (alphaB - alphaA))
         
-        return UIColor(colorLiteralRed: iRed, green: iGreen, blue: iBlue, alpha: iAlpha)
+        return UIColor(red: iRed, green: iGreen, blue: iBlue, alpha: iAlpha)
     }
 }
 
