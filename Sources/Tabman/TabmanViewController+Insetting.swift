@@ -94,7 +94,7 @@ internal extension TabmanViewController {
                 guard scrollView.frame.minY == 0.0 else { continue }
             }
             if requiredContentInset.bottom > 0.0 {
-                guard scrollView.superview!.bounds.maxY - scrollView.frame.maxY == 0.0 else { continue }
+                guard let scrollViewsSuperview = scrollView.superview, scrollViewsSuperview.bounds.maxY - scrollView.frame.maxY == 0.0 else { continue }
             }
             
             // dont update if we dont need to
