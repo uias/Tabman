@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auto Insetting Table View Controller-->
+        <scene sceneID="Liy-Nh-6c6">
+            <objects>
+                <viewController storyboardIdentifier="AutoInsettingTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IEw-Iz-XL1" customClass="AutoInsettingTableViewController" customModule="Tabman_Tests" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PZ9-2t-uGw"/>
+                        <viewControllerLayoutGuide type="bottom" id="HRY-vw-oaa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rup-yB-cp7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E1b-Nl-c9u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IEw-Iz-XL1" id="hDK-Xq-Egp"/>
+                                    <outlet property="delegate" destination="IEw-Iz-XL1" id="DGN-LU-DN5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E1b-Nl-c9u" firstAttribute="leading" secondItem="rup-yB-cp7" secondAttribute="leading" id="Q8x-YE-7pA"/>
+                            <constraint firstItem="E1b-Nl-c9u" firstAttribute="top" secondItem="rup-yB-cp7" secondAttribute="top" id="Ues-fd-IoN"/>
+                            <constraint firstItem="HRY-vw-oaa" firstAttribute="top" secondItem="E1b-Nl-c9u" secondAttribute="bottom" id="ZwD-e1-AT0"/>
+                            <constraint firstAttribute="trailing" secondItem="E1b-Nl-c9u" secondAttribute="trailing" id="d8G-ey-wdt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRd-EP-2RV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.40000000000001" y="103.89805097451276"/>
+        </scene>
+        <!--Auto InsettingUI Table View Controller-->
+        <scene sceneID="36X-Ph-pIR">
+            <objects>
+                <tableViewController storyboardIdentifier="AutoInsettingUITableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jks-Pt-NWg" customClass="AutoInsettingUITableViewController" customModule="Tabman_Tests" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CIq-v3-gXD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Jks-Pt-NWg" id="bbS-kI-Xfg"/>
+                            <outlet property="delegate" destination="Jks-Pt-NWg" id="Y73-tc-17s"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1v-Xr-BNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="104"/>
+        </scene>
+    </scenes>
+</document>
