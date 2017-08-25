@@ -10,7 +10,7 @@
 		D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAAF1F50475600298598 /* AppDelegate.swift */; };
 		D61AAABE1F50475600298598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB01F50475600298598 /* Assets.xcassets */; };
 		D61AAABF1F50475600298598 /* AutoInsetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB11F50475600298598 /* AutoInsetting.storyboard */; };
-		D61AAAC01F50475600298598 /* AutoInsettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAB21F50475600298598 /* AutoInsettingTableViewController.swift */; };
+		D61AAAC01F50475600298598 /* AutoInsettingTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAB21F50475600298598 /* AutoInsettingTableViewViewController.swift */; };
 		D61AAAC11F50475600298598 /* AutoInsettingUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAB31F50475600298598 /* AutoInsettingUITableViewController.swift */; };
 		D61AAAC21F50475600298598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB41F50475600298598 /* LaunchScreen.storyboard */; };
 		D61AAAC31F50475600298598 /* Tests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB61F50475600298598 /* Tests.storyboard */; };
@@ -24,6 +24,7 @@
 		D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAF11F504B3200298598 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; };
 		D61AAAF21F504B3200298598 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D61AAAF41F504BAD00298598 /* AutoInsettingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,7 @@
 		D61AAAAF1F50475600298598 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D61AAAB01F50475600298598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D61AAAB11F50475600298598 /* AutoInsetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutoInsetting.storyboard; sourceTree = "<group>"; };
-		D61AAAB21F50475600298598 /* AutoInsettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsettingTableViewController.swift; sourceTree = "<group>"; };
+		D61AAAB21F50475600298598 /* AutoInsettingTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsettingTableViewViewController.swift; sourceTree = "<group>"; };
 		D61AAAB31F50475600298598 /* AutoInsettingUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsettingUITableViewController.swift; sourceTree = "<group>"; };
 		D61AAAB51F50475600298598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D61AAAB71F50475600298598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tests.storyboard; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		D61AAADA1F50486100298598 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 		D61AAAEC1F50497000298598 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		D61AAAF01F504B3200298598 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsettingScrollViewViewController.swift; sourceTree = "<group>"; };
 		D6C6A33C1F4049410030FB3D /* Tabman-UITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-UITests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,8 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				D61AAAB11F50475600298598 /* AutoInsetting.storyboard */,
-				D61AAAB21F50475600298598 /* AutoInsettingTableViewController.swift */,
+				D61AAAB21F50475600298598 /* AutoInsettingTableViewViewController.swift */,
 				D61AAAB31F50475600298598 /* AutoInsettingUITableViewController.swift */,
+				D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */,
 			);
 			name = "Auto Insetting";
 			sourceTree = "<group>";
@@ -278,9 +281,10 @@
 			files = (
 				D61AAAC81F50475600298598 /* TestViewController.swift in Sources */,
 				D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */,
-				D61AAAC01F50475600298598 /* AutoInsettingTableViewController.swift in Sources */,
+				D61AAAC01F50475600298598 /* AutoInsettingTableViewViewController.swift in Sources */,
 				D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */,
 				D61AAAC11F50475600298598 /* AutoInsettingUITableViewController.swift in Sources */,
+				D61AAAF41F504BAD00298598 /* AutoInsettingScrollViewViewController.swift in Sources */,
 				D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */,
 				D61AAAC51F50475600298598 /* TabmanContainerViewController.swift in Sources */,
 			);

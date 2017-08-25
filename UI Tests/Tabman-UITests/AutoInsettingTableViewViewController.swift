@@ -1,5 +1,5 @@
 //
-//  AutoInsettingTableViewController.swift
+//  AutoInsettingTableViewViewController.swift
 //  Tabman-Tests
 //
 //  Created by Merrick Sapsford on 13/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AutoInsettingTableViewController: TestViewController {
+class AutoInsettingTableViewViewController: TestViewController {
     
     // MARK: Properties
     
@@ -16,7 +16,7 @@ class AutoInsettingTableViewController: TestViewController {
     
 }
 
-extension AutoInsettingTableViewController: UITableViewDataSource {
+extension AutoInsettingTableViewViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
