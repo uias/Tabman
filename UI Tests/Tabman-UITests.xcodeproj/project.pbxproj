@@ -18,12 +18,12 @@
 		D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABA1F50475600298598 /* TabmanTest.swift */; };
 		D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABB1F50475600298598 /* TestsViewController.swift */; };
 		D61AAAC81F50475600298598 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABC1F50475600298598 /* TestViewController.swift */; };
-		D61AAAD11F50481A00298598 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAACE1F50481A00298598 /* PureLayout.framework */; };
-		D61AAAD21F50481A00298598 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAACE1F50481A00298598 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; };
 		D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; };
 		D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D61AAAF11F504B3200298598 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; };
+		D61AAAF21F504B3200298598 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */,
-				D61AAAD21F50481A00298598 /* PureLayout.framework in Embed Frameworks */,
+				D61AAAF21F504B3200298598 /* PureLayout.framework in Embed Frameworks */,
 				D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -79,9 +79,9 @@
 		D61AAABA1F50475600298598 /* TabmanTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTest.swift; sourceTree = "<group>"; };
 		D61AAABB1F50475600298598 /* TestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
 		D61AAABC1F50475600298598 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		D61AAACE1F50481A00298598 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		D61AAADA1F50486100298598 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 		D61AAAEC1F50497000298598 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		D61AAAF01F504B3200298598 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		D6C6A33C1F4049410030FB3D /* Tabman-UITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-UITests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */,
-				D61AAAD11F50481A00298598 /* PureLayout.framework in Frameworks */,
+				D61AAAF11F504B3200298598 /* PureLayout.framework in Frameworks */,
 				D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,9 +154,9 @@
 		D61AAAE71F50487700298598 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D61AAAF01F504B3200298598 /* PureLayout.framework */,
 				D61AAADA1F50486100298598 /* Tabman.xcodeproj */,
 				D61AAAEC1F50497000298598 /* Pageboy.framework */,
-				D61AAACE1F50481A00298598 /* PureLayout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,6 +414,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-UITests";
@@ -427,6 +428,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-UITests";
