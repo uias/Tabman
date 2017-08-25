@@ -17,6 +17,8 @@ Released on 2017-08-25
 #### Fixed
 - [#132](https://github.com/uias/Tabman/issues/132) Crash when using `UITableViewController` with auto-insetting enabled.
      - Fixed by [Patrick-Remy](https://github.com/Patrick-Remy).
+- Resolved deprecation warnings when using latest Xcode 9 beta.
+     - Fixed by [msaps](https://github.com/msaps).
 
 ## [0.8.1](https://github.com/uias/Pageboy/releases/tag/0.8.1)
 Released on 2017-08-04
