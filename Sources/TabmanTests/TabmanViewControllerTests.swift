@@ -18,7 +18,9 @@ class TabmanViewControllerTests: XCTestCase {
         super.setUp()
         
         self.tabmanViewController = TabmanTestViewController()
-        self.tabmanViewController.loadViewIfNeeded()
+        if #available(iOS 9.0, *) {
+            self.tabmanViewController.loadViewIfNeeded()
+        }
     }
     
     /// Test that the item count limit on a TabmanBar is correctly handled
