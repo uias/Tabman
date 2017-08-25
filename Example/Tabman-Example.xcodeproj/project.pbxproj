@@ -268,7 +268,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Merrick Sapsford";
+				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
 					D62AC0D41E5733A80020B8AE = {
 						CreatedOnToolsVersion = 8.2;
@@ -499,7 +499,7 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -513,7 +513,7 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.msapsford.Tabman-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
