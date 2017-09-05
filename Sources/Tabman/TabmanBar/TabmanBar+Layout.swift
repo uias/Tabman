@@ -62,9 +62,10 @@ internal extension TabmanBar {
     ///   - location: The location of the bar.
     ///   - topLayoutGuide: The TabmanViewController top layout guide.
     func extendBackgroundForStatusBarIfNeeded(location: TabmanBar.Location,
-                                              topLayoutGuide: UILayoutSupport) {
+                                              topLayoutGuide: UILayoutSupport,
+                                              appearance: TabmanBar.Appearance) {
         guard let topPinConstraint = self.backgroundView.constraints.first else { return }
-        guard location == .top else {
+        guard location == .top, appearance.layout.extendBackgroundEdgeInsets ?? false else {
             topPinConstraint.constant = 0.0
             return
         }

@@ -76,7 +76,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         reloadBarWithCurrentPosition()
         
         activeTabmanBar?.extendBackgroundForStatusBarIfNeeded(location: bar.location,
-                                                              topLayoutGuide: self.topLayoutGuide)
+                                                              topLayoutGuide: self.topLayoutGuide,
+                                                              appearance: bar.appearance ?? .defaultAppearance)
 
     }
     

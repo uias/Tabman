@@ -59,6 +59,10 @@ public extension TabmanBar {
             public var itemDistribution: ItemDistribution?
             /// The minimum width for item
             public var minimumItemWidth: CGFloat?
+            /// Whether to extend the background edge insets in certain scenarios.
+            /// For example when the bar is against the status bar, the background 
+            /// will extend underneath the status bar.
+            public var extendBackgroundEdgeInsets: Bool?
         }
         
         public struct State {
@@ -137,6 +141,7 @@ public extension TabmanBar {
             self.layout.itemVerticalPadding = 12.0
             self.layout.itemDistribution = .leftAligned
             self.layout.minimumItemWidth = 44.0
+            self.layout.extendBackgroundEdgeInsets = true
             
             // style
             self.style.background = .blur(style: .extraLight)
