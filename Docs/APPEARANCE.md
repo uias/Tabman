@@ -53,7 +53,8 @@ bar.appearance.layout
 | `height` | `TabmanBar.Height` | The height for the bar. | `.auto` |
 | `itemVerticalPadding` | `CGFloat` | The vertical padding between the item and the bar bounds. | `12.0` |
 | `itemDistribution` | `ItemDistribution` | How items in the bar should be distributed. | `.leftAligned` |
-
+| `minimumItemWidth` | `CGFloat` | The minimum width for an item. | `44.0` |
+| `extendBackgroundEdgeInsets` | `Bool` | Whether to extend the background edge insets in certain scenarios. | `true` |
 
 ## State
 Customise how the bar should react to state changes.
