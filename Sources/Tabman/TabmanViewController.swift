@@ -74,6 +74,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         reloadRequiredBarInsets()
         insetChildViewControllerIfNeeded(self.currentViewController)
         reloadBarWithCurrentPosition()
+        
+        activeTabmanBar?.extendBackgroundForStatusBarIfNeeded(location: bar.location,
+                                                              topLayoutGuide: self.topLayoutGuide)
+
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

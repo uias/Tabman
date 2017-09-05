@@ -1,5 +1,5 @@
 //
-//  UIView+AutoLayout.swift
+//  TabmanBar+Layout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/02/2017.
@@ -54,5 +54,24 @@ internal extension TabmanBar {
         
         self.superview?.addConstraints(constraints)
         return constraints
+    }
+    
+    /// Extends the bar background view underneath status bar if applicable.
+    ///
+    /// - Parameters:
+    ///   - location: The location of the bar.
+    ///   - topLayoutGuide: The TabmanViewController top layout guide.
+    func extendBackgroundForStatusBarIfNeeded(location: TabmanBar.Location,
+                                              topLayoutGuide: UILayoutSupport) {
+        guard let topPinConstraint = self.backgroundView.constraints.first else { return }
+        guard location == .top else {
+            topPinConstraint.constant = 0.0
+            return
+        }
+        
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        if topLayoutGuide.length == statusBarHeight {
+            self.backgroundView.constraints.first?.constant = -statusBarHeight
+        }
     }
 }
