@@ -280,8 +280,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.preferredIndicatorStyle = appearance.indicator.preferredStyle
         
         let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
-        self.backgroundView.backgroundStyle = backgroundStyle
-        
+        self.backgroundView.style = backgroundStyle
         
         let height : Height
         let hideWhenSingleItem = appearance.state.shouldHideWhenSingleItem ?? defaultAppearance.state.shouldHideWhenSingleItem!
