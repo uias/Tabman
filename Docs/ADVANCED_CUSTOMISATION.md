@@ -33,7 +33,7 @@ override func usePreferredIndicatorStyle() -> Bool {
 }
 
 override func construct(in contentView: UIView,
-                        for items: [TabmanBarItem]) {
+                        for items: [TabmanBar.Item]) {
 	// create your bar here     
 }
 
