@@ -28,9 +28,9 @@ public extension TabmanBar {
         // MARK: Properties
         //
         
-        var backgroundStyle: Style = TabmanBar.Appearance.defaultAppearance.style.background ?? .clear {
+        var style: Style = TabmanBar.Appearance.defaultAppearance.style.background ?? .clear {
             didSet {
-                self.updateBackground(forStyle: backgroundStyle)
+                self.updateBackground(for: style)
             }
         }
         
@@ -42,26 +42,26 @@ public extension TabmanBar {
         
         public override init(frame: CGRect) {
             super.init(frame: frame)
-            initBackgroundView()
+            configure()
         }
         
         required public init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
-            initBackgroundView()
+            configure()
         }
         
-        private func initBackgroundView() {
+        private func configure() {
             self.addSubview(self.backgroundContainer)
             self.backgroundContainer.autoPinEdgesToSuperviewEdges()
             
-            self.updateBackground(forStyle: backgroundStyle)
+            self.updateBackground(for: style)
         }
         
         //
         // MARK: Lifecycle
         //
         
-        func updateBackground(forStyle style: Style) {
+        func updateBackground(for style: Style) {
             self.backgroundContainer.removeAllSubviews()
             
             switch style {
