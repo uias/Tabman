@@ -18,7 +18,7 @@ public extension TabmanBar {
         // MARK: Types
         //
         
-        public enum BackgroundStyle {
+        public enum Style {
             case clear
             case blur(style: UIBlurEffectStyle)
             case solid(color: UIColor)
@@ -28,7 +28,7 @@ public extension TabmanBar {
         // MARK: Properties
         //
         
-        var backgroundStyle: BackgroundStyle = TabmanBar.Appearance.defaultAppearance.style.background ?? .clear {
+        var backgroundStyle: Style = TabmanBar.Appearance.defaultAppearance.style.background ?? .clear {
             didSet {
                 self.updateBackground(forStyle: backgroundStyle)
             }
@@ -61,7 +61,7 @@ public extension TabmanBar {
         // MARK: Lifecycle
         //
         
-        func updateBackground(forStyle style: BackgroundStyle) {
+        func updateBackground(forStyle style: Style) {
             self.backgroundContainer.removeAllSubviews()
             
             switch style {
@@ -83,7 +83,7 @@ public extension TabmanBar {
     }
 }
 
-extension TabmanBar.BackgroundView.BackgroundStyle: CustomStringConvertible, Equatable {
+extension TabmanBar.BackgroundView.Style: CustomStringConvertible, Equatable {
     
     public var description: String {
         switch self {
@@ -98,8 +98,8 @@ extension TabmanBar.BackgroundView.BackgroundStyle: CustomStringConvertible, Equ
         }
     }
     
-    public static func ==(lhs: TabmanBar.BackgroundView.BackgroundStyle,
-                          rhs: TabmanBar.BackgroundView.BackgroundStyle) -> Bool {
+    public static func ==(lhs: TabmanBar.BackgroundView.Style,
+                          rhs: TabmanBar.BackgroundView.Style) -> Bool {
         return lhs.description == rhs.description
     }
 }
