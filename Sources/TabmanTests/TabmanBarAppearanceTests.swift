@@ -48,7 +48,7 @@ class TabmanBarAppearanceTests: TabmanViewControllerTests {
             appearance.style.background = .blur(style: .dark)
         })
         
-        let backgroundStyle = self.tabmanViewController.tabmanBar!.backgroundView.backgroundStyle
+        let backgroundStyle = self.tabmanViewController.tabmanBar!.backgroundView.style
         XCTAssertTrue(backgroundStyle != .none,
                       "background style in TabmanBarAppearance is ignored incorrectly")
     }
