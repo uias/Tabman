@@ -3,13 +3,22 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 0.x Releases
-- `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082)
+- `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082) | [0.8.3](#083)
 - `0.7.x` Releases - [0.7.0](#070) | [0.7.1](#071) | [0.7.2](#072) | [0.7.3](#073)
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [0.8.3](https://github.com/uias/Pageboy/releases/tag/0.8.3)
+Released on 2017-09-05
+
+#### Added
+- [#135](https://github.com/uias/Tabman/issues/135) Ability to extend background edge insets under system components.
+     - Added by [msaps](https://github.com/msaps).
+- [#138](https://github.com/uias/Tabman/pull/138) `extendBackgroundEdgeInsets` property to `TabmanBar.Appearance`.
+     - Added by [msaps](https://github.com/msaps).
 
 ## [0.8.2](https://github.com/uias/Pageboy/releases/tag/0.8.2)
 Released on 2017-08-25
