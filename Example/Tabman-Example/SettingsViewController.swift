@@ -117,7 +117,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.contentView.backgroundColor = self.navigationController?.navigationBar.tintColor
         headerView.textLabel?.textColor = .white
         if #available(iOS 8.2, *) {
-            headerView.textLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
+            headerView.textLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.medium)
         }
     }
     
