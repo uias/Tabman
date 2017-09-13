@@ -195,7 +195,7 @@ internal class TabmanButtonBar: TabmanBar {
             button.titleLabel?.font = self.textFont
             
             // layout
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(rawValue: 500), forConstraints: {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
                 button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
             })
             button.autoPinEdge(toSuperviewEdge: .top)
@@ -207,7 +207,7 @@ internal class TabmanButtonBar: TabmanBar {
             
             // Add horizontal pin constraints
             // These are breakable (For equal width instances etc.)
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(rawValue: 500), forConstraints: {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
                 if previousButton == nil { // pin to left
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
                 } else {
@@ -220,7 +220,7 @@ internal class TabmanButtonBar: TabmanBar {
             })
             
             // allow button to be compressed
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(rawValue: 400), forConstraints: { 
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority(400), forConstraints: { 
                 button.autoSetContentCompressionResistancePriority(for: .horizontal)
             })
             
