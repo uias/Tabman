@@ -95,10 +95,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private var isScrollingAnimated: Bool = false
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                      willScrollToPageAtIndex index: Int,
-                                      direction: PageboyViewController.NavigationDirection,
-                                      animated: Bool) {
-        self.insetChildViewControllerIfNeeded(self.viewControllers?[index])
+                                    willScrollToPageAt index: Int,
+                                    direction: PageboyViewController.NavigationDirection,
+                                    animated: Bool) {
+        let viewController = dataSource?.viewController(for: self, at: index)
+        self.insetChildViewControllerIfNeeded(viewController)
         
         if animated {
             isScrollingAnimated = true
@@ -110,7 +111,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                      didScrollToPageAtIndex index: Int,
+                                      didScrollToPageAt index: Int,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
         isScrollingAnimated = false
@@ -119,7 +120,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                      didScrollToPosition position: CGPoint,
+                                      didScrollTo position: CGPoint,
                                       direction: PageboyViewController.NavigationDirection,
                                       animated: Bool) {
         if !animated {
@@ -129,9 +130,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                    didReload viewControllers: [UIViewController],
-                                    currentIndex: PageboyViewController.PageIndex) {
-        self.insetChildViewControllerIfNeeded(self.currentViewController)
+                                      didReloadWith currentViewController: UIViewController,
+                                      currentPageIndex: PageboyViewController.PageIndex) {
+        self.insetChildViewControllerIfNeeded(currentViewController)
     }
     
     // MARK: Positional Updates
@@ -144,7 +145,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private func updateBar(withPosition position: CGFloat,
                            direction: PageboyViewController.NavigationDirection) {
         
-        let viewControllersCount = self.viewControllers?.count ?? 0
+        let viewControllersCount = self.pageCount ?? 0
         let barItemsCount = self.activeTabmanBar?.items?.count ?? 0
         let itemCountsAreEqual = viewControllersCount == barItemsCount
         
