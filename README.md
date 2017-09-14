@@ -22,12 +22,17 @@
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](https://github.com/uias/pageboy).
 
+## Requirements
+Tabman requires iOS 9 or above, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
+
+For details on using older versions of Tabman or Swift please see [Compatibility](Docs/COMPATIBILITY.md).
+
 ## Installation
 ### CocoaPods
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Tabman'
+pod 'Tabman', '~> 1.0'
 ```
 
 And run `pod install`.
@@ -43,7 +48,7 @@ $ brew install carthage
 Add Tabman to your `Cartfile`:
 
 ```ogdl
-github "uias/Tabman" 
+github "uias/Tabman", ~> 1.0
 ```
 
 **Dependencies**
@@ -60,13 +65,10 @@ carthage bootstrap --platform ios
 
 and build the workspace.
 
-## Requirements
-Tabman requires iOS 9.0 or above.
-
 ## Usage
 ### Getting Started
 
-1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
+1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
 
 ```swift
 class YourTabViewController: TabmanViewController, PageboyViewControllerDataSource {
@@ -75,26 +77,27 @@ class YourTabViewController: TabmanViewController, PageboyViewControllerDataSour
 		super.viewDidLoad()
 
 		self.dataSource = self
+
+        // configure the bar
+        self.bar.items = [Item(title: "Page 1"),
+                          Item(title: "Page 2")]
 	}
 }
 ```
 
-2) Implement the `PageboyViewControllerDataSource` and configure the bar for display.
+2) Implement `PageboyViewControllerDataSource`.
 
 ```swift
-func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
-    // return array of view controllers
-    let viewControllers = [viewController1, viewController2]
-
-    // configure the bar
-    self.bar.items = [Item(title: "Page 1"),
-                      Item(title: "Page 2")]
-
-    return viewControllers
+func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+    return viewControllers.count
 }
-
-func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
-    // use default index
+    
+func viewController(for pageboyViewController: PageboyViewController,
+                    at index: PageboyViewController.PageIndex) -> UIViewController? {
+    return viewControllers[index]
+}
+    
+func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
     return nil
 }
 ```
@@ -106,12 +109,12 @@ As Tabman is based on [Pageboy](github.com/uias/Pageboy), everything behaves the
 
 ```swift
 // Scroll the page view controller to a new page.
-public func scrollToPage(_ pageIndex: PageIndex,
-                         animated: Bool,
-                         completion: PageTransitionCompletion? = nil)
+func scrollToPage(_ pageIndex: PageIndex,
+                               animated: Bool,
+                               completion: PageTransitionCompletion? = nil)
 
 // Reload the view controllers in the page view controller.                         
-public func reloadPages()
+func reloadPages()
 ```
 
 Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/uias/Pageboy/blob/master/README.md).
@@ -150,6 +153,7 @@ To set a custom appearance definition do the following on a `TabmanViewControlle
 
 ```swift
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
+
 	// customise appearance here
 	appearance.text.color = UIColor.red
 	appearance.indicator.isProgressive = true
@@ -164,10 +168,10 @@ For more advanced customisation, including defining your own indicator and bar s
 
 ## About
 - Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
+- Contributed to by a growing [list of others](https://github.com/uias/Tabman/graphs/contributors).
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 ## License
-
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
