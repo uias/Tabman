@@ -45,6 +45,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     var previousBarButton: UIBarButtonItem?
     var nextBarButton: UIBarButtonItem?
     
+    private var viewControllers = [UIViewController]()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -97,59 +99,66 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     // MARK: PageboyViewControllerDataSource
 
-    func numberOfPages(forBarStyle style: TabmanBar.Style) -> Int {
-        switch style {
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        var count = 0
+        switch self.bar.style {
         case .blockTabBar, .buttonBar:
-            return 3
+            count = 3
         default:
-            return 5
+            count = 5
         }
+        
+        initializeViewControllers(count: count)
+        return count
     }
     
-    func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
+    private func initializeViewControllers(count: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
         var viewControllers = [UIViewController]()
-        var tabBarItems: [TabmanBar.Item] = []
-        for i in 0 ..< self.numberOfPages(forBarStyle: self.bar.style) {
+        var barItems = [Item]()
+        
+        for index in 0 ..< count {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
-            viewController.index = i + 1
-            
-            tabBarItems.append(Item(title: String(format: "Page No. %i", viewController.index!)))
-//            tabBarItems.append(Item(image: UIImage(named: "ic_home")!))
+            viewController.index = index + 1
+            barItems.append(Item(title: "Page No. \(index + 1)"))
             
             viewControllers.append(viewController)
         }
-        
-        self.bar.items = tabBarItems
-        return viewControllers
+
+        self.bar.items = barItems
+        self.viewControllers = viewControllers
     }
     
-    func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return self.viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
     
     // MARK: PageboyViewControllerDelegate
     
     private var targetIndex: Int?
+    
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                        willScrollToPageAtIndex index: Int,
+                                        willScrollToPageAt index: Int,
                                         direction: PageboyViewController.NavigationDirection,
                                         animated: Bool) {
         super.pageboyViewController(pageboyViewController,
-                                    willScrollToPageAtIndex: index,
+                                    willScrollToPageAt: index,
                                     direction: direction,
                                     animated: animated)
         
         self.targetIndex = index
     }
-    
+
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               didScrollToPosition position: CGPoint,
-                               direction: PageboyViewController.NavigationDirection,
-                               animated: Bool) {
+                                        didScrollTo position: CGPoint,
+                                        direction: PageboyViewController.NavigationDirection,
+                                        animated: Bool) {
         super.pageboyViewController(pageboyViewController,
-                                    didScrollToPosition: position,
+                                    didScrollTo: position,
                                     direction: direction,
                                     animated: animated)
         
@@ -158,11 +167,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                                        didScrollToPageAtIndex index: Int,
+                                        didScrollToPageAt index: Int,
                                         direction: PageboyViewController.NavigationDirection,
                                         animated: Bool) {
         super.pageboyViewController(pageboyViewController,
-                                    didScrollToPageAtIndex: index,
+                                    didScrollToPageAt: index,
                                     direction: direction,
                                     animated: animated)
         

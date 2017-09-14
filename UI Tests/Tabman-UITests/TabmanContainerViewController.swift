@@ -28,6 +28,8 @@ class TabmanContainerViewController: TabmanViewController {
         self.test = test
         
         super.init(nibName: nil, bundle: nil)
+        
+        self.bar.items = titles.flatMap({ Item(title: $0) })
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,16 +50,16 @@ class TabmanContainerViewController: TabmanViewController {
 
 extension TabmanContainerViewController: PageboyViewControllerDataSource {
 
-    func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
-        var barItems = [Item]()
-        titles.forEach { (title) in
-            barItems.append(Item(title: title))
-        }
-        self.bar.items = barItems
-        return testViewControllers
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return testViewControllers.count
     }
     
-    func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
+    func viewController(for pageboyViewController: PageboyViewController,
+                        at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return testViewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
 }
