@@ -11,7 +11,7 @@ import Foundation
 public extension TabmanBar {
     
     /// An item to display in a TabmanBar.
-    public struct Item: Any {
+    public struct Item {
         
         // MARK: Properties
         
@@ -27,6 +27,7 @@ public extension TabmanBar {
         /// Create an item with a title.
         ///
         /// - Parameter title: The title to display.
+        /// - Parameter context: Object that can be used to provide external context for the item.
 		public init(title: String, context: Any? = nil) {
             self.title = title
 			self.context = context
@@ -35,6 +36,7 @@ public extension TabmanBar {
         /// Create an item with an image.
         ///
         /// - Parameter image: Image to display.
+        /// - Parameter context: Object that can be used to provide external context for the item.
         public init(image: UIImage, context: Any? = nil) {
             self.image = image
 			self.context = context
@@ -44,6 +46,7 @@ public extension TabmanBar {
         ///
         /// - Parameter title: The title to display.
         /// - Parameter image: Image to display.
+        /// - Parameter context: Object that can be used to provide external context for the item.
         public init(title: String, image: UIImage, context: Any? = nil) {
             self.title = title
             self.image = image
