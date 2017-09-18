@@ -30,6 +30,22 @@ class SettingsNavigationController: UINavigationController {
     
     // MARK: Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // On iOS 11 add rounded corners
+        if #available(iOS 11, *) {
+            view.clipsToBounds = true
+            view.layer.cornerRadius = 16.0
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            
+            view.layer.shadowOffset = .zero
+            view.layer.shadowColor = UIColor.black.cgColor
+            view.layer.shadowRadius = 16.0
+            view.layer.shadowOpacity = 0.5
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,5 +54,11 @@ class SettingsNavigationController: UINavigationController {
             titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         }
         self.navigationBar.titleTextAttributes = titleTextAttributes
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
     }
 }
