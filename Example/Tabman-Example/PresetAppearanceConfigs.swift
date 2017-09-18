@@ -44,7 +44,7 @@ class PresetAppearanceConfigs: Any {
             
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
+            appearance.state.selectedColor = UIColor(red:0.39, green:0.03, blue:0.21, alpha:1.0)
             appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
             appearance.layout.edgeInset = 0.0
             appearance.layout.interItemSpacing = 0.0

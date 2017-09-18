@@ -18,7 +18,7 @@ class SettingsNavigationController: UINavigationController {
         
         self.definesPresentationContext = true
         self.providesPresentationContextTransitionStyle = true
-        self.modalPresentationCapturesStatusBarAppearance = true
+        self.modalPresentationCapturesStatusBarAppearance = false
         self.modalPresentationStyle = .overFullScreen
         
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
