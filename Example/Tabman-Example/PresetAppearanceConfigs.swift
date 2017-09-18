@@ -15,18 +15,17 @@ class PresetAppearanceConfigs: Any {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         appearance.indicator.bounces = false
         appearance.indicator.compresses = false
+        appearance.style.background = .blur(style: .dark)
         
         switch style {
 
         case .bar:
-            appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
             appearance.indicator.color = .white
             appearance.indicator.lineWeight = .thick
             
         case .scrollingButtonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
-            appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
             appearance.layout.itemVerticalPadding = 16.0
             appearance.indicator.bounces = true
@@ -37,7 +36,6 @@ class PresetAppearanceConfigs: Any {
         case .buttonBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
             appearance.state.selectedColor = UIColor.white
-            appearance.style.background = .blur(style: .light)
             appearance.indicator.color = UIColor.white
             appearance.indicator.lineWeight = .thin
             appearance.indicator.compresses = true
@@ -46,8 +44,7 @@ class PresetAppearanceConfigs: Any {
             
         case .blockTabBar:
             appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0)
-            appearance.style.background = .solid(color: UIColor.white.withAlphaComponent(0.3))
+            appearance.state.selectedColor = UIColor(red:0.39, green:0.03, blue:0.21, alpha:1.0)
             appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
             appearance.layout.edgeInset = 0.0
             appearance.layout.interItemSpacing = 0.0

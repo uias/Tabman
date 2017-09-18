@@ -12,28 +12,6 @@ import Pageboy
 
 class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
-    // MARK: Types
-    
-    struct GradientConfig {
-        let topColor: UIColor
-        let bottomColor: UIColor
-        
-        static var defaultGradient: GradientConfig {
-            return GradientConfig(topColor: .black, bottomColor: .black)
-        }
-    }
-
-    // MARK: Constants
-
-    let numberOfPages = 5
-    let gradients: [GradientConfig] = [
-        GradientConfig(topColor: UIColor(red:0.00, green:0.45, blue:1.00, alpha:1.0), bottomColor: UIColor(red:0.00, green:0.78, blue:1.00, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.97, green:0.21, blue:0.00, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.55, blue:0.00, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.01, green:0.11, blue:0.47, alpha:1.0), bottomColor: UIColor(red:0.02, green:0.46, blue:0.90, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.20, green:0.20, blue:0.60, alpha:1.0), bottomColor: UIColor(red:1.00, green:0.00, blue:0.80, alpha:1.0)),
-        GradientConfig(topColor: UIColor(red:0.06, green:0.20, blue:0.26, alpha:1.0), bottomColor: UIColor(red:0.20, green:0.91, blue:0.62, alpha:1.0))
-    ]
-    
     // MARK: Outlets
     
     @IBOutlet weak var offsetLabel: UILabel!
@@ -42,6 +20,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     // MARK: Properties
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var previousBarButton: UIBarButtonItem?
     var nextBarButton: UIBarButtonItem?
     
@@ -53,7 +35,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         super.viewDidLoad()
         self.addBarButtons()
         self.view.sendSubview(toBack: self.gradientView)
-        
+                
         self.dataSource = self
         
         // bar customisation

@@ -21,7 +21,7 @@ class SettingsPresentTransitionController: NSObject, UIViewControllerAnimatedTra
         let containerView = transitionContext.containerView
         
         let screenBounds = UIScreen.main.bounds
-        let topOffset: CGFloat = 80.0
+        let topOffset: CGFloat = 160.0
         
         var finalFrame = transitionContext.finalFrame(for: toViewController)
         finalFrame.origin.y += topOffset

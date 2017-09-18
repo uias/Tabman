@@ -66,7 +66,7 @@ extension TabViewController {
         
     }
     
-    func gradient(forIndex index: Int) -> GradientConfig {
+    func gradient(forIndex index: Int) -> Gradient {
         guard index >= 0 && index < self.gradients.count else {
             return .defaultGradient
         }

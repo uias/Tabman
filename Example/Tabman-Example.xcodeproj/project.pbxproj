@@ -34,6 +34,7 @@
 		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
 		D62AC10C1E5736A10020B8AE /* TabViewController+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
+		D65D07621F6C18D600255575 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65D07611F6C18D600255575 /* Gradients.swift */; };
 		D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
 		D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabViewController+Extras.swift"; sourceTree = "<group>"; };
 		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
+		D65D07611F6C18D600255575 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		D62AC10E1E5736B20020B8AE /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				D65D07611F6C18D600255575 /* Gradients.swift */,
 				D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */,
 				D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */,
 				D61E50CF1E647F0000AC8C75 /* Settings */,
@@ -341,6 +344,7 @@
 				D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */,
 				D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */,
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
+				D65D07621F6C18D600255575 /* Gradients.swift in Sources */,
 				D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */,
 				D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */,
 				D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */,
