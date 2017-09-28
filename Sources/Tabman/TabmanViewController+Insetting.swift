@@ -77,6 +77,10 @@ internal extension TabmanViewController {
             guard let scrollView = scrollView else { continue }
             guard !scrollView.isBeingInteracted else { continue }
             
+            if #available(iOS 11.0, *) {
+                scrollView.contentInsetAdjustmentBehavior = .never
+            }
+            
             var requiredContentInset = self.bar.requiredInsets.all
             let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
             
