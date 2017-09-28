@@ -33,20 +33,20 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addBarButtons()
-        self.view.sendSubview(toBack: self.gradientView)
+        addBarButtons()
+        view.sendSubview(toBack: self.gradientView)
                 
-        self.dataSource = self
+        dataSource = self
         
         // bar customisation
-        self.bar.location = .top
-//        self.bar.style = .custom(type: CustomTabmanBar.self) // uncomment to use CustomTabmanBar as style.
-        self.bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
+        bar.location = .top
+//        bar.style = .custom(type: CustomTabmanBar.self) // uncomment to use CustomTabmanBar as style.
+        bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
         // updating
-        self.updateAppearance(pagePosition: self.currentPosition?.x ?? 0.0)
-        self.updateStatusLabels()
-        self.updateBarButtonStates(index: self.currentIndex ?? 0)
+        updateAppearance(pagePosition: currentPosition?.x ?? 0.0)
+        updateStatusLabels()
+        updateBarButtonStates(index: currentIndex ?? 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,18 +72,18 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     // MARK: Actions
     
     @objc func firstPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.first, animated: true)
+        scrollToPage(.first, animated: true)
     }
     
     @objc func lastPage(_ sender: UIBarButtonItem) {
-        self.scrollToPage(.last, animated: true)
+        scrollToPage(.last, animated: true)
     }
     
     // MARK: PageboyViewControllerDataSource
 
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         var count = 0
-        switch self.bar.style {
+        switch bar.style {
         case .blockTabBar, .buttonBar:
             count = 3
         default:
@@ -107,7 +107,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             viewControllers.append(viewController)
         }
 
-        self.bar.items = barItems
+        bar.items = barItems
         self.viewControllers = viewControllers
     }
     
@@ -132,7 +132,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.targetIndex = index
+        targetIndex = index
     }
 
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -144,8 +144,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pagePosition: position.x)
-        self.updateStatusLabels()
+        updateAppearance(pagePosition: position.x)
+        updateStatusLabels()
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -157,10 +157,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
                                     direction: direction,
                                     animated: animated)
         
-        self.updateAppearance(pagePosition: CGFloat(index))
-        self.updateStatusLabels()
-        self.updateBarButtonStates(index: index)
+        updateAppearance(pagePosition: CGFloat(index))
+        updateStatusLabels()
+        updateBarButtonStates(index: index)
         
-        self.targetIndex = nil
+        targetIndex = nil
     }
 }
