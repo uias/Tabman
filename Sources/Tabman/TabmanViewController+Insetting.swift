@@ -13,8 +13,16 @@ internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
     func reloadRequiredBarInsets() {
-        self.bar.requiredInsets = TabmanBar.Insets(topLayoutGuide: self.topLayoutGuide.length,
-                                                   bottomLayoutGuide: self.bottomLayoutGuide.length,
+        
+        var layoutInsets: UIEdgeInsets = .zero
+        if #available(iOS 11, *) {
+            layoutInsets = view.safeAreaInsets
+        } else {
+            layoutInsets.top = topLayoutGuide.length
+            layoutInsets.bottom = bottomLayoutGuide.length
+        }
+        
+        self.bar.requiredInsets = TabmanBar.Insets(safeAreaInsets: layoutInsets,
                                                    bar: self.calculateRequiredBarInsets())
     }
     
@@ -69,11 +77,13 @@ internal extension TabmanViewController {
             guard let scrollView = scrollView else { continue }
             guard !scrollView.isBeingInteracted else { continue }
             
-            var requiredContentInset = self.bar.requiredInsets.barInsets
+            if #available(iOS 11.0, *) {
+                scrollView.contentInsetAdjustmentBehavior = .never
+            }
+            
+            var requiredContentInset = self.bar.requiredInsets.all
             let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
             
-            requiredContentInset.top += self.topLayoutGuide.length
-            requiredContentInset.bottom += self.bottomLayoutGuide.length
             self.viewControllerInsets[scrollView.hash] = requiredContentInset
             
             // take account of custom top / bottom insets
