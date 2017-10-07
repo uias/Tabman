@@ -23,9 +23,9 @@ class TabmanBarAppearanceTests: TabmanViewControllerTests {
         })
         
         let indicator = self.tabmanViewController.tabmanBar!.indicator!
-        let type = TabmanIndicator.Style.chevron.rawType!
+        let indicatorType = TabmanIndicator.Style.chevron.rawType!
         
-        XCTAssertTrue(type(of: indicator) == type,
+        XCTAssertTrue(type(of: indicator) == indicatorType,
                       "preferredIndicatorStyle is incorrectly ignored when using .buttonBar style")
     }
     
@@ -36,9 +36,9 @@ class TabmanBarAppearanceTests: TabmanViewControllerTests {
         })
         
         let indicator = self.tabmanViewController.tabmanBar!.indicator!
-        let type = TabmanIndicator.Style.dot.rawType!
+        let indicatorType = TabmanIndicator.Style.dot.rawType!
         
-        XCTAssertFalse(type(of: indicator) == type,
+        XCTAssertFalse(type(of: indicator) == indicatorType,
                        "preferredIndicatorStyle is incorrectly conformed to when using .blockTabBar style")
     }
     
