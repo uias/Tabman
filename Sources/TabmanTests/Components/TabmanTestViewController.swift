@@ -12,8 +12,11 @@ import Pageboy
 
 class TabmanTestViewController: TabmanViewController {
     
+    fileprivate var viewControllers = [UIViewController]()
+    
     var numberOfPages: Int = 5 {
         didSet {
+            recreateViewControllers()
             self.reloadPages()
         }
     }
@@ -23,26 +26,35 @@ class TabmanTestViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        recreateViewControllers()
         self.dataSource = self
+    }
+    
+    private func recreateViewControllers() {
+        var viewControllers = [UIViewController]()
+        var barItems: [TabmanBar.Item] = []
+        
+        for index in 0 ..< numberOfPages {
+            viewControllers.append(UIViewController())
+            barItems.append(TabmanBar.Item(title: "Index \(index)"))
+        }
+        
+        self.viewControllers = viewControllers
+        self.bar.items = barItems
     }
 }
 
 extension TabmanTestViewController: PageboyViewControllerDataSource {
     
-    func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
-        var viewControllers = [UIViewController]()
-        var barItems: [TabmanBar.Item] = []
-        
-        for index in 0 ..< self.numberOfPages {
-            viewControllers.append(UIViewController())
-            barItems.append(TabmanBar.Item(title: "Index \(index)"))
-        }
-        self.bar.items = barItems
-        
-        return viewControllers
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return numberOfPages
     }
     
-    func defaultPageIndex(forPageboyViewController pageboyViewController: PageboyViewController) -> PageboyViewController.PageIndex? {
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
 }
