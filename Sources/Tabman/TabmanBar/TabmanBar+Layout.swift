@@ -72,7 +72,21 @@ internal extension TabmanBar {
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         if topLayoutGuide.length == statusBarHeight {
-            self.backgroundView.constraints.first?.constant = -statusBarHeight
+            topPinConstraint.constant = -statusBarHeight
         }
+    }
+    
+    @available (iOS 11, *)
+    func extendBackgroundForBottomSafeAreaIfNeeded(location: TabmanBar.Location,
+                                                   safeAreaInsets: UIEdgeInsets,
+                                                   appearance: TabmanBar.Appearance) {
+        let bottomPinConstraint = self.backgroundView.constraints[2]
+        guard location == .bottom, appearance.layout.extendBackgroundEdgeInsets ?? false else {
+            bottomPinConstraint.constant = 0.0
+            return
+        }
+        
+        let bottomSafeAreaInset = safeAreaInsets.bottom
+        bottomPinConstraint.constant = bottomSafeAreaInset
     }
 }
