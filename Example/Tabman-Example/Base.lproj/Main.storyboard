@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -277,6 +277,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
+                            <constraint firstAttribute="bottom" secondItem="88R-O5-360" secondAttribute="bottom" id="AwD-aW-SHU"/>
                             <constraint firstAttribute="trailing" secondItem="i8L-kP-mjs" secondAttribute="trailing" constant="16" id="F8w-QM-rZt"/>
                             <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="i8L-kP-mjs" secondAttribute="bottom" constant="20" id="Ii3-7s-BcH"/>
                             <constraint firstItem="CBZ-3O-Ovm" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="16" id="KJY-DC-FmK"/>
@@ -284,7 +285,6 @@
                             <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="a1Y-Y5-Lkw" secondAttribute="bottom" constant="20" id="Wa8-gm-cJ3"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="bottom" secondItem="CBZ-3O-Ovm" secondAttribute="bottom" id="XjM-0o-Hjt"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="24" id="YPm-xb-xDv"/>
-                            <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="88R-O5-360" secondAttribute="bottom" id="bd3-5d-JdV"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="top" secondItem="hXb-D4-ulJ" secondAttribute="top" id="jiX-9q-0t8"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="top" secondItem="DI3-f1-tUV" secondAttribute="bottom" constant="4" id="kLo-Y9-RkT"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" id="rmv-lb-kKH"/>
