@@ -14,6 +14,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.3](https://github.com/uias/Pageboy/releases/tag/1.0.2)
+Released on 2017-10-11
+
+#### Added
+- [#154](https://github.com/uias/Tabman/issues/154) Support for extending bar background on iPhone X function areas.
+     - by [msaps](https://github.com/msaps).
+- [#148](https://github.com/uias/Tabman/pull/148) `imageRenderingMode` to `TabmanBar.Appearance.Style`.
+     - by [thevest](https://github.com/thevest).
+
 ## [1.0.2](https://github.com/uias/Pageboy/releases/tag/1.0.2)
 Released on 2017-09-28
 
@@ -30,7 +39,6 @@ Released on 2017-09-28
 #### Fixed
 - [#146](https://github.com/uias/Tabman/issues/146) Incorrect layout with automatic insetting on iOS 11 and iPhone X.
      - by [msaps](https://github.com/msaps).
-
 
 ## [1.0.1](https://github.com/uias/Pageboy/releases/tag/1.0.1)
 Released on 2017-09-18
