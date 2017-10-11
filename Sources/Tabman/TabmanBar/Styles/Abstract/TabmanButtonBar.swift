@@ -58,8 +58,23 @@ internal class TabmanButtonBar: TabmanBar {
             })
         }
     }
+    
     public var color: UIColor = Appearance.defaultAppearance.state.color!
     public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
+  
+    public var imageRenderingMode: UIImageRenderingMode = Appearance.defaultAppearance.style.imageRenderingMode! {
+        didSet {
+            guard oldValue != imageRenderingMode else {
+                return
+            }
+            updateButtons(update: {
+                guard let image = $0.currentImage else {
+                    return
+                }
+                $0.setImage(image.withRenderingMode(imageRenderingMode), for: .normal)
+            })
+        }
+    }
     
     public var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
         didSet {
@@ -142,6 +157,8 @@ internal class TabmanButtonBar: TabmanBar {
         let edgeInset = appearance.layout.edgeInset
         self.edgeInset = edgeInset ?? defaultAppearance.layout.edgeInset!
         
+        self.imageRenderingMode = appearance.style.imageRenderingMode ?? defaultAppearance.style.imageRenderingMode!
+        
         // update left margin for progressive style
         if self.indicator?.isProgressiveCapable ?? false {
             
@@ -175,7 +192,7 @@ internal class TabmanButtonBar: TabmanBar {
                 // resize images to fit
                 let resizedImage = image.resize(toSize: Defaults.titleWithImageSize)
                 if resizedImage.size != .zero {
-                    button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+                    button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
                 }
                 button.setTitle(title, for: .normal)
                 // Nudge it over a little bit
@@ -186,7 +203,7 @@ internal class TabmanButtonBar: TabmanBar {
                 // resize images to fit
                 let resizedImage = image.resize(toSize: Defaults.itemImageSize)
                 if resizedImage.size != .zero {
-                    button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+                    button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
                 }
             }
             
