@@ -39,7 +39,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         dataSource = self
         
         // bar customisation
-        bar.location = .bottom
+        bar.location = .top
 //        bar.style = .custom(type: CustomTabmanBar.self) // uncomment to use CustomTabmanBar as style.
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
