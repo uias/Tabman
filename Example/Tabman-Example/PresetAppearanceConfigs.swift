@@ -54,6 +54,10 @@ class PresetAppearanceConfigs: Any {
             appearance.style.background = .blur(style: .light)
         }
         
+        if #available(iOS 8.2, *) {
+            appearance.text.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
+        }
+        
         return appearance
     }
 }
