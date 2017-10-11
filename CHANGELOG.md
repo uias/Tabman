@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101)
+- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102)
 
 #### 0.x Releases
 - `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082) | [0.8.3](#083)
@@ -13,6 +13,24 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [1.0.2](https://github.com/uias/Pageboy/releases/tag/1.0.2)
+Released on 2017-09-28
+
+#### Added
+- `safeAreaInsets` to `TabmanBar.Insets`.
+     - by [msaps](https://github.com/msaps).
+
+#### Updated
+- Deprecated `topLayoutGuide` in `TabmanBar.Insets`.
+     - by [msaps](https://github.com/msaps).
+- Deprecated `bottomLayoutGuide` in `TabmanBar.Insets`.
+     - by [msaps](https://github.com/msaps).
+
+#### Fixed
+- [#146](https://github.com/uias/Tabman/issues/146) Incorrect layout with automatic insetting on iOS 11 and iPhone X.
+     - by [msaps](https://github.com/msaps).
+
 
 ## [1.0.1](https://github.com/uias/Pageboy/releases/tag/1.0.1)
 Released on 2017-09-18
