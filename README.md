@@ -65,8 +65,9 @@ carthage bootstrap --platform ios
 
 and build the workspace.
 
+
 ## Usage
-### Getting Started
+### The Basics
 
 1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
 
@@ -104,23 +105,19 @@ func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyVie
 
 3) All done! 🎉
 
-### Going forward
-As Tabman is based on [Pageboy](github.com/uias/Pageboy), everything behaves the same and all the same properties/functions are available. Such as these functions for navigation & reloading:
+### Page View Controller
+As Tabman is based on [Pageboy](github.com/uias/Pageboy), all the extras and niceities in a `PageboyViewController` are available in a`TabmanViewController`. Including:
 
-```swift
-// Scroll the page view controller to a new page.
-func scrollToPage(_ pageIndex: PageIndex,
-                               animated: Bool,
-                               completion: PageTransitionCompletion? = nil)
+- Simplified data source management.
+- Enhanced delegation; featuring exact relative positional data and reliable updates.
+- Infinite scrolling support.
+- Automatic timer-based page transitioning.
+- Support for custom page transitions.
 
-// Reload the view controllers in the page view controller.                         
-func reloadPages()
-```
-
-Read up on the `Pageboy` docs to find out a bit more [here](https://www.github.com/uias/Pageboy/blob/master/README.md).
+Read up on the `Pageboy` documentation [here](https://github.com/uias/Pageboy#usage).
 
 ## Child Content Insetting
-Tabman will automatically inset any `UITableView` or `UICollectionView`'s that are in the child view controllers provided to the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
+Tabman will automatically inset any `UIScrollView` that if finds within the child view controllers provided by the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
 
 ```swift
 tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
@@ -128,8 +125,9 @@ tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
 
 A `requiredInsets` property is also available on `TabmanBarConfig` which provides any insets required to inset content correctly for the visible `TabmanBar` manually.
 
-## Customisation
-The `TabmanBar` in Tabman can be completely customised to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
+
+## Customization
+The `TabmanBar` in Tabman can be completely customized to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
 
 #### Style
 The style of bar to display, by default this is set to `.scrollingButtonBar`.  
@@ -166,12 +164,15 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
 For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
 
+
 ## About
 - Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
 - Contributed to by a growing [list of others](https://github.com/uias/Tabman/graphs/contributors).
 
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
+
 
 ## License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
