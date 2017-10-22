@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102)
+- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104)
 
 #### 0.x Releases
 - `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082) | [0.8.3](#083)
@@ -14,7 +14,20 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.0.3](https://github.com/uias/Pageboy/releases/tag/1.0.2)
+## [1.0.4](https://github.com/uias/Pageboy/releases/tag/1.0.4)
+Released on 2017-10-22
+
+#### Added
+- New `embedBar(in view: UIView)` function to `TabmanViewController`.
+     - by [msaps](https://github.com/msaps).
+
+#### Updated
+- Deprecated `embedBar(inView view: UIView)` in `TabmanViewController`.
+     - by [msaps](https://github.com/msaps).
+- Add improved error handling to bar embedding and attachment operations.
+     - by [msaps](https://github.com/msaps).
+
+## [1.0.3](https://github.com/uias/Pageboy/releases/tag/1.0.3)
 Released on 2017-10-11
 
 #### Added
