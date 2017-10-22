@@ -201,7 +201,7 @@ internal extension TabmanViewController {
     /// - Parameter location: The new location.
     func updateBar(withLocation location: TabmanBar.Location) {
         guard self.embeddingView == nil else {
-            self.embedBar(inView: self.embeddingView!)
+            self.embedBar(in: self.embeddingView!)
             return
         }
         
