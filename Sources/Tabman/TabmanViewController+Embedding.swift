@@ -16,7 +16,9 @@ public extension TabmanViewController {
     ///
     /// - Parameter bar: The bar to attach.
     public func attach(bar: TabmanBar) {
-        guard self.attachedTabmanBar == nil else { return }
+        guard self.attachedTabmanBar == nil else {
+            fatalError("Tabman - You must detach the currently attached bar before attempting to attach a new bar.")
+        }
         
         self.tabmanBar?.isHidden = true
         self.reloadRequiredBarInsets()
@@ -65,9 +67,20 @@ public extension TabmanViewController {
     /// This will add the bar to the specified view, and pin the bar edges to the view edges.
     ///
     /// - Parameter view: The view to embed the bar in.
+    @available(*, deprecated: 1.0.4, message: "Use embedBar(in: )")
     public func embedBar(inView view: UIView) {
+        embedBar(in: view)
+    }
+    
+    /// Embed the TabmanBar in an external view.
+    /// This will add the bar to the specified view, and pin the bar edges to the view edges.
+    ///
+    /// - Parameter view: The view to embed the bar in.
+    public func embedBar(in view: UIView) {
         guard let bar = self.tabmanBar else { return }
-        guard self.embeddingView == nil || view === self.embeddingView else { return }
+        guard self.embeddingView == nil || view === self.embeddingView else {
+            fatalError("Tabman - The bar must be disembedded from the view it is currently embedded in first. Use disembedBar().")
+        }
         
         self.embeddingView = view
         
