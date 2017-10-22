@@ -144,7 +144,7 @@ func detachAttachedBar() -> TabmanBar?
 ## Embedding TabmanBar in an external view
 You can also embed the internally managed `TabmanBar` in an external view. This allows for all the advantages of internal management (Style switching etc.) but in a specified view elsewhere in the view hierarchy.
 
-This is available with the `embedBar(inView:)` function.
+This is available with the `embedBar(in view: UIView)` function.
 
 ```swift
 class MyTabmanViewController: TabmanViewController {
@@ -154,7 +154,7 @@ class MyTabmanViewController: TabmanViewController {
 	func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.embedBar(inView: customBarView)
+		self.embedBar(in: customBarView)
 	}
 }
 
