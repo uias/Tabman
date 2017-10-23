@@ -6,15 +6,32 @@
 //  Copyright © 2017 UI At Six. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct TabmanTest {
     
     let id = UUID().uuidString
     let title: String
-    let storyboardId: String
-    let viewControllerId: String
+    let storyboardId: String?
+    let viewControllerId: String?
+    let viewControllerType: UIViewController.Type?
     let instances: Int
+    
+    init(title: String, storyboardId: String, viewControllerId: String, instances: Int) {
+        self.title = title
+        self.storyboardId = storyboardId
+        self.viewControllerId = viewControllerId
+        self.viewControllerType = nil
+        self.instances = instances
+    }
+    
+    init(title: String, viewControllerType: UIViewController.Type, instances: Int) {
+        self.title = title
+        self.storyboardId = nil
+        self.viewControllerId = nil
+        self.viewControllerType = viewControllerType
+        self.instances = instances
+    }
 }
 
 extension TabmanTest: Equatable {
