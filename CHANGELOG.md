@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.5](https://github.com/uias/Pageboy/releases/tag/1.0.5)
+Released on 2017-10-23
+
+#### Added
+- Added support for `UICollectionViewController` and automatic insetting.
+     - by [msaps](https://github.com/msaps).
+
+#### Fixed
+- [#109](https://github.com/uias/Tabman/issues/109) Fixed automatic insetting behavior when using a `UITableViewController`.
+     - by [msaps](https://github.com/msaps).
+
 ## [1.0.4](https://github.com/uias/Pageboy/releases/tag/1.0.4)
 Released on 2017-10-22
 
