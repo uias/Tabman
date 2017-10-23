@@ -23,9 +23,18 @@ class TestsViewController: UIViewController {
         
         self.sections = [
             TabmanTestSection(title: "Auto Insetting", tests: [
-                TabmanTest(title: "UITableView", storyboardId: "AutoInsetting", viewControllerId: "AutoInsettingTableViewViewController", instances: 3),
-                TabmanTest(title: "UITableViewController", storyboardId: "AutoInsetting", viewControllerId: "AutoInsettingUITableViewController", instances: 3),
-                TabmanTest(title: "UIScrollView", storyboardId: "AutoInsetting", viewControllerId: "AutoInsettingScrollViewViewController", instances: 3)
+                TabmanTest(title: "UITableView",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingTableViewViewController",
+                           instances: 3),
+                TabmanTest(title: "UITableViewController",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingUITableViewController",
+                           instances: 3),
+                TabmanTest(title: "UIScrollView",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingScrollViewViewController",
+                           instances: 3)
                 ])
         ]
     }
@@ -67,12 +76,17 @@ extension TestsViewController: UITableViewDelegate {
         
         guard let test = sections?[indexPath.section].tests[indexPath.row] else { return }
         
-        let storyboard = UIStoryboard(name: test.storyboardId, bundle: .main)
-        
         var viewControllers = [UIViewController]()
         var titles = [String]()
         for index in 0 ..< test.instances {
-            let viewController = storyboard.instantiateViewController(withIdentifier: test.viewControllerId)
+            
+            var viewController: UIViewController!
+            if let storyboardId = test.storyboardId, let viewControllerId = test.viewControllerId {
+                let storyboard = UIStoryboard(name: storyboardId, bundle: .main)
+                viewController = storyboard.instantiateViewController(withIdentifier: viewControllerId)
+            } else if let viewControllerType = test.viewControllerType {
+                viewController = viewControllerType.init()
+            }
             titles.append("\(test.title) \(index + 1)")
             viewControllers.append(viewController)
         }
