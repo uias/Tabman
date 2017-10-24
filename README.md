@@ -48,7 +48,7 @@ $ brew install carthage
 Add Tabman to your `Cartfile`:
 
 ```ogdl
-github "uias/Tabman", ~> 1.0
+github "uias/Tabman" ~> 1.0
 ```
 
 **Dependencies**
