@@ -34,6 +34,10 @@ class TestsViewController: UIViewController {
                 TabmanTest(title: "UIScrollView",
                            storyboardId: "AutoInsetting",
                            viewControllerId: "AutoInsettingScrollViewViewController",
+                           instances: 3),
+                TabmanTest(title: "UICollectionViewController",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingUICollectionViewController",
                            instances: 3)
                 ])
         ]
