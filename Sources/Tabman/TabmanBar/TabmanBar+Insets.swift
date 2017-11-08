@@ -42,9 +42,9 @@ public extension TabmanBar {
             let bottom = safeAreaInsets.bottom + barInsets.bottom
             
             if barInsets.top > 0.0 {
-                return UIEdgeInsetsMake(top, 0.0, 0.0, 0.0)
+                return UIEdgeInsetsMake(top, 0.0, safeAreaInsets.bottom, 0.0)
             } else {
-                return UIEdgeInsetsMake(0.0, 0.0, bottom, 0.0)
+                return UIEdgeInsetsMake(safeAreaInsets.top, 0.0, bottom, 0.0)
             }
         }
         
