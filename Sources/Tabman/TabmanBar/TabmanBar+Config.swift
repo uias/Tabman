@@ -75,6 +75,13 @@ public extension TabmanBar {
                 self.handler?.config(self, didUpdate: location)
             }
         }
+        /// The actual location of the bar on screen (including preferred location).
+        internal var actualLocation: Location {
+            if location == .preferred {
+                return style.preferredLocation
+            }
+            return location
+        }
         
         /// The items to display in the bar.
         public var items: [TabmanBar.Item]? {

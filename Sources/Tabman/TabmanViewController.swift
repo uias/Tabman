@@ -77,7 +77,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         reloadBarWithCurrentPosition()
         
         let appearance = bar.appearance ?? .defaultAppearance
-        activeTabmanBar?.extendBackgroundForSystemAreasIfNeeded(for: bar.location,
+        activeTabmanBar?.extendBackgroundForSystemAreasIfNeeded(for: bar.actualLocation,
                                                                 in: self,
                                                                 appearance: appearance)
     }
