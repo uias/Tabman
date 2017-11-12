@@ -17,6 +17,10 @@ All notable changes to this project will be documented in this file.
 ## [1.0.6](https://github.com/uias/Pageboy/releases/tag/1.0.6)
 Released on 2017-11-12
 
+#### Updated
+- Renamed `safeAreaInsets` to `safeArea` in `TabmanBar.Insets`.
+     - by [msaps](https://github.com/msaps).
+
 #### Fixed
 - Fixed issue where bar background would not extend correctly when using `.preferred` bar location.
      - by [msaps](https://github.com/msaps).
