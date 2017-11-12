@@ -57,7 +57,7 @@ github "uias/Tabman" ~> 1.0
 - [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
 
 ### Example
-A nice pretty example project is available to take a look at some of the features that `Tabman` offers. To run the example, simply clone the repo, run 
+An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
 
 ```ogdl
 carthage bootstrap --platform ios
@@ -106,7 +106,7 @@ func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyVie
 3) All done! 🎉
 
 ### Page View Controller
-As Tabman is based on [Pageboy](github.com/uias/Pageboy), all the extras and niceities in a `PageboyViewController` are available in a`TabmanViewController`. Including:
+As Tabman is based on **[Pageboy](github.com/uias/Pageboy)**, all the extras and niceities in a `PageboyViewController` are available in a`TabmanViewController`. Including:
 
 - Simplified data source management.
 - Enhanced delegation; featuring exact relative positional data and reliable updates.
@@ -114,7 +114,7 @@ As Tabman is based on [Pageboy](github.com/uias/Pageboy), all the extras and nic
 - Automatic timer-based page transitioning.
 - Support for custom page transitions.
 
-Read up on the `Pageboy` documentation [here](https://github.com/uias/Pageboy#usage).
+Read up on the **Pageboy** documentation [here](https://github.com/uias/Pageboy#usage).
 
 ## Child Content Insetting
 Tabman will automatically inset any `UIScrollView` that if finds within the child view controllers provided by the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
