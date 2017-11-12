@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104)
+- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104) | [1.0.5](#105) | [1.0.6](#106)
 
 #### 0.x Releases
 - `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082) | [0.8.3](#083)
@@ -13,6 +13,16 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [1.0.6](https://github.com/uias/Pageboy/releases/tag/1.0.6)
+Released on 2017-11-12
+
+#### Fixed
+- Fixed issue where bar background would not extend correctly when using `.preferred` bar location.
+     - by [msaps](https://github.com/msaps).
+- Fixed issue where child view controller contents would not get inset correctly on iPhone X.
+     - by [msaps](https://github.com/msaps).
+
 
 ## [1.0.5](https://github.com/uias/Pageboy/releases/tag/1.0.5)
 Released on 2017-10-23
