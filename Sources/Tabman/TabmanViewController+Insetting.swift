@@ -108,10 +108,7 @@ internal extension TabmanViewController {
                     isValidLayout = scrollView.frame.minY == 0.0
                 }
                 if requiredContentInset.bottom > 0.0 {
-                    guard let scrollViewSuperview = scrollView.superview else {
-                        return
-                    }
-                    isValidLayout = (scrollViewSuperview.bounds.maxY - scrollView.frame.maxY) == 0.0
+                    // TODO - Figure out a way to check whether bottom of scroll view goes underneath bar.
                 }
             })
             

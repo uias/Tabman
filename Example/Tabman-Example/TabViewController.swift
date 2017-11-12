@@ -47,6 +47,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         updateAppearance(pagePosition: currentPosition?.x ?? 0.0)
         updateStatusLabels()
         updateBarButtonStates(index: currentIndex ?? 0)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

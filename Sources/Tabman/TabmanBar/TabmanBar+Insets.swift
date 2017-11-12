@@ -17,17 +17,22 @@ public extension TabmanBar {
         internal let barInsets: UIEdgeInsets
         
         /// The inset required for the top layout guide (UINavigationBar etc.).
-        @available(*, deprecated: 1.0.1, message: "Use safeAreaInsets")
+        @available(*, deprecated: 1.0.1, message: "Use safeArea")
         public var topLayoutGuide: CGFloat {
             return safeAreaInsets.top
         }
         /// The inset required for the bottom layout guide (UITabBar etc.).
-        @available(*, deprecated: 1.0.1, message: "Use safeAreaInsets")
+        @available(*, deprecated: 1.0.1, message: "Use safeArea")
         public var bottomLayoutGuide: CGFloat {
             return safeAreaInsets.bottom
         }
         /// The insets that determine the safe area for the view controller view.
-        public let safeAreaInsets: UIEdgeInsets
+        @available(*, deprecated: 1.0.6, message: "Use safeArea")
+        public var safeAreaInsets: UIEdgeInsets {
+            return safeArea
+        }
+        /// The insets that determine the safe area for the view controller view.
+        public let safeArea: UIEdgeInsets
         /// The inset required for the bar.
         public var bar: CGFloat {
             return max(barInsets.top, barInsets.bottom)
@@ -38,21 +43,17 @@ public extension TabmanBar {
         /// This takes topLayoutGuide, bottomlayoutGuide and the bar height into account.
         /// Set on a UIScrollView's contentInset to manually inset the contents.
         public var all: UIEdgeInsets {
-            let top = safeAreaInsets.top + barInsets.top
-            let bottom = safeAreaInsets.bottom + barInsets.bottom
+            let top = safeArea.top + barInsets.top
+            let bottom = safeArea.bottom + barInsets.bottom
             
-            if barInsets.top > 0.0 {
-                return UIEdgeInsetsMake(top, 0.0, safeAreaInsets.bottom, 0.0)
-            } else {
-                return UIEdgeInsetsMake(safeAreaInsets.top, 0.0, bottom, 0.0)
-            }
+            return UIEdgeInsets(top: top, left: 0.0, bottom: bottom, right: 0.0)
         }
         
         // MARK: Init
         
         internal init(safeAreaInsets: UIEdgeInsets,
                       bar: UIEdgeInsets) {
-            self.safeAreaInsets = safeAreaInsets
+            self.safeArea = safeAreaInsets
             self.barInsets = bar
         }
         

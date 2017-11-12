@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */; };
 		D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAAF1F50475600298598 /* AppDelegate.swift */; };
 		D61AAABE1F50475600298598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB01F50475600298598 /* Assets.xcassets */; };
 		D61AAABF1F50475600298598 /* AutoInsetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB11F50475600298598 /* AutoInsetting.storyboard */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingUICollectionViewController.swift; sourceTree = "<group>"; };
 		D61AAAAF1F50475600298598 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D61AAAB01F50475600298598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D61AAAB11F50475600298598 /* AutoInsetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AutoInsetting.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				D61AAAB21F50475600298598 /* AutoInsettingTableViewViewController.swift */,
 				D61AAAB31F50475600298598 /* AutoInsettingUITableViewController.swift */,
 				D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */,
+				46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */,
 			);
 			name = "Auto Insetting";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				D61AAAC81F50475600298598 /* TestViewController.swift in Sources */,
 				D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */,
+				46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */,
 				D61AAAC01F50475600298598 /* AutoInsettingTableViewViewController.swift in Sources */,
 				D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */,
 				D61AAAC11F50475600298598 /* AutoInsettingUITableViewController.swift in Sources */,
