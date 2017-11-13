@@ -116,15 +116,18 @@ As Tabman is based on **[Pageboy](github.com/uias/Pageboy)**, all the extras and
 
 Read up on the **Pageboy** documentation [here](https://github.com/uias/Pageboy#usage).
 
-## Child Content Insetting
-Tabman will automatically inset any `UIScrollView` that if finds within the child view controllers provided by the `PageboyViewControllerDataSource`. This behaviour can easily be disabled:
+### Child Content Insetting
+Tabman will automatically attempt to inset any `UIScrollView` that if finds within it's child view controllers. This is enabled by default:
 
 ```swift
-tabmanViewController.automaticallyAdjustsChildScrollViewInsets = false
+.automaticallyAdjustsChildScrollViewInsets = true
 ```
 
-A `requiredInsets` property is also available on `TabmanBarConfig` which provides any insets required to inset content correctly for the visible `TabmanBar` manually.
+The values used for insetting the child content are also available for manual use at `bar.requiredInsets`.
 
+Automatic insetting support is available for any `UIScrollView` derived class such as `UITableView` and also view controllers such as `UITableViewController` and `UICollectionViewController`.
+
+**Troubleshooting** - If you are having issues with the automatic insetting behaviour of Tabman, please check out the [Automatic Insetting Troubleshooting Guide](Docs/TROUBLESHOOTING.md#automatic-insetting). If you still are having issues, please raise an [issue](https://github.com/uias/Tabman/issues/new).
 
 ## Customization
 The `TabmanBar` in Tabman can be completely customized to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
@@ -164,6 +167,10 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
 For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
 
+## Troubleshooting
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
+
+If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
 ## About
 - Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
