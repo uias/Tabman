@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +35,7 @@
                         <constraints>
                             <constraint firstItem="E1b-Nl-c9u" firstAttribute="leading" secondItem="rup-yB-cp7" secondAttribute="leading" id="Q8x-YE-7pA"/>
                             <constraint firstItem="E1b-Nl-c9u" firstAttribute="top" secondItem="rup-yB-cp7" secondAttribute="top" id="Ues-fd-IoN"/>
-                            <constraint firstItem="HRY-vw-oaa" firstAttribute="top" secondItem="E1b-Nl-c9u" secondAttribute="bottom" id="ZwD-e1-AT0"/>
+                            <constraint firstAttribute="bottom" secondItem="E1b-Nl-c9u" secondAttribute="bottom" id="ZwD-e1-AT0"/>
                             <constraint firstAttribute="trailing" secondItem="E1b-Nl-c9u" secondAttribute="trailing" id="d8G-ey-wdt"/>
                         </constraints>
                     </view>
@@ -108,7 +108,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vtg-k7-roP" firstAttribute="width" secondItem="0MN-vQ-uNM" secondAttribute="width" id="4ci-Lv-wOQ"/>
-                            <constraint firstItem="GSz-UI-CMP" firstAttribute="top" secondItem="OU4-7h-Tfy" secondAttribute="bottom" id="6XJ-nR-VhD"/>
+                            <constraint firstAttribute="bottom" secondItem="OU4-7h-Tfy" secondAttribute="bottom" id="6XJ-nR-VhD"/>
                             <constraint firstItem="OU4-7h-Tfy" firstAttribute="leading" secondItem="0MN-vQ-uNM" secondAttribute="leading" id="IrM-BR-Y6d"/>
                             <constraint firstAttribute="trailing" secondItem="OU4-7h-Tfy" secondAttribute="trailing" id="MZv-bS-b0A"/>
                             <constraint firstItem="OU4-7h-Tfy" firstAttribute="top" secondItem="0MN-vQ-uNM" secondAttribute="top" id="qyF-mN-DjY"/>
@@ -142,13 +142,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMC-eG-hEp">
-                                            <rect key="frame" x="22" y="26" width="278" height="21"/>
+                                            <rect key="frame" x="14" y="14" width="294" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Jy-9l3">
-                                            <rect key="frame" x="22" y="53" width="278" height="129"/>
+                                            <rect key="frame" x="14" y="41" width="294" height="133"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
