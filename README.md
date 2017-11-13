@@ -124,7 +124,7 @@ Tabman will automatically attempt to inset any `UIScrollView` that if finds with
 .automaticallyAdjustsChildScrollViewInsets = true
 ```
 
-The values used for insetting the child content are also available for manual use at `bar.requiredInsets`.
+The values used for insetting the child content are also available for manual use at `bar.requiredInsets`. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas when running iOS 11.
 
 Automatic insetting support is available for any `UIScrollView` derived class such as `UITableView` and also view controllers such as `UITableViewController` and `UICollectionViewController`.
 
