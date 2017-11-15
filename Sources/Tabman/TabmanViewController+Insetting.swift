@@ -60,9 +60,14 @@ internal extension TabmanViewController {
     ///
     /// - Parameter childViewController: The child view controller.
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
+        let requiredInsets = bar.requiredInsets
         
         guard let childViewController = childViewController else { return }
         guard self.automaticallyAdjustsChildScrollViewInsets else { return }
+        
+        if #available(iOS 11, *) {
+            childViewController.additionalSafeAreaInsets = requiredInsets.barInsets
+        }
         
         // get all scroll views in view controller root subviews for insetting.
         var scrollViews = [UIScrollView?]()
@@ -83,7 +88,7 @@ internal extension TabmanViewController {
                 scrollView.contentInsetAdjustmentBehavior = .never
             }
             
-            var requiredContentInset = self.bar.requiredInsets.all
+            var requiredContentInset = requiredInsets.all
             let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
             
             self.viewControllerInsets[scrollView.hash] = requiredContentInset
