@@ -124,7 +124,6 @@ internal extension TabmanViewController {
             // dont update if we dont need to
             if scrollView.contentInset != requiredContentInset {
             
-                print(requiredContentInset)
                 scrollView.contentInset = requiredContentInset
                 scrollView.scrollIndicatorInsets = requiredContentInset
                 
