@@ -107,7 +107,7 @@ func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyVie
 3) All done! 🎉
 
 ### Page View Controller
-As Tabman is based on **[Pageboy](github.com/uias/Pageboy)**, all the extras and niceities in a `PageboyViewController` are available in a`TabmanViewController`. Including:
+As Tabman is based on **[Pageboy](https://github.com/uias/Pageboy)**, all the extras and niceities in a `PageboyViewController` are available in a`TabmanViewController`. Including:
 
 - Simplified data source management.
 - Enhanced delegation; featuring exact relative positional data and reliable updates.
