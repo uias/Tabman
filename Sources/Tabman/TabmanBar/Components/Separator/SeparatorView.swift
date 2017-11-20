@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-internal class Separator: UIView {
+internal class SeparatorView: UIView {
     
     //
     // MARK: Properties
