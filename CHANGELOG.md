@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104) | [1.0.5](#105) | [1.0.6](#106) | [1.0.7](#107)
+- `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104) | [1.0.5](#105) | [1.0.6](#106) | [1.0.7](#107) | [1.0.8](#108)
 
 #### 0.x Releases
 - `0.8.x` Releases - [0.8.0](#080) | [0.8.1](#081) | [0.8.2](#082) | [0.8.3](#083)
@@ -13,6 +13,17 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [1.0.8](https://github.com/uias/Pageboy/releases/tag/1.0.8)
+Released on 2017-11-15
+
+#### Added
+- [#176](https://github.com/uias/Tabman/issues/176) Support for edge insets to bottom separator view.
+     - by [msaps](https://github.com/msaps).
+
+#### Fixed
+- Removed unnecessary debugging logging.
+     - by [msaps](https://github.com/msaps).
 
 ## [1.0.7](https://github.com/uias/Pageboy/releases/tag/1.0.7)
 Released on 2017-11-15
