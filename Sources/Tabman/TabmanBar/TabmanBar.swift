@@ -292,6 +292,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
         self.bottomSeparator.color = bottomSeparatorColor
+        let bottomSeparatorEdgeInsets = appearance.layout.bottomSeparatorEdgeInsets ?? defaultAppearance.layout.bottomSeparatorEdgeInsets!
+        self.bottomSeparator.edgeInsets = bottomSeparatorEdgeInsets
         
         self.update(forAppearance: appearance,
                     defaultAppearance: defaultAppearance)

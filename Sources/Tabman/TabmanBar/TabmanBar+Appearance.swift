@@ -51,6 +51,8 @@ public extension TabmanBar {
             public var interItemSpacing: CGFloat?
             /// The spacing at the edge of the items in the bar.
             public var edgeInset: CGFloat?
+            /// Edge insets for the bottom separator relative to the bar.
+            public var bottomSeparatorEdgeInsets: UIEdgeInsets?
             /// The height for the bar.
             public var height: TabmanBar.Height?
             /// The vertical padding between the item and the bar bounds.
@@ -140,6 +142,7 @@ public extension TabmanBar {
             self.layout.height = .auto
             self.layout.interItemSpacing = 20.0
             self.layout.edgeInset = 16.0
+            self.layout.bottomSeparatorEdgeInsets = .zero
             self.layout.itemVerticalPadding = 12.0
             self.layout.itemDistribution = .leftAligned
             self.layout.minimumItemWidth = 44.0
