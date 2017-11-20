@@ -101,7 +101,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     /// The content view for the bar.
     public private(set) var contentView = UIView(forAutoLayout: ())
     /// The bottom separator view for the bar.
-    internal private(set) var bottomSeparator = Separator()
+    internal private(set) var bottomSeparator = SeparatorView()
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
         didSet {
@@ -162,8 +162,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
-        self.addSubview(bottomSeparator)
-        bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        bottomSeparator.addAsSubview(to: self)
         
         self.addSubview(contentView)
         contentView.autoPinEdgesToSuperviewEdges()
@@ -293,6 +292,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         
         let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
         self.bottomSeparator.color = bottomSeparatorColor
+        let bottomSeparatorEdgeInsets = appearance.layout.bottomSeparatorEdgeInsets ?? defaultAppearance.layout.bottomSeparatorEdgeInsets!
+        self.bottomSeparator.edgeInsets = bottomSeparatorEdgeInsets
         
         self.update(forAppearance: appearance,
                     defaultAppearance: defaultAppearance)
