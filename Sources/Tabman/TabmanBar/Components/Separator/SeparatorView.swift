@@ -1,5 +1,5 @@
 //
-//  Separator.swift
+//  SeparatorView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 21/03/2017.
