@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 internal class Separator: UIView {
     
@@ -14,19 +15,30 @@ internal class Separator: UIView {
     // MARK: Properties
     //
     
-    public override var intrinsicContentSize: CGSize {
+    private var leftPinConstraint: NSLayoutConstraint?
+    private var rightPinConstraint: NSLayoutConstraint?
+    
+    override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 0.5)
     }
     
-    public override var tintColor: UIColor! {
+    override var tintColor: UIColor! {
         didSet {
             self.color = tintColor
         }
     }
     /// The color of the separator.
-    public var color: UIColor = .clear {
+    var color: UIColor = .clear {
         didSet {
             self.backgroundColor = color
+        }
+    }
+    /// The distance to inset the separator from it's superview (X-axis only).
+    var edgeInsets: UIEdgeInsets = .zero {
+        didSet {
+            leftPinConstraint?.constant = edgeInsets.left
+            rightPinConstraint?.constant = -edgeInsets.right
+            superview?.layoutIfNeeded()
         }
     }
     
@@ -51,5 +63,15 @@ internal class Separator: UIView {
     private func initSeparator() {
         
         self.backgroundColor = self.color
+    }
+    
+    // MARK: Layout
+    
+    func addAsSubview(to parent: UIView) {
+        
+        parent.addSubview(self)
+        autoPinEdge(toSuperviewEdge: .bottom)
+        leftPinConstraint = autoPinEdge(toSuperviewEdge: .leading)
+        rightPinConstraint = autoPinEdge(toSuperviewEdge: .trailing)
     }
 }

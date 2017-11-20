@@ -162,8 +162,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         self.addSubview(backgroundView)
         backgroundView.autoPinEdgesToSuperviewEdges()
         
-        self.addSubview(bottomSeparator)
-        bottomSeparator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        bottomSeparator.addAsSubview(to: self)
         
         self.addSubview(contentView)
         contentView.autoPinEdgesToSuperviewEdges()
