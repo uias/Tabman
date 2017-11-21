@@ -12,6 +12,11 @@ public extension TabmanBar {
     
     public enum Behavior {
         
+        /// Autohiding the bar
+        ///
+        /// - never: always visible
+        /// - withOneItem: hidden when only a single item is in the bar
+        /// - always: always hidden
         public enum AutoHiding {
             case never
             case withOneItem
