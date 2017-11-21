@@ -10,25 +10,20 @@ import UIKit
 import PureLayout
 import Pageboy
 
+public protocol TabmanBarDelegate: class {
+    
+    /// Whether a bar should select an item at an index.
+    ///
+    /// - Parameters:
+    ///   - index: The proposed selection index.
+    /// - Returns: Whether the index should be selected.
+    func bar(shouldSelectItemAt index: Int) -> Bool
+}
+
 /// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     // MARK: Types
-    
-    /// The style of the bar.
-    ///
-    /// - bar: A simple horizontal bar only.
-    /// - buttonBar: A horizontal bar with evenly distributed buttons for each page index.
-    /// - scrollingButtonBar: A scrolling horizontal bar with buttons for each page index.
-    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
-    /// - custom: A custom defined TabmanBar type.
-    public enum Style {
-        case bar
-        case buttonBar
-        case scrollingButtonBar
-        case blockTabBar
-        case custom(type: TabmanBar.Type)
-    }
     
     /// The height for the bar.
     ///
