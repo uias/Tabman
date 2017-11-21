@@ -32,9 +32,15 @@ internal class BarBehaviorEngine {
     private func updateActiveBehaviors(to behaviors: [TabmanBar.Behavior]) {
         activists.removeAll()
         
-        behaviors.forEach { (behavior) in
-            guard let activist = behavior.activistType?.init(for: behavior, bar: self.bar) else {
-                return
+        for (index, behavior) in behaviors.enumerated() {
+            
+            var otherBehaviors = behaviors
+            otherBehaviors.remove(at: index)
+            
+            guard let activist = behavior.activistType?.init(for: behavior,
+                                                             bar: self.bar,
+                                                             otherBehaviors: otherBehaviors) else {
+                continue
             }
             self.activists.append(activist)
             activist.update()
