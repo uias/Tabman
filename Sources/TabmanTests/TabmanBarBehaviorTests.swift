@@ -12,4 +12,17 @@ import Pageboy
 
 class TabmanBarBehaviorTests: TabmanViewControllerTests {
 
+    func testBehaviorEngineUpdates() {
+        let config = tabmanViewController.bar
+        let bar = tabmanViewController.activeTabmanBar
+        
+        let initialBehaviors = bar?.behaviorEngine.activeBehaviors ?? []
+        
+        config.behaviors = [.autoHide(.always)]
+        
+        let finalBehaviors = bar?.behaviorEngine.activeBehaviors ?? []
+        
+        XCTAssertTrue(initialBehaviors.count < finalBehaviors.count,
+                      "Behaviors don't get added when set on the bar config")
+    }
 }
