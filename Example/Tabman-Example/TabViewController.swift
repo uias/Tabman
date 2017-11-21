@@ -43,8 +43,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 //        bar.style = .custom(type: CustomTabmanBar.self) // uncomment to use CustomTabmanBar as style.
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
-        bar.behaviors = [.autoHiding(.withOneItem)]
-        
         // updating
         updateAppearance(pagePosition: currentPosition?.x ?? 0.0)
         updateStatusLabels()

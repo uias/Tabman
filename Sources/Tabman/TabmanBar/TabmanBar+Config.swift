@@ -39,7 +39,7 @@ internal protocol TabmanBarConfigHandler: class {
     ///   - appearance: The new appearance config.
     func config(_ config: TabmanBar.Config, didUpdate appearance: TabmanBar.Appearance)
     
-    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior])
+    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?)
 }
 
 public protocol TabmanBarDelegate: class {
@@ -110,7 +110,7 @@ public extension TabmanBar {
         
         public var behaviors: [Behavior]? {
             didSet {
-                handler?.config(self, didUpdate: behaviors ?? [])
+                handler?.config(self, didUpdate: behaviors)
             }
         }
         

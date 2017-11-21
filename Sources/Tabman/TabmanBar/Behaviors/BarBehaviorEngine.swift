@@ -12,13 +12,14 @@ internal class BarBehaviorEngine {
     
     // MARK: Properties
     
-    weak var bar: TabmanBar?
+    private weak var bar: TabmanBar?
     
-    var activeBehaviors: [TabmanBar.Behavior] = [] {
+    var activeBehaviors: [TabmanBar.Behavior]? {
         didSet {
-            updateActiveBehaviors(to: activeBehaviors)
+            updateActiveBehaviors(to: activeBehaviors ?? [])
         }
     }
+    private var activists = [BarBehaviorActivist]()
     
     // MARK: Init
     
@@ -29,6 +30,20 @@ internal class BarBehaviorEngine {
     // MARK: Behaviors
     
     private func updateActiveBehaviors(to behaviors: [TabmanBar.Behavior]) {
-        dump(behaviors)
+        activists.removeAll()
+        
+        behaviors.forEach { (behavior) in
+            guard let activist = behavior.activistType?.init(for: behavior, bar: self.bar) else {
+                return
+            }
+            self.activists.append(activist)
+            activist.update()
+        }
+    }
+    
+    func update() {
+        activists.forEach { (activist) in
+            activist.update()
+        }
     }
 }

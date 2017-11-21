@@ -13,11 +13,12 @@ public extension TabmanBar {
     public enum Behavior {
         
         public enum AutoHiding {
-            case none
+            case never
             case withOneItem
+            case always
         }
         
-        case autoHiding(AutoHiding)
+        case autoHide(AutoHiding)
     }
 }
 
@@ -26,7 +27,7 @@ internal extension TabmanBar.Behavior {
     var activistType: BarBehaviorActivist.Type? {
         switch self {
             
-        case .autoHiding:
+        case .autoHide:
             return AutoHideBarBehaviorActivist.self
         }
     }

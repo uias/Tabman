@@ -10,4 +10,33 @@ import Foundation
 
 class AutoHideBarBehaviorActivist: BarBehaviorActivist {
     
+    // MARK: Properties
+    
+    private var autoHideBehavior: TabmanBar.Behavior.AutoHiding? {
+        if case .autoHide(let behavior) = self.behavior {
+            return behavior
+        }
+        return nil
+    }
+    
+    // MARK: Lifecycle
+    
+    override func update() {
+        super.update()
+        guard let behavior = self.autoHideBehavior else {
+            return
+        }
+        
+        switch behavior {
+            
+        case .always:
+            bar?.isHidden = true
+            
+        case .withOneItem:
+            bar?.isHidden = bar?.items?.count == 1
+            
+        default:
+            bar?.isHidden = false
+        }
+    }
 }

@@ -26,6 +26,7 @@ extension TabmanBar {
             add(indicator: indicator, to: contentView)
         }
         
+        behaviorEngine.update()
         self.updateCore(forAppearance: self.appearance)
         self.updateForCurrentPosition()
     }

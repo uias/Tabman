@@ -188,6 +188,7 @@ internal extension TabmanViewController {
         bar.transitionStore = self.barTransitionStore
         bar.dataSource = self
         bar.responder = self
+        bar.behaviorEngine.activeBehaviors = self.bar.behaviors
         bar.isHidden = (bar.items?.count ?? 0) == 0 // hidden if no items
         if let appearance = self.bar.appearance {
             bar.appearance = appearance
@@ -293,7 +294,7 @@ extension TabmanViewController: TabmanBarConfigHandler {
         self.reloadRequiredBarInsets()
     }
     
-    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]) {
+    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?) {
         activeTabmanBar?.behaviorEngine.activeBehaviors = behaviors
     }
 }
