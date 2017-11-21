@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BarBehaviorActivist {
+internal class BarBehaviorActivist {
  
     // MARK: Properties
     

@@ -48,11 +48,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
-    /// The current position of the bar.
     internal private(set) var currentPosition: CGFloat = 0.0
-    /// Store of available transitions for bar item/indicator transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
-    
+    internal lazy var behaviorEngine = BarBehaviorEngine(for: self)
+
     /// The object that acts as a responder to the bar.
     internal weak var responder: TabmanBarResponder?
     /// The object that acts as a data source to the bar.
@@ -102,6 +101,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     /// The bottom separator view for the bar.
     internal private(set) var bottomSeparator = SeparatorView()
+    
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
         didSet {
@@ -115,10 +115,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         maskView.backgroundColor = .black
         return maskView
     }()
-    
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
         didSet {
             guard indicatorIsProgressive != oldValue else { return }
@@ -130,7 +128,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorCompresses: Bool = TabmanBar.Appearance.defaultAppearance.indicator.compresses ?? false
-    
     /// Preferred style for the indicator. 
     /// Bar conforms at own discretion via usePreferredIndicatorStyle()
     public var preferredIndicatorStyle: TabmanIndicator.Style? {
@@ -145,8 +142,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
             return nil
         }
     }
-    
-    internal lazy var behaviorEngine = BarBehaviorEngine(for: self)
     
     // MARK: Init
     
