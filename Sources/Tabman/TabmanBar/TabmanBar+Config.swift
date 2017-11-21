@@ -38,6 +38,8 @@ internal protocol TabmanBarConfigHandler: class {
     ///   - config: The config.
     ///   - appearance: The new appearance config.
     func config(_ config: TabmanBar.Config, didUpdate appearance: TabmanBar.Appearance)
+    
+    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior])
 }
 
 public protocol TabmanBarDelegate: class {
@@ -105,6 +107,12 @@ public extension TabmanBar {
         
         /// The required insets for the bar.
         public internal(set) var requiredInsets: TabmanBar.Insets = .zero
+        
+        public var behaviors: [Behavior]? {
+            didSet {
+                handler?.config(self, didUpdate: behaviors ?? [])
+            }
+        }
         
         /// Object that acts as a delegate to the current TabmanBar.
         public weak var delegate: TabmanBarDelegate?

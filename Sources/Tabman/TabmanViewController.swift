@@ -292,4 +292,8 @@ extension TabmanViewController: TabmanBarConfigHandler {
         self.view.layoutIfNeeded()
         self.reloadRequiredBarInsets()
     }
+    
+    func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]) {
+        activeTabmanBar?.behaviorEngine.activeBehaviors = behaviors
+    }
 }

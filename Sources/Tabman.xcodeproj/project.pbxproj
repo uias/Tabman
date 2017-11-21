@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F17BF1E81D6B100E5A993 /* SeparatorView.swift */; };
+		4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */; };
+		4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */; };
+		4659D9CE1FC4AD7A006E483F /* BarBehaviorActivist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */; };
+		4659D9D11FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D01FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift */; };
 		D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136781E69893A0013CD42 /* TabmanIndicator.swift */; };
 		D601368A1E6992BB0013CD42 /* TabmanBar+BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136891E6992BB0013CD42 /* TabmanBar+BackgroundView.swift */; };
 		D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
@@ -76,6 +80,10 @@
 
 /* Begin PBXFileReference section */
 		463F17BF1E81D6B100E5A993 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Behaviors.swift"; sourceTree = "<group>"; };
+		4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorEngine.swift; sourceTree = "<group>"; };
+		4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorActivist.swift; sourceTree = "<group>"; };
+		4659D9D01FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoHideBarBehaviorActivist.swift; sourceTree = "<group>"; };
 		D60136781E69893A0013CD42 /* TabmanIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanIndicator.swift; sourceTree = "<group>"; };
 		D60136891E6992BB0013CD42 /* TabmanBar+BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanBar+BackgroundView.swift"; sourceTree = "<group>"; };
 		D6020A971E5DC59500C2B7BA /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
@@ -162,6 +170,25 @@
 				463F17BF1E81D6B100E5A993 /* SeparatorView.swift */,
 			);
 			path = Separator;
+			sourceTree = "<group>";
+		};
+		4659D9C81FC4AB7A006E483F /* Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */,
+				4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */,
+				4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */,
+				4659D9CF1FC4B02E006E483F /* Activists */,
+			);
+			path = Behaviors;
+			sourceTree = "<group>";
+		};
+		4659D9CF1FC4B02E006E483F /* Activists */ = {
+			isa = PBXGroup;
+			children = (
+				4659D9D01FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift */,
+			);
+			path = Activists;
 			sourceTree = "<group>";
 		};
 		D60136751E69892F0013CD42 /* Indicator */ = {
@@ -306,6 +333,7 @@
 				D66FEEBD1E79670700E7E87A /* TabmanBar+Protocols.swift */,
 				D6F7FF4B1EC39E050077219B /* TabmanBar+Insets.swift */,
 				D635821F1F5EF843006AD0C3 /* TabmanBar+Layout.swift */,
+				4659D9C81FC4AB7A006E483F /* Behaviors */,
 				D6020AA51E5DE4A800C2B7BA /* Styles */,
 				D616D09F1E77EFC600C7AA32 /* Transitioning */,
 				D62AC1AE1E5C84CB0020B8AE /* Components */,
@@ -524,6 +552,7 @@
 				D696BFAC1E92531900771F22 /* TabmanViewController+Embedding.swift in Sources */,
 				D6CC55931ECCF08700A7FBB4 /* TabmanBar+Appearance.swift in Sources */,
 				D66F583C1EC0F66000418B40 /* TabmanButtonBar.swift in Sources */,
+				4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */,
 				D616D0B71E77FF7600C7AA32 /* TabmanItemMaskTransition.swift in Sources */,
 				D6020AA71E5DE4A800C2B7BA /* TabmanScrollingButtonBar.swift in Sources */,
 				D616D0BD1E783E6400C7AA32 /* ImageUtils.swift in Sources */,
@@ -536,6 +565,7 @@
 				D616D0B51E77FF6D00C7AA32 /* TabmanItemColorCrossfadeTransition.swift in Sources */,
 				D616D0A31E77EFC600C7AA32 /* TabmanBarTransitionStore.swift in Sources */,
 				D66FEEDC1E7AA51000E7E87A /* ViewUtils.swift in Sources */,
+				4659D9CE1FC4AD7A006E483F /* BarBehaviorActivist.swift in Sources */,
 				D68FBA811E701D1A00B96EC0 /* CircularView.swift in Sources */,
 				D616D06C1E72C1FC00C7AA32 /* TabmanLineIndicator.swift in Sources */,
 				D616D0B91E78065500C7AA32 /* PositionalUtils.swift in Sources */,
@@ -554,10 +584,12 @@
 				D616D0B11E77FCDA00C7AA32 /* TabmanItemTransition.swift in Sources */,
 				D616D06A1E72C1FC00C7AA32 /* TabmanBlockIndicator.swift in Sources */,
 				D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */,
+				4659D9D11FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift in Sources */,
 				D66FEEBC1E79662C00E7E87A /* TabmanBar+Indicator.swift in Sources */,
 				D66FEEF61E7BFF8E00E7E87A /* TabmanChevronIndicator.swift in Sources */,
 				D670521D1E856664003348BD /* TabmanFixedButtonBar.swift in Sources */,
 				D616D0601E719D3B00C7AA32 /* TabmanBlockTabBar.swift in Sources */,
+				4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 				D616D06B1E72C1FC00C7AA32 /* TabmanDotIndicator.swift in Sources */,
 				D6822CDE1EAD2A9500E246AD /* TabmanViewController+Insetting.swift in Sources */,

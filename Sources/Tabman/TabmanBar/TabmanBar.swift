@@ -146,6 +146,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
+    internal lazy var behaviorEngine = BarBehaviorEngine(for: self)
+    
     // MARK: Init
     
     required public init?(coder aDecoder: NSCoder) {
