@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F17BF1E81D6B100E5A993 /* SeparatorView.swift */; };
+		464813271FC596320035B761 /* AutoInsetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464813261FC596320035B761 /* AutoInsetEngine.swift */; };
 		4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */; };
 		4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */; };
 		4659D9CE1FC4AD7A006E483F /* BarBehaviorActivist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		463F17BF1E81D6B100E5A993 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		464813261FC596320035B761 /* AutoInsetEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsetEngine.swift; sourceTree = "<group>"; };
 		4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Behaviors.swift"; sourceTree = "<group>"; };
 		4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorEngine.swift; sourceTree = "<group>"; };
 		4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorActivist.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 				463F17BF1E81D6B100E5A993 /* SeparatorView.swift */,
 			);
 			path = Separator;
+			sourceTree = "<group>";
+		};
+		464813251FC596260035B761 /* AutoInset */ = {
+			isa = PBXGroup;
+			children = (
+				464813261FC596320035B761 /* AutoInsetEngine.swift */,
+			);
+			path = AutoInset;
 			sourceTree = "<group>";
 		};
 		4659D9C81FC4AB7A006E483F /* Behaviors */ = {
@@ -318,6 +328,7 @@
 				D696BFAB1E92531900771F22 /* TabmanViewController+Embedding.swift */,
 				D6822CDD1EAD2A9500E246AD /* TabmanViewController+Insetting.swift */,
 				D62AC11A1E573AA00020B8AE /* TabmanBar */,
+				464813251FC596260035B761 /* AutoInset */,
 				D62AC1211E5748C80020B8AE /* Utilities */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
@@ -574,6 +585,7 @@
 				D66F583C1EC0F66000418B40 /* TabmanButtonBar.swift in Sources */,
 				4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */,
 				D616D0B71E77FF7600C7AA32 /* TabmanItemMaskTransition.swift in Sources */,
+				464813271FC596320035B761 /* AutoInsetEngine.swift in Sources */,
 				D6020AA71E5DE4A800C2B7BA /* TabmanScrollingButtonBar.swift in Sources */,
 				D616D0BD1E783E6400C7AA32 /* ImageUtils.swift in Sources */,
 				D62AC1A91E5C54570020B8AE /* UIView+Utils.swift in Sources */,
