@@ -40,8 +40,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Internal store for bar component transitions.
     internal var barTransitionStore = TabmanBarTransitionStore()
-    /// Collection of cached insets for view controllers per page index.
-    internal var viewControllerInsets: [PageIndex : UIEdgeInsets] = [:]
     internal let autoInsetEngine = AutoInsetEngine()
     
     /// Whether any UIScrollView in child view controllers should be
@@ -49,6 +47,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// NOTE: This needs to be set before a dataSource is set, defaults to true.
     public var automaticallyAdjustsChildScrollViewInsets: Bool = true {
         didSet {
+            autoInsetEngine.isEnabled = automaticallyAdjustsChildScrollViewInsets
             if automaticallyAdjustsScrollViewInsets {
                 self.automaticallyAdjustsScrollViewInsets = false
             }

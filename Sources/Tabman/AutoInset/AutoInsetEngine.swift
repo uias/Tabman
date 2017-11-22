@@ -14,6 +14,7 @@ class AutoInsetEngine {
     
     private var viewControllerInsets: [Int : UIEdgeInsets] = [:]
     
+    /// Whether auto-insetting is enabled.
     var isEnabled: Bool = true
     
     // MARK: Insetting
@@ -37,23 +38,8 @@ class AutoInsetEngine {
                 scrollView.contentInsetAdjustmentBehavior = .never
             }
             
-            var requiredContentInset = requiredInsets.all
-            let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
-            
-            self.viewControllerInsets[scrollView.hash] = requiredContentInset
-            
-            // take account of custom top / bottom insets
-            let topInset = scrollView.contentInset.top - currentContentInset.top
-            if topInset != 0.0 {
-                requiredContentInset.top += topInset
-            }
-            let bottomInset = scrollView.contentInset.bottom - currentContentInset.bottom
-            if bottomInset != 0.0 {
-                requiredContentInset.bottom += bottomInset
-            }
-            
-            requiredContentInset.left = currentContentInset.left
-            requiredContentInset.right = currentContentInset.right
+            let requiredContentInset = calculateActualRequiredContentInset(for: scrollView,
+                                                                           from: requiredInsets)
             
             // ensure scroll view is either at top or full height before doing automatic insetting
             var isValidLayout = true
@@ -94,6 +80,35 @@ class AutoInsetEngine {
         if !(viewController is UITableViewController) && !(viewController is UICollectionViewController) {
             success()
         }
+    }
+    
+    /// Calculate the actual inset values to use including any custom contentInset values.
+    ///
+    /// - Parameters:
+    ///   - scrollView: Scroll view.
+    ///   - requiredInsets: Required TabmanBar insets.
+    /// - Returns: Actual contentInset values to use.
+    private func calculateActualRequiredContentInset(for scrollView: UIScrollView,
+                                                     from requiredInsets: TabmanBar.Insets) -> UIEdgeInsets {
+        var requiredContentInset = requiredInsets.all
+        let currentContentInset = self.viewControllerInsets[scrollView.hash] ?? .zero
+        
+        self.viewControllerInsets[scrollView.hash] = requiredContentInset
+        
+        // take account of custom top / bottom insets
+        let topInset = scrollView.contentInset.top - currentContentInset.top
+        if topInset != 0.0 {
+            requiredContentInset.top += topInset
+        }
+        let bottomInset = scrollView.contentInset.bottom - currentContentInset.bottom
+        if bottomInset != 0.0 {
+            requiredContentInset.bottom += bottomInset
+        }
+        
+        requiredContentInset.left = currentContentInset.left
+        requiredContentInset.right = currentContentInset.right
+        
+        return requiredContentInset
     }
 }
 
