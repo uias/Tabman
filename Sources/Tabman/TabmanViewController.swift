@@ -40,19 +40,19 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Internal store for bar component transitions.
     internal var barTransitionStore = TabmanBarTransitionStore()
-    /// Collection of cached insets for view controllers per page index.
-    internal var viewControllerInsets: [PageIndex : UIEdgeInsets] = [:]
     
     /// Whether any UIScrollView in child view controllers should be
     /// automatically insetted to display below the TabmanBar.
     /// NOTE: This needs to be set before a dataSource is set, defaults to true.
     public var automaticallyAdjustsChildScrollViewInsets: Bool = true {
         didSet {
+            autoInsetEngine.isEnabled = automaticallyAdjustsChildScrollViewInsets
             if automaticallyAdjustsScrollViewInsets {
                 self.automaticallyAdjustsScrollViewInsets = false
             }
         }
     }
+    internal let autoInsetEngine = AutoInsetEngine()
     
     // MARK: Lifecycle
     
@@ -72,8 +72,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        reloadRequiredBarInsets()
-        insetChildViewControllerIfNeeded(self.currentViewController)
+        setNeedsChildAutoInsetUpdate()
         reloadBarWithCurrentPosition()
         
         let appearance = bar.appearance ?? .defaultAppearance
@@ -100,7 +99,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: PageboyViewController.NavigationDirection,
                                     animated: Bool) {
         let viewController = dataSource?.viewController(for: self, at: index)
-        self.insetChildViewControllerIfNeeded(viewController)
+        setNeedsChildAutoInsetUpdate(for: viewController)
         
         if animated {
             isScrollingAnimated = true
@@ -133,7 +132,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didReloadWith currentViewController: UIViewController,
                                       currentPageIndex: PageboyViewController.PageIndex) {
-        self.insetChildViewControllerIfNeeded(currentViewController)
+        setNeedsChildAutoInsetUpdate(for: currentViewController)
     }
     
     // MARK: Positional Updates
@@ -238,7 +237,7 @@ internal extension TabmanViewController {
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
         
-        self.insetChildViewControllerIfNeeded(self.currentViewController)
+        setNeedsChildAutoInsetUpdate()
     }
 }
 
@@ -288,13 +287,12 @@ extension TabmanViewController: TabmanBarConfigHandler {
     }
     
     func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBar.Item]?) {
-        self.activeTabmanBar?.reloadData()
-
-        self.view.layoutIfNeeded()
-        self.reloadRequiredBarInsets()
+        activeTabmanBar?.reloadData()
+        setNeedsChildAutoInsetUpdate()
     }
     
     func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?) {
         activeTabmanBar?.behaviorEngine.activeBehaviors = behaviors
+        setNeedsChildAutoInsetUpdate()
     }
 }

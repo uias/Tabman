@@ -21,7 +21,7 @@ public extension TabmanViewController {
         }
         
         self.tabmanBar?.isHidden = true
-        self.reloadRequiredBarInsets()
+        setNeedsChildAutoInsetUpdate()
         
         // hook up new bar
         bar.dataSource = self
@@ -53,7 +53,7 @@ public extension TabmanViewController {
         self.tabmanBar?.reloadData()
         self.view.layoutIfNeeded()
         
-        self.reloadRequiredBarInsets()
+        setNeedsChildAutoInsetUpdate()
         
         return bar
     }
@@ -87,7 +87,7 @@ public extension TabmanViewController {
         bar.removeFromSuperview()
         view.addSubview(bar)
         bar.autoPinEdgesToSuperviewEdges()
-        self.reloadRequiredBarInsets()
+        setNeedsChildAutoInsetUpdate()
         
         view.layoutIfNeeded()
     }
@@ -101,7 +101,5 @@ public extension TabmanViewController {
         self.embeddingView = nil
         
         self.updateBar(withLocation: self.bar.location)
-        self.reloadRequiredBarInsets()
     }
-    
 }
