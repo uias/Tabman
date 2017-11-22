@@ -48,5 +48,17 @@ internal extension TabmanBar.Style {
             return type
         }
     }
+    
+    /// Where the bar is preferred to be displayed for the style.
+    var preferredLocation: TabmanBar.Location {
+        switch self {
+            
+        case .bar:
+            return .bottom
+            
+        default:
+            return .top
+        }
+    }
 }
 

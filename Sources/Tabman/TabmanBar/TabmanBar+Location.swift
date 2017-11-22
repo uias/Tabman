@@ -21,19 +21,3 @@ public extension TabmanBar {
         case bottom
     }
 }
-
-// MARK: - Additional Style properties for internal use
-internal extension TabmanBar.Style {
-    
-    /// Where the bar is preferred to be displayed for the style.
-    var preferredLocation: TabmanBar.Location {
-        switch self {
-            
-        case .bar:
-            return .bottom
-            
-        default:
-            return .top
-        }
-    }
-}
