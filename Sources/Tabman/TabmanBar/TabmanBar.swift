@@ -10,25 +10,20 @@ import UIKit
 import PureLayout
 import Pageboy
 
+public protocol TabmanBarDelegate: class {
+    
+    /// Whether a bar should select an item at an index.
+    ///
+    /// - Parameters:
+    ///   - index: The proposed selection index.
+    /// - Returns: Whether the index should be selected.
+    func bar(shouldSelectItemAt index: Int) -> Bool
+}
+
 /// A bar that displays the current page status of a TabmanViewController.
 open class TabmanBar: UIView, TabmanBarLifecycle {
     
     // MARK: Types
-    
-    /// The style of the bar.
-    ///
-    /// - bar: A simple horizontal bar only.
-    /// - buttonBar: A horizontal bar with evenly distributed buttons for each page index.
-    /// - scrollingButtonBar: A scrolling horizontal bar with buttons for each page index.
-    /// - blockTabBar: A tab bar with sliding block style indicator behind tabs.
-    /// - custom: A custom defined TabmanBar type.
-    public enum Style {
-        case bar
-        case buttonBar
-        case scrollingButtonBar
-        case blockTabBar
-        case custom(type: TabmanBar.Type)
-    }
     
     /// The height for the bar.
     ///
@@ -48,11 +43,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
     }
     
-    /// The current position of the bar.
     internal private(set) var currentPosition: CGFloat = 0.0
-    /// Store of available transitions for bar item/indicator transitions.
     internal weak var transitionStore: TabmanBarTransitionStore?
-    
+    internal lazy var behaviorEngine = BarBehaviorEngine(for: self)
+
     /// The object that acts as a responder to the bar.
     internal weak var responder: TabmanBarResponder?
     /// The object that acts as a data source to the bar.
@@ -102,6 +96,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     public private(set) var contentView = UIView(forAutoLayout: ())
     /// The bottom separator view for the bar.
     internal private(set) var bottomSeparator = SeparatorView()
+    
     /// Indicator for the bar.
     public internal(set) var indicator: TabmanIndicator? {
         didSet {
@@ -115,10 +110,8 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         maskView.backgroundColor = .black
         return maskView
     }()
-    
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
-    
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
         didSet {
             guard indicatorIsProgressive != oldValue else { return }
@@ -130,7 +123,6 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     }
     internal var indicatorBounces: Bool = TabmanBar.Appearance.defaultAppearance.indicator.bounces ?? false
     internal var indicatorCompresses: Bool = TabmanBar.Appearance.defaultAppearance.indicator.compresses ?? false
-    
     /// Preferred style for the indicator. 
     /// Bar conforms at own discretion via usePreferredIndicatorStyle()
     public var preferredIndicatorStyle: TabmanIndicator.Style? {
