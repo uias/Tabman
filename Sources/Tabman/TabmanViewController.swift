@@ -72,7 +72,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        reloadRequiredBarInsets()
+        calculateRequiredBarInsets()
         setNeedsChildAutoInsetUpdate()
         reloadBarWithCurrentPosition()
         
@@ -291,7 +291,7 @@ extension TabmanViewController: TabmanBarConfigHandler {
         self.activeTabmanBar?.reloadData()
 
         self.view.layoutIfNeeded()
-        self.reloadRequiredBarInsets()
+        self.calculateRequiredBarInsets()
     }
     
     func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?) {

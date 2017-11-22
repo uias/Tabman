@@ -12,7 +12,7 @@ import Foundation
 internal extension TabmanViewController {
     
     /// Reload the required bar insets for the current bar.
-    func reloadRequiredBarInsets() {
+    func calculateRequiredBarInsets() {
         
         var layoutInsets: UIEdgeInsets = .zero
         if #available(iOS 11, *) {
@@ -23,13 +23,13 @@ internal extension TabmanViewController {
         }
         
         self.bar.requiredInsets = TabmanBar.Insets(safeAreaInsets: layoutInsets,
-                                                   bar: self.calculateRequiredBarInsets())
+                                                   bar: self.actualBarInsets())
     }
     
-    /// Calculate the required insets for the current bar.
+    /// Calculate the actual required insets for the current bar.
     ///
     /// - Returns: The required bar insets
-    private func calculateRequiredBarInsets() -> UIEdgeInsets {
+    private func actualBarInsets() -> UIEdgeInsets {
         guard self.embeddingView == nil && self.attachedTabmanBar == nil else {
             return .zero
         }
