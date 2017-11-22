@@ -59,6 +59,7 @@ internal extension TabmanViewController {
     /// Automatically inset any table/collection views in a child view controller for the TabmanBar.
     ///
     /// - Parameter childViewController: The child view controller.
+    @available(*, deprecated: 1.1.0, message: "Use autoInsetEngine")
     func insetChildViewControllerIfNeeded(_ childViewController: UIViewController?) {
         let requiredInsets = bar.requiredInsets
         

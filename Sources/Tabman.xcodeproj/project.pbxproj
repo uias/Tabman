@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F17BF1E81D6B100E5A993 /* SeparatorView.swift */; };
 		464813271FC596320035B761 /* AutoInsetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464813261FC596320035B761 /* AutoInsetEngine.swift */; };
+		4648132D1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */; };
 		4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */; };
 		4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */; };
 		4659D9CE1FC4AD7A006E483F /* BarBehaviorActivist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		463F17BF1E81D6B100E5A993 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		464813261FC596320035B761 /* AutoInsetEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsetEngine.swift; sourceTree = "<group>"; };
+		4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
 		4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Behaviors.swift"; sourceTree = "<group>"; };
 		4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorEngine.swift; sourceTree = "<group>"; };
 		4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorActivist.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		464813251FC596260035B761 /* AutoInset */ = {
 			isa = PBXGroup;
 			children = (
+				4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */,
 				464813261FC596320035B761 /* AutoInsetEngine.swift */,
 			);
 			path = AutoInset;
@@ -615,6 +618,7 @@
 				D66FEEF81E7C024E00E7E87A /* ChevronView.swift in Sources */,
 				D616D0AE1E77FA9300C7AA32 /* TabmanStaticBarIndicatorTransition.swift in Sources */,
 				D616D0B11E77FCDA00C7AA32 /* TabmanItemTransition.swift in Sources */,
+				4648132D1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift in Sources */,
 				D616D06A1E72C1FC00C7AA32 /* TabmanBlockIndicator.swift in Sources */,
 				D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */,
 				4659D9D11FC4B03B006E483F /* AutoHideBarBehaviorActivist.swift in Sources */,

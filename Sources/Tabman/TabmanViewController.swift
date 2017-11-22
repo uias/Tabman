@@ -42,6 +42,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     internal var barTransitionStore = TabmanBarTransitionStore()
     /// Collection of cached insets for view controllers per page index.
     internal var viewControllerInsets: [PageIndex : UIEdgeInsets] = [:]
+    internal let autoInsetEngine = AutoInsetEngine()
     
     /// Whether any UIScrollView in child view controllers should be
     /// automatically insetted to display below the TabmanBar.
