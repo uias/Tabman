@@ -157,6 +157,6 @@ public extension UIViewController {
     /// after viewDidLoad.
     public func setNeedsScrollViewInsetUpdate() {
         guard let tabmanViewController = self.parent?.parent as? TabmanViewController else { return }
-        tabmanViewController.insetChildViewControllerIfNeeded(self)
+        tabmanViewController.setNeedsChildAutoInsetUpdate(for: self)
     }
 }

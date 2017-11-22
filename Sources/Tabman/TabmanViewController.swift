@@ -74,7 +74,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         super.viewDidLayoutSubviews()
         
         reloadRequiredBarInsets()
-        insetChildViewControllerIfNeeded(self.currentViewController)
+        setNeedsChildAutoInsetUpdate()
         reloadBarWithCurrentPosition()
         
         let appearance = bar.appearance ?? .defaultAppearance
@@ -101,7 +101,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: PageboyViewController.NavigationDirection,
                                     animated: Bool) {
         let viewController = dataSource?.viewController(for: self, at: index)
-        self.insetChildViewControllerIfNeeded(viewController)
+        setNeedsChildAutoInsetUpdate(for: viewController)
         
         if animated {
             isScrollingAnimated = true
@@ -134,7 +134,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                       didReloadWith currentViewController: UIViewController,
                                       currentPageIndex: PageboyViewController.PageIndex) {
-        self.insetChildViewControllerIfNeeded(currentViewController)
+        setNeedsChildAutoInsetUpdate(for: currentViewController)
     }
     
     // MARK: Positional Updates
@@ -239,7 +239,7 @@ internal extension TabmanViewController {
         let position = self.navigationOrientation == .horizontal ? self.currentPosition?.x : self.currentPosition?.y
         bar.updatePosition(position ?? 0.0, direction: .neutral)
         
-        self.insetChildViewControllerIfNeeded(self.currentViewController)
+        setNeedsChildAutoInsetUpdate()
     }
 }
 

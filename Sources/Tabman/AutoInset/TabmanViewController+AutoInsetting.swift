@@ -11,13 +11,13 @@ import UIKit
 internal extension TabmanViewController {
     
     func setNeedsChildAutoInsetUpdate() {
-        guard let currentViewController = self.currentViewController else {
-            return
-        }
         setNeedsChildAutoInsetUpdate(for: currentViewController)
     }
     
-    func setNeedsChildAutoInsetUpdate(for childViewController: UIViewController) {
+    func setNeedsChildAutoInsetUpdate(for childViewController: UIViewController?) {
+        guard let childViewController = childViewController else {
+            return
+        }
         autoInsetEngine.inset(childViewController, requiredInsets: bar.requiredInsets)
     }
 }
