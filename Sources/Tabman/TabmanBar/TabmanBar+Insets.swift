@@ -15,22 +15,6 @@ public extension TabmanBar {
         
         /// Raw TabmanBar UIEdgeInsets
         internal let barInsets: UIEdgeInsets
-        
-        /// The inset required for the top layout guide (UINavigationBar etc.).
-        @available(*, deprecated: 1.0.1, message: "Use safeArea")
-        public var topLayoutGuide: CGFloat {
-            return safeAreaInsets.top
-        }
-        /// The inset required for the bottom layout guide (UITabBar etc.).
-        @available(*, deprecated: 1.0.1, message: "Use safeArea")
-        public var bottomLayoutGuide: CGFloat {
-            return safeAreaInsets.bottom
-        }
-        /// The insets that determine the safe area for the view controller view.
-        @available(*, deprecated: 1.0.6, message: "Use safeArea")
-        public var safeAreaInsets: UIEdgeInsets {
-            return safeArea
-        }
         /// The insets that determine the safe area for the view controller view.
         public let safeArea: UIEdgeInsets
         /// The inset required for the bar.
