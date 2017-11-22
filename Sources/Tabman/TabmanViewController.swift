@@ -40,7 +40,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Internal store for bar component transitions.
     internal var barTransitionStore = TabmanBarTransitionStore()
-    internal let autoInsetEngine = AutoInsetEngine()
     
     /// Whether any UIScrollView in child view controllers should be
     /// automatically insetted to display below the TabmanBar.
@@ -53,6 +52,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             }
         }
     }
+    internal let autoInsetEngine = AutoInsetEngine()
     
     // MARK: Lifecycle
     
@@ -72,7 +72,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        calculateRequiredBarInsets()
         setNeedsChildAutoInsetUpdate()
         reloadBarWithCurrentPosition()
         
@@ -291,7 +290,7 @@ extension TabmanViewController: TabmanBarConfigHandler {
         self.activeTabmanBar?.reloadData()
 
         self.view.layoutIfNeeded()
-        self.calculateRequiredBarInsets()
+        setNeedsChildAutoInsetUpdate()
     }
     
     func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?) {
