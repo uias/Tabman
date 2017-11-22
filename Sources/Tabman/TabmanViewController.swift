@@ -287,13 +287,12 @@ extension TabmanViewController: TabmanBarConfigHandler {
     }
     
     func config(_ config: TabmanBar.Config, didUpdate items: [TabmanBar.Item]?) {
-        self.activeTabmanBar?.reloadData()
-
-        self.view.layoutIfNeeded()
+        activeTabmanBar?.reloadData()
         setNeedsChildAutoInsetUpdate()
     }
     
     func config(_ config: TabmanBar.Config, didUpdate behaviors: [TabmanBar.Behavior]?) {
         activeTabmanBar?.behaviorEngine.activeBehaviors = behaviors
+        setNeedsChildAutoInsetUpdate()
     }
 }
