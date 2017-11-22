@@ -10,6 +10,7 @@
 		463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F17BF1E81D6B100E5A993 /* SeparatorView.swift */; };
 		464813271FC596320035B761 /* AutoInsetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464813261FC596320035B761 /* AutoInsetEngine.swift */; };
 		4648132D1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */; };
+		4648132F1FC5C3DF0035B761 /* UIViewController+AutoInsetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648132E1FC5C3DF0035B761 /* UIViewController+AutoInsetting.swift */; };
 		4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */; };
 		4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */; };
 		4659D9CE1FC4AD7A006E483F /* BarBehaviorActivist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */; };
@@ -88,6 +89,7 @@
 		463F17BF1E81D6B100E5A993 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		464813261FC596320035B761 /* AutoInsetEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsetEngine.swift; sourceTree = "<group>"; };
 		4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
+		4648132E1FC5C3DF0035B761 /* UIViewController+AutoInsetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
 		4659D9C91FC4AB83006E483F /* TabmanBar+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Behaviors.swift"; sourceTree = "<group>"; };
 		4659D9CB1FC4AC03006E483F /* BarBehaviorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorEngine.swift; sourceTree = "<group>"; };
 		4659D9CD1FC4AD7A006E483F /* BarBehaviorActivist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBehaviorActivist.swift; sourceTree = "<group>"; };
@@ -187,10 +189,19 @@
 		464813251FC596260035B761 /* AutoInset */ = {
 			isa = PBXGroup;
 			children = (
-				4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */,
 				464813261FC596320035B761 /* AutoInsetEngine.swift */,
+				464813301FC5C3E50035B761 /* Extensions */,
 			);
 			path = AutoInset;
+			sourceTree = "<group>";
+		};
+		464813301FC5C3E50035B761 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4648132C1FC5C1D70035B761 /* TabmanViewController+AutoInsetting.swift */,
+				4648132E1FC5C3DF0035B761 /* UIViewController+AutoInsetting.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4659D9C81FC4AB7A006E483F /* Behaviors */ = {
@@ -613,6 +624,7 @@
 				D66FEEC01E79688000E7E87A /* TabmanBar+Construction.swift in Sources */,
 				D6F7FF4C1EC39E050077219B /* TabmanBar+Insets.swift in Sources */,
 				D601368A1E6992BB0013CD42 /* TabmanBar+BackgroundView.swift in Sources */,
+				4648132F1FC5C3DF0035B761 /* UIViewController+AutoInsetting.swift in Sources */,
 				D697AB421E7C166800586DCF /* TabmanClearIndicator.swift in Sources */,
 				D62AC1AB1E5C55290020B8AE /* ContentViewScrollView.swift in Sources */,
 				D66FEEF81E7C024E00E7E87A /* ChevronView.swift in Sources */,

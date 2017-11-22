@@ -52,17 +52,3 @@ internal extension TabmanViewController {
         return insets
     }
 }
-
-// MARK: - UIViewController extension for handling insetting.
-public extension UIViewController {
-    
-    /// Indicates to the TabmanViewController that a child scroll view inset 
-    /// needs to be updated.
-    ///
-    /// This should be called if the contentInset of a UITableView or UICollectionView is changed
-    /// after viewDidLoad.
-    public func setNeedsScrollViewInsetUpdate() {
-        guard let tabmanViewController = self.parent?.parent as? TabmanViewController else { return }
-        tabmanViewController.setNeedsChildAutoInsetUpdate(for: self)
-    }
-}
