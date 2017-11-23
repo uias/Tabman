@@ -145,14 +145,16 @@ The style of bar to display, by default this is set to `.scrollingButtonBar`.
 For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).
 
 #### Location
-Where you want the bar to appear, either at the top or bottom of the screen. By default this is set to `.preferred` which will use the predefined preferred location for the active style.
+Choose where you want the bar to appear, by default this is set to `.preferred` which will use the predefined preferred location for the active style.
 
-The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.
+```swift
+tabViewController.bar.location = .top
+```
+
+*Note: The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.*
 
 #### Appearance
-The `TabmanBar.Appearance` object provides all the available properties for appearance customisation of a `TabmanBar`. Not all of the properties are appropriate for each style `TabmanBar`, therefore the bar will only respond to the properties it adheres to.
-
-To set a custom appearance definition do the following on a `TabmanViewController`:
+Customization of the appearance and styling of a bar is available via `.appearance`. Providing a `TabmanBar.Appearance` object with your desired configuration will instantly update the appearance of the active bar:
 
 ```swift
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
