@@ -1,4 +1,4 @@
-# BEHAVIORS
+# Behaviors
 
 The following values can be used to customize the behavior of a `TabmanBar` via the `.bar.behaviors` property on a `TabmanViewController`.
 
