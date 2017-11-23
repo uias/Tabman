@@ -68,6 +68,7 @@ and build the workspace.
 
 
 ## Usage
+
 ### The Basics
 
 1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
@@ -134,24 +135,30 @@ Automatic insetting support is available for any `UIScrollView` derived class su
 The `TabmanBar` in Tabman can be completely customized to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
 
 #### Style
-The style of bar to display, by default this is set to `.scrollingButtonBar`.  
+The style of bar to display, by default this is set to `.scrollingButtonBar`.
+
+```swift
+tabViewController.bar.style = .buttonBar
+```
 
 ##### Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).
+*For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).*
 
 #### Location
-Where you want the bar to appear, either at the top or bottom of the screen. By default this is set to `.preferred` which will use the predefined preferred location for the active style.
+Choose where you want the bar to appear, by default this is set to `.preferred` which will use the predefined preferred location for the active style.
 
-The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.
+```swift
+tabViewController.bar.location = .top
+```
+
+*Note: The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.*
 
 #### Appearance
-The `TabmanBar.Appearance` object provides all the available properties for appearance customisation of a `TabmanBar`. Not all of the properties are appropriate for each style `TabmanBar`, therefore the bar will only respond to the properties it adheres to.
-
-To set a custom appearance definition do the following on a `TabmanViewController`:
+Customization of the appearance and styling of a bar is available via `.appearance`. Providing a `TabmanBar.Appearance` object with your desired configuration will instantly update the appearance of the active bar:
 
 ```swift
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
@@ -162,11 +169,18 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 })
 ```
 
-**Documentation for all the available appearance properties can be found here: [Appearance](Docs/APPEARANCE.md).**
+*The full list of appearance properties can be found [here](Docs/APPEARANCE.md).*
 
-### Advanced
+*For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).*
 
-For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).
+#### Behaviors
+You can also enable different behaviors via `.behaviors`. Simply provide an array of your desired `TabmanBar.Behavior` values and the bar will start using them:
+
+```swift
+tabViewController.bar.behaviors = [.autoHide(.always)]
+```
+
+*The full list of available behaviors can be found [here](Docs/BEHAVIORS.md).*
 
 ## Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).

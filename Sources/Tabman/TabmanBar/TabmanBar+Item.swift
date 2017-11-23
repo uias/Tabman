@@ -22,6 +22,10 @@ public extension TabmanBar {
 		/// Context of the item for external reference.
 		public private(set) var context: Any?
         
+        public var accessibilityLabel: String?
+        public var accessibilityHint: String?
+        public var accessibilityTraits: UIAccessibilityTraits?
+        
         // MARK: Init
         
         /// Create an item with a title.

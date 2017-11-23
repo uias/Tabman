@@ -241,6 +241,13 @@ internal class TabmanButtonBar: TabmanBar {
                 button.autoSetContentCompressionResistancePriority(for: .horizontal)
             })
             
+            // Accessibility
+            button.accessibilityLabel = item.accessibilityLabel
+            button.accessibilityHint = item.accessibilityHint
+            if let accessibilityTraits = item.accessibilityTraits {
+                button.accessibilityTraits = accessibilityTraits
+            }
+            
             customize(button, previousButton)
             previousButton = button
         }
