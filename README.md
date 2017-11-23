@@ -135,14 +135,18 @@ Automatic insetting support is available for any `UIScrollView` derived class su
 The `TabmanBar` in Tabman can be completely customized to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
 
 #### Style
-The style of bar to display, by default this is set to `.scrollingButtonBar`.  
+The style of bar to display, by default this is set to `.scrollingButtonBar`.
+
+```swift
+tabViewController.bar.style = .buttonBar
+```
 
 ##### Available Styles:
 <p align="center">
     <img src="Artwork/styles.png" width="890" alt="Pageboy"/>
 </p>
 
-For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).
+*For examples on implementing real-world bar styles with `Tabman`, check out [Tabman-Styles](https://github.com/uias/Tabman-Styles).*
 
 #### Location
 Choose where you want the bar to appear, by default this is set to `.preferred` which will use the predefined preferred location for the active style.
