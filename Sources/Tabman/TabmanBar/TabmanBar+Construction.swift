@@ -19,7 +19,10 @@ extension TabmanBar {
         self.indicatorLeftMargin?.isActive = false
         self.clearBar()
         
-        guard let items = self.items else { return } // no items yet
+        // no items yet
+        guard let items = self.items else {
+            return
+        }
         
         construct(in: contentView, for: items)
         if let indicator = self.indicator {

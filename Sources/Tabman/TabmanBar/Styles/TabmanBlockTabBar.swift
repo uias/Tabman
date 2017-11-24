@@ -34,7 +34,9 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     override var color: UIColor {
         didSet {
-            guard color != oldValue else { return }
+            guard color != oldValue else {
+                return
+            }
             
             self.updateButtonsInView(view: self.buttonContentView, update: { (button) in
                 button.tintColor = color
@@ -45,7 +47,9 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     override var selectedColor: UIColor {
         didSet {
-            guard selectedColor != oldValue else { return }
+            guard selectedColor != oldValue else {
+                return
+            }
             
             self.updateButtonsInView(view: self.maskContentView, update: { (button) in
                 button.tintColor = selectedColor
@@ -91,12 +95,12 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         maskContentView.autoPinEdgesToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
-        self.addAndLayoutBarButtons(toView: buttonContentView, items: items) { (button, previousButton) in
+        self.addAndLayoutBarButtons(toView: buttonContentView, items: items) { (button, _) in
             self.buttons.append(button)
             
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
         }
-        self.addAndLayoutBarButtons(toView: maskContentView, items: items) { (button, previousButton) in
+        self.addAndLayoutBarButtons(toView: maskContentView, items: items) { (button, _) in
             button.tintColor = self.selectedColor
             button.setTitleColor(self.selectedColor, for: .normal)
         }

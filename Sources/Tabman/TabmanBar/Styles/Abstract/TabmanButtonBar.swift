@@ -1,4 +1,3 @@
-
 //
 //  TabmanButtonBar.swift
 //  Tabman
@@ -40,7 +39,9 @@ internal class TabmanButtonBar: TabmanBar {
     
     internal var focussedButton: UIButton? {
         didSet {
-            guard focussedButton !== oldValue else { return }
+            guard focussedButton !== oldValue else {
+                return
+            }
             
             focussedButton?.setTitleColor(self.selectedColor, for: .normal)
             focussedButton?.tintColor = self.selectedColor
@@ -196,7 +197,7 @@ internal class TabmanButtonBar: TabmanBar {
                 }
                 button.setTitle(title, for: .normal)
                 // Nudge it over a little bit
-                button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+                button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
             } else if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
@@ -225,10 +226,10 @@ internal class TabmanButtonBar: TabmanBar {
             // Add horizontal pin constraints
             // These are breakable (For equal width instances etc.)
             NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
-                if previousButton == nil { // pin to left
+                if let previousButton = previousButton {
+                    self.horizontalMarginConstraints.append(button.autoPinEdge(.leading, to: .trailing, of: previousButton))
+                } else { // pin to leading
                     self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
-                } else {
-                    self.horizontalMarginConstraints.append(button.autoPinEdge(.leading, to: .trailing, of: previousButton!))
                 }
                 
                 if index == items.count - 1 {
@@ -259,7 +260,7 @@ internal class TabmanButtonBar: TabmanBar {
         case unselected
     }
     
-    internal func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> ()) {
+    internal func updateButtons(withContext context: ButtonContext = .all, update: (UIButton) -> Void) {
         for button in self.buttons {
             if context == .all ||
                 (context == .target && button === self.focussedButton) ||

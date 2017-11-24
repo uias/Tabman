@@ -29,7 +29,9 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
     
     override var color: UIColor {
         didSet {
-            guard color != oldValue else { return }
+            guard color != oldValue else {
+                return
+            }
             
             self.updateButtons(withContext: .unselected) { (button) in
                 button.tintColor = color
@@ -40,7 +42,9 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
     
     override var selectedColor: UIColor {
         didSet {
-            guard selectedColor != oldValue else { return }
+            guard selectedColor != oldValue else {
+                return
+            }
             
             self.updateButtons(withContext: .target) { (button) in
                 button.tintColor = selectedColor

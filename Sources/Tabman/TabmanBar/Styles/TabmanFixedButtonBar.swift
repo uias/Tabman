@@ -21,7 +21,7 @@ internal class TabmanFixedButtonBar: TabmanStaticButtonBar {
                                    for items: [TabmanBar.Item]) {
         super.construct(in: contentView, for: items)
         
-        self.addAndLayoutBarButtons(toView: self.contentView, items: items) { (button, previousButton) in
+        self.addAndLayoutBarButtons(toView: self.contentView, items: items) { (button, _) in
             self.buttons.append(button)
             
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
