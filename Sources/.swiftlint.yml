@@ -10,7 +10,7 @@ opt_in_rules:
 - conditional_returns_on_newline
 #- empty_count
 - explicit_init
-- force_unwrapping
+#- force_unwrapping // THIS SHOULD BE USED
 #- missing_docs
 - overridden_super_call
 - private_outlet
