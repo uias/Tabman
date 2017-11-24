@@ -12,7 +12,7 @@ class AutoInsetEngine {
     
     // MARK: Properties
     
-    private var viewControllerInsets: [Int : UIEdgeInsets] = [:]
+    private var viewControllerInsets: [Int: UIEdgeInsets] = [:]
     
     /// Whether auto-insetting is enabled.
     var isEnabled: Bool = true
@@ -22,8 +22,12 @@ class AutoInsetEngine {
     func inset(_ childViewController: UIViewController?,
                requiredInsets: TabmanBar.Insets) {
      
-        guard let childViewController = childViewController else { return }
-        guard self.isEnabled else { return }
+        guard let childViewController = childViewController else {
+            return
+        }
+        guard self.isEnabled else {
+            return
+        }
         
         if #available(iOS 11, *) {
             childViewController.additionalSafeAreaInsets = requiredInsets.barInsets

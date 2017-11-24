@@ -114,7 +114,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal var indicatorWidth: NSLayoutConstraint?
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {
         didSet {
-            guard indicatorIsProgressive != oldValue else { return }
+            guard indicatorIsProgressive != oldValue else {
+                return
+            }
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.updateForCurrentPosition()
@@ -213,7 +215,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     internal func updatePosition(_ position: CGFloat,
                                  direction: PageboyViewController.NavigationDirection,
                                  bounds: CGRect? = nil) {
-        guard let items = self.items else { return }
+        guard let items = self.items else {
+            return
+        }
         let bounds = bounds ?? self.bounds
         
         self.layoutIfNeeded()
@@ -245,7 +249,9 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                      direction: PageboyViewController.NavigationDirection,
                      indexRange: Range<Int>,
                      bounds: CGRect) {
-        guard self.indicator != nil else { return }
+        guard self.indicator != nil else {
+            return
+        }
         
         let indicatorTransition = self.transitionStore?.indicatorTransition(forBar: self)
         indicatorTransition?.transition(withPosition: position,

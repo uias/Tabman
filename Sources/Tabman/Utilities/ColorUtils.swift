@@ -11,8 +11,8 @@ import UIKit
 internal extension UIColor {
     
     static func interpolate(betweenColor colorA: UIColor,
-                     and colorB: UIColor,
-                     percent: CGFloat) -> UIColor? {
+                            and colorB: UIColor,
+                            percent: CGFloat) -> UIColor? {
         var redA: CGFloat = 0.0
         var greenA: CGFloat = 0.0
         var blueA: CGFloat = 0.0

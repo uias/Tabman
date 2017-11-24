@@ -18,4 +18,3 @@ class TabmanTestIndicator: TabmanIndicator {
         self.wasConstructed = true
     }
 }
-
