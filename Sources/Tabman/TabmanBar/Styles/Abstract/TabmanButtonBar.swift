@@ -52,7 +52,9 @@ internal class TabmanButtonBar: TabmanBar {
     
     public var textFont: UIFont = Appearance.defaultAppearance.text.font! {
         didSet {
-            guard textFont != oldValue else { return }
+            guard textFont != oldValue else {
+                return
+            }
             
             self.updateButtons(update: { (button) in
                 button.titleLabel?.font = textFont
@@ -79,7 +81,9 @@ internal class TabmanButtonBar: TabmanBar {
     
     public var itemVerticalPadding: CGFloat = Appearance.defaultAppearance.layout.itemVerticalPadding! {
         didSet {
-            guard itemVerticalPadding != oldValue else { return }
+            guard itemVerticalPadding != oldValue else {
+                return
+            }
             
             self.updateButtons { (button) in
                 let insets = UIEdgeInsets(top: itemVerticalPadding, left: 0.0,

@@ -51,6 +51,4 @@ public extension TabmanBar {
         }
         
     }
-
 }
-

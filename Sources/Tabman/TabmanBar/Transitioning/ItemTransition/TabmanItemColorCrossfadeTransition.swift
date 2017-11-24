@@ -18,13 +18,17 @@ class TabmanItemColorCrossfadeTransition: TabmanItemTransition {
                              direction: PageboyViewController.NavigationDirection,
                              indexRange: Range<Int>,
                              bounds: CGRect) {
-        guard let bar = tabmanBar as? TabmanButtonBar else { return }
+        guard let bar = tabmanBar as? TabmanButtonBar else {
+            return
+        }
         
         let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
                                                                                minimum: indexRange.lowerBound,
                                                                                maximum: indexRange.upperBound)
         
-        guard bar.buttons.count > max(upperIndex, lowerIndex) else { return }
+        guard bar.buttons.count > max(upperIndex, lowerIndex) else {
+            return
+        }
         let lowerButton = bar.buttons[lowerIndex]
         let upperButton = bar.buttons[upperIndex]
         

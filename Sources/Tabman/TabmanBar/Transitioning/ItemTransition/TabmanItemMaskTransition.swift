@@ -18,7 +18,9 @@ class TabmanItemMaskTransition: TabmanItemTransition {
                              direction: PageboyViewController.NavigationDirection,
                              indexRange: Range<Int>,
                              bounds: CGRect) {
-        guard let bar = tabmanBar else { return }
+        guard let bar = tabmanBar else {
+            return
+        }
         
         bar.contentView.layoutIfNeeded()
         bar.indicatorMaskView.frame = bar.indicator?.frame ?? .zero

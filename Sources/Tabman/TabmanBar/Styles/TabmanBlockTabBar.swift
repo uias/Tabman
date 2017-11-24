@@ -60,7 +60,9 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     
     override var textFont: UIFont {
         didSet {
-            guard textFont != oldValue else { return }
+            guard textFont != oldValue else {
+                return
+            }
 
             updateButtonsInView(view: self.buttonContentView,
                                 update: { $0.titleLabel?.font = textFont })

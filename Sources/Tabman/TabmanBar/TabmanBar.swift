@@ -133,9 +133,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     
     /// The limit that the bar has for the number of items it can display.
     public var itemCountLimit: Int? {
-        get {
-            return nil
-        }
+        return nil
     }
     
     // MARK: Init
@@ -273,7 +271,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         let backgroundStyle = appearance.style.background ?? defaultAppearance.style.background!
         self.backgroundView.style = backgroundStyle
         
-        let height : Height
+        let height: Height
         let hideWhenSingleItem = appearance.state.shouldHideWhenSingleItem ?? defaultAppearance.state.shouldHideWhenSingleItem!
         if hideWhenSingleItem && items?.count ?? 0 <= 1 {
             height = .explicit(value: 0)

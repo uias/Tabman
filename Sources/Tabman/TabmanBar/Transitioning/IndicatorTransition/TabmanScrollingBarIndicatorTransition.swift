@@ -17,7 +17,9 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                              direction: PageboyViewController.NavigationDirection,
                              indexRange: Range<Int>,
                              bounds: CGRect) {
-        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
+        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else {
+            return
+        }
         
         let (lowerIndex, upperIndex) = TabmanPositionalUtil.lowerAndUpperIndex(forPosition: position,
                                                                                minimum: indexRange.lowerBound,
@@ -36,7 +38,9 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
     }
     
     override func updateForCurrentPosition() {
-        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else { return }
+        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else {
+            return
+        }
 
         self.scrollIndicatorPositionToVisible(in: scrollingButtonBar)
     }
@@ -57,8 +61,10 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
             
             bar.indicatorWidth?.constant = indicatorStartFrame + (endFrameDiff * progress)
             
-            guard bar.indicatorBounces || bar.indicatorCompresses else { return }
-            if (lowerButton === upperButton) {
+            guard bar.indicatorBounces || bar.indicatorCompresses else {
+                return
+            }
+            if lowerButton === upperButton {
                 let indicatorWidth = bar.indicatorWidth?.constant ?? 0.0
                 bar.indicatorWidth?.constant = indicatorWidth + (indicatorWidth * progress)
             }
