@@ -21,11 +21,7 @@ class AutoInsetEngine {
     
     func inset(_ childViewController: UIViewController?,
                requiredInsets: TabmanBar.Insets) {
-     
-        guard let childViewController = childViewController else {
-            return
-        }
-        guard self.isEnabled else {
+        guard let childViewController = childViewController, self.isEnabled else {
             return
         }
         
