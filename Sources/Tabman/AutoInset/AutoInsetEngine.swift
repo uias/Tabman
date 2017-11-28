@@ -42,30 +42,27 @@ class AutoInsetEngine {
                                                                            from: requiredInsets)
             
             // ensure scroll view is either at top or full height before doing automatic insetting
-            var isValidLayout = true
-            checkIsNotEmbeddedViewController(childViewController, {
-                if requiredContentInset.top > 0.0 {
-                    isValidLayout = scrollView.frame.minY == 0.0
-                }
-                if requiredContentInset.bottom > 0.0 {
-                    // TODO - Figure out a way to check whether bottom of scroll view goes underneath bar.
-                }
+            ensureLayoutIsValid(for: childViewController,
+                                with: scrollView,
+                                requiredContentInset: requiredContentInset,
+                                success:
+                {
+                    // dont update if we dont need to
+                    if scrollView.contentInset != requiredContentInset {
+                        
+                        let isTopInsetChanged = requiredContentInset.top != scrollView.contentInset.top
+                        
+                        scrollView.contentInset = requiredContentInset
+                        scrollView.scrollIndicatorInsets = requiredContentInset
+                        
+                        // only update contentOffset if the top contentInset has updated.
+                        if isTopInsetChanged {
+                            var contentOffset = scrollView.contentOffset
+                            contentOffset.y = -requiredContentInset.top
+                            scrollView.contentOffset = contentOffset
+                        }
+                    }
             })
-            
-            guard isValidLayout else {
-                continue
-            }
-            
-            // dont update if we dont need to
-            if scrollView.contentInset != requiredContentInset {
-                
-                scrollView.contentInset = requiredContentInset
-                scrollView.scrollIndicatorInsets = requiredContentInset
-                
-                var contentOffset = scrollView.contentOffset
-                contentOffset.y = -requiredContentInset.top
-                scrollView.contentOffset = contentOffset
-            }
         }
     }
 
@@ -76,10 +73,11 @@ class AutoInsetEngine {
     /// - Parameters:
     ///   - viewController: The view controller.
     ///   - success: Execution if view controller is not embedded type.
-    private func checkIsNotEmbeddedViewController(_ viewController: UIViewController, _ success: () -> Void) {
+    private func isNotEmbeddedViewController(_ viewController: UIViewController) -> Bool {
         if !(viewController is UITableViewController) && !(viewController is UICollectionViewController) {
-            success()
+            return true
         }
+        return false
     }
     
     /// Calculate the actual inset values to use including any custom contentInset values.
@@ -109,6 +107,29 @@ class AutoInsetEngine {
         requiredContentInset.right = currentContentInset.right
         
         return requiredContentInset
+    }
+    
+    private func ensureLayoutIsValid(for childViewController: UIViewController,
+                                     with scrollView: UIScrollView,
+                                     requiredContentInset: UIEdgeInsets,
+                                     success: () -> Void) {
+        if isNotEmbeddedViewController(childViewController) {
+            
+            var isValidLayout = true
+            if requiredContentInset.top > 0.0 {
+                isValidLayout = scrollView.frame.minY == 0.0
+            }
+            if requiredContentInset.bottom > 0.0 {
+                // TODO - Figure out a way to check whether bottom of scroll view goes underneath bar.
+            }
+            
+            if isValidLayout {
+                success()
+            }
+            
+        } else {
+            success()
+        }
     }
 }
 
