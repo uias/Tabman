@@ -59,12 +59,17 @@ class AutoInsetEngine {
             // dont update if we dont need to
             if scrollView.contentInset != requiredContentInset {
                 
+                let isTopInsetChanged = requiredContentInset.top != scrollView.contentInset.top
+                
                 scrollView.contentInset = requiredContentInset
                 scrollView.scrollIndicatorInsets = requiredContentInset
                 
-                var contentOffset = scrollView.contentOffset
-                contentOffset.y = -requiredContentInset.top
-                scrollView.contentOffset = contentOffset
+                // only update contentOffset if the top contentInset has updated.
+                if isTopInsetChanged {
+                    var contentOffset = scrollView.contentOffset
+                    contentOffset.y = -requiredContentInset.top
+                    scrollView.contentOffset = contentOffset
+                }
             }
         }
     }
