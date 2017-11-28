@@ -1,0 +1,22 @@
+disabled_rules:
+- trailing_whitespace
+- vertical_whitespace
+- line_length
+- opening_brace
+- large_tuple
+
+opt_in_rules:
+- closure_spacing
+- conditional_returns_on_newline
+#- empty_count
+- explicit_init
+#- force_unwrapping // THIS SHOULD BE USED
+#- missing_docs
+- overridden_super_call
+- private_outlet
+- redundant_nil_coalesing
+#- switch_case_on_newline
+
+excluded:
+- Pods
+- Tests

@@ -38,6 +38,10 @@ class TestsViewController: UIViewController {
                 TabmanTest(title: "UICollectionViewController",
                            storyboardId: "AutoInsetting",
                            viewControllerId: "AutoInsettingUICollectionViewController",
+                           instances: 3),
+                TabmanTest(title: "UINavigationController Pop",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingOnPopViewController",
                            instances: 3)
                 ])
         ]

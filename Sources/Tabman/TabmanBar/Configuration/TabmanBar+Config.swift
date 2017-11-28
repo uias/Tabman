@@ -19,7 +19,9 @@ public extension TabmanBar {
         /// The style to use for the bar. Default = .scrollingButtonBar
         public var style: TabmanBar.Style = .scrollingButtonBar {
             didSet {
-                guard style.rawType != oldValue.rawType else { return }
+                guard style.rawType != oldValue.rawType else {
+                    return
+                }
                 
                 self.handler?.config(self, didUpdate: style)
             }

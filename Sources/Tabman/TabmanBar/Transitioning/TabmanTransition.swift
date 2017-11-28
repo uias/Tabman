@@ -51,7 +51,7 @@ internal class TabmanTransition: Any, TabmanTransitionLifecycle {
 
 extension TabmanTransition: Hashable, Equatable {
     
-    static func ==(lhs: TabmanTransition, rhs: TabmanTransition) -> Bool {
+    static func == (lhs: TabmanTransition, rhs: TabmanTransition) -> Bool {
         return String(describing: lhs) == String(describing: rhs)
     }
     

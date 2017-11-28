@@ -98,8 +98,8 @@ extension TabmanBar.BackgroundView.Style: CustomStringConvertible, Equatable {
         }
     }
     
-    public static func ==(lhs: TabmanBar.BackgroundView.Style,
-                          rhs: TabmanBar.BackgroundView.Style) -> Bool {
+    public static func == (lhs: TabmanBar.BackgroundView.Style,
+                           rhs: TabmanBar.BackgroundView.Style) -> Bool {
         return lhs.description == rhs.description
     }
 }

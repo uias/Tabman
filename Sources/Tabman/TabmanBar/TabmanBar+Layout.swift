@@ -20,7 +20,7 @@ internal extension TabmanBar {
         var constraints = [NSLayoutConstraint]()
         
         let margins = self.layoutMargins
-        let views: [String: Any] = ["view" : self, "topLayoutGuide" : topLayoutGuide]
+        let views: [String: Any] = ["view": self, "topLayoutGuide": topLayoutGuide]
         let xConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
                                                           options: NSLayoutFormatOptions(),
                                                           metrics: nil, views: views)
@@ -43,7 +43,7 @@ internal extension TabmanBar {
         var constraints = [NSLayoutConstraint]()
         
         let margins = self.layoutMargins
-        let views: [String: Any] = ["view" : self, "bottomLayoutGuide" : bottomLayoutGuide]
+        let views: [String: Any] = ["view": self, "bottomLayoutGuide": bottomLayoutGuide]
         let xConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
                                                           options: NSLayoutFormatOptions(),
                                                           metrics: nil, views: views)
@@ -107,8 +107,10 @@ internal extension TabmanBar {
     ///   - appearance: The appearance configuration of the bar.
     private func extendBackgroundForStatusBarIfNeeded(location: TabmanBar.Location,
                                                       safeAreaInsets: UIEdgeInsets,
-                                              appearance: TabmanBar.Appearance) {
-        guard let topPinConstraint = self.backgroundView.constraints.first else { return }
+                                                      appearance: TabmanBar.Appearance) {
+        guard let topPinConstraint = self.backgroundView.constraints.first else {
+            return
+        }
         guard location == .top, appearance.layout.extendBackgroundEdgeInsets ?? false else {
             topPinConstraint.constant = 0.0
             return

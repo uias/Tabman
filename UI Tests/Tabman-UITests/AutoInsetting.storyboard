@@ -188,5 +188,23 @@
             </objects>
             <point key="canvasLocation" x="2101.5999999999999" y="103.89805097451276"/>
         </scene>
+        <!--Auto Insetting On Pop View Controller-->
+        <scene sceneID="KxW-lJ-DFn">
+            <objects>
+                <tableViewController storyboardIdentifier="AutoInsettingOnPopViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M5d-gm-svr" customClass="AutoInsettingOnPopViewController" customModule="Tabman_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iF-qo-tgw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="M5d-gm-svr" id="PBa-cv-leK"/>
+                            <outlet property="delegate" destination="M5d-gm-svr" id="Xd8-nM-7uN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNT-A8-Fba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2850" y="104"/>
+        </scene>
     </scenes>
 </document>

@@ -109,7 +109,7 @@ public extension TabmanBar {
         
         // MARK: Init
 
-        public init(_ appearance: (Appearance) -> ()) {
+        public init(_ appearance: (Appearance) -> Void) {
             self.setDefaultValues()
             appearance(self)
         }

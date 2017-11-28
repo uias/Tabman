@@ -29,7 +29,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
         set(isScrollEnabled) {
-            guard isScrollEnabled != self.scrollView.isScrollEnabled else { return }
+            guard isScrollEnabled != self.scrollView.isScrollEnabled else {
+                return
+            }
 
             self.scrollView.isScrollEnabled = isScrollEnabled
             UIView.animate(withDuration: 0.3, animations: { // reset scroll position
@@ -43,7 +45,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     
     override var color: UIColor {
         didSet {
-            guard color != oldValue else { return }
+            guard color != oldValue else {
+                return
+            }
             
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(color, for: .normal)
@@ -54,7 +58,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     }
     override var selectedColor: UIColor {
         didSet {
-            guard selectedColor != oldValue else { return }
+            guard selectedColor != oldValue else {
+                return
+            }
             
             self.focussedButton?.setTitleColor(selectedColor, for: .normal)
             self.focussedButton?.tintColor = selectedColor
@@ -93,7 +99,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         var itemMinimumWidthConstraints = [NSLayoutConstraint]()
         self.addBarButtons(toView: self.scrollView.contentView, items: items)
-        { (button, previousButton) in
+        { (button, _) in
             self.buttons.append(button)
             
             button.setTitleColor(self.color, for: .normal)

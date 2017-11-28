@@ -16,7 +16,9 @@ public extension UIViewController {
     /// This should be called if the contentInset of a UITableView or UICollectionView is changed
     /// after viewDidLoad.
     public func setNeedsScrollViewInsetUpdate() {
-        guard let tabmanViewController = self.parent?.parent as? TabmanViewController else { return }
+        guard let tabmanViewController = self.parent?.parent as? TabmanViewController else {
+            return
+        }
         tabmanViewController.setNeedsChildAutoInsetUpdate(for: self)
     }
 }

@@ -17,7 +17,9 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                              direction: PageboyViewController.NavigationDirection,
                              indexRange: Range<Int>,
                              bounds: CGRect) {
-        guard let bar = tabmanBar else { return }
+        guard let bar = tabmanBar else {
+            return
+        }
         
         var barWidth = bounds.size.width
         
@@ -64,10 +66,10 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                 let progress = CGFloat(modff(Float(position), &integral))
 
                 let indicatorDiff = (indicatorWidth * fabs(progress))
-                indicatorWidth = indicatorWidth - indicatorDiff
+                indicatorWidth -= indicatorDiff
                 
                 if progress > 0.0 {
-                    indicatorLeftMargin = indicatorLeftMargin + indicatorDiff
+                    indicatorLeftMargin += indicatorDiff
                 }
             }
             

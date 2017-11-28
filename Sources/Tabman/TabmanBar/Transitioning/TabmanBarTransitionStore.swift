@@ -30,7 +30,7 @@ internal class TabmanBarTransitionStore: Any {
         let itemMaskTransition = TabmanItemMaskTransition()
         
         // create transitions hashmap
-        var transitions: [Int : TabmanTransition] = [:]
+        var transitions: [Int: TabmanTransition] = [:]
         transitions[scrollingIndicatorTransition.hashValue] = scrollingIndicatorTransition
         transitions[staticIndicatorTransition.hashValue] = staticIndicatorTransition
         transitions[itemColorTransition.hashValue] = itemColorTransition
