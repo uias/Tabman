@@ -10,6 +10,23 @@ import UIKit
 import PureLayout
 import Pageboy
 
+
+extension UIButton {
+    func alignVertical(spacing: CGFloat = 6.0) {
+        guard let imageSize = self.imageView?.image?.size,
+            let text = self.titleLabel?.text,
+            let font = self.titleLabel?.font
+            else { return }
+        self.backgroundColor = UIColor.orange
+        self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageSize.width, bottom: -(imageSize.height + spacing+4), right: 0.0)
+        let labelString = NSString(string: text)
+        let titleSize = labelString.size(withAttributes: [NSAttributedStringKey.font: font])
+        self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + 2), left: 0.0, bottom: 0.0, right: -titleSize.width)
+//        let edgeOffset = abs(titleSize.height - imageSize.height) / 2.0;
+//        self.contentEdgeInsets = UIEdgeInsets(top: edgeOffset, left: 0.0, bottom: edgeOffset, right: 0.0)
+    }
+}
+
 /// Abstract class for static (non-scrolling) button bars.
 internal class TabmanStaticButtonBar: TabmanButtonBar {
 
@@ -21,8 +38,14 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
         didSet {
             let insets = UIEdgeInsets(top: 0.0, left: interItemSpacing / 2, bottom: 0.0, right: interItemSpacing / 2)
             self.updateButtons(withContext: .all) { (button) in
-                button.titleEdgeInsets = insets
-                button.imageEdgeInsets = insets
+               
+                if self.appearance.layout.itemAlignment == .horizontolAlignment {
+                    button.titleEdgeInsets = insets
+                    button.imageEdgeInsets = insets
+                }
+                else {
+                    button.alignVertical(spacing: interItemSpacing / 2)
+                }
             }
         }
     }
