@@ -17,13 +17,13 @@ extension UIButton {
             let text = self.titleLabel?.text,
             let font = self.titleLabel?.font
             else { return }
-        self.backgroundColor = UIColor.orange
-        self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageSize.width, bottom: -(imageSize.height + spacing+4), right: 0.0)
+        
+        self.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageSize.width, bottom: -(imageSize.height + spacing), right: 0.0)
         let labelString = NSString(string: text)
         let titleSize = labelString.size(withAttributes: [NSAttributedStringKey.font: font])
-        self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + 2), left: 0.0, bottom: 0.0, right: -titleSize.width)
-//        let edgeOffset = abs(titleSize.height - imageSize.height) / 2.0;
-//        self.contentEdgeInsets = UIEdgeInsets(top: edgeOffset, left: 0.0, bottom: edgeOffset, right: 0.0)
+        self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0.0, bottom: 0.0, right: -titleSize.width /*+ imageSize.width / 2*/)
+        //        let edgeOffset = abs(titleSize.height - imageSize.height) / 2.0;
+        //        self.contentEdgeInsets = UIEdgeInsets(top: edgeOffset, left: 0.0, bottom: edgeOffset, right: 0.0)
     }
 }
 

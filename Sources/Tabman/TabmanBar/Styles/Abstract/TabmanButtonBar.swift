@@ -200,8 +200,14 @@ internal class TabmanButtonBar: TabmanBar {
                     button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
                 }
                 button.setTitle(title, for: .normal)
-                // Nudge it over a little bit
-                button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
+                
+                if self.appearance.layout.itemAlignment == .horizontolAlignment {
+                    // Nudge it over a little bit
+                    button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
+                }
+                else {
+                    button.alignVertical(spacing: interItemSpacing / 2)
+                }
             } else if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
