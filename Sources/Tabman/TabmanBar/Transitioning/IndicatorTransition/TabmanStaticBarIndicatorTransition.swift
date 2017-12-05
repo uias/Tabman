@@ -22,6 +22,9 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
         }
         
         var barWidth = bounds.size.width
+        if #available(iOS 11, *) {
+            barWidth -= (bar.safeAreaInsets.left + bar.safeAreaInsets.right)
+        }
         
         // account for padding if using a button bar.
         var indicatorPadding: CGFloat = 0.0
