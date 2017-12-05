@@ -15,6 +15,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.2](https://github.com/uias/Pageboy/releases/tag/1.1.2)
+Released on 2017-12-05
+
+#### Fixed
+- [#202](https://github.com/uias/Tabman/issues/202) TabmanBar item views don’t conform to safe area.
+     - by [msaps](https://github.com/msaps).
+
 ## [1.1.1](https://github.com/uias/Pageboy/releases/tag/1.1.1)
 Released on 2017-11-28
 
