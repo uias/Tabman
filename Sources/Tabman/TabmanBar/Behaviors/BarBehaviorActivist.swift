@@ -10,18 +10,28 @@ import Foundation
 
 internal class BarBehaviorActivist {
  
+    // MARK: Types
+    
+    enum Activator {
+        case onBarChange
+        case onPositionChange
+    }
+    
     // MARK: Properties
     
     let behavior: TabmanBar.Behavior
+    let activator: Activator
     let otherBehaviors: [TabmanBar.Behavior]
     private(set) weak var bar: TabmanBar?
     
     // MARK: Init
     
     required init(for behavior: TabmanBar.Behavior,
+                  activator: Activator,
                   bar: TabmanBar?,
                   otherBehaviors: [TabmanBar.Behavior]) {
         self.behavior = behavior
+        self.activator = activator
         self.bar = bar
         self.otherBehaviors = otherBehaviors
     }
@@ -29,6 +39,6 @@ internal class BarBehaviorActivist {
     // MARK: Lifecycle
     
     func update() {
-        
+        fatalError("Implement update() in subclass")
     }
 }

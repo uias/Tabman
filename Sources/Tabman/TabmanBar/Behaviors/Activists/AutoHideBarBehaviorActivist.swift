@@ -22,7 +22,7 @@ class AutoHideBarBehaviorActivist: BarBehaviorActivist {
     // MARK: Lifecycle
     
     override func update() {
-        super.update()
+        print("UPDATE")
         guard let behavior = self.autoHideBehavior else {
             return
         }
