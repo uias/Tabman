@@ -76,9 +76,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         reloadBarWithCurrentPosition()
         
         let appearance = bar.appearance ?? .defaultAppearance
-        activeTabmanBar?.extendBackgroundForSystemAreasIfNeeded(for: bar.actualLocation,
-                                                                in: self,
-                                                                appearance: appearance)
+        let isBarExternal = embeddingView != nil || attachedTabmanBar != nil
+        activeTabmanBar?.updateBackgroundEdgesForSystemAreasIfNeeded(for: bar.actualLocation,
+                                                                     in: self,
+                                                                     appearance: appearance,
+                                                                     canExtend: !isBarExternal)
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
