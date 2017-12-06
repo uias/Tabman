@@ -36,4 +36,12 @@ internal extension TabmanBar.Behavior {
             return AutoHideBarBehaviorActivist.self
         }
     }
+    
+    var activator: BarBehaviorActivist.Activator {
+        switch self {
+            
+        default:
+            return .onBarChange
+        }
+    }
 }

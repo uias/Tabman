@@ -29,7 +29,7 @@ extension TabmanBar {
             add(indicator: indicator, to: contentView)
         }
         
-        behaviorEngine.update()
+        behaviorEngine.update(activation: .onBarChange)
         self.updateCore(forAppearance: self.appearance)
         self.updateForCurrentPosition()
     }
