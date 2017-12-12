@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ## [1.1.3](https://github.com/uias/Pageboy/releases/tag/1.1.3)
 Released on 2017-12-12
 
+#### Fixed
 - [#208](https://github.com/uias/Tabman/issues/208) Auto-Inset issues on iOS 11.2 with bottom safe area.
      - by [msaps](https://github.com/msaps).
 
