@@ -21,7 +21,11 @@ class AutoInsetEngine {
     
     func inset(_ childViewController: UIViewController?,
                requiredInsets: TabmanBar.Insets) {
-        guard let childViewController = childViewController, self.isEnabled else {
+        guard let childViewController = childViewController else {
+            return
+        }
+        guard isEnabled else { // reset safe areas / contentInset
+            reset(childViewController, from: requiredInsets)
             return
         }
         
@@ -29,10 +33,7 @@ class AutoInsetEngine {
             childViewController.additionalSafeAreaInsets = requiredInsets.barInsets
         }
         
-        // if a scroll view is found in child VC subviews inset by the required content inset.
-        for scrollView in childViewController.embeddedScrollViews {
-            guard let scrollView = scrollView else { continue }
-            guard !scrollView.isBeingInteracted else { continue }
+        childViewController.forEachEmbeddedScrollView { (scrollView) in
             
             if #available(iOS 11.0, *) {
                 scrollView.contentInsetAdjustmentBehavior = .never
@@ -63,6 +64,23 @@ class AutoInsetEngine {
                         }
                     }
             })
+        }
+    }
+    
+    private func reset(_ childViewController: UIViewController,
+                       from requiredInsets: TabmanBar.Insets) {
+        
+        if #available(iOS 11, *) {
+            childViewController.additionalSafeAreaInsets = .zero
+        }
+        
+        childViewController.forEachEmbeddedScrollView { (scrollView) in
+            if #available(iOS 11, *) {
+                scrollView.contentInsetAdjustmentBehavior = .automatic
+            }
+            scrollView.contentInset = .zero
+            scrollView.contentOffset = .zero
+            scrollView.scrollIndicatorInsets = .zero
         }
     }
 
@@ -153,5 +171,14 @@ private extension UIViewController {
             scrollViews.append(contentsOf: subviews.map({ $0 as? UIScrollView }))
         }
         return scrollViews
+    }
+    
+    func forEachEmbeddedScrollView(_ action: (UIScrollView) -> Void) {
+        for scrollView in self.embeddedScrollViews {
+            guard let scrollView = scrollView else { continue }
+            guard !scrollView.isBeingInteracted else { continue }
+            
+            action(scrollView)
+        }
     }
 }
