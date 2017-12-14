@@ -160,15 +160,29 @@ class AutoInsetEngine {
 private extension UIViewController {
     
     var embeddedScrollViews: [UIScrollView?] {
-        
-        var scrollViews = [UIScrollView?]()
         if let tableViewController = self as? UITableViewController { // UITableViewController
-            scrollViews.append(tableViewController.tableView)
+            return [tableViewController.tableView]
         } else if let collectionViewController = self as? UICollectionViewController { // UICollectionViewController
-            scrollViews.append(collectionViewController.collectionView)
+            return [collectionViewController.collectionView]
         } else { // standard subview filtering
-            let subviews = self.view.subviews
-            scrollViews.append(contentsOf: subviews.map({ $0 as? UIScrollView }))
+            return scrollViews(in: self.view)
+        }
+    }
+    
+    func scrollViews(in view: UIView) -> [UIScrollView] {
+        var scrollViews = [UIScrollView]()
+        if let scrollView = view as? UIScrollView {
+            scrollViews.append(scrollView)
+            return scrollViews
+        }
+        
+        for subview in view.subviews {
+            if let scrollView = subview as? UIScrollView {
+                scrollViews.append(scrollView)
+                return scrollViews
+            }
+            
+            scrollViews.append(contentsOf: self.scrollViews(in: subview))
         }
         return scrollViews
     }
