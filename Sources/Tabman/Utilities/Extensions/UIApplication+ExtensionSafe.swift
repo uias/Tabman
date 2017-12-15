@@ -13,7 +13,10 @@ extension UIApplication {
     
     static var safeShared: UIApplication? {
         guard !Bundle.main.bundlePath.hasSuffix("appex") else { return nil }
-        return UIApplication.shared
+        guard UIApplication.respondsToSelector("sharedApplication") else { return nil }
+        guard let unmanagedSharedApplication = UIApplication.performSelector("sharedApplication") else { return nil }
+        
+        return unmanagedSharedApplication.takeRetainedValue() as? UIApplication
     }
     
 }
