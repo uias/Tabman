@@ -43,13 +43,21 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// Whether any UIScrollView in child view controllers should be
     /// automatically insetted to display below the TabmanBar.
-    /// NOTE: This needs to be set before a dataSource is set, defaults to true.
-    public var automaticallyAdjustsChildScrollViewInsets: Bool = true {
+    @available(*, deprecated: 1.2.0, message: "Use automaticallyAdjustsChildViewInsets")
+    public var automaticallyAdjustsChildScrollViewInsets: Bool {
+        set {
+            automaticallyAdjustsChildViewInsets = newValue
+        } get {
+            return automaticallyAdjustsChildViewInsets
+        }
+    }
+    /// Whether to automatically inset the contents of any child view controller.
+    /// Defaults to true.
+    public var automaticallyAdjustsChildViewInsets: Bool = true {
         didSet {
-            autoInsetEngine.isEnabled = automaticallyAdjustsChildScrollViewInsets
-            if automaticallyAdjustsScrollViewInsets {
-                self.automaticallyAdjustsScrollViewInsets = false
-            }
+            self.automaticallyAdjustsScrollViewInsets = !automaticallyAdjustsChildViewInsets
+            autoInsetEngine.isEnabled = automaticallyAdjustsChildViewInsets
+            setNeedsChildAutoInsetUpdate()
         }
     }
     internal let autoInsetEngine = AutoInsetEngine()
@@ -76,9 +84,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         reloadBarWithCurrentPosition()
         
         let appearance = bar.appearance ?? .defaultAppearance
-        activeTabmanBar?.extendBackgroundForSystemAreasIfNeeded(for: bar.actualLocation,
-                                                                in: self,
-                                                                appearance: appearance)
+        let isBarExternal = embeddingView != nil || attachedTabmanBar != nil
+        activeTabmanBar?.updateBackgroundEdgesForSystemAreasIfNeeded(for: bar.actualLocation,
+                                                                     in: self,
+                                                                     appearance: appearance,
+                                                                     canExtend: !isBarExternal)
     }
     
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

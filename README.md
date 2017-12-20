@@ -24,7 +24,7 @@
 - [x] Built on a powerful and informative page view controller, [Pageboy](https://github.com/uias/pageboy).
 
 ## Requirements
-Tabman requires iOS 8 or above, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
+Tabman requires iOS 9, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
 
 For details on using older versions of Tabman or Swift please see [Compatibility](Docs/COMPATIBILITY.md).
 
