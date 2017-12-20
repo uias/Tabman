@@ -124,12 +124,6 @@ class AutoInsetEngine {
         requiredContentInset.left = currentContentInset.left
         requiredContentInset.right = currentContentInset.right
         
-        // workaround for iOS 11.2 - contentInsetAdjustmentBehavior is ignored and bottom safe area is always automatically insetted for.
-        // rdar://35933138
-        if #available(iOS 11.2, *) {
-            requiredContentInset.bottom = 0.0
-        }
-        
         return requiredContentInset
     }
     
