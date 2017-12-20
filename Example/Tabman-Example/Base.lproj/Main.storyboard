@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,10 +46,6 @@
         <scene sceneID="Aui-O0-XUR">
             <objects>
                 <viewController id="6xv-FU-HvM" customClass="SettingsViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zpK-Xv-POn"/>
-                        <viewControllerLayoutGuide type="bottom" id="dPd-cf-3MD"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZBH-1o-GHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,11 +168,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aRB-Rw-noV" secondAttribute="trailing" id="5Ca-4a-xjC"/>
-                            <constraint firstItem="dPd-cf-3MD" firstAttribute="top" secondItem="aRB-Rw-noV" secondAttribute="bottom" id="Q7k-jk-wic"/>
-                            <constraint firstItem="aRB-Rw-noV" firstAttribute="leading" secondItem="ZBH-1o-GHw" secondAttribute="leading" id="hp0-Mz-HB6"/>
+                            <constraint firstItem="5gX-hR-cWF" firstAttribute="trailing" secondItem="aRB-Rw-noV" secondAttribute="trailing" id="5Ca-4a-xjC"/>
+                            <constraint firstItem="5gX-hR-cWF" firstAttribute="bottom" secondItem="aRB-Rw-noV" secondAttribute="bottom" id="Q7k-jk-wic"/>
+                            <constraint firstItem="aRB-Rw-noV" firstAttribute="leading" secondItem="5gX-hR-cWF" secondAttribute="leading" id="hp0-Mz-HB6"/>
                             <constraint firstItem="aRB-Rw-noV" firstAttribute="top" secondItem="ZBH-1o-GHw" secondAttribute="top" id="jsh-Oy-Hcc"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="5gX-hR-cWF"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="9Yl-NY-ocN"/>
@@ -191,10 +189,6 @@
         <scene sceneID="UCA-Ag-NWn">
             <objects>
                 <viewController id="IeO-V8-H1g" customClass="SettingsOptionsViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g3H-0w-QDG"/>
-                        <viewControllerLayoutGuide type="bottom" id="GgU-q3-Mui"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sNv-XT-iCd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,10 +205,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FDT-nC-pxZ" firstAttribute="top" secondItem="sNv-XT-iCd" secondAttribute="top" id="PsE-bW-3RT"/>
-                            <constraint firstAttribute="trailing" secondItem="FDT-nC-pxZ" secondAttribute="trailing" id="U2k-ns-Cuk"/>
-                            <constraint firstItem="FDT-nC-pxZ" firstAttribute="leading" secondItem="sNv-XT-iCd" secondAttribute="leading" id="lke-Sb-xBd"/>
-                            <constraint firstItem="GgU-q3-Mui" firstAttribute="top" secondItem="FDT-nC-pxZ" secondAttribute="bottom" id="zpp-mR-ev1"/>
+                            <constraint firstItem="kaB-0D-ZTd" firstAttribute="trailing" secondItem="FDT-nC-pxZ" secondAttribute="trailing" id="U2k-ns-Cuk"/>
+                            <constraint firstItem="FDT-nC-pxZ" firstAttribute="leading" secondItem="kaB-0D-ZTd" secondAttribute="leading" id="lke-Sb-xBd"/>
+                            <constraint firstItem="kaB-0D-ZTd" firstAttribute="bottom" secondItem="FDT-nC-pxZ" secondAttribute="bottom" id="zpp-mR-ev1"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kaB-0D-ZTd"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="FDT-nC-pxZ" id="mdO-zk-D38"/>
@@ -228,10 +223,6 @@
         <scene sceneID="fRi-Jx-IOR">
             <objects>
                 <viewController id="Y3B-UK-iWz" customClass="TabViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gN0-DI-ib6"/>
-                        <viewControllerLayoutGuide type="bottom" id="NTf-cz-yeb"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hXb-D4-ulJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,13 +239,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-f1-tUV">
-                                <rect key="frame" x="24" y="609" width="154.5" height="17"/>
+                                <rect key="frame" x="24" y="609" width="263" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Y5-Lkw">
-                                <rect key="frame" x="24" y="630" width="104.5" height="17"/>
+                                <rect key="frame" x="24" y="630" width="263" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -276,20 +267,23 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
+                            <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
+                            <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="DI3-f1-tUV" secondAttribute="trailing" constant="16" id="3d4-6A-i5r"/>
                             <constraint firstAttribute="bottom" secondItem="88R-O5-360" secondAttribute="bottom" id="AwD-aW-SHU"/>
-                            <constraint firstAttribute="trailing" secondItem="i8L-kP-mjs" secondAttribute="trailing" constant="16" id="F8w-QM-rZt"/>
-                            <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="i8L-kP-mjs" secondAttribute="bottom" constant="20" id="Ii3-7s-BcH"/>
-                            <constraint firstItem="CBZ-3O-Ovm" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="16" id="KJY-DC-FmK"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="trailing" secondItem="i8L-kP-mjs" secondAttribute="trailing" constant="16" id="F8w-QM-rZt"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="bottom" secondItem="i8L-kP-mjs" secondAttribute="bottom" constant="20" id="Ii3-7s-BcH"/>
+                            <constraint firstItem="CBZ-3O-Ovm" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="16" id="KJY-DC-FmK"/>
                             <constraint firstAttribute="trailing" secondItem="88R-O5-360" secondAttribute="trailing" id="WEJ-9S-7Tp"/>
-                            <constraint firstItem="NTf-cz-yeb" firstAttribute="top" secondItem="a1Y-Y5-Lkw" secondAttribute="bottom" constant="20" id="Wa8-gm-cJ3"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="bottom" secondItem="a1Y-Y5-Lkw" secondAttribute="bottom" constant="20" id="Wa8-gm-cJ3"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="bottom" secondItem="CBZ-3O-Ovm" secondAttribute="bottom" id="XjM-0o-Hjt"/>
-                            <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" constant="24" id="YPm-xb-xDv"/>
+                            <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="YPm-xb-xDv"/>
+                            <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="a1Y-Y5-Lkw" secondAttribute="trailing" constant="16" id="aih-hX-1LS"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="top" secondItem="hXb-D4-ulJ" secondAttribute="top" id="jiX-9q-0t8"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="top" secondItem="DI3-f1-tUV" secondAttribute="bottom" constant="4" id="kLo-Y9-RkT"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" id="rmv-lb-kKH"/>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="top" secondItem="CBZ-3O-Ovm" secondAttribute="top" id="v7L-LY-vON"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="eqO-1r-eTU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tabman" id="UcL-mG-QB9"/>
                     <connections>
@@ -306,10 +300,6 @@
         <scene sceneID="qbT-Z9-bjv">
             <objects>
                 <viewController storyboardIdentifier="ChildViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hab-QH-68l" customClass="ChildViewController" customModule="Tabman_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JOY-iU-XKI"/>
-                        <viewControllerLayoutGuide type="bottom" id="6NA-6H-g3U"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C9w-6e-1E1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,10 +320,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UF3-Fe-eat" firstAttribute="top" secondItem="o0d-bc-nZ1" secondAttribute="bottom" constant="8" id="4Tr-ph-9ES"/>
-                            <constraint firstItem="UF3-Fe-eat" firstAttribute="centerX" secondItem="C9w-6e-1E1" secondAttribute="centerX" id="JE8-f4-kIV"/>
+                            <constraint firstItem="UF3-Fe-eat" firstAttribute="centerX" secondItem="nLe-sp-sPx" secondAttribute="centerX" id="JE8-f4-kIV"/>
                             <constraint firstItem="o0d-bc-nZ1" firstAttribute="centerY" secondItem="C9w-6e-1E1" secondAttribute="centerY" id="rif-uU-RYX"/>
-                            <constraint firstItem="o0d-bc-nZ1" firstAttribute="centerX" secondItem="C9w-6e-1E1" secondAttribute="centerX" id="vI4-uk-S8z"/>
+                            <constraint firstItem="o0d-bc-nZ1" firstAttribute="centerX" secondItem="nLe-sp-sPx" secondAttribute="centerX" id="vI4-uk-S8z"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="nLe-sp-sPx"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="o0d-bc-nZ1" id="6ko-8o-FpY"/>
