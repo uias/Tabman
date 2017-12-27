@@ -201,7 +201,7 @@ internal class TabmanButtonBar: TabmanBar {
                 }
                 button.setTitle(title, for: .normal)
                 
-                if self.appearance.layout.itemAlignment == .horizontolAlignment {
+                if self.appearance.layout.itemAlignment == .horizontal {
                     // Nudge it over a little bit
                     button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
                 }

@@ -37,7 +37,7 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
             let insets = UIEdgeInsets(top: 0.0, left: interItemSpacing / 2, bottom: 0.0, right: interItemSpacing / 2)
             self.updateButtons(withContext: .all) { (button) in
                
-                if self.appearance.layout.itemAlignment == .horizontolAlignment {
+                if self.appearance.layout.itemAlignment == .horizontal {
                     button.titleEdgeInsets = insets
                     button.imageEdgeInsets = insets
                 }

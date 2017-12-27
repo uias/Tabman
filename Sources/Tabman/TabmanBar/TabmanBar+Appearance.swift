@@ -48,8 +48,8 @@ public extension TabmanBar {
             }
             
             public enum ItemAlignment {
-                case verticalAlignment
-                case horizontolAlignment
+                case vertical
+                case horizontal
             }
             
             /// The spacing between items in the bar.
@@ -152,7 +152,7 @@ public extension TabmanBar {
             self.layout.bottomSeparatorEdgeInsets = .zero
             self.layout.itemVerticalPadding = 12.0
             self.layout.itemDistribution = .leftAligned
-            self.layout.itemAlignment = .horizontolAlignment
+            self.layout.itemAlignment = .horizontal
             self.layout.minimumItemWidth = 44.0
             self.layout.extendBackgroundEdgeInsets = true
             
