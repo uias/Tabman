@@ -47,6 +47,11 @@ public extension TabmanBar {
                 case centered
             }
             
+            public enum ItemAlignment {
+                case vertical
+                case horizontal
+            }
+            
             /// The spacing between items in the bar.
             public var interItemSpacing: CGFloat?
             /// The spacing at the edge of the items in the bar.
@@ -57,6 +62,8 @@ public extension TabmanBar {
             public var height: TabmanBar.Height?
             /// The vertical padding between the item and the bar bounds.
             public var itemVerticalPadding: CGFloat?
+            /// How items should be align in the bar
+            public var itemAlignment:ItemAlignment?
             /// How items in the bar should be distributed.
             public var itemDistribution: ItemDistribution?
             /// The minimum width for item
@@ -145,6 +152,7 @@ public extension TabmanBar {
             self.layout.bottomSeparatorEdgeInsets = .zero
             self.layout.itemVerticalPadding = 12.0
             self.layout.itemDistribution = .leftAligned
+            self.layout.itemAlignment = .horizontal
             self.layout.minimumItemWidth = 44.0
             self.layout.extendBackgroundEdgeInsets = true
             
