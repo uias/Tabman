@@ -238,6 +238,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
                     direction: direction,
                     indexRange: 0 ..< items.count - 1,
                     bounds: bounds)
+        behaviorEngine.update(activation: .onPositionChange)
     }
     
     internal func updateForCurrentPosition(bounds: CGRect? = nil) {

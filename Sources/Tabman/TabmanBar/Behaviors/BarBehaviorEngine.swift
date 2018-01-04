@@ -16,10 +16,10 @@ internal class BarBehaviorEngine {
     
     var activeBehaviors: [TabmanBar.Behavior]? {
         didSet {
-            updateActiveBehaviors(to: activeBehaviors ?? [])
+            loadActivists(for: activeBehaviors ?? [])
         }
     }
-    private var activists = [BarBehaviorActivist]()
+    private var activists = [BarBehaviorActivist.Activator: [BarBehaviorActivist]]()
     
     // MARK: Init
     
@@ -29,7 +29,7 @@ internal class BarBehaviorEngine {
     
     // MARK: Behaviors
     
-    private func updateActiveBehaviors(to behaviors: [TabmanBar.Behavior]) {
+    private func loadActivists(for behaviors: [TabmanBar.Behavior]) {
         activists.removeAll()
         
         for (index, behavior) in behaviors.enumerated() {
@@ -38,17 +38,21 @@ internal class BarBehaviorEngine {
             otherBehaviors.remove(at: index)
             
             guard let activist = behavior.activistType?.init(for: behavior,
+                                                             activator: behavior.activator,
                                                              bar: self.bar,
                                                              otherBehaviors: otherBehaviors) else {
                 continue
             }
-            self.activists.append(activist)
+            var activists = self.activists[behavior.activator] ?? []
+            activists.append(activist)
+            self.activists[behavior.activator] = activists
+            
             activist.update()
         }
     }
     
-    func update() {
-        activists.forEach { (activist) in
+    func update(activation: BarBehaviorActivist.Activator) {
+        activists[activation]?.forEach { (activist) in
             activist.update()
         }
     }
