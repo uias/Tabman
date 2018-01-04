@@ -12,11 +12,20 @@ import UIKit
 extension UIApplication {
     
     static var safeShared: UIApplication? {
-        guard !Bundle.main.bundlePath.hasSuffix("appex") else { return nil }
-        guard UIApplication.respondsToSelector("sharedApplication") else { return nil }
-        guard let unmanagedSharedApplication = UIApplication.performSelector("sharedApplication") else { return nil }
+        guard #available(iOSApplicationExtension 9, *) else {
+            return nil
+        }
         
-        return unmanagedSharedApplication.takeRetainedValue() as? UIApplication
+        guard !Bundle.main.bundlePath.hasSuffix("appex") else {
+            return nil
+        }
+        guard UIApplication.responds(to: Selector(("sharedApplication"))) else {
+            return nil
+        }
+        guard let unmanagedSharedApplication = UIApplication.perform(Selector(("sharedApplication"))) else {
+            return nil
+        }
+        
+        return unmanagedSharedApplication.takeUnretainedValue() as? UIApplication
     }
-    
 }
