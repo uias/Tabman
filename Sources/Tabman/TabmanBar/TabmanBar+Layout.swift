@@ -124,7 +124,7 @@ internal extension TabmanBar {
             return
         }
         
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight = UIApplication.safeShared?.statusBarFrame.height ?? 0.0
         if safeAreaInsets.top == statusBarHeight {
             topPinConstraint.constant = -statusBarHeight
         }
