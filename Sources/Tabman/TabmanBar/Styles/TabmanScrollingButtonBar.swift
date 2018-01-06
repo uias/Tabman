@@ -92,7 +92,7 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         // add scroll view
         self.contentView.addSubview(scrollView)
-        scrollView.autoPinEdgesToSuperviewEdges()
+        scrollView.pinToSuperviewEdges()
         scrollView.match(parent: self, onDimension: .height)
         scrollView.contentView.removeAllSubviews()
         scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false

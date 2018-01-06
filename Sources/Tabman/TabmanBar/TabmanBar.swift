@@ -153,21 +153,15 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     private func initTabBar(coder aDecoder: NSCoder?) {
         
         self.addSubview(backgroundView)
-        backgroundView.autoPinEdgesToSuperviewEdges()
+        backgroundView.pinToSuperviewEdges()
         
         bottomSeparator.addAsSubview(to: self)
         
         self.addSubview(contentView)
         if #available(iOS 11, *) {
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-                ])
+            contentView.pinToSafeArea(layoutGuide: safeAreaLayoutGuide)
         } else {
-            contentView.autoPinEdgesToSuperviewEdges()
+            contentView.pinToSuperviewEdges()
         }
         
         self.indicator = self.create(indicatorForStyle: self.defaultIndicatorStyle())

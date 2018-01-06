@@ -92,9 +92,9 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
         maskContentView.isUserInteractionEnabled = false
         
         self.contentView.addSubview(buttonContentView)
-        buttonContentView.autoPinEdgesToSuperviewEdges()
+        buttonContentView.pinToSuperviewEdges()
         self.contentView.addSubview(maskContentView)
-        maskContentView.autoPinEdgesToSuperviewEdges()
+        maskContentView.pinToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
         self.addAndLayoutBarButtons(toView: buttonContentView, items: items) { (button, _) in
