@@ -44,7 +44,7 @@ internal class TabmanChevronIndicator: TabmanIndicator {
         chevronView.autoSetDimension(.height, toSize: self.intrinsicContentSize.height - 2.0)
         chevronView.autoSetDimension(.width, toSize: self.intrinsicContentSize.height)
         chevronView.autoAlignAxis(toSuperviewAxis: .vertical)
-        chevronView.autoPinEdge(toSuperviewEdge: .bottom)
+        chevronView.pinToSuperviewEdge(.bottom)
     }
     
     override func itemTransitionType() -> TabmanItemTransition.Type? {

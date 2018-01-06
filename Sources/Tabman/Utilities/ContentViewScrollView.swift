@@ -51,10 +51,7 @@ internal class ContentViewScrollView: UIScrollView {
         
         let contentView = UIView(forAutoLayout: ())
         self.addSubview(contentView)
-        contentView.autoPinEdge(toSuperviewEdge: .leading)
-        contentView.autoPinEdge(toSuperviewEdge: .top)
-        contentView.autoPinEdge(toSuperviewEdge: .bottom)
-        contentView.autoPinEdge(toSuperviewEdge: .trailing)
+        contentView.pinToSuperviewEdges()
         
         self.contentView = contentView
     }

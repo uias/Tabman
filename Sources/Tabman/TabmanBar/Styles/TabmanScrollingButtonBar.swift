@@ -127,8 +127,8 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         self.scrollView.contentView.addSubview(indicator)
-        indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
+        indicator.pinToSuperviewEdge(.bottom)
+        self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.left)
         self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
     }
     

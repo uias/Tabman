@@ -220,8 +220,8 @@ internal class TabmanButtonBar: TabmanBar {
             NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
                 button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
             })
-            button.autoPinEdge(toSuperviewEdge: .top)
-            button.autoPinEdge(toSuperviewEdge: .bottom)
+            button.pinToSuperviewEdge(.top)
+            button.pinToSuperviewEdge(.bottom)
             
             let verticalPadding = self.itemVerticalPadding
             let insets = UIEdgeInsets(top: verticalPadding, left: 0.0, bottom: verticalPadding, right: 0.0)
