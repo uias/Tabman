@@ -41,8 +41,8 @@ internal class TabmanChevronIndicator: TabmanIndicator {
         chevronView.backgroundColor = self.tintColor
         
         self.addSubview(chevronView)
-        chevronView.autoSetDimension(.height, toSize: self.intrinsicContentSize.height - 2.0)
-        chevronView.autoSetDimension(.width, toSize: self.intrinsicContentSize.height)
+        chevronView.set(.height, to: intrinsicContentSize.height - 2.0)
+        chevronView.set(.width, to: intrinsicContentSize.height)
         chevronView.autoAlignAxis(toSuperviewAxis: .vertical)
         chevronView.pinToSuperviewEdge(.bottom)
     }

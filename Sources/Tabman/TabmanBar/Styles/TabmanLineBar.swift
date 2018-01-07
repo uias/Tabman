@@ -45,6 +45,6 @@ internal class TabmanLineBar: TabmanBar {
         indicator.tintColor = self.appearance.indicator.color
         contentView.addSubview(indicator)
         self.indicatorLeftMargin = indicator.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .right)[1]
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
 }

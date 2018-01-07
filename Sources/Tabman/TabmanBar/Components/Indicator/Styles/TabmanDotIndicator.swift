@@ -39,8 +39,8 @@ internal class TabmanDotIndicator: TabmanIndicator {
     public override func constructIndicator() {
         
         self.addSubview(dotView)
-        dotView.autoSetDimension(.height, toSize: self.intrinsicContentSize.height)
-        dotView.autoSetDimension(.width, toSize: self.intrinsicContentSize.height)
+        dotView.set(.height, to: intrinsicContentSize.height)
+        dotView.set(.width, to: intrinsicContentSize.height)
         dotView.autoAlignAxis(toSuperviewAxis: .vertical)
         dotView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 2.0)
         dotView.backgroundColor = self.tintColor

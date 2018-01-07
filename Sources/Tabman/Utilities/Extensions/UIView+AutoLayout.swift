@@ -92,6 +92,18 @@ internal extension UIView {
         return constraints.first!
     }
     
+    @discardableResult
+    func set(_ dimension: Dimension, to value: CGFloat) -> NSLayoutConstraint {
+        return addConstraints({ () -> [NSLayoutConstraint] in
+            switch dimension {
+            case .width:
+                return [self.widthAnchor.constraint(equalToConstant: value)]
+            case .height:
+                return [self.heightAnchor.constraint(equalToConstant: value)]
+            }
+        }).first!
+    }
+    
     // MARK: Utilities
     
     private func prepareForAutoLayout(_ completion: () -> Void) {

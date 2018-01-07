@@ -77,8 +77,8 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
         
         contentView.addSubview(indicator)
         indicator.pinToSuperviewEdge(.bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .leading)
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.leading)
+        self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
     
     //
