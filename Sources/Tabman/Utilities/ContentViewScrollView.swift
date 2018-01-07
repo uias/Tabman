@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 /// UIScrollView with internally managed contentView.
 internal class ContentViewScrollView: UIScrollView {
@@ -60,13 +59,13 @@ internal class ContentViewScrollView: UIScrollView {
     // MARK: Layout
     //
     
-    func match(parent: UIView, onDimension dimension: Dimension) {
+    func matchParent(_ parent: UIView, on dimension: UIView.Dimension) {
         switch dimension {
         case .height:
-            self.contentView.autoMatch(.height, to: .height, of: parent)
+            contentView.match(.height, of: parent)
             
         case .width:
-            self.contentView.autoMatch(.width, to: .width, of: parent)
+            contentView.match(.width, of: parent)
         }
     }
 }

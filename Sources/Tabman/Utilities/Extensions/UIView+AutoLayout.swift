@@ -20,6 +20,11 @@ internal extension UIView {
         case right
     }
     
+    enum Dimension {
+        case width
+        case height
+    }
+    
     @available (iOS 11, *)
     @discardableResult
     func pinToSafeArea(layoutGuide: UILayoutGuide) -> [NSLayoutConstraint] {
@@ -71,6 +76,19 @@ internal extension UIView {
                 return [self.rightAnchor.constraint(equalTo: superview.rightAnchor)]
             }
         }
+        return constraints.first!
+    }
+    
+    @discardableResult
+    func match(_ dimension: Dimension, of view: UIView) -> NSLayoutConstraint {
+        let constraints = addConstraints({ () -> [NSLayoutConstraint] in
+            switch dimension {
+            case .width:
+                return [self.heightAnchor.constraint(equalTo: view.heightAnchor)]
+            case .height:
+                return [self.widthAnchor.constraint(equalTo: view.widthAnchor)]
+            }
+        })
         return constraints.first!
     }
     
