@@ -164,7 +164,8 @@ Customization of the appearance and styling of a bar is available via `.appearan
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
 	// customise appearance here
-	appearance.text.color = UIColor.red
+	appearance.state.selectedColor = UIColor.red
+	appearance.text.font = .systemFont(ofSize: 16.0)
 	appearance.indicator.isProgressive = true
 })
 ```
