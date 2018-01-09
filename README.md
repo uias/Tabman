@@ -194,7 +194,7 @@ If you're still having problems, feel free to raise an [issue](https://github.co
 - Contributed to by a growing [list of others](https://github.com/uias/Tabman/graphs/contributors).
 
 
-## 💙 Contributing
+## ❤️ Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 
