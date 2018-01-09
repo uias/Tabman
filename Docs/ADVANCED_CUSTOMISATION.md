@@ -76,10 +76,10 @@ override func viewDidLoad() {
 ```
 
 ### Using a custom TabmanIndicator
-As seen above, when creating a `TabmanBar` subclass you can specify the style for the indicator in `indicatorStyle()`.
+As seen above, when creating a `TabmanBar` subclass you can specify the style for the indicator in `defaultIndicatorStyle()`.
 
 ```swift
-override func indicatorStyle() -> TabmanIndicator.Style {
+override func defaultIndicatorStyle() -> TabmanIndicator.Style {
 	return .line
 }
 ```
@@ -110,7 +110,7 @@ public override func constructIndicator() {
 3) Configure your custom `TabmanBar` to use your custom indicator.
 
 ```swift
-override func indicatorStyle() -> TabmanIndicator.Style {
+override func defaultIndicatorStyle() -> TabmanIndicator.Style {
 	return .custom(type: MyCustomIndicator.self)
 }
 ```
