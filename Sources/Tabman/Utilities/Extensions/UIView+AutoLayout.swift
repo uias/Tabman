@@ -82,12 +82,13 @@ internal extension UIView {
     @discardableResult
     func match(_ dimension: Dimension, of view: UIView) -> NSLayoutConstraint {
         let constraints = addConstraints({ () -> [NSLayoutConstraint] in
-            switch dimension {
-            case .width:
-                return [self.heightAnchor.constraint(equalTo: view.heightAnchor)]
-            case .height:
-                return [self.widthAnchor.constraint(equalTo: view.widthAnchor)]
-            }
+            let attribute: NSLayoutAttribute = (dimension == .width) ? .width : .height
+            return [NSLayoutConstraint(item: self, attribute: attribute,
+                                       relatedBy: .equal,
+                                       toItem: view,
+                                       attribute: attribute,
+                                       multiplier: 1.0,
+                                       constant: 0.0)]
         })
         return constraints.first!
     }
