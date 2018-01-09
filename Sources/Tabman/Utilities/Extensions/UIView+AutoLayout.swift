@@ -25,6 +25,11 @@ internal extension UIView {
         case height
     }
     
+    enum Axis {
+        case horizontal
+        case vertical
+    }
+    
     @available (iOS 11, *)
     @discardableResult
     func pinToSafeArea(layoutGuide: UILayoutGuide) -> [NSLayoutConstraint] {
@@ -40,10 +45,8 @@ internal extension UIView {
     
     @discardableResult
     func pinToSuperviewEdges() -> [NSLayoutConstraint] {
-        guard let superview = self.superview else {
-            fatalError("No superview for view \(self)")
-        }
-        
+        let superview = guardForSuperview()
+
         return addConstraints { () -> [NSLayoutConstraint] in
             return [
                 self.topAnchor.constraint(equalTo: superview.topAnchor),
@@ -56,10 +59,7 @@ internal extension UIView {
     
     @discardableResult
     func pinToSuperviewEdge(_ edge: Edge, inset: CGFloat = 0.0) -> NSLayoutConstraint {
-        guard let superview = self.superview else {
-            fatalError("No superview for view \(self)")
-        }
-        
+        let superview = guardForSuperview()        
         let constraints = addConstraints { () -> [NSLayoutConstraint] in
             switch edge {
             case .top:
@@ -88,7 +88,8 @@ internal extension UIView {
     func match(_ dimension: Dimension, of view: UIView) -> NSLayoutConstraint {
         let constraints = addConstraints({ () -> [NSLayoutConstraint] in
             let attribute: NSLayoutAttribute = (dimension == .width) ? .width : .height
-            return [NSLayoutConstraint(item: self, attribute: attribute,
+            return [NSLayoutConstraint(item: self,
+                                       attribute: attribute,
                                        relatedBy: .equal,
                                        toItem: view,
                                        attribute: attribute,
@@ -110,6 +111,22 @@ internal extension UIView {
         }).first!
     }
     
+    @discardableResult
+    func alignToSuperviewAxis(_ axis: Axis) -> NSLayoutConstraint {
+        let superview = guardForSuperview()
+
+        return addConstraints({ () -> [NSLayoutConstraint] in
+            let attribute: NSLayoutAttribute = (axis == .horizontal) ? .centerY : .centerX
+            return [NSLayoutConstraint(item: self,
+                                       attribute: attribute,
+                                       relatedBy: .equal,
+                                       toItem: superview,
+                                       attribute: attribute,
+                                       multiplier: 1.0,
+                                       constant: 0.0)]
+        }).first!
+    }
+    
     // MARK: Utilities
     
     private func prepareForAutoLayout(_ completion: () -> Void) {
@@ -124,6 +141,13 @@ internal extension UIView {
             NSLayoutConstraint.activate(constraints)
         }
         return constraints
+    }
+    
+    private func guardForSuperview() -> UIView {
+        guard let superview = self.superview else {
+            fatalError("No superview for view \(self)")
+        }
+        return superview
     }
     
     private func actualInset(for edge: Edge, value: CGFloat) -> CGFloat {

@@ -11,9 +11,7 @@ import PureLayout
 
 internal class TabmanChevronIndicator: TabmanIndicator {
     
-    //
     // MARK: Properties
-    //
     
     private var chevronView = ChevronView()
     
@@ -28,9 +26,7 @@ internal class TabmanChevronIndicator: TabmanIndicator {
         return false
     }
     
-    //
     // MARK: Lifecycle
-    //
     
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 0.0, height: 10.0)
@@ -43,7 +39,7 @@ internal class TabmanChevronIndicator: TabmanIndicator {
         self.addSubview(chevronView)
         chevronView.set(.height, to: intrinsicContentSize.height - 2.0)
         chevronView.set(.width, to: intrinsicContentSize.height)
-        chevronView.autoAlignAxis(toSuperviewAxis: .vertical)
+        chevronView.alignToSuperviewAxis(.vertical)
         chevronView.pinToSuperviewEdge(.bottom)
     }
     
