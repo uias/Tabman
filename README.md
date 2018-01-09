@@ -16,19 +16,20 @@
     <img src="Artwork/header.png" width="890" alt="Tabman"/>
 </p>
 
-## Features
+ 
+## ⭐️ Features
 - [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
 - [x] Simplistic, yet highly extensive customisation.
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](https://github.com/uias/pageboy).
 
-## Requirements
+## 📋 Requirements
 Tabman requires iOS 9, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
 
 For details on using older versions of Tabman or Swift please see [Compatibility](Docs/COMPATIBILITY.md).
 
-## Installation
+## 📲 Installation
 ### CocoaPods
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
@@ -67,7 +68,7 @@ carthage bootstrap --platform ios
 and build the workspace.
 
 
-## Usage
+## 🚀 Usage
 
 ### The Basics
 
@@ -183,19 +184,19 @@ tabViewController.bar.behaviors = [.autoHide(.always)]
 
 *The full list of available behaviors can be found [here](Docs/BEHAVIORS.md).*
 
-## Troubleshooting
+## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
-## About
+## 👨🏻‍💻 About
 - Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
 - Contributed to by a growing [list of others](https://github.com/uias/Tabman/graphs/contributors).
 
 
-## Contributing
+## 💙 Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 
-## License
+## 👮🏻‍♂️License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
