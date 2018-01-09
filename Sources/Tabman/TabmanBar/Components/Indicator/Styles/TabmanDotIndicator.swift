@@ -42,7 +42,7 @@ internal class TabmanDotIndicator: TabmanIndicator {
         dotView.set(.height, to: intrinsicContentSize.height)
         dotView.set(.width, to: intrinsicContentSize.height)
         dotView.autoAlignAxis(toSuperviewAxis: .vertical)
-        dotView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 2.0)
+        dotView.pinToSuperviewEdge(.bottom, inset: 2.0)
         dotView.backgroundColor = self.tintColor
     }
     

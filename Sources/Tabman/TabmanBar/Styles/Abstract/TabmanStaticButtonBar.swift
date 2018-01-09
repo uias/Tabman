@@ -101,7 +101,7 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
             button.imageEdgeInsets = insets
             
             if let previousButton = previousButton {
-                button.autoMatch(.width, to: .width, of: previousButton)
+                button.match(.width, of: previousButton)
             }
             
             customize(button, previousButton)

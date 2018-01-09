@@ -55,7 +55,7 @@ internal extension UIView {
     }
     
     @discardableResult
-    func pinToSuperviewEdge(_ edge: Edge) -> NSLayoutConstraint {
+    func pinToSuperviewEdge(_ edge: Edge, inset: CGFloat = 0.0) -> NSLayoutConstraint {
         guard let superview = self.superview else {
             fatalError("No superview for view \(self)")
         }
@@ -76,7 +76,12 @@ internal extension UIView {
                 return [self.rightAnchor.constraint(equalTo: superview.rightAnchor)]
             }
         }
-        return constraints.first!
+        guard let constraint = constraints.first else {
+            fatalError("Failed to add constraint for some reason")
+        }
+        
+        constraint.constant = actualInset(for: edge, value: inset)
+        return constraint
     }
     
     @discardableResult
@@ -119,5 +124,15 @@ internal extension UIView {
             NSLayoutConstraint.activate(constraints)
         }
         return constraints
+    }
+    
+    private func actualInset(for edge: Edge, value: CGFloat) -> CGFloat {
+        switch edge {
+        case .trailing, .right, .bottom:
+            return -value
+            
+        default:
+            return value
+        }
     }
 }
