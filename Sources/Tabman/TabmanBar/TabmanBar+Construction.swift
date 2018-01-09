@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 // MARK: - TabmanBar construction

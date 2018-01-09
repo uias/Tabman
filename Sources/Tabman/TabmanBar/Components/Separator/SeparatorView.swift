@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 internal class SeparatorView: UIView {
     
@@ -70,8 +69,8 @@ internal class SeparatorView: UIView {
     func addAsSubview(to parent: UIView) {
         
         parent.addSubview(self)
-        autoPinEdge(toSuperviewEdge: .bottom)
-        leftPinConstraint = autoPinEdge(toSuperviewEdge: .leading)
-        rightPinConstraint = autoPinEdge(toSuperviewEdge: .trailing)
+        pinToSuperviewEdge(.bottom)
+        leftPinConstraint = pinToSuperviewEdge(.leading)
+        rightPinConstraint = pinToSuperviewEdge(.right)
     }
 }

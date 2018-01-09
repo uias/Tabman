@@ -9,7 +9,6 @@
 import UIKit
 import Tabman
 import Pageboy
-import PureLayout
 
 class CustomTabmanBar: TabmanBar {
 
@@ -36,7 +35,14 @@ class CustomTabmanBar: TabmanBar {
         label.textAlignment = .center
         label.textColor = .white
         self.contentView.addSubview(label)
-        label.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(12.0, 0.0, 12.0, 0.0))
+    
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            ])
     }
     
     public override func add(indicator: TabmanIndicator,
