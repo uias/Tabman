@@ -217,9 +217,7 @@ internal class TabmanButtonBar: TabmanBar {
             button.titleLabel?.font = self.textFont
             
             // layout
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
-                button.autoSetDimension(.height, toSize: Defaults.minimumItemHeight)
-            })
+            button.set(.height, to: Defaults.minimumItemHeight, priority: UILayoutPriority(500))
             button.pinToSuperviewEdge(.top)
             button.pinToSuperviewEdge(.bottom)
             
@@ -229,17 +227,14 @@ internal class TabmanButtonBar: TabmanBar {
             
             // Add horizontal pin constraints
             // These are breakable (For equal width instances etc.)
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(500), forConstraints: {
-                if let previousButton = previousButton {
-                    self.horizontalMarginConstraints.append(button.autoPinEdge(.leading, to: .trailing, of: previousButton))
-                } else { // pin to leading
-                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .leading))
-                }
-                
-                if index == items.count - 1 {
-                    self.edgeMarginConstraints.append(button.autoPinEdge(toSuperviewEdge: .trailing))
-                }
-            })
+            if let previousButton = previousButton {
+                horizontalMarginConstraints.append(button.pinEdge(.leading, to: .trailing, of: previousButton, priority: UILayoutPriority(500)))
+            } else { // pin to leading
+                self.edgeMarginConstraints.append(button.pinToSuperviewEdge(.leading, priority: UILayoutPriority(500)))
+            }
+            if index == items.count - 1 {
+                self.edgeMarginConstraints.append(button.pinToSuperviewEdge(.trailing, priority: UILayoutPriority(500)))
+            }
             
             // allow button to be compressed
             NSLayoutConstraint.autoSetPriority(UILayoutPriority(400), forConstraints: { 

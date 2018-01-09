@@ -33,49 +33,59 @@ internal extension UIView {
     @available (iOS 11, *)
     @discardableResult
     func pinToSafeArea(layoutGuide: UILayoutGuide) -> [NSLayoutConstraint] {
-        return addConstraints { () -> [NSLayoutConstraint] in
+        return addConstraints(priority: .required, { () -> [NSLayoutConstraint] in
             return [
                 self.topAnchor.constraint(equalTo: layoutGuide.topAnchor),
                 self.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
                 self.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
                 self.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor)
             ]
-        }
+        })
     }
     
     @discardableResult
-    func pinToSuperviewEdges() -> [NSLayoutConstraint] {
+    func pinToSuperviewEdges(priority: UILayoutPriority = .required) -> [NSLayoutConstraint] {
         let superview = guardForSuperview()
 
-        return addConstraints { () -> [NSLayoutConstraint] in
+        return addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
             return [
                 self.topAnchor.constraint(equalTo: superview.topAnchor),
                 self.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
                 self.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
                 self.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ]
-        }
+        })
     }
     
     @discardableResult
-    func pinToSuperviewEdge(_ edge: Edge, inset: CGFloat = 0.0) -> NSLayoutConstraint {
+    func pinToSuperviewEdge(_ edge: Edge, inset: CGFloat = 0.0, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let superview = guardForSuperview()        
-        let constraints = addConstraints { () -> [NSLayoutConstraint] in
+        return pinEdge(edge, to: edge, of: superview, inset: inset, priority: priority)
+    }
+    
+    @discardableResult
+    func pinEdge(_ edge: Edge,
+                 to otherEdge: Edge,
+                 of view: UIView,
+                 inset: CGFloat = 0.0,
+                 priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        
+        let constraints = addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
             switch edge {
             case .top:
-                return [self.topAnchor.constraint(equalTo: superview.topAnchor)]
+                return [self.topAnchor.constraint(equalTo: yAnchor(for: otherEdge, of: view))]
             case .leading:
-                return [self.leadingAnchor.constraint(equalTo: superview.leadingAnchor)]
+                return [self.leadingAnchor.constraint(equalTo: xAnchor(for: otherEdge, of: view))]
             case .bottom:
-                return [self.bottomAnchor.constraint(equalTo: superview.bottomAnchor)]
+                return [self.bottomAnchor.constraint(equalTo: yAnchor(for: otherEdge, of: view))]
             case .trailing:
-                return [self.trailingAnchor.constraint(equalTo: superview.trailingAnchor)]
+                return [self.trailingAnchor.constraint(equalTo: xAnchor(for: otherEdge, of: view))]
             case .left:
-                return [self.leftAnchor.constraint(equalTo: superview.leftAnchor)]
+                return [self.leftAnchor.constraint(equalTo: xAnchor(for: otherEdge, of: view))]
             case .right:
-                return [self.rightAnchor.constraint(equalTo: superview.rightAnchor)]
+                return [self.rightAnchor.constraint(equalTo: xAnchor(for: otherEdge, of: view))]
             }
-        }
+        })
         guard let constraint = constraints.first else {
             fatalError("Failed to add constraint for some reason")
         }
@@ -85,8 +95,8 @@ internal extension UIView {
     }
     
     @discardableResult
-    func match(_ dimension: Dimension, of view: UIView) -> NSLayoutConstraint {
-        let constraints = addConstraints({ () -> [NSLayoutConstraint] in
+    func match(_ dimension: Dimension, of view: UIView, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        let constraints = addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
             let attribute: NSLayoutAttribute = (dimension == .width) ? .width : .height
             return [NSLayoutConstraint(item: self,
                                        attribute: attribute,
@@ -100,8 +110,8 @@ internal extension UIView {
     }
     
     @discardableResult
-    func set(_ dimension: Dimension, to value: CGFloat) -> NSLayoutConstraint {
-        return addConstraints({ () -> [NSLayoutConstraint] in
+    func set(_ dimension: Dimension, to value: CGFloat, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        return addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
             switch dimension {
             case .width:
                 return [self.widthAnchor.constraint(equalToConstant: value)]
@@ -112,10 +122,10 @@ internal extension UIView {
     }
     
     @discardableResult
-    func alignToSuperviewAxis(_ axis: Axis) -> NSLayoutConstraint {
+    func alignToSuperviewAxis(_ axis: Axis, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let superview = guardForSuperview()
 
-        return addConstraints({ () -> [NSLayoutConstraint] in
+        return addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
             let attribute: NSLayoutAttribute = (axis == .horizontal) ? .centerY : .centerX
             return [NSLayoutConstraint(item: self,
                                        attribute: attribute,
@@ -135,8 +145,9 @@ internal extension UIView {
     }
     
     @discardableResult
-    private func addConstraints(_ completion: () -> [NSLayoutConstraint]) -> [NSLayoutConstraint] {
+    private func addConstraints(priority: UILayoutPriority, _ completion: () -> [NSLayoutConstraint]) -> [NSLayoutConstraint] {
         let constraints = completion()
+        constraints.forEach({ $0.priority = priority })
         prepareForAutoLayout {
             NSLayoutConstraint.activate(constraints)
         }
@@ -157,6 +168,32 @@ internal extension UIView {
             
         default:
             return value
+        }
+    }
+    
+    private func yAnchor(for edge: Edge, of view: UIView) -> NSLayoutAnchor<NSLayoutYAxisAnchor> {
+        switch edge {
+        case .top:
+            return view.topAnchor
+        case .bottom:
+            return view.bottomAnchor
+        default:
+            fatalError("Not a valid Y axis anchor")
+        }
+    }
+    
+    private func xAnchor(for edge: Edge, of view: UIView) -> NSLayoutAnchor<NSLayoutXAxisAnchor> {
+        switch edge {
+        case .leading:
+            return view.leadingAnchor
+        case .trailing:
+            return view.trailingAnchor
+        case .left:
+            return view.leftAnchor
+        case .right:
+            return view.rightAnchor
+        default:
+            fatalError("Not a valid X axis anchor")
         }
     }
 }
