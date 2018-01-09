@@ -190,7 +190,7 @@ internal class TabmanButtonBar: TabmanBar {
         var previousButton: UIButton?
         for (index, item) in items.enumerated() {
             
-            let button = UIButton(forAutoLayout: ())
+            let button = UIButton()
             view.addSubview(button)
             
             if let image = item.image, let title = item.title {
@@ -237,9 +237,7 @@ internal class TabmanButtonBar: TabmanBar {
             }
             
             // allow button to be compressed
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority(400), forConstraints: { 
-                button.autoSetContentCompressionResistancePriority(for: .horizontal)
-            })
+            button.setContentCompressionResistance(for: .horizontal, to: UILayoutPriority(400))
             
             // Accessibility
             button.accessibilityLabel = item.accessibilityLabel

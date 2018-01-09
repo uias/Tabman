@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 internal class TabmanChevronIndicator: TabmanIndicator {
     

@@ -137,6 +137,11 @@ internal extension UIView {
         }).first!
     }
     
+    func setContentCompressionResistance(for axis: Axis, to priority: UILayoutPriority) {
+        let axis: UILayoutConstraintAxis = (axis == .horizontal) ? .horizontal : .vertical
+        self.setContentCompressionResistancePriority(priority, for: axis)
+    }
+    
     // MARK: Utilities
     
     private func prepareForAutoLayout(_ completion: () -> Void) {

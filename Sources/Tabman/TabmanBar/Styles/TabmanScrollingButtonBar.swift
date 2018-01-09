@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// A bar with scrolling buttons and line indicator.

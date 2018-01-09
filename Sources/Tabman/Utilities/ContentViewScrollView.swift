@@ -48,7 +48,7 @@ internal class ContentViewScrollView: UIScrollView {
     private func initContentView() {
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        let contentView = UIView(forAutoLayout: ())
+        let contentView = UIView()
         self.addSubview(contentView)
         contentView.pinToSuperviewEdges()
         

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// Abstract class for static (non-scrolling) button bars.

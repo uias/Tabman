@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 internal class TabmanDotIndicator: TabmanIndicator {
     
