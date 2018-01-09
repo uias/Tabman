@@ -602,7 +602,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/PureLayout.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
