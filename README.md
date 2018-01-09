@@ -198,5 +198,5 @@ If you're still having problems, feel free to raise an [issue](https://github.co
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 
-## 👮🏻‍♂️License
+## 👮🏻‍♂️ License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
