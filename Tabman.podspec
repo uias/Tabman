@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version      = "1.3.0"
   s.summary      = "A powerful paging view controller with indicator bar."
   s.description  = <<-DESC
-  					Tabman is a highly customisable, powerful and extendable paging view controller with indicator bar.
+            Tabman is a highly customisable, powerful and extendable paging view controller with indicator bar.
                    DESC
 
   s.homepage          = "https://github.com/uias/Tabman"
