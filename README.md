@@ -53,11 +53,6 @@ Add Tabman to your `Cartfile`:
 github "uias/Tabman" ~> 1.0
 ```
 
-**Dependencies**
-
-- [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
-- [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
-
 ### Example
 An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
 
@@ -72,7 +67,9 @@ and build the workspace.
 
 ### The Basics
 
-1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
+1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. 
+
+	*Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.*
 
 ```swift
 class YourTabViewController: TabmanViewController, PageboyViewControllerDataSource {
@@ -126,7 +123,7 @@ Tabman will automatically attempt to inset any `UIScrollView` that if finds with
 .automaticallyAdjustsChildScrollViewInsets = true
 ```
 
-*The values used for insetting the child content are also available for manual use at `bar.requiredInsets`. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas when running iOS 11.*
+*The values used for insetting the child content are also available for manual use at `bar.requiredInsets`, and via `.parentTabmanBarInsets` from child view controllers. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas under iOS 11.*
 
 Automatic insetting support is available for any `UIScrollView` derived class such as `UITableView` and also view controllers such as `UITableViewController` and `UICollectionViewController`.
 

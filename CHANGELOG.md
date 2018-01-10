@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
+- `1.3.x` Releases - [1.3.0](#130) 
 - `1.2.x` Releases - [1.2.0](#120) 
 - `1.1.x` Releases - [1.1.0](#110) | [1.1.1](#111) | [1.1.2](#112) | [1.1.3](#113) | [1.1.4](#114)
 - `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101) | [1.0.2](#102) | [1.0.3](#103) | [1.0.4](#104) | [1.0.5](#105) | [1.0.6](#106) | [1.0.7](#107) | [1.0.8](#108)
@@ -13,6 +14,21 @@ All notable changes to this project will be documented in this file.
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
+
+---
+
+## [1.3.0](https://github.com/uias/Pageboy/releases/tag/1.3.0)
+Released on 2017-01-10
+
+#### Added 
+- [#227](https://github.com/uias/Tabman/pull/227) `parentTabmanBarInsets` property to UIViewController.
+     - by [msaps](https://github.com/msaps).
+
+#### Updated
+- [#219](https://github.com/uias/Tabman/issues/219) Make Tabman safe to use in extensions.
+     - by [msaps](https://github.com/msaps) & [OskarGroth](https://github.com/OskarGroth).
+- [#221](https://github.com/uias/Tabman/issues/221) Remove PureLayout dependency.
+     - by [msaps](https://github.com/msaps).
 
 ---
 
