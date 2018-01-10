@@ -24,12 +24,16 @@ target 'Tabman-UITests' do
 
 end
 
-# target 'TabmanTests' do
-#   workspace 'Tabman'
-#   project './Sources/Tabman.xcodeproj'
+target 'Tabman' do
+  workspace 'Tabman'
+  project './Sources/Tabman.xcodeproj'
 
-#   use_frameworks!
+  use_frameworks!
+  shared_pods
 
-#   pod 'Pageboy', '~> 2.0'
+  target 'TabmanTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
-# end
+end
