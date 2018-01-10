@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; };
-		7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
 		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
@@ -68,7 +66,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */,
 				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -113,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */,
 				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

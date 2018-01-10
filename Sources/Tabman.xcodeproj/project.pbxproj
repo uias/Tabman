@@ -54,7 +54,6 @@
 		D62AC1AB1E5C55290020B8AE /* ContentViewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */; };
 		D63582201F5EF843006AD0C3 /* TabmanBar+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D635821F1F5EF843006AD0C3 /* TabmanBar+Layout.swift */; };
 		D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
-		D65F101D1EAEA2730090980C /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		D66F583C1EC0F66000418B40 /* TabmanButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F583A1EC0F66000418B40 /* TabmanButtonBar.swift */; };
 		D66F583D1EC0F66000418B40 /* TabmanStaticButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F583B1EC0F66000418B40 /* TabmanStaticButtonBar.swift */; };
 		D66FEEBC1E79662C00E7E87A /* TabmanBar+Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66FEEBB1E79662C00E7E87A /* TabmanBar+Indicator.swift */; };
@@ -165,7 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D65F101D1EAEA2730090980C /* Pageboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +496,6 @@
 				D62AC0B71E5733810020B8AE /* Sources */,
 				D62AC0B81E5733810020B8AE /* Frameworks */,
 				D62AC0B91E5733810020B8AE /* Resources */,
-				D68766FB1EAE9685003C8D11 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -594,21 +591,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list HEAD --count`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Incremented the build number ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
-		};
-		D68766FB1EAE9685003C8D11 /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -735,7 +717,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -795,7 +776,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

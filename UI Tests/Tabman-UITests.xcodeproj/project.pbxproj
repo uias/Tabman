@@ -22,8 +22,6 @@
 		D61AAAC81F50475600298598 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABC1F50475600298598 /* TestViewController.swift */; };
 		D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; };
 		D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; };
-		D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAF41F504BAD00298598 /* AutoInsettingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */,
 				D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -93,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */,
 				D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
