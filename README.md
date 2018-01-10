@@ -53,11 +53,6 @@ Add Tabman to your `Cartfile`:
 github "uias/Tabman" ~> 1.0
 ```
 
-**Dependencies**
-
-- [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
-- [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
-
 ### Example
 An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
 
