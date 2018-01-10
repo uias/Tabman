@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// A bar with scrolling buttons and line indicator.
@@ -92,8 +91,8 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         
         // add scroll view
         self.contentView.addSubview(scrollView)
-        scrollView.autoPinEdgesToSuperviewEdges()
-        scrollView.match(parent: self, onDimension: .height)
+        scrollView.pinToSuperviewEdges()
+        scrollView.matchParent(self, on: .height)
         scrollView.contentView.removeAllSubviews()
         scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false
         
@@ -127,9 +126,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
     public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         self.scrollView.contentView.addSubview(indicator)
-        indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .left)
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        indicator.pinToSuperviewEdge(.bottom)
+        self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.left)
+        self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
     
     override public func update(forAppearance appearance: Appearance,

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; };
 		7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7BF6B4981E9555DE00BE68B5 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */; };
-		7BF6B4991E9555DE00BE68B5 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
 		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
@@ -71,7 +69,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7BF6B4971E9555DE00BE68B5 /* Pageboy.framework in Embed Frameworks */,
-				7BF6B4991E9555DE00BE68B5 /* PureLayout.framework in Embed Frameworks */,
 				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -117,7 +114,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF6B4961E9555DE00BE68B5 /* Pageboy.framework in Frameworks */,
-				7BF6B4981E9555DE00BE68B5 /* PureLayout.framework in Frameworks */,
 				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -488,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 // MARK: - TabmanBar construction
@@ -29,7 +28,7 @@ extension TabmanBar {
             add(indicator: indicator, to: contentView)
         }
         
-        behaviorEngine.update()
+        behaviorEngine.update(activation: .onBarChange)
         self.updateCore(forAppearance: self.appearance)
         self.updateForCurrentPosition()
     }

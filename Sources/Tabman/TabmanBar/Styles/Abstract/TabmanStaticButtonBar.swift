@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// Abstract class for static (non-scrolling) button bars.
@@ -76,9 +75,9 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
     public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         contentView.addSubview(indicator)
-        indicator.autoPinEdge(toSuperviewEdge: .bottom)
-        self.indicatorLeftMargin = indicator.autoPinEdge(toSuperviewEdge: .leading)
-        self.indicatorWidth = indicator.autoSetDimension(.width, toSize: 0.0)
+        indicator.pinToSuperviewEdge(.bottom)
+        self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.leading)
+        self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
     
     //
@@ -101,7 +100,7 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
             button.imageEdgeInsets = insets
             
             if let previousButton = previousButton {
-                button.autoMatch(.width, to: .width, of: previousButton)
+                button.match(.width, of: previousButton)
             }
             
             customize(button, previousButton)

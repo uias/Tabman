@@ -15,7 +15,7 @@ internal extension UIView {
         if #available(iOS 9.0, *) {
             return UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft
         } else {
-            return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+            return UIApplication.safeShared?.userInterfaceLayoutDirection == .rightToLeft
         }
     }
 }

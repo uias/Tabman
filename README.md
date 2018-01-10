@@ -16,19 +16,20 @@
     <img src="Artwork/header.png" width="890" alt="Tabman"/>
 </p>
 
-## Features
+ 
+## ⭐️ Features
 - [x] Super easy to implement page view controller with indicator bar.
 - [x] Multiple indicator bar styles.
 - [x] Simplistic, yet highly extensive customisation.
 - [x] Full support for custom components.
 - [x] Built on a powerful and informative page view controller, [Pageboy](https://github.com/uias/pageboy).
 
-## Requirements
-Tabman requires iOS 8 or above, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
+## 📋 Requirements
+Tabman requires iOS 9, Swift 4 and uses [Pageboy 2](https://github.com/uias/Pageboy/releases/tag/2.0.0).
 
 For details on using older versions of Tabman or Swift please see [Compatibility](Docs/COMPATIBILITY.md).
 
-## Installation
+## 📲 Installation
 ### CocoaPods
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
@@ -52,11 +53,6 @@ Add Tabman to your `Cartfile`:
 github "uias/Tabman" ~> 1.0
 ```
 
-**Dependencies**
-
-- [Pageboy](https://www.github.com/msaps/Pageboy) by Merrick Sapsford
-- [PureLayout](https://www.github.com/PureLayout/PureLayout) by PureLayout
-
 ### Example
 An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
 
@@ -67,11 +63,13 @@ carthage bootstrap --platform ios
 and build the workspace.
 
 
-## Usage
+## 🚀 Usage
 
 ### The Basics
 
-1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.
+1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. 
+
+	*Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.*
 
 ```swift
 class YourTabViewController: TabmanViewController, PageboyViewControllerDataSource {
@@ -125,7 +123,7 @@ Tabman will automatically attempt to inset any `UIScrollView` that if finds with
 .automaticallyAdjustsChildScrollViewInsets = true
 ```
 
-*The values used for insetting the child content are also available for manual use at `bar.requiredInsets`. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas when running iOS 11.*
+*The values used for insetting the child content are also available for manual use at `bar.requiredInsets`, and via `.parentTabmanBarInsets` from child view controllers. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas under iOS 11.*
 
 Automatic insetting support is available for any `UIScrollView` derived class such as `UITableView` and also view controllers such as `UITableViewController` and `UICollectionViewController`.
 
@@ -164,7 +162,8 @@ Customization of the appearance and styling of a bar is available via `.appearan
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
 	// customise appearance here
-	appearance.text.color = UIColor.red
+	appearance.state.selectedColor = UIColor.red
+	appearance.text.font = .systemFont(ofSize: 16.0)
 	appearance.indicator.isProgressive = true
 })
 ```
@@ -182,19 +181,19 @@ tabViewController.bar.behaviors = [.autoHide(.always)]
 
 *The full list of available behaviors can be found [here](Docs/BEHAVIORS.md).*
 
-## Troubleshooting
+## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
-## About
+## 👨🏻‍💻 About
 - Created by [Merrick Sapsford](https://github.com/msaps) ([@MerrickSapsford](https://twitter.com/MerrickSapsford))
 - Contributed to by a growing [list of others](https://github.com/uias/Tabman/graphs/contributors).
 
 
-## Contributing
+## ❤️ Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
 
 
-## License
+## 👮🏻‍♂️ License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

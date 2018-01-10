@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// A button tab bar with a block style indicator behind the selected item.
@@ -87,14 +86,14 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
                                    for items: [TabmanBar.Item]) {
         super.construct(in: contentView, for: items)
         
-        let buttonContentView = UIView(forAutoLayout: ())
-        let maskContentView = UIView(forAutoLayout: ())
+        let buttonContentView = UIView()
+        let maskContentView = UIView()
         maskContentView.isUserInteractionEnabled = false
         
         self.contentView.addSubview(buttonContentView)
-        buttonContentView.autoPinEdgesToSuperviewEdges()
+        buttonContentView.pinToSuperviewEdges()
         self.contentView.addSubview(maskContentView)
-        maskContentView.autoPinEdgesToSuperviewEdges()
+        maskContentView.pinToSuperviewEdges()
         maskContentView.mask = self.indicatorMaskView
         
         self.addAndLayoutBarButtons(toView: buttonContentView, items: items) { (button, _) in
