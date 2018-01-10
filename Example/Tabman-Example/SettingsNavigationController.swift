@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 
 class SettingsNavigationController: UINavigationController {
     
@@ -24,8 +23,15 @@ class SettingsNavigationController: UINavigationController {
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
         self.view.addSubview(blurView)
         self.view.sendSubview(toBack: blurView)
-        blurView.autoPinEdgesToSuperviewEdges()
         blurView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            blurView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            blurView.topAnchor.constraint(equalTo: view.topAnchor),
+            blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
     }
     
     // MARK: Lifecycle

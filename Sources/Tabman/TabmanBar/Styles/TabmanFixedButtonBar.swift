@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PureLayout
 import Pageboy
 
 /// A bar with fixed buttons and line indicator.
