@@ -52,3 +52,14 @@ public extension TabmanBar {
         
     }
 }
+
+public extension UIViewController {
+    
+    /// The required insets for the TabmanBar in a parent TabmanViewController.
+    public var parentTabmanBarInsets: TabmanBar.Insets? {
+        guard let tabmanViewController = parentPageboyViewController as? TabmanViewController else {
+            return nil
+        }
+        return tabmanViewController.bar.requiredInsets
+    }
+}
