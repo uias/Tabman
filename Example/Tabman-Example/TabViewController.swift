@@ -22,10 +22,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     // MARK: Properties
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     var previousBarButton: UIBarButtonItem?
     var nextBarButton: UIBarButtonItem?
     
