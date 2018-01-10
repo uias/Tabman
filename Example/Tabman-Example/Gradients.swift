@@ -33,11 +33,11 @@ extension TabViewController {
     
     var gradients: [Gradient] {
         return [
-            Gradient(topColorHex: "#C51010", bottomColorHex: "#FFCFCF"),
-            Gradient(topColorHex: "#B9AB01", bottomColorHex: "#FFFCD8"),
-            Gradient(topColorHex: "#3BC510", bottomColorHex: "#EAFFE3"),
-            Gradient(topColorHex: "#1067C5", bottomColorHex: "#ECF5FF"),
-            Gradient(topColorHex: "#9F10C5", bottomColorHex: "#FAE7FF")
+            Gradient(topColorHex: "#004C9E", bottomColorHex: "#ECF5FF"),
+            Gradient(topColorHex: "#760094", bottomColorHex: "#FAE7FF"),
+            Gradient(topColorHex: "#950000", bottomColorHex: "#FFCFCF"),
+            Gradient(topColorHex: "#A69900", bottomColorHex: "#FFFCD8"),
+            Gradient(topColorHex: "#239300", bottomColorHex: "#EAFFE3")
         ]
     }
     
