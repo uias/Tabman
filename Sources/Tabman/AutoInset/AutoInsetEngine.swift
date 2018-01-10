@@ -6,7 +6,7 @@
 //  Copyright © 2017 UI At Six. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AutoInsetEngine {
     

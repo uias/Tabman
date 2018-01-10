@@ -6,7 +6,7 @@
 //  Copyright © 2017 Merrick Sapsford. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension TabmanBar {
     
