@@ -21,14 +21,29 @@ internal class TabmanBlockTabBar: TabmanStaticButtonBar {
     public override var interItemSpacing: CGFloat {
         didSet {
             let insets = UIEdgeInsets(top: 0.0, left: interItemSpacing / 2, bottom: 0.0, right: interItemSpacing / 2)
-            self.updateButtonsInView(view: self.buttonContentView) { (button) in
-                button.titleEdgeInsets = insets
-                button.imageEdgeInsets = insets
+            
+            if self.appearance.layout.itemAlignment == .horizontal {
+                self.updateButtonsInView(view: self.buttonContentView) { (button) in
+                    button.titleEdgeInsets = insets
+                    button.imageEdgeInsets = insets
+                }
+                self.updateButtonsInView(view: self.maskContentView) { (button) in
+                    button.titleEdgeInsets = insets
+                    button.imageEdgeInsets = insets
+                }
             }
-            self.updateButtonsInView(view: self.maskContentView) { (button) in
-                button.titleEdgeInsets = insets
-                button.imageEdgeInsets = insets
+            else {
+                
+                self.updateButtonsInView(view: self.buttonContentView) { (button) in
+//                    button.titleEdgeInsets = insets
+//                    button.imageEdgeInsets = insets
+                    button.alignVertical(spacing: 2)
+                }
+                self.updateButtonsInView(view: self.maskContentView) { (button) in
+                    button.alignVertical(spacing: 2)
+                }
             }
+            
         }
     }
     

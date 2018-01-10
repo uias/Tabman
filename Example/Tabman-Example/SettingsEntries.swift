@@ -19,6 +19,9 @@ extension SettingsViewController {
                             TabmanBar.Style.blockTabBar.description,
                             TabmanBar.Style.bar.description]
         
+        let itemAlignmentOptions = [TabmanBar.Appearance.Layout.ItemAlignment.horizontal.description,
+                                    TabmanBar.Appearance.Layout.ItemAlignment.vertical.description]
+        
         let indicatorStyleOptions = ["Default",
                             TabmanIndicator.Style.line.description,
                             TabmanIndicator.Style.dot.description,
@@ -48,6 +51,18 @@ extension SettingsViewController {
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
                 self.tabViewController?.reloadPages()
         }))
+
+        appearanceSection.add(item: SettingsItem(type: .options(values: itemAlignmentOptions,
+                                                                selectedValue: { return self.tabViewController?.bar.appearance?.layout.itemAlignment?.description }),
+                                                 title: "Item Alignment",
+                                                 description: nil,
+                                                 value: nil, update:
+            { (value) in
+                let itemAlignment = TabmanBar.Appearance.Layout.ItemAlignment.fromDescription(value as! String)
+                self.tabViewController?.bar.appearance?.layout.itemAlignment = itemAlignment
+                self.tabViewController?.reloadPages()
+        }))
+        
         appearanceSection.add(item: SettingsItem(type: .options(values: indicatorStyleOptions,
                                                                 selectedValue: { return self.tabViewController?.bar.appearance?.indicator.preferredStyle?.description ?? "Default" }),
                                                  title: "Preferred Indicator Style",
@@ -185,6 +200,30 @@ fileprivate extension TabmanIndicator.Style {
 
         default:
             return nil
+        }
+    }
+}
+
+fileprivate extension TabmanBar.Appearance.Layout.ItemAlignment {
+    
+    var description: String {
+        switch self {
+        case .horizontal:
+            return "Horizontal"
+        case .vertical:
+            return "Vertical"
+        }
+    }
+    
+    static func fromDescription(_ description: String) -> TabmanBar.Appearance.Layout.ItemAlignment {
+        
+        switch description {
+        case "Horizontal":
+            return .horizontal
+        case "Vertical":
+            return .vertical
+        default:
+            return .horizontal
         }
     }
 }

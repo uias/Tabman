@@ -206,7 +206,7 @@ internal class TabmanButtonBar: TabmanBar {
                     button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
                 }
                 else {
-                    button.alignVertical(spacing: interItemSpacing / 2)
+                    button.alignVertical(spacing: 2)
                 }
             } else if let title = item.title {
                 button.setTitle(title, for: .normal)

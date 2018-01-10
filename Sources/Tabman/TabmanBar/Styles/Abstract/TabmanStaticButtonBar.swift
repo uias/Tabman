@@ -42,7 +42,7 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
                     button.imageEdgeInsets = insets
                 }
                 else {
-                    button.alignVertical(spacing: interItemSpacing / 2)
+                    button.alignVertical(spacing: 2)
                 }
             }
         }
