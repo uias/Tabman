@@ -109,7 +109,7 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
     ///
     /// - Returns: The item transition type.
     internal func itemTransitionType() -> TabmanItemTransition.Type? {
-        return nil
+        return TabmanItemColorCrossfadeTransition.self
     }
 }
 
