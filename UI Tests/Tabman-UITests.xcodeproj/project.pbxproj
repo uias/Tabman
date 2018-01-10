@@ -21,8 +21,6 @@
 		D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABA1F50475600298598 /* TabmanTest.swift */; };
 		D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABB1F50475600298598 /* TestsViewController.swift */; };
 		D61AAAC81F50475600298598 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABC1F50475600298598 /* TestViewController.swift */; };
-		D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; };
-		D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAF41F504BAD00298598 /* AutoInsettingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,28 +39,7 @@
 			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
 			remoteInfo = TabmanTests;
 		};
-		D61AAAEA1F50496600298598 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D61AAADA1F50486100298598 /* Tabman.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
-			remoteInfo = Tabman;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D61AAAD31F50481B00298598 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0BE61E35E2485747322B833D /* Pods-Tabman-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-UITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */,
 				1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,14 +182,12 @@
 				D6C6A3381F4049410030FB3D /* Sources */,
 				D6C6A3391F4049410030FB3D /* Frameworks */,
 				D6C6A33A1F4049410030FB3D /* Resources */,
-				D61AAAD31F50481B00298598 /* Embed Frameworks */,
 				87B2C80674EA67773E03F6A3 /* [CP] Embed Pods Frameworks */,
 				B78F5654CEEB41F51110ACE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D61AAAEB1F50496600298598 /* PBXTargetDependency */,
 			);
 			name = "Tabman-UITests";
 			productName = "Tabman-Tests";
@@ -318,10 +292,12 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,14 +340,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D61AAAEB1F50496600298598 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Tabman;
-			targetProxy = D61AAAEA1F50496600298598 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D61AAAB41F50475600298598 /* LaunchScreen.storyboard */ = {

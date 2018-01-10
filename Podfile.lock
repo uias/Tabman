@@ -1,12 +1,19 @@
 PODS:
   - Pageboy (2.3.1)
+  - Tabman (1.3.0):
+    - Pageboy (~> 2.3.0)
 
 DEPENDENCIES:
-  - Pageboy (~> 2.0)
+  - Tabman (from `./Tabman.podspec`)
+
+EXTERNAL SOURCES:
+  Tabman:
+    :path: ./Tabman.podspec
 
 SPEC CHECKSUMS:
   Pageboy: 761f33cb03c8ef27c69b803be1bccd04b71c80d1
+  Tabman: d2a2bbaaeb5c9a2ece276db9a261295d4d50f714
 
-PODFILE CHECKSUM: 807db08e2482c252d60099e0d71de789a320f868
+PODFILE CHECKSUM: 9b21a0a99d662652ad69cb803fb915a5a6e9f913
 
 COCOAPODS: 1.3.1

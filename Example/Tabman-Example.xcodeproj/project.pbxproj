@@ -32,8 +32,6 @@
 		D62AC10C1E5736A10020B8AE /* TabViewController+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */; };
 		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
 		D65D07621F6C18D600255575 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65D07611F6C18D600255575 /* Gradients.swift */; };
-		D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
-		D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,28 +49,7 @@
 			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
 			remoteInfo = TabmanTests;
 		};
-		D6C7597A1E83CFAA00471973 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
-			remoteInfo = Tabman;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D6C7597C1E83CFAA00471973 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D6C759791E83CFAA00471973 /* Tabman.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C759781E83CFAA00471973 /* Tabman.framework in Frameworks */,
 				A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +236,12 @@
 				D62AC0D11E5733A80020B8AE /* Sources */,
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
-				D6C7597C1E83CFAA00471973 /* Embed Frameworks */,
 				929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */,
 				D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D6C7597B1E83CFAA00471973 /* PBXTargetDependency */,
 			);
 			name = "Tabman-Example";
 			productName = "Tabman-Example";
@@ -354,10 +328,12 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -429,14 +405,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D6C7597B1E83CFAA00471973 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Tabman;
-			targetProxy = D6C7597A1E83CFAA00471973 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D62AC0DC1E5733A80020B8AE /* Main.storyboard */ = {

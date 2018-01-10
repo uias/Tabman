@@ -1,7 +1,8 @@
+platform :ios, '9.0'
 
 def shared_pods 
 
-  pod 'Pageboy', '~> 2.0'
+  pod 'Tabman', :path => './Tabman.podspec'
 
 end
 
@@ -23,16 +24,12 @@ target 'Tabman-UITests' do
 
 end
 
-target 'Tabman' do
-  workspace 'Tabman'
-  project './Sources/Tabman.xcodeproj'
+# target 'TabmanTests' do
+#   workspace 'Tabman'
+#   project './Sources/Tabman.xcodeproj'
 
-  use_frameworks!
-  shared_pods
+#   use_frameworks!
 
-  target 'TabmanTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+#   pod 'Pageboy', '~> 2.0'
 
-end
+# end
