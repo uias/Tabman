@@ -62,6 +62,12 @@ extension TabViewController {
                                           and: upperGradient.bottomColor,
                                           percent: percentage) {
             self.gradientView.colors = [topColor, bottomColor]
+            
+            let midColor = interpolate(betweenColor: topColor, and: bottomColor, percent: 0.2)
+            offsetLabel.textColor = midColor
+            pageLabel.textColor = midColor
+            separatorView.backgroundColor = midColor
+            settingsButton.tintColor = midColor
         }
         
     }

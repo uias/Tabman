@@ -14,8 +14,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     // MARK: Outlets
     
+    @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var offsetLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var settingsButton: CircularButton!
     @IBOutlet weak var gradientView: GradientView!
 
     // MARK: Properties
