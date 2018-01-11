@@ -10,7 +10,11 @@ import UIKit
 
 extension UIColor {
     
-    func interpolate(between otherColor: UIColor, percent: CGFloat) -> UIColor? {
+    func interpolate(between otherColor: UIColor?, percent: CGFloat) -> UIColor? {
+        guard let otherColor = otherColor else {
+            return nil
+        }
+        
         var redA: CGFloat = 0.0
         var greenA: CGFloat = 0.0
         var blueA: CGFloat = 0.0

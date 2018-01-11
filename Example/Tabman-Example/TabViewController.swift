@@ -61,7 +61,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         if let navigationController = segue.destination as? UINavigationController,
             let navigationBar = navigationController.navigationBar as? TransparentNavigationBar {
             let gradient = self.gradients[self.currentIndex ?? 0]
-            let color = gradient.topColor.interpolate(between: gradient.bottomColor, percent: 0.5)
+            let color = gradient.firstColor?.interpolate(between: gradient.lastColor, percent: 0.5)
             navigationBar.tintColor = color
         }
     }

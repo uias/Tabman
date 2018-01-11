@@ -9,23 +9,39 @@
 import UIKit
 
 struct Gradient {
-    let topColor: UIColor
-    let bottomColor: UIColor
+    let colors: [UIColor]
     
     static var defaultGradient: Gradient {
-        return Gradient(topColor: .black, bottomColor: .black)
+        return Gradient(colors: .black)
+    }
+    
+    var firstColor: UIColor? {
+        return colors.first
+    }
+    var midColor: UIColor? {
+        let midIndex = colors.count / 2
+        guard colors.count > midIndex else {
+            return nil
+        }
+        return colors[midIndex]
+    }
+    
+    var lastColor: UIColor? {
+        return colors.last
     }
     
     // MARK: Init
     
-    init(topColor: UIColor, bottomColor: UIColor) {
-        self.topColor = topColor
-        self.bottomColor = bottomColor
+    init(colors: UIColor...) {
+        self.colors = colors
     }
     
-    init(topColorHex: String, bottomColorHex: String) {
-        self.topColor = UIColor.fromHex(string: topColorHex)
-        self.bottomColor = UIColor.fromHex(string: bottomColorHex)
+    init(colorHexs: String...) {
+        var colors = [UIColor]()
+        colorHexs.forEach { (hex) in
+            colors.append(UIColor.fromHex(string: hex))
+        }
+        self.colors = colors
     }
 }
 
@@ -33,11 +49,11 @@ extension TabViewController {
     
     var gradients: [Gradient] {
         return [
-            Gradient(topColorHex: "#ECF5FF", bottomColorHex: "#004C9E"),
-            Gradient(topColorHex: "#FAE7FF", bottomColorHex: "#760094"),
-            Gradient(topColorHex: "#FFCFCF", bottomColorHex: "#950000"),
-            Gradient(topColorHex: "#FFFCD8", bottomColorHex: "#A69900"),
-            Gradient(topColorHex: "#EAFFE3", bottomColorHex: "#239300")
+            Gradient(colorHexs: "#ECF5FF", "#004C9E"),
+            Gradient(colorHexs: "#FAE7FF", "#760094"),
+            Gradient(colorHexs: "#FFCFCF", "#950000"),
+            Gradient(colorHexs: "#FFFCD8", "#A69900"),
+            Gradient(colorHexs: "#EAFFE3", "#239300")
         ]
     }
     

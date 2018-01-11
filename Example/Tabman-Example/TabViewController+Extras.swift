@@ -55,8 +55,8 @@ extension TabViewController {
         let lowerGradient = self.gradient(forIndex: lowerIndex)
         let upperGradient = self.gradient(forIndex: upperIndex)
         
-        if let topColor = lowerGradient.topColor.interpolate(between: upperGradient.topColor, percent: percentage),
-            let bottomColor = lowerGradient.bottomColor.interpolate(between: upperGradient.bottomColor, percent: percentage) {
+        if let topColor = lowerGradient.firstColor?.interpolate(between: upperGradient.firstColor, percent: percentage),
+            let bottomColor = lowerGradient.lastColor?.interpolate(between: upperGradient.lastColor, percent: percentage) {
             self.gradientView.colors = [topColor, bottomColor]
             
             let midColor = topColor.interpolate(between: bottomColor, percent: 0.1)
