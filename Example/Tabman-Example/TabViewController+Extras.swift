@@ -14,7 +14,7 @@ extension TabViewController {
         return .lightContent
     }
     
-    // MARK: Bar buttons
+    // MARK: Set Up
 
     func addBarButtons() {
         
@@ -28,19 +28,23 @@ extension TabViewController {
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
     }
     
+    func setUpGradientView() {
+        view.sendSubview(toBack: self.gradientView)
+        gradientView.direction = .custom(start: CGPoint(x: 0.4, y: 0.0),
+                                         end: CGPoint(x: 1.0, y: 1.0))
+    }
+    
+    // MARK: Updating
+    
     func updateBarButtonStates(index: Int) {
         self.previousBarButton?.isEnabled = index != 0
         self.nextBarButton?.isEnabled = index != (self.pageCount ?? 0) - 1
     }
     
-    // MARK: Labels
-    
     func updateStatusLabels() {
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
     }
-    
-    // MARK: Appearance
     
     func updateAppearance(pagePosition: CGFloat) {
         var relativePosition = pagePosition

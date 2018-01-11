@@ -32,8 +32,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBarButtons()
-        view.sendSubview(toBack: self.gradientView)
-                
+        setUpGradientView()
+        
         dataSource = self
         
         // bar customisation
