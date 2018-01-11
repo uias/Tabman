@@ -2,13 +2,27 @@
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
 
-[![Build Status](https://travis-ci.org/uias/Tabman.svg?branch=master)](https://travis-ci.org/uias/Tabman)
-[![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://developer.apple.com/swift/)
-[![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)](https://cocoapods.org/pods/Tabman)
-[![Platforms](https://img.shields.io/cocoapods/p/Tabman.svg)](https://cocoapods.org/pods/Tabman)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![codecov](https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/uias/Tabman)
-[![GitHub release](https://img.shields.io/github/release/uias/Tabman.svg)](https://github.com/uias/Tabman/releases)
+<p align="center">
+    <a href="https://travis-ci.org/uias/Tabman">
+        <img src="https://travis-ci.org/uias/Tabman.svg?branch=master" />
+    </a>
+    <img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat" />
+    <a href="https://cocoapods.org/pods/Tabman">
+        <img src="https://img.shields.io/cocoapods/v/Tabman.svg" alt="CocoaPods" />
+    </a>
+	<a href="https://cocoapods.org/pods/Tabman">
+        <img src="https://img.shields.io/cocoapods/p/Tabman.svg" alt="Platforms" />
+    </a>
+	<a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
+    </a>
+	<a href="https://codecov.io/gh/uias/Tabman">
+        <img src="https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg" />
+    </a>
+	<a href="https://github.com/uias/Tabman/releases">
+        <img src="https://img.shields.io/github/release/uias/Tabman.svg" />
+    </a>
+</p>
 
 **Tabman** is a powerful paging view controller with indicator bar, for iOS.
 
@@ -52,16 +66,6 @@ Add Tabman to your `Cartfile`:
 ```ogdl
 github "uias/Tabman" ~> 1.0
 ```
-
-### Example
-An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
-
-```ogdl
-carthage bootstrap --platform ios
-```
-
-and build the workspace.
-
 
 ## 🚀 Usage
 
@@ -193,7 +197,6 @@ If you're still having problems, feel free to raise an [issue](https://github.co
 
 ## ❤️ Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
-
 
 ## 👮🏻‍♂️ License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
