@@ -53,16 +53,6 @@ Add Tabman to your `Cartfile`:
 github "uias/Tabman" ~> 1.0
 ```
 
-### Example
-An example project is available to take a look at some of the features that **Tabman** offers. To run the example, simply clone the repo, run 
-
-```ogdl
-carthage bootstrap --platform ios
-```
-
-and build the workspace.
-
-
 ## 🚀 Usage
 
 ### The Basics
@@ -193,7 +183,6 @@ If you're still having problems, feel free to raise an [issue](https://github.co
 
 ## ❤️ Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/uias/Tabman](https://github.com/uias/Tabman).
-
 
 ## 👮🏻‍♂️ License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
