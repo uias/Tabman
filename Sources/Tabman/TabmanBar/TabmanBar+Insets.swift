@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 public extension TabmanBar {
     
