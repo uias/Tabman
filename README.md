@@ -2,13 +2,27 @@
     <img src="Artwork/logo.png" width="890" alt="Tabman"/>
 </p>
 
-[![Build Status](https://travis-ci.org/uias/Tabman.svg?branch=master)](https://travis-ci.org/uias/Tabman)
-[![Swift 4](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://developer.apple.com/swift/)
-[![CocoaPods](https://img.shields.io/cocoapods/v/Tabman.svg)](https://cocoapods.org/pods/Tabman)
-[![Platforms](https://img.shields.io/cocoapods/p/Tabman.svg)](https://cocoapods.org/pods/Tabman)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![codecov](https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg)](https://codecov.io/gh/uias/Tabman)
-[![GitHub release](https://img.shields.io/github/release/uias/Tabman.svg)](https://github.com/uias/Tabman/releases)
+<p align="center">
+    <a href="https://travis-ci.org/uias/Tabman">
+        <img src="https://travis-ci.org/uias/Tabman.svg?branch=master" />
+    </a>
+    <img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat" />
+    <a href="https://cocoapods.org/pods/Tabman">
+        <img src="https://img.shields.io/cocoapods/v/Tabman.svg" alt="CocoaPods" />
+    </a>
+	<a href="https://cocoapods.org/pods/Tabman">
+        <img src="https://img.shields.io/cocoapods/p/Tabman.svg" alt="Platforms" />
+    </a>
+	<a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
+    </a>
+	<a href="https://codecov.io/gh/uias/Tabman">
+        <img src="https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg" />
+    </a>
+	<a href="https://github.com/uias/Tabman/releases">
+        <img src="https://img.shields.io/github/release/uias/Tabman.svg" />
+    </a>
+</p>
 
 **Tabman** is a powerful paging view controller with indicator bar, for iOS.
 
