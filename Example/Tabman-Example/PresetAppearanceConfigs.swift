@@ -32,6 +32,7 @@ class PresetAppearanceConfigs: Any {
             appearance.indicator.lineWeight = .normal
             appearance.layout.edgeInset = 16.0
             appearance.layout.interItemSpacing = 20.0
+            appearance.style.showEdgeFade = true
 
         case .buttonBar:
             appearance.indicator.lineWeight = .thin
