@@ -55,15 +55,11 @@ extension TabViewController {
         let lowerGradient = self.gradient(forIndex: lowerIndex)
         let upperGradient = self.gradient(forIndex: upperIndex)
         
-        if let topColor = interpolate(betweenColor: lowerGradient.topColor,
-                                      and: upperGradient.topColor,
-                                      percent: percentage),
-            let bottomColor = interpolate(betweenColor: lowerGradient.bottomColor,
-                                          and: upperGradient.bottomColor,
-                                          percent: percentage) {
+        if let topColor = lowerGradient.topColor.interpolate(between: upperGradient.topColor, percent: percentage),
+            let bottomColor = lowerGradient.bottomColor.interpolate(between: upperGradient.bottomColor, percent: percentage) {
             self.gradientView.colors = [topColor, bottomColor]
             
-            let midColor = interpolate(betweenColor: topColor, and: bottomColor, percent: 0.1)
+            let midColor = topColor.interpolate(between: bottomColor, percent: 0.1)
             offsetLabel.textColor = midColor
             pageLabel.textColor = midColor
             separatorView.backgroundColor = midColor
@@ -78,33 +74,6 @@ extension TabViewController {
         }
         
         return self.gradients[index]
-    }
-    
-    func interpolate(betweenColor colorA: UIColor,
-                     and colorB: UIColor,
-                     percent: CGFloat) -> UIColor? {
-        var redA: CGFloat = 0.0
-        var greenA: CGFloat = 0.0
-        var blueA: CGFloat = 0.0
-        var alphaA: CGFloat = 0.0
-        guard colorA.getRed(&redA, green: &greenA, blue: &blueA, alpha: &alphaA) else {
-            return nil
-        }
-        
-        var redB: CGFloat = 0.0
-        var greenB: CGFloat = 0.0
-        var blueB: CGFloat = 0.0
-        var alphaB: CGFloat = 0.0
-        guard colorB.getRed(&redB, green: &greenB, blue: &blueB, alpha: &alphaB) else {
-            return nil
-        }
-        
-        let iRed = CGFloat(redA + percent * (redB - redA))
-        let iBlue = CGFloat(blueA + percent * (blueB - blueA))
-        let iGreen = CGFloat(greenA + percent * (greenB - greenA))
-        let iAlpha = CGFloat(alphaA + percent * (alphaB - alphaA))
-        
-        return UIColor(red: iRed, green: iGreen, blue: iBlue, alpha: iAlpha)
     }
 }
 

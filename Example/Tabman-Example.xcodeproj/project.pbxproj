@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46DFB8DB2007CA5000D79F44 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */; };
 		A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
 		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
@@ -35,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		46DFB8D82007CA3F00D79F44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 463DE98A2006B77E00709671;
+			remoteInfo = Tabman_Carthage;
+		};
 		D6C759741E83CFA300471973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
@@ -53,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +114,14 @@
 				94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		46DFB8D42007CA3F00D79F44 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		D61E50CF1E647F0000AC8C75 /* Settings */ = {
@@ -181,6 +198,7 @@
 				D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */,
 				D61E50CF1E647F0000AC8C75 /* Settings */,
 				D6BF9D191ED6132000F24456 /* Views */,
+				46DFB8D42007CA3F00D79F44 /* Utilities */,
 			);
 			name = Extras;
 			sourceTree = "<group>";
@@ -220,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C759751E83CFA300471973 /* Tabman.framework */,
+				46DFB8D92007CA3F00D79F44 /* Tabman_Carthage.framework */,
 				D6C759771E83CFA300471973 /* TabmanTests.xctest */,
 			);
 			name = Products;
@@ -290,6 +309,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		46DFB8D92007CA3F00D79F44 /* Tabman_Carthage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tabman_Carthage.framework;
+			remoteRef = 46DFB8D82007CA3F00D79F44 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D6C759751E83CFA300471973 /* Tabman.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -400,6 +426,7 @@
 				D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */,
 				D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */,
 				D61E50D51E6485D000AC8C75 /* SettingsCells.swift in Sources */,
+				46DFB8DB2007CA5000D79F44 /* UIColor+Interpolation.swift in Sources */,
 				D61E50C81E644A2200AC8C75 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
