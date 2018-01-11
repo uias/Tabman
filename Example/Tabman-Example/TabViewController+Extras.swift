@@ -55,17 +55,25 @@ extension TabViewController {
         let lowerGradient = self.gradient(forIndex: lowerIndex)
         let upperGradient = self.gradient(forIndex: upperIndex)
         
-        if let topColor = lowerGradient.firstColor?.interpolate(between: upperGradient.firstColor, percent: percentage),
-            let bottomColor = lowerGradient.lastColor?.interpolate(between: upperGradient.lastColor, percent: percentage) {
-            self.gradientView.colors = [topColor, bottomColor]
+        var newColors = [UIColor]()
+        for (index, color) in lowerGradient.colors.enumerated() {
+            let otherColor: UIColor
+            if upperGradient.colors.count > index {
+                otherColor = upperGradient.colors[index]
+            } else {
+                otherColor = .black
+            }
             
-            let midColor = topColor.interpolate(between: bottomColor, percent: 0.1)
-            offsetLabel.textColor = midColor
-            pageLabel.textColor = midColor
-            separatorView.backgroundColor = midColor
-            settingsButton.tintColor = midColor
+            if let newColor = color.interpolate(between: otherColor, percent: percentage) {
+                newColors.append(newColor)
+            }
         }
+        self.gradientView.colors = newColors
         
+        offsetLabel.textColor = .white
+        pageLabel.textColor = .white
+        separatorView.backgroundColor = .white
+        settingsButton.tintColor = .white
     }
     
     func gradient(forIndex index: Int) -> Gradient {

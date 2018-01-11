@@ -12,7 +12,7 @@ struct Gradient {
     let colors: [UIColor]
     
     static var defaultGradient: Gradient {
-        return Gradient(colors: .black)
+        return Gradient(colors: .black, .black)
     }
     
     var firstColor: UIColor? {
@@ -49,11 +49,11 @@ extension TabViewController {
     
     var gradients: [Gradient] {
         return [
-            Gradient(colorHexs: "#ECF5FF", "#004C9E"),
-            Gradient(colorHexs: "#FAE7FF", "#760094"),
-            Gradient(colorHexs: "#FFCFCF", "#950000"),
-            Gradient(colorHexs: "#FFFCD8", "#A69900"),
-            Gradient(colorHexs: "#EAFFE3", "#239300")
+            Gradient(colorHexs: "#833AB4", "#FD1D1D", "#FCB045"),
+            Gradient(colorHexs: "#833AB4", "#FD1D54", "#FC8D45"),
+            Gradient(colorHexs: "#AF2F91", "#DF246B", "#FC604B"),
+            Gradient(colorHexs: "#833AB4", "#FD1D54", "#FC8D45"),
+            Gradient(colorHexs: "#833AB4", "#FD1D1D", "#FCB045")
         ]
     }
     
