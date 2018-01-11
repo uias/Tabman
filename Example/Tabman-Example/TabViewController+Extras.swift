@@ -16,15 +16,7 @@ extension TabViewController {
     
     // MARK: Set Up
 
-    func setUp() {
-        addBarButtons()
-        setUpGradientView()
-        setUpAutoScroller()
-        
-        transition = Transition(style: .push, duration: 1.0)
-    }
-    
-    private func addBarButtons() {
+    func addBarButtons() {
         
         let previousBarButton = UIBarButtonItem(title: "First", style: .plain, target: self, action: #selector(firstPage(_:)))
         let nextBarButton = UIBarButtonItem(title: "Last", style: .plain, target: self, action: #selector(lastPage(_:)))
@@ -36,15 +28,10 @@ extension TabViewController {
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
     }
     
-    private func setUpGradientView() {
+    func setUpGradientView() {
         view.sendSubview(toBack: self.gradientView)
         gradientView.direction = .custom(start: CGPoint(x: 0.4, y: 0.0),
                                          end: CGPoint(x: 1.0, y: 1.0))
-    }
-    
-    private func setUpAutoScroller() {
-        autoScroller.enable(withIntermissionDuration: .short)
-        autoScroller.cancelsOnScroll = true
     }
     
     // MARK: Updating
