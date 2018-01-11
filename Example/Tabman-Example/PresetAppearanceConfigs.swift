@@ -15,18 +15,18 @@ class PresetAppearanceConfigs: Any {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         appearance.indicator.bounces = false
         appearance.indicator.compresses = false
-        appearance.style.background = .blur(style: .extraLight)
+        appearance.style.background = .blur(style: .dark)
+        
+        appearance.state.color = UIColor.white.withAlphaComponent(0.4)
+        appearance.state.selectedColor = UIColor.white.withAlphaComponent(0.8)
+        appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
         
         switch style {
 
         case .bar:
-            appearance.indicator.color = UIColor.black.withAlphaComponent(0.4)
             appearance.indicator.lineWeight = .thick
             
         case .scrollingButtonBar:
-            appearance.state.color = UIColor.black.withAlphaComponent(0.2)
-            appearance.state.selectedColor = UIColor.black.withAlphaComponent(0.5)
-            appearance.indicator.color = UIColor.black.withAlphaComponent(0.4)
             appearance.layout.itemVerticalPadding = 16.0
             appearance.indicator.bounces = true
             appearance.indicator.lineWeight = .normal
@@ -34,17 +34,12 @@ class PresetAppearanceConfigs: Any {
             appearance.layout.interItemSpacing = 20.0
 
         case .buttonBar:
-            appearance.state.color = UIColor.black.withAlphaComponent(0.2)
-            appearance.state.selectedColor = UIColor.black.withAlphaComponent(0.5)
-            appearance.indicator.color = UIColor.black.withAlphaComponent(0.4)
             appearance.indicator.lineWeight = .thin
             appearance.indicator.compresses = true
             appearance.layout.edgeInset = 8.0
             appearance.layout.interItemSpacing = 0.0
             
         case .blockTabBar:
-            appearance.state.color = UIColor.black.withAlphaComponent(0.2)
-            appearance.state.selectedColor = UIColor.black.withAlphaComponent(0.5)
             appearance.indicator.color = UIColor.white
             appearance.layout.edgeInset = 0.0
             appearance.layout.interItemSpacing = 0.0
