@@ -41,7 +41,7 @@ class PresetAppearanceConfigs: Any {
             appearance.layout.interItemSpacing = 0.0
             
         case .blockTabBar:
-            appearance.indicator.color = UIColor.white
+            appearance.indicator.color = UIColor.white.withAlphaComponent(0.3)
             appearance.layout.edgeInset = 0.0
             appearance.layout.interItemSpacing = 0.0
             appearance.indicator.bounces = true
