@@ -19,12 +19,14 @@ All notable changes to this project will be documented in this file.
 ---
 
 ## [1.4.0](https://github.com/uias/Pageboy/releases/tag/1.4.0)
-Released on 2018-01-10
+Released on 2018-01-13
 
 #### Updated
 - [#215](https://github.com/uias/Tabman/pull/215) Add default crossfade transition to custom indicators.
      - by [Limon-O-O](https://github.com/Limon-O-O).
 - [#229](https://github.com/uias/Tabman/pull/229) Update project workspace to use CocoaPods for dependency management.
+    - by [msaps](https://github.com/msaps).
+- [#231](https://github.com/uias/Tabman/pull/231) Update styling for project.
     - by [msaps](https://github.com/msaps).
 
 ---
