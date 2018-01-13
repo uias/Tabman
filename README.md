@@ -24,12 +24,9 @@
     </a>
 </p>
 
-**Tabman** is a powerful paging view controller with indicator bar, for iOS.
-
 <p align="center">
     <img src="Artwork/header.png" width="890" alt="Tabman"/>
 </p>
-
  
 ## ⭐️ Features
 - [x] Super easy to implement page view controller with indicator bar.
