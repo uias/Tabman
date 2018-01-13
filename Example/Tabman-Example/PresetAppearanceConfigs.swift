@@ -17,35 +17,31 @@ class PresetAppearanceConfigs: Any {
         appearance.indicator.compresses = false
         appearance.style.background = .blur(style: .dark)
         
+        appearance.state.color = UIColor.white.withAlphaComponent(0.4)
+        appearance.state.selectedColor = UIColor.white.withAlphaComponent(0.8)
+        appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
+        
         switch style {
 
         case .bar:
-            appearance.indicator.color = .white
             appearance.indicator.lineWeight = .thick
             
         case .scrollingButtonBar:
-            appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor.white
-            appearance.indicator.color = UIColor.white
             appearance.layout.itemVerticalPadding = 16.0
             appearance.indicator.bounces = true
             appearance.indicator.lineWeight = .normal
             appearance.layout.edgeInset = 16.0
             appearance.layout.interItemSpacing = 20.0
+            appearance.style.showEdgeFade = true
 
         case .buttonBar:
-            appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor.white
-            appearance.indicator.color = UIColor.white
             appearance.indicator.lineWeight = .thin
             appearance.indicator.compresses = true
             appearance.layout.edgeInset = 8.0
             appearance.layout.interItemSpacing = 0.0
             
         case .blockTabBar:
-            appearance.state.color = UIColor.white.withAlphaComponent(0.6)
-            appearance.state.selectedColor = UIColor(red:0.39, green:0.03, blue:0.21, alpha:1.0)
-            appearance.indicator.color = UIColor.white.withAlphaComponent(0.8)
+            appearance.indicator.color = UIColor.white.withAlphaComponent(0.3)
             appearance.layout.edgeInset = 0.0
             appearance.layout.interItemSpacing = 0.0
             appearance.indicator.bounces = true

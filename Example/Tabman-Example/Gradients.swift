@@ -8,24 +8,40 @@
 
 import UIKit
 
-struct Gradient {
-    let topColor: UIColor
-    let bottomColor: UIColor
+class Gradient {
+    var colors: [UIColor]
     
     static var defaultGradient: Gradient {
-        return Gradient(topColor: .black, bottomColor: .black)
+        return Gradient(colors: .black, .black)
+    }
+    
+    var firstColor: UIColor? {
+        return colors.first
+    }
+    var midColor: UIColor? {
+        let midIndex = colors.count / 2
+        guard colors.count > midIndex else {
+            return nil
+        }
+        return colors[midIndex]
+    }
+    
+    var lastColor: UIColor? {
+        return colors.last
     }
     
     // MARK: Init
     
-    init(topColor: UIColor, bottomColor: UIColor) {
-        self.topColor = topColor
-        self.bottomColor = bottomColor
+    init(colors: UIColor...) {
+        self.colors = colors
     }
     
-    init(topColorHex: String, bottomColorHex: String) {
-        self.topColor = UIColor.fromHex(string: topColorHex)
-        self.bottomColor = UIColor.fromHex(string: bottomColorHex)
+    init(colorHexs: String...) {
+        var colors = [UIColor]()
+        colorHexs.forEach { (hex) in
+            colors.append(UIColor.fromHex(string: hex))
+        }
+        self.colors = colors
     }
 }
 
@@ -33,11 +49,11 @@ extension TabViewController {
     
     var gradients: [Gradient] {
         return [
-            Gradient(topColorHex: "#ff0084", bottomColorHex: "#640736"),
-            Gradient(topColorHex: "#f09819", bottomColorHex: "#704d0e"),
-            Gradient(topColorHex: "#3498db", bottomColorHex: "#2c3e50"),
-            Gradient(topColor: UIColor(red:1.00, green:0.00, blue:0.80, alpha:1.0), bottomColor: UIColor(red:0.20, green:0.20, blue:0.60, alpha:1.0)),
-            Gradient(topColor: UIColor(red:0.20, green:0.91, blue:0.62, alpha:1.0), bottomColor: UIColor(red:0.06, green:0.20, blue:0.26, alpha:1.0))
+            Gradient(colorHexs: "#833AB4", "#FD1D1D", "#FCB045"),
+            Gradient(colorHexs: "#D32750", "#FA5B30", "#FCB045"),
+            Gradient(colorHexs: "#FCB045", "#FC7635", "#FCB045"),
+            Gradient(colorHexs: "#FCB045", "#FA5B30", "#D32750"),
+            Gradient(colorHexs: "#FCB045", "#FD1D1D", "#833AB4")
         ]
     }
     

@@ -10,7 +10,11 @@ import UIKit
 
 extension TabViewController {
 
-    // MARK: Bar buttons
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: Set Up
 
     func addBarButtons() {
         
@@ -24,19 +28,23 @@ extension TabViewController {
         self.updateBarButtonStates(index: self.currentIndex ?? 0)
     }
     
+    func setUpGradientView() {
+        view.sendSubview(toBack: self.gradientView)
+        gradientView.direction = .custom(start: CGPoint(x: 0.4, y: 0.0),
+                                         end: CGPoint(x: 1.0, y: 1.0))
+    }
+    
+    // MARK: Updating
+    
     func updateBarButtonStates(index: Int) {
         self.previousBarButton?.isEnabled = index != 0
         self.nextBarButton?.isEnabled = index != (self.pageCount ?? 0) - 1
     }
     
-    // MARK: Labels
-    
     func updateStatusLabels() {
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
     }
-    
-    // MARK: Appearance
     
     func updateAppearance(pagePosition: CGFloat) {
         var relativePosition = pagePosition
@@ -52,21 +60,27 @@ extension TabViewController {
         var integral: Double = 0.0
         let percentage = CGFloat(modf(Double(relativePosition), &integral))
         
-        let lowerGradient = self.gradient(forIndex: lowerIndex)
-        let upperGradient = self.gradient(forIndex: upperIndex)
+        var lowerGradient = self.gradient(forIndex: lowerIndex)
+        var upperGradient = self.gradient(forIndex: upperIndex)
+        ensureGradient(&lowerGradient, hasEqualColorCountTo: &upperGradient)
         
-        if let topColor = interpolate(betweenColor: lowerGradient.topColor,
-                                      and: upperGradient.topColor,
-                                      percent: percentage),
-            let bottomColor = interpolate(betweenColor: lowerGradient.bottomColor,
-                                          and: upperGradient.bottomColor,
-                                          percent: percentage) {
-            self.gradientView.colors = [topColor, bottomColor]
+        var newColors = [UIColor]()
+        for (index, color) in lowerGradient.colors.enumerated() {
+            let otherColor = upperGradient.colors[index]
+
+            if let newColor = color.interpolate(between: otherColor, percent: percentage) {
+                newColors.append(newColor)
+            }
         }
+        self.gradientView.colors = newColors
         
+        offsetLabel.textColor = .white
+        pageLabel.textColor = .white
+        separatorView.backgroundColor = .white
+        settingsButton.tintColor = .white
     }
     
-    func gradient(forIndex index: Int) -> Gradient {
+    private func gradient(forIndex index: Int) -> Gradient {
         guard index >= 0 && index < self.gradients.count else {
             return .defaultGradient
         }
@@ -74,31 +88,21 @@ extension TabViewController {
         return self.gradients[index]
     }
     
-    func interpolate(betweenColor colorA: UIColor,
-                     and colorB: UIColor,
-                     percent: CGFloat) -> UIColor? {
-        var redA: CGFloat = 0.0
-        var greenA: CGFloat = 0.0
-        var blueA: CGFloat = 0.0
-        var alphaA: CGFloat = 0.0
-        guard colorA.getRed(&redA, green: &greenA, blue: &blueA, alpha: &alphaA) else {
-            return nil
+    private func ensureGradient(_ gradient: inout Gradient,
+                                hasEqualColorCountTo otherGradient: inout Gradient) {
+        guard gradient.colors.count != otherGradient.colors.count else {
+            return
+        }
+        while gradient.colors.count < otherGradient.colors.count {
+            gradient.colors.append(.black)
         }
         
-        var redB: CGFloat = 0.0
-        var greenB: CGFloat = 0.0
-        var blueB: CGFloat = 0.0
-        var alphaB: CGFloat = 0.0
-        guard colorB.getRed(&redB, green: &greenB, blue: &blueB, alpha: &alphaB) else {
-            return nil
+        guard gradient.colors.count != otherGradient.colors.count else {
+            return
         }
-        
-        let iRed = CGFloat(redA + percent * (redB - redA))
-        let iBlue = CGFloat(blueA + percent * (blueB - blueA))
-        let iGreen = CGFloat(greenA + percent * (greenB - greenA))
-        let iAlpha = CGFloat(alphaA + percent * (alphaB - alphaA))
-        
-        return UIColor(red: iRed, green: iGreen, blue: iBlue, alpha: iAlpha)
+        while otherGradient.colors.count < gradient.colors.count {
+            otherGradient.colors.append(.black)
+        }
     }
 }
 
