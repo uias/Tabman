@@ -24,12 +24,9 @@
     </a>
 </p>
 
-**Tabman** is a powerful paging view controller with indicator bar, for iOS.
-
 <p align="center">
     <img src="Artwork/header.png" width="890" alt="Tabman"/>
 </p>
-
  
 ## ⭐️ Features
 - [x] Super easy to implement page view controller with indicator bar.
@@ -71,7 +68,7 @@ github "uias/Tabman" ~> 1.0
 
 ### The Basics
 
-1) Create an instance of `TabmanViewController` and provide it with a `PageboyViewControllerDataSource`, also configuring the items you want to display in the `TabmanBar`. 
+1) Create a `TabmanViewController` and provide a `PageboyViewControllerDataSource`, then set the items you want to display in the bar. 
 
 	*Note: `TabmanViewController` conforms to and is set as the `PageboyViewControllerDelegate`.*
 
@@ -121,7 +118,7 @@ As Tabman is based on **[Pageboy](https://github.com/uias/Pageboy)**, all the ex
 Read up on the **Pageboy** documentation [here](https://github.com/uias/Pageboy#usage).
 
 ### Child Content Insetting
-Tabman will automatically attempt to inset any `UIScrollView` that if finds within it's child view controllers. This is enabled by default:
+Tabman will automatically attempt to inset any `UIScrollView` (including derivatives) that if finds within it's child view controllers. This is enabled by default:
 
 ```swift
 .automaticallyAdjustsChildScrollViewInsets = true
@@ -129,12 +126,10 @@ Tabman will automatically attempt to inset any `UIScrollView` that if finds with
 
 *The values used for insetting the child content are also available for manual use at `bar.requiredInsets`, and via `.parentTabmanBarInsets` from child view controllers. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas under iOS 11.*
 
-Automatic insetting support is available for any `UIScrollView` derived class such as `UITableView` and also view controllers such as `UITableViewController` and `UICollectionViewController`.
-
 **Troubleshooting** - If you are having issues with the automatic insetting behaviour of Tabman, please check out the [Automatic Insetting Troubleshooting Guide](Docs/TROUBLESHOOTING.md#automatic-insetting). If you still are having issues, please raise an [issue](https://github.com/uias/Tabman/issues/new).
 
 ## Customization
-The `TabmanBar` in Tabman can be completely customized to your liking, by simply modifying the available properties in the `.bar` `TabmanBar.Config` object.
+The bar in Tabman can be completely customized to your liking, by simply modifying the properties in the `.bar` configuration:
 
 #### Style
 The style of bar to display, by default this is set to `.scrollingButtonBar`.
@@ -157,15 +152,13 @@ Choose where you want the bar to appear, by default this is set to `.preferred` 
 tabViewController.bar.location = .top
 ```
 
-*Note: The bar will automatically take `UIKit` components such as `UINavigationBar` and `UITabBar` into account.*
-
 #### Appearance
-Customization of the appearance and styling of a bar is available via `.appearance`. Providing a `TabmanBar.Appearance` object with your desired configuration will instantly update the appearance of the active bar:
+Customization of the appearance and styling of a bar is available via `.appearance`. Providing a custom `TabmanBar.Appearance` will instantly update the appearance of the active bar:
 
 ```swift
 tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 
-	// customise appearance here
+	// customize appearance here
 	appearance.state.selectedColor = UIColor.red
 	appearance.text.font = .systemFont(ofSize: 16.0)
 	appearance.indicator.isProgressive = true

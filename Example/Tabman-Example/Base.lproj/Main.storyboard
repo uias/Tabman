@@ -233,7 +233,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBZ-3O-Ovm" userLabel="Separator">
                                 <rect key="frame" x="16" y="609" width="1" height="38"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="qUw-Vk-nu9"/>
                                 </constraints>
@@ -241,13 +241,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-f1-tUV">
                                 <rect key="frame" x="24" y="609" width="263" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Y5-Lkw">
                                 <rect key="frame" x="24" y="630" width="263" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-kP-mjs" customClass="CircularButton" customModule="Tabman_Example" customModuleProvider="target">
@@ -265,7 +263,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
                             <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="DI3-f1-tUV" secondAttribute="trailing" constant="16" id="3d4-6A-i5r"/>
@@ -290,6 +288,8 @@
                         <outlet property="gradientView" destination="88R-O5-360" id="eIM-cX-kVm"/>
                         <outlet property="offsetLabel" destination="DI3-f1-tUV" id="WHv-MA-78K"/>
                         <outlet property="pageLabel" destination="a1Y-Y5-Lkw" id="toc-jK-lrM"/>
+                        <outlet property="separatorView" destination="CBZ-3O-Ovm" id="F1f-2H-xbv"/>
+                        <outlet property="settingsButton" destination="i8L-kP-mjs" id="2a6-B3-OkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ob-Rs-oP4" sceneMemberID="firstResponder"/>
