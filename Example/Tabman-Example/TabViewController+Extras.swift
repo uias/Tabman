@@ -60,18 +60,14 @@ extension TabViewController {
         var integral: Double = 0.0
         let percentage = CGFloat(modf(Double(relativePosition), &integral))
         
-        let lowerGradient = self.gradient(forIndex: lowerIndex)
-        let upperGradient = self.gradient(forIndex: upperIndex)
+        var lowerGradient = self.gradient(forIndex: lowerIndex)
+        var upperGradient = self.gradient(forIndex: upperIndex)
+        ensureGradient(&lowerGradient, hasEqualColorCountTo: &upperGradient)
         
         var newColors = [UIColor]()
         for (index, color) in lowerGradient.colors.enumerated() {
-            let otherColor: UIColor
-            if upperGradient.colors.count > index {
-                otherColor = upperGradient.colors[index]
-            } else {
-                otherColor = .black
-            }
-            
+            let otherColor = upperGradient.colors[index]
+
             if let newColor = color.interpolate(between: otherColor, percent: percentage) {
                 newColors.append(newColor)
             }
@@ -84,12 +80,29 @@ extension TabViewController {
         settingsButton.tintColor = .white
     }
     
-    func gradient(forIndex index: Int) -> Gradient {
+    private func gradient(forIndex index: Int) -> Gradient {
         guard index >= 0 && index < self.gradients.count else {
             return .defaultGradient
         }
         
         return self.gradients[index]
+    }
+    
+    private func ensureGradient(_ gradient: inout Gradient,
+                                hasEqualColorCountTo otherGradient: inout Gradient) {
+        guard gradient.colors.count != otherGradient.colors.count else {
+            return
+        }
+        while gradient.colors.count < otherGradient.colors.count {
+            gradient.colors.append(.black)
+        }
+        
+        guard gradient.colors.count != otherGradient.colors.count else {
+            return
+        }
+        while otherGradient.colors.count < gradient.colors.count {
+            otherGradient.colors.append(.black)
+        }
     }
 }
 

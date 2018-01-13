@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct Gradient {
-    let colors: [UIColor]
+class Gradient {
+    var colors: [UIColor]
     
     static var defaultGradient: Gradient {
         return Gradient(colors: .black, .black)
