@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
+- `1.4.x` Releases - [1.4.0](#140) 
 - `1.3.x` Releases - [1.3.0](#130) 
 - `1.2.x` Releases - [1.2.0](#120) 
 - `1.1.x` Releases - [1.1.0](#110) | [1.1.1](#111) | [1.1.2](#112) | [1.1.3](#113) | [1.1.4](#114)
@@ -17,8 +18,21 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.4.0](https://github.com/uias/Pageboy/releases/tag/1.4.0)
+Released on 2018-01-13
+
+#### Updated
+- [#215](https://github.com/uias/Tabman/pull/215) Add default crossfade transition to custom indicators.
+     - by [Limon-O-O](https://github.com/Limon-O-O).
+- [#229](https://github.com/uias/Tabman/pull/229) Update project workspace to use CocoaPods for dependency management.
+    - by [msaps](https://github.com/msaps).
+- [#231](https://github.com/uias/Tabman/pull/231) Update styling for project.
+    - by [msaps](https://github.com/msaps).
+
+---
+
 ## [1.3.0](https://github.com/uias/Pageboy/releases/tag/1.3.0)
-Released on 2017-01-10
+Released on 2018-01-10
 
 #### Added 
 - [#227](https://github.com/uias/Tabman/pull/227) `parentTabmanBarInsets` property to UIViewController.

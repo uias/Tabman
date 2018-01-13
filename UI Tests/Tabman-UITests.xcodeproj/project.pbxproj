@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */; };
 		4627D7A91FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */; };
 		46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */; };
 		D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAAF1F50475600298598 /* AppDelegate.swift */; };
@@ -20,12 +21,6 @@
 		D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABA1F50475600298598 /* TabmanTest.swift */; };
 		D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABB1F50475600298598 /* TestsViewController.swift */; };
 		D61AAAC81F50475600298598 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAABC1F50475600298598 /* TestViewController.swift */; };
-		D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; };
-		D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; };
-		D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAEC1F50497000298598 /* Pageboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D61AAAF11F504B3200298598 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; };
-		D61AAAF21F504B3200298598 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAF01F504B3200298598 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D61AAAF41F504BAD00298598 /* AutoInsettingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,32 +39,11 @@
 			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
 			remoteInfo = TabmanTests;
 		};
-		D61AAAEA1F50496600298598 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D61AAADA1F50486100298598 /* Tabman.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D62AC0B11E5733810020B8AE;
-			remoteInfo = Tabman;
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D61AAAD31F50481B00298598 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D61AAAEE1F50497000298598 /* Pageboy.framework in Embed Frameworks */,
-				D61AAAF21F504B3200298598 /* PureLayout.framework in Embed Frameworks */,
-				D61AAAE91F50496600298598 /* Tabman.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		0BE61E35E2485747322B833D /* Pods-Tabman-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-UITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingOnPopViewController.swift; sourceTree = "<group>"; };
 		46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingUICollectionViewController.swift; sourceTree = "<group>"; };
 		D61AAAAF1F50475600298598 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +63,7 @@
 		D61AAAF01F504B3200298598 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsettingScrollViewViewController.swift; sourceTree = "<group>"; };
 		D6C6A33C1F4049410030FB3D /* Tabman-UITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-UITests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7BE29C104BCCF241C3E76F2 /* Pods-Tabman-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-UITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,15 +71,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D61AAAED1F50497000298598 /* Pageboy.framework in Frameworks */,
-				D61AAAF11F504B3200298598 /* PureLayout.framework in Frameworks */,
-				D61AAAE81F50496600298598 /* Tabman.framework in Frameworks */,
+				1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152372A00ED0CD5C1FD0651D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BE61E35E2485747322B833D /* Pods-Tabman-UITests.debug.xcconfig */,
+				E7BE29C104BCCF241C3E76F2 /* Pods-Tabman-UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D61AAAAE1F50475600298598 /* Tabman-UITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +148,7 @@
 				D61AAAF01F504B3200298598 /* PureLayout.framework */,
 				D61AAADA1F50486100298598 /* Tabman.xcodeproj */,
 				D61AAAEC1F50497000298598 /* Pageboy.framework */,
+				33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +159,7 @@
 				D61AAAAE1F50475600298598 /* Tabman-UITests */,
 				D6C6A33D1F4049410030FB3D /* Products */,
 				D61AAAE71F50487700298598 /* Frameworks */,
+				152372A00ED0CD5C1FD0651D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,15 +178,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6C6A34E1F4049410030FB3D /* Build configuration list for PBXNativeTarget "Tabman-UITests" */;
 			buildPhases = (
+				592E9AEF504342B4949C937F /* [CP] Check Pods Manifest.lock */,
 				D6C6A3381F4049410030FB3D /* Sources */,
 				D6C6A3391F4049410030FB3D /* Frameworks */,
 				D6C6A33A1F4049410030FB3D /* Resources */,
-				D61AAAD31F50481B00298598 /* Embed Frameworks */,
+				87B2C80674EA67773E03F6A3 /* [CP] Embed Pods Frameworks */,
+				B78F5654CEEB41F51110ACE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D61AAAEB1F50496600298598 /* PBXTargetDependency */,
 			);
 			name = "Tabman-UITests";
 			productName = "Tabman-Tests";
@@ -280,6 +265,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		592E9AEF504342B4949C937F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tabman-UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87B2C80674EA67773E03F6A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B78F5654CEEB41F51110ACE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D6C6A3381F4049410030FB3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -299,14 +340,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D61AAAEB1F50496600298598 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Tabman;
-			targetProxy = D61AAAEA1F50496600298598 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D61AAAB41F50475600298598 /* LaunchScreen.storyboard */ = {
@@ -435,10 +468,9 @@
 		};
 		D6C6A34F1F4049410030FB3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BE61E35E2485747322B833D /* Pods-Tabman-UITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-UITests";
@@ -449,10 +481,9 @@
 		};
 		D6C6A3501F4049410030FB3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7BE29C104BCCF241C3E76F2 /* Pods-Tabman-UITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-UITests";
