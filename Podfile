@@ -3,6 +3,7 @@ platform :ios, '9.0'
 def shared_pods 
 
   pod 'Tabman', :path => './Tabman.podspec'
+  pod 'AutoInset', :git => 'https://github.com/uias/AutoInset'
 
 end
 
