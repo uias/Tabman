@@ -8,6 +8,7 @@
 
 import UIKit
 import Pageboy
+import AutoInset
 
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
