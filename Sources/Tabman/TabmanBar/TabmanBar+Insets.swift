@@ -60,7 +60,7 @@ extension TabmanBar.Insets: AutoInsetSpec {
         return barInsets
     }
     
-    public var totalRequiredInsets: UIEdgeInsets {
+    public var allRequiredInsets: UIEdgeInsets {
         return all
     }
 }
