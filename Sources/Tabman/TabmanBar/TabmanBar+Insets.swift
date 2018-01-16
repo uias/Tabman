@@ -54,13 +54,13 @@ public extension TabmanBar {
     }
 }
 
-extension TabmanBar.Insets: RequiredAutoInsets {
+extension TabmanBar.Insets: AutoInsetSpec {
     
-    public var additionalInsets: UIEdgeInsets {
+    public var additionalRequiredInsets: UIEdgeInsets {
         return barInsets
     }
     
-    public var totalInsets: UIEdgeInsets {
+    public var totalRequiredInsets: UIEdgeInsets {
         return all
     }
 }
