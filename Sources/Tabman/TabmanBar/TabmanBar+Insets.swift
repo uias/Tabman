@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AutoInset
+import AutoInsetter
 
 public extension TabmanBar {
     

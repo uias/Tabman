@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
   s.dependency 'Pageboy', '~> 2.3.0'
-  s.dependency 'AutoInset'
+  s.dependency 'AutoInsetter'
 
 end
