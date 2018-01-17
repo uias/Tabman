@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AutoInsetter:
-    :commit: 6e81f4e597bd4a235b86715a77b844d6faeb6225
+    :commit: b06f5902896d3f3561e550025b32ed30c40cfb7a
     :git: https://github.com/uias/AutoInsetter
 
 SPEC CHECKSUMS:

@@ -57,11 +57,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     public var automaticallyAdjustsChildViewInsets: Bool = true {
         didSet {
             self.automaticallyAdjustsScrollViewInsets = !automaticallyAdjustsChildViewInsets
-            autoInsetEngine.isEnabled = automaticallyAdjustsChildViewInsets
+            autoInsetter.isEnabled = automaticallyAdjustsChildViewInsets
             setNeedsChildAutoInsetUpdate()
         }
     }
-    internal let autoInsetEngine = AutoInsetEngine()
+    internal let autoInsetter = AutoInsetter()
     
     // MARK: Lifecycle
     
