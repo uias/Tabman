@@ -1,5 +1,5 @@
 PODS:
-  - AutoInsetter (1.0.0)
+  - AutoInsetter (0.9.0)
   - Pageboy (2.3.1)
   - Tabman (1.4.0):
     - AutoInsetter
@@ -17,11 +17,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AutoInsetter:
-    :commit: b06f5902896d3f3561e550025b32ed30c40cfb7a
+    :commit: fb779a6062d558a48caa679cc1b25c946b959216
     :git: https://github.com/uias/AutoInsetter
 
 SPEC CHECKSUMS:
-  AutoInsetter: 7441b07813a4019b9df688da04e15166fcd97ec8
+  AutoInsetter: 17798a495033caeb5e30a5c87675dad8f75dc2ba
   Pageboy: 761f33cb03c8ef27c69b803be1bccd04b71c80d1
   Tabman: 5c932fa4f3e89b3792faa4a6aa9b8ef1b91d21d6
 
