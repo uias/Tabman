@@ -3,6 +3,7 @@ Pod::Spec.new do |s|
   s.name         = "Tabman"
   s.platform     = :ios, "9.0"
   s.requires_arc = true
+  s.swift_version = "4.0"
 
   s.version      = "1.4.0"
   s.summary      = "A powerful paging view controller with indicator bar."
