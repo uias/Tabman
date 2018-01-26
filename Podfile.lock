@@ -1,30 +1,22 @@
 PODS:
-  - AutoInsetter (0.9.0)
+  - AutoInsetter (1.0.0)
   - Pageboy (2.3.1)
   - Tabman (1.4.0):
-    - AutoInsetter
+    - AutoInsetter (~> 1.0.0)
     - Pageboy (~> 2.3.0)
 
 DEPENDENCIES:
-  - AutoInsetter (from `https://github.com/uias/AutoInsetter`)
   - Tabman (from `./Tabman.podspec`)
 
 EXTERNAL SOURCES:
-  AutoInsetter:
-    :git: https://github.com/uias/AutoInsetter
   Tabman:
     :path: ./Tabman.podspec
 
-CHECKOUT OPTIONS:
-  AutoInsetter:
-    :commit: fb779a6062d558a48caa679cc1b25c946b959216
-    :git: https://github.com/uias/AutoInsetter
-
 SPEC CHECKSUMS:
-  AutoInsetter: 17798a495033caeb5e30a5c87675dad8f75dc2ba
+  AutoInsetter: c662cef9ffb391592a25d78f9109a12823b1cbb8
   Pageboy: 761f33cb03c8ef27c69b803be1bccd04b71c80d1
-  Tabman: 37113ad85b772d160c5c3c58fd5e15b78804dd72
+  Tabman: 185fe6e1ae47afeea635584ddb0681fd5111dbff
 
-PODFILE CHECKSUM: 83afa6b703b952697dd90c161f75fdfb10edc0df
+PODFILE CHECKSUM: 21711da85c40f57403d6e7383427d4649a5bf42b
 
 COCOAPODS: 1.4.0
