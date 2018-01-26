@@ -21,7 +21,7 @@ internal extension TabmanViewController {
         guard let childViewController = childViewController else {
             return
         }
-        autoInsetEngine.inset(childViewController, requiredInsets: bar.requiredInsets)
+        autoInsetter.inset(childViewController, requiredInsetSpec: bar.requiredInsets)
     }
 }
 

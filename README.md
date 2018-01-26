@@ -123,6 +123,7 @@ Tabman will automatically attempt to inset any `UIScrollView` (including derivat
 ```swift
 .automaticallyAdjustsChildScrollViewInsets = true
 ```
+***NOTE**: If you wish to disable this behaviour, you must do so **before** setting the `dataSource` on the `TabmanViewController`.*
 
 *The values used for insetting the child content are also available for manual use at `bar.requiredInsets`, and via `.parentTabmanBarInsets` from child view controllers. Additionally, `additionalSafeAreaInsets` are also configured to allow for content to be pinned to the safe areas under iOS 11.*
 

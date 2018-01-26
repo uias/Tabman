@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.6)
     activesupport (4.2.10)

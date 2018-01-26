@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AutoInsetter
 
 public extension TabmanBar {
     
@@ -50,6 +51,17 @@ public extension TabmanBar {
             return Insets()
         }
         
+    }
+}
+
+extension TabmanBar.Insets: AutoInsetSpec {
+    
+    public var additionalRequiredInsets: UIEdgeInsets {
+        return barInsets
+    }
+    
+    public var allRequiredInsets: UIEdgeInsets {
+        return all
     }
 }
 
