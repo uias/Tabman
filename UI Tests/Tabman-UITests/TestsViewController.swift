@@ -43,9 +43,9 @@ class TestsViewController: UIViewController {
                            storyboardId: "AutoInsetting",
                            viewControllerId: "AutoInsettingOnPopViewController",
                            instances: 3),
-                TabmanTest(title: "UITableView Fixed Height",
+                TabmanTest(title: "Multiple UIScrollView",
                            storyboardId: "AutoInsetting",
-                           viewControllerId: "AutoInsettingFixedTableViewController",
+                           viewControllerId: "AutoInsettingMultiScrollViewController",
                            instances: 3)
                 ])
         ]

@@ -206,36 +206,16 @@
             </objects>
             <point key="canvasLocation" x="2850" y="104"/>
         </scene>
-        <!--Auto Insetting Fixed Table View Controller-->
+        <!--Auto Insetting Multi Scroll View Controller-->
         <scene sceneID="rWn-oE-Ajx">
             <objects>
-                <viewController storyboardIdentifier="AutoInsettingFixedTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O9L-Xk-fDV" customClass="AutoInsettingFixedTableViewController" customModule="Tabman_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AutoInsettingMultiScrollViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O9L-Xk-fDV" customClass="AutoInsettingMultiScrollViewController" customModule="Tabman_UITests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddQ-n0-mvD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ik-Fp-OLR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="fh4-Up-fPb"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="O9L-Xk-fDV" id="tef-qp-52w"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="1ik-Fp-OLR" firstAttribute="top" secondItem="ddQ-n0-mvD" secondAttribute="top" id="0Rv-gY-60O"/>
-                            <constraint firstItem="1ik-Fp-OLR" firstAttribute="leading" secondItem="ddQ-n0-mvD" secondAttribute="leading" id="KeQ-FI-CJy"/>
-                            <constraint firstAttribute="trailing" secondItem="1ik-Fp-OLR" secondAttribute="trailing" id="UAN-7v-iW9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U7z-ax-OeD"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="1ik-Fp-OLR" id="zcA-ka-7yj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcl-NL-Scq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
