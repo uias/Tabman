@@ -3,7 +3,7 @@
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 10/03/2017.
-//  Copyright © 2017 Merrick Sapsford. All rights reserved.
+//  Copyright © 2018 UI At Six. All rights reserved.
 //
 
 import Foundation
