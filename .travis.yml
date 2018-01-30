@@ -3,8 +3,8 @@ osx_image: xcode9
 before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
-- gem update fastlane --no-ri --no-rdoc --no-document
-- pod repo update
+- bundle install
+- bundle exec pod repo update
 script:
 - .travis/build.sh
 after_success:

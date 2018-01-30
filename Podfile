@@ -22,6 +22,8 @@ target 'Tabman-UITests' do
   use_frameworks!
   shared_pods
 
+  pod 'PureLayout', '~> 3.0'
+
 end
 
 target 'Tabman' do

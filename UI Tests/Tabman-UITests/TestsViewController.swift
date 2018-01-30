@@ -42,6 +42,10 @@ class TestsViewController: UIViewController {
                 TabmanTest(title: "UINavigationController Pop",
                            storyboardId: "AutoInsetting",
                            viewControllerId: "AutoInsettingOnPopViewController",
+                           instances: 3),
+                TabmanTest(title: "Multiple UIScrollView",
+                           storyboardId: "AutoInsetting",
+                           viewControllerId: "AutoInsettingMultiScrollViewController",
                            instances: 3)
                 ])
         ]

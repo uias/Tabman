@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */; };
+		461BE58C201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BE58B201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift */; };
 		4627D7A91FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */; };
 		46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */; };
 		D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAAF1F50475600298598 /* AppDelegate.swift */; };
@@ -25,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		461BE549201C9FA90049A8C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D61AAADA1F50486100298598 /* Tabman.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 463DE98A2006B77E00709671;
+			remoteInfo = Tabman_Carthage;
+		};
 		D61AAADF1F50486100298598 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D61AAADA1F50486100298598 /* Tabman.xcodeproj */;
@@ -44,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0BE61E35E2485747322B833D /* Pods-Tabman-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-UITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		461BE58B201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingMultiScrollViewController.swift; sourceTree = "<group>"; };
 		4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingOnPopViewController.swift; sourceTree = "<group>"; };
 		46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInsettingUICollectionViewController.swift; sourceTree = "<group>"; };
 		D61AAAAF1F50475600298598 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 				D61AAAF31F504BAD00298598 /* AutoInsettingScrollViewViewController.swift */,
 				46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */,
 				4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */,
+				461BE58B201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift */,
 			);
 			name = "Auto Insetting";
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D61AAAE01F50486100298598 /* Tabman.framework */,
+				461BE54A201C9FA90049A8C8 /* Tabman_Carthage.framework */,
 				D61AAAE21F50486100298598 /* TabmanTests.xctest */,
 			);
 			name = Products;
@@ -235,6 +246,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		461BE54A201C9FA90049A8C8 /* Tabman_Carthage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tabman_Carthage.framework;
+			remoteRef = 461BE549201C9FA90049A8C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D61AAAE01F50486100298598 /* Tabman.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -291,13 +309,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -330,6 +352,7 @@
 				D61AAAC71F50475600298598 /* TestsViewController.swift in Sources */,
 				46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */,
 				D61AAAC01F50475600298598 /* AutoInsettingTableViewViewController.swift in Sources */,
+				461BE58C201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift in Sources */,
 				D61AAAC61F50475600298598 /* TabmanTest.swift in Sources */,
 				D61AAAC11F50475600298598 /* AutoInsettingUITableViewController.swift in Sources */,
 				4627D7A91FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift in Sources */,

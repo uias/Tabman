@@ -3,11 +3,12 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/02/2017.
-//  Copyright © 2017 Merrick Sapsford. All rights reserved.
+//  Copyright © 2018 UI At Six. All rights reserved.
 //
 
 import UIKit
 import Pageboy
+import AutoInsetter
 
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
@@ -52,23 +53,28 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     /// Whether to automatically inset the contents of any child view controller.
+    /// NOTE: Set this before setting a dataSource on the TabmanViewController.
     /// Defaults to true.
     public var automaticallyAdjustsChildViewInsets: Bool = true {
         didSet {
+            guard viewIfLoaded != nil else {
+                return
+            }
             self.automaticallyAdjustsScrollViewInsets = !automaticallyAdjustsChildViewInsets
-            autoInsetEngine.isEnabled = automaticallyAdjustsChildViewInsets
-            setNeedsChildAutoInsetUpdate()
+            autoInsetter.isEnabled = automaticallyAdjustsChildViewInsets
         }
     }
-    internal let autoInsetEngine = AutoInsetEngine()
+    internal let autoInsetter = AutoInsetter()
     
     // MARK: Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.automaticallyAdjustsScrollViewInsets = false
-        
+        // configure for auto insetting
+        self.automaticallyAdjustsScrollViewInsets = !automaticallyAdjustsChildViewInsets
+        autoInsetter.isEnabled = automaticallyAdjustsChildViewInsets
+
         self.delegate = self
         self.bar.handler = self
         
