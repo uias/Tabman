@@ -34,7 +34,7 @@ target 'Tabman-UITests' do
 
 end
 
-target 'Tabman' do
+target 'Tabman_Dev' do
   workspace 'Tabman'
   project './Sources/Tabman.xcodeproj'
 

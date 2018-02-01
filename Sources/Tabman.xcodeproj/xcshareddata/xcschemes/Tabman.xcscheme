@@ -15,22 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "463DE9482006B77E00709671"
-               BuildableName = "Tabman_Carthage.framework"
-               BlueprintName = "Tabman_Carthage"
-               ReferencedContainer = "container:Tabman.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62AC0BA1E5733810020B8AE"
-               BuildableName = "TabmanTests.xctest"
-               BlueprintName = "TabmanTests"
+               BuildableName = "Tabman.framework"
+               BlueprintName = "Tabman"
                ReferencedContainer = "container:Tabman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -41,7 +27,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -58,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "463DE9482006B77E00709671"
-            BuildableName = "Tabman_Carthage.framework"
-            BlueprintName = "Tabman_Carthage"
+            BuildableName = "Tabman.framework"
+            BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "463DE9482006B77E00709671"
-            BuildableName = "Tabman_Carthage.framework"
-            BlueprintName = "Tabman_Carthage"
+            BuildableName = "Tabman.framework"
+            BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "463DE9482006B77E00709671"
-            BuildableName = "Tabman_Carthage.framework"
-            BlueprintName = "Tabman_Carthage"
+            BuildableName = "Tabman.framework"
+            BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
