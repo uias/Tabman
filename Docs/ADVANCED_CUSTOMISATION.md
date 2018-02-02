@@ -46,8 +46,8 @@ override func update(forPosition position: CGFloat,
                 indexRange: Range<Int>,
                 bounds: CGRect) {
 	super.update(forPosition: position, direction: direction,
-				 indexRange: Range<Int>,
-				 bounds: CGRect)
+				 indexRange: indexRange,
+				 bounds: bounds)
 				 
 	// update your bar contents for a positional update here              
 }
