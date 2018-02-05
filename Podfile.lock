@@ -1,12 +1,14 @@
 PODS:
-  - AutoInsetter (1.1.0)
+  - AutoInsetter (1.2.0)
   - Pageboy (2.3.3)
   - PureLayout (3.0.2)
-  - Tabman (1.4.0):
-    - AutoInsetter (~> 1.1.0)
+  - Tabman (1.5.0):
+    - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.3.0)
 
 DEPENDENCIES:
+  - AutoInsetter (~> 1.2.0)
+  - Pageboy (~> 2.3.0)
   - PureLayout (~> 3.0)
   - Tabman (from `./Tabman.podspec`)
 
@@ -15,11 +17,11 @@ EXTERNAL SOURCES:
     :path: ./Tabman.podspec
 
 SPEC CHECKSUMS:
-  AutoInsetter: ca08506cbb7c7b6b116b985c45e8573988c35090
+  AutoInsetter: ae91a29fdc7c8fcfe038e7b83337c349a83e46f7
   Pageboy: 0ea6c85f6e6cfd4d54d427fc640a51223ca9ebc7
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  Tabman: 41079eedffbd54ca8a1e2d8ca2c612a5c09b1aef
+  Tabman: 5d8f10fc20cb32e231613950d9f4d0cc574ef708
 
-PODFILE CHECKSUM: 0fe50da64bb6d1180a3a917db75f5aa2013baf55
+PODFILE CHECKSUM: 7db18dfa1f2dd5a7e025eb609f3d58f5e10a3a0e
 
 COCOAPODS: 1.4.0
