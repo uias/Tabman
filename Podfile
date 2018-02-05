@@ -10,7 +10,7 @@ end
 def lib_pods
 
   pod 'Pageboy', '~> 2.3.0'
-  pod 'AutoInsetter', '~> 1.1.0'
+  pod 'AutoInsetter', '~> 1.2.0'
 
 end
 
