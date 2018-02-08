@@ -103,7 +103,7 @@
 		D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */; };
 		D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */; };
 		D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */; };
-		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
+		D62AC0BC1E5733810020B8AE /* Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman_Dev.framework */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
 		D62AC11C1E573AA00020B8AE /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC11B1E573AA00020B8AE /* TabmanBar.swift */; };
@@ -153,7 +153,7 @@
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
 		462F85D9201B339800C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
-		463DE98A2006B77E00709671 /* Tabman_Carthage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman_Carthage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		463DE98A2006B77E00709671 /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463F17BF1E81D6B100E5A993 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		464AD768200F955900A74FC5 /* UIViewController+AutoInsetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
 		464AD76B200F957100A74FC5 /* TabmanViewController+AutoInsetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
 		D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestBar.swift; sourceTree = "<group>"; };
-		D62AC0B21E5733810020B8AE /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62AC0B21E5733810020B8AE /* Tabman_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0B51E5733810020B8AE /* Tabman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tabman.h; sourceTree = "<group>"; };
 		D62AC0B61E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0BB1E5733810020B8AE /* TabmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,7 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */,
+				D62AC0BC1E5733810020B8AE /* Tabman_Dev.framework in Frameworks */,
 				3C46A153829A597FA2EAC9AB /* Pods_TabmanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,9 +403,9 @@
 		D62AC0B31E5733810020B8AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D62AC0B21E5733810020B8AE /* Tabman.framework */,
+				D62AC0B21E5733810020B8AE /* Tabman_Dev.framework */,
 				D62AC0BB1E5733810020B8AE /* TabmanTests.xctest */,
-				463DE98A2006B77E00709671 /* Tabman_Carthage.framework */,
+				463DE98A2006B77E00709671 /* Tabman.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,9 +554,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		463DE9482006B77E00709671 /* Tabman_Carthage */ = {
+		463DE9482006B77E00709671 /* Tabman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 463DE9872006B77E00709671 /* Build configuration list for PBXNativeTarget "Tabman_Carthage" */;
+			buildConfigurationList = 463DE9872006B77E00709671 /* Build configuration list for PBXNativeTarget "Tabman" */;
 			buildPhases = (
 				463DE9492006B77E00709671 /* Swift Lint */,
 				463DE94A2006B77E00709671 /* Sources */,
@@ -569,14 +569,14 @@
 			);
 			dependencies = (
 			);
-			name = Tabman_Carthage;
+			name = Tabman;
 			productName = Tabman;
-			productReference = 463DE98A2006B77E00709671 /* Tabman_Carthage.framework */;
+			productReference = 463DE98A2006B77E00709671 /* Tabman.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D62AC0B11E5733810020B8AE /* Tabman */ = {
+		D62AC0B11E5733810020B8AE /* Tabman_Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D62AC0C61E5733810020B8AE /* Build configuration list for PBXNativeTarget "Tabman" */;
+			buildConfigurationList = D62AC0C61E5733810020B8AE /* Build configuration list for PBXNativeTarget "Tabman_Dev" */;
 			buildPhases = (
 				EA0C48124903B78DD4C7F566 /* [CP] Check Pods Manifest.lock */,
 				468AC2AC1FC85EC000B870EE /* Swift Lint */,
@@ -591,9 +591,9 @@
 			);
 			dependencies = (
 			);
-			name = Tabman;
+			name = Tabman_Dev;
 			productName = Tabman;
-			productReference = D62AC0B21E5733810020B8AE /* Tabman.framework */;
+			productReference = D62AC0B21E5733810020B8AE /* Tabman_Dev.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D62AC0BA1E5733810020B8AE /* TabmanTests */ = {
@@ -653,8 +653,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D62AC0B11E5733810020B8AE /* Tabman */,
-				463DE9482006B77E00709671 /* Tabman_Carthage */,
+				D62AC0B11E5733810020B8AE /* Tabman_Dev */,
+				463DE9482006B77E00709671 /* Tabman */,
 				D62AC0BA1E5733810020B8AE /* TabmanTests */,
 			);
 		};
@@ -973,7 +973,7 @@
 /* Begin PBXTargetDependency section */
 		D62AC0BE1E5733810020B8AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D62AC0B11E5733810020B8AE /* Tabman */;
+			target = D62AC0B11E5733810020B8AE /* Tabman_Dev */;
 			targetProxy = D62AC0BD1E5733810020B8AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1225,7 +1225,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		463DE9872006B77E00709671 /* Build configuration list for PBXNativeTarget "Tabman_Carthage" */ = {
+		463DE9872006B77E00709671 /* Build configuration list for PBXNativeTarget "Tabman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				463DE9882006B77E00709671 /* Debug */,
@@ -1243,7 +1243,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D62AC0C61E5733810020B8AE /* Build configuration list for PBXNativeTarget "Tabman" */ = {
+		D62AC0C61E5733810020B8AE /* Build configuration list for PBXNativeTarget "Tabman_Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D62AC0C71E5733810020B8AE /* Debug */,
