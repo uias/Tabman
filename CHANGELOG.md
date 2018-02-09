@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151)
+- `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152)
 - `1.4.x` Releases - [1.4.0](#140) 
 - `1.3.x` Releases - [1.3.0](#130) 
 - `1.2.x` Releases - [1.2.0](#120) 
@@ -18,6 +18,15 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+
+## [1.5.2](https://github.com/uias/Pageboy/releases/tag/1.5.2)
+Released on 2018-02-09
+
+#### Updated
+- Improved compatiblity with Carthage.
+    - Carthage now builds 'Tabman' scheme and target.
+    - by [msaps](https://github.com/msaps).
 
 ## [1.5.1](https://github.com/uias/Pageboy/releases/tag/1.5.1)
 Released on 2018-02-05
