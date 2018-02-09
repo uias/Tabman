@@ -10,6 +10,7 @@
 		1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A44362D8C4726D068D2FBB /* Pods_Tabman_UITests.framework */; };
 		461BE58C201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BE58B201F8A360049A8C8 /* AutoInsettingMultiScrollViewController.swift */; };
 		4627D7A91FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627D7A81FCD941C00370DC2 /* AutoInsettingOnPopViewController.swift */; };
+		463B4222202C943E00EC2E86 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61AAAE01F50486100298598 /* Tabman.framework */; };
 		46FC31491FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC31481FA23FFD00F20746 /* AutoInsettingUICollectionViewController.swift */; };
 		D61AAABD1F50475600298598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61AAAAF1F50475600298598 /* AppDelegate.swift */; };
 		D61AAABE1F50475600298598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D61AAAB01F50475600298598 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463B4222202C943E00EC2E86 /* Tabman.framework in Frameworks */,
 				1DD9BE74FBDC6D5B228CD322 /* Pods_Tabman_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,14 +313,12 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

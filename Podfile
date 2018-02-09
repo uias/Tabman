@@ -1,12 +1,5 @@
 platform :ios, '9.0'
 
-def example_pods 
-
-  pod 'Tabman', :path => './Tabman.podspec'
-  lib_pods
-
-end
-
 def lib_pods
 
   pod 'Pageboy', '~> 2.3.0'
@@ -19,7 +12,7 @@ target 'Tabman-Example' do
   project './Example/Tabman-Example.xcodeproj'
 
   use_frameworks!
-  example_pods
+  lib_pods
 
 end
 
@@ -28,13 +21,13 @@ target 'Tabman-UITests' do
   project './UI Tests/Tabman-UITests.xcodeproj'
 
   use_frameworks!
-  example_pods
+  lib_pods
 
   pod 'PureLayout', '~> 3.0'
 
 end
 
-target 'Tabman' do
+target 'Tabman_Dev' do
   workspace 'Tabman'
   project './Sources/Tabman.xcodeproj'
 

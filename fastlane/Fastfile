@@ -16,7 +16,7 @@ platform :ios do
   desc "Run unit tests and check library"
   lane :test do
     bootstrap
-    scan(workspace: "Tabman.xcworkspace", scheme: "Tabman_Carthage", clean: true)
+    scan(workspace: "Tabman.xcworkspace", scheme: "Tabman", clean: true)
     pod_lib_lint(verbose: true)
   end
 

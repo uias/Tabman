@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
 		46DFB8DB2007CA5000D79F44 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */; };
 		A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */; };
 		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */,
 				A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,13 +357,11 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
