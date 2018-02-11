@@ -16,6 +16,9 @@ Tabman is designed to automatically inset the contents of child view controllers
 
 If you are having issues with Automatic Insetting, please try the following steps...
 
+### 0) Make sure you're up to date
+Ensure you're using the latest releases of both [**Tabman**](https://github.com/uias/Tabman/releases/latest) and [**AutoInsetter**](https://github.com/uias/AutoInsetter/releases/latest).
+
 ### 1) Ensure it's turned on
 Make sure that auto insetting is enabled (it is by default).
 ```swift
