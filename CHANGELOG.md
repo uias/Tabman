@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
+- `1.6.x` Releases - [1.6.0](#160)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152)
 - `1.4.x` Releases - [1.4.0](#140) 
 - `1.3.x` Releases - [1.3.0](#130) 
@@ -19,8 +20,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.6.0](https://github.com/uias/Tabman/releases/tag/1.6.0)
+Released on 2018-02-23
 
-## [1.5.2](https://github.com/uias/Pageboy/releases/tag/1.5.2)
+#### Updated
+- Now using Pageboy [2.4](https://github.com/uias/Pageboy/releases/tag/2.4.0) with improved transitioning support.
+    - by [msaps](https://github.com/msaps).
+
+---
+
+## [1.5.2](https://github.com/uias/Tabman/releases/tag/1.5.2)
 Released on 2018-02-09
 
 #### Updated
@@ -28,14 +37,14 @@ Released on 2018-02-09
     - Carthage now builds 'Tabman' scheme and target.
     - by [msaps](https://github.com/msaps).
 
-## [1.5.1](https://github.com/uias/Pageboy/releases/tag/1.5.1)
+## [1.5.1](https://github.com/uias/Tabman/releases/tag/1.5.1)
 Released on 2018-02-05
 
 #### Updated
 - Updated AutoInsetter to 1.2 for 'extension safe API' compatibility.
     - by [msaps](https://github.com/msaps).
 
-## [1.5.0](https://github.com/uias/Pageboy/releases/tag/1.5.0)
+## [1.5.0](https://github.com/uias/Tabman/releases/tag/1.5.0)
 Released on 2018-01-30
 
 #### Updated
@@ -50,7 +59,7 @@ Released on 2018-01-30
 
 ---
 
-## [1.4.0](https://github.com/uias/Pageboy/releases/tag/1.4.0)
+## [1.4.0](https://github.com/uias/Tabman/releases/tag/1.4.0)
 Released on 2018-01-13
 
 #### Updated
@@ -63,7 +72,7 @@ Released on 2018-01-13
 
 ---
 
-## [1.3.0](https://github.com/uias/Pageboy/releases/tag/1.3.0)
+## [1.3.0](https://github.com/uias/Tabman/releases/tag/1.3.0)
 Released on 2018-01-10
 
 #### Added 
@@ -78,7 +87,7 @@ Released on 2018-01-10
 
 ---
 
-## [1.2.0](https://github.com/uias/Pageboy/releases/tag/1.2.0)
+## [1.2.0](https://github.com/uias/Tabman/releases/tag/1.2.0)
 Released on 2017-12-20
 
 #### Added
@@ -99,35 +108,35 @@ Released on 2017-12-20
 
 ---
 
-## [1.1.4](https://github.com/uias/Pageboy/releases/tag/1.1.4)
+## [1.1.4](https://github.com/uias/Tabman/releases/tag/1.1.4)
 Released on 2017-12-20
 
 #### Updated
 - Versions of Tabman 1.1.x are now tied to Pageboy 2.1.x.
      - by [msaps](https://github.com/msaps).
 
-## [1.1.3](https://github.com/uias/Pageboy/releases/tag/1.1.3)
+## [1.1.3](https://github.com/uias/Tabman/releases/tag/1.1.3)
 Released on 2017-12-12
 
 #### Fixed
 - [#208](https://github.com/uias/Tabman/issues/208) Auto-Inset issues on iOS 11.2 with bottom safe area.
      - by [msaps](https://github.com/msaps).
 
-## [1.1.2](https://github.com/uias/Pageboy/releases/tag/1.1.2)
+## [1.1.2](https://github.com/uias/Tabman/releases/tag/1.1.2)
 Released on 2017-12-05
 
 #### Fixed
 - [#202](https://github.com/uias/Tabman/issues/202) TabmanBar item views don’t conform to safe area.
      - by [msaps](https://github.com/msaps).
 
-## [1.1.1](https://github.com/uias/Pageboy/releases/tag/1.1.1)
+## [1.1.1](https://github.com/uias/Tabman/releases/tag/1.1.1)
 Released on 2017-11-28
 
 #### Fixed
 - [#194](https://github.com/uias/Tabman/issues/194) UIScrollView contentOffset reset when going back to Tabman VC.
      - by [msaps](https://github.com/msaps).
 
-## [1.1.0](https://github.com/uias/Pageboy/releases/tag/1.1.0)
+## [1.1.0](https://github.com/uias/Tabman/releases/tag/1.1.0)
 Released on 2017-11-23
 
 #### Added
@@ -146,7 +155,7 @@ Released on 2017-11-23
 
 ---
 
-## [1.0.8](https://github.com/uias/Pageboy/releases/tag/1.0.8)
+## [1.0.8](https://github.com/uias/Tabman/releases/tag/1.0.8)
 Released on 2017-11-15
 
 #### Added
@@ -157,14 +166,14 @@ Released on 2017-11-15
 - Removed unnecessary debugging logging.
      - by [msaps](https://github.com/msaps).
 
-## [1.0.7](https://github.com/uias/Pageboy/releases/tag/1.0.7)
+## [1.0.7](https://github.com/uias/Tabman/releases/tag/1.0.7)
 Released on 2017-11-15
 
 #### Added
 - Support for `additionalSafeAreaInsets` for child view controllers. 
      - by [msaps](https://github.com/msaps).
 
-## [1.0.6](https://github.com/uias/Pageboy/releases/tag/1.0.6)
+## [1.0.6](https://github.com/uias/Tabman/releases/tag/1.0.6)
 Released on 2017-11-12
 
 #### Updated
@@ -178,7 +187,7 @@ Released on 2017-11-12
      - by [msaps](https://github.com/msaps).
 
 
-## [1.0.5](https://github.com/uias/Pageboy/releases/tag/1.0.5)
+## [1.0.5](https://github.com/uias/Tabman/releases/tag/1.0.5)
 Released on 2017-10-23
 
 #### Added
@@ -189,7 +198,7 @@ Released on 2017-10-23
 - [#109](https://github.com/uias/Tabman/issues/109) Fixed automatic insetting behavior when using a `UITableViewController`.
      - by [msaps](https://github.com/msaps).
 
-## [1.0.4](https://github.com/uias/Pageboy/releases/tag/1.0.4)
+## [1.0.4](https://github.com/uias/Tabman/releases/tag/1.0.4)
 Released on 2017-10-22
 
 #### Added
@@ -202,7 +211,7 @@ Released on 2017-10-22
 - Add improved error handling to bar embedding and attachment operations.
      - by [msaps](https://github.com/msaps).
 
-## [1.0.3](https://github.com/uias/Pageboy/releases/tag/1.0.3)
+## [1.0.3](https://github.com/uias/Tabman/releases/tag/1.0.3)
 Released on 2017-10-11
 
 #### Added
@@ -211,7 +220,7 @@ Released on 2017-10-11
 - [#148](https://github.com/uias/Tabman/pull/148) `imageRenderingMode` to `TabmanBar.Appearance.Style`.
      - by [thevest](https://github.com/thevest).
 
-## [1.0.2](https://github.com/uias/Pageboy/releases/tag/1.0.2)
+## [1.0.2](https://github.com/uias/Tabman/releases/tag/1.0.2)
 Released on 2017-09-28
 
 #### Added
@@ -228,7 +237,7 @@ Released on 2017-09-28
 - [#146](https://github.com/uias/Tabman/issues/146) Incorrect layout with automatic insetting on iOS 11 and iPhone X.
      - by [msaps](https://github.com/msaps).
 
-## [1.0.1](https://github.com/uias/Pageboy/releases/tag/1.0.1)
+## [1.0.1](https://github.com/uias/Tabman/releases/tag/1.0.1)
 Released on 2017-09-18
 
 #### Added
@@ -239,7 +248,7 @@ Released on 2017-09-18
 - Updated example project styling and improved iPhone X support.
      - by [msaps](https://github.com/msaps).
 
-## [1.0.0](https://github.com/uias/Pageboy/releases/tag/1.0.0)
+## [1.0.0](https://github.com/uias/Tabman/releases/tag/1.0.0)
 Released on 2017-09-14
 
 #### Added
@@ -252,7 +261,7 @@ Released on 2017-09-14
 
 ---
 
-## [0.8.3](https://github.com/uias/Pageboy/releases/tag/0.8.3)
+## [0.8.3](https://github.com/uias/Tabman/releases/tag/0.8.3)
 Released on 2017-09-05
 
 #### Added
@@ -261,7 +270,7 @@ Released on 2017-09-05
 - [#138](https://github.com/uias/Tabman/pull/138) `extendBackgroundEdgeInsets` property to `TabmanBar.Appearance`.
      - Added by [msaps](https://github.com/msaps).
 
-## [0.8.2](https://github.com/uias/Pageboy/releases/tag/0.8.2)
+## [0.8.2](https://github.com/uias/Tabman/releases/tag/0.8.2)
 Released on 2017-08-25
 
 #### Fixed
@@ -270,14 +279,14 @@ Released on 2017-08-25
 - Resolved deprecation warnings when using latest Xcode 9 beta.
      - Fixed by [msaps](https://github.com/msaps).
 
-## [0.8.1](https://github.com/uias/Pageboy/releases/tag/0.8.1)
+## [0.8.1](https://github.com/uias/Tabman/releases/tag/0.8.1)
 Released on 2017-08-04
 
 #### Fixed
 - [#121](https://github.com/uias/Tabman/issues/121) Aligment issues when using a single bar item with `.buttonBar`.
      - Fixed by [msaps](https://github.com/msaps).
 
-## [0.8.0](https://github.com/uias/Pageboy/releases/tag/0.8.0)
+## [0.8.0](https://github.com/uias/Tabman/releases/tag/0.8.0)
 Released on 2017-07-25
 
 #### Updated
@@ -286,7 +295,7 @@ Released on 2017-07-25
 
 ---
 
-## [0.7.3](https://github.com/uias/Pageboy/releases/tag/0.7.3)
+## [0.7.3](https://github.com/uias/Tabman/releases/tag/0.7.3)
 Released on 2017-07-13
 
 #### Updated
@@ -301,7 +310,7 @@ Released on 2017-07-13
 - [#115](https://github.com/uias/Tabman/issues/115) Fix text font not being applied to block tab bar.
      - Fixed by [msaps](https://github.com/msaps).
 
-## [0.7.2](https://github.com/uias/Pageboy/releases/tag/0.7.2)
+## [0.7.2](https://github.com/uias/Tabman/releases/tag/0.7.2)
 Released on 2017-07-10
 
 #### Fixed
@@ -310,7 +319,7 @@ Released on 2017-07-10
 - [#80](https://github.com/uias/Tabman/issues/80) Fix issue where automatic insetting would incorrectly be re-applied when `hidesBarOnSwipe` was enabled on `UINavigationController`.
      - Fixed by [msaps](https://github.com/msaps).
 
-## [0.7.1](https://github.com/uias/Pageboy/releases/tag/0.7.1)
+## [0.7.1](https://github.com/uias/Tabman/releases/tag/0.7.1)
 Released on 2017-06-30
 
 #### Added
@@ -321,7 +330,7 @@ Released on 2017-06-30
 - [#109](https://github.com/uias/Tabman/issues/109) Fix issue where UITableViewController would not automatically inset correctly.
      - Fixed by [msaps](https://github.com/msaps).
 
-## [0.7.0](https://github.com/uias/Pageboy/releases/tag/0.7.0)
+## [0.7.0](https://github.com/uias/Tabman/releases/tag/0.7.0)
 Released on 2017-06-24
 
 #### Added
@@ -331,7 +340,7 @@ Released on 2017-06-24
 
 ---
 
-## [0.6.2](https://github.com/uias/Pageboy/releases/tag/0.6.2)
+## [0.6.2](https://github.com/uias/Tabman/releases/tag/0.6.2)
 Released on 2017-06-19.
 
 #### Added
@@ -344,7 +353,7 @@ Released on 2017-06-19.
 #### Fixed
 - [#91](https://github.com/uias/Tabman/issues/91) Issue where title labels in `TabmanBar` could appear to be using different font sizes due to incorrect layout compression.
 
-## [0.6.1](https://github.com/uias/Pageboy/releases/tag/0.6.1)
+## [0.6.1](https://github.com/uias/Tabman/releases/tag/0.6.1)
 Released on 2017-06-18.
 
 #### Added
@@ -356,7 +365,7 @@ Released on 2017-06-18.
 #### Updated
 - Pageboy to `1.1.2`.
 
-## [0.6.0](https://github.com/uias/Pageboy/releases/tag/0.6.0)
+## [0.6.0](https://github.com/uias/Tabman/releases/tag/0.6.0)
 Released on 2017-06-14.
 
 #### Added
@@ -378,7 +387,7 @@ Released on 2017-06-14.
 
 ---
 
-## [0.5.3](https://github.com/uias/Pageboy/releases/tag/0.5.3)
+## [0.5.3](https://github.com/uias/Tabman/releases/tag/0.5.3)
 Released on 2017-06-09.
 
 #### Added 
@@ -391,13 +400,13 @@ Released on 2017-06-09.
 - Removed `constructTabBar(items: [TabmanBarItem])` from `TabmanBarLifecycle`.
 - Removed `addIndicatorToBar(indicator: TabmanIndicator)` from `TabmanBarLifecycle`.
 
-## [0.5.2](https://github.com/uias/Pageboy/releases/tag/0.5.2)
+## [0.5.2](https://github.com/uias/Tabman/releases/tag/0.5.2)
 Released on 2017-06-07.
 
 #### Updated
 - Updated `Pageboy` to `v1.1.0`.
 
-## [0.5.1](https://github.com/uias/Pageboy/releases/tag/0.5.1)
+## [0.5.1](https://github.com/uias/Tabman/releases/tag/0.5.1)
 Released on 2017-05-24.
 
 #### Added
@@ -408,7 +417,7 @@ Released on 2017-05-24.
 - Improvements to documentation. 
 - Minor refactoring to `TabmanBar.Appearance`.
 
-## [0.5.0](https://github.com/uias/Pageboy/releases/tag/0.5.0)
+## [0.5.0](https://github.com/uias/Tabman/releases/tag/0.5.0)
 Released on 2017-05-14.
 
 #### Added
@@ -427,7 +436,7 @@ Released on 2017-05-14.
 
 ---
 
-## [0.4.8](https://github.com/uias/Pageboy/releases/tag/0.4.8)
+## [0.4.8](https://github.com/uias/Tabman/releases/tag/0.4.8)
 Released on 2017-04-20.
 
 #### Updated
@@ -437,7 +446,7 @@ Released on 2017-04-20.
 - Fixed deprecation warning for `PageboyViewController.PageIndex` API update.
 - [#58](https://github.com/uias/Tabman/issues/58) Fixed missing delegate function from `PageboyViewControllerDelegate` API update.
 
-## [0.4.7](https://github.com/uias/Pageboy/releases/tag/0.4.7)
+## [0.4.7](https://github.com/uias/Tabman/releases/tag/0.4.7)
 Released on 2017-04-11.
 
 #### Updated
@@ -446,19 +455,19 @@ Released on 2017-04-11.
 #### Fixed
 - [#51](https://github.com/uias/Tabman/issues/51) Fixed issue with using custom font on bar styles other than `.scrollingButtonBar`. 
 
-## [0.4.6](https://github.com/uias/Pageboy/releases/tag/0.4.6)
+## [0.4.6](https://github.com/uias/Tabman/releases/tag/0.4.6)
 Released on 2017-04-06.
 
 #### Updated
 - Updated podspec to use latest versions of `Pageboy` which contain numerous fixes.
 
-## [0.4.5](https://github.com/uias/Pageboy/releases/tag/0.4.5)
+## [0.4.5](https://github.com/uias/Tabman/releases/tag/0.4.5)
 Released on 2017-04-05.
 
 #### Fixed
 - [#50](https://github.com/uias/Tabman/issues/50) Fixed memory retain issue with `TabmanBarConfig` `.delegate` property.
 
-## [0.4.4](https://github.com/uias/Pageboy/releases/tag/0.4.4)
+## [0.4.4](https://github.com/uias/Tabman/releases/tag/0.4.4)
 Released on 2017-04-04.
 
 #### Updated
@@ -468,7 +477,7 @@ Released on 2017-04-04.
 - Fix issue where `requiredContentInset` property on `TabmanViewController.bar` would consistently have incorrect values. 
    - Partial fix for [#42](https://github.com/uias/Tabman/issues/42) - automatic insetting for child view controllers still under development.
 
-## [0.4.3](https://github.com/uias/Pageboy/releases/tag/0.4.3)
+## [0.4.3](https://github.com/uias/Tabman/releases/tag/0.4.3)
 Released on 2017-03-30.
 
 #### Added
@@ -480,7 +489,7 @@ Released on 2017-03-30.
 #### Fixed
 - Fixed issue where internally managed `TabmanBar` could potentially be below other subviews.
 
-## [0.4.2](https://github.com/uias/Pageboy/releases/tag/0.4.2)
+## [0.4.2](https://github.com/uias/Tabman/releases/tag/0.4.2)
 Released on 2017-03-28.
 
 #### Added
@@ -495,7 +504,7 @@ Released on 2017-03-28.
 - Issues with `compresses` / `bounces` properties in `TabmanBar.Appearance`. New behaviour simply takes `bounces` as precedence and ignores `compresses`. 
 - A few minor layout issues that would appear when setting custom layout appearance properties. 
 
-## [0.4.1](https://github.com/uias/Pageboy/releases/tag/0.4.1)
+## [0.4.1](https://github.com/uias/Tabman/releases/tag/0.4.1)
 Released on 2017-03-23.
 
 #### Added
@@ -510,7 +519,7 @@ Released on 2017-03-23.
 #### Updated
 - Renamed `.none` to `.clear` in `TabmanBarBackgroundView.BackgroundStyle`.
 
-## [0.4.0](https://github.com/uias/Pageboy/releases/tag/0.4.0)
+## [0.4.0](https://github.com/uias/Tabman/releases/tag/0.4.0)
 Released on 2017-03-20.
 
 Initial **Tabman** release - A powerful paging view controller with indicator bar for iOS
