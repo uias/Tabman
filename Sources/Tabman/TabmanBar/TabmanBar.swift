@@ -17,6 +17,12 @@ public protocol TabmanBarDelegate: class {
     ///   - index: The proposed selection index.
     /// - Returns: Whether the index should be selected.
     func bar(shouldSelectItemAt index: Int) -> Bool
+
+    /// The bar did select an item at an index.
+    ///
+    /// - Parameters:
+    ///   - index: The selected index.
+    func bar(didSelectItemAt index: Int)
 }
 
 /// A bar that displays the current page status of a TabmanViewController.
