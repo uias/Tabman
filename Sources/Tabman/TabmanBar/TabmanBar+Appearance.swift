@@ -90,6 +90,8 @@ public extension TabmanBar {
         public struct Text {
             /// The font to use for text labels in the bar.
             public var font: UIFont?
+            /// The font to use for the selected text label in the bar.
+            public var selectedFont: UIFont?
         }
         
         // MARK: Properties
@@ -137,7 +139,8 @@ public extension TabmanBar {
             
             // text
             self.text.font = UIFont.systemFont(ofSize: 16.0)
-            
+            self.text.selectedFont = UIFont.systemFont(ofSize: 16.0)
+
             // layout
             self.layout.height = .auto
             self.layout.interItemSpacing = 20.0

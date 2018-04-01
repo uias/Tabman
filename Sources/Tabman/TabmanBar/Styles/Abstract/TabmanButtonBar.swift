@@ -45,8 +45,10 @@ internal class TabmanButtonBar: TabmanBar {
             
             focussedButton?.setTitleColor(self.selectedColor, for: .normal)
             focussedButton?.tintColor = self.selectedColor
+            focussedButton?.titleLabel?.font = self.selectedTextFont
             oldValue?.setTitleColor(self.color, for: .normal)
             oldValue?.tintColor = self.color
+            oldValue?.titleLabel?.font = self.textFont
         }
     }
     
@@ -62,6 +64,18 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
+    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont! {
+        didSet {
+            guard selectedTextFont != oldValue else {
+                return
+            }
+
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = selectedTextFont
+            })
+        }
+    }
+
     public var color: UIColor = Appearance.defaultAppearance.state.color!
     public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
   
@@ -156,6 +170,9 @@ internal class TabmanButtonBar: TabmanBar {
         let textFont = appearance.text.font
         self.textFont = textFont ?? defaultAppearance.text.font!
         
+        let selectedTextFont = appearance.text.selectedFont
+        self.selectedTextFont = selectedTextFont ?? defaultAppearance.text.selectedFont!
+
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
         
