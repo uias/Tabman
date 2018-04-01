@@ -83,6 +83,8 @@ public extension TabmanBar {
             public var showEdgeFade: Bool?
             /// Color of the separator at the bottom of the bar.
             public var bottomSeparatorColor: UIColor?
+            /// The height of the separator at the bottom of the bar.
+            public var bottomSeparatorHeight: CGFloat?
             /// The image rendering mode for items that have an image
             public var imageRenderingMode: UIImageRenderingMode?
         }
@@ -154,6 +156,7 @@ public extension TabmanBar {
             // style
             self.style.background = .blur(style: .extraLight)
             self.style.bottomSeparatorColor = .clear
+            self.style.bottomSeparatorHeight = 0.5
             self.style.imageRenderingMode = .alwaysTemplate
           
             // interaction
