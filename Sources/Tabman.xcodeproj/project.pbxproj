@@ -80,6 +80,8 @@
 		4659D9D61FC4B548006E483F /* TabmanBar+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D51FC4B548006E483F /* TabmanBar+Location.swift */; };
 		4659D9D81FC4B56E006E483F /* TabmanBar+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D71FC4B56E006E483F /* TabmanBar+Styles.swift */; };
 		4659D9DA1FC4B617006E483F /* TabmanBarBehaviorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */; };
+		468FCAAF20723D0400654B72 /* SeparatorHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCAAE20723D0400654B72 /* SeparatorHeight.swift */; };
+		468FCAB020723D0700654B72 /* SeparatorHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCAAE20723D0400654B72 /* SeparatorHeight.swift */; };
 		A76C0B46B8A5BA7E1ED51391 /* Pods_Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */; };
 		D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136781E69893A0013CD42 /* TabmanIndicator.swift */; };
 		D601368A1E6992BB0013CD42 /* TabmanBar+BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136891E6992BB0013CD42 /* TabmanBar+BackgroundView.swift */; };
@@ -164,6 +166,7 @@
 		4659D9D51FC4B548006E483F /* TabmanBar+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Location.swift"; sourceTree = "<group>"; };
 		4659D9D71FC4B56E006E483F /* TabmanBar+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Styles.swift"; sourceTree = "<group>"; };
 		4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanBarBehaviorTests.swift; sourceTree = "<group>"; };
+		468FCAAE20723D0400654B72 /* SeparatorHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorHeight.swift; sourceTree = "<group>"; };
 		48EAAF81E817FAAF5691F364 /* Pods-TabmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		605FE451A05F8B6776F53CF3 /* Pods-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DA10AAE13C79D51060810AD /* Pods-Tabman_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.release.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +277,7 @@
 		463F17BE1E81D6A900E5A993 /* Separator */ = {
 			isa = PBXGroup;
 			children = (
+				468FCAAE20723D0400654B72 /* SeparatorHeight.swift */,
 				463F17BF1E81D6B100E5A993 /* SeparatorView.swift */,
 			);
 			path = Separator;
@@ -626,7 +630,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
 					463DE9482006B77E00709671 = {
@@ -862,6 +866,7 @@
 				463DE9612006B77E00709671 /* CircularView.swift in Sources */,
 				463DE9622006B77E00709671 /* TabmanLineIndicator.swift in Sources */,
 				463DE9632006B77E00709671 /* TabmanPositionalUtil.swift in Sources */,
+				468FCAAF20723D0400654B72 /* SeparatorHeight.swift in Sources */,
 				463DE9642006B77E00709671 /* TabmanTransition.swift in Sources */,
 				463DE9652006B77E00709671 /* TabmanScrollingBarIndicatorTransition.swift in Sources */,
 				463DE9662006B77E00709671 /* SeparatorView.swift in Sources */,
@@ -923,6 +928,7 @@
 				D68FBA811E701D1A00B96EC0 /* CircularView.swift in Sources */,
 				D616D06C1E72C1FC00C7AA32 /* TabmanLineIndicator.swift in Sources */,
 				D616D0B91E78065500C7AA32 /* TabmanPositionalUtil.swift in Sources */,
+				468FCAB020723D0700654B72 /* SeparatorHeight.swift in Sources */,
 				D616D0B31E77FD5000C7AA32 /* TabmanTransition.swift in Sources */,
 				D616D0AD1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift in Sources */,
 				463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */,
@@ -1049,6 +1055,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1056,6 +1063,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1108,6 +1116,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1115,6 +1124,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

@@ -10,15 +10,13 @@ import UIKit
 
 internal class SeparatorView: UIView {
     
-    //
     // MARK: Properties
-    //
     
     private var leftPinConstraint: NSLayoutConstraint?
     private var rightPinConstraint: NSLayoutConstraint?
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0.0, height: 0.5)
+        return CGSize(width: 0.0, height: height)
     }
     
     override var tintColor: UIColor! {
@@ -32,6 +30,14 @@ internal class SeparatorView: UIView {
             self.backgroundColor = color
         }
     }
+    /// The height of the separator.
+    var height: CGFloat = 0.5 {
+        didSet {
+            invalidateIntrinsicContentSize()
+            superview?.setNeedsLayout()
+            superview?.layoutIfNeeded()
+        }
+    }
     /// The distance to inset the separator from it's superview (X-axis only).
     var edgeInsets: UIEdgeInsets = .zero {
         didSet {
@@ -41,9 +47,7 @@ internal class SeparatorView: UIView {
         }
     }
     
-    //
     // MARK: Init
-    //
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
