@@ -85,6 +85,7 @@ public extension TabmanBar {
             /// The text color to use for unselected items in the bar (text/images etc.).
             public var color: UIColor?
             /// Whether to hide bar when there is only a single item
+            @available(*, deprecated: 1.7.0, message: "Use Behavior.AutoHiding instead")
             public var shouldHideWhenSingleItem: Bool?
         }
         
