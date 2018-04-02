@@ -166,7 +166,7 @@ tabViewController.bar.appearance = TabmanBar.Appearance({ (appearance) in
 })
 ```
 
-*The full list of appearance properties can be found [here](Docs/APPEARANCE.md).*
+***The full list of appearance properties can be found [here](Docs/APPEARANCE.md).***
 
 *For more advanced customisation, including defining your own indicator and bar styles please read [here](Docs/ADVANCED_CUSTOMISATION.md).*
 
@@ -177,7 +177,7 @@ You can also enable different behaviors via `.behaviors`. Simply provide an arra
 tabViewController.bar.behaviors = [.autoHide(.always)]
 ```
 
-*The full list of available behaviors can be found [here](Docs/BEHAVIORS.md).*
+***The full list of available behaviors can be found [here](Docs/BEHAVIORS.md).***
 
 ## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
