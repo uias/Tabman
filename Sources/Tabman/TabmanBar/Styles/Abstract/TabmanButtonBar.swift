@@ -53,8 +53,18 @@ internal class TabmanButtonBar: TabmanBar {
     }
     
     public var textFont: UIFont = Appearance.defaultAppearance.text.font!
-    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont!
-    
+    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont! {
+        didSet {
+            guard selectedTextFont != oldValue else {
+                return
+            }
+
+            self.updateButtons(update: { (button) in
+                button.titleLabel?.font = selectedTextFont
+            })
+        }
+    }
+
     public var color: UIColor = Appearance.defaultAppearance.state.color!
     public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
   
@@ -151,7 +161,7 @@ internal class TabmanButtonBar: TabmanBar {
         
         let selectedTextFont = appearance.text.selectedFont
         self.selectedTextFont = selectedTextFont ?? defaultAppearance.text.selectedFont!
-        
+
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
         
