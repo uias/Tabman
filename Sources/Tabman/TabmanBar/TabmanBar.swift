@@ -291,10 +291,10 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         }
         self.height = height
         
-        let bottomSeparatorColor = appearance.style.bottomSeparatorColor ?? defaultAppearance.style.bottomSeparatorColor!
+        let bottomSeparatorColor = appearance.bottomSeparator.color ?? defaultAppearance.bottomSeparator.color!
         self.bottomSeparator.color = bottomSeparatorColor
-        self.bottomSeparator.height = appearance.style.bottomSeparatorHeight ?? defaultAppearance.style.bottomSeparatorHeight!
-        let bottomSeparatorEdgeInsets = appearance.layout.bottomSeparatorEdgeInsets ?? defaultAppearance.layout.bottomSeparatorEdgeInsets!
+        self.bottomSeparator.height = (appearance.bottomSeparator.height ?? defaultAppearance.bottomSeparator.height!).rawValue
+        let bottomSeparatorEdgeInsets = appearance.bottomSeparator.edgeInsets ?? defaultAppearance.bottomSeparator.edgeInsets!
         self.bottomSeparator.edgeInsets = bottomSeparatorEdgeInsets
         
         self.update(forAppearance: appearance,

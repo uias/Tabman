@@ -10,9 +10,7 @@ import UIKit
 
 internal class SeparatorView: UIView {
     
-    //
     // MARK: Properties
-    //
     
     private var leftPinConstraint: NSLayoutConstraint?
     private var rightPinConstraint: NSLayoutConstraint?
@@ -49,9 +47,7 @@ internal class SeparatorView: UIView {
         }
     }
     
-    //
     // MARK: Init
-    //
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
