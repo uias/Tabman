@@ -53,8 +53,6 @@ internal class TabmanButtonBar: TabmanBar {
     }
     
     public var textFont: UIFont = Appearance.defaultAppearance.text.font!
-    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont!
-    
     public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont! {
         didSet {
             guard selectedTextFont != oldValue else {
