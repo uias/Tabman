@@ -92,7 +92,7 @@ public extension TabmanBar {
         public struct Text {
             /// The font to use for text labels in the bar.
             public var font: UIFont?
-            /// The font to use for the selected text label in the bar.
+            /// The selected font to use for text labels in the bar.
             public var selectedFont: UIFont?
         }
         
