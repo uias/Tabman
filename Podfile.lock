@@ -1,5 +1,5 @@
 PODS:
-  - AutoInsetter (1.2.1)
+  - AutoInsetter (1.2.3)
   - Pageboy (2.4.0)
   - PureLayout (3.0.2)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - PureLayout (~> 3.0)
 
 SPEC CHECKSUMS:
-  AutoInsetter: d90171b54341b801edd4ab68eee9eec54fdc92b7
+  AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
   Pageboy: b04cee5c1315a865fb49321129d12635e8465144
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 

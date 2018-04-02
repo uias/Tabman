@@ -3,6 +3,7 @@
 There are extensive options available in Tabman to customise the component to your liking. These are divided into appropriate functional structures:
 
 - **[Indicator](#indicator)**
+- **[Bottom Separator](#bottom-separator)**
 - **[Interaction](#interaction)**
 - **[Layout](#layout)**
 - **[State](#state)**
@@ -26,6 +27,14 @@ bar.appearance.indicator
 | `compresses` | `Bool` | Whether the indicator compresses at the end of page ranges (Unavailable if bounces enabled). | `false` |
 | `useRoundedCorners` | `Bool` | Whether to use rounded corners on line indicators. | `false` |
 
+## Bottom Separator
+Customise how the separator at the bottom of the bar looks.
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `edgeInsets` | `UIEdgeInsets` | Insets to apply to the edges of the separator. | `zero` |
+| `height` | `SeparatorHeight` | The height of the separator. | `thin` |
+| `color` | `UIColor` | The color of the separator. | `clear` |
 
 ## Interaction
 Customise how the bar can be interacted with.
@@ -80,8 +89,7 @@ bar.appearance.style
 |----------|------|-------------|---------|
 | `background` | `TabmanBarBackgroundView.BackgroundStyle` | The background style for the bar. | `.blur(style: .extraLight)` |
 | `showEdgeFade` | `Bool` | Whether to show a fade on the items at the bounds edge of a scrolling button bar. | `false` |
-| `bottomSeparatorColor` | `UIColor` | Color of the separator at the bottom of the bar. | `.clear` |
-
+| `imageRenderingMode` | `UIImageRenderingMode` | The rendering mode to use for images displayed in bar items. | `alwaysTemplate` |
 
 ## Text
 Customise any text displayed in a bar.
@@ -93,6 +101,4 @@ bar.appearance.text
 | Property | Type | Description | Default |
 |----------|------|-------------|---------|
 | `font` | `UIFont` | The font to use for text labels in the bar. | `.systemFont(ofSize: 16.0)` |
-
-
-
+| `selectedFont` | `UIFont` | The font to use for text labels in the bar when selected. | `.systemFont(ofSize: 16.0)` |

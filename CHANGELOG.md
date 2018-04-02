@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
+- `1.7.x` Releases - [1.7.0](#170)
 - `1.6.x` Releases - [1.6.0](#160)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152)
 - `1.4.x` Releases - [1.4.0](#140) 
@@ -17,6 +18,27 @@ All notable changes to this project will be documented in this file.
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
+
+---
+
+## [1.7.0](https://github.com/uias/Tabman/releases/tag/1.7.0)
+Released on 2018-03-02
+
+#### Added
+- `.bottomSeparator` configuration to `TabmanBar.Appearance`.
+    - by [msaps](https://github.com/msaps).
+- Ability to customize separator height via `Appearance.bottomSeparator.height`.
+    - by [leah](https://github.com/leah) & [msaps](https://github.com/msaps).
+- Ability to specifiy a selected font for bar items via `Appearance.text.selectedFont`.
+    - by [moaible](https://github.com/moaible) & [leah](https://github.com/leah).
+
+#### Updated
+- Deprecated `Appearance.State.shouldHideWhenSingleItem`.
+    - by [msaps](https://github.com/msaps).
+- Deprecated `Appearance.Style.bottomSeparatorColor`.
+    - by [msaps](https://github.com/msaps).
+- Deprecated `Appearance.Layout.bottomSeparatorEdgeInsets`.
+    - by [msaps](https://github.com/msaps).
 
 ---
 
