@@ -6,6 +6,8 @@
 //  Copyright © 2017 UI At Six. All rights reserved.
 //
 
+// swiftlint:disable nesting
+
 import Foundation
 
 public extension TabmanBar {
