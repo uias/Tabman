@@ -1,18 +1,18 @@
 PODS:
   - AutoInsetter (1.2.3)
-  - Pageboy (2.4.0)
+  - Pageboy (2.5.0)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - AutoInsetter (~> 1.2.0)
-  - Pageboy (~> 2.4.0)
+  - Pageboy (~> 2.5.0)
   - PureLayout (~> 3.0)
 
 SPEC CHECKSUMS:
   AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
-  Pageboy: b04cee5c1315a865fb49321129d12635e8465144
+  Pageboy: 00985df8245ab2d4b4ef6959a0722d64b09aafee
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 3a0031bff296ac16e4568b7d8973f86bb521b35f
+PODFILE CHECKSUM: 39a20a8ced6404605add472a1b5b452ae5f4b553
 
 COCOAPODS: 1.4.0
