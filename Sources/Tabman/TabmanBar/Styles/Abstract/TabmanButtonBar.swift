@@ -71,7 +71,7 @@ internal class TabmanButtonBar: TabmanBar {
             }
         }
     }
-    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont! {
+    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.font! {
         didSet {
             focussedButton?.titleLabel?.font = selectedTextFont
         }
@@ -172,7 +172,7 @@ internal class TabmanButtonBar: TabmanBar {
         self.textFont = textFont ?? defaultAppearance.text.font!
         
         let selectedTextFont = appearance.text.selectedFont
-        self.selectedTextFont = selectedTextFont ?? defaultAppearance.text.selectedFont!
+        self.selectedTextFont = selectedTextFont ?? self.textFont
 
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
