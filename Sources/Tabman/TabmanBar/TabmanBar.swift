@@ -332,7 +332,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
     ///
     /// - Parameter index: The index of the selected item.
     open func itemSelected(at index: Int) {
-        responder?.bar(self, didSelectItemAt: index)
+        responder?.bar(self, didSelectItemAt: index, completion: nil)
     }
 }
 

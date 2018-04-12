@@ -51,7 +51,6 @@ class PresetAppearanceConfigs: Any {
         }
         
         appearance.text.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
-        appearance.text.selectedFont = UIFont.systemFont(ofSize: 16.0, weight: .heavy)
         
         return appearance
     }
