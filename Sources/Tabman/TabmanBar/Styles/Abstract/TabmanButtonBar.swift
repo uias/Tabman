@@ -52,16 +52,16 @@ internal class TabmanButtonBar: TabmanBar {
         }
     }
     
-    public var textFont: UIFont = Appearance.defaultAppearance.text.font!
+    public var textFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            updateButtons { (button) in
+                button.titleLabel?.font = textFont
+            }
+        }
+    }
     public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.selectedFont! {
         didSet {
-            guard selectedTextFont != oldValue else {
-                return
-            }
-
-            self.updateButtons(update: { (button) in
-                button.titleLabel?.font = selectedTextFont
-            })
+            focussedButton?.titleLabel?.font = selectedTextFont
         }
     }
 
