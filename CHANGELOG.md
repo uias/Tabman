@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.8.x` Releases - [1.8.0](#180)
+- `1.8.x` Releases - [1.8.0](#180) | [1.8.1](#181)
 - `1.7.x` Releases - [1.7.0](#170)
 - `1.6.x` Releases - [1.6.0](#160)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152)
@@ -21,6 +21,19 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [1.8.1](https://github.com/uias/Tabman/releases/tag/1.8.1)
+Released on 2018-04-12
+
+#### Updated
+- Improved animation when interactively transitioning between items with a `selectedFont`.
+    - by [msaps](https://github.com/msaps).
+- `selectedFont` now defaults to `font` if no custom value is set when used in button bars.
+    - by [msaps](https://github.com/msaps).
+
+#### Fixed
+- [#273](https://github.com/uias/Tabman/issues/273) ssue where selectedTextFont would incorrectly be used for every item in a button bar when not selected.
+    - by [msaps](https://github.com/msaps).
+
 ## [1.8.0](https://github.com/uias/Tabman/releases/tag/1.8.0)
 Released on 2018-04-06
 

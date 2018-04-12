@@ -285,8 +285,10 @@ extension TabmanViewController: TabmanBarDataSource, TabmanBarResponder {
         return self.bar.delegate?.bar(shouldSelectItemAt: index) ?? true
     }
     
-    public func bar(_ bar: TabmanBar, didSelectItemAt index: Int) {
-        self.scrollToPage(.at(index: index), animated: true)
+    public func bar(_ bar: TabmanBar, didSelectItemAt index: Int, completion: (() -> Void)?) {
+        scrollToPage(.at(index: index), animated: true) { (_, _, _) in
+            completion?()
+        }
     }
 }
 

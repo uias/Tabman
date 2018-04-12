@@ -160,7 +160,6 @@ public extension TabmanBar {
             
             // text
             text.font = UIFont.systemFont(ofSize: 16.0)
-            text.selectedFont = UIFont.systemFont(ofSize: 16.0)
 
             // layout
             layout.height = .auto
