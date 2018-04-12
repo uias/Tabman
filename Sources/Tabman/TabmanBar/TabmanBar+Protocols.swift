@@ -32,7 +32,10 @@ internal protocol TabmanBarResponder: class {
     /// - Parameters:
     ///   - bar: The bar.
     ///   - index: The selected index.
-    func bar(_ bar: TabmanBar, didSelectItemAt index: Int)
+    ///   - completion: Completion handler for action.
+    func bar(_ bar: TabmanBar,
+             didSelectItemAt index: Int,
+             completion: (() -> Void)?)
 }
 
 /// Lifecycle functions of TabmanBar

@@ -37,18 +37,30 @@ internal class TabmanButtonBar: TabmanBar {
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
+    private var isAnimatingFocussedButton: Bool = false
     internal var focussedButton: UIButton? {
         didSet {
             guard focussedButton !== oldValue else {
                 return
             }
             
-            focussedButton?.setTitleColor(self.selectedColor, for: .normal)
-            focussedButton?.tintColor = self.selectedColor
-            focussedButton?.titleLabel?.font = self.selectedTextFont
-            oldValue?.setTitleColor(self.color, for: .normal)
-            oldValue?.tintColor = self.color
-            oldValue?.titleLabel?.font = self.textFont
+            let update = {
+                self.focussedButton?.setTitleColor(self.selectedColor, for: .normal)
+                self.focussedButton?.tintColor = self.selectedColor
+                self.focussedButton?.titleLabel?.font = self.selectedTextFont
+                oldValue?.setTitleColor(self.color, for: .normal)
+                oldValue?.tintColor = self.color
+                oldValue?.titleLabel?.font = self.textFont
+            }
+            
+            // If animating between buttons then dont use a transition - only for scroll events
+            if isAnimatingFocussedButton {
+                update()
+            } else {
+                UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    update()
+                }, completion: nil)
+            }
         }
     }
     
@@ -279,7 +291,10 @@ internal class TabmanButtonBar: TabmanBar {
     
     @objc internal func tabButtonPressed(_ sender: UIButton) {
         if let index = self.buttons.index(of: sender), (self.responder?.bar(self, shouldSelectItemAt: index) ?? true) {
-            self.responder?.bar(self, didSelectItemAt: index)
+            isAnimatingFocussedButton = true
+            responder?.bar(self, didSelectItemAt: index, completion: {
+                self.isAnimatingFocussedButton = false
+            })
         }
     }
     
