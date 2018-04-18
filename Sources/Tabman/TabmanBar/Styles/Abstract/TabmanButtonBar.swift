@@ -57,7 +57,11 @@ internal class TabmanButtonBar: TabmanBar {
             if isAnimatingFocussedButton {
                 update()
             } else {
-                UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                guard let transitionView = focussedButton ?? oldValue else {
+                    update()
+                    return
+                }
+                UIView.transition(with: transitionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
                     update()
                 }, completion: nil)
             }
