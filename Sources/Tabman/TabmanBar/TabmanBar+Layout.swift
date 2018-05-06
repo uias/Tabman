@@ -146,12 +146,24 @@ internal extension TabmanBar {
                                                         canExtend: Bool) {
         let bottomPinConstraint = self.backgroundView.constraints[2]
         let extendBackgroundEdgeInsets = appearance.layout.extendBackgroundEdgeInsets ?? false
+        let tabBarDoesNotExist: Bool = {
+            if viewController.tabBarController == nil {
+                return true
+            } else if let navigationController = viewController.navigationController {
+                return navigationController.viewControllers
+                    .reversed()
+                    .drop { $0 != viewController }
+                    .contains { $0.hidesBottomBarWhenPushed }
+            } else {
+                return false
+            }
+        }()
         
         // ensure location is bottom, extending is enabled
         // and view controller is not in a tab bar controller.
         guard location == .bottom &&
             extendBackgroundEdgeInsets &&
-            viewController.tabBarController == nil &&
+            tabBarDoesNotExist &&
             canExtend else {
             bottomPinConstraint.constant = 0.0
             return
