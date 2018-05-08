@@ -34,7 +34,7 @@ internal extension TabmanBar {
         return constraints
     }
     
-    @discardableResult func barAutoPinToBotton(bottomLayoutGuide: UILayoutSupport) -> [NSLayoutConstraint]? {
+    @discardableResult func barAutoPinToBottom(bottomLayoutGuide: UILayoutSupport, viewController: UIViewController) -> [NSLayoutConstraint]? {
         guard self.superview != nil else {
             return nil
         }
@@ -47,14 +47,41 @@ internal extension TabmanBar {
         let xConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
                                                           options: NSLayoutFormatOptions(),
                                                           metrics: nil, views: views)
-        let yConstraints = NSLayoutConstraint.constraints(withVisualFormat: String(format: "V:[view]-%i-[bottomLayoutGuide]", -margins.bottom),
+        
+        let yConstraints: [NSLayoutConstraint]
+        if #available(iOS 11, *) {
+            yConstraints = NSLayoutConstraint.constraints(withVisualFormat: String(format: "V:[view]-%i-[bottomLayoutGuide]", -margins.bottom),
                                                           options: NSLayoutFormatOptions(),
                                                           metrics: nil, views: views)
+        } else if viewController.tabBarDoesNotExist() {
+            yConstraints = NSLayoutConstraint.constraints(withVisualFormat: String(format: "V:[view]-%i-|", -margins.bottom),
+                                                          options: NSLayoutFormatOptions(),
+                                                          metrics: nil, views: views)
+        } else {
+            yConstraints = NSLayoutConstraint.constraints(withVisualFormat: String(format: "V:[view]-%i-[bottomLayoutGuide]", -margins.bottom),
+                                                          options: NSLayoutFormatOptions(),
+                                                          metrics: nil, views: views)
+        }
         constraints.append(contentsOf: xConstraints)
         constraints.append(contentsOf: yConstraints)
         
         self.superview?.addConstraints(constraints)
         return constraints
+    }
+}
+
+extension UIViewController {
+    func tabBarDoesNotExist() -> Bool {
+        if tabBarController == nil {
+            return true
+        } else if let navigationController = navigationController {
+            return navigationController.viewControllers
+                .reversed()
+                .drop { $0 !== self }
+                .contains { $0.hidesBottomBarWhenPushed }
+        } else {
+            return false
+        }
     }
 }
 
@@ -146,24 +173,12 @@ internal extension TabmanBar {
                                                         canExtend: Bool) {
         let bottomPinConstraint = self.backgroundView.constraints[2]
         let extendBackgroundEdgeInsets = appearance.layout.extendBackgroundEdgeInsets ?? false
-        let tabBarDoesNotExist: Bool = {
-            if viewController.tabBarController == nil {
-                return true
-            } else if let navigationController = viewController.navigationController {
-                return navigationController.viewControllers
-                    .reversed()
-                    .drop { $0 != viewController }
-                    .contains { $0.hidesBottomBarWhenPushed }
-            } else {
-                return false
-            }
-        }()
         
         // ensure location is bottom, extending is enabled
         // and view controller is not in a tab bar controller.
         guard location == .bottom &&
             extendBackgroundEdgeInsets &&
-            tabBarDoesNotExist &&
+            viewController.tabBarDoesNotExist() &&
             canExtend else {
             bottomPinConstraint.constant = 0.0
             return
