@@ -253,7 +253,7 @@ internal extension TabmanViewController {
         case .top:
             bar.barAutoPinToTop(topLayoutGuide: self.topLayoutGuide)
         case .bottom:
-            bar.barAutoPinToBotton(bottomLayoutGuide: self.bottomLayoutGuide)
+            bar.barAutoPinToBottom(bottomLayoutGuide: self.bottomLayoutGuide, viewController: self)
             
         default:()
         }
