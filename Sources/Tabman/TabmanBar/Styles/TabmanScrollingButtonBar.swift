@@ -145,18 +145,24 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
 
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
 
+
         // dont allow for centered item distribution if indicator is progressive
         let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
         var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
         if itemDistribution == .centered && isProgressive {
             itemDistribution = .leftAligned
             print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
-        } else if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
-            let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
-            let extraInterItemSpacing = extraSpace / CGFloat(itemCount - 1)
-            interItemSpacing = defaultAppearance.layout.interItemSpacing! + extraInterItemSpacing
         }
-        update(for: itemDistribution)
+
+        // in fill item distribution add additional padding around items if content doesn't use the full width of the bar
+        var customFillInset: CGFloat?
+        if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
+            let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
+            let extraInterItemSpacing = extraSpace / CGFloat(itemCount + 1)
+            interItemSpacing = (appearance.layout.interItemSpacing ?? defaultAppearance.layout.interItemSpacing!) + extraInterItemSpacing
+            customFillInset = extraInterItemSpacing
+        }
+        update(for: itemDistribution, customFillInset: customFillInset)
     }
 }
 
@@ -186,14 +192,19 @@ internal extension TabmanScrollingButtonBar {
     /// Updates scroll view contentInset for an itemDistribution style.
     ///
     /// - Parameter itemDistribution: The itemDistribution style.
-    func update(for itemDistribution: TabmanBar.Appearance.Layout.ItemDistribution) {
+    /// - Parameter customFillInset: The amount to inset the content horizontally when in fill item distribution.
+    func update(for itemDistribution: TabmanBar.Appearance.Layout.ItemDistribution, customFillInset: CGFloat?) {
 
         var contentInset = scrollView.contentInset
         switch itemDistribution {
 
-        case .leftAligned, .fill:
+        case .leftAligned:
             contentInset.left = 0.0
             contentInset.right = 0.0
+
+        case .fill:
+            contentInset.left = customFillInset ?? 0.0
+            contentInset.right = customFillInset ?? 0.0
 
         case .centered:
             let indicatorWidth = indicator?.bounds.size.width ?? 0.0

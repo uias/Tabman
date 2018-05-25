@@ -38,7 +38,7 @@ extension SettingsViewController {
             { (value) in
                 self.tabViewController?.isInfiniteScrollEnabled = value as! Bool
         }))
-        
+
         let appearanceSection = SettingsSection(title: "Appearance")
         appearanceSection.add(item: SettingsItem(type: .options(values: styleOptions,
                                                                 selectedValue: { return self.tabViewController?.bar.style.description }),
@@ -50,6 +50,7 @@ extension SettingsViewController {
                 self.tabViewController?.bar.style = style
                 self.tabViewController?.bar.appearance = PresetAppearanceConfigs.forStyle(style,
                                                                                            currentAppearance: self.tabViewController?.bar.appearance)
+                self.tabViewController?.resetNumberOfViewControllers()
                 self.tabViewController?.reloadPages()
         }))
         appearanceSection.add(item: SettingsItem(type: .options(values: itemDistributionOptions,
@@ -127,10 +128,10 @@ extension SettingsViewController {
                 appearance?.indicator.compresses = value as? Bool
                 self.tabViewController?.bar.appearance = appearance
         }))
-        
+
         sections.append(appearanceSection)
         sections.append(pageVCSection)
-        
+
         return sections
     }
 
