@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GWJ-y4-xki">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -231,23 +231,43 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBZ-3O-Ovm" userLabel="Separator">
-                                <rect key="frame" x="16" y="609" width="1" height="38"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBZ-3O-Ovm" userLabel="Upper Separator">
+                                <rect key="frame" x="16" y="84" width="1" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="qUw-Vk-nu9"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-f1-tUV">
-                                <rect key="frame" x="24" y="609" width="263" height="17"/>
+                                <rect key="frame" x="24" y="84" width="327" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Y5-Lkw">
-                                <rect key="frame" x="24" y="630" width="263" height="17"/>
+                                <rect key="frame" x="24" y="105" width="327" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="105-fT-j9X" userLabel="Lower Separator">
+                                <rect key="frame" x="16" y="591" width="1" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="xLi-N4-z4f"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Pages: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sT-JP-rkX" userLabel="Number of Pages Label">
+                                <rect key="frame" x="24" y="591" width="263" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="PWO-1x-q8i" userLabel="Number of Pages Stepper">
+                                <rect key="frame" x="24" y="618" width="94" height="29"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <connections>
+                                    <action selector="numberOfPagesStepperDidChangeValue:" destination="Y3B-UK-iWz" eventType="valueChanged" id="siN-1H-6oE"/>
+                                </connections>
+                            </stepper>
                             <button opaque="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-kP-mjs" customClass="CircularButton" customModule="Tabman_Example" customModuleProvider="target">
                                 <rect key="frame" x="303" y="591" width="56" height="56"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -266,30 +286,42 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="3FG-zV-R3q"/>
-                            <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="DI3-f1-tUV" secondAttribute="trailing" constant="16" id="3d4-6A-i5r"/>
+                            <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="6sT-JP-rkX" secondAttribute="trailing" constant="16" id="3Zc-7d-fDm"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="trailing" secondItem="DI3-f1-tUV" secondAttribute="trailing" constant="24" id="4lJ-FQ-Ux0"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="bottom" secondItem="PWO-1x-q8i" secondAttribute="bottom" constant="20" id="7qg-0B-d2X"/>
+                            <constraint firstItem="105-fT-j9X" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="16" id="90e-h2-PdU"/>
+                            <constraint firstItem="DI3-f1-tUV" firstAttribute="top" secondItem="eqO-1r-eTU" secondAttribute="top" constant="64" id="ASn-Md-ZwL"/>
                             <constraint firstAttribute="bottom" secondItem="88R-O5-360" secondAttribute="bottom" id="AwD-aW-SHU"/>
+                            <constraint firstItem="6sT-JP-rkX" firstAttribute="top" secondItem="i8L-kP-mjs" secondAttribute="top" id="ESy-AI-64S"/>
                             <constraint firstItem="eqO-1r-eTU" firstAttribute="trailing" secondItem="i8L-kP-mjs" secondAttribute="trailing" constant="16" id="F8w-QM-rZt"/>
+                            <constraint firstItem="6sT-JP-rkX" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="FB5-0A-nWg"/>
                             <constraint firstItem="eqO-1r-eTU" firstAttribute="bottom" secondItem="i8L-kP-mjs" secondAttribute="bottom" constant="20" id="Ii3-7s-BcH"/>
                             <constraint firstItem="CBZ-3O-Ovm" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="16" id="KJY-DC-FmK"/>
+                            <constraint firstItem="6sT-JP-rkX" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="P11-zm-ibj"/>
                             <constraint firstAttribute="trailing" secondItem="88R-O5-360" secondAttribute="trailing" id="WEJ-9S-7Tp"/>
-                            <constraint firstItem="eqO-1r-eTU" firstAttribute="bottom" secondItem="a1Y-Y5-Lkw" secondAttribute="bottom" constant="20" id="Wa8-gm-cJ3"/>
-                            <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="bottom" secondItem="CBZ-3O-Ovm" secondAttribute="bottom" id="XjM-0o-Hjt"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="YPm-xb-xDv"/>
-                            <constraint firstItem="i8L-kP-mjs" firstAttribute="leading" secondItem="a1Y-Y5-Lkw" secondAttribute="trailing" constant="16" id="aih-hX-1LS"/>
+                            <constraint firstItem="105-fT-j9X" firstAttribute="top" secondItem="6sT-JP-rkX" secondAttribute="top" id="gku-N7-Szr"/>
+                            <constraint firstItem="eqO-1r-eTU" firstAttribute="trailing" secondItem="a1Y-Y5-Lkw" secondAttribute="trailing" constant="24" id="huV-7F-MiF"/>
+                            <constraint firstItem="PWO-1x-q8i" firstAttribute="bottom" secondItem="105-fT-j9X" secondAttribute="bottom" id="jLd-OF-5ge"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="top" secondItem="hXb-D4-ulJ" secondAttribute="top" id="jiX-9q-0t8"/>
                             <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="top" secondItem="DI3-f1-tUV" secondAttribute="bottom" constant="4" id="kLo-Y9-RkT"/>
+                            <constraint firstItem="PWO-1x-q8i" firstAttribute="leading" secondItem="eqO-1r-eTU" secondAttribute="leading" constant="24" id="m7Z-6o-JLb"/>
                             <constraint firstItem="88R-O5-360" firstAttribute="leading" secondItem="hXb-D4-ulJ" secondAttribute="leading" id="rmv-lb-kKH"/>
                             <constraint firstItem="DI3-f1-tUV" firstAttribute="top" secondItem="CBZ-3O-Ovm" secondAttribute="top" id="v7L-LY-vON"/>
+                            <constraint firstItem="a1Y-Y5-Lkw" firstAttribute="bottom" secondItem="CBZ-3O-Ovm" secondAttribute="bottom" id="yQR-a6-tvp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eqO-1r-eTU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tabman" id="UcL-mG-QB9"/>
                     <connections>
                         <outlet property="gradientView" destination="88R-O5-360" id="eIM-cX-kVm"/>
+                        <outlet property="lowerSeparatorView" destination="105-fT-j9X" id="Ea3-Is-Mdh"/>
+                        <outlet property="numberOfPagesLabel" destination="6sT-JP-rkX" id="nwA-PE-1Q0"/>
+                        <outlet property="numberOfPagesStepper" destination="PWO-1x-q8i" id="M4t-Ql-0cY"/>
                         <outlet property="offsetLabel" destination="DI3-f1-tUV" id="WHv-MA-78K"/>
                         <outlet property="pageLabel" destination="a1Y-Y5-Lkw" id="toc-jK-lrM"/>
-                        <outlet property="separatorView" destination="CBZ-3O-Ovm" id="F1f-2H-xbv"/>
                         <outlet property="settingsButton" destination="i8L-kP-mjs" id="2a6-B3-OkS"/>
+                        <outlet property="upperSeparatorView" destination="CBZ-3O-Ovm" id="qjG-jr-u3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ob-Rs-oP4" sceneMemberID="firstResponder"/>
