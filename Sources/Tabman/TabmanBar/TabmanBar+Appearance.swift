@@ -53,9 +53,11 @@ public extension TabmanBar {
             ///
             /// - leftAligned: Items will be laid out from the left of the bar.
             /// - centered: Items will be laid out from the center of the bar.
+            /// - fill: Only applicable to scrolling button bar. Items will be padded with extra inter-item spacing if laying them out normally doesn't fill the entire width of the bar.
             public enum ItemDistribution {
                 case leftAligned
                 case centered
+                case fill
             }
             
             /// The spacing between items in the bar.

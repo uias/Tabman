@@ -13,18 +13,18 @@ import Pageboy
 ///
 /// Akin to Android ViewPager etc.
 internal class TabmanScrollingButtonBar: TabmanButtonBar {
-    
+
     // MARK: Properties
-    
+
     internal var scrollView: ContentViewScrollView = {
         let scrollView = ContentViewScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
     internal var fadeGradientLayer: CAGradientLayer?
-    
+
     private var itemMinimumWidthConstraints: [NSLayoutConstraint]?
-    
+
     /// Whether scroll is enabled on the bar.
     public var isScrollEnabled: Bool {
         set(isScrollEnabled) {
@@ -41,13 +41,13 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             return self.scrollView.isScrollEnabled
         }
     }
-    
+
     override var color: UIColor {
         didSet {
             guard color != oldValue else {
                 return
             }
-            
+
             self.updateButtons(withContext: .unselected, update: { button in
                 button.setTitleColor(color, for: .normal)
                 button.setTitleColor(color.withAlphaComponent(0.3), for: .highlighted)
@@ -60,51 +60,51 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             guard selectedColor != oldValue else {
                 return
             }
-            
+
             self.focussedButton?.setTitleColor(selectedColor, for: .normal)
             self.focussedButton?.tintColor = selectedColor
         }
     }
-    
+
     // MARK: Lifecycle
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         self.fadeGradientLayer?.frame = self.bounds
-        
+
         self.transitionStore?.indicatorTransition(forBar: self)?.updateForCurrentPosition()
     }
-    
+
     public override func defaultIndicatorStyle() -> TabmanIndicator.Style {
         return .line
     }
-    
+
     override func indicatorTransitionType() -> TabmanIndicatorTransition.Type? {
         return TabmanScrollingBarIndicatorTransition.self
     }
-    
+
     // MARK: TabmanBar Lifecycle
-    
+
     public override func construct(in contentView: UIView, for items: [TabmanBar.Item]) {
         super.construct(in: contentView, for: items)
-        
+
         // add scroll view
         self.contentView.addSubview(scrollView)
         scrollView.pinToSuperviewEdges()
         scrollView.matchParent(self, on: .height)
         scrollView.contentView.removeAllSubviews()
         scrollView.isScrollEnabled = self.appearance.interaction.isScrollEnabled ?? false
-        
+
         var itemMinimumWidthConstraints = [NSLayoutConstraint]()
         self.addBarButtons(toView: self.scrollView.contentView, items: items)
         { (button, _) in
             self.buttons.append(button)
-            
+
             button.setTitleColor(self.color, for: .normal)
             button.setTitleColor(self.color.withAlphaComponent(0.3), for: .highlighted)
             button.addTarget(self, action: #selector(tabButtonPressed(_:)), for: .touchUpInside)
-            
+
             let defaultAppearance = TabmanBar.Appearance.defaultAppearance
             // add a minimum width constraint to button
             let minimumItemWidth = self.appearance.layout.minimumItemWidth ?? defaultAppearance.layout.minimumItemWidth!
@@ -118,52 +118,56 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             itemMinimumWidthConstraints.append(minWidthConstraint)
             button.addConstraint(minWidthConstraint)
         }
-        
+
         self.itemMinimumWidthConstraints = itemMinimumWidthConstraints
         self.scrollView.layoutIfNeeded()
     }
-    
+
     public override func add(indicator: TabmanIndicator, to contentView: UIView) {
-        
+
         self.scrollView.contentView.addSubview(indicator)
         indicator.pinToSuperviewEdge(.bottom)
         self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.left)
         self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
-    
+
     override public func update(forAppearance appearance: Appearance,
                                 defaultAppearance: Appearance) {
         super.update(forAppearance: appearance,
                      defaultAppearance: defaultAppearance)
-        
+
         let isScrollEnabled = appearance.interaction.isScrollEnabled
         self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
-        
+
         let minimumItemWidth = appearance.layout.minimumItemWidth ?? defaultAppearance.layout.minimumItemWidth!
         self.itemMinimumWidthConstraints?.forEach({ $0.constant = minimumItemWidth })
         layoutIfNeeded()
-        
+
         self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
-        
+
         // dont allow for centered item distribution if indicator is progressive
         let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
         var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
         if itemDistribution == .centered && isProgressive {
             itemDistribution = .leftAligned
             print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
+        } else if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
+            let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
+            let extraInterItemSpacing = extraSpace / CGFloat(itemCount - 1)
+            interItemSpacing = defaultAppearance.layout.interItemSpacing! + extraInterItemSpacing
         }
         update(for: itemDistribution)
     }
 }
 
 internal extension TabmanScrollingButtonBar {
-    
+
     /// Updates the visibility of the alpha fade at the edge of scroll view bounds.
     ///
     /// - Parameter visible: Whether to show the fade.
     func updateEdgeFade(visible: Bool) {
         if visible {
-            
+
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = self.bounds
             gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
@@ -172,34 +176,34 @@ internal extension TabmanScrollingButtonBar {
             gradientLayer.locations = [0.02, 0.05, 0.95, 0.98]
             self.contentView.layer.mask = gradientLayer
             self.fadeGradientLayer = gradientLayer
-            
+
         } else {
             self.contentView.layer.mask = nil
             self.fadeGradientLayer = nil
         }
     }
-    
+
     /// Updates scroll view contentInset for an itemDistribution style.
     ///
     /// - Parameter itemDistribution: The itemDistribution style.
     func update(for itemDistribution: TabmanBar.Appearance.Layout.ItemDistribution) {
-        
+
         var contentInset = scrollView.contentInset
         switch itemDistribution {
-            
-        case .leftAligned:
+
+        case .leftAligned, .fill:
             contentInset.left = 0.0
             contentInset.right = 0.0
-            
+
         case .centered:
             let indicatorWidth = indicator?.bounds.size.width ?? 0.0
             let boundsWidth = bounds.size.width - (2 * edgeInset)
             let inset = (boundsWidth - indicatorWidth) / 2.0
             contentInset.left = inset
             contentInset.right = inset
-            
+
         }
-        
+
         scrollView.contentInset = contentInset
         self.updateForCurrentPosition()
     }

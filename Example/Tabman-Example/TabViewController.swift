@@ -80,10 +80,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         var count = 0
         switch bar.style {
-        case .blockTabBar, .buttonBar:
-            count = 3
+// FIXME
+//        case .blockTabBar, .buttonBar:
+//            count = 3
         default:
-            count = 5
+            count = 5 //3 //5
         }
         
         initializeViewControllers(count: count)
