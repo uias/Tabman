@@ -13,4 +13,32 @@ import AutoInsetter
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
+    // MARK: PageboyViewControllerDelegate
+    
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    willScrollToPageAt index: PageIndex,
+                                    direction: NavigationDirection,
+                                    animated: Bool) {
+        
+    }
+    
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didScrollTo position: CGPoint,
+                                    direction: NavigationDirection,
+                                    animated: Bool) {
+        
+    }
+    
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didScrollToPageAt index: PageIndex,
+                                    direction: NavigationDirection,
+                                    animated: Bool) {
+        
+    }
+    
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didReloadWith currentViewController: UIViewController,
+                                    currentPageIndex: PageIndex) {
+        
+    }
 }
