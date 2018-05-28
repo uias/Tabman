@@ -8,32 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
-		46DFB8DB2007CA5000D79F44 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */; };
 		A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */; };
-		D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D601367C1E6990650013CD42 /* CustomTabmanBar.swift */; };
-		D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */; };
-		D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50BB1E64452D00AC8C75 /* CircularButton.swift */; };
-		D61E50C81E644A2200AC8C75 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */; };
-		D61E50CA1E644A7500AC8C75 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */; };
-		D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */; };
-		D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */; };
-		D61E50D11E6481C300AC8C75 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D01E6481C300AC8C75 /* SettingsItem.swift */; };
-		D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */; };
-		D61E50D51E6485D000AC8C75 /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D41E6485D000AC8C75 /* SettingsCells.swift */; };
-		D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */; };
-		D629EBBF1E6598B400CDF88F /* SettingsOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */; };
-		D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */; };
-		D629EBC31E65D52C00CDF88F /* SettingsPopTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
 		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
 		D62AC0E31E5733A80020B8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */; };
 		D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1041E5736A10020B8AE /* ChildViewController.swift */; };
-		D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1051E5736A10020B8AE /* GradientView.swift */; };
 		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
-		D62AC10C1E5736A10020B8AE /* TabViewController+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */; };
-		D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */; };
-		D65D07621F6C18D600255575 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65D07611F6C18D600255575 /* Gradients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,25 +43,10 @@
 
 /* Begin PBXFileReference section */
 		2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
 		AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D601367C1E6990650013CD42 /* CustomTabmanBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabmanBar.swift; sourceTree = "<group>"; };
-		D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetAppearanceConfigs.swift; sourceTree = "<group>"; };
-		D61E50BB1E64452D00AC8C75 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
-		D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
-		D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentTransitionController.swift; sourceTree = "<group>"; };
-		D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDismissTransitionController.swift; sourceTree = "<group>"; };
-		D61E50D01E6481C300AC8C75 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
-		D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
-		D61E50D41E6485D000AC8C75 /* SettingsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
-		D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntries.swift; sourceTree = "<group>"; };
-		D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionsViewController.swift; sourceTree = "<group>"; };
-		D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPushTransitionController.swift; sourceTree = "<group>"; };
-		D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPopTransitionController.swift; sourceTree = "<group>"; };
 		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,11 +54,7 @@
 		D62AC0E21E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D62AC0E41E5733A80020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC1041E5736A10020B8AE /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		D62AC1051E5736A10020B8AE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabViewController+Extras.swift"; sourceTree = "<group>"; };
-		D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
-		D65D07611F6C18D600255575 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,48 +78,6 @@
 				94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		46DFB8D42007CA3F00D79F44 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				46DFB8DA2007CA5000D79F44 /* UIColor+Interpolation.swift */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
-		D61E50CF1E647F0000AC8C75 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				D61E50D61E657FBE00AC8C75 /* SettingsEntries.swift */,
-				D61E50C71E644A2200AC8C75 /* SettingsViewController.swift */,
-				D629EBBE1E6598B400CDF88F /* SettingsOptionsViewController.swift */,
-				D61E50C91E644A7500AC8C75 /* SettingsNavigationController.swift */,
-				D61E50D41E6485D000AC8C75 /* SettingsCells.swift */,
-				D629EBB21E65989D00CDF88F /* Transitions */,
-				D629EBBD1E6598A400CDF88F /* Model */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		D629EBB21E65989D00CDF88F /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				D61E50CB1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift */,
-				D61E50CD1E64757000AC8C75 /* SettingsDismissTransitionController.swift */,
-				D629EBC01E65D2D900CDF88F /* SettingsPushTransitionController.swift */,
-				D629EBC21E65D52C00CDF88F /* SettingsPopTransitionController.swift */,
-			);
-			name = Transitions;
-			sourceTree = "<group>";
-		};
-		D629EBBD1E6598A400CDF88F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D61E50D21E6482EE00AC8C75 /* SettingsSection.swift */,
-				D61E50D01E6481C300AC8C75 /* SettingsItem.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		D62AC0CC1E5733A80020B8AE = {
@@ -184,25 +104,10 @@
 				D62AC0D81E5733A80020B8AE /* AppDelegate.swift */,
 				D62AC1061E5736A10020B8AE /* TabViewController.swift */,
 				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
-				D601367C1E6990650013CD42 /* CustomTabmanBar.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
-				D62AC10E1E5736B20020B8AE /* Extras */,
 				D62AC10F1E5736BE0020B8AE /* Resources */,
 			);
 			path = "Tabman-Example";
-			sourceTree = "<group>";
-		};
-		D62AC10E1E5736B20020B8AE /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				D65D07611F6C18D600255575 /* Gradients.swift */,
-				D62AC1071E5736A10020B8AE /* TabViewController+Extras.swift */,
-				D616D06D1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift */,
-				D61E50CF1E647F0000AC8C75 /* Settings */,
-				D6BF9D191ED6132000F24456 /* Views */,
-				46DFB8D42007CA3F00D79F44 /* Utilities */,
-			);
-			name = Extras;
 			sourceTree = "<group>";
 		};
 		D62AC10F1E5736BE0020B8AE /* Resources */ = {
@@ -213,16 +118,6 @@
 				D62AC0E41E5733A80020B8AE /* Info.plist */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		D6BF9D191ED6132000F24456 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC1051E5736A10020B8AE /* GradientView.swift */,
-				D62AC1081E5736A10020B8AE /* TransparentNavigationBar.swift */,
-				D61E50BB1E64452D00AC8C75 /* CircularButton.swift */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		D6C759651E83CE6300471973 /* Frameworks */ = {
@@ -258,7 +153,6 @@
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
 				929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */,
-				D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,21 +262,6 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EE7713597E46317E0CA21A5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,27 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */,
-				D629EBC31E65D52C00CDF88F /* SettingsPopTransitionController.swift in Sources */,
-				D61E50D71E657FBE00AC8C75 /* SettingsEntries.swift in Sources */,
-				D61E50D31E6482EE00AC8C75 /* SettingsSection.swift in Sources */,
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
-				D65D07621F6C18D600255575 /* Gradients.swift in Sources */,
-				D629EBC11E65D2D900CDF88F /* SettingsPushTransitionController.swift in Sources */,
-				D616D06E1E72E2C600C7AA32 /* PresetAppearanceConfigs.swift in Sources */,
-				D601367D1E6990650013CD42 /* CustomTabmanBar.swift in Sources */,
-				D62AC10D1E5736A10020B8AE /* TransparentNavigationBar.swift in Sources */,
-				D62AC10C1E5736A10020B8AE /* TabViewController+Extras.swift in Sources */,
-				D62AC10A1E5736A10020B8AE /* GradientView.swift in Sources */,
-				D61E50D11E6481C300AC8C75 /* SettingsItem.swift in Sources */,
-				D61E50CC1E646FAD00AC8C75 /* SettingsPresentTransitionController.swift in Sources */,
-				D61E50CA1E644A7500AC8C75 /* SettingsNavigationController.swift in Sources */,
-				D629EBBF1E6598B400CDF88F /* SettingsOptionsViewController.swift in Sources */,
 				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
-				D61E50BC1E64452D00AC8C75 /* CircularButton.swift in Sources */,
-				D61E50CE1E64757000AC8C75 /* SettingsDismissTransitionController.swift in Sources */,
-				D61E50D51E6485D000AC8C75 /* SettingsCells.swift in Sources */,
-				46DFB8DB2007CA5000D79F44 /* UIColor+Interpolation.swift in Sources */,
-				D61E50C81E644A2200AC8C75 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

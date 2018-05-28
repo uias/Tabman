@@ -8,6 +8,12 @@ DEPENDENCIES:
   - Pageboy (~> 2.5.0)
   - PureLayout (~> 3.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AutoInsetter
+    - Pageboy
+    - PureLayout
+
 SPEC CHECKSUMS:
   AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
   Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
@@ -15,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 39a20a8ced6404605add472a1b5b452ae5f4b553
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
