@@ -1,24 +1,33 @@
 PODS:
   - AutoInsetter (1.2.3)
-  - Pageboy (2.5.1)
+  - Pageboy (3.0.0)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - AutoInsetter (~> 1.2.0)
-  - Pageboy (~> 2.5.0)
+  - Pageboy (from `https://github.com/uias/Pageboy`, branch `pageboy3`)
   - PureLayout (~> 3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AutoInsetter
-    - Pageboy
     - PureLayout
+
+EXTERNAL SOURCES:
+  Pageboy:
+    :branch: pageboy3
+    :git: https://github.com/uias/Pageboy
+
+CHECKOUT OPTIONS:
+  Pageboy:
+    :commit: 07c29e0f356438891b0eb2ed3449e7b704624029
+    :git: https://github.com/uias/Pageboy
 
 SPEC CHECKSUMS:
   AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
-  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
+  Pageboy: e2eebcadf628ba26f201e520b9583b164dacabe8
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 39a20a8ced6404605add472a1b5b452ae5f4b553
+PODFILE CHECKSUM: 6d60ffea6e18c3afafe315646838cea262436fca
 
 COCOAPODS: 1.5.0

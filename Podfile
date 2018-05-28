@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 def lib_pods
 
-  pod 'Pageboy', '~> 2.5.0'
+  pod 'Pageboy', :git => 'https://github.com/uias/Pageboy', :branch => 'pageboy3'
   pod 'AutoInsetter', '~> 1.2.0'
 
 end
