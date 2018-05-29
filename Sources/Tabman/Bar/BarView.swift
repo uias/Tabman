@@ -1,5 +1,5 @@
 //
-//  TabmanBar.swift
+//  BarView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/05/2018.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-open class TabmanBar: UIView {
+open class BarView: UIView {
     
 }
