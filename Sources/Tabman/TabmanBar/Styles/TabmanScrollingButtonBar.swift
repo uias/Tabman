@@ -155,12 +155,23 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
 
         // in fill item distribution add additional padding around items if content doesn't use the full width of the bar
-        var customFillInset: CGFloat?
+//        var customFillInset: CGFloat?
         if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
             let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
-            let extraInterItemSpacing = extraSpace / CGFloat(itemCount + 1)
-            interItemSpacing = (appearance.layout.interItemSpacing ?? defaultAppearance.layout.interItemSpacing!) + extraInterItemSpacing
-            customFillInset = extraInterItemSpacing
+            let widthPadding = extraSpace / CGFloat(itemCount)
+            for (index, button) in buttons.enumerated() {
+                if let minWidthConstraint = itemMinimumWidthConstraints?[index] {
+                    minWidthConstraint.constant = button.bounds.width + widthPadding
+                }
+            }
+//            itemMinimumWidthConstraints?[0].constant = buttons[0].bounds.width + extraSpace
+//            print("original.b1.width: \(buttons[0].bounds.width)")
+            layoutIfNeeded()
+//            print("extra: \(extraSpace), b1.width: \(buttons[0].bounds.width), b2.width: \(buttons[1].bounds.width), indicatorWidth: \(indicator?.bounds.width ?? 0)")
+//            let
+//            let extraInterItemSpacing = extraSpace / CGFloat(itemCount + 1)
+//            interItemSpacing = (appearance.layout.interItemSpacing ?? defaultAppearance.layout.interItemSpacing!) + extraInterItemSpacing
+//            customFillInset = extraInterItemSpacing
         }
         update(for: itemDistribution, customFillInset: customFillInset)
     }
