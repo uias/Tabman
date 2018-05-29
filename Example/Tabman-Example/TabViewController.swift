@@ -118,7 +118,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         for index in 0 ..< count {
             let viewController = storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
             viewController.index = index + 1
-            barItems.append(Item(title: "Page No. \(index + 1)\(index == 1 ? " long title" : "")")) // FIXME
+            barItems.append(Item(title: "Page No. \(index + 1)"))
             
             viewControllers.append(viewController)
         }
