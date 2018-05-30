@@ -11,12 +11,46 @@ import Pageboy
 import AutoInsetter
 
 /// Page view controller with a bar indicator component.
-open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
+open class TabmanViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
+    
+    // MARK: Init
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        initialize()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
+        dataSource = self
+        delegate = self
+    }
+    
+    // MARK: Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         
         let bar = BarView<ButtonBarLayout>()
+    }
+    
+    // MARK: PageboyViewControllerDataSource
+    
+    public func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return 0
+    }
+    
+    public func viewController(for pageboyViewController: PageboyViewController,
+                               at index: PageIndex) -> UIViewController? {
+        return nil
+    }
+    
+    public func defaultPage(for pageboyViewController: PageboyViewController) -> Page? {
+        return nil
     }
     
     // MARK: PageboyViewControllerDelegate

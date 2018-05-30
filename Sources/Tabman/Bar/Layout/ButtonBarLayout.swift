@@ -10,4 +10,9 @@ import UIKit
 
 public final class ButtonBarLayout: BarLayout {
     
+    // MARK: Layout
+    
+    public override func layout(in container: UIView) {
+        super.layout(in: container)
+    }
 }

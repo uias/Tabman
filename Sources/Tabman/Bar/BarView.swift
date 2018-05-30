@@ -31,5 +31,6 @@ open class BarView<LayoutType: BarLayout>: UIView {
         
         let layoutContainer = layout.container
         view.addSubview(layoutContainer)
+        layoutContainer.pinToSuperviewEdges()
     }
 }

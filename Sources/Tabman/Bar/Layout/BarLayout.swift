@@ -16,5 +16,13 @@ open class BarLayout {
     
     public required init() {
         container.backgroundColor = .red
+        
+        layout(in: container)
+    }
+    
+    // MARK: Layout
+    
+    open func layout(in container: UIView) {
+        
     }
 }
