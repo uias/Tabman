@@ -13,6 +13,12 @@ import AutoInsetter
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let bar = BarView<ButtonBarLayout>()
+    }
+    
     // MARK: PageboyViewControllerDelegate
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,

@@ -8,6 +8,28 @@
 
 import UIKit
 
-open class BarView: UIView {
+open class BarView<LayoutType: BarLayout>: UIView {
     
+    // MARK: Properties
+    
+    let layout = LayoutType()
+    
+    // MARK: Init
+    
+    public required init() {
+        super.init(frame: .zero)
+        construct(in: self)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("BarView does not support Interface Builder")
+    }
+    
+    // MARK: Construction
+    
+    private func construct(in view: UIView) {
+        
+        let layoutContainer = layout.container
+        view.addSubview(layoutContainer)
+    }
 }
