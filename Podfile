@@ -4,6 +4,7 @@ def lib_pods
 
   pod 'Pageboy', '~> 2.5.0'
   pod 'AutoInsetter', '~> 1.2.0'
+  pod 'BadgeSwift', '~> 5.0'
 
 end
 

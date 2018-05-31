@@ -1,2 +1,3 @@
 github "uias/Pageboy" ~> 2.5.0
 github "uias/AutoInsetter" ~> 1.2.0
+github "evgenyneu/swift-badge" ~> 5.0
