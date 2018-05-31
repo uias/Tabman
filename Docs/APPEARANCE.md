@@ -9,6 +9,7 @@ There are extensive options available in Tabman to customise the component to yo
 - **[State](#state)**
 - **[Style](#style)**
 - **[Text](#text)**
+- **[Badge](#badge)**
 
 ## Indicator
 Customise how the indicator looks and behaves.
@@ -102,3 +103,19 @@ bar.appearance.text
 |----------|------|-------------|---------|
 | `font` | `UIFont` | The font to use for text labels in the bar. | `.systemFont(ofSize: 16.0)` |
 | `selectedFont` | `UIFont` | The font to use for text labels in the bar when selected. | `.systemFont(ofSize: 16.0)` |
+
+## Badge
+Customise 
+
+```swift
+bar.appearance.badge
+```
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `font` | `UIFont` | The font to use for the badge text. | `.systemFont(ofSize: 10.0)` |
+| `textColor` | `UIColor` | The text color for the badge text. | `.white` |
+| `badgeColor` | `UIColor` | The color of the badge that text is rendered on top of. | `.red` |
+| `position` | `TabmanBar.Appearance.Badge.BadgePosition` | The position of the badge in relation to the title text. | `.trailing` |
+| `spacing` | `CGFloat` | The amount of space between the badge and the title text. | `5.0` |
+| `insets` | `CGSize` | The insets that describe the margin between the badge text and the edge of the badge. | `CGSize(width: 5.0, height: 2.0)` |
