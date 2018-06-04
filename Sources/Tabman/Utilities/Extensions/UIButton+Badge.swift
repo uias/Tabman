@@ -65,6 +65,9 @@ public extension UIButton {
 
 public extension BadgeSwift {
 
+    /// Applies attributes in the given appearance to the receiver. Will use default appearance for missing attributes.
+    ///
+    /// - Parameter appearance: The appearance to apply.
     public func applyAppearance(_ appearance: TabmanBar.Appearance) {
         let badge = appearance.badge
         let defaultBadge = TabmanBar.Appearance.defaultAppearance.badge
