@@ -86,8 +86,8 @@
 		94934CD120BEF8650068DA86 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */; };
 		94934CD220BEF8E20068DA86 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */; };
 		94934CD420BF7E5E0068DA86 /* BadgeSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94934CD320BF7E5E0068DA86 /* BadgeSwift.framework */; };
-		94934CD620BF862D0068DA86 /* BadgeSwift+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD520BF862D0068DA86 /* BadgeSwift+Appearance.swift */; };
-		94934CD720BF86420068DA86 /* BadgeSwift+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD520BF862D0068DA86 /* BadgeSwift+Appearance.swift */; };
+		94934CDF20C581F50068DA86 /* UIButton+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CDE20C581F50068DA86 /* UIButton+Badge.swift */; };
+		94934CE020C581F50068DA86 /* UIButton+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CDE20C581F50068DA86 /* UIButton+Badge.swift */; };
 		94A1B69520BEEA0100BB20BF /* NSAttributedString+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */; };
 		A76C0B46B8A5BA7E1ED51391 /* Pods_Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */; };
 		D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136781E69893A0013CD42 /* TabmanIndicator.swift */; };
@@ -178,7 +178,7 @@
 		605FE451A05F8B6776F53CF3 /* Pods-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
 		94934CD320BF7E5E0068DA86 /* BadgeSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BadgeSwift.framework; path = ../Carthage/Build/iOS/BadgeSwift.framework; sourceTree = "<group>"; };
-		94934CD520BF862D0068DA86 /* BadgeSwift+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSwift+Appearance.swift"; sourceTree = "<group>"; };
+		94934CDE20C581F50068DA86 /* UIButton+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Badge.swift"; sourceTree = "<group>"; };
 		94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Images.swift"; sourceTree = "<group>"; };
 		9DA10AAE13C79D51060810AD /* Pods-Tabman_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		B39AB1424F1AFAD098C05738 /* Pods-Tabman_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 				464AD768200F955900A74FC5 /* UIViewController+AutoInsetting.swift */,
 				94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */,
 				94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */,
-				94934CD520BF862D0068DA86 /* BadgeSwift+Appearance.swift */,
+				94934CDE20C581F50068DA86 /* UIButton+Badge.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -907,10 +907,10 @@
 				463DE9772006B77E00709671 /* TabmanBar+Styles.swift in Sources */,
 				463DE9782006B77E00709671 /* TabmanBar+Indicator.swift in Sources */,
 				463DE9792006B77E00709671 /* TabmanChevronIndicator.swift in Sources */,
-				94934CD620BF862D0068DA86 /* BadgeSwift+Appearance.swift in Sources */,
 				463DE97A2006B77E00709671 /* TabmanFixedButtonBar.swift in Sources */,
 				463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */,
 				463DE97C2006B77E00709671 /* TabmanBlockTabBar.swift in Sources */,
+				94934CE020C581F50068DA86 /* UIButton+Badge.swift in Sources */,
 				463DE97D2006B77E00709671 /* BarBehaviorEngine.swift in Sources */,
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
 				463DE97F2006B77E00709671 /* TabmanBar+Location.swift in Sources */,
@@ -972,10 +972,10 @@
 				4659D9D81FC4B56E006E483F /* TabmanBar+Styles.swift in Sources */,
 				D66FEEBC1E79662C00E7E87A /* TabmanBar+Indicator.swift in Sources */,
 				D66FEEF61E7BFF8E00E7E87A /* TabmanChevronIndicator.swift in Sources */,
-				94934CD720BF86420068DA86 /* BadgeSwift+Appearance.swift in Sources */,
 				D670521D1E856664003348BD /* TabmanFixedButtonBar.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				D616D0601E719D3B00C7AA32 /* TabmanBlockTabBar.swift in Sources */,
+				94934CDF20C581F50068DA86 /* UIButton+Badge.swift in Sources */,
 				4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,
 				4659D9D61FC4B548006E483F /* TabmanBar+Location.swift in Sources */,

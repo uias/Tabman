@@ -48,9 +48,11 @@ internal class TabmanButtonBar: TabmanBar {
                 self.focussedButton?.setTitleColor(self.selectedColor, for: .normal)
                 self.focussedButton?.tintColor = self.selectedColor
                 self.focussedButton?.titleLabel?.font = self.selectedTextFont
+                self.focussedButton?.isSelected = true
                 oldValue?.setTitleColor(self.color, for: .normal)
                 oldValue?.tintColor = self.color
                 oldValue?.titleLabel?.font = self.textFont
+                oldValue?.isSelected = false
             }
             
             // If animating between buttons then dont use a transition - only for scroll events

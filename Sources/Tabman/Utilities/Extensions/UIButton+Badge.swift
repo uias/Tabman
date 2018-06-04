@@ -1,37 +1,22 @@
 //
-//  BadgeSwift+Appearance.swift
+//  UIButton+Badge.swift
 //  Tabman
 //
-//  Created by Ryan Zulkoski on 30/05/2018.
+//  Created by Ryan Zulkoski on 04/06/2018.
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
 import BadgeSwift
 
-extension BadgeSwift {
+public extension UIButton {
 
-    func applyAppearance(_ appearance: TabmanBar.Appearance) {
-        let badge = appearance.badge
-        let defaultBadge = TabmanBar.Appearance.defaultAppearance.badge
-
-        font = badge.font ?? defaultBadge.font!
-        textColor = badge.textColor ?? defaultBadge.textColor!
-        badgeColor = badge.badgeColor ?? defaultBadge.badgeColor!
-        insets = badge.insets ?? defaultBadge.insets!
-        borderWidth = badge.borderWidth ?? defaultBadge.borderWidth!
-        borderColor = badge.borderColor ?? defaultBadge.borderColor!
-
-        switch badge.cornerRadius ?? defaultBadge.cornerRadius! {
-        case .fullyRounded: cornerRadius = -1.0
-        case .square: cornerRadius = 0.0
-        case .custom(let value): cornerRadius = value
-        }
-    }
-}
-
-extension UIButton {
-
-    func setAttributedTitle(_ title: String, badgeText: String, appearance: TabmanBar.Appearance) {
+    /// Sets the attributed title for the normal and selected states using the given appearance.
+    ///
+    /// - Parameters:
+    ///   - title: The title to be displayed.
+    ///   - badgeText: The badge text to be displayed next to the title.
+    ///   - appearance: The appearance to use when styling the title and badge text.
+    public func setAttributedTitle(_ title: String, badgeText: String, appearance: TabmanBar.Appearance) {
 
         // Create badge
         let badge = BadgeSwift(frame: .zero)
@@ -72,7 +57,29 @@ extension UIButton {
         self.setAttributedTitle(attributedTitle, for: .normal)
         self.setAttributedTitle(attributedSelectedTitle, for: .selected)
 
+
         // Disable resizing the title text to fit when a badge is present
         titleLabel?.adjustsFontSizeToFitWidth = false
+    }
+}
+
+public extension BadgeSwift {
+
+    public func applyAppearance(_ appearance: TabmanBar.Appearance) {
+        let badge = appearance.badge
+        let defaultBadge = TabmanBar.Appearance.defaultAppearance.badge
+
+        font = badge.font ?? defaultBadge.font!
+        textColor = badge.textColor ?? defaultBadge.textColor!
+        badgeColor = badge.badgeColor ?? defaultBadge.badgeColor!
+        insets = badge.insets ?? defaultBadge.insets!
+        borderWidth = badge.borderWidth ?? defaultBadge.borderWidth!
+        borderColor = badge.borderColor ?? defaultBadge.borderColor!
+
+        switch badge.cornerRadius ?? defaultBadge.cornerRadius! {
+        case .fullyRounded: cornerRadius = -1.0
+        case .square: cornerRadius = 0.0
+        case .custom(let value): cornerRadius = value
+        }
     }
 }
