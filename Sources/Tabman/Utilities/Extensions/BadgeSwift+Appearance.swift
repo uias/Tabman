@@ -18,6 +18,14 @@ extension BadgeSwift {
         textColor = badge.textColor ?? defaultBadge.textColor!
         badgeColor = badge.badgeColor ?? defaultBadge.badgeColor!
         insets = badge.insets ?? defaultBadge.insets!
+        borderWidth = badge.borderWidth ?? defaultBadge.borderWidth!
+        borderColor = badge.borderColor ?? defaultBadge.borderColor!
+
+        switch badge.cornerRadius ?? defaultBadge.cornerRadius! {
+        case .rounded: cornerRadius = -1.0
+        case .square: cornerRadius = 0.0
+        case .custom(let value): cornerRadius = value
+        }
     }
 }
 

@@ -105,7 +105,7 @@ bar.appearance.text
 | `selectedFont` | `UIFont` | The font to use for text labels in the bar when selected. | `.systemFont(ofSize: 16.0)` |
 
 ## Badge
-Customise 
+Customise the appearance of the badge within an item.
 
 ```swift
 bar.appearance.badge
@@ -119,3 +119,6 @@ bar.appearance.badge
 | `position` | `TabmanBar.Appearance.Badge.BadgePosition` | The position of the badge in relation to the title text. | `.trailing` |
 | `spacing` | `CGFloat` | The amount of space between the badge and the title text. | `5.0` |
 | `insets` | `CGSize` | The insets that describe the margin between the badge text and the edge of the badge. | `CGSize(width: 5.0, height: 2.0)` |
+| `borderWidth` | `CGFloat` | The width of the border around the badge. | `0.0` |
+| `borderColor` | `UIColor` | The color of the border around the badge. | `.white` |
+| `cornerRadius` | `TabmanBar.Appearance.Badge.CornerRadius` | The corner radius of the badge. | `.fullyRounded` |
