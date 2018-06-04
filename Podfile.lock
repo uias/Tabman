@@ -1,21 +1,21 @@
 PODS:
   - AutoInsetter (1.2.3)
   - BadgeSwift (5.0.1)
-  - Pageboy (2.5.0)
+  - Pageboy (2.5.1)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - AutoInsetter (~> 1.2.0)
-  - BadgeSwift (~> 5.0)
+  - BadgeSwift (~> 5.0.0)
   - Pageboy (~> 2.5.0)
   - PureLayout (~> 3.0)
 
 SPEC CHECKSUMS:
   AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
   BadgeSwift: 3defa56f504bfb46f2300122c4a565ec9e405c1e
-  Pageboy: 00985df8245ab2d4b4ef6959a0722d64b09aafee
+  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 4362154afc4f1f4e5dff0738e72e299ba12e3041
+PODFILE CHECKSUM: b3dbb0ecfc530c34d5bb92e479c5c751da51977b
 
 COCOAPODS: 1.4.0
