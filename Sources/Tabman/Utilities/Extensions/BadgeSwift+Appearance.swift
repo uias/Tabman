@@ -22,7 +22,7 @@ extension BadgeSwift {
         borderColor = badge.borderColor ?? defaultBadge.borderColor!
 
         switch badge.cornerRadius ?? defaultBadge.cornerRadius! {
-        case .rounded: cornerRadius = -1.0
+        case .fullyRounded: cornerRadius = -1.0
         case .square: cornerRadius = 0.0
         case .custom(let value): cornerRadius = value
         }
