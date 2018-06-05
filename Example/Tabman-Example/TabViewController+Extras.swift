@@ -44,6 +44,7 @@ extension TabViewController {
     func updateStatusLabels() {
         self.offsetLabel.text = "Current Position: " + String(format: "%.3f", self.currentPosition?.x ?? 0.0)
         self.pageLabel.text = "Current Page: " + String(describing: self.currentIndex ?? 0)
+        self.numberOfPagesLabel.text = "Number of Pages: " + String(describing: self.numberOfViewControllers)
     }
     
     func updateAppearance(pagePosition: CGFloat) {
@@ -74,9 +75,12 @@ extension TabViewController {
         }
         self.gradientView.colors = newColors
         
+        upperSeparatorView.backgroundColor = .white
         offsetLabel.textColor = .white
         pageLabel.textColor = .white
-        separatorView.backgroundColor = .white
+        lowerSeparatorView.backgroundColor = .white
+        numberOfPagesLabel.textColor = .white
+        numberOfPagesStepper.tintColor = .white
         settingsButton.tintColor = .white
     }
     
