@@ -21,6 +21,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'Pageboy', '~> 2.5.0'
   s.dependency 'AutoInsetter', '~> 1.2.0'
-  s.dependency 'BadgeSwift', '~> 5.0.0'
 
 end

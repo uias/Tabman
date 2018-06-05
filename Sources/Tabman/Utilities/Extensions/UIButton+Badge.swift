@@ -6,8 +6,6 @@
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
-import BadgeSwift
-
 public extension UIButton {
 
     /// Sets the attributed title for the normal and selected states using the given appearance.
