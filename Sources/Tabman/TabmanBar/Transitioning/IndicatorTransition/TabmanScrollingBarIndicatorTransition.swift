@@ -17,7 +17,7 @@ internal class TabmanScrollingBarIndicatorTransition: TabmanIndicatorTransition 
                              direction: PageboyViewController.NavigationDirection,
                              indexRange: Range<Int>,
                              bounds: CGRect) {
-        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar else {
+        guard let scrollingButtonBar = self.tabmanBar as? TabmanScrollingButtonBar, !scrollingButtonBar.buttons.isEmpty else {
             return
         }
         

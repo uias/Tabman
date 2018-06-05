@@ -109,6 +109,48 @@ public extension TabmanBar {
             /// The selected font to use for text labels in the bar.
             public var selectedFont: UIFont?
         }
+
+        public struct Badge {
+
+            /// The position of the badge in relation to the title text
+            ///
+            /// - leading: The badge is displayed before the title text.
+            /// - trailing: The badge is displayed after the title text.
+            public enum BadgePosition {
+                case leading
+                case trailing
+            }
+
+            /// The corner radius of the badge
+            ///
+            /// - fullyRounded: The radius will be equal to half of the badge height, causing it to be pill shaped.
+            /// - square: The radius will be zero, giving the badge sharp corners.
+            /// - custom: The radius will be equal to the provided value.
+            public enum CornerRadius {
+                case fullyRounded
+                case square
+                case custom(radius: CGFloat)
+            }
+
+            /// The font to use for the badge text
+            public var font: UIFont?
+            /// The text color for the badge text
+            public var textColor: UIColor?
+            /// The color of the badge that the text is rendered on top of
+            public var badgeColor: UIColor?
+            /// The position of the badge in relation to the title text
+            public var position: BadgePosition?
+            /// The amount of space between the badge and the title text
+            public var spacing: CGFloat?
+            /// The insets that describe the margin between the badge text and the edge of the badge
+            public var insets: CGSize?
+            /// The width of the border around the badge
+            public var borderWidth: CGFloat?
+            /// The color of the border around the badge
+            public var borderColor: UIColor?
+            /// The corner radius of the badge
+            public var cornerRadius: CornerRadius?
+        }
         
         // MARK: Properties
         
@@ -126,6 +168,8 @@ public extension TabmanBar {
         public var style = Style()
         /// Bar interaction configuration
         public var interaction = Interaction()
+        /// Badge display configuration
+        public var badge = Badge()
         
         // MARK: Init
 
@@ -178,6 +222,17 @@ public extension TabmanBar {
           
             // interaction
             interaction.isScrollEnabled = true
+
+            // badge
+            badge.font = UIFont.systemFont(ofSize: 10.0)
+            badge.textColor = .white
+            badge.badgeColor = .red
+            badge.position = .trailing
+            badge.spacing = 5.0
+            badge.insets = CGSize(width: 5.0, height: 2.0)
+            badge.borderWidth = 0.0
+            badge.borderColor = .white
+            badge.cornerRadius = .fullyRounded
         }
     }
 }

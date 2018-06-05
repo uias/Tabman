@@ -48,9 +48,11 @@ internal class TabmanButtonBar: TabmanBar {
                 self.focussedButton?.setTitleColor(self.selectedColor, for: .normal)
                 self.focussedButton?.tintColor = self.selectedColor
                 self.focussedButton?.titleLabel?.font = self.selectedTextFont
+                self.focussedButton?.isSelected = true
                 oldValue?.setTitleColor(self.color, for: .normal)
                 oldValue?.tintColor = self.color
                 oldValue?.titleLabel?.font = self.textFont
+                oldValue?.isSelected = false
             }
             
             // If animating between buttons then dont use a transition - only for scroll events
@@ -199,6 +201,15 @@ internal class TabmanButtonBar: TabmanBar {
                 self.indicatorLeftMargin?.constant = 0.0
             }
         }
+
+        // update title attributed text for items with badge text
+        for (index, button) in buttons.enumerated() {
+            guard let item = items?[index], let title = item.title, let badgeText = item.badgeText else {
+                continue
+            }
+
+            button.setAttributedTitle(title, badgeText: badgeText, appearance: appearance)
+        }
     }
     
     //
@@ -224,6 +235,8 @@ internal class TabmanButtonBar: TabmanBar {
                 button.setTitle(title, for: .normal)
                 // Nudge it over a little bit
                 button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
+            } else if let badgeText = item.badgeText, let title = item.title {
+                button.setAttributedTitle(title, badgeText: badgeText, appearance: appearance)
             } else if let title = item.title {
                 button.setTitle(title, for: .normal)
             } else if let image = item.image {
@@ -235,7 +248,8 @@ internal class TabmanButtonBar: TabmanBar {
             }
             
             // appearance
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            // Disable resizing the title text to fit when a badge is present
+            button.titleLabel?.adjustsFontSizeToFitWidth = item.badgeText == nil
             button.titleLabel?.font = self.textFont
             
             // layout

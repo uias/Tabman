@@ -82,6 +82,14 @@
 		4659D9DA1FC4B617006E483F /* TabmanBarBehaviorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */; };
 		468FCAAF20723D0400654B72 /* SeparatorHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCAAE20723D0400654B72 /* SeparatorHeight.swift */; };
 		468FCAB020723D0700654B72 /* SeparatorHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCAAE20723D0400654B72 /* SeparatorHeight.swift */; };
+		944C09CC20C6D13600A7B514 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C09CB20C6D13600A7B514 /* BadgeSwift.swift */; };
+		944C09CD20C6D13600A7B514 /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C09CB20C6D13600A7B514 /* BadgeSwift.swift */; };
+		94934CCF20BEEE910068DA86 /* NSAttributedString+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */; };
+		94934CD120BEF8650068DA86 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */; };
+		94934CD220BEF8E20068DA86 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */; };
+		94934CDF20C581F50068DA86 /* UIButton+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CDE20C581F50068DA86 /* UIButton+Badge.swift */; };
+		94934CE020C581F50068DA86 /* UIButton+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94934CDE20C581F50068DA86 /* UIButton+Badge.swift */; };
+		94A1B69520BEEA0100BB20BF /* NSAttributedString+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */; };
 		A76C0B46B8A5BA7E1ED51391 /* Pods_Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */; };
 		D60136791E69893A0013CD42 /* TabmanIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136781E69893A0013CD42 /* TabmanIndicator.swift */; };
 		D601368A1E6992BB0013CD42 /* TabmanBar+BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60136891E6992BB0013CD42 /* TabmanBar+BackgroundView.swift */; };
@@ -169,6 +177,11 @@
 		468FCAAE20723D0400654B72 /* SeparatorHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorHeight.swift; sourceTree = "<group>"; };
 		48EAAF81E817FAAF5691F364 /* Pods-TabmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		605FE451A05F8B6776F53CF3 /* Pods-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
+		944C09CB20C6D13600A7B514 /* BadgeSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
+		94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
+		94934CD320BF7E5E0068DA86 /* BadgeSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BadgeSwift.framework; path = ../Carthage/Build/iOS/BadgeSwift.framework; sourceTree = "<group>"; };
+		94934CDE20C581F50068DA86 /* UIButton+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Badge.swift"; sourceTree = "<group>"; };
+		94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Images.swift"; sourceTree = "<group>"; };
 		9DA10AAE13C79D51060810AD /* Pods-Tabman_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		B39AB1424F1AFAD098C05738 /* Pods-Tabman_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +283,9 @@
 				D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */,
 				462A65D52000FB130051C79C /* UIView+AutoLayout.swift */,
 				464AD768200F955900A74FC5 /* UIViewController+AutoInsetting.swift */,
+				94A1B69420BEEA0100BB20BF /* NSAttributedString+Images.swift */,
+				94934CD020BEF8650068DA86 /* UIView+Screenshot.swift */,
+				94934CDE20C581F50068DA86 /* UIButton+Badge.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +489,7 @@
 				46146FA81FD6D584004F7D78 /* Extensions */,
 				D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */,
 				D6020A971E5DC59500C2B7BA /* ColorUtils.swift */,
+				944C09CB20C6D13600A7B514 /* BadgeSwift.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -480,6 +497,7 @@
 		D62AC1531E5AF5500020B8AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94934CD320BF7E5E0068DA86 /* BadgeSwift.framework */,
 				462F85D9201B339800C3D4D4 /* AutoInsetter.framework */,
 				462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */,
 				D65F101C1EAEA2730090980C /* Pageboy.framework */,
@@ -814,6 +832,7 @@
 				463DE94E2006B77E00709671 /* TabmanViewController+Embedding.swift in Sources */,
 				463DE94F2006B77E00709671 /* TabmanBar+Appearance.swift in Sources */,
 				463DE9502006B77E00709671 /* TabmanButtonBar.swift in Sources */,
+				944C09CD20C6D13600A7B514 /* BadgeSwift.swift in Sources */,
 				463DE9512006B77E00709671 /* TabmanBar+Behaviors.swift in Sources */,
 				463DE9522006B77E00709671 /* TabmanItemMaskTransition.swift in Sources */,
 				463DE9542006B77E00709671 /* TabmanScrollingButtonBar.swift in Sources */,
@@ -835,6 +854,7 @@
 				463DE9622006B77E00709671 /* TabmanLineIndicator.swift in Sources */,
 				463DE9632006B77E00709671 /* TabmanPositionalUtil.swift in Sources */,
 				468FCAAF20723D0400654B72 /* SeparatorHeight.swift in Sources */,
+				94A1B69520BEEA0100BB20BF /* NSAttributedString+Images.swift in Sources */,
 				463DE9642006B77E00709671 /* TabmanTransition.swift in Sources */,
 				463DE9652006B77E00709671 /* TabmanScrollingBarIndicatorTransition.swift in Sources */,
 				463DE9662006B77E00709671 /* SeparatorView.swift in Sources */,
@@ -846,6 +866,7 @@
 				463DE96C2006B77E00709671 /* TabmanBar+BackgroundView.swift in Sources */,
 				463DE96E2006B77E00709671 /* TabmanClearIndicator.swift in Sources */,
 				463DE96F2006B77E00709671 /* ContentViewScrollView.swift in Sources */,
+				94934CD120BEF8650068DA86 /* UIView+Screenshot.swift in Sources */,
 				463DE9702006B77E00709671 /* ChevronView.swift in Sources */,
 				463DE9712006B77E00709671 /* TabmanStaticBarIndicatorTransition.swift in Sources */,
 				463DE9722006B77E00709671 /* TabmanItemTransition.swift in Sources */,
@@ -858,6 +879,7 @@
 				463DE97A2006B77E00709671 /* TabmanFixedButtonBar.swift in Sources */,
 				463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */,
 				463DE97C2006B77E00709671 /* TabmanBlockTabBar.swift in Sources */,
+				94934CE020C581F50068DA86 /* UIButton+Badge.swift in Sources */,
 				463DE97D2006B77E00709671 /* BarBehaviorEngine.swift in Sources */,
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
 				463DE97F2006B77E00709671 /* TabmanBar+Location.swift in Sources */,
@@ -876,6 +898,7 @@
 				D696BFAC1E92531900771F22 /* TabmanViewController+Embedding.swift in Sources */,
 				D6CC55931ECCF08700A7FBB4 /* TabmanBar+Appearance.swift in Sources */,
 				D66F583C1EC0F66000418B40 /* TabmanButtonBar.swift in Sources */,
+				944C09CC20C6D13600A7B514 /* BadgeSwift.swift in Sources */,
 				4659D9CA1FC4AB83006E483F /* TabmanBar+Behaviors.swift in Sources */,
 				D616D0B71E77FF7600C7AA32 /* TabmanItemMaskTransition.swift in Sources */,
 				D6020AA71E5DE4A800C2B7BA /* TabmanScrollingButtonBar.swift in Sources */,
@@ -897,6 +920,7 @@
 				D616D06C1E72C1FC00C7AA32 /* TabmanLineIndicator.swift in Sources */,
 				D616D0B91E78065500C7AA32 /* TabmanPositionalUtil.swift in Sources */,
 				468FCAB020723D0700654B72 /* SeparatorHeight.swift in Sources */,
+				94934CCF20BEEE910068DA86 /* NSAttributedString+Images.swift in Sources */,
 				D616D0B31E77FD5000C7AA32 /* TabmanTransition.swift in Sources */,
 				D616D0AD1E77FA9300C7AA32 /* TabmanScrollingBarIndicatorTransition.swift in Sources */,
 				463F17C01E81D6B100E5A993 /* SeparatorView.swift in Sources */,
@@ -908,6 +932,7 @@
 				D601368A1E6992BB0013CD42 /* TabmanBar+BackgroundView.swift in Sources */,
 				D697AB421E7C166800586DCF /* TabmanClearIndicator.swift in Sources */,
 				D62AC1AB1E5C55290020B8AE /* ContentViewScrollView.swift in Sources */,
+				94934CD220BEF8E20068DA86 /* UIView+Screenshot.swift in Sources */,
 				D66FEEF81E7C024E00E7E87A /* ChevronView.swift in Sources */,
 				D616D0AE1E77FA9300C7AA32 /* TabmanStaticBarIndicatorTransition.swift in Sources */,
 				D616D0B11E77FCDA00C7AA32 /* TabmanItemTransition.swift in Sources */,
@@ -920,6 +945,7 @@
 				D670521D1E856664003348BD /* TabmanFixedButtonBar.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				D616D0601E719D3B00C7AA32 /* TabmanBlockTabBar.swift in Sources */,
+				94934CDF20C581F50068DA86 /* UIButton+Badge.swift in Sources */,
 				4659D9CC1FC4AC03006E483F /* BarBehaviorEngine.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,
 				4659D9D61FC4B548006E483F /* TabmanBar+Location.swift in Sources */,
