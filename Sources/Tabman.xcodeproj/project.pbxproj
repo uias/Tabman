@@ -591,7 +591,6 @@
 				D62AC0AF1E5733810020B8AE /* Headers */,
 				D62AC0B01E5733810020B8AE /* Resources */,
 				D6607C9E1E8023DE00FEB9F4 /* Increment Build Number */,
-				3C95063A5A5FC00A1B116A6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -611,7 +610,6 @@
 				D62AC0B81E5733810020B8AE /* Frameworks */,
 				D62AC0B91E5733810020B8AE /* Resources */,
 				92FB30A0EE7C70530B3D68E0 /* [CP] Embed Pods Frameworks */,
-				2CE2C22CE109FD7FC91E5CC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -691,36 +689,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CE2C22CE109FD7FC91E5CC5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C95063A5A5FC00A1B116A6C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		463DE9492006B77E00709671 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

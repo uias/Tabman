@@ -196,7 +196,6 @@
 				D6C6A3391F4049410030FB3D /* Frameworks */,
 				D6C6A33A1F4049410030FB3D /* Resources */,
 				87B2C80674EA67773E03F6A3 /* [CP] Embed Pods Frameworks */,
-				B78F5654CEEB41F51110ACE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,21 +323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B78F5654CEEB41F51110ACE9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-UITests/Pods-Tabman-UITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
