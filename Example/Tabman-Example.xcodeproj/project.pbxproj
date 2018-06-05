@@ -258,7 +258,6 @@
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
 				929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */,
-				D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,21 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE7713597E46317E0CA21A5E /* [CP] Check Pods Manifest.lock */ = {
