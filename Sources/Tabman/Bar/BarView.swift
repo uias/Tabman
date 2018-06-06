@@ -15,6 +15,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     
     public let layout = LayoutType()
     
+    public private(set) var buttons: [BarButtonType]?
+    
     // MARK: Init
     
     public required init() {
@@ -55,6 +57,7 @@ public extension BarView {
             button.populate(for: item)
             return button
         })
+        self.buttons = barButtons
         layout.clear()
         layout.populate(with: barButtons)
         
