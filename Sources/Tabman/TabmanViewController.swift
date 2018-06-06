@@ -36,7 +36,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bar = BarView<ButtonBarLayout>()
+        let bar = BarView<ButtonBarLayout, LabelBarButton>()
         view.addSubview(bar)
         bar.snp.makeConstraints { (make) in
             make.leading.equalToSuperview()

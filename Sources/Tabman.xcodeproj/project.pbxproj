@@ -10,6 +10,12 @@
 		3C46A153829A597FA2EAC9AB /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */; };
 		4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCD220C859E5001A37B5 /* ScrollStackView.swift */; };
 		4612BCD420C859E5001A37B5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCD220C859E5001A37B5 /* ScrollStackView.swift */; };
+		4612BCDE20C86004001A37B5 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCDD20C86004001A37B5 /* BarButton.swift */; };
+		4612BCDF20C86004001A37B5 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCDD20C86004001A37B5 /* BarButton.swift */; };
+		4612BCE120C86011001A37B5 /* LabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE020C86011001A37B5 /* LabelBarButton.swift */; };
+		4612BCE220C86011001A37B5 /* LabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE020C86011001A37B5 /* LabelBarButton.swift */; };
+		4612BCE420C860EC001A37B5 /* LayoutPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */; };
+		4612BCE520C860EC001A37B5 /* LayoutPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
@@ -65,6 +71,9 @@
 		01E3ED7E8507FC2B1052D975 /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabmanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4612BCD220C859E5001A37B5 /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
+		4612BCDD20C86004001A37B5 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
+		4612BCE020C86011001A37B5 /* LabelBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBarButton.swift; sourceTree = "<group>"; };
+		4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPerformer.swift; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -141,6 +150,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4612BCDC20C86004001A37B5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4612BCDD20C86004001A37B5 /* BarButton.swift */,
+				4612BCE020C86011001A37B5 /* LabelBarButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		46146FA81FD6D584004F7D78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +177,7 @@
 			children = (
 				46B7FDFA20BC537000E9BB7E /* BarView.swift */,
 				46B7FE1420BEA1CE00E9BB7E /* Layout */,
+				4612BCDC20C86004001A37B5 /* Buttons */,
 			);
 			path = Bar;
 			sourceTree = "<group>";
@@ -245,6 +264,7 @@
 			children = (
 				46146FA81FD6D584004F7D78 /* Extensions */,
 				D6020A971E5DC59500C2B7BA /* ColorUtils.swift */,
+				4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -546,7 +566,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4612BCE520C860EC001A37B5 /* LayoutPerformer.swift in Sources */,
 				4612BCD420C859E5001A37B5 /* ScrollStackView.swift in Sources */,
+				4612BCE220C86011001A37B5 /* LabelBarButton.swift in Sources */,
+				4612BCDF20C86004001A37B5 /* BarButton.swift in Sources */,
 				463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */,
 				463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */,
 				463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */,
@@ -566,7 +589,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4612BCE420C860EC001A37B5 /* LayoutPerformer.swift in Sources */,
 				4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */,
+				4612BCE120C86011001A37B5 /* LabelBarButton.swift in Sources */,
+				4612BCDE20C86004001A37B5 /* BarButton.swift in Sources */,
 				D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */,
 				D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */,
 				D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */,

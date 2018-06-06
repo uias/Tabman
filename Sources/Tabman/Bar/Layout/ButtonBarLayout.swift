@@ -17,8 +17,8 @@ public final class ButtonBarLayout: BarLayout {
     
     // MARK: Layout
     
-    public override func layout(in container: UIView) {
-        super.layout(in: container)
+    public override func performLayout(in view: UIView) {
+        super.performLayout(in: view)
         
         container.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in

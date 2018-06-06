@@ -8,21 +8,26 @@
 
 import UIKit
 
-open class BarLayout {
+open class BarLayout: LayoutPerformer {
     
     let container = BarLayoutContainer()
+    
     
     // MARK: Init
     
     public required init() {
         container.backgroundColor = .red
         
-        layout(in: container)
+        performLayout(in: container)
     }
     
-    // MARK: Layout
+    // MARK: LayoutPerformer
     
-    open func layout(in container: UIView) {
-        
+    public private(set) var hasPerformedLayout = false
+
+    open func performLayout(in view: UIView) {
+        guard !hasPerformedLayout else {
+            fatalError("performLayout() can only be called once.")
+        }
     }
 }

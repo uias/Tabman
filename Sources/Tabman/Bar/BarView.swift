@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-open class BarView<LayoutType: BarLayout>: UIView {
+open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
@@ -19,7 +19,7 @@ open class BarView<LayoutType: BarLayout>: UIView {
     
     public required init() {
         super.init(frame: .zero)
-        construct(in: self)
+        performLayout(in: self)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -28,7 +28,12 @@ open class BarView<LayoutType: BarLayout>: UIView {
     
     // MARK: Construction
     
-    private func construct(in view: UIView) {
+    public private(set) var hasPerformedLayout = false
+    
+    public func performLayout(in view: UIView) {
+        guard !hasPerformedLayout else {
+            fatalError("performLayout() can only be called once.")
+        }
         
         let layoutContainer = layout.container
         view.addSubview(layoutContainer)
@@ -36,4 +41,9 @@ open class BarView<LayoutType: BarLayout>: UIView {
             make.edges.equalToSuperview()
         }
     }
+}
+
+// MARK: - Configuration
+public extension BarView {
+    
 }
