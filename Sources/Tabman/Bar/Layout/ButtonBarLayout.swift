@@ -1,3 +1,4 @@
+
 //
 //  ButtonBarLayout.swift
 //  Tabman
@@ -35,5 +36,15 @@ public final class ButtonBarLayout: BarLayout {
             }
             stackView.addArrangedSubview(view)
         }
+    }
+    
+    // MARK: Lifecycle
+    
+    override func populate(with barButtons: [BarButton]) {
+        barButtons.forEach({ stackView.addArrangedSubview($0) })
+    }
+    
+    override func clear() {
+        stackView.arrangedSubviews.forEach({ stackView.removeArrangedSubview($0) })
     }
 }

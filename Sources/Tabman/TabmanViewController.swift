@@ -67,8 +67,6 @@ public extension TabmanViewController {
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                            at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
-        bar.metricsProvider = self
-        
         view.addSubview(bar)
         bar.snp.makeConstraints { (make) in
             make.leading.equalToSuperview()
@@ -77,12 +75,5 @@ public extension TabmanViewController {
         }
         
         return bar
-    }
-}
-
-extension TabmanViewController: BarViewMetricsProvider {
-    
-    var numberOfItems: Int {
-        return self.pageCount ?? 0
     }
 }

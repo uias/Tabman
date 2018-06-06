@@ -12,8 +12,8 @@ open class BarButton: UIControl, LayoutPerformer {
     
     // MARK: Init
     
-    convenience init() {
-        self.init(frame: .zero)
+    public required init() {
+        super.init(frame: .zero)
     }
     
     public override init(frame: CGRect) {
@@ -34,5 +34,10 @@ open class BarButton: UIControl, LayoutPerformer {
         guard !hasPerformedLayout else {
             fatalError("performLayout() can only be called once.")
         }
+    }
+    
+    // MARK: Item
+    
+    func populate(for item: BarItem) {
     }
 }

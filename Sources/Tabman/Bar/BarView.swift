@@ -9,24 +9,19 @@
 import UIKit
 import SnapKit
 
-internal protocol BarViewMetricsProvider: class {
-    
-    var numberOfItems: Int { get }
-}
-
 open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
     public let layout = LayoutType()
-
-    weak var metricsProvider: BarViewMetricsProvider?
     
     // MARK: Init
     
     public required init() {
         super.init(frame: .zero)
         performLayout(in: self)
+        
+        self.backgroundColor = .red
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -52,7 +47,21 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
 
 public extension BarView {
     
-    public func populate(with items: [BarItem], configure: (BarButtonType, BarItem) -> Void) {
+    public func populate(with items: [BarItem], configure: ((BarButtonType, BarItem) -> Void)? = nil) {
         
+        let barButtons: [BarButtonType] = items.map({ item in
+            let button = BarButtonType()
+            button.populate(for: item)
+            return button
+        })
+        layout.clear()
+        layout.populate(with: barButtons)
+        
+        if let configure = configure {
+            for (index, button) in barButtons.enumerated() {
+                let item = items[index]
+                configure(button, item)
+            }
+        }
     }
 }

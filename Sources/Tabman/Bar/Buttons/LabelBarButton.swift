@@ -26,6 +26,12 @@ public final class LabelBarButton: BarButton {
             make.edges.equalToSuperview()
         }
     }
+    
+    override func populate(for item: BarItem) {
+        super.populate(for: item)
+        
+        label.text = item.title
+    }
 }
 
 // MARK: - Label manipulation

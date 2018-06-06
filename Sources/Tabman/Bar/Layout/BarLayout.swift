@@ -29,4 +29,14 @@ open class BarLayout: LayoutPerformer {
             fatalError("performLayout() can only be called once.")
         }
     }
+    
+    // MARK: Lifecycle
+    
+    func populate(with barButtons: [BarButton]) {
+        fatalError("Implement in subclass")
+    }
+    
+    func clear() {
+        fatalError("Implement in subclass")
+    }
 }
