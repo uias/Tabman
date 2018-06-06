@@ -9,6 +9,7 @@
 import UIKit
 import Pageboy
 import AutoInsetter
+import SnapKit
 
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
@@ -37,6 +38,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
         
         let bar = BarView<ButtonBarLayout>()
         view.addSubview(bar)
+        bar.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.height.equalTo(50.0)
+        }
     }
     
     // MARK: PageboyViewControllerDataSource
