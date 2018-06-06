@@ -47,7 +47,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
 
 public extension BarView {
     
-    public func populate(with items: [BarItem], configure: ((BarButtonType, BarItem) -> Void)? = nil) {
+    public func populate(with items: [BarItem],
+                         configure: ((BarButtonType, BarItem) -> Void)? = nil) {
         
         let barButtons: [BarButtonType] = items.map({ item in
             let button = BarButtonType()
