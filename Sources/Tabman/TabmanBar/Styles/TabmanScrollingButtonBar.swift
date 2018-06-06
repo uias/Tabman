@@ -154,6 +154,18 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
             print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
         }
 
+        // prevent visual glitch when scrolling between items when normal font and selected font differ
+        if self.textFont != self.selectedTextFont, let items = items {
+            for (index, item) in items.enumerated() {
+                guard let title = item.title, let minWidthConstraint = itemMinimumWidthConstraints?[index] else { continue }
+                let constrainedHeight = self.contentView.bounds.height
+                let normalWidth = title.width(withConstrainedHeight: constrainedHeight, font: self.textFont)
+                let selectedWidth = title.width(withConstrainedHeight: constrainedHeight, font: self.selectedTextFont)
+                minWidthConstraint.constant = max(normalWidth, selectedWidth, minimumItemWidth)
+            }
+            layoutIfNeeded()
+        }
+
         // in fill item distribution add additional padding to items if content doesn't use the full width of the bar
         if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
             let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
