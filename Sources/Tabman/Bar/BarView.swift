@@ -46,4 +46,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
 // MARK: - Configuration
 public extension BarView {
     
+    func populate(with items: [BarItem], configure: (BarButtonType, BarItem) -> Void) {
+        
+    }
 }

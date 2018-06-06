@@ -43,6 +43,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
             make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+        
+        let items = [BarItem(title: "Item 1"), BarItem(title: "Item 2")]
+        bar.populate(with: items) { (button, item) in
+            
+        }
     }
     
     // MARK: PageboyViewControllerDataSource

@@ -12,7 +12,6 @@ open class BarLayout: LayoutPerformer {
     
     let container = BarLayoutContainer()
     
-    
     // MARK: Init
     
     public required init() {
