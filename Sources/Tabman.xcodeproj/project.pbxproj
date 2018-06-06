@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C46A153829A597FA2EAC9AB /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */; };
+		4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCD220C859E5001A37B5 /* ScrollStackView.swift */; };
+		4612BCD420C859E5001A37B5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCD220C859E5001A37B5 /* ScrollStackView.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
@@ -62,6 +64,7 @@
 /* Begin PBXFileReference section */
 		01E3ED7E8507FC2B1052D975 /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabmanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BCD220C859E5001A37B5 /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -130,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4612BCD120C859D6001A37B5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4612BCD220C859E5001A37B5 /* ScrollStackView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		46146FA81FD6D584004F7D78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +218,7 @@
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
 				46B7FDF920BC52D000E9BB7E /* Bar */,
+				4612BCD120C859D6001A37B5 /* Components */,
 				D62AC1211E5748C80020B8AE /* Utilities */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
@@ -534,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4612BCD420C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */,
 				463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */,
 				463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */,
@@ -553,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */,
 				D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */,
 				D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */,

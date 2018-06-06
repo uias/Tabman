@@ -42,7 +42,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
-            make.height.equalTo(50.0)
         }
     }
     
