@@ -7,24 +7,46 @@
 //
 
 import UIKit
+import SnapKit
 
 open class BarButton: UIControl, LayoutPerformer {
+    
+    // MARK: Properties
+    
+    private let contentView = UIView()
+    private var contentViewPins: Constraint?
+
+    var contentInset: UIEdgeInsets = .zero {
+        didSet {
+            contentViewPins?.update(inset: contentInset)
+        }
+    }
     
     // MARK: Init
     
     public required init() {
         super.init(frame: .zero)
-        performLayout(in: self)
+        initialize()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        performLayout(in: self)
+        initialize()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        performLayout(in: self)
+        initialize()
+    }
+    
+    private func initialize() {
+        
+        addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
+            self.contentViewPins = make.edges.equalToSuperview().constraint
+        }
+        
+        performLayout(in: contentView)
     }
     
     // MARK: LayoutPerformer

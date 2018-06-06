@@ -11,6 +11,12 @@ import SnapKit
 
 public final class LabelBarButton: BarButton {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let contentInset: UIEdgeInsets = UIEdgeInsets(top: 12.0, left: 8.0, bottom: 12.0, right: 8.0)
+    }
+    
     // MARK: Properties
     
     private let label = UILabel()
@@ -20,11 +26,13 @@ public final class LabelBarButton: BarButton {
     public override func performLayout(in view: UIView) {
         super.performLayout(in: view)
         
-        label.text = "LabelBarButton"
         view.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        self.contentInset = Defaults.contentInset
+        label.text = "Label"
     }
     
     override func populate(for item: BarItem) {
