@@ -25,7 +25,7 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = addBar(BarView<ButtonBarLayout, LabelBarButton>(), at: .top)
+        let bar = addBar(BarViewTemplates.ButtonBar(), at: .top)
         let items = [BarItem(title: "Test")]
         bar.populate(with: items) { (button, item) in
             
