@@ -8,7 +8,7 @@ DEPENDENCIES:
   - AutoInsetter (~> 1.2.0)
   - Pageboy (from `https://github.com/uias/Pageboy`, branch `pageboy3`)
   - PureLayout (~> 3.0)
-  - SnapKit
+  - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -32,6 +32,6 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 3ad7a8d5e9c786edd8f30985835b5ca8464558cc
+PODFILE CHECKSUM: d51254933904c0e677ffabbd712d1b126b5be577
 
 COCOAPODS: 1.5.3

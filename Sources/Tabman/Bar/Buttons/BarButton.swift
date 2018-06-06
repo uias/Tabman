@@ -14,6 +14,7 @@ open class BarButton: UIControl, LayoutPerformer {
     
     public required init() {
         super.init(frame: .zero)
+        performLayout(in: self)
     }
     
     public override init(frame: CGRect) {
