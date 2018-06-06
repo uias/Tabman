@@ -109,4 +109,12 @@ extension ScrollStackView {
             return scrollView.delegate
         }
     }
+    
+    var isScrollEnabled: Bool {
+        set {
+            scrollView.isScrollEnabled = newValue
+        } get {
+            return scrollView.isScrollEnabled
+        }
+    }
 }

@@ -1,4 +1,3 @@
-
 //
 //  ButtonBarLayout.swift
 //  Tabman
@@ -11,6 +10,12 @@ import UIKit
 import SnapKit
 
 public final class ButtonBarLayout: BarLayout {
+    
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let interButtonSpacing: CGFloat = 8.0
+    }
     
     // MARK: Properties
     
@@ -26,16 +31,7 @@ public final class ButtonBarLayout: BarLayout {
             make.edges.equalToSuperview()
         }
         
-        stackView.spacing = 16.0
-        for _ in 0 ..< 25 {
-            let view = UIView()
-            view.backgroundColor = .blue
-            view.snp.makeConstraints { (make) in
-                make.width.equalTo(70)
-                make.height.equalTo(50)
-            }
-            stackView.addArrangedSubview(view)
-        }
+        self.interButtonSpacing = Defaults.interButtonSpacing
     }
     
     // MARK: Lifecycle
@@ -46,5 +42,25 @@ public final class ButtonBarLayout: BarLayout {
     
     override func clear() {
         stackView.arrangedSubviews.forEach({ stackView.removeArrangedSubview($0) })
+    }
+}
+
+// MARK: - Customization
+public extension ButtonBarLayout {
+    
+    public var interButtonSpacing: CGFloat {
+        set {
+            stackView.spacing = newValue
+        } get {
+            return stackView.spacing
+        }
+    }
+    
+    public var isScrollEnabled: Bool {
+        set {
+            stackView.isScrollEnabled = newValue
+        } get {
+            return stackView.isScrollEnabled
+        }
     }
 }

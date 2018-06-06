@@ -40,3 +40,15 @@ open class BarLayout: LayoutPerformer {
         fatalError("Implement in subclass")
     }
 }
+
+// MARK: - Customization
+public extension BarLayout {
+    
+    public var isUserInteractionEnabled: Bool {
+        set {
+            container.isUserInteractionEnabled = newValue
+        } get {
+            return container.isUserInteractionEnabled
+        }
+    }
+}

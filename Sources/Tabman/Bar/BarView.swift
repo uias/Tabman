@@ -47,6 +47,10 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     }
 }
 
+extension BarView: PagingStatusDisplay {
+    
+}
+
 public extension BarView {
     
     public func populate(with items: [BarItem],

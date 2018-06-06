@@ -16,6 +16,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
+    private var activeDisplay: PagingStatusDisplay?
+    
     // MARK: Init
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -67,6 +69,8 @@ public extension TabmanViewController {
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                            at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
+        self.activeDisplay = bar
+        
         view.addSubview(bar)
         bar.snp.makeConstraints { (make) in
             make.leading.equalToSuperview()

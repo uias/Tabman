@@ -22,6 +22,8 @@
 		4612BCF020C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
 		4612BCF220C88D24001A37B5 /* BarViewTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */; };
 		4612BCF320C88D24001A37B5 /* BarViewTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */; };
+		4612BCFB20C8A351001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCFA20C8A351001A37B5 /* PagingStatusDisplay.swift */; };
+		4612BCFC20C8A351001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCFA20C8A351001A37B5 /* PagingStatusDisplay.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
@@ -83,6 +85,7 @@
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
 		4612BCEE20C87385001A37B5 /* BarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
 		4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewTemplates.swift; sourceTree = "<group>"; };
+		4612BCFA20C8A351001A37B5 /* PagingStatusDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingStatusDisplay.swift; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4612BCD220C859E5001A37B5 /* ScrollStackView.swift */,
+				4612BCFA20C8A351001A37B5 /* PagingStatusDisplay.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -602,6 +606,7 @@
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
 				4612BCF020C87385001A37B5 /* BarLocation.swift in Sources */,
 				4612BCF320C88D24001A37B5 /* BarViewTemplates.swift in Sources */,
+				4612BCFC20C8A351001A37B5 /* PagingStatusDisplay.swift in Sources */,
 				46B7FE1E20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				463DE9802006B77E00709671 /* TabmanViewController.swift in Sources */,
 				46B7FE1820BEA1EE00E9BB7E /* ButtonBarLayout.swift in Sources */,
@@ -628,6 +633,7 @@
 				46B7FE1A20BEA1F300E9BB7E /* BarLayout.swift in Sources */,
 				4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */,
 				4612BCF220C88D24001A37B5 /* BarViewTemplates.swift in Sources */,
+				4612BCFB20C8A351001A37B5 /* PagingStatusDisplay.swift in Sources */,
 				46B7FE1D20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
