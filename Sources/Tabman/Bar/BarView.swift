@@ -15,13 +15,23 @@ public protocol BarViewDataSource: class {
                                          at index: Int) -> BarItem
 }
 
+internal protocol BarViewMetricsProvider: class {
+    
+    var numberOfItems: Int { get }
+}
+
 open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
     public let layout = LayoutType()
     
-    public weak var dataSource: BarViewDataSource?
+    public weak var dataSource: BarViewDataSource? {
+        didSet {
+            reloadData()
+        }
+    }
+    weak var metricsProvider: BarViewMetricsProvider?
     
     // MARK: Init
     
@@ -51,10 +61,13 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     }
 }
 
-// MARK: - Configuration
-public extension BarView {
+internal extension BarView {
     
-    func populate(with items: [BarItem], configure: (BarButtonType, BarItem) -> Void) {
+    func reloadData() {
+        guard let numberOfPages = metricsProvider?.numberOfItems else {
+            return
+        }
+        
         
     }
 }

@@ -18,6 +18,8 @@
 		4612BCE520C860EC001A37B5 /* LayoutPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */; };
 		4612BCE720C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
 		4612BCE820C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
+		4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
+		4612BCF020C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
@@ -77,6 +79,7 @@
 		4612BCE020C86011001A37B5 /* LabelBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBarButton.swift; sourceTree = "<group>"; };
 		4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPerformer.swift; sourceTree = "<group>"; };
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
+		4612BCEE20C87385001A37B5 /* BarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -162,6 +165,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		4612BCED20C8735C001A37B5 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				4612BCEE20C87385001A37B5 /* BarLocation.swift */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
 		46146FA81FD6D584004F7D78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +193,7 @@
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
 				46B7FE1420BEA1CE00E9BB7E /* Layout */,
 				4612BCDC20C86004001A37B5 /* Buttons */,
+				4612BCED20C8735C001A37B5 /* Meta */,
 			);
 			path = Bar;
 			sourceTree = "<group>";
@@ -584,6 +596,7 @@
 				463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */,
 				463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */,
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
+				4612BCF020C87385001A37B5 /* BarLocation.swift in Sources */,
 				46B7FE1E20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				463DE9802006B77E00709671 /* TabmanViewController.swift in Sources */,
 				46B7FE1820BEA1EE00E9BB7E /* ButtonBarLayout.swift in Sources */,
@@ -608,6 +621,7 @@
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				46B7FE1920BEA1F000E9BB7E /* ButtonBarLayout.swift in Sources */,
 				46B7FE1A20BEA1F300E9BB7E /* BarLayout.swift in Sources */,
+				4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */,
 				46B7FE1D20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,

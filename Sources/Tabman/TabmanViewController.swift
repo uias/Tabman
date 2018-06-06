@@ -16,8 +16,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
-    public let bar = BarView<ButtonBarLayout, LabelBarButton>()
-    
     // MARK: Init
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -32,19 +30,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     private func initialize() {
         delegate = self
-    }
-    
-    // MARK: Lifecycle
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(bar)
-        bar.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
     }
     
     // MARK: PageboyViewControllerDelegate
@@ -74,5 +59,30 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
         
+    }
+}
+
+public extension TabmanViewController {
+    
+    @discardableResult
+    func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+                                           at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
+        bar.metricsProvider = self
+        
+        view.addSubview(bar)
+        bar.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        return bar
+    }
+}
+
+extension TabmanViewController: BarViewMetricsProvider {
+    
+    var numberOfItems: Int {
+        return self.pageCount ?? 0
     }
 }

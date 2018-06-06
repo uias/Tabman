@@ -24,7 +24,9 @@ class TabViewController: TabmanViewController {
         initializeViewControllers(count: 5)
         
         self.dataSource = self
-        self.bar.dataSource = self
+        
+        let bar = addBar(BarView<ButtonBarLayout, LabelBarButton>(), at: .top)
+        bar.dataSource = self
     }
 }
 
