@@ -12,7 +12,11 @@ import AutoInsetter
 import SnapKit
 
 /// Page view controller with a bar indicator component.
-open class TabmanViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
+open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
+    
+    // MARK: Properties
+    
+    public let bar = BarView<ButtonBarLayout, LabelBarButton>()
     
     // MARK: Init
     
@@ -27,7 +31,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
     }
     
     private func initialize() {
-        dataSource = self
         delegate = self
     }
     
@@ -36,33 +39,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bar = BarView<ButtonBarLayout, LabelBarButton>()
         view.addSubview(bar)
         bar.snp.makeConstraints { (make) in
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
-        
-        let items = [BarItem(title: "Item 1"), BarItem(title: "Item 2")]
-        bar.populate(with: items) { (button, item) in
-            
-        }
-    }
-    
-    // MARK: PageboyViewControllerDataSource
-    
-    public func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        return 0
-    }
-    
-    public func viewController(for pageboyViewController: PageboyViewController,
-                               at index: PageIndex) -> UIViewController? {
-        return nil
-    }
-    
-    public func defaultPage(for pageboyViewController: PageboyViewController) -> Page? {
-        return nil
     }
     
     // MARK: PageboyViewControllerDelegate

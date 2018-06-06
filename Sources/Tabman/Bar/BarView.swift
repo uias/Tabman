@@ -9,11 +9,19 @@
 import UIKit
 import SnapKit
 
+public protocol BarViewDataSource: class {
+    
+    func item<LayoutType, BarButtonType>(for bar: BarView<LayoutType, BarButtonType>,
+                                         at index: Int) -> BarItem
+}
+
 open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
-    let layout = LayoutType()
+    public let layout = LayoutType()
+    
+    public weak var dataSource: BarViewDataSource?
     
     // MARK: Init
     
