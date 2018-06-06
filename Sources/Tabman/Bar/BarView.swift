@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 open class BarView<LayoutType: BarLayout>: UIView {
     
@@ -31,6 +32,8 @@ open class BarView<LayoutType: BarLayout>: UIView {
         
         let layoutContainer = layout.container
         view.addSubview(layoutContainer)
-        layoutContainer.pinToSuperviewEdges()
+        layoutContainer.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }

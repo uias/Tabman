@@ -10,16 +10,13 @@
 		3C46A153829A597FA2EAC9AB /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
-		462A65D62000FB130051C79C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65D52000FB130051C79C /* UIView+AutoLayout.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		462F85DB201B33AE00C3D4D4 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
 		463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
 		463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */; };
 		463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */; };
-		463DE95F2006B77E00709671 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65D52000FB130051C79C /* UIView+AutoLayout.swift */; };
 		463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
-		463DE96F2006B77E00709671 /* ContentViewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */; };
 		463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		463DE9802006B77E00709671 /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
@@ -44,7 +41,6 @@
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
 		D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */; };
-		D62AC1AB1E5C55290020B8AE /* ContentViewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */; };
 		D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
 		D68FBA761E700E2400B96EC0 /* TabmanIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */; };
 		D68FBA781E700F1300B96EC0 /* TabmanTestIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA771E700F1300B96EC0 /* TabmanTestIndicator.swift */; };
@@ -68,7 +64,6 @@
 		0652BC0991E54D3132FD799E /* Pods_TabmanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabmanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
-		462A65D52000FB130051C79C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
 		462F85D9201B339800C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
@@ -95,7 +90,6 @@
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
 		D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewScrollView.swift; sourceTree = "<group>"; };
 		D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Interaction.swift"; sourceTree = "<group>"; };
 		D65F101C1EAEA2730090980C /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		D68767011EAEA263003C8D11 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
@@ -145,7 +139,6 @@
 				46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */,
 				46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */,
 				D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */,
-				462A65D52000FB130051C79C /* UIView+AutoLayout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				46146FA81FD6D584004F7D78 /* Extensions */,
-				D62AC1AA1E5C55290020B8AE /* ContentViewScrollView.swift */,
 				D6020A971E5DC59500C2B7BA /* ColorUtils.swift */,
 			);
 			path = Utilities;
@@ -472,11 +464,13 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -543,12 +537,10 @@
 				463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */,
 				463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */,
 				463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */,
-				463DE95F2006B77E00709671 /* UIView+AutoLayout.swift in Sources */,
 				463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */,
 				46B7FE1620BEA1D700E9BB7E /* BarLayout.swift in Sources */,
 				46B7FDFC20BC537000E9BB7E /* BarView.swift in Sources */,
 				463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */,
-				463DE96F2006B77E00709671 /* ContentViewScrollView.swift in Sources */,
 				463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */,
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
 				46B7FE1E20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
@@ -564,11 +556,9 @@
 				D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */,
 				D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */,
 				D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */,
-				462A65D62000FB130051C79C /* UIView+AutoLayout.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* BarView.swift in Sources */,
 				D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */,
-				D62AC1AB1E5C55290020B8AE /* ContentViewScrollView.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				46B7FE1920BEA1F000E9BB7E /* ButtonBarLayout.swift in Sources */,
 				46B7FE1A20BEA1F300E9BB7E /* BarLayout.swift in Sources */,

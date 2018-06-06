@@ -36,6 +36,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDat
         super.viewDidLoad()
         
         let bar = BarView<ButtonBarLayout>()
+        view.addSubview(bar)
     }
     
     // MARK: PageboyViewControllerDataSource
