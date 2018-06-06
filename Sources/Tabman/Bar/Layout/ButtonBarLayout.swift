@@ -36,4 +36,8 @@ public final class ButtonBarLayout: BarLayout {
             stackView.addArrangedSubview(view)
         }
     }
+    
+    public func test() {
+        
+    }
 }

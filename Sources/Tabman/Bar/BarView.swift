@@ -9,12 +9,6 @@
 import UIKit
 import SnapKit
 
-public protocol BarViewDataSource: class {
-    
-    func item<LayoutType, BarButtonType>(for bar: BarView<LayoutType, BarButtonType>,
-                                         at index: Int) -> BarItem
-}
-
 internal protocol BarViewMetricsProvider: class {
     
     var numberOfItems: Int { get }
@@ -25,12 +19,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     // MARK: Properties
     
     public let layout = LayoutType()
-    
-    public weak var dataSource: BarViewDataSource? {
-        didSet {
-            reloadData()
-        }
-    }
+
     weak var metricsProvider: BarViewMetricsProvider?
     
     // MARK: Init
@@ -61,13 +50,9 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     }
 }
 
-internal extension BarView {
+public extension BarView {
     
-    func reloadData() {
-        guard let numberOfPages = metricsProvider?.numberOfItems else {
-            return
-        }
-        
+    public func populate(with items: [BarItem], configure: (BarButtonType, BarItem) -> Void) {
         
     }
 }

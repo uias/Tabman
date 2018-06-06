@@ -25,8 +25,10 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = addBar(BarView<ButtonBarLayout, LabelBarButton>(), at: .top)
-        bar.dataSource = self
+        let bar = BarView<ButtonBarLayout, LabelBarButton>()
+        bar.populate(with: []) { (button, item) in
+            
+        }
     }
 }
 
@@ -43,14 +45,6 @@ extension TabViewController: PageboyViewControllerDataSource {
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> Page? {
         return nil
-    }
-}
-
-extension TabViewController: BarViewDataSource {
-    
-    func item<BarLayout, BarButton>(for bar: BarView<BarLayout, BarButton>,
-                                    at index: Int) -> BarItem {
-        return BarItem(title: "test")
     }
 }
 

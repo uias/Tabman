@@ -31,7 +31,7 @@ public final class LabelBarButton: BarButton {
 // MARK: - Label manipulation
 public extension LabelBarButton {
     
-    var text: String? {
+    public var text: String? {
         set {
             label.text = newValue
         } get {
