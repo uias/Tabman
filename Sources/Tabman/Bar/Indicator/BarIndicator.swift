@@ -11,3 +11,13 @@ import UIKit
 open class BarIndicator: UIView {
     
 }
+
+internal extension BarIndicator {
+    
+    static func `for`(style: BarIndicatorStyle) -> BarIndicator {
+        switch style {
+        case .line:
+            return BarIndicator()
+        }
+    }
+}

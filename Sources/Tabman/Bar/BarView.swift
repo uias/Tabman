@@ -14,9 +14,16 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     // MARK: Properties
     
     private let scrollView = UIScrollView()
-    public private(set) lazy var layout = LayoutType(for: self)
     
+    public private(set) lazy var layout = LayoutType(for: self)
     public private(set) var buttons: [BarButtonType]?
+    
+    public private(set) lazy var indicator = BarIndicator.for(style: indicatorStyle)
+    public var indicatorStyle: BarIndicatorStyle = .default {
+        didSet {
+            updateIndicator(for: indicatorStyle)
+        }
+    }
     
     // MARK: Init
     
@@ -31,7 +38,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         fatalError("BarView does not support Interface Builder")
     }
     
-    // MARK: Construction
+    // MARK: Layout
     
     public private(set) var hasPerformedLayout = false
     
@@ -39,6 +46,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         guard !hasPerformedLayout else {
             fatalError("performLayout() can only be called once.")
         }
+        hasPerformedLayout = true
         
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
@@ -56,6 +64,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     }
 }
 
+// MARK: - Item population
 public extension BarView {
     
     public func populate(with items: [BarItem],
@@ -79,9 +88,18 @@ public extension BarView {
     }
 }
 
+// MARK: - Paging Updates
 extension BarView: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat, capacity: Int) {
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
+    }
+}
+
+// MARK: - Indicator management
+extension BarView {
+    
+    private func updateIndicator(for style: BarIndicatorStyle) {
+        
     }
 }
