@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BarLayout: LayoutPerformer {
+open class BarLayout: LayoutPerformer, BarFocusProvider {
     
     let container = BarLayoutContainer()
     
@@ -37,6 +37,12 @@ open class BarLayout: LayoutPerformer {
     }
     
     func clear() {
+        fatalError("Implement in subclass")
+    }
+    
+    // MARK: BarFocusProvider
+    
+    func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         fatalError("Implement in subclass")
     }
 }

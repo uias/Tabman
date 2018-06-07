@@ -29,7 +29,7 @@ class TabViewController: TabmanViewController {
         let items = [BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"),  BarItem(title: "Test"), BarItem(title: "Test")]
         bar.populate(with: items)
         
-        bar.layout.isScrollEnabled = false
+//        bar.layout.isScrollEnabled = false
     }
 }
 

@@ -46,6 +46,12 @@ public final class ButtonBarLayout: BarLayout {
     override func clear() {
         stackView.arrangedSubviews.forEach({ stackView.removeArrangedSubview($0) })
     }
+    
+    // MARK: BarFocusProvider
+    
+    override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+        return .zero
+    }
 }
 
 // MARK: - Customization

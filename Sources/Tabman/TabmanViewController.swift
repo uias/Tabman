@@ -40,21 +40,31 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     willScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.activeDisplay?.updateDisplay(for: CGFloat(index),
+                                                  capacity: pageboyViewController.pageCount ?? 0)
+            }
+        }
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollTo position: CGPoint,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        
+        if !animated {
+            let position = pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y
+            activeDisplay?.updateDisplay(for: position,
+                                         capacity: pageboyViewController.pageCount ?? 0)
+        }
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        
+        activeDisplay?.updateDisplay(for: CGFloat(index),
+                                     capacity: pageboyViewController.pageCount ?? 0)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
