@@ -10,6 +10,19 @@ import UIKit
 
 open class BarIndicator: UIView {
     
+    // MARK: Init
+    
+    public required init() {
+        super.init(frame: .zero)
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 
 internal extension BarIndicator {
@@ -17,7 +30,9 @@ internal extension BarIndicator {
     static func `for`(style: BarIndicatorStyle) -> BarIndicator {
         switch style {
         case .line:
-            return BarIndicator()
+            return LineBarIndicator()
+        case .custom(let type):
+            return type.init()
         }
     }
 }

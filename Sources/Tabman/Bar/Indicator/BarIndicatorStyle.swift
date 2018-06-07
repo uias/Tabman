@@ -10,6 +10,7 @@ import Foundation
 
 public enum BarIndicatorStyle {
     case line
+    case custom(type: BarIndicator.Type)
 }
 
 internal extension BarIndicatorStyle {
