@@ -50,7 +50,17 @@ public final class ButtonBarLayout: BarLayout {
     // MARK: BarFocusProvider
     
     override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
-        return .zero
+        let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
+        let lowerView = stackView.arrangedSubviews[range.lowerBound]
+        let upperView = stackView.arrangedSubviews[range.upperBound]
+        
+        let progress = BarMath.localProgress(for: position)
+        let interpolation = lowerView.frame.interpolate(with: upperView.frame, progress: progress)
+        
+        return CGRect(x: lowerView.frame.origin.x + interpolation.origin.x,
+                      y: 0.0,
+                      width: lowerView.frame.size.width + interpolation.size.width,
+                      height: container.bounds.size.height)
     }
 }
 

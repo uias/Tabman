@@ -26,13 +26,15 @@
 		4612BD0620C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */; };
 		4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */; };
 		4612BD0C20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */; };
+		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
+		4612BD1220C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
+		4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */; };
+		4612BD1520C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		462F85DB201B33AE00C3D4D4 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
 		463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
-		463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */; };
-		463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */; };
 		463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
 		463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
@@ -52,13 +54,11 @@
 		A76C0B46B8A5BA7E1ED51391 /* Pods_Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */; };
 		D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
 		D616D0841E73058600C7AA32 /* TabmanBarAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */; };
-		D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */; };
 		D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */; };
 		D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */; };
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
-		D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */; };
 		D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
 		D68FBA761E700E2400B96EC0 /* TabmanIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA751E700E2400B96EC0 /* TabmanIndicatorTests.swift */; };
 		D68FBA781E700F1300B96EC0 /* TabmanTestIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FBA771E700F1300B96EC0 /* TabmanTestIndicator.swift */; };
@@ -89,6 +89,8 @@
 		4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewTemplates.swift; sourceTree = "<group>"; };
 		4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingStatusDisplay.swift; sourceTree = "<group>"; };
 		4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFocusProvider.swift; sourceTree = "<group>"; };
+		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
+		4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6020A971E5DC59500C2B7BA /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearanceTests.swift; sourceTree = "<group>"; };
-		D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
 		D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestBar.swift; sourceTree = "<group>"; };
 		D62AC0B21E5733810020B8AE /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +117,6 @@
 		D62AC0BB1E5733810020B8AE /* TabmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
-		D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Interaction.swift"; sourceTree = "<group>"; };
 		D65F101C1EAEA2730090980C /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		D68767011EAEA263003C8D11 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
@@ -183,15 +183,22 @@
 			path = Meta;
 			sourceTree = "<group>";
 		};
+		4612BD0F20C9B7F5001A37B5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4612BD1020C9B851001A37B5 /* BarMath.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		46146FA81FD6D584004F7D78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */,
-				D616D0BC1E783E6400C7AA32 /* UIImage+Resize.swift */,
-				D62AC1A81E5C54570020B8AE /* UIView+Layout.swift */,
 				46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */,
 				46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */,
 				D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */,
+				4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 				46B7FE1420BEA1CE00E9BB7E /* Layout */,
 				4612BCDC20C86004001A37B5 /* Buttons */,
 				4612BCED20C8735C001A37B5 /* Meta */,
+				4612BD0F20C9B7F5001A37B5 /* Utility */,
 			);
 			path = Bar;
 			sourceTree = "<group>";
@@ -602,11 +610,11 @@
 				4612BD0620C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */,
 				4612BCE820C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0C20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
-				463DE9552006B77E00709671 /* UIImage+Resize.swift in Sources */,
-				463DE9562006B77E00709671 /* UIView+Layout.swift in Sources */,
 				463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */,
 				46B7FE1620BEA1D700E9BB7E /* BarLayout.swift in Sources */,
 				46B7FDFC20BC537000E9BB7E /* BarView.swift in Sources */,
+				4612BD1220C9B851001A37B5 /* BarMath.swift in Sources */,
+				4612BD1520C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
 				463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */,
 				463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */,
 				463DE97E2006B77E00709671 /* UIView+DefaultTintColor.swift in Sources */,
@@ -630,11 +638,11 @@
 				4612BD0520C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
-				D616D0BD1E783E6400C7AA32 /* UIImage+Resize.swift in Sources */,
-				D62AC1A91E5C54570020B8AE /* UIView+Layout.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* BarView.swift in Sources */,
 				D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */,
+				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
+				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				46B7FE1920BEA1F000E9BB7E /* ButtonBarLayout.swift in Sources */,
 				46B7FE1A20BEA1F300E9BB7E /* BarLayout.swift in Sources */,
