@@ -40,7 +40,7 @@ public final class ButtonBarLayout: BarLayout {
     
     override func populate(with barButtons: [BarButton]) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
-        updateLayoutConstraintsForFreshLayout()
+        invalidateStateLayoutConstraints()
     }
     
     override func clear() {
@@ -54,6 +54,7 @@ public extension ButtonBarLayout {
     public var interButtonSpacing: CGFloat {
         set {
             stackView.spacing = newValue
+            invalidateStateLayoutConstraints()
         } get {
             return stackView.spacing
         }
@@ -73,12 +74,10 @@ public extension ButtonBarLayout {
 private extension ButtonBarLayout {
     
     /// Apply any layout constraint changes that are required for the
-    /// current customization state to a fresh layout (From `populate()`).
-    private func updateLayoutConstraintsForFreshLayout() {
+    /// current customization state.
+    private func invalidateStateLayoutConstraints() {
         
-        if self.isScrollEnabled != true { // Default state is fine with true
-            updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
-        }
+        updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
     }
     
     /// Constrain item views to fit the width of the screen if scroll is disabled.
@@ -93,11 +92,15 @@ private extension ButtonBarLayout {
             self.itemWidthConstraints = nil
             
         } else {
-            guard itemWidthConstraints == nil else {
-                return
+            if let itemWidthConstraints = self.itemWidthConstraints {
+                itemWidthConstraints.forEach({ $0.deactivate() })
             }
+            container.layoutIfNeeded()
+
+            let itemCount = CGFloat(stackView.arrangedSubviews.count)
+            let totalInterItemSpacing = interButtonSpacing * (itemCount - 1.0)
+            let constrainedWidth = (container.frame.size.width - totalInterItemSpacing) / itemCount
             
-            let constrainedWidth = container.frame.size.width / CGFloat(stackView.arrangedSubviews.count)
             if constrainedWidth < Defaults.minimumRecommendedButtonWidth {
                 print("The item width in the ButtonBarLayout is less than \(Defaults.minimumRecommendedButtonWidth) when `isScrollEnabled = false`. It is recommended that you enable scrolling to avoid interaction issues.")
             }

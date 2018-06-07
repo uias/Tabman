@@ -41,6 +41,8 @@ open class BarButton: UIControl, LayoutPerformer {
     
     private func initialize() {
         
+        backgroundColor = .green
+        
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             self.contentViewPins = make.edges.equalToSuperview().constraint

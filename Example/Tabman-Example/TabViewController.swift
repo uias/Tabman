@@ -28,6 +28,8 @@ class TabViewController: TabmanViewController {
         let bar = addBar(BarViewTemplates.ButtonBar(), at: .top)
         let items = [BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"), BarItem(title: "Test"),  BarItem(title: "Test"), BarItem(title: "Test")]
         bar.populate(with: items)
+        
+        bar.layout.isScrollEnabled = false
     }
 }
 
