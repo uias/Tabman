@@ -20,8 +20,14 @@ public final class ButtonBarLayout: BarLayout {
     
     // MARK: Properties
     
-    private let stackView = ScrollStackView()
+    private let stackView = UIStackView()
     private var itemWidthConstraints: [Constraint]?
+    
+    public var isScrollEnabled: Bool = true {
+        didSet {
+            updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
+        }
+    }
     
     // MARK: Layout
     
@@ -75,15 +81,6 @@ public extension ButtonBarLayout {
             return stackView.spacing
         }
     }
-    
-    public var isScrollEnabled: Bool {
-        set {
-            stackView.isScrollEnabled = newValue
-            updateLayoutConstraintsFor(isScrollEnabled: newValue)
-        } get {
-            return stackView.isScrollEnabled
-        }
-    }
 }
 
 // MARK: - Layout Updating
@@ -115,7 +112,7 @@ private extension ButtonBarLayout {
 
             let itemCount = CGFloat(stackView.arrangedSubviews.count)
             let totalInterItemSpacing = interButtonSpacing * (itemCount - 1.0)
-            let constrainedWidth = (container.frame.size.width - totalInterItemSpacing) / itemCount
+            let constrainedWidth = (referenceBounds.size.width - totalInterItemSpacing) / itemCount
             
             if constrainedWidth < Defaults.minimumRecommendedButtonWidth {
                 print("The item width in the ButtonBarLayout is less than \(Defaults.minimumRecommendedButtonWidth) when `isScrollEnabled = false`. It is recommended that you enable scrolling to avoid interaction issues.")

@@ -13,7 +13,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     
     // MARK: Properties
     
-    public let layout = LayoutType()
+    private let scrollView = UIScrollView()
+    public private(set) lazy var layout = LayoutType(for: self)
     
     public private(set) var buttons: [BarButtonType]?
     
@@ -39,10 +40,16 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
             fatalError("performLayout() can only be called once.")
         }
         
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         let layoutContainer = layout.container
-        view.addSubview(layoutContainer)
+        scrollView.addSubview(layoutContainer)
         layoutContainer.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.height.equalTo(view)
         }
     }
 }

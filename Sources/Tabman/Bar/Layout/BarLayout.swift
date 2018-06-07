@@ -10,11 +10,20 @@ import UIKit
 
 open class BarLayout: LayoutPerformer, BarFocusProvider {
     
+    // MARK: Properties
+    
     let container = BarLayoutContainer()
+    private weak var referenceView: UIView?
+    
+    public var referenceBounds: CGRect {
+        referenceView?.layoutIfNeeded()
+        return referenceView?.bounds ?? .zero
+    }
     
     // MARK: Init
     
-    public required init() {
+    public required init(for referenceView: UIView) {
+        self.referenceView = referenceView
         container.backgroundColor = .red
         
         performLayout(in: container)
