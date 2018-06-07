@@ -40,6 +40,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
             fatalError("performLayout() can only be called once.")
         }
         
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
