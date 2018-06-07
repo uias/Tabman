@@ -17,12 +17,6 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     
     public private(set) var buttons: [BarButtonType]?
     
-    let indicatorFrame: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
-        return view
-    }()
-    
     // MARK: Init
     
     public required init() {
@@ -50,8 +44,6 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         layoutContainer.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        view.addSubview(indicatorFrame)
     }
 }
 
@@ -82,8 +74,5 @@ extension BarView: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat, capacity: Int) {
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
-        print(focusFrame)
-        
-        indicatorFrame.frame = focusFrame
     }
 }

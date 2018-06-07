@@ -12,3 +12,8 @@ internal protocol BarFocusProvider: class {
     
     func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect
 }
+
+internal protocol BarFocusResponder: class {
+    
+    func updateLayout(for focusRect: CGRect)
+}
