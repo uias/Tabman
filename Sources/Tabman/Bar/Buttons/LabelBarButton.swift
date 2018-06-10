@@ -21,6 +21,9 @@ public final class LabelBarButton: BarButton {
     
     private let label = UILabel()
     
+    public var color: UIColor = .black
+    public var selectedColor: UIColor = UIView.defaultTintColor
+    
     // MARK: Lifecycle
     
     public override func performLayout(in view: UIView) {
@@ -31,11 +34,12 @@ public final class LabelBarButton: BarButton {
             make.edges.equalToSuperview()
         }
         
-        self.contentInset = Defaults.contentInset
         label.text = "Label"
+        
+        self.contentInset = Defaults.contentInset
     }
     
-    override func populate(for item: BarItem) {
+    public override func populate(for item: BarItem) {
         super.populate(for: item)
         
         label.text = item.title

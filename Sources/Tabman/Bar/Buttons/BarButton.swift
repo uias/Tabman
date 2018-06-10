@@ -11,14 +11,28 @@ import SnapKit
 
 open class BarButton: UIControl, LayoutPerformer {
     
+    // MARK: Types
+    
+    public enum SelectionState {
+        case unselected
+        case partial(delta: CGFloat)
+        case selected
+    }
+    
     // MARK: Properties
     
     private let contentView = UIView()
     private var contentViewPins: Constraint?
 
-    var contentInset: UIEdgeInsets = .zero {
+    public var contentInset: UIEdgeInsets = .zero {
         didSet {
             contentViewPins?.update(inset: contentInset)
+        }
+    }
+    
+    public var selectionState: SelectionState = .unselected {
+        didSet {
+            update(for: selectionState)
         }
     }
     
@@ -55,14 +69,35 @@ open class BarButton: UIControl, LayoutPerformer {
     
     public private(set) var hasPerformedLayout = false
     
-    public func performLayout(in view: UIView) {
+    open func performLayout(in view: UIView) {
         guard !hasPerformedLayout else {
             fatalError("performLayout() can only be called once.")
         }
     }
     
-    // MARK: Item
+    // MARK: Lifecycle
     
-    func populate(for item: BarItem) {
+    open func populate(for item: BarItem) {
+    }
+    
+    open func update(for selectionState: SelectionState) {
+        let minimumAlpha: CGFloat = 0.5
+        let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
+        
+        self.alpha = alpha
+    }
+}
+
+private extension BarButton.SelectionState {
+    
+    var rawValue: CGFloat {
+        switch self {
+        case .unselected:
+            return 0.0
+        case .partial(let delta):
+            return delta
+        case .selected:
+            return 1.0
+        }
     }
 }

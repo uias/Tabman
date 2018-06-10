@@ -93,6 +93,7 @@ extension BarView: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat, capacity: Int) {
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
+        print(focusFrame)
     }
 }
 
