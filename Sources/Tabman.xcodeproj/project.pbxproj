@@ -36,11 +36,12 @@
 		4612BD1C20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */; };
 		4612BD1E20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */; };
 		4612BD1F20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */; };
+		4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */; };
+		4612BD2220CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		462F85DB201B33AE00C3D4D4 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
-		463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
 		463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		463DE9692006B77E00709671 /* UIScrollView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */; };
 		463DE97B2006B77E00709671 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
@@ -58,7 +59,6 @@
 		46B7FE1D20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FE1C20BEA2BA00E9BB7E /* BarLayoutContainer.swift */; };
 		46B7FE1E20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FE1C20BEA2BA00E9BB7E /* BarLayoutContainer.swift */; };
 		A76C0B46B8A5BA7E1ED51391 /* Pods_Tabman_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */; };
-		D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6020A971E5DC59500C2B7BA /* ColorUtils.swift */; };
 		D616D0841E73058600C7AA32 /* TabmanBarAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */; };
 		D61E50AE1E6435A600AC8C75 /* TabmanBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */; };
 		D61E50B41E6438A800AC8C75 /* TabmanTestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */; };
@@ -100,6 +100,7 @@
 		4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicator.swift; sourceTree = "<group>"; };
 		4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorStyle.swift; sourceTree = "<group>"; };
 		4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBarIndicator.swift; sourceTree = "<group>"; };
+		4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		9DA10AAE13C79D51060810AD /* Pods-Tabman_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		B39AB1424F1AFAD098C05738 /* Pods-Tabman_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman_Dev.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman_Dev/Pods-Tabman_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		B675BA5E76D5C2803A94F747 /* Pods_Tabman_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6020A971E5DC59500C2B7BA /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearanceTests.swift; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
 		D61E50B31E6438A800AC8C75 /* TabmanTestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanTestBar.swift; sourceTree = "<group>"; };
@@ -218,6 +218,7 @@
 				46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */,
 				D637B2F71F13960900343713 /* UIScrollView+Interaction.swift */,
 				4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */,
+				4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				46146FA81FD6D584004F7D78 /* Extensions */,
-				D6020A971E5DC59500C2B7BA /* ColorUtils.swift */,
 				4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */,
 			);
 			path = Utilities;
@@ -626,8 +626,8 @@
 				4612BCD420C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				4612BCE220C86011001A37B5 /* LabelBarButton.swift in Sources */,
 				4612BCDF20C86004001A37B5 /* BarButton.swift in Sources */,
-				463DE94C2006B77E00709671 /* ColorUtils.swift in Sources */,
 				4612BD0620C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */,
+				4612BD2220CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
 				4612BCE820C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0C20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
 				463DE9672006B77E00709671 /* UIApplication+SafeShared.swift in Sources */,
@@ -657,8 +657,8 @@
 				4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				4612BCE120C86011001A37B5 /* LabelBarButton.swift in Sources */,
 				4612BCDE20C86004001A37B5 /* BarButton.swift in Sources */,
-				D6020A981E5DC59500C2B7BA /* ColorUtils.swift in Sources */,
 				4612BD0520C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */,
+				4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,

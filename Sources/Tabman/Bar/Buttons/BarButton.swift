@@ -88,7 +88,7 @@ open class BarButton: UIControl, LayoutPerformer {
     }
 }
 
-private extension BarButton.SelectionState {
+extension BarButton.SelectionState {
     
     var rawValue: CGFloat {
         switch self {
