@@ -18,7 +18,9 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     public private(set) lazy var layout = LayoutType(for: self)
     public private(set) var buttons: [BarButtonType]?
     
+    private let indicatorContainer = UIView()
     public private(set) lazy var indicator = BarIndicator.for(style: indicatorStyle)
+    private var indicatorConstraints: Constraint?
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
             updateIndicator(for: indicatorStyle)
@@ -54,6 +56,9 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        scrollView.addSubview(indicatorContainer)
+        
         
         let layoutContainer = layout.container
         scrollView.addSubview(layoutContainer)
@@ -106,6 +111,28 @@ extension BarView {
     }
     
     private func updateIndicator(to newIndicator: BarIndicator) {
+        clearUp(oldIndicator: self.indicator, constraints: self.indicatorConstraints)
         
+        layout(newIndicator: newIndicator)
+    }
+    
+    // MARK: Clean Up
+    
+    private func clearUp(oldIndicator: BarIndicator, constraints: Constraint?) {
+        oldIndicator.removeFromSuperview()
+        constraints?.deactivate()
+    }
+    
+    // MARK: Layout
+    
+    private func layout(newIndicator: BarIndicator) {
+        
+        switch newIndicator.displayStyle {
+        case .footer:
+            ()
+            
+        default:
+            fatalError()
+        }
     }
 }
