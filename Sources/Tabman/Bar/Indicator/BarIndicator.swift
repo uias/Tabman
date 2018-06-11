@@ -10,6 +10,20 @@ import UIKit
 
 open class BarIndicator: UIView {
     
+    // MARK: Types
+    
+    public enum DisplayStyle {
+        case header
+        case fill
+        case footer
+    }
+    
+    // MARK: Properties
+    
+    open var displayStyle: DisplayStyle {
+        fatalError("Return displayStyle in subclass")
+    }
+    
     // MARK: Init
     
     public required init() {

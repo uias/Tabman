@@ -101,6 +101,11 @@ extension BarView: PagingStatusDisplay {
 extension BarView {
     
     private func updateIndicator(for style: BarIndicatorStyle) {
+        let indicator = BarIndicator.for(style: style)
+        updateIndicator(to: indicator)
+    }
+    
+    private func updateIndicator(to newIndicator: BarIndicator) {
         
     }
 }
