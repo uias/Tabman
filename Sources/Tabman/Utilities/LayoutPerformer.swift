@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal protocol LayoutPerformer {
+public protocol LayoutPerformer {
     
     var hasPerformedLayout: Bool { get }
     
