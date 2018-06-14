@@ -11,6 +11,6 @@ import UIKit
 internal final class LineBarIndicator: BarIndicator {
     
     override var displayStyle: BarIndicator.DisplayStyle {
-        return .fill
+        return .footer
     }
 }
