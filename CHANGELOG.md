@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.9.x` Releases - [1.9.0](#190)
+- `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191)
 - `1.8.x` Releases - [1.8.0](#180) | [1.8.1](#181) | [1.8.2](#182)
 - `1.7.x` Releases - [1.7.0](#170)
 - `1.6.x` Releases - [1.6.0](#160)
@@ -22,6 +22,13 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [1.9.1](https://github.com/uias/Tabman/releases/tag/1.9.1)
+Released on 2018-06-20
+
+#### Fixed
+- [#296](https://github.com/uias/Tabman/pull/296) Visual bug when scrolling between bar buttons with different font styles.
+    - by [rzulkoski](https://github.com/rzulkoski)
+
 ## [1.9.0](https://github.com/uias/Tabman/releases/tag/1.9.0)
 Released on 2018-06-05
 
