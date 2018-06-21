@@ -85,6 +85,8 @@ public extension TabmanViewController {
             make.centerY.equalToSuperview()
         }
         
+        updateActiveDisplay(bar, to: relativeCurrentPosition)
+        
         return bar
     }
 }
@@ -97,10 +99,14 @@ private extension TabmanViewController {
     }
     
     func updateActiveDisplays(to position: CGFloat?) {
+        activeDisplays.forEach({ self.updateActiveDisplay($0, to: position) })
+    }
+    
+    func updateActiveDisplay(_ display: PagingStatusDisplay, to position: CGFloat?) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
         
-        activeDisplays.forEach({ $0.updateDisplay(for: position, capacity: capacity) })
+        display.updateDisplay(for: position, capacity: capacity)
     }
 }
 

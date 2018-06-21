@@ -28,6 +28,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     private var indicatorLayout: BarIndicatorLayout?
     private var indicatorContainer: UIView?
     
+    private var indicatedPosition: CGFloat?
+    
     // MARK: Init
     
     public required init() {
@@ -93,6 +95,11 @@ public extension BarView {
                 configure(button, item)
             }
         }
+        
+        // Update for indicated position
+        if let indicatedPosition = self.indicatedPosition {
+            updateDisplay(for: indicatedPosition, capacity: barButtons.count)
+        }
     }
 }
 
@@ -100,6 +107,9 @@ public extension BarView {
 extension BarView: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat, capacity: Int) {
+        self.indicatedPosition = pagePosition
+        
+        layoutIfNeeded()
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
         indicatorLayout?.update(for: focusFrame)
     }
