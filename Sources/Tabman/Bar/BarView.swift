@@ -112,6 +112,8 @@ extension BarView: PagingStatusDisplay {
         layoutIfNeeded()
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
         indicatorLayout?.update(for: focusFrame)
+        
+        scrollView.scrollRectToVisible(focusFrame, animated: false)
     }
 }
 
