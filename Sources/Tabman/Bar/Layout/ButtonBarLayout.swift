@@ -57,6 +57,10 @@ public final class ButtonBarLayout: BarLayout {
     
     override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
+        guard stackView.arrangedSubviews.count > range.upperBound else {
+            return .zero
+        }
+        
         let lowerView = stackView.arrangedSubviews[range.lowerBound]
         let upperView = stackView.arrangedSubviews[range.upperBound]
         

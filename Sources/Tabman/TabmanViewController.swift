@@ -16,7 +16,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
-    private var activeDisplay: PagingStatusDisplay?
+    private var activeDisplays = [PagingStatusDisplay]()
     
     // MARK: Init
     
@@ -42,8 +42,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.2) {
-                self.activeDisplay?.updateDisplay(for: CGFloat(index),
-                                                  capacity: pageboyViewController.pageCount ?? 0)
+                self.updateActiveDisplays(to: CGFloat(index))
             }
         }
     }
@@ -53,9 +52,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if !animated {
-            let position = pageboyViewController.navigationOrientation == .horizontal ? position.x : position.y
-            activeDisplay?.updateDisplay(for: position,
-                                         capacity: pageboyViewController.pageCount ?? 0)
+            updateActiveDisplays(to: relativeCurrentPosition)
         }
     }
     
@@ -63,8 +60,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        activeDisplay?.updateDisplay(for: CGFloat(index),
-                                     capacity: pageboyViewController.pageCount ?? 0)
+        updateActiveDisplays(to: CGFloat(index))
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -74,12 +70,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }
 }
 
+// MARK: - Bar Layout
 public extension TabmanViewController {
     
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                            at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
-        self.activeDisplay = bar
+        addActiveDisplay(bar)
         
         view.addSubview(bar)
         bar.snp.makeConstraints { (make) in
@@ -89,5 +86,30 @@ public extension TabmanViewController {
         }
         
         return bar
+    }
+}
+
+// MARK: - Active Display management
+private extension TabmanViewController {
+    
+    func addActiveDisplay(_ display: PagingStatusDisplay) {
+        self.activeDisplays.append(display)
+    }
+    
+    func updateActiveDisplays(to position: CGFloat?) {
+        let position = position ?? 0.0
+        let capacity = self.pageCount ?? 0
+        
+        activeDisplays.forEach({ $0.updateDisplay(for: position, capacity: capacity) })
+    }
+}
+
+internal extension TabmanViewController {
+    
+    var relativeCurrentPosition: CGFloat? {
+        guard let position = self.currentPosition else {
+            return nil
+        }
+        return self.navigationOrientation == .horizontal ? position.x : position.y
     }
 }
