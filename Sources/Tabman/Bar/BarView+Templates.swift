@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BarViewTemplates {
+public extension BarView {
  
     public typealias ButtonBar = BarView<ButtonBarLayout, LabelBarButton>
 

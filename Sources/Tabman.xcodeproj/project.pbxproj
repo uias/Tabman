@@ -19,8 +19,8 @@
 		4612BCE820C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
 		4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
 		4612BCF020C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
-		4612BCF220C88D24001A37B5 /* BarViewTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */; };
-		4612BCF320C88D24001A37B5 /* BarViewTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */; };
+		4612BCF220C88D24001A37B5 /* BarView+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarView+Templates.swift */; };
+		4612BCF320C88D24001A37B5 /* BarView+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* BarView+Templates.swift */; };
 		4612BD0520C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */; };
 		4612BD0620C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */; };
 		4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */; };
@@ -94,7 +94,7 @@
 		4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPerformer.swift; sourceTree = "<group>"; };
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
 		4612BCEE20C87385001A37B5 /* BarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
-		4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewTemplates.swift; sourceTree = "<group>"; };
+		4612BCF120C88D24001A37B5 /* BarView+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarView+Templates.swift"; sourceTree = "<group>"; };
 		4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingStatusDisplay.swift; sourceTree = "<group>"; };
 		4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFocusProvider.swift; sourceTree = "<group>"; };
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				46B7FDFA20BC537000E9BB7E /* BarView.swift */,
+				4612BCF120C88D24001A37B5 /* BarView+Templates.swift */,
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
-				4612BCF120C88D24001A37B5 /* BarViewTemplates.swift */,
 				4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */,
 				46B7FE1420BEA1CE00E9BB7E /* Layout */,
 				4612BCDC20C86004001A37B5 /* Buttons */,
@@ -645,7 +645,7 @@
 				4612BD1920C9E7FA001A37B5 /* BarIndicator.swift in Sources */,
 				4612BD1C20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */,
 				4612BD1F20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */,
-				4612BCF320C88D24001A37B5 /* BarViewTemplates.swift in Sources */,
+				4612BCF320C88D24001A37B5 /* BarView+Templates.swift in Sources */,
 				46B7FE1E20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				463DE9802006B77E00709671 /* TabmanViewController.swift in Sources */,
 				46B7FE1820BEA1EE00E9BB7E /* ButtonBarLayout.swift in Sources */,
@@ -677,7 +677,7 @@
 				4612BD1820C9E7FA001A37B5 /* BarIndicator.swift in Sources */,
 				4612BD1B20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */,
 				4612BD1E20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */,
-				4612BCF220C88D24001A37B5 /* BarViewTemplates.swift in Sources */,
+				4612BCF220C88D24001A37B5 /* BarView+Templates.swift in Sources */,
 				46B7FE1D20BEA2BA00E9BB7E /* BarLayoutContainer.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
