@@ -13,18 +13,19 @@ open class BarLayout: LayoutPerformer, BarFocusProvider {
     // MARK: Properties
     
     let container = BarLayoutContainer()
-    private weak var barView: UIView?
     
+    /// Bar View that is presenting the layout.
+    public private(set) weak var presentingView: UIView!
     /// Bounds of the bar view that is presenting the layout.
-    public var barBounds: CGRect {
-        barView?.layoutIfNeeded()
-        return barView?.bounds ?? .zero
+    public var presentingBounds: CGRect {
+        presentingView.layoutIfNeeded()
+        return presentingView.bounds
     }
     
     // MARK: Init
     
     public required init(for referenceView: UIView) {
-        self.barView = referenceView
+        self.presentingView = referenceView
         container.backgroundColor = .red
         
         performLayout(in: container)

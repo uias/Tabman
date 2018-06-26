@@ -116,7 +116,7 @@ private extension ButtonBarLayout {
 
             let itemCount = CGFloat(stackView.arrangedSubviews.count)
             let totalInterItemSpacing = interButtonSpacing * (itemCount - 1.0)
-            let constrainedWidth = (barBounds.size.width - totalInterItemSpacing) / itemCount
+            let constrainedWidth = (presentingBounds.size.width - totalInterItemSpacing) / itemCount
             
             if constrainedWidth < Defaults.minimumRecommendedButtonWidth {
                 print("The item width in the ButtonBarLayout is less than \(Defaults.minimumRecommendedButtonWidth) when `isScrollEnabled = false`. It is recommended that you enable scrolling to avoid interaction issues.")
