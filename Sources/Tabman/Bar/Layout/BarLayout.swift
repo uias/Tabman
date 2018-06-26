@@ -24,21 +24,24 @@ open class BarLayout: LayoutPerformer, BarFocusProvider {
     
     // MARK: Init
     
-    public required init(for referenceView: UIView) {
-        self.presentingView = referenceView
-        container.backgroundColor = .red
-        
-        performLayout(in: container)
+    public required init(for presentingView: UIView) {
+        self.presentingView = presentingView
+        container.backgroundColor = .red        
     }
     
     // MARK: LayoutPerformer
     
     public private(set) var hasPerformedLayout = false
 
+    internal func performLayout() {
+        performLayout(in: container)
+    }
+    
     open func performLayout(in view: UIView) {
         guard !hasPerformedLayout else {
             fatalError("performLayout() can only be called once.")
         }
+        hasPerformedLayout = true
     }
     
     // MARK: Lifecycle

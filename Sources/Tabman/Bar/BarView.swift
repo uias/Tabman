@@ -69,6 +69,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
+        layout.performLayout()
         
         layout(newIndicator: indicator)
     }

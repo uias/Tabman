@@ -25,7 +25,7 @@ public final class TabBarLayout: BarLayout {
         container.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-//            make.width.equalTo(presentingView.snp.width)
+            make.width.equalTo(presentingView.snp.width)
         }
     }
     
