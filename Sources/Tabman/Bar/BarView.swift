@@ -74,6 +74,18 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     }
 }
 
+// MARK: - Customization
+public extension BarView {
+    
+    public var contentInset: UIEdgeInsets {
+        set {
+            scrollView.contentInset = newValue
+        } get {
+            return scrollView.contentInset
+        }
+    }
+}
+
 // MARK: - Item population
 public extension BarView {
     

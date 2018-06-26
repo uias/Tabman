@@ -205,9 +205,9 @@
 		4612BD1620C9E7F4001A37B5 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */,
 				46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */,
 				4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */,
+				4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */,
 				4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */,
 			);
 			path = Indicator;

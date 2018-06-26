@@ -30,6 +30,7 @@ class TabViewController: TabmanViewController {
         bar.populate(with: items)
         
 //        bar.layout.isScrollEnabled = false
+        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
     }
 }
 
