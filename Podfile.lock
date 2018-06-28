@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Pageboy:
-    :commit: 07c29e0f356438891b0eb2ed3449e7b704624029
+    :commit: 904c45164e6e170dc879643add451a3cfd1130e8
     :git: https://github.com/uias/Pageboy
 
 SPEC CHECKSUMS:
