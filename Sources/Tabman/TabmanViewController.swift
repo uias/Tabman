@@ -16,6 +16,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
+    private let topBarContainer = UIStackView()
+    private let bottomBarContainer = UIStackView()
+    
     private var activeDisplays = [PagingStatusDisplay]()
     
     // MARK: Init
@@ -32,6 +35,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     private func initialize() {
         delegate = self
+    }
+    
+    // MARK: Lifecycle
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        layoutContainers(in: view)
     }
     
     // MARK: PageboyViewControllerDelegate
@@ -76,18 +86,55 @@ public extension TabmanViewController {
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                            at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
-        addActiveDisplay(bar)
-        
-        view.addSubview(bar)
-        bar.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.centerY.equalToSuperview()
+        guard bar.superview == nil else {
+            fatalError("Bar has already been added to view hierarchy.")
         }
+        
+        addActiveDisplay(bar)
+        layoutBar(bar, at: location)
         
         updateActiveDisplay(bar, to: relativeCurrentPosition)
         
         return bar
+    }
+    
+    private func layoutContainers(in view: UIView) {
+        
+        topBarContainer.axis = .vertical
+        view.addSubview(topBarContainer)
+        topBarContainer.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            
+            if #available(iOS 11, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            } else {
+                make.top.equalToSuperview()
+            }
+        }
+        
+        bottomBarContainer.axis = .vertical
+        view.addSubview(bottomBarContainer)
+        bottomBarContainer.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            
+            if #available(iOS 11, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
+            } else {
+                make.bottom.equalToSuperview()
+            }
+        }
+    }
+    
+    private func layoutBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+                                                      at location: BarLocation) {
+        switch location {
+        case .top:
+            topBarContainer.addArrangedSubview(bar)
+        case .bottom:
+            bottomBarContainer.addArrangedSubview(bar)
+        }
     }
 }
 
