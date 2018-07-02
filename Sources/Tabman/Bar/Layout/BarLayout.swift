@@ -25,8 +25,7 @@ open class BarLayout: LayoutPerformer, BarFocusProvider {
     // MARK: Init
     
     public required init(for presentingView: UIView) {
-        self.presentingView = presentingView
-        container.backgroundColor = .red        
+        self.presentingView = presentingView     
     }
     
     // MARK: LayoutPerformer

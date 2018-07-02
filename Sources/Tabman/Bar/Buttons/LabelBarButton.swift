@@ -45,12 +45,12 @@ public final class LabelBarButton: BarButton {
         label.text = item.title
     }
     
-    public override func update(for selectionState: BarButton.SelectionState) {
-        
-        let transitionColor = color.interpolate(with: selectedColor,
-                                                percent: selectionState.rawValue)
-        label.textColor = transitionColor
-    }
+//    public override func update(for selectionState: BarButton.SelectionState) {
+//        
+//        let transitionColor = color.interpolate(with: selectedColor,
+//                                                percent: selectionState.rawValue)
+//        label.textColor = transitionColor
+//    }
 }
 
 // MARK: - Label manipulation

@@ -32,6 +32,7 @@ open class BarButton: UIControl, LayoutPerformer {
     
     public var selectionState: SelectionState = .unselected {
         didSet {
+            self.isSelected = selectionState == .selected
             update(for: selectionState)
         }
     }
@@ -54,8 +55,6 @@ open class BarButton: UIControl, LayoutPerformer {
     }
     
     private func initialize() {
-        
-        backgroundColor = .green
         
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
@@ -88,7 +87,18 @@ open class BarButton: UIControl, LayoutPerformer {
     }
 }
 
-extension BarButton.SelectionState {
+extension BarButton.SelectionState: Equatable {
+    
+    static func from(rawValue: CGFloat) -> BarButton.SelectionState {
+        switch rawValue {
+        case 0.0:
+            return .unselected
+        case 1.0:
+            return .selected
+        default:
+            return .partial(delta: rawValue)
+        }
+    }
     
     var rawValue: CGFloat {
         switch self {
@@ -99,5 +109,9 @@ extension BarButton.SelectionState {
         case .selected:
             return 1.0
         }
+    }
+    
+    public static func == (lhs: BarButton.SelectionState, rhs: BarButton.SelectionState) -> Bool {
+        return lhs.rawValue == rhs.rawValue
     }
 }

@@ -27,7 +27,11 @@ class TabViewController: TabmanViewController {
         
         let bar = addBar(BarView.ButtonBar(), at: .top)
         let items = [BarItem(title: "Test"), BarItem(title: "TestTest"), BarItem(title: "TestTestTest"), BarItem(title: "TestTestTestTest"), BarItem(title: "TestTestTestTestTest")]
-        bar.populate(with: items)
+        bar.populate(with: items) { (button, item) in
+            button.color = .red
+            button.selectedColor = .green
+            button.backgroundColor = .gray
+        }
         
 //        bar.layout.isScrollEnabled = false
 //        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)

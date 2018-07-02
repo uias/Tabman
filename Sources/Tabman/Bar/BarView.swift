@@ -18,6 +18,9 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     
     public private(set) lazy var layout = LayoutType(for: self)
     public private(set) var buttons: [BarButtonType]?
+    internal var selectedButton: BarButtonType? {
+        return buttons?.filter({ $0.isSelected }).first
+    }
     
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
@@ -36,7 +39,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
         super.init(frame: .zero)
         performLayout(in: self)
         
-        self.backgroundColor = .red
+        self.backgroundColor = .lightGray
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -127,6 +130,19 @@ extension BarView: PagingStatusDisplay {
         indicatorLayout?.update(for: focusFrame)
         
         scrollView.scrollRectToVisible(focusFrame, animated: false)
+        
+        let range = BarMath.localIndexRange(for: pagePosition, minimum: 0, maximum: capacity - 1)
+        guard let lowerButton = self.buttons?[range.lowerBound], let upperButton = self.buttons?[range.upperBound] else {
+            return
+        }
+        
+        let progress = BarMath.localProgress(for: pagePosition)
+        lowerButton.selectionState = .from(rawValue: 1.0 - progress)
+        upperButton.selectionState = .from(rawValue: progress)
+
+        print(progress)
+//        print("Lower: \(lowerButton.selectionState.rawValue)")
+//        print("Upper \(upperButton.selectionState.rawValue)")
     }
 }
 
