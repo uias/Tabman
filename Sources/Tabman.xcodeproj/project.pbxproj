@@ -32,6 +32,7 @@
 		46C314B820EBA8430093D2AF /* LabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314B720EBA8430093D2AF /* LabelBarButton.swift */; };
 		46C314BC20EBA8570093D2AF /* ButtonBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BA20EBA8570093D2AF /* ButtonBarLayout.swift */; };
 		46C314BD20EBA8570093D2AF /* TabBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BB20EBA8570093D2AF /* TabBarLayout.swift */; };
+		46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BE20EBAC430093D2AF /* WeakContainer.swift */; };
 		46EADB0320D315F7000414F9 /* BarIndicatorLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */; };
 		6A829074D90FEE6F323906BE /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5379744DBFF16C4BC46B1E9E /* Pods_Tabman.framework */; };
 		9A0A3D5ABE1090880B262C09 /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9333340F5D2920DE75BF57E /* Pods_TabmanTests.framework */; };
@@ -90,6 +91,7 @@
 		46C314B720EBA8430093D2AF /* LabelBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBarButton.swift; sourceTree = "<group>"; };
 		46C314BA20EBA8570093D2AF /* ButtonBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarLayout.swift; sourceTree = "<group>"; };
 		46C314BB20EBA8570093D2AF /* TabBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarLayout.swift; sourceTree = "<group>"; };
+		46C314BE20EBAC430093D2AF /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorLayout.swift; sourceTree = "<group>"; };
 		51C6D38A86CD1DEE1FAC6973 /* Pods_Tabman_Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5379744DBFF16C4BC46B1E9E /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +327,7 @@
 			children = (
 				46146FA81FD6D584004F7D78 /* Extensions */,
 				4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */,
+				46C314BE20EBAC430093D2AF /* WeakContainer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				46B7FE1A20BEA1F300E9BB7E /* BarLayout.swift in Sources */,
 				4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */,
 				4612BD1820C9E7FA001A37B5 /* BarIndicator.swift in Sources */,
+				46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */,
 				4612BD1B20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */,
 				4612BD1E20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */,
 				4612BCF220C88D24001A37B5 /* BarView+Templates.swift in Sources */,
