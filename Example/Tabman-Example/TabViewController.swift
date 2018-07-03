@@ -25,11 +25,11 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = addBar(BarView.ButtonBar(), at: .top)
+        let bar = addBar(BarView<ButtonBarLayout, SelectionStateBarButton>(), at: .top)
         let items = [BarItem(title: "Test"), BarItem(title: "TestTest"), BarItem(title: "TestTestTest"), BarItem(title: "TestTestTestTest"), BarItem(title: "TestTestTestTestTest")]
         bar.populate(with: items) { (button, item) in
-            button.color = .red
-            button.selectedColor = .green
+//            button.color = .red
+//            button.selectedColor = .green
             button.backgroundColor = .gray
         }
         
