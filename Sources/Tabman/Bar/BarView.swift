@@ -136,6 +136,7 @@ extension BarView: PagingStatusDisplay {
         
         scrollView.scrollRectToVisible(focusFrame, animated: false)
         
+        buttonStateController?.update(for: pagePosition, direction: direction)
     }
 }
 

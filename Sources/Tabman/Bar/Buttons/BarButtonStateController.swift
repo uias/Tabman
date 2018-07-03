@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Pageboy
 
 internal final class BarButtonStateController {
     
@@ -20,8 +21,8 @@ internal final class BarButtonStateController {
     
     // MARK: Update
     
-    func update(for position: CGFloat) {
+    func update(for position: CGFloat, direction: NavigationDirection) {
         
-        
+        print("Update Position: \(position)")
     }
 }
