@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import Pageboy
 
 internal protocol PagingStatusDisplay: class {
  
-    func updateDisplay(for pagePosition: CGFloat, capacity: Int)
+    func updateDisplay(for pagePosition: CGFloat,
+                       capacity: Int,
+                       direction: NavigationDirection)
 }

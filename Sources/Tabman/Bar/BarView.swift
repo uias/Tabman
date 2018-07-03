@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Pageboy
 
 open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
@@ -17,10 +18,12 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     private let stackView = UIStackView()
     
     public private(set) lazy var layout = LayoutType(for: self)
-    public private(set) var buttons: [BarButtonType]?
-    internal var selectedButton: BarButtonType? {
-        return buttons?.filter({ $0.isSelected }).first
+    public private(set) var buttons: [BarButtonType]? {
+        didSet {
+            self.buttonStateController = BarButtonStateController(for: buttons)
+        }
     }
+    private var buttonStateController: BarButtonStateController?
     
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
@@ -114,7 +117,7 @@ public extension BarView {
         
         // Update for indicated position
         if let indicatedPosition = self.indicatedPosition {
-            updateDisplay(for: indicatedPosition, capacity: barButtons.count)
+            updateDisplay(for: indicatedPosition, capacity: barButtons.count, direction: .neutral)
         }
     }
 }
@@ -122,7 +125,9 @@ public extension BarView {
 // MARK: - Paging Updates
 extension BarView: PagingStatusDisplay {
     
-    func updateDisplay(for pagePosition: CGFloat, capacity: Int) {
+    func updateDisplay(for pagePosition: CGFloat,
+                       capacity: Int,
+                       direction: NavigationDirection) {
         self.indicatedPosition = pagePosition
         
         layoutIfNeeded()
@@ -131,18 +136,6 @@ extension BarView: PagingStatusDisplay {
         
         scrollView.scrollRectToVisible(focusFrame, animated: false)
         
-        let range = BarMath.localIndexRange(for: pagePosition, minimum: 0, maximum: capacity - 1)
-        guard let lowerButton = self.buttons?[range.lowerBound], let upperButton = self.buttons?[range.upperBound] else {
-            return
-        }
-        
-        let progress = BarMath.localProgress(for: pagePosition)
-        lowerButton.selectionState = .from(rawValue: 1.0 - progress)
-        upperButton.selectionState = .from(rawValue: progress)
-
-        print(progress)
-//        print("Lower: \(lowerButton.selectionState.rawValue)")
-//        print("Upper \(upperButton.selectionState.rawValue)")
     }
 }
 

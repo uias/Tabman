@@ -62,7 +62,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if !animated {
-            updateActiveDisplays(to: relativeCurrentPosition)
+            updateActiveDisplays(to: relativeCurrentPosition, direction: direction)
         }
     }
     
@@ -70,7 +70,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        updateActiveDisplays(to: CGFloat(index))
+        updateActiveDisplays(to: CGFloat(index), direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -145,15 +145,20 @@ private extension TabmanViewController {
         self.activeDisplays.append(display)
     }
     
-    func updateActiveDisplays(to position: CGFloat?) {
-        activeDisplays.forEach({ self.updateActiveDisplay($0, to: position) })
+    func updateActiveDisplays(to position: CGFloat?,
+                              direction: NavigationDirection = .neutral) {
+        activeDisplays.forEach({ self.updateActiveDisplay($0, to: position, direction: direction) })
     }
     
-    func updateActiveDisplay(_ display: PagingStatusDisplay, to position: CGFloat?) {
+    func updateActiveDisplay(_ display: PagingStatusDisplay,
+                             to position: CGFloat?,
+                             direction: NavigationDirection = .neutral) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
         
-        display.updateDisplay(for: position, capacity: capacity)
+        display.updateDisplay(for: position,
+                              capacity: capacity,
+                              direction: direction)
     }
 }
 
