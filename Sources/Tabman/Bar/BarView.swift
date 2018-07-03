@@ -102,6 +102,7 @@ public extension BarView {
         let barButtons: [BarButtonType] = items.map({ item in
             let button = BarButtonType()
             button.populate(for: item)
+            button.update(for: .unselected)
             return button
         })
         self.buttons = barButtons

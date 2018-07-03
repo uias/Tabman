@@ -15,20 +15,45 @@ internal final class BarButtonStateController {
     
     private let barButtons: [WeakContainer<BarButton>]
     
+    private weak var selectedButton: BarButton? {
+        didSet {
+            selectedButton?.selectionState = .selected
+        }
+    }
+    
     // MARK: Init
     
     init?(for barButtons: [BarButton]?) {
         guard let barButtons = barButtons else {
             return nil
         }
-        
         self.barButtons = barButtons.map({ WeakContainer<BarButton>(for: $0) })
     }
     
     // MARK: Update
     
     func update(for position: CGFloat, direction: NavigationDirection) {
+        let capacity = barButtons.count
+        let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
+        guard barButtons.count > range.upperBound else {
+            return
+        }
         
-        print("Update Position: \(position)")
+        let lowerButton = barButtons[range.lowerBound].object
+        let upperButton = barButtons[range.upperBound].object
+        
+        let targetButton = direction != .reverse ? upperButton : lowerButton
+        let oldTargetButton = direction != .reverse ? lowerButton : upperButton
+        
+        let progress = BarMath.localProgress(for: position)
+        let directionalProgress = direction != .reverse ? progress : 1.0 - progress
+        
+        guard targetButton !== oldTargetButton else {
+            self.selectedButton = targetButton
+            return
+        }
+        
+        targetButton?.selectionState = .from(rawValue: directionalProgress)
+        oldTargetButton?.selectionState = .from(rawValue: 1.0 - directionalProgress)
     }
 }
