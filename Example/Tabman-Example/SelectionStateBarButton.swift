@@ -18,9 +18,11 @@ class SelectionStateBarButton: BarButton {
         super.performLayout(in: view)
         
         label.text = selectionState.description
+        label.textAlignment = .center
         view.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.width.equalTo(120)
         }
     }
     
