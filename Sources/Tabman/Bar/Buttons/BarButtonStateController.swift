@@ -15,6 +15,9 @@ internal final class BarButtonStateController: BarButtonController {
     
     private weak var selectedButton: BarButton? {
         didSet {
+            if oldValue !== selectedButton {
+                oldValue?.selectionState = .unselected
+            }
             selectedButton?.selectionState = .selected
         }
     }

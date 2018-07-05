@@ -144,6 +144,7 @@ extension BarView: PagingStatusDisplay {
         
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
         indicatorLayout?.update(for: focusFrame)
+        layoutIfNeeded()
         
         buttonStateController?.update(for: pagePosition, direction: direction)
         
