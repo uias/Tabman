@@ -9,25 +9,14 @@
 import Foundation
 import Pageboy
 
-internal final class BarButtonStateController {
+internal final class BarButtonStateController: BarButtonController {
     
     // MARK: Properties
-    
-    private let barButtons: [WeakContainer<BarButton>]
     
     private weak var selectedButton: BarButton? {
         didSet {
             selectedButton?.selectionState = .selected
         }
-    }
-    
-    // MARK: Init
-    
-    init?(for barButtons: [BarButton]?) {
-        guard let barButtons = barButtons else {
-            return nil
-        }
-        self.barButtons = barButtons.map({ WeakContainer<BarButton>(for: $0) })
     }
     
     // MARK: Update

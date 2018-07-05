@@ -10,6 +10,12 @@ import UIKit
 import SnapKit
 import Pageboy
 
+internal protocol BarViewDelegate: class {
+    
+    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+                                            didRequestScrollToPageAt index: PageIndex)
+}
+
 open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
@@ -21,9 +27,11 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     public private(set) var buttons: [BarButtonType]? {
         didSet {
             self.buttonStateController = BarButtonStateController(for: buttons)
+            self.buttonInteractionController = BarButtonInteractionController(for: buttons, handler: self)
         }
     }
     private var buttonStateController: BarButtonStateController?
+    private var buttonInteractionController: BarButtonInteractionController?
     
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
@@ -35,6 +43,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     private var indicatorContainer: UIView?
     
     private var indicatedPosition: CGFloat?
+    
+    internal weak var delegate: BarViewDelegate?
     
     // MARK: Init
     
@@ -130,14 +140,14 @@ extension BarView: PagingStatusDisplay {
                        capacity: Int,
                        direction: NavigationDirection) {
         self.indicatedPosition = pagePosition
-        
         layoutIfNeeded()
+        
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
         indicatorLayout?.update(for: focusFrame)
         
-        scrollView.scrollRectToVisible(focusFrame, animated: false)
-        
         buttonStateController?.update(for: pagePosition, direction: direction)
+        
+        scrollView.scrollRectToVisible(focusFrame, animated: false)
     }
 }
 
@@ -211,5 +221,14 @@ extension BarView {
         }
         
         return BarIndicatorLayout(leading: leading, width: width, height: height)
+    }
+}
+
+extension BarView: BarButtonInteractionHandler {
+    
+    func barButtonInteraction(controller: BarButtonInteractionController,
+                              didHandlePressOf button: BarButton,
+                              at index: Int) {
+        delegate?.barView(self, didRequestScrollToPageAt: index)
     }
 }

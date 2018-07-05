@@ -33,6 +33,8 @@
 		46C314BC20EBA8570093D2AF /* ButtonBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BA20EBA8570093D2AF /* ButtonBarLayout.swift */; };
 		46C314BD20EBA8570093D2AF /* TabBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BB20EBA8570093D2AF /* TabBarLayout.swift */; };
 		46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BE20EBAC430093D2AF /* WeakContainer.swift */; };
+		46C314FF20EE53EC0093D2AF /* BarButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314FE20EE53EC0093D2AF /* BarButtonController.swift */; };
+		46C3150120EE54230093D2AF /* BarButtonInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3150020EE54230093D2AF /* BarButtonInteractionController.swift */; };
 		46EADB0320D315F7000414F9 /* BarIndicatorLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */; };
 		6A829074D90FEE6F323906BE /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5379744DBFF16C4BC46B1E9E /* Pods_Tabman.framework */; };
 		9A0A3D5ABE1090880B262C09 /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9333340F5D2920DE75BF57E /* Pods_TabmanTests.framework */; };
@@ -92,6 +94,8 @@
 		46C314BA20EBA8570093D2AF /* ButtonBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarLayout.swift; sourceTree = "<group>"; };
 		46C314BB20EBA8570093D2AF /* TabBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarLayout.swift; sourceTree = "<group>"; };
 		46C314BE20EBAC430093D2AF /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
+		46C314FE20EE53EC0093D2AF /* BarButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonController.swift; sourceTree = "<group>"; };
+		46C3150020EE54230093D2AF /* BarButtonInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonInteractionController.swift; sourceTree = "<group>"; };
 		46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorLayout.swift; sourceTree = "<group>"; };
 		51C6D38A86CD1DEE1FAC6973 /* Pods_Tabman_Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5379744DBFF16C4BC46B1E9E /* Pods_Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				4612BCDD20C86004001A37B5 /* BarButton.swift */,
+				46C314FE20EE53EC0093D2AF /* BarButtonController.swift */,
 				46C314B420EBA82E0093D2AF /* BarButtonStateController.swift */,
+				46C3150020EE54230093D2AF /* BarButtonInteractionController.swift */,
 				46C314B620EBA8430093D2AF /* Styles */,
 			);
 			path = Buttons;
@@ -558,6 +564,7 @@
 				4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
+				46C314FF20EE53EC0093D2AF /* BarButtonController.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* BarView.swift in Sources */,
 				46EADB0320D315F7000414F9 /* BarIndicatorLayout.swift in Sources */,
@@ -566,6 +573,7 @@
 				D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
+				46C3150120EE54230093D2AF /* BarButtonInteractionController.swift in Sources */,
 				46C314BC20EBA8570093D2AF /* ButtonBarLayout.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				46C314B520EBA82E0093D2AF /* BarButtonStateController.swift in Sources */,

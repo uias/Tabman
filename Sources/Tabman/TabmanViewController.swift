@@ -90,6 +90,7 @@ public extension TabmanViewController {
             fatalError("Bar has already been added to view hierarchy.")
         }
         
+        bar.delegate = self
         addActiveDisplay(bar)
         layoutBar(bar, at: location)
         
@@ -159,6 +160,15 @@ private extension TabmanViewController {
         display.updateDisplay(for: position,
                               capacity: capacity,
                               direction: direction)
+    }
+}
+
+// MARK: Bar Updates
+extension TabmanViewController: BarViewDelegate {
+    
+    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+                                            didRequestScrollToPageAt index: PageIndex) {
+        scrollToPage(.at(index: index), animated: true, completion: nil)
     }
 }
 
