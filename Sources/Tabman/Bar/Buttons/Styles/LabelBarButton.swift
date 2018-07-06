@@ -19,11 +19,7 @@ public final class LabelBarButton: BarButton {
     
     // MARK: Properties
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.isUserInteractionEnabled = false
-        return label
-    }()
+    private let label = UILabel()
     
     public var color: UIColor = .black
     public var selectedColor: UIColor = UIView.defaultTintColor

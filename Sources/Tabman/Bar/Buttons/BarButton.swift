@@ -56,6 +56,7 @@ open class BarButton: UIControl, LayoutPerformer {
     
     private func initialize() {
         
+        contentView.isUserInteractionEnabled = false
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             self.contentViewPins = make.edges.equalToSuperview().constraint
