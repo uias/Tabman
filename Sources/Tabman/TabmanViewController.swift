@@ -51,8 +51,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if animated {
-            UIView.animate(withDuration: 0.2) {
-                self.updateActiveDisplays(to: CGFloat(index))
+            let duration = self.transition?.duration ?? 0.25
+            UIView.animate(withDuration: duration) {
+                self.updateActiveDisplays(to: CGFloat(index), direction: direction)
             }
         }
     }
@@ -70,14 +71,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        let index = CGFloat(index)
-        if animated {
-            UIView.animate(withDuration: 0.25) {
-                self.updateActiveDisplays(to: index, direction: direction)
-            }
-        } else {
-            updateActiveDisplays(to: index, direction: direction)
-        }
+        updateActiveDisplays(to: CGFloat(index), direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
