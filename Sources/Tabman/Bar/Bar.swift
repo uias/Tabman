@@ -1,5 +1,5 @@
 //
-//  BarView.swift
+//  Bar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/05/2018.

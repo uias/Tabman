@@ -1,5 +1,5 @@
 //
-//  BarViewTemplates.swift
+//  Bar+Templates.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
