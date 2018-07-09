@@ -12,11 +12,11 @@ import Pageboy
 
 internal protocol BarViewDelegate: class {
     
-    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+    func barView<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
                                             didRequestScrollToPageAt index: PageIndex)
 }
 
-open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
+open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
@@ -92,7 +92,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
 }
 
 // MARK: - Customization
-public extension BarView {
+public extension Bar {
     
     public var contentInset: UIEdgeInsets {
         set {
@@ -104,7 +104,7 @@ public extension BarView {
 }
 
 // MARK: - Item population
-public extension BarView {
+public extension Bar {
     
     public func populate(with items: [BarItem],
                          configure: ((BarButtonType, BarItem) -> Void)? = nil) {
@@ -134,7 +134,7 @@ public extension BarView {
 }
 
 // MARK: - Paging Updates
-extension BarView: PagingStatusDisplay {
+extension Bar: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat,
                        capacity: Int,
@@ -153,7 +153,7 @@ extension BarView: PagingStatusDisplay {
 }
 
 // MARK: - Indicator management
-extension BarView {
+extension Bar {
     
     private func updateIndicator(for style: BarIndicatorStyle) {
         let indicator = BarIndicator.for(style: style)
@@ -225,7 +225,7 @@ extension BarView {
     }
 }
 
-extension BarView: BarButtonInteractionHandler {
+extension Bar: BarButtonInteractionHandler {
     
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,

@@ -85,8 +85,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 public extension TabmanViewController {
     
     @discardableResult
-    func addBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
-                                           at location: BarLocation) -> BarView<LayoutType, BarButtonType> {
+    func addBar<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
+                                           at location: BarLocation) -> Bar<LayoutType, BarButtonType> {
         guard bar.superview == nil else {
             fatalError("Bar has already been added to view hierarchy.")
         }
@@ -129,7 +129,7 @@ public extension TabmanViewController {
         }
     }
     
-    private func layoutBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+    private func layoutBar<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
                                                       at location: BarLocation) {
         switch location {
         case .top:
@@ -167,7 +167,7 @@ private extension TabmanViewController {
 // MARK: Bar Updates
 extension TabmanViewController: BarViewDelegate {
     
-    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
+    func barView<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
                                             didRequestScrollToPageAt index: PageIndex) {
         scrollToPage(.at(index: index), animated: true, completion: nil)
     }
