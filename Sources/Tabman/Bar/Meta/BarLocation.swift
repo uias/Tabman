@@ -11,4 +11,5 @@ import Foundation
 public enum BarLocation {
     case top
     case bottom
+    case custom(view: UIView)
 }

@@ -86,14 +86,15 @@ public extension TabmanViewController {
     
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
-                                           at location: BarLocation) -> Bar<LayoutType, BarButtonType> {
+                                           at location: BarLocation,
+                                           layout: ((UIView) -> Void)? = nil) -> Bar<LayoutType, BarButtonType> {
         guard bar.superview == nil else {
             fatalError("Bar has already been added to view hierarchy.")
         }
         
         bar.delegate = self
         addActiveDisplay(bar)
-        layoutBar(bar, at: location)
+        layoutBar(bar, at: location, customLayout: layout)
         
         updateActiveDisplay(bar, to: relativeCurrentPosition)
         
@@ -130,12 +131,22 @@ public extension TabmanViewController {
     }
     
     private func layoutBar<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
-                                                      at location: BarLocation) {
+                                                      at location: BarLocation,
+                                                      customLayout: ((UIView) -> Void)?) {
         switch location {
         case .top:
             topBarContainer.addArrangedSubview(bar)
         case .bottom:
             bottomBarContainer.addArrangedSubview(bar)
+        case .custom(let view):
+            view.addSubview(bar)
+            if customLayout != nil {
+                customLayout?(bar)
+            } else {
+                bar.snp.makeConstraints { (make) in
+                    make.edges.equalToSuperview()
+                }
+            }
         }
     }
 }
