@@ -142,9 +142,9 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         let itemDistribution = appearance.layout.itemDistribution ?? Appearance.defaultAppearance.layout.itemDistribution!
 
         // prevent visual glitch when scrolling between items when normal font and selected font differ
-        if self.textFont != self.selectedTextFont, let items = items {
-            for (index, item) in items.enumerated() {
-                guard let title = item.title, let minWidthConstraint = itemMinimumWidthConstraints?[index] else { continue }
+        if self.textFont != self.selectedTextFont, let items = items, let itemMinimumWidthConstraints = itemMinimumWidthConstraints {
+            for (item, minWidthConstraint) in zip(items, itemMinimumWidthConstraints) {
+                guard let title = item.title else { continue }
                 let constrainedHeight = self.contentView.bounds.height
                 let normalWidth = title.width(withConstrainedHeight: constrainedHeight, font: self.textFont)
                 let selectedWidth = title.width(withConstrainedHeight: constrainedHeight, font: self.selectedTextFont)
@@ -154,17 +154,17 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         }
 
         // in fill item distribution add additional padding to items if content doesn't use the full width of the bar
-        if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count {
+        if itemDistribution == .fill, scrollView.contentView.bounds.width < scrollView.bounds.width, let itemCount = items?.count, let itemMinimumWidthConstraints = itemMinimumWidthConstraints {
             let extraSpace = scrollView.bounds.width - scrollView.contentView.bounds.width
             let widthPadding = extraSpace / CGFloat(itemCount)
-            for (index, button) in buttons.enumerated() {
-                if let minWidthConstraint = itemMinimumWidthConstraints?[index] {
-                    minWidthConstraint.constant = button.bounds.width + widthPadding
-                }
+            for (button, minWidthConstraint) in zip(buttons, itemMinimumWidthConstraints) {
+                minWidthConstraint.constant = button.bounds.width + widthPadding
             }
-            indicator?.invalidateIntrinsicContentSize()
             layoutIfNeeded()
         }
+
+        indicator?.invalidateIntrinsicContentSize()
+        layoutIfNeeded()
     }
 
     override public func update(forAppearance appearance: Appearance, defaultAppearance: Appearance) {
