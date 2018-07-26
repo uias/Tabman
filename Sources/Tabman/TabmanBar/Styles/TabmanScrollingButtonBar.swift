@@ -131,28 +131,15 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
         self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
 
-    override public func update(forAppearance appearance: Appearance,
-                                defaultAppearance: Appearance) {
-        super.update(forAppearance: appearance,
-                     defaultAppearance: defaultAppearance)
+    override func updateForCurrentPosition(bounds: CGRect? = nil) {
+        super.updateForCurrentPosition(bounds: bounds)
 
-        let isScrollEnabled = appearance.interaction.isScrollEnabled
-        self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
-
-        let minimumItemWidth = appearance.layout.minimumItemWidth ?? defaultAppearance.layout.minimumItemWidth!
+        // reset minimum item width constraints
+        let minimumItemWidth = appearance.layout.minimumItemWidth ?? Appearance.defaultAppearance.layout.minimumItemWidth!
         self.itemMinimumWidthConstraints?.forEach({ $0.constant = minimumItemWidth })
         layoutIfNeeded()
 
-        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
-
-
-        // dont allow for centered item distribution if indicator is progressive
-        let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
-        var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
-        if itemDistribution == .centered && isProgressive {
-            itemDistribution = .leftAligned
-            print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
-        }
+        let itemDistribution = appearance.layout.itemDistribution ?? Appearance.defaultAppearance.layout.itemDistribution!
 
         // prevent visual glitch when scrolling between items when normal font and selected font differ
         if self.textFont != self.selectedTextFont, let items = items {
@@ -175,7 +162,25 @@ internal class TabmanScrollingButtonBar: TabmanButtonBar {
                     minWidthConstraint.constant = button.bounds.width + widthPadding
                 }
             }
+            indicator?.invalidateIntrinsicContentSize()
             layoutIfNeeded()
+        }
+    }
+
+    override public func update(forAppearance appearance: Appearance, defaultAppearance: Appearance) {
+        super.update(forAppearance: appearance, defaultAppearance: defaultAppearance)
+
+        let isScrollEnabled = appearance.interaction.isScrollEnabled
+        self.isScrollEnabled = isScrollEnabled ?? defaultAppearance.interaction.isScrollEnabled!
+
+        self.updateEdgeFade(visible: appearance.style.showEdgeFade ?? false)
+
+        // dont allow for centered item distribution if indicator is progressive
+        let isProgressive = appearance.indicator.isProgressive ?? defaultAppearance.indicator.isProgressive!
+        var itemDistribution = appearance.layout.itemDistribution ?? defaultAppearance.layout.itemDistribution!
+        if itemDistribution == .centered && isProgressive {
+            itemDistribution = .leftAligned
+            print("TabmanScrollingButtonBar Error - 'centered' item distribution is not supported when using a progressive indicator.")
         }
 
         update(for: itemDistribution)
