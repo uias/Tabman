@@ -24,7 +24,7 @@ internal final class BarButtonStateController: BarButtonController {
     
     // MARK: Update
     
-    func update(for position: CGFloat, direction: NavigationDirection) {
+    func update(for position: CGFloat, direction: PageboyViewController.NavigationDirection) {
         let capacity = barButtons.count
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard barButtons.count > range.upperBound else {

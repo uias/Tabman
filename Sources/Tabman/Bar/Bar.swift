@@ -13,7 +13,7 @@ import Pageboy
 internal protocol BarViewDelegate: class {
     
     func barView<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
-                                            didRequestScrollToPageAt index: PageIndex)
+                                            didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
 open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
@@ -138,7 +138,7 @@ extension Bar: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: NavigationDirection) {
+                       direction: PageboyViewController.NavigationDirection) {
         self.indicatedPosition = pagePosition
         layoutIfNeeded()
         

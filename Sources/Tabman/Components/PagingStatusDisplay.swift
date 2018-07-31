@@ -13,5 +13,5 @@ internal protocol PagingStatusDisplay: class {
  
     func updateDisplay(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: NavigationDirection)
+                       direction: PageboyViewController.NavigationDirection)
 }
