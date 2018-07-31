@@ -23,6 +23,20 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     
+    private let backgroundContainer = UIView()
+    public var background: BarBackground = .flat(color: .white) {
+        didSet {
+            updateBackground(for: background.backgroundView)
+        }
+    }
+    open override var backgroundColor: UIColor? {
+        set {
+            fatalError("Use .background instead")
+        } get {
+            return nil
+        }
+    }
+    
     public private(set) lazy var layout = LayoutType(for: self)
     public private(set) var buttons: [BarButtonType]? {
         didSet {
@@ -51,8 +65,6 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
     public required init() {
         super.init(frame: .zero)
         performLayout(in: self)
-        
-        self.backgroundColor = .lightGray
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -68,6 +80,12 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
             fatalError("performLayout() can only be called once.")
         }
         hasPerformedLayout = true
+        
+        view.addSubview(backgroundContainer)
+        backgroundContainer.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        updateBackground(for: background.backgroundView)
         
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
@@ -99,6 +117,18 @@ public extension Bar {
             scrollView.contentInset = newValue
         } get {
             return scrollView.contentInset
+        }
+    }
+    
+    private func updateBackground(for view: UIView?) {
+        backgroundContainer.removeAllSubviews()
+        guard let view = view else {
+            return
+        }
+        
+        backgroundContainer.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
     }
 }
