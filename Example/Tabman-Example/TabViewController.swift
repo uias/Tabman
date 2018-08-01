@@ -25,7 +25,7 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = addBar(Bar<ButtonBarLayout, SelectionStateBarButton>(), dataSource: self, at: .top)
+        let bar = addBar(BarView<ButtonBarLayout, SelectionStateBarButton>(), dataSource: self, at: .top)
         
 //        bar.layout.isScrollEnabled = false
 //        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)

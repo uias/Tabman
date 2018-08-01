@@ -17,11 +17,15 @@ public protocol BarViewDataSource: class {
 
 internal protocol BarViewDelegate: class {
     
-    func barView<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
+    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                             didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
-open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
+public protocol Bar: class {
+    
+}
+
+open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
@@ -116,7 +120,7 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
 }
 
 // MARK: - Data Source
-internal extension Bar {
+internal extension BarView {
     
     func reloadData(for tabViewController: TabmanViewController) {
         guard let pageCount = tabViewController.pageCount else {
@@ -135,7 +139,7 @@ internal extension Bar {
 }
 
 // MARK: - Customization
-public extension Bar {
+public extension BarView {
     
     public var contentInset: UIEdgeInsets {
         set {
@@ -159,7 +163,7 @@ public extension Bar {
 }
 
 // MARK: - Item population
-private extension Bar {
+private extension BarView {
     
     func populate(with items: [BarItem],
                   configure: ((BarButtonType, BarItem) -> Void)? = nil) {
@@ -189,7 +193,7 @@ private extension Bar {
 }
 
 // MARK: - Paging Updates
-extension Bar: PagingStatusDisplay {
+extension BarView: PagingStatusDisplay {
     
     func updateDisplay(for pagePosition: CGFloat,
                        capacity: Int,
@@ -208,7 +212,7 @@ extension Bar: PagingStatusDisplay {
 }
 
 // MARK: - Indicator management
-extension Bar {
+extension BarView {
     
     private func updateIndicator(for style: BarIndicatorStyle) {
         let indicator = BarIndicator.for(style: style)
@@ -280,7 +284,7 @@ extension Bar {
     }
 }
 
-extension Bar: BarButtonInteractionHandler {
+extension BarView: BarButtonInteractionHandler {
     
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,
