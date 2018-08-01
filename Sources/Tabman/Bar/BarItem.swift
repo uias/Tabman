@@ -12,6 +12,8 @@ public struct BarItem {
     
     public let title: String?
     
+    internal var assignedIndex: Int?
+    
     public init(title: String) {
         self.title = title
     }

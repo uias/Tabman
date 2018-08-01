@@ -100,6 +100,8 @@ public extension TabmanViewController {
         
         updateActiveDisplay(bar, to: relativeCurrentPosition)
         
+        bar.reloadData(for: self)
+        
         return bar
     }
     

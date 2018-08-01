@@ -115,6 +115,25 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
     }
 }
 
+// MARK: - Data Source
+internal extension Bar {
+    
+    func reloadData(for tabViewController: TabmanViewController) {
+        guard let pageCount = tabViewController.pageCount else {
+            return
+        }
+        var items = [BarItem]()
+        for index in 0 ..< pageCount {
+            if var item = dataSource?.barItem(for: tabViewController, at: index) {
+                item.assignedIndex = index
+                items.append(item)
+            }
+        }
+        
+        populate(with: items, configure: nil)
+    }
+}
+
 // MARK: - Customization
 public extension Bar {
     
@@ -140,10 +159,10 @@ public extension Bar {
 }
 
 // MARK: - Item population
-public extension Bar {
+private extension Bar {
     
-    public func populate(with items: [BarItem],
-                         configure: ((BarButtonType, BarItem) -> Void)? = nil) {
+    func populate(with items: [BarItem],
+                  configure: ((BarButtonType, BarItem) -> Void)? = nil) {
         
         let barButtons: [BarButtonType] = items.map({ item in
             let button = BarButtonType()
