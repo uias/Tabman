@@ -10,6 +10,6 @@ import Foundation
 
 public extension Bar {
  
-    public typealias ButtonBar = BarView<ButtonBarLayout, LabelBarButton>
-    public typealias TabBar = BarView<TabBarLayout, LabelBarButton>
+    public typealias ButtonBar = BarView<ButtonBarViewLayout, LabelBarButton>
+    public typealias TabBar = BarView<TabBarViewLayout, LabelBarButton>
 }

@@ -1,5 +1,5 @@
 //
-//  TabBarLayout.swift
+//  TabBarViewLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-public final class TabBarLayout: BarLayout {
+public final class TabBarViewLayout: BarViewLayout {
     
     // MARK: Properties
     

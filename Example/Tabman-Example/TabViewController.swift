@@ -25,7 +25,7 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = BarView<ButtonBarLayout, SelectionStateBarButton>()
+        let bar = BarView<ButtonBarViewLayout, SelectionStateBarButton>()
         addBar(bar, dataSource: self, at: .top)
         
         bar.background = .flat(color: .lightGray)

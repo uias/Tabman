@@ -1,5 +1,5 @@
 //
-//  ButtonBarLayout.swift
+//  ButtonBarViewLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-public final class ButtonBarLayout: BarLayout {
+public final class ButtonBarViewLayout: BarViewLayout {
     
     // MARK: Defaults
     
@@ -68,7 +68,7 @@ public final class ButtonBarLayout: BarLayout {
 }
 
 // MARK: - Customization
-public extension ButtonBarLayout {
+public extension ButtonBarViewLayout {
     
     public var interButtonSpacing: CGFloat {
         set {

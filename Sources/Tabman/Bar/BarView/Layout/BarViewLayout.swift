@@ -8,11 +8,11 @@
 
 import UIKit
 
-open class BarLayout: LayoutPerformer, BarFocusProvider {
+open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
     // MARK: Properties
     
-    let container = BarLayoutContainer()
+    let container = BarViewLayoutContainer()
     
     /// Bar View that is presenting the layout.
     public private(set) weak var presentingView: UIView!
@@ -61,7 +61,7 @@ open class BarLayout: LayoutPerformer, BarFocusProvider {
 }
 
 // MARK: - Customization
-public extension BarLayout {
+public extension BarViewLayout {
     
     public var isUserInteractionEnabled: Bool {
         set {
