@@ -31,7 +31,8 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
         }
     }
     
-    public private(set) var layout: LayoutType!
+    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
+    public private(set) lazy var layout = LayoutType(contentView: scrollView)
     public private(set) var buttons: [BarButtonType]? {
         didSet {
             self.buttonStateController = BarButtonStateController(for: buttons)
@@ -96,10 +97,9 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
             make.height.equalTo(view)
         }
         
-        self.layout = LayoutType(in: self, contentView: scrollView)
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
-        layout.performLayout()
+        layout.performLayout(contentInsetGuides: contentInsetGuides)
         
         layout(newIndicator: indicator)
     }

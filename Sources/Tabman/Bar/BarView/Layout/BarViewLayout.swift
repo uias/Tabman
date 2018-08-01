@@ -20,7 +20,7 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     // MARK: Properties
     
     let container = BarViewLayoutContainer()
-    private let contentInsetGuides: BarViewContentInsetGuides
+    private weak var contentInsetGuides: BarViewContentInsetGuides!
     private weak var contentView: UIScrollView!
     
     public var contentMode: ContentMode = .fill {
@@ -36,9 +36,7 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
     // MARK: Init
     
-    public required init<LayoutType, ButtonBarType>(in barView: BarView<LayoutType, ButtonBarType>,
-                                                    contentView: UIScrollView) {
-        self.contentInsetGuides = BarViewContentInsetGuides(for: barView)
+    public required init(contentView: UIScrollView) {
         self.contentView = contentView
     }
     
@@ -46,7 +44,8 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
     public private(set) var hasPerformedLayout = false
 
-    internal func performLayout() {
+    internal func performLayout(contentInsetGuides: BarViewContentInsetGuides) {
+        self.contentInsetGuides = contentInsetGuides
         performLayout(in: container)
     }
     
