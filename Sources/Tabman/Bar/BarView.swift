@@ -172,15 +172,15 @@ private extension BarView {
         
         // Update for indicated position
         if let indicatedPosition = self.indicatedPosition {
-            updateDisplay(for: indicatedPosition, capacity: barButtons.count, direction: .neutral)
+            update(for: indicatedPosition, capacity: barButtons.count, direction: .neutral)
         }
     }
 }
 
 // MARK: - Paging Updates
-extension BarView: PagingStatusDisplay {
+extension BarView {
     
-    func updateDisplay(for pagePosition: CGFloat,
+    public func update(for pagePosition: CGFloat,
                        capacity: Int,
                        direction: PageboyViewController.NavigationDirection) {
         self.indicatedPosition = pagePosition

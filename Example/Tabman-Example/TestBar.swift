@@ -8,6 +8,7 @@
 
 import Foundation
 import Tabman
+import Pageboy
 
 class TestBar: UIView, Bar {
     
@@ -15,6 +16,10 @@ class TestBar: UIView, Bar {
     var delegate: BarViewDelegate?
     
     func reloadData(for tabViewController: TabmanViewController) {
+        
+    }
+    
+    func update(for pagePosition: CGFloat, capacity: Int, direction: PageboyViewController.NavigationDirection) {
         
     }
 }

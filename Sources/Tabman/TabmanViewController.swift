@@ -19,7 +19,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private let topBarContainer = UIStackView()
     private let bottomBarContainer = UIStackView()
     
-    private var activeDisplays = [PagingStatusDisplay]()
+    private var activeBars = [Bar]()
     
     // MARK: Init
     
@@ -53,7 +53,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         if animated {
             let duration = self.transition?.duration ?? 0.25
             UIView.animate(withDuration: duration) {
-                self.updateActiveDisplays(to: CGFloat(index), direction: direction)
+                self.updateActiveBars(to: CGFloat(index), direction: direction)
             }
         }
     }
@@ -63,7 +63,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if !animated {
-            updateActiveDisplays(to: relativeCurrentPosition, direction: direction)
+            updateActiveBars(to: relativeCurrentPosition, direction: direction)
         }
     }
     
@@ -71,7 +71,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        updateActiveDisplays(to: CGFloat(index), direction: direction)
+        updateActiveBars(to: CGFloat(index), direction: direction)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -98,10 +98,11 @@ public extension TabmanViewController {
         
         bar.dataSource = dataSource
         bar.delegate = self
-//        addActiveDisplay(bar)
-//        layoutBar(bar, at: location, customLayout: layout)
-//
-//        updateActiveDisplay(bar, to: relativeCurrentPosition)
+        
+        addActiveBar(bar)
+        layoutView(barView, at: location, customLayout: layout)
+        
+        updateBar(bar, to: relativeCurrentPosition)
         
         bar.reloadData(for: self)
         
@@ -137,20 +138,20 @@ public extension TabmanViewController {
         }
     }
     
-    private func layoutBar<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
-                                                      at location: BarLocation,
-                                                      customLayout: ((UIView) -> Void)?) {
+    private func layoutView(_ view: UIView,
+                            at location: BarLocation,
+                            customLayout: ((UIView) -> Void)?) {
         switch location {
         case .top:
-            topBarContainer.addArrangedSubview(bar)
+            topBarContainer.addArrangedSubview(view)
         case .bottom:
-            bottomBarContainer.addArrangedSubview(bar)
+            bottomBarContainer.addArrangedSubview(view)
         case .custom(let view):
-            view.addSubview(bar)
+            view.addSubview(view)
             if customLayout != nil {
-                customLayout?(bar)
+                customLayout?(view)
             } else {
-                bar.snp.makeConstraints { (make) in
+                view.snp.makeConstraints { (make) in
                     make.edges.equalToSuperview()
                 }
             }
@@ -158,27 +159,27 @@ public extension TabmanViewController {
     }
 }
 
-// MARK: - Active Display management
+// MARK: - Bar Management
 private extension TabmanViewController {
     
-    func addActiveDisplay(_ display: PagingStatusDisplay) {
-        self.activeDisplays.append(display)
+    func addActiveBar(_ bar: Bar) {
+        activeBars.append(bar)
     }
     
-    func updateActiveDisplays(to position: CGFloat?,
-                              direction: NavigationDirection = .neutral) {
-        activeDisplays.forEach({ self.updateActiveDisplay($0, to: position, direction: direction) })
+    func updateActiveBars(to position: CGFloat?,
+                          direction: NavigationDirection = .neutral) {
+        activeBars.forEach({ self.updateBar($0, to: position, direction: direction) })
     }
     
-    func updateActiveDisplay(_ display: PagingStatusDisplay,
-                             to position: CGFloat?,
-                             direction: NavigationDirection = .neutral) {
+    func updateBar(_ bar: Bar,
+                   to position: CGFloat?,
+                   direction: NavigationDirection = .neutral) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
         
-        display.updateDisplay(for: position,
-                              capacity: capacity,
-                              direction: direction)
+        bar.update(for: position,
+                   capacity: capacity,
+                   direction: direction)
     }
 }
 

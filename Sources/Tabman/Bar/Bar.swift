@@ -26,6 +26,11 @@ public protocol Bar: AnyObject where Self: UIView {
     var dataSource: BarViewDataSource? { get set }
     var delegate: BarViewDelegate? { get set }
     
-    // MARK: Data Source
+    // Data Source
     func reloadData(for tabViewController: TabmanViewController)
+    
+    // Updating
+    func update(for pagePosition: CGFloat,
+                capacity: Int,
+                direction: PageboyViewController.NavigationDirection)
 }
