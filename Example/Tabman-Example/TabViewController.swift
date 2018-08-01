@@ -25,22 +25,13 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = addBar(Bar<ButtonBarLayout, SelectionStateBarButton>(), at: .top)
-        let items = [BarItem(title: "Test"), BarItem(title: "TestTest"), BarItem(title: "TestTestTest"), BarItem(title: "TestTestTestTest"), BarItem(title: "TestTestTestTestTest")]
-        bar.populate(with: items) { (button, item) in
-//            button.color = .red
-//            button.selectedColor = .green
-            button.backgroundColor = .gray
-        }
+        let bar = addBar(Bar<ButtonBarLayout, SelectionStateBarButton>(), dataSource: self, at: .top)
         
-//        bar.layout.isScrollEnabled = false
+        bar.layout.isScrollEnabled = false
 //        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
         
-        let secondBar = addBar(Bar.TabBar(), at: .top)
-        secondBar.populate(with: items)
-        
-        let thirdBar = addBar(Bar.ButtonBar(), at: .bottom)
-        thirdBar.populate(with: items)
+        addBar(Bar.TabBar(), dataSource: self, at: .top)
+        addBar(Bar.ButtonBar(), dataSource: self, at: .bottom)
     }
 }
 
@@ -73,5 +64,16 @@ extension TabViewController {
             viewControllers.append(viewController)
         }
         self.viewControllers = viewControllers
+    }
+}
+
+extension TabViewController: BarViewDataSource {
+    
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem? {
+        var title = "Test"
+        for _ in 0 ..< index {
+            title.append("Test")
+        }
+        return BarItem(title: title)
     }
 }

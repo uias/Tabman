@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Pageboy
 
+public protocol BarViewDataSource: class {
+    
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem?
+}
+
 internal protocol BarViewDelegate: class {
     
     func barView<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
@@ -58,6 +63,7 @@ open class Bar<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutP
     
     private var indicatedPosition: CGFloat?
     
+    internal weak var dataSource: BarViewDataSource?
     internal weak var delegate: BarViewDelegate?
     
     // MARK: Init

@@ -86,12 +86,14 @@ public extension TabmanViewController {
     
     @discardableResult
     func addBar<LayoutType, BarButtonType>(_ bar: Bar<LayoutType, BarButtonType>,
+                                           dataSource: BarViewDataSource,
                                            at location: BarLocation,
                                            layout: ((UIView) -> Void)? = nil) -> Bar<LayoutType, BarButtonType> {
         guard bar.superview == nil else {
             fatalError("Bar has already been added to view hierarchy.")
         }
         
+        bar.dataSource = dataSource
         bar.delegate = self
         addActiveDisplay(bar)
         layoutBar(bar, at: location, customLayout: layout)
