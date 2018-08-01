@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class BarViewContentInsetGuides {
+internal final class BarViewContentInsetGuides {
     
     // MARK: Properties
     
