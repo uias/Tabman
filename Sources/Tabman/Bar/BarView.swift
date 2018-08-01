@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Pageboy
 
-open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
+open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Bar, LayoutPerformer {
     
     // MARK: Properties
     
@@ -52,8 +52,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
     
     private var indicatedPosition: CGFloat?
     
-    internal weak var dataSource: BarViewDataSource?
-    internal weak var delegate: BarViewDelegate?
+    public weak var dataSource: BarViewDataSource?
+    public weak var delegate: BarViewDelegate?
     
     // MARK: Init
     
@@ -105,9 +105,9 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Lay
 }
 
 // MARK: - Data Source
-internal extension BarView {
+public extension BarView {
     
-    func reloadData(for tabViewController: TabmanViewController) {
+    public func reloadData(for tabViewController: TabmanViewController) {
         guard let pageCount = tabViewController.pageCount else {
             return
         }

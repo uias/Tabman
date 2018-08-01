@@ -15,12 +15,17 @@ public protocol BarViewDataSource: class {
     func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem?
 }
 
-internal protocol BarViewDelegate: class {
+public protocol BarViewDelegate: class {
     
     func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
                                             didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
-public protocol Bar: class {
+public protocol Bar: AnyObject where Self: UIView {
     
+    var dataSource: BarViewDataSource? { get set }
+    var delegate: BarViewDelegate? { get set }
+    
+    // MARK: Data Source
+    func reloadData(for tabViewController: TabmanViewController)
 }
