@@ -84,11 +84,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 // MARK: - Bar Layout
 public extension TabmanViewController {
     
-    @discardableResult
     func addBar(_ bar: Bar,
                 dataSource: BarDataSource,
                 at location: BarLocation,
-                layout: ((UIView) -> Void)? = nil) -> Bar {
+                layout: ((UIView) -> Void)? = nil) {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
@@ -105,8 +104,6 @@ public extension TabmanViewController {
         updateBar(bar, to: relativeCurrentPosition)
         
         bar.reloadData(for: self)
-        
-        return bar
     }
     
     private func layoutContainers(in view: UIView) {
