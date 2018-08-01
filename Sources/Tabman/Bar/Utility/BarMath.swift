@@ -11,6 +11,9 @@ import Foundation
 class BarMath {
     
     static func localIndexRange(for position: CGFloat, minimum: Int, maximum: Int) -> Range<Int> {
+        guard maximum > minimum else {
+            return 0 ..< 0
+        }
         let lower = floor(position)
         let upper = ceil(position)
         let minimum = CGFloat(minimum)
