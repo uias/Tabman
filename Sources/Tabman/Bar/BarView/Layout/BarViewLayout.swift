@@ -13,16 +13,16 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     // MARK: Types
     
     public enum ContentMode {
-        case wrap
+        case fill
         case fit
     }
     
     // MARK: Properties
     
     let container = BarViewLayoutContainer()
-    let layoutReferences: BarViewLayoutReferences
+    let contentInsetGuides: BarViewContentInsetGuides
     
-    public var contentMode: ContentMode = .wrap {
+    public var contentMode: ContentMode = .fill {
         didSet {
             guard oldValue != contentMode else {
                 return
@@ -31,10 +31,12 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
         }
     }
     
+    private var widthConstraint: NSLayoutConstraint?
+    
     // MARK: Init
     
-    public required init(layoutReferences: BarViewLayoutReferences) {
-        self.layoutReferences = layoutReferences
+    public required init(contentInsetGuides: BarViewContentInsetGuides) {
+        self.contentInsetGuides = contentInsetGuides
     }
     
     // MARK: LayoutPerformer
@@ -86,11 +88,11 @@ private extension BarViewLayout {
     func update(for contentMode: ContentMode) {
         switch contentMode {
         case .fit:
-            container.snp.makeConstraints { (make) in
-                make.width.equalTo(layoutReferences.rootView.snp.width)
-            }
+            self.widthConstraint = container.widthAnchor.constraint(equalTo: contentInsetGuides.content.widthAnchor)
+            widthConstraint?.isActive = true
+            
         default:
-            break
+            widthConstraint?.isActive = false
         }
     }
 }

@@ -29,10 +29,11 @@ class TabViewController: TabmanViewController {
         addBar(bar, dataSource: self, at: .top)
         
         bar.background = .flat(color: .lightGray)
-        bar.layout.contentMode = .fit
-        bar.layout.buttonDistribution = .fillEqually
+        
+//        bar.layout.contentMode = .fit
+        bar.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        
 //        bar.layout.isScrollEnabled = false
-//        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
         
         addBar(Bar.TabBar(), dataSource: self, at: .top)
         addBar(Bar.ButtonBar(), dataSource: self, at: .bottom)

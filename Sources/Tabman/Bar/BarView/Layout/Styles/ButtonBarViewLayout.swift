@@ -11,22 +11,6 @@ import SnapKit
 
 public final class ButtonBarViewLayout: BarViewLayout {
     
-    // MARK: Types
-    
-    public enum Distribution: Int {
-        case fill
-        case fillEqually
-        
-        var stackViewDistribution: UIStackView.Distribution {
-            switch self {
-            case .fill:
-                return .fill
-            case .fillEqually:
-                return .fillEqually
-            }
-        }
-    }
-    
     // MARK: Defaults
     
     private struct Defaults {
@@ -38,6 +22,17 @@ public final class ButtonBarViewLayout: BarViewLayout {
     
     private let stackView = UIStackView()
     private var itemWidthConstraints: [Constraint]?
+    
+    public override var contentMode: BarViewLayout.ContentMode {
+        didSet {
+            switch contentMode {
+            case .fill:
+                buttonDistribution = .fill
+            case .fit:
+                buttonDistribution = .fillEqually
+            }
+        }
+    }
     
     // MARK: Layout
     
@@ -94,14 +89,11 @@ public extension ButtonBarViewLayout {
         }
     }
     
-    public var buttonDistribution: Distribution {
+    private var buttonDistribution: UIStackView.Distribution {
         set {
-            stackView.distribution = newValue.stackViewDistribution
+            stackView.distribution = newValue
         } get {
-            guard let distribution = Distribution(rawValue: stackView.distribution.rawValue) else {
-                fatalError()
-            }
-            return distribution
+            return stackView.distribution
         }
     }
 }
