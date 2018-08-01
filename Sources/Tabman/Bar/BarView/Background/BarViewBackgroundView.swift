@@ -9,11 +9,11 @@
 import UIKit
 import SnapKit
 
-internal class BarBackgroundView: UIView {
+internal class BarViewBackgroundView: UIView {
     
     // MARK: Init
     
-    init(for background: BarBackground) {
+    init(for background: BarViewBackground) {
         super.init(frame: .zero)
         renderBackground(background)
     }
@@ -24,7 +24,7 @@ internal class BarBackgroundView: UIView {
     
     // MARK: Background
     
-    private func renderBackground(_ background: BarBackground) {
+    private func renderBackground(_ background: BarViewBackground) {
         switch background {
             
         case .blur(let style):

@@ -18,7 +18,7 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Bar
     private let stackView = UIStackView()
     
     private let backgroundContainer = UIView()
-    public var background: BarBackground = .flat(color: .white) {
+    public var background: BarViewBackground = .flat(color: .white) {
         didSet {
             updateBackground(for: background.backgroundView)
         }

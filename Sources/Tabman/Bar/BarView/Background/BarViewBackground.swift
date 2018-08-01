@@ -1,5 +1,5 @@
 //
-//  BarBackground.swift
+//  BarViewBackground.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 31/07/2018.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-public enum BarBackground {
+public enum BarViewBackground {
     case none
     case flat(color: UIColor)
     case blur(style: UIBlurEffect.Style)
     case custom(view: UIView)
 }
 
-internal extension BarBackground {
+internal extension BarViewBackground {
     
     var backgroundView: UIView? {
         switch self {
@@ -24,7 +24,7 @@ internal extension BarBackground {
         case .custom(let view):
             return view
         default:
-            return BarBackgroundView(for: self)
+            return BarViewBackgroundView(for: self)
         }
     }
 }
