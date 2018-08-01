@@ -20,7 +20,8 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     // MARK: Properties
     
     let container = BarViewLayoutContainer()
-    let contentInsetGuides: BarViewContentInsetGuides
+    private let contentInsetGuides: BarViewContentInsetGuides
+    private weak var contentView: UIScrollView!
     
     public var contentMode: ContentMode = .fill {
         didSet {
@@ -35,8 +36,10 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
     // MARK: Init
     
-    public required init(contentInsetGuides: BarViewContentInsetGuides) {
-        self.contentInsetGuides = contentInsetGuides
+    public required init<LayoutType, ButtonBarType>(in barView: BarView<LayoutType, ButtonBarType>,
+                                                    contentView: UIScrollView) {
+        self.contentInsetGuides = BarViewContentInsetGuides(for: barView)
+        self.contentView = contentView
     }
     
     // MARK: LayoutPerformer
@@ -73,6 +76,23 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
 
 // MARK: - Customization
 public extension BarViewLayout {
+    
+    public var contentInset: UIEdgeInsets {
+        set {
+            contentInsetGuides.contentInset = newValue
+            contentView.contentInset = newValue
+        } get {
+            return contentView.contentInset
+        }
+    }
+    
+    public var isScrollEnabled: Bool {
+        set {
+            contentView.isScrollEnabled = newValue
+        } get {
+            return contentView.isScrollEnabled
+        }
+    }
     
     public var isUserInteractionEnabled: Bool {
         set {

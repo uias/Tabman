@@ -31,7 +31,6 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
         }
     }
     
-    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
     public private(set) var layout: LayoutType!
     public private(set) var buttons: [BarButtonType]? {
         didSet {
@@ -97,7 +96,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
             make.height.equalTo(view)
         }
         
-        self.layout = LayoutType(contentInsetGuides: contentInsetGuides)
+        self.layout = LayoutType(in: self, contentView: scrollView)
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
         layout.performLayout()
@@ -127,15 +126,6 @@ public extension BarView {
 
 // MARK: - Customization
 public extension BarView {
-    
-    public var contentInset: UIEdgeInsets {
-        set {
-            contentInsetGuides.contentInset = newValue
-            scrollView.contentInset = newValue
-        } get {
-            return scrollView.contentInset
-        }
-    }
     
     private func updateBackground(for view: UIView?) {
         backgroundContainer.removeAllSubviews()
