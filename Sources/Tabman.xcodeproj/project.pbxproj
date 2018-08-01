@@ -23,6 +23,7 @@
 		4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
+		462941D42111CDC600345B52 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941D32111CDC600345B52 /* BarView.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		464DFE1F2110AF0200335D19 /* BarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DFE1E2110AF0200335D19 /* BarBackground.swift */; };
 		464DFE212110AF0800335D19 /* BarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DFE202110AF0800335D19 /* BarBackgroundView.swift */; };
@@ -85,6 +86,7 @@
 		4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
+		462941D32111CDC600345B52 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
 		462F85D9201B339800C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				46B7FDFA20BC537000E9BB7E /* Bar.swift */,
 				4612BCF120C88D24001A37B5 /* Bar+Templates.swift */,
+				462941D32111CDC600345B52 /* BarView.swift */,
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
 				4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */,
 				464DFE1D2110AEFC00335D19 /* Background */,
@@ -584,6 +587,7 @@
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
 				46C3150120EE54230093D2AF /* BarButtonInteractionController.swift in Sources */,
+				462941D42111CDC600345B52 /* BarView.swift in Sources */,
 				46C314BC20EBA8570093D2AF /* ButtonBarLayout.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				46C314B520EBA82E0093D2AF /* BarButtonStateController.swift in Sources */,
