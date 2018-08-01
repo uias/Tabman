@@ -23,12 +23,6 @@ public final class ButtonBarLayout: BarLayout {
     private let stackView = UIStackView()
     private var itemWidthConstraints: [Constraint]?
     
-    public var isScrollEnabled: Bool = true {
-        didSet {
-            updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
-        }
-    }
-    
     // MARK: Layout
     
     public override func performLayout(in view: UIView) {
@@ -46,7 +40,6 @@ public final class ButtonBarLayout: BarLayout {
     
     override func populate(with barButtons: [BarButton]) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
-        invalidateStateLayoutConstraints()
     }
     
     override func clear() {
@@ -80,7 +73,6 @@ public extension ButtonBarLayout {
     public var interButtonSpacing: CGFloat {
         set {
             stackView.spacing = newValue
-            invalidateStateLayoutConstraints()
         } get {
             return stackView.spacing
         }
@@ -88,47 +80,47 @@ public extension ButtonBarLayout {
 }
 
 // MARK: - Layout Updating
-private extension ButtonBarLayout {
-    
-    /// Apply any layout constraint changes that are required for the
-    /// current customization state.
-    private func invalidateStateLayoutConstraints() {
-        
-        updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
-    }
-    
-    /// Constrain item views to fit the width of the screen if scroll is disabled.
-    ///
-    /// - Parameter isScrollEnabled: Whether scroll is enabled.
-    private func updateLayoutConstraintsFor(isScrollEnabled: Bool) {
-        if isScrollEnabled {
-            
-            for constraint in itemWidthConstraints ?? [] {
-                constraint.deactivate()
-            }
-            self.itemWidthConstraints = nil
-            
-        } else {
-            if let itemWidthConstraints = self.itemWidthConstraints {
-                itemWidthConstraints.forEach({ $0.deactivate() })
-            }
-            container.layoutIfNeeded()
-
-            let itemCount = CGFloat(stackView.arrangedSubviews.count)
-            let totalInterItemSpacing = interButtonSpacing * (itemCount - 1.0)
-            let constrainedWidth = (presentingBounds.size.width - totalInterItemSpacing) / itemCount
-            
-            if constrainedWidth < Defaults.minimumRecommendedButtonWidth {
-                print("The item width in the ButtonBarLayout is less than \(Defaults.minimumRecommendedButtonWidth) when `isScrollEnabled = false`. It is recommended that you enable scrolling to avoid interaction issues.")
-            }
-            
-            var constraints = [Constraint]()
-            for view in stackView.arrangedSubviews {
-                view.snp.makeConstraints { (make) in
-                    constraints.append(make.width.equalTo(max(constrainedWidth, 0.0)).constraint)
-                }
-            }
-            self.itemWidthConstraints = constraints
-        }
-    }
-}
+//private extension ButtonBarLayout {
+//
+//    /// Apply any layout constraint changes that are required for the
+//    /// current customization state.
+//    private func invalidateStateLayoutConstraints() {
+//
+//        updateLayoutConstraintsFor(isScrollEnabled: isScrollEnabled)
+//    }
+//
+//    /// Constrain item views to fit the width of the screen if scroll is disabled.
+//    ///
+//    /// - Parameter isScrollEnabled: Whether scroll is enabled.
+//    private func updateLayoutConstraintsFor(isScrollEnabled: Bool) {
+//        if isScrollEnabled {
+//
+//            for constraint in itemWidthConstraints ?? [] {
+//                constraint.deactivate()
+//            }
+//            self.itemWidthConstraints = nil
+//
+//        } else {
+//            if let itemWidthConstraints = self.itemWidthConstraints {
+//                itemWidthConstraints.forEach({ $0.deactivate() })
+//            }
+//            container.layoutIfNeeded()
+//
+//            let itemCount = CGFloat(stackView.arrangedSubviews.count)
+//            let totalInterItemSpacing = interButtonSpacing * (itemCount - 1.0)
+//            let constrainedWidth = (presentingBounds.size.width - totalInterItemSpacing) / itemCount
+//
+//            if constrainedWidth < Defaults.minimumRecommendedButtonWidth {
+//                print("The item width in the ButtonBarLayout is less than \(Defaults.minimumRecommendedButtonWidth) when `isScrollEnabled = false`. It is recommended that you enable scrolling to avoid interaction issues.")
+//            }
+//
+//            var constraints = [Constraint]()
+//            for view in stackView.arrangedSubviews {
+//                view.snp.makeConstraints { (make) in
+//                    constraints.append(make.width.equalTo(max(constrainedWidth, 0.0)).constraint)
+//                }
+//            }
+//            self.itemWidthConstraints = constraints
+//        }
+//    }
+//}
