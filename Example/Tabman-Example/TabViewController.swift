@@ -67,7 +67,7 @@ extension TabViewController {
     }
 }
 
-extension TabViewController: BarViewDataSource {
+extension TabViewController: BarDataSource {
     
     func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem? {
         var title = "Test"

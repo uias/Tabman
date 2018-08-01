@@ -10,21 +10,21 @@ import UIKit
 import SnapKit
 import Pageboy
 
-public protocol BarViewDataSource: class {
+public protocol BarDataSource: class {
     
     func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem?
 }
 
-public protocol BarViewDelegate: class {
+public protocol BarDelegate: class {
     
-    func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
-                                            didRequestScrollToPageAt index: PageboyViewController.PageIndex)
+    func bar(_ bar: Bar,
+             didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
 public protocol Bar: AnyObject where Self: UIView {
     
-    var dataSource: BarViewDataSource? { get set }
-    var delegate: BarViewDelegate? { get set }
+    var dataSource: BarDataSource? { get set }
+    var delegate: BarDelegate? { get set }
     
     // Data Source
     func reloadData(for tabViewController: TabmanViewController)

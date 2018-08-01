@@ -86,7 +86,7 @@ public extension TabmanViewController {
     
     @discardableResult
     func addBar(_ bar: Bar,
-                dataSource: BarViewDataSource,
+                dataSource: BarDataSource,
                 at location: BarLocation,
                 layout: ((UIView) -> Void)? = nil) -> Bar {
         guard let barView = bar as? UIView else {
@@ -184,10 +184,9 @@ private extension TabmanViewController {
 }
 
 // MARK: Bar Updates
-extension TabmanViewController: BarViewDelegate {
+extension TabmanViewController: BarDelegate {
     
-    public func barView<LayoutType, BarButtonType>(_ bar: BarView<LayoutType, BarButtonType>,
-                                            didRequestScrollToPageAt index: PageIndex) {
+    public func bar(_ bar: Bar, didRequestScrollToPageAt index: PageboyViewController.PageIndex) {
         scrollToPage(.at(index: index), animated: true, completion: nil)
     }
 }

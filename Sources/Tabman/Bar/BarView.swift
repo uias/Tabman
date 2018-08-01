@@ -52,8 +52,8 @@ open class BarView<LayoutType: BarLayout, BarButtonType: BarButton>: UIView, Bar
     
     private var indicatedPosition: CGFloat?
     
-    public weak var dataSource: BarViewDataSource?
-    public weak var delegate: BarViewDelegate?
+    public weak var dataSource: BarDataSource?
+    public weak var delegate: BarDelegate?
     
     // MARK: Init
     
@@ -274,6 +274,6 @@ extension BarView: BarButtonInteractionHandler {
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,
                               at index: Int) {
-        delegate?.barView(self, didRequestScrollToPageAt: index)
+        delegate?.bar(self, didRequestScrollToPageAt: index)
     }
 }

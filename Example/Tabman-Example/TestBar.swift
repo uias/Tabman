@@ -12,8 +12,8 @@ import Pageboy
 
 class TestBar: UIView, Bar {
     
-    var dataSource: BarViewDataSource?
-    var delegate: BarViewDelegate?
+    var dataSource: BarDataSource?
+    var delegate: BarDelegate?
     
     func reloadData(for tabViewController: TabmanViewController) {
         
