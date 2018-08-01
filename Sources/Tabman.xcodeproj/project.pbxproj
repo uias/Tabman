@@ -13,7 +13,6 @@
 		4612BCE720C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
 		4612BCEF20C87385001A37B5 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCEE20C87385001A37B5 /* BarLocation.swift */; };
 		4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* Bar+Templates.swift */; };
-		4612BD0520C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */; };
 		4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */; };
 		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
 		4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */; };
@@ -76,7 +75,6 @@
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
 		4612BCEE20C87385001A37B5 /* BarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
 		4612BCF120C88D24001A37B5 /* Bar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bar+Templates.swift"; sourceTree = "<group>"; };
-		4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingStatusDisplay.swift; sourceTree = "<group>"; };
 		4612BD0A20C9AE88001A37B5 /* BarFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFocusProvider.swift; sourceTree = "<group>"; };
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
 		4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				4612BCD220C859E5001A37B5 /* ScrollStackView.swift */,
-				4612BD0420C9AE61001A37B5 /* PagingStatusDisplay.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 				4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				464DFE212110AF0800335D19 /* BarBackgroundView.swift in Sources */,
 				4612BCDE20C86004001A37B5 /* BarButton.swift in Sources */,
-				4612BD0520C9AE61001A37B5 /* PagingStatusDisplay.swift in Sources */,
 				4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				4612BD0B20C9AE88001A37B5 /* BarFocusProvider.swift in Sources */,
