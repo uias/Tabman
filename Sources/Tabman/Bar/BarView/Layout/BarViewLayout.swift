@@ -10,22 +10,31 @@ import UIKit
 
 open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
+    // MARK: Types
+    
+    public enum ContentMode {
+        case wrap
+        case fit
+    }
+    
     // MARK: Properties
     
     let container = BarViewLayoutContainer()
+    let layoutReferences: BarViewLayoutReferences
     
-    /// Bar View that is presenting the layout.
-    public private(set) weak var presentingView: UIView!
-    /// Bounds of the bar view that is presenting the layout.
-    public var presentingBounds: CGRect {
-        presentingView.layoutIfNeeded()
-        return presentingView.bounds
+    public var contentMode: ContentMode = .wrap {
+        didSet {
+            guard oldValue != contentMode else {
+                return
+            }
+            update(for: contentMode)
+        }
     }
     
     // MARK: Init
     
-    public required init(for presentingView: UIView) {
-        self.presentingView = presentingView     
+    public required init(layoutReferences: BarViewLayoutReferences) {
+        self.layoutReferences = layoutReferences
     }
     
     // MARK: LayoutPerformer
@@ -68,6 +77,20 @@ public extension BarViewLayout {
             container.isUserInteractionEnabled = newValue
         } get {
             return container.isUserInteractionEnabled
+        }
+    }
+}
+
+private extension BarViewLayout {
+    
+    func update(for contentMode: ContentMode) {
+        switch contentMode {
+        case .fit:
+            container.snp.makeConstraints { (make) in
+                make.width.equalTo(layoutReferences.rootView.snp.width)
+            }
+        default:
+            break
         }
     }
 }

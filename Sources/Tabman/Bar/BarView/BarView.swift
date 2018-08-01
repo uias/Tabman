@@ -31,7 +31,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
         }
     }
     
-    public private(set) lazy var layout = LayoutType(for: self)
+    public private(set) var layout: LayoutType!
     public private(set) var buttons: [BarButtonType]? {
         didSet {
             self.buttonStateController = BarButtonStateController(for: buttons)
@@ -96,6 +96,9 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
             make.height.equalTo(view)
         }
         
+        self.layout = LayoutType(layoutReferences: BarViewLayoutReferences(rootView: self,
+                                                                           scrollView: self.scrollView,
+                                                                           contentView: self.stackView))
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
         layout.performLayout()

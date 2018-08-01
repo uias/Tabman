@@ -25,10 +25,12 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = BarView<ButtonBarViewLayout, SelectionStateBarButton>()
+        let bar = BarView<ButtonBarViewLayout, LabelBarButton>()
         addBar(bar, dataSource: self, at: .top)
         
         bar.background = .flat(color: .lightGray)
+        bar.layout.contentMode = .fit
+        bar.layout.buttonDistribution = .fillEqually
 //        bar.layout.isScrollEnabled = false
 //        bar.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
         
