@@ -49,7 +49,7 @@ public final class ButtonBarViewLayout: BarViewLayout {
     
     // MARK: Lifecycle
     
-    public override func populate(with barButtons: [BarButton]) {
+    public override func populate(with barButtons: [BarButton], at index: Int?) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
     }
     

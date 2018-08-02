@@ -41,7 +41,7 @@ public final class TabBarViewLayout: BarViewLayout {
         }
     }
     
-    public override func populate(with barButtons: [BarButton]) {
+    public override func populate(with barButtons: [BarButton], at index: Int?) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
     }
     

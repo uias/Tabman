@@ -15,7 +15,7 @@ class MyCustomBarViewLayout: BarViewLayout {
         super.performLayout(in: view)
     }
     
-    override func populate(with barButtons: [BarButton]) {
+    override func populate(with barButtons: [BarButton], at index: Int?) {
         
     }
     

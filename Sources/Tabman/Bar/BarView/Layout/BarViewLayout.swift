@@ -75,8 +75,9 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     /** Populate the layout with the bar buttons to display in the bar.
      
      - Parameter barButtons: Bar buttons to display.
+     - Parameter index: The index that the bar buttons should be populated at (in cases of insertion etc).
      **/
-    open func populate(with barButtons: [BarButton]) {
+    open func populate(with barButtons: [BarButton], at index: Int? = nil) {
         fatalError("Implement in subclass")
     }
     
