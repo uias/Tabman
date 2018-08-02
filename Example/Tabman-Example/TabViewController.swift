@@ -29,7 +29,7 @@ class TabViewController: TabmanViewController {
         addBar(bar, dataSource: self, at: .top)
 
         bar.background = .flat(color: .lightGray)
-
+        
         bar.layout.contentMode = .fit
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 

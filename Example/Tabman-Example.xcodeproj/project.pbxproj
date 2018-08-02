@@ -10,6 +10,7 @@
 		462941D62111CFA300345B52 /* TestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941D52111CFA300345B52 /* TestBar.swift */; };
 		463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
 		46C314AF20EBA5450093D2AF /* SelectionStateBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */; };
+		46DC3F0D211300DB0085FF37 /* MyCustomBarViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */; };
 		A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */; };
 		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
 		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		462941D52111CFA300345B52 /* TestBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBar.swift; sourceTree = "<group>"; };
 		46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStateBarButton.swift; sourceTree = "<group>"; };
+		46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomBarViewLayout.swift; sourceTree = "<group>"; };
 		7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
 				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
 				46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */,
+				46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */,
 				D62AC10F1E5736BE0020B8AE /* Resources */,
 			);
 			path = "Tabman-Example";
@@ -284,6 +287,7 @@
 				46C314AF20EBA5450093D2AF /* SelectionStateBarButton.swift in Sources */,
 				D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */,
 				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
+				46DC3F0D211300DB0085FF37 /* MyCustomBarViewLayout.swift in Sources */,
 				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

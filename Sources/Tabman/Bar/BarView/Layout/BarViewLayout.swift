@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BarViewLayout: LayoutPerformer, BarFocusProvider {
+open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Types
     
@@ -23,6 +23,15 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     private weak var contentInsetGuides: BarViewContentInsetGuides!
     private weak var contentView: UIScrollView!
     
+    /**
+     The display mode in which to display the content in the layout.
+     
+     Options:
+     - `.fill`: The layout and contents will be intrinsically sized, taking up as much space as required.
+     - `.fit`: The layout and it's contents will be restricted to fitting within the bounds of the bar.
+     
+     By default this is set to `.fill`
+    **/
     public var contentMode: ContentMode = .fill {
         didSet {
             guard oldValue != contentMode else {
@@ -58,17 +67,32 @@ open class BarViewLayout: LayoutPerformer, BarFocusProvider {
     
     // MARK: Lifecycle
     
-    func populate(with barButtons: [BarButton]) {
+    /** Populate the layout with the bar buttons to display in the bar.
+     
+     - Parameter barButtons: Bar buttons to display.
+     **/
+    open func populate(with barButtons: [BarButton]) {
         fatalError("Implement in subclass")
     }
     
-    func clear() {
+    /// Remove all populated content from the layout.
+    open func clear() {
         fatalError("Implement in subclass")
     }
     
-    // MARK: BarFocusProvider
+    // MARK: BarViewFocusProvider
     
-    func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    /**
+     Calculate the `focusRect` for the current position and capacity.
+     
+     This rect defines the area of the layout that should currently be highlighted for the selected bar button.
+
+     - Parameter position: Current position to display.
+     - Parameter capacity: Capacity of the bar (items).
+     
+     - Returns: Calculated focus rect.
+     **/
+    open func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         fatalError("Implement in subclass")
     }
 }

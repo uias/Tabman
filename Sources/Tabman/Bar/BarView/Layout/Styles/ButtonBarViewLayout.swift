@@ -49,17 +49,17 @@ public final class ButtonBarViewLayout: BarViewLayout {
     
     // MARK: Lifecycle
     
-    override func populate(with barButtons: [BarButton]) {
+    public override func populate(with barButtons: [BarButton]) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
     }
     
-    override func clear() {
+    public override func clear() {
         stackView.arrangedSubviews.forEach({ stackView.removeArrangedSubview($0) })
     }
     
-    // MARK: BarFocusProvider
+    // MARK: BarViewFocusProvider
     
-    override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    public override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard stackView.arrangedSubviews.count > range.upperBound else {
             return .zero

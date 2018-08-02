@@ -41,15 +41,15 @@ public final class TabBarViewLayout: BarViewLayout {
         }
     }
     
-    override func populate(with barButtons: [BarButton]) {
+    public override func populate(with barButtons: [BarButton]) {
         barButtons.forEach({ stackView.addArrangedSubview($0) })
     }
     
-    override func clear() {
+    public override func clear() {
         
     }
     
-    override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    public override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }
 }
