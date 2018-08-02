@@ -77,7 +77,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
-        
+        activeBars.forEach({ $0.reloadData(for: self)})
     }
 }
 
