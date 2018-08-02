@@ -36,6 +36,13 @@ class TabViewController: TabmanViewController {
         addBar(Bar.TabBar(), dataSource: self, at: .top)
         addBar(Bar.ButtonBar(), dataSource: self, at: .bottom)
     }
+    
+    func insertNewChild() {
+        let viewController = makeChildViewControllers(count: 1).first!
+        let index = viewControllers.count
+        viewControllers.append(viewController)
+        insertPage(at: index, then: .doNothing)
+    }
 }
 
 extension TabViewController: PageboyViewControllerDataSource {
@@ -57,6 +64,10 @@ extension TabViewController: PageboyViewControllerDataSource {
 extension TabViewController {
     
     private func initializeViewControllers(count: Int) {
+        self.viewControllers = makeChildViewControllers(count: count)
+    }
+    
+    private func makeChildViewControllers(count: Int) -> [UIViewController] {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewControllers = [UIViewController]()
         
@@ -66,7 +77,7 @@ extension TabViewController {
             
             viewControllers.append(viewController)
         }
-        self.viewControllers = viewControllers
+        return viewControllers
     }
 }
 

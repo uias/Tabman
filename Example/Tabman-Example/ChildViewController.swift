@@ -23,4 +23,8 @@ class ChildViewController: UIViewController {
             self.promptLabel.isHidden = index != 1
         }
     }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        (parentPageboy as? TabViewController)?.insertNewChild()
+    }
 }
