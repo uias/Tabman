@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 public final class LabelBarButton: BarButton {
     
@@ -30,11 +29,16 @@ public final class LabelBarButton: BarButton {
         super.performLayout(in: view)
         
         view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            view.leadingAnchor.constraint(equalTo: label.leadingAnchor),
+            view.topAnchor.constraint(equalTo: label.topAnchor),
+            view.trailingAnchor.constraint(equalTo: label.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: label.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
         
-        label.text = "Label"
+        label.text = "Item"
         
         self.contentInset = Defaults.contentInset
     }
