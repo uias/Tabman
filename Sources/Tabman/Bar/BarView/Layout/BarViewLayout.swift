@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ `BarViewLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
+ 
+ Attention: You should not directly use `BarViewLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarViewLayout`.
+ **/
 open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Types
@@ -100,6 +105,7 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
 // MARK: - Customization
 public extension BarViewLayout {
     
+    /// Inset to apply to the outside of the layout.
     public var contentInset: UIEdgeInsets {
         set {
             contentInsetGuides.contentInset = newValue
@@ -108,7 +114,7 @@ public extension BarViewLayout {
             return contentView.contentInset
         }
     }
-    
+    /// Whether the layout should be allowed to be scrolled by the user.
     public var isScrollEnabled: Bool {
         set {
             contentView.isScrollEnabled = newValue
@@ -116,7 +122,7 @@ public extension BarViewLayout {
             return contentView.isScrollEnabled
         }
     }
-    
+    /// Whether the user can interact with the layout directly.
     public var isUserInteractionEnabled: Bool {
         set {
             container.isUserInteractionEnabled = newValue
