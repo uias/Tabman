@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Pageboy
 
-open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView, Bar, LayoutPerformer {
+open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Properties
     
@@ -67,7 +67,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
         fatalError("BarView does not support Interface Builder")
     }
     
-    // MARK: Layout
+    // MARK: LayoutPerformer
     
     public private(set) var hasPerformedLayout = false
     
@@ -105,8 +105,8 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     }
 }
 
-// MARK: - Data Source
-public extension BarView {
+// MARK: - Bar
+extension BarView: Bar {
     
     public func reloadData(for tabViewController: TabmanViewController) {
         guard let pageCount = tabViewController.pageCount else {
@@ -121,6 +121,21 @@ public extension BarView {
         }
         
         populate(with: items, configure: nil)
+    }
+    
+    public func update(for pagePosition: CGFloat,
+                       capacity: Int,
+                       direction: PageboyViewController.NavigationDirection) {
+        self.indicatedPosition = pagePosition
+        layoutIfNeeded()
+        
+        let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
+        indicatorLayout?.update(for: focusFrame)
+        layoutIfNeeded()
+        
+        buttonStateController?.update(for: pagePosition, direction: direction)
+        
+        scrollView.scrollRectToVisible(focusFrame, animated: false)
     }
 }
 
@@ -167,25 +182,6 @@ private extension BarView {
         if let indicatedPosition = self.indicatedPosition {
             update(for: indicatedPosition, capacity: barButtons.count, direction: .neutral)
         }
-    }
-}
-
-// MARK: - Paging Updates
-extension BarView {
-    
-    public func update(for pagePosition: CGFloat,
-                       capacity: Int,
-                       direction: PageboyViewController.NavigationDirection) {
-        self.indicatedPosition = pagePosition
-        layoutIfNeeded()
-        
-        let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
-        indicatorLayout?.update(for: focusFrame)
-        layoutIfNeeded()
-        
-        buttonStateController?.update(for: pagePosition, direction: direction)
-        
-        scrollView.scrollRectToVisible(focusFrame, animated: false)
     }
 }
 
