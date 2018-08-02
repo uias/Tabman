@@ -5,9 +5,6 @@
       location = "group:Example/Tabman-Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:UI Tests/Tabman-UITests.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Sources/Tabman.xcodeproj">
    </FileRef>
    <FileRef
