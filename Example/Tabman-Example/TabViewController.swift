@@ -14,12 +14,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
     // MARK: Outlets
     
-    @IBOutlet weak var upperSeparatorView: UIView!
+    @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var offsetLabel: UILabel!
     @IBOutlet weak var pageLabel: UILabel!
-    @IBOutlet weak var lowerSeparatorView: UIView!
-    @IBOutlet weak var numberOfPagesLabel: UILabel!
-    @IBOutlet weak var numberOfPagesStepper: UIStepper!
     @IBOutlet weak var settingsButton: CircularButton!
     @IBOutlet weak var gradientView: GradientView!
 
@@ -45,7 +42,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
         // updating
-        numberOfPagesStepper.value = Double(numberOfViewControllers)
         updateAppearance(pagePosition: currentPosition?.x ?? 0.0)
         updateStatusLabels()
         updateBarButtonStates(index: currentIndex ?? 0)
@@ -68,26 +64,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
             navigationBar.tintColor = gradient.midColor
         }
     }
-
-    private(set) var numberOfViewControllers: Int = 5 {
-        didSet {
-            reloadPages()
-            updateStatusLabels()
-        }
-    }
-
-    private var defaultNumberOfViewControllers: Int {
-        switch bar.style {
-        case .blockTabBar, .buttonBar:
-            return 3
-        default:
-            return 5
-        }
-    }
-
-    func resetNumberOfViewControllers() {
-        numberOfViewControllers = defaultNumberOfViewControllers
-    }
     
     // MARK: Actions
     
@@ -98,16 +74,20 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     @objc func lastPage(_ sender: UIBarButtonItem) {
         scrollToPage(.last, animated: true)
     }
-
-    @IBAction func numberOfPagesStepperDidChangeValue(_ sender: UIStepper) {
-        numberOfViewControllers = Int(sender.value)
-    }
     
     // MARK: PageboyViewControllerDataSource
 
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        initializeViewControllers(count: numberOfViewControllers)
-        return numberOfViewControllers
+        var count = 0
+        switch bar.style {
+        case .blockTabBar, .buttonBar:
+            count = 3
+        default:
+            count = 5
+        }
+        
+        initializeViewControllers(count: count)
+        return count
     }
     
     private func initializeViewControllers(count: Int) {
