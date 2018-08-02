@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 def lib_pods
 
-  pod 'Pageboy', :git => 'https://github.com/uias/Pageboy', :tag => '3.0.0.beta.2'
+  pod 'Pageboy', :git => 'https://github.com/uias/Pageboy', :branch => 'pageboy3'
   pod 'AutoInsetter', '~> 1.2.0'
   pod 'SnapKit', '~> 4.0'
 
