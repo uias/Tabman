@@ -71,21 +71,15 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     }
     
     // MARK: Lifecycle
-    
-    /** Populate the layout with the bar buttons to display in the bar.
-     
-     - Parameter barButtons: Bar buttons to display.
-     - Parameter index: The index that the bar buttons should be populated at (in cases of insertion etc).
-     **/
-    open func populate(with barButtons: [BarButton], at index: Int? = nil) {
-        fatalError("Implement in subclass")
+        
+    open func insert(barButtons: [BarButton], at index: Int) {
+        
     }
     
-    /// Remove all populated content from the layout.
-    open func clear() {
-        fatalError("Implement in subclass")
+    open func remove(barButtons: [BarButton]) {
+        
     }
-    
+
     // MARK: BarViewFocusProvider
     
     /**

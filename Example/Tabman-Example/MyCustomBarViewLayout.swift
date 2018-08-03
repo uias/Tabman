@@ -15,14 +15,6 @@ class MyCustomBarViewLayout: BarViewLayout {
         super.performLayout(in: view)
     }
     
-    override func populate(with barButtons: [BarButton], at index: Int?) {
-        
-    }
-    
-    override func clear() {
-        
-    }
-    
     override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }

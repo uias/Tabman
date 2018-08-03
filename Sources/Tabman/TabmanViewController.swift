@@ -48,13 +48,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(for: self)})
+        activeBars.forEach({ $0.reloadData(for: self, at: index...index, context: .insertion)})
         super.insertPage(at: index, then: updateBehavior)
     }
     
     open override func deletePage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(for: self)})
+        activeBars.forEach({ $0.reloadData(for: self, at: index...index, context: .deletion)})
         super.deletePage(at: index, then: updateBehavior)
     }
     
@@ -91,7 +91,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
-        activeBars.forEach({ $0.reloadData(for: self)})
+        guard let pageCount = pageboyViewController.pageCount else {
+            return
+        }
+        activeBars.forEach({ $0.reloadData(for: self, at: 0...pageCount - 1, context: .full)})
     }
 }
 
@@ -117,7 +120,9 @@ public extension TabmanViewController {
         
         updateBar(bar, to: relativeCurrentPosition)
         
-        bar.reloadData(for: self)
+        if let pageCount = self.pageCount {
+            bar.reloadData(for: self, at: 0...pageCount - 1, context: .full)
+        }
     }
     
     private func layoutContainers(in view: UIView) {

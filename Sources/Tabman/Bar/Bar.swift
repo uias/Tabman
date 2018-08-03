@@ -12,7 +12,7 @@ import Pageboy
 
 public protocol BarDataSource: class {
     
-    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem?
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem
 }
 
 public protocol BarDelegate: class {
@@ -21,13 +21,21 @@ public protocol BarDelegate: class {
              didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
+public enum BarReloadContext {
+    case full
+    case insertion
+    case deletion
+}
+
 public protocol Bar: AnyObject where Self: UIView {
     
     var dataSource: BarDataSource? { get set }
     var delegate: BarDelegate? { get set }
     
     // Data Source
-    func reloadData(for tabViewController: TabmanViewController)
+    func reloadData(for viewController: TabmanViewController,
+                    at indexes: ClosedRange<Int>,
+                    context: BarReloadContext)
     
     // Updating
     func update(for pagePosition: CGFloat,

@@ -83,7 +83,7 @@ extension TabViewController {
 
 extension TabViewController: BarDataSource {
     
-    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem? {
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
         var title = "Test"
         for _ in 0 ..< index {
             title.append("Test")

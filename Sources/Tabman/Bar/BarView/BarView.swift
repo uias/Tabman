@@ -108,19 +108,41 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
 // MARK: - Bar
 extension BarView: Bar {
     
-    public func reloadData(for tabViewController: TabmanViewController) {
-        guard let pageCount = tabViewController.pageCount else {
+    public func reloadData(for viewController: TabmanViewController,
+                           at indexes: ClosedRange<Int>,
+                           context: BarReloadContext) {
+        guard let dataSource = self.dataSource else {
             return
         }
-        var items = [BarItem]()
-        for index in 0 ..< pageCount {
-            if var item = dataSource?.barItem(for: tabViewController, at: index) {
+        
+        switch context {
+        case .full, .insertion:
+            
+            var newButtons = [BarButtonType]()
+            for index in indexes.lowerBound ... indexes.upperBound {
+                var item = dataSource.barItem(for: viewController, at: index)
                 item.assignedIndex = index
-                items.append(item)
+                
+                let button = BarButtonType()
+                button.populate(for: item)
+                button.update(for: .unselected)
+                newButtons.append(button)
             }
+            
+            self.buttons?.insert(contentsOf: newButtons, at: indexes.lowerBound)
+            layout.insert(barButtons: newButtons, at: indexes.lowerBound)
+            
+        case .deletion:
+            var buttonsToRemove = [BarButtonType]()
+            for index in indexes.lowerBound ... indexes.upperBound {
+                if let button = self.buttons?[index] {
+                    buttonsToRemove.append(button)
+                }
+            }
+            layout.remove(barButtons: buttonsToRemove)
         }
         
-        populate(with: items, configure: nil)
+        reloadIndicatorPosition()
     }
     
     public func update(for pagePosition: CGFloat,
@@ -151,36 +173,6 @@ public extension BarView {
         backgroundContainer.addSubview(view)
         view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-        }
-    }
-}
-
-// MARK: - Item population
-private extension BarView {
-    
-    func populate(with items: [BarItem],
-                  configure: ((BarButtonType, BarItem) -> Void)? = nil) {
-        
-        let barButtons: [BarButtonType] = items.map({ item in
-            let button = BarButtonType()
-            button.populate(for: item)
-            button.update(for: .unselected)
-            return button
-        })
-        self.buttons = barButtons
-        layout.clear()
-        layout.populate(with: barButtons)
-        
-        if let configure = configure {
-            for (index, button) in barButtons.enumerated() {
-                let item = items[index]
-                configure(button, item)
-            }
-        }
-        
-        // Update for indicated position
-        if let indicatedPosition = self.indicatedPosition {
-            update(for: indicatedPosition, capacity: barButtons.count, direction: .neutral)
         }
     }
 }
@@ -255,6 +247,13 @@ extension BarView {
         }
         
         return BarIndicatorLayout(leading: leading, width: width, height: height)
+    }
+    
+    private func reloadIndicatorPosition() {
+        guard let indicatedPosition = self.indicatedPosition, let buttons = self.buttons else {
+            return
+        }
+        update(for: indicatedPosition, capacity: buttons.count, direction: .neutral)
     }
 }
 
