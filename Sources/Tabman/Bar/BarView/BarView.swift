@@ -129,7 +129,7 @@ extension BarView: Bar {
             }
             
             buttons.collection.insert(contentsOf: newButtons, at: indexes.lowerBound)
-            layout.insert(barButtons: newButtons, at: indexes.lowerBound)
+            layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
             var buttonsToRemove = [BarButtonType]()
@@ -137,7 +137,7 @@ extension BarView: Bar {
                 let button = buttons.collection[index]
                 buttonsToRemove.append(button)
             }
-            layout.remove(barButtons: buttonsToRemove)
+            layout.remove(buttons: buttonsToRemove)
         }
         
         reloadIndicatorPosition()

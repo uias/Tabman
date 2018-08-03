@@ -27,17 +27,21 @@ class TabViewController: TabmanViewController {
         
         let bar = BarView<ButtonBarViewLayout, LabelBarButton>()
         addBar(bar, dataSource: self, at: .top)
+
+        bar.background = .flat(color: .lightGray)
+        bar.layout.contentMode = .fit
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         
         bar.buttons.customize { (button) in
             button.selectedColor = .red
         }
 
-        bar.background = .flat(color: .lightGray)
+        let tabBar = Bar.TabBar()
+        addBar(tabBar, dataSource: self, at: .top)
+        tabBar.buttons.customize { (button) in
+            button.imageSize = CGSize(width: 50, height: 50)
+        }
         
-        bar.layout.contentMode = .fit
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-
-        addBar(Bar.TabBar(), dataSource: self, at: .top)
         addBar(Bar.ButtonBar(), dataSource: self, at: .bottom)
     }
     
@@ -45,7 +49,7 @@ class TabViewController: TabmanViewController {
         let viewController = makeChildViewControllers(count: 1).first!
         let index = viewControllers.count
         viewControllers.append(viewController)
-        insertPage(at: index, then: .doNothing)
+        insertPage(at: index, then: .scrollToUpdate)
     }
 }
 

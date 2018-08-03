@@ -49,21 +49,21 @@ public final class ButtonBarViewLayout: BarViewLayout {
     
     // MARK: Lifecycle
     
-    public override func insert(barButtons: [BarButton], at index: Int) {
+    public override func insert(buttons: [BarButton], at index: Int) {
         var currentIndex = index
-        for barButton in barButtons {
+        for button in buttons {
             if index >= stackView.arrangedSubviews.count { // just add
-                stackView.addArrangedSubview(barButton)
+                stackView.addArrangedSubview(button)
             } else {
-                stackView.insertArrangedSubview(barButton, at: currentIndex)
+                stackView.insertArrangedSubview(button, at: currentIndex)
             }
             currentIndex += 1
         }
     }
     
-    public override func remove(barButtons: [BarButton]) {
-        for barButton in barButtons {
-            stackView.removeArrangedSubview(barButton)
+    public override func remove(buttons: [BarButton]) {
+        for button in buttons {
+            stackView.removeArrangedSubview(button)
         }
     }
     

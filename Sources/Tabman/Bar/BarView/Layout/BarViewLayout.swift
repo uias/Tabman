@@ -71,12 +71,23 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     }
     
     // MARK: Lifecycle
-        
-    open func insert(barButtons: [BarButton], at index: Int) {
+    
+    /**
+     Insert new bar buttons into the layout from a specified index.
+     
+     - Parameter buttons: The buttons to insert.
+     - Parameter index: The index to start inserting the buttons at.
+     **/
+    open func insert(buttons: [BarButton], at index: Int) {
         
     }
-    
-    open func remove(barButtons: [BarButton]) {
+
+    /**
+     Remove existing bar buttons from the layout.
+     
+     - Parameter buttons: The buttons to remove.
+     **/
+    open func remove(buttons: [BarButton]) {
         
     }
 
