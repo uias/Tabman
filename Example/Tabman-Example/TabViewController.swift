@@ -27,7 +27,8 @@ class TabViewController: TabmanViewController {
         
         let bar = BarView<ButtonBarViewLayout, LabelBarButton>()
         addBar(bar, dataSource: self, at: .top)
-        bar.customizeBarButtons { (button) in
+        
+        bar.buttons.customize { (button) in
             button.selectedColor = .red
         }
 

@@ -21,6 +21,14 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     
+    public private(set) lazy var layout = LayoutType(contentView: scrollView)
+    public let buttons = BarButtons<BarButtonType>()
+
+    public weak var dataSource: BarDataSource?
+    public weak var delegate: BarDelegate?
+    
+    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
+    
     private let backgroundContainer = UIView()
     public var background: BarViewBackground = .flat(color: .white) {
         didSet {
@@ -34,11 +42,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
             return nil
         }
     }
-    
-    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
-    public private(set) lazy var layout = LayoutType(contentView: scrollView)
-    public let buttons = BarButtons<BarButtonType>()
-    
+
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
             updateIndicator(for: indicatorStyle)
@@ -49,11 +53,6 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     private var indicatorContainer: UIView?
     
     private var indicatedPosition: CGFloat?
-    
-    public weak var dataSource: BarDataSource?
-    public weak var delegate: BarDelegate?
-    
-    private var barButtonCustomization: BarButtonCustomization?
     
     // MARK: Init
     
@@ -127,8 +126,6 @@ extension BarView: Bar {
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)
-                
-                barButtonCustomization?(button)
             }
             
             buttons.collection.insert(contentsOf: newButtons, at: indexes.lowerBound)
@@ -164,12 +161,7 @@ extension BarView: Bar {
 
 // MARK: - Customization
 public extension BarView {
-    
-    public func customizeBarButtons(_ customize: @escaping BarButtonCustomization) {
-        self.barButtonCustomization = customize
-        buttons.collection.forEach({ customize($0) })
-    }
-    
+        
     private func updateBackground(for view: UIView?) {
         backgroundContainer.removeAllSubviews()
         guard let view = view else {

@@ -22,6 +22,10 @@ public final class BarButtons<BarButtonType: BarButton> {
         didSet {
             self.stateController = BarButtonStateController(for: collection)
             self.interactionController = BarButtonInteractionController(for: collection, handler: self)
+            
+            for button in collection {
+                customization?(button)
+            }
         }
     }
     
