@@ -12,6 +12,10 @@ import Pageboy
 
 open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
     
+    // MARK: Types
+    
+    public typealias BarButtonCustomization = (BarButtonType) -> Void
+    
     // MARK: Properties
     
     private let scrollView = UIScrollView()
@@ -55,6 +59,8 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     
     public weak var dataSource: BarDataSource?
     public weak var delegate: BarDelegate?
+    
+    private var barButtonCustomization: BarButtonCustomization?
     
     // MARK: Init
     
@@ -127,6 +133,8 @@ extension BarView: Bar {
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)
+                
+                barButtonCustomization?(button)
             }
             
             self.buttons.insert(contentsOf: newButtons, at: indexes.lowerBound)
@@ -162,6 +170,11 @@ extension BarView: Bar {
 
 // MARK: - Customization
 public extension BarView {
+    
+    public func customizeBarButtons(_ customize: @escaping BarButtonCustomization) {
+        self.barButtonCustomization = customize
+        buttons.forEach({ customize($0) })
+    }
     
     private func updateBackground(for view: UIView?) {
         backgroundContainer.removeAllSubviews()
