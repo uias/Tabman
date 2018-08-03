@@ -21,10 +21,18 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     
+    /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType(contentView: scrollView)
+    /// The bar buttons that are currently displayed in the bar view.
     public let buttons = BarButtons<BarButtonType>()
 
+    /// Object that acts as a data source to the BarView.
     public weak var dataSource: BarDataSource?
+    /**
+     Object that acts as a delegate to the BarView.
+     
+     By default this is set to the `TabmanViewController` the bar is added to.
+     **/
     public weak var delegate: BarDelegate?
     
     private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
@@ -33,13 +41,6 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     public var background: BarViewBackground = .flat(color: .white) {
         didSet {
             updateBackground(for: background.backgroundView)
-        }
-    }
-    open override var backgroundColor: UIColor? {
-        set {
-            fatalError("Use .background instead")
-        } get {
-            return nil
         }
     }
 
