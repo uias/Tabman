@@ -33,7 +33,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     
     private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
     public private(set) lazy var layout = LayoutType(contentView: scrollView)
-    public private(set) var buttons: [BarButtonType]? {
+    public private(set) var buttons = [BarButtonType]() {
         didSet {
             self.buttonStateController = BarButtonStateController(for: buttons)
             self.buttonInteractionController = BarButtonInteractionController(for: buttons, handler: self)
@@ -129,15 +129,14 @@ extension BarView: Bar {
                 newButtons.append(button)
             }
             
-            self.buttons?.insert(contentsOf: newButtons, at: indexes.lowerBound)
+            self.buttons.insert(contentsOf: newButtons, at: indexes.lowerBound)
             layout.insert(barButtons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
             var buttonsToRemove = [BarButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
-                if let button = self.buttons?[index] {
-                    buttonsToRemove.append(button)
-                }
+                let button = self.buttons[index]
+                buttonsToRemove.append(button)
             }
             layout.remove(barButtons: buttonsToRemove)
         }
@@ -250,10 +249,12 @@ extension BarView {
     }
     
     private func reloadIndicatorPosition() {
-        guard let indicatedPosition = self.indicatedPosition, let buttons = self.buttons else {
+        guard let indicatedPosition = self.indicatedPosition else {
             return
         }
-        update(for: indicatedPosition, capacity: buttons.count, direction: .neutral)
+        update(for: indicatedPosition,
+               capacity: self.buttons.count,
+               direction: .neutral)
     }
 }
 
