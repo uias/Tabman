@@ -23,16 +23,16 @@ internal final class BarButtonInteractionController: BarButtonController {
     
     // MARK: Init
     
-    init?(for barButtons: [BarButton]?, handler: BarButtonInteractionHandler) {
+    init(for barButtons: [BarButton], handler: BarButtonInteractionHandler) {
         self.handler = handler
         super.init(for: barButtons)
         
-        barButtons?.forEach({ (button) in
+        barButtons.forEach({ (button) in
             button.addTarget(self, action: #selector(barButtonPressed(_:)), for: .touchUpInside)
         })
     }
     
-    override init?(for barButtons: [BarButton]?) {
+    override init(for barButtons: [BarButton]?) {
         fatalError("Use init(for barButtons: handler:)")
     }
     

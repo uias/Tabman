@@ -20,8 +20,20 @@ public final class LabelBarButton: BarButton {
     
     private let label = UILabel()
     
-    public var color: UIColor = .black
-    public var selectedColor: UIColor = UIView.defaultTintColor
+    public var color: UIColor = .black {
+        didSet {
+            if !isSelected {
+                label.textColor = selectedColor
+            }
+        }
+    }
+    public var selectedColor: UIColor = UIView.defaultTintColor {
+        didSet {
+            if isSelected  {
+                label.textColor = selectedColor
+            }
+        }
+    }
     
     // MARK: Lifecycle
     

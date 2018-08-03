@@ -16,10 +16,7 @@ internal class BarButtonController {
     
     // MARK: Init
     
-    init?(for barButtons: [BarButton]?) {
-        guard let barButtons = barButtons else {
-            return nil
-        }
+    init(for barButtons: [BarButton]) {
         self.barButtons = barButtons.map({ WeakContainer<BarButton>(for: $0) })
     }
 }

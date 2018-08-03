@@ -37,14 +37,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     
     private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
     public private(set) lazy var layout = LayoutType(contentView: scrollView)
-    public private(set) var buttons = [BarButtonType]() {
-        didSet {
-            self.buttonStateController = BarButtonStateController(for: buttons)
-            self.buttonInteractionController = BarButtonInteractionController(for: buttons, handler: self)
-        }
-    }
-    private var buttonStateController: BarButtonStateController?
-    private var buttonInteractionController: BarButtonInteractionController?
+    public let buttons = BarButtons<BarButtonType>()
     
     public var indicatorStyle: BarIndicatorStyle = .default {
         didSet {
@@ -66,6 +59,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     
     public required init() {
         super.init(frame: .zero)
+        buttons.interactionHandler = self
         performLayout(in: self)
     }
     
@@ -137,13 +131,13 @@ extension BarView: Bar {
                 barButtonCustomization?(button)
             }
             
-            self.buttons.insert(contentsOf: newButtons, at: indexes.lowerBound)
+            buttons.collection.insert(contentsOf: newButtons, at: indexes.lowerBound)
             layout.insert(barButtons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
             var buttonsToRemove = [BarButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
-                let button = self.buttons[index]
+                let button = buttons.collection[index]
                 buttonsToRemove.append(button)
             }
             layout.remove(barButtons: buttonsToRemove)
@@ -162,7 +156,7 @@ extension BarView: Bar {
         indicatorLayout?.update(for: focusFrame)
         layoutIfNeeded()
         
-        buttonStateController?.update(for: pagePosition, direction: direction)
+        buttons.stateController.update(for: pagePosition, direction: direction)
         
         scrollView.scrollRectToVisible(focusFrame, animated: false)
     }
@@ -173,7 +167,7 @@ public extension BarView {
     
     public func customizeBarButtons(_ customize: @escaping BarButtonCustomization) {
         self.barButtonCustomization = customize
-        buttons.forEach({ customize($0) })
+        buttons.collection.forEach({ customize($0) })
     }
     
     private func updateBackground(for view: UIView?) {
@@ -266,7 +260,7 @@ extension BarView {
             return
         }
         update(for: indicatedPosition,
-               capacity: self.buttons.count,
+               capacity: buttons.collection.count,
                direction: .neutral)
     }
 }
