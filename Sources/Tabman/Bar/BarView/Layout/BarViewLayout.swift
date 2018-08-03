@@ -120,22 +120,6 @@ public extension BarViewLayout {
             return contentView.contentInset
         }
     }
-    /// Whether the layout should be allowed to be scrolled by the user.
-    public var isScrollEnabled: Bool {
-        set {
-            contentView.isScrollEnabled = newValue
-        } get {
-            return contentView.isScrollEnabled
-        }
-    }
-    /// Whether the user can interact with the layout directly.
-    public var isUserInteractionEnabled: Bool {
-        set {
-            container.isUserInteractionEnabled = newValue
-        } get {
-            return container.isUserInteractionEnabled
-        }
-    }
 }
 
 private extension BarViewLayout {

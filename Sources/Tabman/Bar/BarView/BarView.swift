@@ -18,6 +18,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     
     // MARK: Properties
     
+    private let edgeFadeView = EdgeFadedView()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
     
@@ -83,9 +84,14 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
         }
         updateBackground(for: background.backgroundView)
         
+        view.addSubview(edgeFadeView)
+        edgeFadeView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        view.addSubview(scrollView)
+        edgeFadeView.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -162,7 +168,24 @@ extension BarView: Bar {
 
 // MARK: - Customization
 public extension BarView {
-        
+    
+    /// Whether the layout should be allowed to be scrolled by the user.
+    public var isScrollEnabled: Bool {
+        set {
+            scrollView.isScrollEnabled = newValue
+        } get {
+            return scrollView.isScrollEnabled
+        }
+    }
+    /// Whether to fade the edges of the bar content.
+    public var fadeEdges: Bool {
+        set {
+            edgeFadeView.showFade = newValue
+        } get {
+            return edgeFadeView.showFade
+        }
+    }
+    
     private func updateBackground(for view: UIView?) {
         backgroundContainer.removeAllSubviews()
         guard let view = view else {
