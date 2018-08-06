@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 import Pageboy
 
-open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView, LayoutPerformer {
+open class BarView<LayoutType: BarViewLayout, ButtonType: BarButton>: UIView, LayoutPerformer {
     
     // MARK: Types
     
-    public typealias BarButtonCustomization = (BarButtonType) -> Void
+    public typealias BarButtonCustomization = (ButtonType) -> Void
     
     // MARK: Properties
     
@@ -25,7 +25,7 @@ open class BarView<LayoutType: BarViewLayout, BarButtonType: BarButton>: UIView,
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType(contentView: scrollView)
     /// The bar buttons that are currently displayed in the bar view.
-    public let buttons = BarButtons<BarButtonType>()
+    public let buttons = BarButtons<ButtonType>()
 
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: BarDataSource?
@@ -124,12 +124,12 @@ extension BarView: Bar {
         switch context {
         case .full, .insertion:
             
-            var newButtons = [BarButtonType]()
+            var newButtons = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 var item = dataSource.barItem(for: viewController, at: index)
                 item.assignedIndex = index
                 
-                let button = BarButtonType()
+                let button = ButtonType()
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)
@@ -139,7 +139,7 @@ extension BarView: Bar {
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
-            var buttonsToRemove = [BarButtonType]()
+            var buttonsToRemove = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let button = buttons.collection[index]
                 buttonsToRemove.append(button)
