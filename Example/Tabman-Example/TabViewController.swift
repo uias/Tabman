@@ -42,7 +42,9 @@ class TabViewController: TabmanViewController {
             button.imageSize = CGSize(width: 50, height: 50)
         }
         
-        addBar(Bar.ButtonBar(), dataSource: self, at: .bottom)
+        let buttonBar = Bar.ButtonBar()
+        addBar(buttonBar, dataSource: self, at: .bottom)
+        buttonBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
     }
     
     func insertNewChild() {

@@ -116,6 +116,7 @@ public extension BarViewLayout {
         set {
             contentInsetGuides.contentInset = newValue
             contentView.contentInset = newValue
+            contentView.contentOffset.x -= newValue.left
         } get {
             return contentView.contentInset
         }
