@@ -8,12 +8,12 @@
 
 import UIKit
 
-internal final class BarViewContentInsetGuides {
+internal final class BarViewContentInsetGuides: BarLayoutInsetGuides {
     
     // MARK: Properties
     
     /// Layout Guide for the leading inset on the bar.
-    public let leading: UILayoutGuide = {
+    public let leadingInset: UILayoutGuide = {
         let guide = UILayoutGuide()
         guide.identifier = "barInsetsLeadingGuide"
         return guide
@@ -21,7 +21,7 @@ internal final class BarViewContentInsetGuides {
     private let leadingWidth: NSLayoutConstraint
     
     /// Layout Guide for the trailing inset on the bar.
-    public let trailing: UILayoutGuide = {
+    public let trailingInset: UILayoutGuide = {
         let guide = UILayoutGuide()
         guide.identifier = "barInsetsTrailingGuide"
         return guide
@@ -36,32 +36,32 @@ internal final class BarViewContentInsetGuides {
     }()
     
     /// The content inset currently applied to the bar.
-    internal var contentInset: UIEdgeInsets = .zero {
+    internal var insets: UIEdgeInsets = .zero {
         didSet {
-            leadingWidth.constant = contentInset.left
-            trailingWidth.constant = contentInset.right
+            leadingWidth.constant = insets.left
+            trailingWidth.constant = insets.right
         }
     }
     
     // MARK: Init
     
     init<LayoutType, ButtonType, IndicatorType>(for barView: BarView<LayoutType, ButtonType, IndicatorType>) {
-        barView.addLayoutGuide(leading)
+        barView.addLayoutGuide(leadingInset)
         barView.addLayoutGuide(content)
-        barView.addLayoutGuide(trailing)
+        barView.addLayoutGuide(trailingInset)
         
-        leading.leadingAnchor.constraint(equalTo: barView.leadingAnchor).isActive = true
-        leading.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
+        leadingInset.leadingAnchor.constraint(equalTo: barView.leadingAnchor).isActive = true
+        leadingInset.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
         
-        content.leadingAnchor.constraint(equalTo: leading.trailingAnchor).isActive = true
+        content.leadingAnchor.constraint(equalTo: leadingInset.trailingAnchor).isActive = true
         content.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
-        content.trailingAnchor.constraint(equalTo: trailing.leadingAnchor).isActive = true
+        content.trailingAnchor.constraint(equalTo: trailingInset.leadingAnchor).isActive = true
         
-        trailing.trailingAnchor.constraint(equalTo: barView.trailingAnchor).isActive = true
-        trailing.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
+        trailingInset.trailingAnchor.constraint(equalTo: barView.trailingAnchor).isActive = true
+        trailingInset.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
         
-        self.leadingWidth = leading.widthAnchor.constraint(equalToConstant: contentInset.left)
-        self.trailingWidth = trailing.widthAnchor.constraint(equalToConstant: contentInset.right)
+        self.leadingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.left)
+        self.trailingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.right)
         
         leadingWidth.isActive = true
         trailingWidth.isActive = true

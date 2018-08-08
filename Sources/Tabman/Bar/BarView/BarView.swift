@@ -100,7 +100,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
-        layout.performLayout(contentInsetGuides: contentInsetGuides)
+        layout.performLayout(insetGuides: contentInsetGuides)
         
         layout(newIndicator: indicator)
     }

@@ -25,7 +25,7 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     // MARK: Properties
     
     let container = BarLayoutContainer()
-    private weak var contentInsetGuides: BarViewContentInsetGuides!
+    private weak var insetGuides: BarLayoutInsetGuides!
     private weak var contentView: UIScrollView!
     
     /**
@@ -58,8 +58,8 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     public private(set) var hasPerformedLayout = false
 
-    internal func performLayout(contentInsetGuides: BarViewContentInsetGuides) {
-        self.contentInsetGuides = contentInsetGuides
+    internal func performLayout(insetGuides: BarLayoutInsetGuides) {
+        self.insetGuides = insetGuides
         performLayout(in: container)
     }
     
@@ -114,7 +114,7 @@ public extension BarLayout {
     /// Inset to apply to the outside of the layout.
     public var contentInset: UIEdgeInsets {
         set {
-            contentInsetGuides.contentInset = newValue
+            insetGuides.insets = newValue
             contentView.contentInset = newValue
             contentView.contentOffset.x -= newValue.left
         } get {
@@ -128,7 +128,7 @@ private extension BarLayout {
     func update(for contentMode: ContentMode) {
         switch contentMode {
         case .fit:
-            self.widthConstraint = container.widthAnchor.constraint(equalTo: contentInsetGuides.content.widthAnchor)
+            self.widthConstraint = container.widthAnchor.constraint(equalTo: insetGuides.content.widthAnchor)
             widthConstraint?.isActive = true
             
         default:
