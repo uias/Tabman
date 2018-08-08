@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Pageboy
 
-open class BarView<LayoutType: BarViewLayout, ButtonType: BarButton>: UIView, LayoutPerformer {
+open class BarView<LayoutType: BarViewLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
     
     // MARK: Types
     
@@ -45,12 +45,7 @@ open class BarView<LayoutType: BarViewLayout, ButtonType: BarButton>: UIView, La
         }
     }
 
-    public var indicatorStyle: BarIndicatorStyle = .default {
-        didSet {
-            updateIndicator(for: indicatorStyle)
-        }
-    }
-    public private(set) lazy var indicator = BarIndicator.for(style: indicatorStyle)
+    public let indicator = IndicatorType()
     private var indicatorLayout: BarIndicatorLayout?
     private var indicatorContainer: UIView?
     
@@ -201,11 +196,6 @@ public extension BarView {
 
 // MARK: - Indicator management
 extension BarView {
-    
-    private func updateIndicator(for style: BarIndicatorStyle) {
-        let indicator = BarIndicator.for(style: style)
-        updateIndicator(to: indicator)
-    }
     
     private func updateIndicator(to newIndicator: BarIndicator) {
         clearUp(oldIndicator: self.indicator, container: self.indicatorContainer)

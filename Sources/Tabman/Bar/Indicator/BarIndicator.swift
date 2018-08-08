@@ -38,15 +38,3 @@ open class BarIndicator: UIView {
         super.init(coder: aDecoder)
     }
 }
-
-internal extension BarIndicator {
-    
-    static func `for`(style: BarIndicatorStyle) -> BarIndicator {
-        switch style {
-        case .line:
-            return LineBarIndicator()
-        case .custom(let type):
-            return type.init()
-        }
-    }
-}

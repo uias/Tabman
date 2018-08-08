@@ -16,7 +16,6 @@
 		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
 		4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */; };
 		4612BD1820C9E7FA001A37B5 /* BarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */; };
-		4612BD1B20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */; };
 		4612BD1E20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */; };
 		4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
@@ -82,7 +81,6 @@
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
 		4612BD1320C9BAC5001A37B5 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
 		4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicator.swift; sourceTree = "<group>"; };
-		4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorStyle.swift; sourceTree = "<group>"; };
 		4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBarIndicator.swift; sourceTree = "<group>"; };
 		4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				46EADB0220D315F7000414F9 /* BarIndicatorLayout.swift */,
-				4612BD1A20C9E8E3001A37B5 /* BarIndicatorStyle.swift */,
 				4612BD1720C9E7FA001A37B5 /* BarIndicator.swift */,
 				4612BD1D20C9EEF1001A37B5 /* LineBarIndicator.swift */,
 			);
@@ -614,7 +611,6 @@
 				4612BD1820C9E7FA001A37B5 /* BarIndicator.swift in Sources */,
 				46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */,
 				462941EA2111EB7C00345B52 /* TabBarViewLayout.swift in Sources */,
-				4612BD1B20C9E8E3001A37B5 /* BarIndicatorStyle.swift in Sources */,
 				4612BD1E20C9EEF1001A37B5 /* LineBarIndicator.swift in Sources */,
 				4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,

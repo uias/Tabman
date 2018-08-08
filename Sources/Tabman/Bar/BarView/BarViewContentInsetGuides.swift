@@ -45,7 +45,7 @@ internal final class BarViewContentInsetGuides {
     
     // MARK: Init
     
-    init<LayoutType, ButtonType>(for barView: BarView<LayoutType, ButtonType>) {
+    init<LayoutType, ButtonType, IndicatorType>(for barView: BarView<LayoutType, ButtonType, IndicatorType>) {
         barView.addLayoutGuide(leading)
         barView.addLayoutGuide(content)
         barView.addLayoutGuide(trailing)

@@ -8,9 +8,9 @@
 
 import UIKit
 
-internal final class LineBarIndicator: BarIndicator {
+public final class LineBarIndicator: BarIndicator {
     
-    override var displayStyle: BarIndicator.DisplayStyle {
+    public override var displayStyle: BarIndicator.DisplayStyle {
         return .footer
     }
 }
