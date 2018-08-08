@@ -1,5 +1,5 @@
 //
-//  ButtonBarViewLayout.swift
+//  ButtonBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-public final class ButtonBarViewLayout: BarViewLayout {
+public final class ButtonBarLayout: BarLayout {
     
     // MARK: Defaults
     
@@ -23,7 +23,7 @@ public final class ButtonBarViewLayout: BarViewLayout {
     private let stackView = UIStackView()
     private var itemWidthConstraints: [Constraint]?
     
-    public override var contentMode: BarViewLayout.ContentMode {
+    public override var contentMode: BarLayout.ContentMode {
         didSet {
             switch contentMode {
             case .fill:
@@ -89,7 +89,7 @@ public final class ButtonBarViewLayout: BarViewLayout {
 }
 
 // MARK: - Customization
-public extension ButtonBarViewLayout {
+public extension ButtonBarLayout {
     
     public var interButtonSpacing: CGFloat {
         set {

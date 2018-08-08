@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-final class BarViewLayoutContainer: UIView {
+final class BarLayoutContainer: UIView {
     
     // MARK: Properties
     

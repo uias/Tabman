@@ -1,5 +1,5 @@
 //
-//  TabBarViewLayout.swift
+//  TabBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -9,13 +9,13 @@
 import UIKit
 import SnapKit
 
-public final class TabBarViewLayout: BarViewLayout {
+public final class TabBarLayout: BarLayout {
     
     // MARK: Properties
     
     private let stackView = UIStackView()
 
-    public override var contentMode: BarViewLayout.ContentMode {
+    public override var contentMode: BarLayout.ContentMode {
         set {
             guard newValue == .fit else {
                 fatalError("TabBarViewLayout only supports .fit contentMode")

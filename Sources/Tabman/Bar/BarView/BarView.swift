@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Pageboy
 
-open class BarView<LayoutType: BarViewLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
+open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
     
     // MARK: Types
     

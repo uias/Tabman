@@ -9,11 +9,11 @@
 import UIKit
 
 /**
- `BarViewLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
+ `BarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
  
- Attention: You should not directly use `BarViewLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarViewLayout`.
+ Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarLayout`.
  **/
-open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
+open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Types
     
@@ -24,7 +24,7 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Properties
     
-    let container = BarViewLayoutContainer()
+    let container = BarLayoutContainer()
     private weak var contentInsetGuides: BarViewContentInsetGuides!
     private weak var contentView: UIScrollView!
     
@@ -109,7 +109,7 @@ open class BarViewLayout: LayoutPerformer, BarViewFocusProvider {
 }
 
 // MARK: - Customization
-public extension BarViewLayout {
+public extension BarLayout {
     
     /// Inset to apply to the outside of the layout.
     public var contentInset: UIEdgeInsets {
@@ -123,7 +123,7 @@ public extension BarViewLayout {
     }
 }
 
-private extension BarViewLayout {
+private extension BarLayout {
     
     func update(for contentMode: ContentMode) {
         switch contentMode {

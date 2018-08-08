@@ -9,7 +9,7 @@
 import UIKit
 import Tabman
 
-class MyCustomBarViewLayout: BarViewLayout {
+class MyCustomBarViewLayout: BarLayout {
     
     override func performLayout(in view: UIView) {
         super.performLayout(in: view)

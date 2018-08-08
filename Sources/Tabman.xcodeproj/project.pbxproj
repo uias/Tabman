@@ -27,10 +27,10 @@
 		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
 		46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BE20EBAC430093D2AF /* WeakContainer.swift */; };
 		46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */; };
-		46E9631D211B3A01004C7468 /* BarViewLayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630B211B3A01004C7468 /* BarViewLayoutContainer.swift */; };
-		46E9631E211B3A01004C7468 /* TabBarViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* TabBarViewLayout.swift */; };
-		46E9631F211B3A01004C7468 /* ButtonBarViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630E211B3A01004C7468 /* ButtonBarViewLayout.swift */; };
-		46E96320211B3A01004C7468 /* BarViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* BarViewLayout.swift */; };
+		46E9631D211B3A01004C7468 /* BarLayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */; };
+		46E9631E211B3A01004C7468 /* TabBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* TabBarLayout.swift */; };
+		46E9631F211B3A01004C7468 /* ButtonBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */; };
+		46E96320211B3A01004C7468 /* BarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* BarLayout.swift */; };
 		46E96321211B3A01004C7468 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96311211B3A01004C7468 /* BarButton.swift */; };
 		46E96322211B3A01004C7468 /* BarButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96312211B3A01004C7468 /* BarButtonController.swift */; };
 		46E96323211B3A01004C7468 /* LabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96314211B3A01004C7468 /* LabelBarButton.swift */; };
@@ -94,10 +94,10 @@
 		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		46C314BE20EBAC430093D2AF /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewFocusProvider.swift; sourceTree = "<group>"; };
-		46E9630B211B3A01004C7468 /* BarViewLayoutContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewLayoutContainer.swift; sourceTree = "<group>"; };
-		46E9630D211B3A01004C7468 /* TabBarViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewLayout.swift; sourceTree = "<group>"; };
-		46E9630E211B3A01004C7468 /* ButtonBarViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarViewLayout.swift; sourceTree = "<group>"; };
-		46E9630F211B3A01004C7468 /* BarViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewLayout.swift; sourceTree = "<group>"; };
+		46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLayoutContainer.swift; sourceTree = "<group>"; };
+		46E9630D211B3A01004C7468 /* TabBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarLayout.swift; sourceTree = "<group>"; };
+		46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarLayout.swift; sourceTree = "<group>"; };
+		46E9630F211B3A01004C7468 /* BarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLayout.swift; sourceTree = "<group>"; };
 		46E96311211B3A01004C7468 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		46E96312211B3A01004C7468 /* BarButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonController.swift; sourceTree = "<group>"; };
 		46E96314211B3A01004C7468 /* LabelBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBarButton.swift; sourceTree = "<group>"; };
@@ -230,9 +230,9 @@
 		46E96309211B3A01004C7468 /* BarLayout */ = {
 			isa = PBXGroup;
 			children = (
+				46E9630F211B3A01004C7468 /* BarLayout.swift */,
 				46E9630A211B3A01004C7468 /* Container */,
 				46E9630C211B3A01004C7468 /* Styles */,
-				46E9630F211B3A01004C7468 /* BarViewLayout.swift */,
 			);
 			path = BarLayout;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 		46E9630A211B3A01004C7468 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				46E9630B211B3A01004C7468 /* BarViewLayoutContainer.swift */,
+				46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -248,8 +248,8 @@
 		46E9630C211B3A01004C7468 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				46E9630D211B3A01004C7468 /* TabBarViewLayout.swift */,
-				46E9630E211B3A01004C7468 /* ButtonBarViewLayout.swift */,
+				46E9630D211B3A01004C7468 /* TabBarLayout.swift */,
+				46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -590,15 +590,15 @@
 				462941F52112012300345B52 /* BarViewContentInsetGuides.swift in Sources */,
 				46E96322211B3A01004C7468 /* BarButtonController.swift in Sources */,
 				46E96327211B3A01004C7468 /* BarButtons.swift in Sources */,
-				46E9631F211B3A01004C7468 /* ButtonBarViewLayout.swift in Sources */,
+				46E9631F211B3A01004C7468 /* ButtonBarLayout.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */,
-				46E96320211B3A01004C7468 /* BarViewLayout.swift in Sources */,
+				46E96320211B3A01004C7468 /* BarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */,
 				46E96325211B3A01004C7468 /* BarButtonStateController.swift in Sources */,
 				D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */,
 				46E96324211B3A01004C7468 /* TabItemBarButton.swift in Sources */,
-				46E9631D211B3A01004C7468 /* BarViewLayoutContainer.swift in Sources */,
+				46E9631D211B3A01004C7468 /* BarLayoutContainer.swift in Sources */,
 				462941EB2111EB7C00345B52 /* BarView.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
@@ -617,7 +617,7 @@
 				46E96323211B3A01004C7468 /* LabelBarButton.swift in Sources */,
 				462941E62111EB7C00345B52 /* BarViewBackgroundView.swift in Sources */,
 				46F3945221149A9200473E0A /* EdgeFadedView.swift in Sources */,
-				46E9631E211B3A01004C7468 /* TabBarViewLayout.swift in Sources */,
+				46E9631E211B3A01004C7468 /* TabBarLayout.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
