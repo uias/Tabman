@@ -28,8 +28,8 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     let container = UIView()
     /// Layout Guides that provide inset values.
     private weak var insetGuides: BarLayoutInsetGuides!
-    /// The scroll view that this layout is embedded in.
-    private weak var parentScrollView: UIScrollView!
+    /// The parent of the layout.
+    private weak var parent: BarLayoutParent!
     
     /// Constraint that is active when constraining width to a `.fit` contentMode.
     private var widthConstraint: NSLayoutConstraint?
@@ -54,15 +54,15 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Init
     
-    public required init(contentView: UIScrollView) {
-        self.parentScrollView = contentView
-    }
+    public required init() {}
     
     // MARK: LayoutPerformer
     
     public private(set) var hasPerformedLayout = false
 
-    internal func performLayout(insetGuides: BarLayoutInsetGuides) {
+    internal func performLayout(parent: BarLayoutParent,
+                                insetGuides: BarLayoutInsetGuides) {
+        self.parent = parent
         self.insetGuides = insetGuides
         performLayout(in: container)
     }
@@ -119,10 +119,9 @@ public extension BarLayout {
     public var contentInset: UIEdgeInsets {
         set {
             insetGuides.insets = newValue
-            parentScrollView.contentInset = newValue
-            parentScrollView.contentOffset.x -= newValue.left
+            parent.contentInset = newValue
         } get {
-            return parentScrollView.contentInset
+            return parent.contentInset
         }
     }
 }

@@ -40,6 +40,7 @@
 		46E9632E211B3BFB004C7468 /* BarLayoutInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */; };
 		46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96330211B439C004C7468 /* LineBarIndicator.swift */; };
 		46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96335211B4B06004C7468 /* EdgeFadedView.swift */; };
+		46E96339211B7F03004C7468 /* BarLayoutParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96338211B7F03004C7468 /* BarLayoutParent.swift */; };
 		80DC9DD26B75D60F835636A7 /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B5C513664DC2AC0FC95376 /* Pods_TabmanTests.framework */; };
 		9788AA0263196786E1B090CD /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8B62EBAD08F4D6570B1D5 /* Pods_Tabman.framework */; };
 		D616D0841E73058600C7AA32 /* TabmanBarAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */; };
@@ -105,6 +106,7 @@
 		46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLayoutInsetGuides.swift; sourceTree = "<group>"; };
 		46E96330211B439C004C7468 /* LineBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBarIndicator.swift; sourceTree = "<group>"; };
 		46E96335211B4B06004C7468 /* EdgeFadedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeFadedView.swift; sourceTree = "<group>"; };
+		46E96338211B7F03004C7468 /* BarLayoutParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLayoutParent.swift; sourceTree = "<group>"; };
 		B61F5691272BE3E9485FFBA2 /* Pods-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearanceTests.swift; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				46E9630F211B3A01004C7468 /* BarLayout.swift */,
+				46E96338211B7F03004C7468 /* BarLayoutParent.swift */,
 				46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */,
 				46E9630C211B3A01004C7468 /* Styles */,
 			);
@@ -594,6 +597,7 @@
 				464DFE232110B0F500335D19 /* UIView+Subviews.swift in Sources */,
 				46E96321211B3A01004C7468 /* BarButton.swift in Sources */,
 				46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */,
+				46E96339211B7F03004C7468 /* BarLayoutParent.swift in Sources */,
 				46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */,
 				4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */,
 				46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */,

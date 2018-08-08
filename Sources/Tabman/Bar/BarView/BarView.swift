@@ -23,7 +23,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     private let stackView = UIStackView()
     
     /// The layout that is currently active in the bar view.
-    public private(set) lazy var layout = LayoutType(contentView: scrollView)
+    public private(set) lazy var layout = LayoutType()
     /// The bar buttons that are currently displayed in the bar view.
     public let buttons = BarButtons<ButtonType>()
 
@@ -100,7 +100,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
-        layout.performLayout(insetGuides: contentInsetGuides)
+        layout.performLayout(parent: self, insetGuides: contentInsetGuides)
         
         layout(newIndicator: indicator)
     }
@@ -259,5 +259,17 @@ extension BarView: BarButtonInteractionHandler {
                               didHandlePressOf button: BarButton,
                               at index: Int) {
         delegate?.bar(self, didRequestScrollToPageAt: index)
+    }
+}
+
+extension BarView: BarLayoutParent {
+    
+    var contentInset: UIEdgeInsets {
+        set {
+            scrollView.contentInset = newValue
+            scrollView.contentOffset.x -= newValue.left
+        } get {
+            return scrollView.contentInset
+        }
     }
 }
