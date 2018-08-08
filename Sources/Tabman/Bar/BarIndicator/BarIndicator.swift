@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BarIndicator: UIView {
+open class BarIndicator: UIView, LayoutPerformer {
     
     // MARK: Types
     
@@ -28,13 +28,30 @@ open class BarIndicator: UIView {
     
     public required init() {
         super.init(frame: .zero)
+        initialize()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        initialize()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
+        performLayout(in: self)
+    }
+    
+    // MARK: LayoutPerformer
+    
+    public private(set) var hasPerformedLayout: Bool = false
+    public func performLayout(in view: UIView) {
+        guard !hasPerformedLayout else {
+            return
+        }
+        hasPerformedLayout = true
     }
 }

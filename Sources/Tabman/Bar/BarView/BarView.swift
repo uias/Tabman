@@ -46,7 +46,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     }
 
     public let indicator = IndicatorType()
-    private var indicatorLayout: BarIndicatorLayout?
+    private var indicatorLayoutHandler: BarIndicatorLayoutHandler?
     private var indicatorContainer: UIView?
     
     private var indicatedPosition: CGFloat?
@@ -152,7 +152,7 @@ extension BarView: Bar {
         layoutIfNeeded()
         
         let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
-        indicatorLayout?.update(for: focusFrame)
+        indicatorLayoutHandler?.update(for: focusFrame)
         layoutIfNeeded()
         
         buttons.stateController.update(for: pagePosition, direction: direction)
@@ -197,14 +197,12 @@ public extension BarView {
 // MARK: - Indicator management
 extension BarView {
     
-    // MARK: Layout
-    
     private func layout(newIndicator: BarIndicator) {
         let container = layoutContainer(for: newIndicator)
         let layout = layoutIndicator(newIndicator, in: container)
         
         self.indicatorContainer = container
-        self.indicatorLayout = layout
+        self.indicatorLayoutHandler = layout
         
         newIndicator.backgroundColor = .orange
     }
@@ -230,22 +228,19 @@ extension BarView {
         return container
     }
     
-    private func layoutIndicator(_ indicator: BarIndicator, in container: UIView) -> BarIndicatorLayout {
+    private func layoutIndicator(_ indicator: BarIndicator, in container: UIView) -> BarIndicatorLayoutHandler {
         container.addSubview(indicator)
         
-        var leading: NSLayoutConstraint?
-        var width: NSLayoutConstraint?
-        var height: NSLayoutConstraint?
+        let leading = indicator.leadingAnchor.constraint(equalTo: container.leadingAnchor)
+        let top = indicator.topAnchor.constraint(equalTo: container.topAnchor)
+        let bottom = indicator.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         
-        indicator.snp.makeConstraints { (make) in
-            leading = make.leading.equalToSuperview().constraint.layoutConstraints.first
-            width = make.width.equalTo(0).constraint.layoutConstraints.first
-            height = make.height.equalTo(0).priority(500).constraint.layoutConstraints.first
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
+        let width = indicator.widthAnchor.constraint(equalToConstant: 0.0)
         
-        return BarIndicatorLayout(leading: leading, width: width, height: height)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([leading, top, bottom, width])
+        
+        return BarIndicatorLayoutHandler(leading: leading, width: width)
     }
     
     private func reloadIndicatorPosition() {

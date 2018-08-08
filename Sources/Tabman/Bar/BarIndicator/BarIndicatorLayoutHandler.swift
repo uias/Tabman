@@ -8,22 +8,19 @@
 
 import UIKit
 
-internal final class BarIndicatorLayout {
+internal final class BarIndicatorLayoutHandler {
     
     // MARK: Properties
     
     private let leading: NSLayoutConstraint?
     private let width: NSLayoutConstraint?
-    private let height: NSLayoutConstraint?
     
     // MARK: Init
     
     init(leading: NSLayoutConstraint?,
-         width: NSLayoutConstraint?,
-         height: NSLayoutConstraint?) {
+         width: NSLayoutConstraint?) {
         self.leading = leading
         self.width = width
-        self.height = height
     }
     
     // MARK: Updates
@@ -31,6 +28,5 @@ internal final class BarIndicatorLayout {
     func update(for rect: CGRect) {
         self.leading?.constant = rect.minX
         self.width?.constant = rect.size.width
-        self.height?.constant = 10
     }
 }
