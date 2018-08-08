@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCD220C859E5001A37B5 /* ScrollStackView.swift */; };
 		4612BCE420C860EC001A37B5 /* LayoutPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */; };
 		4612BCE720C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
 		4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* Bar+Templates.swift */; };
@@ -41,7 +40,7 @@
 		46E9632C211B3A86004C7468 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632B211B3A85004C7468 /* BarLocation.swift */; };
 		46E9632E211B3BFB004C7468 /* BarLayoutInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */; };
 		46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96330211B439C004C7468 /* LineBarIndicator.swift */; };
-		46F3945221149A9200473E0A /* EdgeFadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F3945121149A9200473E0A /* EdgeFadedView.swift */; };
+		46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96335211B4B06004C7468 /* EdgeFadedView.swift */; };
 		80DC9DD26B75D60F835636A7 /* Pods_TabmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B5C513664DC2AC0FC95376 /* Pods_TabmanTests.framework */; };
 		9788AA0263196786E1B090CD /* Pods_Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8B62EBAD08F4D6570B1D5 /* Pods_Tabman.framework */; };
 		D616D0841E73058600C7AA32 /* TabmanBarAppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */; };
@@ -72,7 +71,6 @@
 		1BD40913430601872FE0DDCD /* Pods-TabmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22EA40ACC8B72F68A41A3D21 /* Pods-Tabman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman/Pods-Tabman.release.xcconfig"; sourceTree = "<group>"; };
 		24B5C513664DC2AC0FC95376 /* Pods_TabmanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabmanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4612BCD220C859E5001A37B5 /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 		4612BCE320C860EC001A37B5 /* LayoutPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPerformer.swift; sourceTree = "<group>"; };
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
 		4612BCF120C88D24001A37B5 /* Bar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bar+Templates.swift"; sourceTree = "<group>"; };
@@ -108,7 +106,7 @@
 		46E9632B211B3A85004C7468 /* BarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
 		46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLayoutInsetGuides.swift; sourceTree = "<group>"; };
 		46E96330211B439C004C7468 /* LineBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBarIndicator.swift; sourceTree = "<group>"; };
-		46F3945121149A9200473E0A /* EdgeFadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeFadedView.swift; sourceTree = "<group>"; };
+		46E96335211B4B06004C7468 /* EdgeFadedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeFadedView.swift; sourceTree = "<group>"; };
 		B61F5691272BE3E9485FFBA2 /* Pods-TabmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabmanTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TabmanTests/Pods-TabmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		D616D0831E73058600C7AA32 /* TabmanBarAppearanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarAppearanceTests.swift; sourceTree = "<group>"; };
 		D61E50AD1E6435A600AC8C75 /* TabmanBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanBarTests.swift; sourceTree = "<group>"; };
@@ -152,15 +150,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4612BCD120C859D6001A37B5 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				4612BCD220C859E5001A37B5 /* ScrollStackView.swift */,
-				46F3945121149A9200473E0A /* EdgeFadedView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		4612BD0F20C9B7F5001A37B5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +203,7 @@
 				46E96309211B3A01004C7468 /* BarLayout */,
 				46E96310211B3A01004C7468 /* BarButton */,
 				46E96319211B3A01004C7468 /* BarIndicator */,
+				46E96334211B4AF6004C7468 /* Generic */,
 				4612BD0F20C9B7F5001A37B5 /* Utility */,
 			);
 			path = Bar;
@@ -278,6 +268,14 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		46E96334211B4AF6004C7468 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				46E96335211B4B06004C7468 /* EdgeFadedView.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 		D61E50B21E6438A000AC8C75 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +312,6 @@
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
 				46B7FDF920BC52D000E9BB7E /* Bar */,
-				4612BCD120C859D6001A37B5 /* Components */,
 				D62AC1211E5748C80020B8AE /* Utilities */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
@@ -577,7 +574,6 @@
 			files = (
 				46E9632E211B3BFB004C7468 /* BarLayoutInsetGuides.swift in Sources */,
 				4612BCE420C860EC001A37B5 /* LayoutPerformer.swift in Sources */,
-				4612BCD320C859E5001A37B5 /* ScrollStackView.swift in Sources */,
 				4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				462941F52112012300345B52 /* BarViewContentInsetGuides.swift in Sources */,
@@ -608,8 +604,8 @@
 				462941E52111EB7C00345B52 /* BarViewBackground.swift in Sources */,
 				46E96323211B3A01004C7468 /* LabelBarButton.swift in Sources */,
 				462941E62111EB7C00345B52 /* BarViewBackgroundView.swift in Sources */,
-				46F3945221149A9200473E0A /* EdgeFadedView.swift in Sources */,
 				46E9631E211B3A01004C7468 /* TabBarLayout.swift in Sources */,
+				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
