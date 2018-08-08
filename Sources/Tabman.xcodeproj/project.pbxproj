@@ -26,7 +26,6 @@
 		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
 		46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BE20EBAC430093D2AF /* WeakContainer.swift */; };
 		46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */; };
-		46E9631D211B3A01004C7468 /* BarLayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */; };
 		46E9631E211B3A01004C7468 /* TabBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* TabBarLayout.swift */; };
 		46E9631F211B3A01004C7468 /* ButtonBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */; };
 		46E96320211B3A01004C7468 /* BarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* BarLayout.swift */; };
@@ -94,7 +93,6 @@
 		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		46C314BE20EBAC430093D2AF /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewFocusProvider.swift; sourceTree = "<group>"; };
-		46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLayoutContainer.swift; sourceTree = "<group>"; };
 		46E9630D211B3A01004C7468 /* TabBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarLayout.swift; sourceTree = "<group>"; };
 		46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarLayout.swift; sourceTree = "<group>"; };
 		46E9630F211B3A01004C7468 /* BarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLayout.swift; sourceTree = "<group>"; };
@@ -226,18 +224,9 @@
 			children = (
 				46E9630F211B3A01004C7468 /* BarLayout.swift */,
 				46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */,
-				46E9630A211B3A01004C7468 /* Container */,
 				46E9630C211B3A01004C7468 /* Styles */,
 			);
 			path = BarLayout;
-			sourceTree = "<group>";
-		};
-		46E9630A211B3A01004C7468 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				46E9630B211B3A01004C7468 /* BarLayoutContainer.swift */,
-			);
-			path = Container;
 			sourceTree = "<group>";
 		};
 		46E9630C211B3A01004C7468 /* Styles */ = {
@@ -603,7 +592,6 @@
 				46E96325211B3A01004C7468 /* BarButtonStateController.swift in Sources */,
 				D637B2F81F13960900343713 /* UIScrollView+Interaction.swift in Sources */,
 				46E96324211B3A01004C7468 /* TabItemBarButton.swift in Sources */,
-				46E9631D211B3A01004C7468 /* BarLayoutContainer.swift in Sources */,
 				462941EB2111EB7C00345B52 /* BarView.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,

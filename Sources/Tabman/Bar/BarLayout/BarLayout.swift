@@ -24,9 +24,15 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     // MARK: Properties
     
-    let container = BarLayoutContainer()
+    /// Container view which contains actual contents
+    let container = UIView()
+    /// Layout Guides that provide inset values.
     private weak var insetGuides: BarLayoutInsetGuides!
-    private weak var contentView: UIScrollView!
+    /// The scroll view that this layout is embedded in.
+    private weak var parentScrollView: UIScrollView!
+    
+    /// Constraint that is active when constraining width to a `.fit` contentMode.
+    private var widthConstraint: NSLayoutConstraint?
     
     /**
      The display mode in which to display the content in the layout.
@@ -46,12 +52,10 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
         }
     }
     
-    private var widthConstraint: NSLayoutConstraint?
-    
     // MARK: Init
     
     public required init(contentView: UIScrollView) {
-        self.contentView = contentView
+        self.parentScrollView = contentView
     }
     
     // MARK: LayoutPerformer
@@ -115,16 +119,19 @@ public extension BarLayout {
     public var contentInset: UIEdgeInsets {
         set {
             insetGuides.insets = newValue
-            contentView.contentInset = newValue
-            contentView.contentOffset.x -= newValue.left
+            parentScrollView.contentInset = newValue
+            parentScrollView.contentOffset.x -= newValue.left
         } get {
-            return contentView.contentInset
+            return parentScrollView.contentInset
         }
     }
 }
 
 private extension BarLayout {
     
+    /// Update any constraints that are needed to satisfy a new ContentMode.
+    ///
+    /// - Parameter contentMode: New ContentMode to display.
     func update(for contentMode: ContentMode) {
         switch contentMode {
         case .fit:
