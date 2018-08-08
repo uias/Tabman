@@ -14,6 +14,14 @@ import SnapKit
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
     
+    // MARK: Types
+    
+    public enum BarLocation {
+        case top
+        case bottom
+        case custom(view: UIView)
+    }
+    
     // MARK: Properties
     
     private let topBarContainer = UIStackView()

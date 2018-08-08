@@ -37,7 +37,6 @@
 		46E96327211B3A01004C7468 /* BarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96318211B3A01004C7468 /* BarButtons.swift */; };
 		46E96328211B3A01004C7468 /* BarIndicatorLayoutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9631A211B3A01004C7468 /* BarIndicatorLayoutHandler.swift */; };
 		46E96329211B3A01004C7468 /* BarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9631B211B3A01004C7468 /* BarIndicator.swift */; };
-		46E9632C211B3A86004C7468 /* BarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632B211B3A85004C7468 /* BarLocation.swift */; };
 		46E9632E211B3BFB004C7468 /* BarLayoutInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */; };
 		46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96330211B439C004C7468 /* LineBarIndicator.swift */; };
 		46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96335211B4B06004C7468 /* EdgeFadedView.swift */; };
@@ -103,7 +102,6 @@
 		46E96318211B3A01004C7468 /* BarButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtons.swift; sourceTree = "<group>"; };
 		46E9631A211B3A01004C7468 /* BarIndicatorLayoutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarIndicatorLayoutHandler.swift; sourceTree = "<group>"; };
 		46E9631B211B3A01004C7468 /* BarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarIndicator.swift; sourceTree = "<group>"; };
-		46E9632B211B3A85004C7468 /* BarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLocation.swift; sourceTree = "<group>"; };
 		46E9632D211B3BFB004C7468 /* BarLayoutInsetGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLayoutInsetGuides.swift; sourceTree = "<group>"; };
 		46E96330211B439C004C7468 /* LineBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBarIndicator.swift; sourceTree = "<group>"; };
 		46E96335211B4B06004C7468 /* EdgeFadedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeFadedView.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				46B7FDFA20BC537000E9BB7E /* Bar.swift */,
 				4612BCF120C88D24001A37B5 /* Bar+Templates.swift */,
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
-				46E9632B211B3A85004C7468 /* BarLocation.swift */,
 				462941D92111EB7C00345B52 /* BarView */,
 				46E96309211B3A01004C7468 /* BarLayout */,
 				46E96310211B3A01004C7468 /* BarButton */,
@@ -581,7 +578,6 @@
 				46E96327211B3A01004C7468 /* BarButtons.swift in Sources */,
 				46E9631F211B3A01004C7468 /* ButtonBarLayout.swift in Sources */,
 				462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */,
-				46E9632C211B3A86004C7468 /* BarLocation.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */,
 				46E96320211B3A01004C7468 /* BarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */,
