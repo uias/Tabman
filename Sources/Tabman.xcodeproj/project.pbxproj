@@ -243,8 +243,8 @@
 		46E9630C211B3A01004C7468 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				46E9630D211B3A01004C7468 /* TabBarLayout.swift */,
 				46E9630E211B3A01004C7468 /* ButtonBarLayout.swift */,
+				46E9630D211B3A01004C7468 /* TabBarLayout.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 		46E96319211B3A01004C7468 /* BarIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				46E9631A211B3A01004C7468 /* BarIndicatorLayout.swift */,
 				46E9631B211B3A01004C7468 /* BarIndicator.swift */,
+				46E9631A211B3A01004C7468 /* BarIndicatorLayout.swift */,
 				46E9631C211B3A01004C7468 /* LineBarIndicator.swift */,
 			);
 			path = BarIndicator;

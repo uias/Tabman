@@ -197,19 +197,6 @@ public extension BarView {
 // MARK: - Indicator management
 extension BarView {
     
-    private func updateIndicator(to newIndicator: BarIndicator) {
-        clearUp(oldIndicator: self.indicator, container: self.indicatorContainer)
-        
-        layout(newIndicator: newIndicator)
-    }
-    
-    // MARK: Clean Up
-    
-    private func clearUp(oldIndicator: BarIndicator, container: UIView?) {
-        oldIndicator.removeFromSuperview()
-        container?.removeFromSuperview()
-    }
-    
     // MARK: Layout
     
     private func layout(newIndicator: BarIndicator) {
