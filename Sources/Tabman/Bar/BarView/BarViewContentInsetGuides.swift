@@ -60,7 +60,7 @@ internal final class BarViewContentInsetGuides: BarLayoutInsetGuides {
         trailingInset.trailingAnchor.constraint(equalTo: barView.trailingAnchor).isActive = true
         trailingInset.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
         
-        self.leadingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.left)
+        self.leadingWidth = leadingInset.widthAnchor.constraint(equalToConstant: insets.left)
         self.trailingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.right)
         
         leadingWidth.isActive = true
