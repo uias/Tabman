@@ -50,6 +50,7 @@ public final class LabelBarButton: BarButton {
         ]
         NSLayoutConstraint.activate(constraints)
         
+        label.textAlignment = .center
         label.text = "Item"
         
         self.contentInset = Defaults.contentInset
