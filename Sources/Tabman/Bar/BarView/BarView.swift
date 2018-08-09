@@ -27,7 +27,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
     /// The bar buttons that are currently displayed in the bar view.
-    public let buttons = BarButtons<ButtonType>()
+    public let buttons = BarButtonCollection<ButtonType>()
 
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: BarDataSource?
@@ -152,13 +152,13 @@ extension BarView: Bar {
                 newButtons.append(button)
             }
             
-            buttons.collection.insert(contentsOf: newButtons, at: indexes.lowerBound)
+            buttons.all.insert(contentsOf: newButtons, at: indexes.lowerBound)
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
             var buttonsToRemove = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
-                let button = buttons.collection[index]
+                let button = buttons.all[index]
                 buttonsToRemove.append(button)
             }
             layout.remove(buttons: buttonsToRemove)
@@ -275,7 +275,7 @@ extension BarView {
             return
         }
         update(for: indicatedPosition,
-               capacity: buttons.collection.count,
+               capacity: buttons.all.count,
                direction: .neutral)
     }
 }

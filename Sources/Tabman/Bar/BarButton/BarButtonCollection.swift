@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class BarButtons<BarButtonType: BarButton> {
+public final class BarButtonCollection<BarButtonType: BarButton> {
     
     // MARK: Types
     
@@ -18,12 +18,12 @@ public final class BarButtons<BarButtonType: BarButton> {
     // MARK: Properties
     
     /// Raw collection of currently active bar buttons.
-    public internal(set) var collection = [BarButtonType]() {
+    public internal(set) var all = [BarButtonType]() {
         didSet {
-            self.stateController = BarButtonStateController(for: collection)
-            self.interactionController = BarButtonInteractionController(for: collection, handler: self)
+            self.stateController = BarButtonStateController(for: all)
+            self.interactionController = BarButtonInteractionController(for: all, handler: self)
             
-            for button in collection {
+            for button in all {
                 customization?(button)
             }
         }
@@ -42,8 +42,8 @@ public final class BarButtons<BarButtonType: BarButton> {
     // MARK: Init
     
     init() {
-        self.stateController = BarButtonStateController(for: collection)
-        self.interactionController = BarButtonInteractionController(for: collection, handler: self)
+        self.stateController = BarButtonStateController(for: all)
+        self.interactionController = BarButtonInteractionController(for: all, handler: self)
     }
     
     // MARK: Customization
@@ -57,13 +57,13 @@ public final class BarButtons<BarButtonType: BarButton> {
      **/
     public func customize(_ customize: @escaping Customization) {
         self.customization = customize
-        collection.forEach { (button) in
+        all.forEach { (button) in
             customize(button)
         }
     }
 }
 
-extension BarButtons: BarButtonInteractionHandler {
+extension BarButtonCollection: BarButtonInteractionHandler {
     
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,
