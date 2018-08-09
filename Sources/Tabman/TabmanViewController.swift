@@ -170,14 +170,18 @@ public extension TabmanViewController {
             topBarContainer.addArrangedSubview(view)
         case .bottom:
             bottomBarContainer.addArrangedSubview(view)
-        case .custom(let view):
-            view.addSubview(view)
+        case .custom(let customSuperview):
+            customSuperview.addSubview(view)
             if customLayout != nil {
                 customLayout?(view)
             } else {
-                view.snp.makeConstraints { (make) in
-                    make.edges.equalToSuperview()
-                }
+                view.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: customSuperview.leadingAnchor),
+                    view.topAnchor.constraint(equalTo: customSuperview.topAnchor),
+                    view.trailingAnchor.constraint(equalTo: customSuperview.trailingAnchor),
+                    view.bottomAnchor.constraint(equalTo: customSuperview.bottomAnchor)
+                    ])
             }
         }
     }

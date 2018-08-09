@@ -233,10 +233,10 @@
 			children = (
 				46E96311211B3A01004C7468 /* BarButton.swift */,
 				46E96312211B3A01004C7468 /* BarButtonController.swift */,
-				46E96313211B3A01004C7468 /* Styles */,
 				46E96316211B3A01004C7468 /* BarButtonStateController.swift */,
 				46E96317211B3A01004C7468 /* BarButtonInteractionController.swift */,
 				46E96318211B3A01004C7468 /* BarButtonCollection.swift */,
+				46E96313211B3A01004C7468 /* Styles */,
 			);
 			path = BarButton;
 			sourceTree = "<group>";
