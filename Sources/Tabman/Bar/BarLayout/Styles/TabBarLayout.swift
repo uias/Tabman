@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 public final class TabBarLayout: BarLayout {
     
@@ -36,9 +35,13 @@ public final class TabBarLayout: BarLayout {
         contentMode = .fit
         
         container.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
     }
     
     public override func insert(buttons: [BarButton], at index: Int) {

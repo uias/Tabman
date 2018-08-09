@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 public final class ButtonBarLayout: BarLayout {
     
@@ -21,7 +20,6 @@ public final class ButtonBarLayout: BarLayout {
     // MARK: Properties
     
     private let stackView = UIStackView()
-    private var itemWidthConstraints: [Constraint]?
     
     public override var contentMode: BarLayout.ContentMode {
         didSet {
@@ -40,9 +38,13 @@ public final class ButtonBarLayout: BarLayout {
         super.performLayout(in: view)
         
         container.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
         
         self.interButtonSpacing = Defaults.interButtonSpacing
     }

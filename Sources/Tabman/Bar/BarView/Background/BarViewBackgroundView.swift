@@ -30,17 +30,25 @@ internal class BarViewBackgroundView: UIView {
         case .blur(let style):
             let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: style))
             addSubview(visualEffectView)
-            visualEffectView.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
-            }
+            visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                visualEffectView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                visualEffectView.topAnchor.constraint(equalTo: topAnchor),
+                visualEffectView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                visualEffectView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                ])
             
         case .flat(let color):
             let view = UIView()
             view.backgroundColor = color
             addSubview(view)
-            view.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
-            }
+            view.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                view.leadingAnchor.constraint(equalTo: leadingAnchor),
+                view.topAnchor.constraint(equalTo: topAnchor),
+                view.trailingAnchor.constraint(equalTo: trailingAnchor),
+                view.bottomAnchor.constraint(equalTo: bottomAnchor)
+                ])
             
         default:
             break
