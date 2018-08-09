@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 open class BarButton: UIControl, LayoutPerformer {
     
@@ -22,11 +21,17 @@ open class BarButton: UIControl, LayoutPerformer {
     // MARK: Properties
     
     private let contentView = UIView()
-    private var contentViewPins: Constraint?
+    private var contentViewLeading: NSLayoutConstraint!
+    private var contentViewTop: NSLayoutConstraint!
+    private var contentViewTrailing: NSLayoutConstraint!
+    private var contentViewBottom: NSLayoutConstraint!
 
     public var contentInset: UIEdgeInsets = .zero {
         didSet {
-            contentViewPins?.update(inset: contentInset)
+            contentViewLeading.constant = contentInset.left
+            contentViewTop.constant = contentInset.top
+            contentViewTrailing.constant = contentInset.right
+            contentViewBottom.constant = contentInset.bottom
         }
     }
     
@@ -58,9 +63,13 @@ open class BarButton: UIControl, LayoutPerformer {
         
         contentView.isUserInteractionEnabled = false
         addSubview(contentView)
-        contentView.snp.makeConstraints { (make) in
-            self.contentViewPins = make.edges.equalToSuperview().constraint
-        }
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentViewLeading = contentView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        contentViewTop = contentView.topAnchor.constraint(equalTo: topAnchor)
+        contentViewTrailing = trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
         
         performLayout(in: contentView)
     }
