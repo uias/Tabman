@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import Pageboy
 
 open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
@@ -211,9 +210,13 @@ public extension BarView {
         }
         
         backgroundContainer.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: backgroundContainer.leadingAnchor),
+            view.topAnchor.constraint(equalTo: backgroundContainer.topAnchor),
+            view.trailingAnchor.constraint(equalTo: backgroundContainer.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: backgroundContainer.bottomAnchor)
+            ])
     }
 }
 
@@ -241,12 +244,13 @@ extension BarView {
             
         case .fill:
             scrollView.addSubview(container)
-            container.snp.makeConstraints { (make) in
-                make.leading.equalToSuperview()
-                make.trailing.equalToSuperview()
-                make.top.equalToSuperview()
-                make.bottom.equalToSuperview()
-            }
+            container.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                container.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                container.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                container.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                container.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+                ])
         }
         return container
     }
