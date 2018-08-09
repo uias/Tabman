@@ -18,9 +18,12 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     
     // MARK: Properties
     
-    private let edgeFadeView = EdgeFadedView()
+    private let rootContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
+    
+    private var rootContainerTop: NSLayoutConstraint!
+    private var rootContainerBottom: NSLayoutConstraint!
     
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
@@ -72,31 +75,51 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
             fatalError("performLayout() can only be called once.")
         }
         hasPerformedLayout = true
+        var constraints = [NSLayoutConstraint]()
         
         view.addSubview(backgroundContainer)
-        backgroundContainer.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        backgroundContainer.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(contentsOf: [
+            backgroundContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
         updateBackground(for: background.backgroundView)
         
-        view.addSubview(edgeFadeView)
-        edgeFadeView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        view.addSubview(rootContainer)
+        rootContainer.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(contentsOf: [
+            rootContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            rootContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        self.rootContainerTop = rootContainer.topAnchor.constraint(equalTo: view.topAnchor)
+        self.rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContainer.bottomAnchor)
+        constraints.append(contentsOf: [rootContainerTop, rootContainerBottom])
         
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        edgeFadeView.addSubview(scrollView)
-        scrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        rootContainer.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(contentsOf: [
+            scrollView.leadingAnchor.constraint(equalTo: rootContainer.leadingAnchor),
+            scrollView.topAnchor.constraint(equalTo: rootContainer.topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: rootContainer.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: rootContainer.bottomAnchor)
+            ])
         
         stackView.axis = .vertical
         scrollView.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-            make.height.equalTo(view)
-        }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(contentsOf: [
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.heightAnchor.constraint(equalTo: rootContainer.heightAnchor)
+            ])
+        
+        NSLayoutConstraint.activate(constraints)
         
         let layoutContainer = layout.container
         stackView.addArrangedSubview(layoutContainer)
@@ -175,9 +198,9 @@ public extension BarView {
     /// Whether to fade the edges of the bar content.
     public var fadeEdges: Bool {
         set {
-            edgeFadeView.showFade = newValue
+            rootContainer.showFade = newValue
         } get {
-            return edgeFadeView.showFade
+            return rootContainer.showFade
         }
     }
     
@@ -266,10 +289,17 @@ extension BarView: BarLayoutParent {
     
     var contentInset: UIEdgeInsets {
         set {
-            scrollView.contentInset = newValue
-            scrollView.contentOffset.x -= newValue.left
+            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
+            scrollView.contentInset = sanitizedContentInset
+            scrollView.contentOffset.x -= sanitizedContentInset.left
+            
+            rootContainerTop.constant = newValue.top
+            rootContainerBottom.constant = newValue.bottom
         } get {
-            return scrollView.contentInset
+            return UIEdgeInsets(top: rootContainerTop.constant,
+                                left: scrollView.contentInset.left,
+                                bottom: rootContainerBottom.constant,
+                                right: scrollView.contentInset.right)
         }
     }
 }
