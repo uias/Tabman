@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 internal class BarViewBackgroundView: UIView {
     

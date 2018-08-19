@@ -9,7 +9,6 @@
 import UIKit
 import Pageboy
 import AutoInsetter
-import SnapKit
 
 /// Page view controller with a bar indicator component.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
@@ -137,29 +136,33 @@ public extension TabmanViewController {
         
         topBarContainer.axis = .vertical
         view.addSubview(topBarContainer)
-        topBarContainer.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            
-            if #available(iOS 11, *) {
-                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
-            } else {
-                make.top.equalToSuperview()
-            }
+        
+        topBarContainer.translatesAutoresizingMaskIntoConstraints = false
+        var topConstraints = [
+            topBarContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topBarContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ]
+        if #available(iOS 11, *) {
+            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
+        } else {
+            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.topAnchor))
         }
+        NSLayoutConstraint.activate(topConstraints)
         
         bottomBarContainer.axis = .vertical
         view.addSubview(bottomBarContainer)
-        bottomBarContainer.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            
-            if #available(iOS 11, *) {
-                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
-            } else {
-                make.bottom.equalToSuperview()
-            }
+        
+        bottomBarContainer.translatesAutoresizingMaskIntoConstraints = false
+        var bottomConstraints = [
+            bottomBarContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomBarContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ]
+        if #available(iOS 11, *) {
+            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
+        } else {
+            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor))
         }
+        NSLayoutConstraint.activate(bottomConstraints)
     }
     
     private func layoutView(_ view: UIView,

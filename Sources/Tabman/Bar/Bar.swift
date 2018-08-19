@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import Pageboy
 
 public protocol BarDataSource: class {
