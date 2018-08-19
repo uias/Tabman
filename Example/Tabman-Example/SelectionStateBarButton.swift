@@ -8,7 +8,6 @@
 
 import UIKit
 import Tabman
-import SnapKit
 
 class SelectionStateBarButton: BarButton {
     
@@ -20,10 +19,15 @@ class SelectionStateBarButton: BarButton {
         label.text = selectionState.description
         label.textAlignment = .center
         view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-            make.width.equalTo(120)
-        }
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            label.widthAnchor.constraint(equalToConstant: 120)
+            ])
     }
     
     override func populate(for item: BarItem) {
