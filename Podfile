@@ -4,7 +4,6 @@ def lib_pods
 
   pod 'Pageboy', :git => 'https://github.com/uias/Pageboy', :branch => 'pageboy3'
   pod 'AutoInsetter', '~> 1.2.0'
-  pod 'SnapKit', '~> 4.0'
 
 end
 
