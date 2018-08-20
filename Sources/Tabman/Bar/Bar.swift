@@ -20,23 +20,43 @@ public protocol BarDelegate: class {
              didRequestScrollToPageAt index: PageboyViewController.PageIndex)
 }
 
+/// Context for causing a reload of a bar.
+///
+/// - full: A full reload has taken place.
+/// - insertion: A page insertion has taken place.
+/// - deletion: A page deletion has taken place.
 public enum BarReloadContext {
     case full
     case insertion
     case deletion
 }
 
+/// A conforming `UIView` that can display a page position for a TabmanViewController.
 public protocol Bar: AnyObject where Self: UIView {
     
+    /// Object that acts as a data source to the bar.
     var dataSource: BarDataSource? { get set }
+    /// Object that acts as a delegate to the bar.
     var delegate: BarDelegate? { get set }
     
-    // Data Source
+    
+    /// Reload the data within the bar.
+    ///
+    /// - Parameters:
+    ///   - viewController: View Controller ot use for reloading.
+    ///   - indexes: The indexes to reload.
+    ///   - context: The context for the reload.
     func reloadData(for viewController: TabmanViewController,
                     at indexes: ClosedRange<Int>,
                     context: BarReloadContext)
     
-    // Updating
+    
+    /// Update the display in the bar for a particular page position.
+    ///
+    /// - Parameters:
+    ///   - pagePosition: Position to display.
+    ///   - capacity: The capacity of the bar.
+    ///   - direction: Semantic direction of the update.
     func update(for pagePosition: CGFloat,
                 capacity: Int,
                 direction: PageboyViewController.NavigationDirection)
