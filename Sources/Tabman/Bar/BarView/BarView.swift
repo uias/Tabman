@@ -306,4 +306,12 @@ extension BarView: BarLayoutParent {
                                 right: scrollView.contentInset.right)
         }
     }
+    
+    var isPagingEnabled: Bool {
+        set {
+            scrollView.isPagingEnabled = newValue
+        } get {
+            return scrollView.isPagingEnabled
+        }
+    }
 }

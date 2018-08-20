@@ -26,10 +26,14 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     /// Container view which contains actual contents
     let container = UIView()
-    /// Layout Guides that provide inset values.
-    private weak var insetGuides: BarLayoutInsetGuides!
     /// The parent of the layout.
     private weak var parent: BarLayoutParent!
+    
+    /// Layout Guides that provide inset values.
+    private weak var insetGuides: BarLayoutInsetGuides!
+    public var layoutGuide: UILayoutGuide {
+        return insetGuides!.content
+    }
     
     /// Constraint that is active when constraining width to a `.fit` contentMode.
     private var widthConstraint: NSLayoutConstraint?
@@ -49,6 +53,22 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
                 return
             }
             update(for: contentMode)
+        }
+    }
+    /// Inset to apply to the outside of the layout.
+    public var contentInset: UIEdgeInsets {
+        set {
+            insetGuides.insets = newValue
+            parent.contentInset = newValue
+        } get {
+            return parent.contentInset
+        }
+    }
+    public var isPagingEnabled: Bool {
+        set {
+            parent.isPagingEnabled = newValue
+        } get {
+            return parent.isPagingEnabled
         }
     }
     
@@ -109,20 +129,6 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
      **/
     open func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
         fatalError("Implement in subclass")
-    }
-}
-
-// MARK: - Customization
-public extension BarLayout {
-    
-    /// Inset to apply to the outside of the layout.
-    public var contentInset: UIEdgeInsets {
-        set {
-            insetGuides.insets = newValue
-            parent.contentInset = newValue
-        } get {
-            return parent.contentInset
-        }
     }
 }
 

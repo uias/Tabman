@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol BarLayoutParent: class {
+internal protocol BarLayoutParent: class {
     
     var contentInset: UIEdgeInsets { get set }
+    
+    var isPagingEnabled: Bool { get set }
 }
