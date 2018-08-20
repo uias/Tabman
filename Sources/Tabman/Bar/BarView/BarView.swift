@@ -65,6 +65,14 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         fatalError("BarView does not support Interface Builder")
     }
     
+    // MARK: Lifecycle
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        reloadIndicatorPosition()
+    }
+    
     // MARK: LayoutPerformer
     
     public private(set) var hasPerformedLayout = false
