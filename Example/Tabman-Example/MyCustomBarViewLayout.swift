@@ -15,7 +15,7 @@ class MyCustomBarViewLayout: BarLayout {
         super.performLayout(in: view)
     }
     
-    override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }
 }

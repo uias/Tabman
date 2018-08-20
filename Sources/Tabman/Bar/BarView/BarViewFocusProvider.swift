@@ -12,14 +12,14 @@ import UIKit
 public protocol BarViewFocusProvider: class {
     
     /**
-     Calculate the 'focusRect' for the current position and capacity.
+     Calculate the 'focusArea' for the current position and capacity.
      
-     This rect defines the area of the layout that should currently be highlighted for the selected bar button.
+     This `CGRect` defines the area of the layout that should currently be highlighted for the selected bar button.
      
      - Parameter position: Current position to display.
      - Parameter capacity: Capacity of the bar (items).
      
      - Returns: Calculated focus rect.
      **/
-    func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect
+    func focusArea(for position: CGFloat, capacity: Int) -> CGRect
 }

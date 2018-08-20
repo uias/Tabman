@@ -80,7 +80,7 @@ public final class TabBarLayout: BarLayout {
         }
     }
     
-    public override func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }
 }

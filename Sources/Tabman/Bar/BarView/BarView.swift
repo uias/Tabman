@@ -181,7 +181,7 @@ extension BarView: Bar {
         self.indicatedPosition = pagePosition
         layoutIfNeeded()
         
-        let focusFrame = layout.barFocusRect(for: pagePosition, capacity: capacity)
+        let focusFrame = layout.focusArea(for: pagePosition, capacity: capacity)
         indicatorLayoutHandler?.update(for: focusFrame)
         layoutIfNeeded()
         

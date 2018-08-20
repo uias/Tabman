@@ -127,7 +127,7 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
      
      - Returns: Calculated focus rect.
      **/
-    open func barFocusRect(for position: CGFloat, capacity: Int) -> CGRect {
+    open func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         fatalError("Implement in subclass")
     }
 }
