@@ -15,6 +15,11 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     
     public typealias BarButtonCustomization = (ButtonType) -> Void
     
+    public enum AnimationStyle {
+        case progressive
+        case snap
+    }
+    
     // MARK: Properties
     
     private let rootContainer = EdgeFadedView()
@@ -23,6 +28,9 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
+    
+    private var indicatedPosition: CGFloat?
+    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
     
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
@@ -38,20 +46,28 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
      **/
     public weak var delegate: BarDelegate?
     
-    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
-    
-    private let backgroundContainer = UIView()
     public var background: BarViewBackground = .flat(color: .white) {
         didSet {
             updateBackground(for: background.backgroundView)
         }
     }
+    private let backgroundContainer = UIView()
 
+    /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
     private var indicatorLayoutHandler: BarIndicatorLayoutHandler?
     private var indicatorContainer: UIView?
-    
-    private var indicatedPosition: CGFloat?
+
+    /**
+     Style to use when animating bar position updates.
+     
+     Options:
+     - `.progressive`: The bar will seemlessly transition between each button in progressive steps.
+     - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
+     
+     By default this is set to `.progressive`
+     **/
+    public var animationStyle: AnimationStyle = .progressive
     
     // MARK: Init
     
@@ -177,17 +193,49 @@ extension BarView: Bar {
     
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: PageboyViewController.NavigationDirection) {
+                       direction: PageboyViewController.NavigationDirection,
+                       shouldAnimate: Bool) {
+        
+        let (pagePosition, animated) = updateValues(for: animationStyle,
+                                                    at: pagePosition,
+                                                    shouldAnimate: shouldAnimate)
         self.indicatedPosition = pagePosition
         layoutIfNeeded()
         
+        // Get focus area for updating indicator layout
         let focusFrame = layout.focusArea(for: pagePosition, capacity: capacity)
         indicatorLayoutHandler?.update(for: focusFrame)
-        layoutIfNeeded()
         
-        buttons.stateController.update(for: pagePosition, direction: direction)
+        let update = {
+            self.layoutIfNeeded()
+            
+            self.buttons.stateController.update(for: pagePosition, direction: direction)
+            self.scrollView.scrollRectToVisible(focusFrame, animated: false)
+        }
         
-        scrollView.scrollRectToVisible(focusFrame, animated: false)
+        if animated {
+            UIView.animate(withDuration: 0.25, animations: {
+                update()
+            })
+        } else {
+            update()
+        }
+    }
+
+    private func updateValues(for style: AnimationStyle,
+                              at position: CGFloat,
+                              shouldAnimate: Bool) -> (CGFloat, Bool) {
+        var position = position
+        var animated = shouldAnimate
+        switch style {
+        case .snap:
+            position = round(position)
+            animated = true
+            
+        default: break
+        }
+        
+        return (position, animated)
     }
 }
 
@@ -284,7 +332,8 @@ extension BarView {
         }
         update(for: indicatedPosition,
                capacity: buttons.all.count,
-               direction: .neutral)
+               direction: .neutral,
+               shouldAnimate: true)
     }
 }
 

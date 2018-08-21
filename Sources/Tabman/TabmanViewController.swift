@@ -72,10 +72,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if animated {
-            let duration = self.transition?.duration ?? 0.25
-            UIView.animate(withDuration: duration) {
-                self.updateActiveBars(to: CGFloat(index), direction: direction)
-            }
+            updateActiveBars(to: CGFloat(index),
+                             direction: direction,
+                             animated: true)
         }
     }
     
@@ -84,7 +83,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     direction: NavigationDirection,
                                     animated: Bool) {
         if !animated {
-            updateActiveBars(to: relativeCurrentPosition, direction: direction)
+            updateActiveBars(to: relativeCurrentPosition,
+                             direction: direction,
+                             animated: false)
         }
     }
     
@@ -92,7 +93,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
-        updateActiveBars(to: CGFloat(index), direction: direction)
+        updateActiveBars(to: CGFloat(index),
+                         direction: direction,
+                         animated: false)
     }
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -125,7 +128,7 @@ public extension TabmanViewController {
         addActiveBar(bar)
         layoutView(barView, at: location, customLayout: layout)
         
-        updateBar(bar, to: relativeCurrentPosition)
+        updateBar(bar, to: relativeCurrentPosition, animated: false)
         
         if let pageCount = self.pageCount {
             bar.reloadData(for: self, at: 0...pageCount - 1, context: .full)
@@ -198,19 +201,24 @@ private extension TabmanViewController {
     }
     
     func updateActiveBars(to position: CGFloat?,
-                          direction: NavigationDirection = .neutral) {
-        activeBars.forEach({ self.updateBar($0, to: position, direction: direction) })
+                          direction: NavigationDirection = .neutral,
+                          animated: Bool) {
+        activeBars.forEach({ self.updateBar($0, to: position,
+                                            direction: direction,
+                                            animated: animated) })
     }
     
     func updateBar(_ bar: Bar,
                    to position: CGFloat?,
-                   direction: NavigationDirection = .neutral) {
+                   direction: NavigationDirection = .neutral,
+                   animated: Bool) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
         
         bar.update(for: position,
                    capacity: capacity,
-                   direction: direction)
+                   direction: direction,
+                   shouldAnimate: animated)
     }
 }
 

@@ -57,7 +57,9 @@ public protocol Bar: AnyObject where Self: UIView {
     ///   - pagePosition: Position to display.
     ///   - capacity: The capacity of the bar.
     ///   - direction: Semantic direction of the update.
+    ///   - shouldAnimate: Whether the bar should animate the update.
     func update(for pagePosition: CGFloat,
                 capacity: Int,
-                direction: PageboyViewController.NavigationDirection)
+                direction: PageboyViewController.NavigationDirection,
+                shouldAnimate: Bool)
 }
