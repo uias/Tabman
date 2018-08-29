@@ -15,6 +15,8 @@ public final class HiddenBarLayout: BarLayout {
     
     public override func performLayout(in view: UIView) {
         super.performLayout(in: view)
+        
+        // TODO - Make this appear
     }
     
     public override func insert(buttons: [BarButton], at index: Int) {
