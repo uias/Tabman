@@ -20,6 +20,7 @@
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
 		462FB6EB21370D3B00768088 /* BarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6EA21370D3B00768088 /* BarBackground.swift */; };
 		462FB6ED2137216700768088 /* HorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6EC2137216700768088 /* HorizontalBarLayout.swift */; };
+		462FB6F1213724EB00768088 /* HiddenBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6F0213724EB00768088 /* HiddenBarIndicator.swift */; };
 		464DFE232110B0F500335D19 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DFE222110B0F500335D19 /* UIView+Subviews.swift */; };
 		4659D9DA1FC4B617006E483F /* TabmanBarBehaviorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */; };
 		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
@@ -85,6 +86,7 @@
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
 		462FB6EA21370D3B00768088 /* BarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBackground.swift; sourceTree = "<group>"; };
 		462FB6EC2137216700768088 /* HorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalBarLayout.swift; sourceTree = "<group>"; };
+		462FB6F0213724EB00768088 /* HiddenBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenBarIndicator.swift; sourceTree = "<group>"; };
 		464DFE222110B0F500335D19 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanBarBehaviorTests.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		46E9632F211B439C004C7468 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				462FB6F0213724EB00768088 /* HiddenBarIndicator.swift */,
 				46E96330211B439C004C7468 /* LineBarIndicator.swift */,
 			);
 			path = Styles;
@@ -587,6 +590,7 @@
 				4612BD1420C9BAC5001A37B5 /* CGRect+Interpolation.swift in Sources */,
 				46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */,
 				462FB6ED2137216700768088 /* HorizontalBarLayout.swift in Sources */,
+				462FB6F1213724EB00768088 /* HiddenBarIndicator.swift in Sources */,
 				46E96329211B3A01004C7468 /* BarIndicator.swift in Sources */,
 				46E96328211B3A01004C7468 /* BarIndicatorLayoutHandler.swift in Sources */,
 				46E96326211B3A01004C7468 /* BarButtonInteractionController.swift in Sources */,
