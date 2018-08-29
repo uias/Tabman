@@ -1,5 +1,5 @@
 //
-//  ButtonBarLayout.swift
+//  HorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
@@ -11,7 +11,7 @@ import UIKit
 /**
  Layout that displays bar buttons sequentially along the horizontal axis.
  **/
-open class ButtonBarLayout: BarLayout {
+open class HorizontalBarLayout: BarLayout {
     
     // MARK: Defaults
     
@@ -94,7 +94,7 @@ open class ButtonBarLayout: BarLayout {
 }
 
 // MARK: - Customization
-public extension ButtonBarLayout {
+public extension HorizontalBarLayout {
     
     public var interButtonSpacing: CGFloat {
         set {

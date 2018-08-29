@@ -25,7 +25,7 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        let bar = BarView<ButtonBarLayout, LabelBarButton, LineBarIndicator>()
+        let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>()
         addBar(bar, dataSource: self, at: .top)
 
         bar.background.style = .flat(color: .lightGray)
