@@ -9,6 +9,9 @@
 import UIKit
 import Pageboy
 
+/**
+ View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
+ **/
 open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
     
     // MARK: Types
@@ -46,6 +49,11 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
      **/
     public weak var delegate: BarDelegate?
     
+    /**
+     Background of the BarView.
+     
+     Defaults to `UIColor.white`.
+     **/
     public var background = BarBackground(style: .flat(color: .white))
 
     /// The indicator that is displayed in this bar view.
