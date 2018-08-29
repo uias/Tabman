@@ -8,9 +8,7 @@
 
 import UIKit
 
-/**
- Layout that displays bar buttons sequentially along the horizontal axis.
- **/
+/// Layout that displays bar buttons sequentially along the horizontal axis.
 open class HorizontalBarLayout: BarLayout {
     
     // MARK: Defaults

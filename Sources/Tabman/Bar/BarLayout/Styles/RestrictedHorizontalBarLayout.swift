@@ -1,5 +1,5 @@
 //
-//  PagedHorizontalBarLayout.swift
+//  RestrictedHorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-open class PagedHorizontalBarLayout: BarLayout {
+/// Layout that displays a limited number of visible bar buttons sequentially along the horizontal axis.
+open class RestrictedHorizontalBarLayout: BarLayout {
     
     // MARK: Properties
     
@@ -89,7 +90,7 @@ open class PagedHorizontalBarLayout: BarLayout {
     }
 }
 
-private extension PagedHorizontalBarLayout {
+private extension RestrictedHorizontalBarLayout {
     
     func constrain(views: [UIView], for maximumCount: Int) {
         if let oldConstraints = viewWidthConstraints {
