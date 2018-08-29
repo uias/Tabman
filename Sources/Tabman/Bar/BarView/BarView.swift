@@ -46,12 +46,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
      **/
     public weak var delegate: BarDelegate?
     
-    public var background: BarViewBackground = .flat(color: .white) {
-        didSet {
-            updateBackground(for: background.backgroundView)
-        }
-    }
-    private let backgroundContainer = UIView()
+    public var background = BarBackground(style: .flat(color: .white))
 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
@@ -100,15 +95,14 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         hasPerformedLayout = true
         var constraints = [NSLayoutConstraint]()
         
-        view.addSubview(backgroundContainer)
-        backgroundContainer.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(background)
+        background.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
-            backgroundContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundContainer.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
-        updateBackground(for: background.backgroundView)
         
         view.addSubview(rootContainer)
         rootContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -257,22 +251,6 @@ public extension BarView {
         } get {
             return rootContainer.showFade
         }
-    }
-    
-    private func updateBackground(for view: UIView?) {
-        backgroundContainer.removeAllSubviews()
-        guard let view = view else {
-            return
-        }
-        
-        backgroundContainer.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: backgroundContainer.leadingAnchor),
-            view.topAnchor.constraint(equalTo: backgroundContainer.topAnchor),
-            view.trailingAnchor.constraint(equalTo: backgroundContainer.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: backgroundContainer.bottomAnchor)
-            ])
     }
 }
 

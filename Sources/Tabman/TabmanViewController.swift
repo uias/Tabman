@@ -238,4 +238,8 @@ internal extension TabmanViewController {
         }
         return self.navigationOrientation == .horizontal ? position.x : position.y
     }
+    
+    var transitionAnimationDuration: TimeInterval {
+        return transition?.duration ?? 0.25
+    }
 }

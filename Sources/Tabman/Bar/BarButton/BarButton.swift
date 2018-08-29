@@ -42,6 +42,8 @@ open class BarButton: UIControl, LayoutPerformer {
         }
     }
     
+    public let background = BarBackground()
+    
     // MARK: Init
     
     public required init() {
@@ -60,6 +62,15 @@ open class BarButton: UIControl, LayoutPerformer {
     }
     
     private func initialize() {
+        
+        addSubview(background)
+        background.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            background.leadingAnchor.constraint(equalTo: leadingAnchor),
+            background.topAnchor.constraint(equalTo: topAnchor),
+            background.trailingAnchor.constraint(equalTo: trailingAnchor),
+            background.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
         
         contentView.isUserInteractionEnabled = false
         addSubview(contentView)
