@@ -1,5 +1,5 @@
 //
-//  TabBarLayout.swift
+//  PagedHorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TabBarLayout: BarLayout {
+open class PagedHorizontalBarLayout: BarLayout {
     
     // MARK: Properties
     
@@ -89,7 +89,7 @@ open class TabBarLayout: BarLayout {
     }
 }
 
-private extension TabBarLayout {
+private extension PagedHorizontalBarLayout {
     
     func constrain(views: [UIView], for maximumCount: Int) {
         if let oldConstraints = viewWidthConstraints {
