@@ -33,12 +33,12 @@ open class HorizontalBarLayout: BarLayout {
         }
     }
     
-    // MARK: Layout
+    // MARK: Lifecycle
     
     open override func performLayout(in view: UIView) {
         super.performLayout(in: view)
         
-        container.addSubview(stackView)
+        view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -49,8 +49,6 @@ open class HorizontalBarLayout: BarLayout {
         
         self.interButtonSpacing = Defaults.interButtonSpacing
     }
-    
-    // MARK: Lifecycle
     
     open override func insert(buttons: [BarButton], at index: Int) {
         var currentIndex = index
@@ -70,8 +68,6 @@ open class HorizontalBarLayout: BarLayout {
         }
     }
     
-    // MARK: BarViewFocusProvider
-    
     open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard stackView.arrangedSubviews.count > range.upperBound else {
@@ -87,7 +83,7 @@ open class HorizontalBarLayout: BarLayout {
         return CGRect(x: lowerView.frame.origin.x + interpolation.origin.x,
                       y: 0.0,
                       width: lowerView.frame.size.width + interpolation.size.width,
-                      height: container.bounds.size.height)
+                      height: view.bounds.size.height)
     }
 }
 

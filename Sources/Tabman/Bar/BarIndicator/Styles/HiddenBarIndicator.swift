@@ -9,6 +9,7 @@
 
 import UIKit
 
+/// Indicator that is zero height and hidden.
 public final class HiddenBarIndicator: BarIndicator {
     
     // MARK: Properties

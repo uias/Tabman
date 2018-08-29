@@ -21,6 +21,7 @@
 		462FB6EB21370D3B00768088 /* BarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6EA21370D3B00768088 /* BarBackground.swift */; };
 		462FB6ED2137216700768088 /* HorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6EC2137216700768088 /* HorizontalBarLayout.swift */; };
 		462FB6F1213724EB00768088 /* HiddenBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6F0213724EB00768088 /* HiddenBarIndicator.swift */; };
+		462FB6F32137266000768088 /* HiddenBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB6F22137266000768088 /* HiddenBarLayout.swift */; };
 		464DFE232110B0F500335D19 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DFE222110B0F500335D19 /* UIView+Subviews.swift */; };
 		4659D9DA1FC4B617006E483F /* TabmanBarBehaviorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */; };
 		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
@@ -87,6 +88,7 @@
 		462FB6EA21370D3B00768088 /* BarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBackground.swift; sourceTree = "<group>"; };
 		462FB6EC2137216700768088 /* HorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalBarLayout.swift; sourceTree = "<group>"; };
 		462FB6F0213724EB00768088 /* HiddenBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenBarIndicator.swift; sourceTree = "<group>"; };
+		462FB6F22137266000768088 /* HiddenBarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenBarLayout.swift; sourceTree = "<group>"; };
 		464DFE222110B0F500335D19 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		4659D9D91FC4B617006E483F /* TabmanBarBehaviorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanBarBehaviorTests.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		46E9630C211B3A01004C7468 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				462FB6F22137266000768088 /* HiddenBarLayout.swift */,
 				462FB6EC2137216700768088 /* HorizontalBarLayout.swift */,
 				46E9630D211B3A01004C7468 /* RestrictedHorizontalBarLayout.swift */,
 			);
@@ -573,6 +576,7 @@
 				46E9632E211B3BFB004C7468 /* BarLayoutInsetGuides.swift in Sources */,
 				4612BCE420C860EC001A37B5 /* LayoutPerformer.swift in Sources */,
 				4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */,
+				462FB6F32137266000768088 /* HiddenBarLayout.swift in Sources */,
 				4612BCE720C86815001A37B5 /* BarItem.swift in Sources */,
 				462941F52112012300345B52 /* BarViewContentInsetGuides.swift in Sources */,
 				46E96322211B3A01004C7468 /* BarButtonController.swift in Sources */,

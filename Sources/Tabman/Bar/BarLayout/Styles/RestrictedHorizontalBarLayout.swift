@@ -51,7 +51,7 @@ open class RestrictedHorizontalBarLayout: BarLayout {
         stackView.distribution = .fill
         super.isPagingEnabled = true
         
-        container.addSubview(stackView)
+        view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -60,8 +60,6 @@ open class RestrictedHorizontalBarLayout: BarLayout {
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
-    
-    // MARK: Lifecycle
     
     open override func insert(buttons: [BarButton], at index: Int) {
         var currentIndex = index
@@ -83,8 +81,6 @@ open class RestrictedHorizontalBarLayout: BarLayout {
         }
     }
     
-    // MARK: BarViewFocusProvider
-    
     open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard stackView.arrangedSubviews.count > range.upperBound else {
@@ -100,7 +96,7 @@ open class RestrictedHorizontalBarLayout: BarLayout {
         return CGRect(x: lowerView.frame.origin.x + interpolation.origin.x,
                       y: 0.0,
                       width: lowerView.frame.size.width + interpolation.size.width,
-                      height: container.bounds.size.height)
+                      height: view.bounds.size.height)
     }
 }
 

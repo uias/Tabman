@@ -146,8 +146,8 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         
         NSLayoutConstraint.activate(constraints)
         
-        let layoutContainer = layout.container
-        stackView.addArrangedSubview(layoutContainer)
+        let layoutView = layout.view
+        stackView.addArrangedSubview(layoutView)
         layout.performLayout(parent: self, insetGuides: contentInsetGuides)
         
         layout(newIndicator: indicator)

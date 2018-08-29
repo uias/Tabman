@@ -25,7 +25,7 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     // MARK: Properties
     
     /// Container view which contains actual contents
-    let container = UIView()
+    public let view = UIView()
     /// The parent of the layout.
     private weak var parent: BarLayoutParent!
     
@@ -84,7 +84,7 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
                                 insetGuides: BarLayoutInsetGuides) {
         self.parent = parent
         self.insetGuides = insetGuides
-        performLayout(in: container)
+        performLayout(in: view)
     }
     
     open func performLayout(in view: UIView) {
@@ -140,7 +140,7 @@ private extension BarLayout {
     func update(for contentMode: ContentMode) {
         switch contentMode {
         case .fit:
-            self.widthConstraint = container.widthAnchor.constraint(equalTo: insetGuides.content.widthAnchor)
+            self.widthConstraint = view.widthAnchor.constraint(equalTo: insetGuides.content.widthAnchor)
             widthConstraint?.isActive = true
             
         default:
