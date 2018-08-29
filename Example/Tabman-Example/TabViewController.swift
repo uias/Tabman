@@ -45,6 +45,7 @@ class TabViewController: TabmanViewController {
             button.imageSize = CGSize(width: 50, height: 50)
         }
         tabBar.animationStyle = .snap
+        tabBar.layout.visibleButtonCount = 3
         
         let buttonBar = Bar.ButtonBar()
         addBar(buttonBar, dataSource: self, at: .bottom)

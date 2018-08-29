@@ -32,13 +32,13 @@ open class TabBarLayout: BarLayout {
     }
    
     private var viewWidthConstraints: [NSLayoutConstraint]?
-    /// The number of buttons that can be fitted onto a single page of the layout.
-    public var maximumButtonCount: Int = 5 {
+    /// The number of buttons that can be visible in the layout at one time.
+    public var visibleButtonCount: Int = 5 {
         didSet {
-            guard oldValue != maximumButtonCount else {
+            guard oldValue != visibleButtonCount else {
                 return
             }
-            constrain(views: stackView.arrangedSubviews, for: maximumButtonCount)
+            constrain(views: stackView.arrangedSubviews, for: visibleButtonCount)
         }
     }
     
@@ -73,7 +73,7 @@ open class TabBarLayout: BarLayout {
             }
             currentIndex += 1
         }
-        constrain(views: buttons, for: maximumButtonCount)
+        constrain(views: buttons, for: visibleButtonCount)
     }
     
     open override func remove(buttons: [BarButton]) {
