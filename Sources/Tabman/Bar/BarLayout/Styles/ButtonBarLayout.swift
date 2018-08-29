@@ -8,7 +8,10 @@
 
 import UIKit
 
-public final class ButtonBarLayout: BarLayout {
+/**
+ Layout that displays bar buttons sequentially along the horizontal axis.
+ **/
+open class ButtonBarLayout: BarLayout {
     
     // MARK: Defaults
     
@@ -34,7 +37,7 @@ public final class ButtonBarLayout: BarLayout {
     
     // MARK: Layout
     
-    public override func performLayout(in view: UIView) {
+    open override func performLayout(in view: UIView) {
         super.performLayout(in: view)
         
         container.addSubview(stackView)
@@ -51,7 +54,7 @@ public final class ButtonBarLayout: BarLayout {
     
     // MARK: Lifecycle
     
-    public override func insert(buttons: [BarButton], at index: Int) {
+    open override func insert(buttons: [BarButton], at index: Int) {
         var currentIndex = index
         for button in buttons {
             if index >= stackView.arrangedSubviews.count { // just add
@@ -63,7 +66,7 @@ public final class ButtonBarLayout: BarLayout {
         }
     }
     
-    public override func remove(buttons: [BarButton]) {
+    open override func remove(buttons: [BarButton]) {
         for button in buttons {
             stackView.removeArrangedSubview(button)
         }
@@ -71,7 +74,7 @@ public final class ButtonBarLayout: BarLayout {
     
     // MARK: BarViewFocusProvider
     
-    public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
+    open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard stackView.arrangedSubviews.count > range.upperBound else {
             return .zero

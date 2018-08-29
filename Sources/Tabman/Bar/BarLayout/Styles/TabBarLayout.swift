@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class TabBarLayout: BarLayout {
+open class TabBarLayout: BarLayout {
     
     // MARK: Properties
     
@@ -44,7 +44,7 @@ public final class TabBarLayout: BarLayout {
     
     // MARK: Lifecycle
     
-    public override func performLayout(in view: UIView) {
+    open override func performLayout(in view: UIView) {
         super.performLayout(in: view)
     
         stackView.distribution = .fill
@@ -60,7 +60,9 @@ public final class TabBarLayout: BarLayout {
             ])
     }
     
-    public override func insert(buttons: [BarButton], at index: Int) {
+    // MARK: Lifecycle
+    
+    open override func insert(buttons: [BarButton], at index: Int) {
         var currentIndex = index
         
         for button in buttons {
@@ -74,13 +76,15 @@ public final class TabBarLayout: BarLayout {
         constrain(views: buttons, for: maximumButtonCount)
     }
     
-    public override func remove(buttons: [BarButton]) {
+    open override func remove(buttons: [BarButton]) {
         for button in buttons {
             stackView.removeArrangedSubview(button)
         }
     }
     
-    public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
+    // MARK: BarViewFocusProvider
+    
+    open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }
 }
