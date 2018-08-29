@@ -12,4 +12,5 @@ public extension Bar {
  
     public typealias ButtonBar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
     public typealias TabBar = BarView<RestrictedHorizontalBarLayout, TabItemBarButton, HiddenBarIndicator>
+    public typealias LineBar = BarView<HiddenBarLayout, LabelBarButton, LineBarIndicator>
 }
