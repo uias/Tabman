@@ -271,8 +271,6 @@ extension BarView {
         
         self.indicatorContainer = container
         self.indicatorLayoutHandler = layout
-        
-        newIndicator.backgroundColor = .orange
     }
     
     private func layoutContainer(for indicator: BarIndicator) -> UIView {

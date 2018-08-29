@@ -31,17 +31,12 @@ class TabViewController: TabmanViewController {
         let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>()
         addBar(bar, dataSource: self, at: .top)
 
-        bar.background.style = .flat(color: .lightGray)
         bar.layout.contentMode = .fit
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         
         bar.indicator.weight = .heavy
         bar.indicator.cornerStyle = .eliptical
         
-        bar.buttons.customize { (button) in
-            button.selectedColor = .red
-        }
-
         let tabBar = Bar.TabBar()
         addBar(tabBar, dataSource: self, at: .top)
         tabBar.buttons.customize { (button) in

@@ -53,6 +53,8 @@ public final class LineBarIndicator: BarIndicator {
         let heightConstraint = heightAnchor.constraint(equalToConstant: weight.rawValue)
         heightConstraint.isActive = true
         self.weightConstraint = heightConstraint
+        
+        backgroundColor = self.tintColor
     }
     
     public override func layoutSubviews() {
