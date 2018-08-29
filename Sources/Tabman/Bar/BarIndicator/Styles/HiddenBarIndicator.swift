@@ -17,21 +17,19 @@ public final class HiddenBarIndicator: BarIndicator {
         return .fill
     }
     
-    public override var backgroundColor: UIColor? {
+    public override var isHidden: Bool {
         set {
-            super.backgroundColor = .clear
+            super.isHidden = true
         } get {
-            return super.backgroundColor
+            return super.isHidden
         }
     }
     
     // MARK: Lifecycle
     
-//    public override func performLayout(in view: UIView) {
-//        super.performLayout(in: view)
-//
-//        NSLayoutConstraint.activate([
-//            view.heightAnchor.constraint(equalToConstant: 0.0)
-//            ])
-//    }
+    public override func performLayout(in view: UIView) {
+        super.performLayout(in: view)
+        
+        super.isHidden = true
+    }
 }
