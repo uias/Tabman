@@ -49,6 +49,61 @@ github "uias/Tabman" ~> 2.0
 
 ## 🚀 Usage
 
+### First things first.
+Getting Tabman up and running could not be simpler. Get your `PageboyViewController` set up first...
+
+```swift
+class TabViewController: TabmanViewController {
+
+    let viewControllers = [UIViewController(), UIViewController()]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.dataSource = self
+    }
+}
+
+extension TabViewController: PageboyViewControllerDataSource {
+
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return viewControllers.count
+    }
+
+    func viewController(for pageboyViewController: PageboyViewController,
+                        at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        return nil
+    }
+}
+```
+You can then add bars to the view controller and provide them with a data source.
+```swift
+class TabViewController: TabmanViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.dataSource = self
+
+        let bar = Bar.ButtonBar()
+        self.addBar(bar, dataSource: self, at: .top)
+    }
+}
+
+extension TabViewController: BarDataSource {
+
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
+        let title = "Page \(index)"
+        return BarItem(title: title)
+    }
+}
+```
+
+
 ## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
 
