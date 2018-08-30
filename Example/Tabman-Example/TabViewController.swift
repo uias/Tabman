@@ -26,7 +26,8 @@ class TabViewController: TabmanViewController {
         self.dataSource = self
         
         // TODO - Fix
-        addBar(Bar.LineBar(), dataSource: self, at: .top)
+        let lineBar = Bar.LineBar()
+        addBar(lineBar, dataSource: self, at: .top)
         
         let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>()
         addBar(bar, dataSource: self, at: .top)

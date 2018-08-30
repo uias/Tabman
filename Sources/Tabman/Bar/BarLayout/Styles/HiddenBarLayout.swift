@@ -11,12 +11,31 @@ import UIKit
 /// Layout that is zero height and hidden.
 public final class HiddenBarLayout: BarLayout {
  
+    // MARK: Properties
+    
+    @available(*, unavailable)
+    public override var contentMode: BarLayout.ContentMode {
+        set {
+            fatalError("\(type(of: self)) does not support updating contentMode")
+        } get {
+            return super.contentMode
+        }
+    }
+    @available(*, unavailable)
+    public override var isPagingEnabled: Bool {
+        set {
+            fatalError("\(type(of: self)) does not support updating isPagingEnabled")
+        } get {
+            return super.isPagingEnabled
+        }
+    }
+    
     // MARK: Lifecycle
     
     public override func performLayout(in view: UIView) {
         super.performLayout(in: view)
         
-        // TODO - Make this appear
+        super.contentMode = .fit
     }
     
     public override func insert(buttons: [BarButton], at index: Int) {
@@ -26,15 +45,17 @@ public final class HiddenBarLayout: BarLayout {
     }
     
     public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
-        let viewWidth = view.bounds.size.width
-        let buttonWidth = viewWidth / CGFloat(capacity)
-        guard !buttonWidth.isNaN else { // 0 / 0
+        guard capacity != 0 else {
             return .zero
         }
         
-        let proposedX = buttonWidth * position
+        let viewWidth = view.bounds.size.width
+        let buttonWidth = viewWidth / CGFloat(capacity)
         
-        return CGRect(x: max(0.0, min(proposedX, viewWidth - buttonWidth)),
+        let proposedX = buttonWidth * position
+        let constrainedX = max(0.0, min(proposedX, viewWidth - buttonWidth))
+        
+        return CGRect(x: constrainedX,
                       y: 0.0,
                       width: buttonWidth,
                       height: 0.0)
