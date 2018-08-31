@@ -105,7 +105,9 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        reloadIndicatorPosition()
+        UIView.performWithoutAnimation {
+            reloadIndicatorPosition()
+        }
     }
     
     // MARK: LayoutPerformer
