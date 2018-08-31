@@ -28,6 +28,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     private let rootContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
+    private let layoutContainer = UIStackView()
     
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
@@ -40,6 +41,21 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     /// The bar buttons that are currently displayed in the bar view.
     public let buttons = BarButtonCollection<ButtonType>()
 
+    open var leadingAccessoryView: UIView? {
+        didSet {
+            cleanUpOldAccessory(view: oldValue)
+            updateAccessory(view: leadingAccessoryView,
+                            at: .leading)
+        }
+    }
+    open var trailingAccessoryView: UIView? {
+        didSet {
+            cleanUpOldAccessory(view: oldValue)
+            updateAccessory(view: trailingAccessoryView,
+                            at: .trailing)
+        }
+    }
+    
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: BarDataSource?
     /**
@@ -143,11 +159,12 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.heightAnchor.constraint(equalTo: rootContainer.heightAnchor)
             ])
+        stackView.addArrangedSubview(layoutContainer)
         
         NSLayoutConstraint.activate(constraints)
         
         let layoutView = layout.view
-        stackView.addArrangedSubview(layoutView)
+        layoutContainer.addArrangedSubview(layoutView)
         layout.performLayout(parent: self, insetGuides: contentInsetGuides)
         
         layout(newIndicator: indicator)
@@ -206,13 +223,14 @@ extension BarView: Bar {
         
         // Get focus area for updating indicator layout
         let focusFrame = layout.focusArea(for: pagePosition, capacity: capacity)
-        indicatorLayoutHandler?.update(for: focusFrame)
+        let relativeFocusFrame = layoutContainer.convert(focusFrame, from: layout.view)
+        indicatorLayoutHandler?.update(for: relativeFocusFrame)
         
         let update = {
             self.layoutIfNeeded()
             
             self.buttons.stateController.update(for: pagePosition, direction: direction)
-            self.scrollView.scrollRectToVisible(focusFrame, animated: false)
+            self.scrollView.scrollRectToVisible(relativeFocusFrame, animated: false)
         }
         
         if animated {
@@ -353,6 +371,31 @@ extension BarView: BarLayoutParent {
             scrollView.isPagingEnabled = newValue
         } get {
             return scrollView.isPagingEnabled
+        }
+    }
+}
+
+private extension BarView {
+    
+    enum AccessoryLocation {
+        case leading
+        case trailing
+    }
+    
+    func cleanUpOldAccessory(view: UIView?) {
+        view?.removeFromSuperview()
+    }
+    
+    func updateAccessory(view: UIView?, at location: AccessoryLocation) {
+        guard let view = view else {
+            return
+        }
+        
+        switch location {
+        case .leading:
+            layoutContainer.insertArrangedSubview(view, at: 0)
+        case .trailing:
+            layoutContainer.insertArrangedSubview(view, at: layoutContainer.arrangedSubviews.count)
         }
     }
 }
