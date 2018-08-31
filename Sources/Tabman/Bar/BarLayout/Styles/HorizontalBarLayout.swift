@@ -20,7 +20,7 @@ open class HorizontalBarLayout: BarLayout {
     
     // MARK: Properties
     
-    private let stackView = UIStackView()
+    internal let stackView = UIStackView()
     
     public override var contentMode: BarLayout.ContentMode {
         didSet {
