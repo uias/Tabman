@@ -41,6 +41,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     /// The bar buttons that are currently displayed in the bar view.
     public let buttons = BarButtonCollection<ButtonType>()
 
+    /// Accessory View that is visible at the leading end of the bar view.
     open var leadingAccessoryView: UIView? {
         didSet {
             cleanUpOldAccessory(view: oldValue)
@@ -48,6 +49,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
                             at: .leading)
         }
     }
+    /// Accessory View that is visible at the trailing end of the bar view.
     open var trailingAccessoryView: UIView? {
         didSet {
             cleanUpOldAccessory(view: oldValue)

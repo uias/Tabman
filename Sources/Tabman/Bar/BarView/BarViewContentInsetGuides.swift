@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ Content Inset guides for a bar view.
+ 
+ Contains layout guides for content views taking any contentInset into account.
+ **/
 internal final class BarViewContentInsetGuides: BarLayoutInsetGuides {
     
     // MARK: Properties
