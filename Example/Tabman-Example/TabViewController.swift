@@ -25,30 +25,38 @@ class TabViewController: TabmanViewController {
         
         self.dataSource = self
         
-        // TODO - Fix
-        let lineBar = Bar.LineBar()
-        addBar(lineBar, dataSource: self, at: .top)
-        
         let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>()
         addBar(bar, dataSource: self, at: .top)
 
-        bar.layout.contentMode = .fit
+//        bar.layout.contentMode = .fit
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         
         bar.indicator.weight = .heavy
         bar.indicator.cornerStyle = .eliptical
         
-        let tabBar = Bar.TabBar()
-        addBar(tabBar, dataSource: self, at: .top)
-        tabBar.buttons.customize { (button) in
-            button.imageSize = CGSize(width: 50, height: 50)
-        }
-        tabBar.animationStyle = .snap
-        tabBar.layout.visibleButtonCount = 3
+        let accessoryView = UIView()
+        accessoryView.backgroundColor = .blue
+        accessoryView.translatesAutoresizingMaskIntoConstraints = false
+        accessoryView.widthAnchor.constraint(equalTo: accessoryView.heightAnchor).isActive = true
+        bar.leadingAccessoryView = accessoryView
         
-        let buttonBar = Bar.ButtonBar()
-        addBar(buttonBar, dataSource: self, at: .bottom)
-        buttonBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
+        let trailingAccessoryView = UIView()
+        trailingAccessoryView.backgroundColor = .red
+        trailingAccessoryView.translatesAutoresizingMaskIntoConstraints = false
+        trailingAccessoryView.widthAnchor.constraint(equalTo: trailingAccessoryView.heightAnchor).isActive = true
+        bar.trailingAccessoryView = trailingAccessoryView
+        
+//        let tabBar = Bar.TabBar()
+//        addBar(tabBar, dataSource: self, at: .top)
+//        tabBar.buttons.customize { (button) in
+//            button.imageSize = CGSize(width: 50, height: 50)
+//        }
+//        tabBar.animationStyle = .snap
+//        tabBar.layout.visibleButtonCount = 3
+//        
+//        let buttonBar = Bar.ButtonBar()
+//        addBar(buttonBar, dataSource: self, at: .bottom)
+//        buttonBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 12.0, bottom: 0.0, right: 12.0)
     }
     
     func insertNewChild() {
