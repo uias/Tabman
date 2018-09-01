@@ -234,7 +234,14 @@ extension BarView: Bar {
             self.layoutIfNeeded()
             
             self.buttons.stateController.update(for: pagePosition, direction: direction)
-            self.scrollView.scrollRectToVisible(relativeFocusFrame, animated: false)
+            
+            let centeredFocusFrame = (self.bounds.size.width / 2) - (focusFrame.size.width / 2) // focus frame centered in view
+            let maxOffsetX = (self.scrollView.contentSize.width - self.bounds.size.width) + self.contentInset.right // maximum possible x offset
+            let minOffsetX = -self.contentInset.left
+            
+            var contentOffset = CGPoint(x: (-centeredFocusFrame) + relativeFocusFrame.origin.x, y: 0.0)
+            contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
+            self.scrollView.contentOffset = contentOffset
         }
         
         if animated {
