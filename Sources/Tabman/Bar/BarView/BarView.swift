@@ -411,5 +411,6 @@ private extension BarView {
         case .trailing:
             layoutContainer.insertArrangedSubview(view, at: layoutContainer.arrangedSubviews.count)
         }
+        reloadIndicatorPosition()
     }
 }
