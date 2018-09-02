@@ -297,16 +297,15 @@ public extension BarView {
 // MARK: - Indicator management
 extension BarView {
     
-    private func layout(newIndicator: BarIndicator) {
+    private func layout(newIndicator: IndicatorType) {
         let container = layoutContainer(for: newIndicator)
-        let layout = layoutIndicator(newIndicator, in: container)
         
         self.indicatorContainer = container
-        self.indicatorLayoutHandler = layout
+        self.indicatorLayoutHandler = container.layoutHandler
     }
     
-    private func layoutContainer(for indicator: BarIndicator) -> UIView {
-        let container = UIView()
+    private func layoutContainer(for indicator: IndicatorType) -> BarIndicatorContainer<IndicatorType> {
+        let container = BarIndicatorContainer(for: indicator)
         switch indicator.displayStyle {
         case .footer:
             stackView.addArrangedSubview(container)
@@ -325,21 +324,6 @@ extension BarView {
                 ])
         }
         return container
-    }
-    
-    private func layoutIndicator(_ indicator: BarIndicator, in container: UIView) -> BarIndicatorLayoutHandler {
-        container.addSubview(indicator)
-        
-        let leading = indicator.leadingAnchor.constraint(equalTo: container.leadingAnchor)
-        let top = indicator.topAnchor.constraint(equalTo: container.topAnchor)
-        let bottom = indicator.bottomAnchor.constraint(equalTo: container.bottomAnchor)
-        
-        let width = indicator.widthAnchor.constraint(equalToConstant: 0.0)
-        
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([leading, top, bottom, width])
-        
-        return BarIndicatorLayoutHandler(leading: leading, width: width)
     }
     
     private func reloadIndicatorPosition() {

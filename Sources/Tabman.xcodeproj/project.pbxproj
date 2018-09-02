@@ -27,6 +27,7 @@
 		46324A7C213A99E30059D469 /* MockBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7B213A99E30059D469 /* MockBarDataSource.swift */; };
 		46324A7E213A9C700059D469 /* MockTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7D213A9C700059D469 /* MockTabmanViewController.swift */; };
 		464DFE232110B0F500335D19 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DFE222110B0F500335D19 /* UIView+Subviews.swift */; };
+		46A9D28A213C145D001D9A70 /* BarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* BarIndicatorContainer.swift */; };
 		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
 		46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314BE20EBAC430093D2AF /* WeakContainer.swift */; };
 		46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */; };
@@ -89,6 +90,7 @@
 		46324A7B213A99E30059D469 /* MockBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBarDataSource.swift; sourceTree = "<group>"; };
 		46324A7D213A9C700059D469 /* MockTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabmanViewController.swift; sourceTree = "<group>"; };
 		464DFE222110B0F500335D19 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		46A9D289213C145D001D9A70 /* BarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorContainer.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		46C314BE20EBAC430093D2AF /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewFocusProvider.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				46E9631B211B3A01004C7468 /* BarIndicator.swift */,
+				46A9D289213C145D001D9A70 /* BarIndicatorContainer.swift */,
 				46E9631A211B3A01004C7468 /* BarIndicatorLayoutHandler.swift */,
 				46E9632F211B439C004C7468 /* Styles */,
 			);
@@ -586,6 +589,7 @@
 				46E96326211B3A01004C7468 /* BarButtonInteractionController.swift in Sources */,
 				464DFE232110B0F500335D19 /* UIView+Subviews.swift in Sources */,
 				46E96321211B3A01004C7468 /* BarButton.swift in Sources */,
+				46A9D28A213C145D001D9A70 /* BarIndicatorContainer.swift in Sources */,
 				46C314BF20EBAC430093D2AF /* WeakContainer.swift in Sources */,
 				46E96339211B7F03004C7468 /* BarLayoutParent.swift in Sources */,
 				46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */,
