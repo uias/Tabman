@@ -166,7 +166,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         NSLayoutConstraint.activate(constraints)
         
         layout.performLayout(parent: self, insetGuides: contentInsetGuides)
-        layout(newIndicator: indicator)
+        self.indicatorLayoutHandler = container(for: indicator).layoutHandler
     }
 }
 
@@ -292,13 +292,11 @@ public extension BarView {
 // MARK: - Indicator management
 extension BarView {
     
-    private func layout(newIndicator: IndicatorType) {
-        let container = layoutContainer(for: newIndicator)
-        
-        self.indicatorLayoutHandler = container.layoutHandler
-    }
-    
-    private func layoutContainer(for indicator: IndicatorType) -> BarIndicatorContainer<IndicatorType> {
+    /// Create a container for an indicator to be displayed in. Will also add the container to the view hierarchy.
+    ///
+    /// - Parameter indicator: Indicator to create container for.
+    /// - Returns: Indicator container.
+    private func container(for indicator: IndicatorType) -> BarIndicatorContainer<IndicatorType> {
         let container = BarIndicatorContainer(for: indicator)
         switch indicator.displayStyle {
         case .footer:
