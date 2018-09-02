@@ -27,9 +27,8 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     
     private let rootContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
-    private let stackView = UIStackView()
-    private let layoutContainer = UIStackView()
-    
+    private var grid: BarViewGrid!
+
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
     
@@ -152,24 +151,21 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
             scrollView.bottomAnchor.constraint(equalTo: rootContainer.bottomAnchor)
             ])
         
-        stackView.axis = .vertical
-        scrollView.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        // Set up grid - stack views that content views are added to.
+        self.grid = BarViewGrid(with: layout.view)
+        scrollView.addSubview(grid)
+        grid.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.heightAnchor.constraint(equalTo: rootContainer.heightAnchor)
+            grid.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            grid.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            grid.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            grid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            grid.heightAnchor.constraint(equalTo: rootContainer.heightAnchor)
             ])
-        stackView.addArrangedSubview(layoutContainer)
         
         NSLayoutConstraint.activate(constraints)
         
-        let layoutView = layout.view
-        layoutContainer.addArrangedSubview(layoutView)
         layout.performLayout(parent: self, insetGuides: contentInsetGuides)
-        
         layout(newIndicator: indicator)
     }
 }
@@ -226,7 +222,7 @@ extension BarView: Bar {
         
         // Get focus area for updating indicator layout
         let focusFrame = layout.focusArea(for: pagePosition, capacity: capacity)
-        let relativeFocusFrame = layoutContainer.convert(focusFrame, from: layout.view)
+        let relativeFocusFrame = grid.convert(focusFrame, from: layout.view)
         indicatorLayoutHandler?.update(for: relativeFocusFrame)
         
         // New content offset for scroll view for focus frame
@@ -306,10 +302,10 @@ extension BarView {
         let container = BarIndicatorContainer(for: indicator)
         switch indicator.displayStyle {
         case .footer:
-            stackView.addArrangedSubview(container)
+            grid.addFooterSubview(container)
             
         case .header:
-            stackView.insertArrangedSubview(container, at: 0)
+            grid.addHeaderSubview(container)
             
         case .fill:
             scrollView.addSubview(container)
@@ -389,9 +385,9 @@ private extension BarView {
         
         switch location {
         case .leading:
-            layoutContainer.insertArrangedSubview(view, at: 0)
+            grid.addLeadingSubview(view)
         case .trailing:
-            layoutContainer.insertArrangedSubview(view, at: layoutContainer.arrangedSubviews.count)
+            grid.addTrailingSubview(view)
         }
         reloadIndicatorPosition()
     }
