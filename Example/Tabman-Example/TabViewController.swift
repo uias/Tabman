@@ -34,17 +34,17 @@ class TabViewController: TabmanViewController {
 //        bar.indicator.weight = .heavy
 //        bar.indicator.cornerStyle = .eliptical
         
-        let accessoryView = UIView()
-        accessoryView.backgroundColor = .blue
-        accessoryView.translatesAutoresizingMaskIntoConstraints = false
-        accessoryView.widthAnchor.constraint(equalTo: accessoryView.heightAnchor).isActive = true
-        bar.leadingAccessoryView = accessoryView
-        
-        let trailingAccessoryView = UIView()
-        trailingAccessoryView.backgroundColor = .red
-        trailingAccessoryView.translatesAutoresizingMaskIntoConstraints = false
-        trailingAccessoryView.widthAnchor.constraint(equalTo: trailingAccessoryView.heightAnchor).isActive = true
-        bar.trailingAccessoryView = trailingAccessoryView
+//        let accessoryView = UIView()
+//        accessoryView.backgroundColor = .blue
+//        accessoryView.translatesAutoresizingMaskIntoConstraints = false
+//        accessoryView.widthAnchor.constraint(equalTo: accessoryView.heightAnchor).isActive = true
+//        bar.leadingAccessoryView = accessoryView
+//        
+//        let trailingAccessoryView = UIView()
+//        trailingAccessoryView.backgroundColor = .red
+//        trailingAccessoryView.translatesAutoresizingMaskIntoConstraints = false
+//        trailingAccessoryView.widthAnchor.constraint(equalTo: trailingAccessoryView.heightAnchor).isActive = true
+//        bar.trailingAccessoryView = trailingAccessoryView
         
 //        let tabBar = Bar.TabBar()
 //        addBar(tabBar, dataSource: self, at: .top)
