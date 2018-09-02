@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class LineBarIndicator: BarIndicator {
+open class LineBarIndicator: BarIndicator {
     
     // MARK: Types
     
@@ -27,7 +27,7 @@ public final class LineBarIndicator: BarIndicator {
     
     // MARK: Properties
     
-    public override var displayStyle: BarIndicator.DisplayStyle {
+    open override var displayStyle: BarIndicator.DisplayStyle {
         return .footer
     }
     
@@ -57,7 +57,7 @@ public final class LineBarIndicator: BarIndicator {
         backgroundColor = self.tintColor
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         superview?.layoutIfNeeded()
