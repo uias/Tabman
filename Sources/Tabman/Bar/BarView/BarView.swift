@@ -77,7 +77,6 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
     private var indicatorLayoutHandler: BarIndicatorLayoutHandler?
-    private var indicatorContainer: UIView?
 
     /**
      Style to use when animating bar position updates.
@@ -300,7 +299,6 @@ extension BarView {
     private func layout(newIndicator: IndicatorType) {
         let container = layoutContainer(for: newIndicator)
         
-        self.indicatorContainer = container
         self.indicatorLayoutHandler = container.layoutHandler
     }
     
