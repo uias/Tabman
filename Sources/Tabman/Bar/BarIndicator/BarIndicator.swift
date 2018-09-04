@@ -27,6 +27,8 @@ open class BarIndicator: UIView, LayoutPerformer {
     /// Whether the indicator should overscroll and 'bounce' at the end of page ranges.
     public var bounces: Bool = true
     
+    public var isProgressive: Bool = false
+    
     // MARK: Init
     
     public required init() {

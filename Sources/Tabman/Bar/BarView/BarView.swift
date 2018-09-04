@@ -223,7 +223,8 @@ extension BarView: Bar {
         // Get focus area for updating indicator layout
         let focusArea = grid.convert(layout.focusArea(for: pagePosition, capacity: capacity), from: layout.view) // raw focus area in grid coordinate space
         let focusRect = BarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
-        indicatorLayoutHandler?.update(for: focusRect.rect(includeOverscroll: indicator.bounces)) // Update indicator layout
+        indicatorLayoutHandler?.update(for: focusRect.rect(isProgressive: indicator.isProgressive,
+                                                           includeOverscroll: indicator.bounces)) // Update indicator layout
         
         // New content offset for scroll view for focus frame
         // Designed to center the frame in the view if possible.

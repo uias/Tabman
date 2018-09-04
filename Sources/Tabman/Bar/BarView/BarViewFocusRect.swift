@@ -44,20 +44,46 @@ internal struct BarViewFocusRect {
     ///
     /// - Parameter includeOverscroll: Whether to include overscrolling if relevant.
     /// - Returns: Rect with additional factors accounted for.
-    func rect(includeOverscroll: Bool) -> CGRect {
-        switch includeOverscroll {
-            
+    func rect(isProgressive: Bool, includeOverscroll: Bool) -> CGRect {
+        switch isProgressive {
         case true:
-            if position < 0.0 {
-                return rect.offsetBy(dx: rect.width * position, dy: 0.0)
-            } else if position > capacity {
-                let delta = position - capacity
-                return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
-            }
-            return rect
+            return progressiveRect(withOverscroll: includeOverscroll, for: rect)
             
-        default:
+        case false:
+            return rect(withOverscroll: includeOverscroll, for: rect)
+        }
+    }
+}
+
+private extension BarViewFocusRect {
+    
+    func rect(withOverscroll: Bool, for rect: CGRect) -> CGRect {
+        guard withOverscroll else {
             return rect
         }
+        
+        if position < 0.0 {
+            return rect.offsetBy(dx: rect.width * position, dy: 0.0)
+        } else if position > capacity {
+            let delta = position - capacity
+            return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+        }
+        return rect
+    }
+    
+    func progressiveRect(withOverscroll: Bool, for rect: CGRect) -> CGRect {
+        var rect = rect
+        
+        rect.size.width += rect.origin.x
+        rect.origin.x = 0.0
+        
+        if position < 0.0 {
+            rect.size.width += rect.width * position
+        } else if position > capacity {
+            let delta = position - capacity
+            return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+        }
+        
+        return rect
     }
 }
