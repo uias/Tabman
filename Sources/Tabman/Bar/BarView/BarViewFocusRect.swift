@@ -78,11 +78,13 @@ private extension BarViewFocusRect {
         rect.size.width += rect.origin.x
         rect.origin.x = 0.0
         
-        if position < 0.0 {
-            rect.size.width += rect.width * position
-        } else if position > capacity {
-            let delta = position - capacity
-            return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+        if withOverscroll {
+            if position < 0.0 {
+                rect.size.width += rect.width * position
+            } else if position > capacity {
+                let delta = position - capacity
+                rect.size.width += rect.width * delta
+            }
         }
         
         return rect
