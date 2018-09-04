@@ -42,6 +42,7 @@ internal struct BarViewFocusRect {
     
     /// Get the rect of the FocusRect accounting for additional factors.
     ///
+    /// - Parameter isProgressive: Whether the rect should be displayed as progressive (i.e. always increases from initial position)
     /// - Parameter includeOverscroll: Whether to include overscrolling if relevant.
     /// - Returns: Rect with additional factors accounted for.
     func rect(isProgressive: Bool, includeOverscroll: Bool) -> CGRect {
