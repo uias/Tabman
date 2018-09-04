@@ -288,7 +288,34 @@ public extension BarView {
     }
 }
 
-// MARK: - Indicator management
+extension BarView: BarLayoutParent {
+    
+    var contentInset: UIEdgeInsets {
+        set {
+            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
+            scrollView.contentInset = sanitizedContentInset
+            scrollView.contentOffset.x -= sanitizedContentInset.left
+            
+            rootContainerTop.constant = newValue.top
+            rootContainerBottom.constant = newValue.bottom
+        } get {
+            return UIEdgeInsets(top: rootContainerTop.constant,
+                                left: scrollView.contentInset.left,
+                                bottom: rootContainerBottom.constant,
+                                right: scrollView.contentInset.right)
+        }
+    }
+    
+    var isPagingEnabled: Bool {
+        set {
+            scrollView.isPagingEnabled = newValue
+        } get {
+            return scrollView.isPagingEnabled
+        }
+    }
+}
+
+// MARK: - Indicator
 extension BarView {
     
     /// Create a container for an indicator to be displayed in. Will also add the container to the view hierarchy.
@@ -328,6 +355,7 @@ extension BarView {
     }
 }
 
+// MARK: - Interaction
 extension BarView: BarButtonInteractionHandler {
     
     func barButtonInteraction(controller: BarButtonInteractionController,
@@ -337,33 +365,7 @@ extension BarView: BarButtonInteractionHandler {
     }
 }
 
-extension BarView: BarLayoutParent {
-    
-    var contentInset: UIEdgeInsets {
-        set {
-            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
-            scrollView.contentInset = sanitizedContentInset
-            scrollView.contentOffset.x -= sanitizedContentInset.left
-            
-            rootContainerTop.constant = newValue.top
-            rootContainerBottom.constant = newValue.bottom
-        } get {
-            return UIEdgeInsets(top: rootContainerTop.constant,
-                                left: scrollView.contentInset.left,
-                                bottom: rootContainerBottom.constant,
-                                right: scrollView.contentInset.right)
-        }
-    }
-    
-    var isPagingEnabled: Bool {
-        set {
-            scrollView.isPagingEnabled = newValue
-        } get {
-            return scrollView.isPagingEnabled
-        }
-    }
-}
-
+// MARK: - Accessory Views
 private extension BarView {
     
     enum AccessoryLocation {
