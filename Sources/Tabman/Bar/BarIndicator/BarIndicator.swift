@@ -24,6 +24,9 @@ open class BarIndicator: UIView, LayoutPerformer {
         fatalError("Return displayStyle in subclass")
     }
     
+    /// Whether the indicator should overscroll and 'bounce' at the end of page ranges.
+    public var bounces: Bool = true
+    
     // MARK: Init
     
     public required init() {

@@ -221,16 +221,16 @@ extension BarView: Bar {
         layoutIfNeeded()
         
         // Get focus area for updating indicator layout
-        let focusFrame = layout.focusArea(for: pagePosition, capacity: capacity)
-        let relativeFocusFrame = grid.convert(focusFrame, from: layout.view)
-        indicatorLayoutHandler?.update(for: relativeFocusFrame)
+        let focusArea = grid.convert(layout.focusArea(for: pagePosition, capacity: capacity), from: layout.view)
+        let focusRect = BarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
+        indicatorLayoutHandler?.update(for: focusRect.rect(includeOverscroll: indicator.bounces))
         
         // New content offset for scroll view for focus frame
         // Designed to center the frame in the view if possible.
-        let centeredFocusFrame = (bounds.size.width / 2) - (focusFrame.size.width / 2) // focus frame centered in view
+        let centeredFocusFrame = (bounds.size.width / 2) - (focusRect.size.width / 2) // focus frame centered in view
         let maxOffsetX = (scrollView.contentSize.width - bounds.size.width) + contentInset.right // maximum possible x offset
         let minOffsetX = -contentInset.left
-        var contentOffset = CGPoint(x: (-centeredFocusFrame) + relativeFocusFrame.origin.x, y: 0.0)
+        var contentOffset = CGPoint(x: (-centeredFocusFrame) + focusRect.origin.x, y: 0.0)
         
         contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX)) // Constrain the offset to bounds
         
@@ -238,7 +238,6 @@ extension BarView: Bar {
             self.layoutIfNeeded()
             
             self.buttons.stateController.update(for: pagePosition, direction: direction)
-            
             self.scrollView.contentOffset = contentOffset
         }
         

@@ -15,6 +15,7 @@
 		4612BD2120CDE586001A37B5 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */; };
 		46146FA41FD6D530004F7D78 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */; };
 		46146FA61FD6D55A004F7D78 /* UIView+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */; };
+		4628609A213EDB63009C707F /* BarViewFocusRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46286099213EDB63009C707F /* BarViewFocusRect.swift */; };
 		462941EB2111EB7C00345B52 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941E42111EB7C00345B52 /* BarView.swift */; };
 		462941F52112012300345B52 /* BarViewContentInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941F42112012300345B52 /* BarViewContentInsetGuides.swift */; };
 		462A65E62000FD1C0051C79C /* UIApplication+SafeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */; };
@@ -77,6 +78,7 @@
 		4612BD2020CDE586001A37B5 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		46146FA31FD6D530004F7D78 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46146FA51FD6D55A004F7D78 /* UIView+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Localization.swift"; sourceTree = "<group>"; };
+		46286099213EDB63009C707F /* BarViewFocusRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewFocusRect.swift; sourceTree = "<group>"; };
 		462941E42111EB7C00345B52 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		462941F42112012300345B52 /* BarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewContentInsetGuides.swift; sourceTree = "<group>"; };
 		462A65E52000FD1C0051C79C /* UIApplication+SafeShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeShared.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				46A9D28B213C3005001D9A70 /* BarViewGrid.swift */,
 				462941F42112012300345B52 /* BarViewContentInsetGuides.swift */,
 				46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */,
+				46286099213EDB63009C707F /* BarViewFocusRect.swift */,
 			);
 			path = BarView;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				46E9631E211B3A01004C7468 /* RestrictedHorizontalBarLayout.swift in Sources */,
 				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
+				4628609A213EDB63009C707F /* BarViewFocusRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
