@@ -60,18 +60,27 @@ private extension BarViewFocusRect {
     
     func rect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
               for rect: CGRect) -> CGRect {
+        var rect = rect
+        
         switch overscrollBehavior {
             
         case .bounce:
             if position < 0.0 {
-                return rect.offsetBy(dx: rect.width * position, dy: 0.0)
+                rect = rect.offsetBy(dx: rect.width * position, dy: 0.0)
             } else if position > capacity {
                 let delta = position - capacity
-                return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+                rect = rect.offsetBy(dx: rect.width * delta, dy: 0.0)
             }
             
         case .compress:
-            fatalError()
+            if position < 0.0 {
+                let delta = rect.width * position
+                rect.size.width += delta
+            } else if position > capacity {
+                let delta = rect.width * (position - capacity)
+                rect.size.width -= delta
+                rect.origin.x += delta
+            }
             
         default:
              break
