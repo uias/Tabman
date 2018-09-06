@@ -117,12 +117,13 @@ Bar customization is available via properties on each functional area of the bar
 </p>
 
 #### BarView
-`BarView` is the root view of every bar, and provides the glue for tying all the other distinct areas together. You can change a few things here, such as background style and animation behaviors. This is also the entry point for all other customization.
+`BarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.
 
 ```swift
 bar.background.style = .blur(style: .extraLight)
 bar.animationStyle = .snap
 ```
+*This is also the entry point for all other customization.*
 
 More: [**BarView Appearance Properties**]()
 
@@ -168,13 +169,15 @@ Each `BarView` is composed of three generic constraints which map directly to th
 This means...
 
 ```swift
-// ...That the preset...
+// ...that the preset...
 let bar = Bar.ButtonBar()
 
 // ...is actually under the hood:
 let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
 ```
-So swapping in another type of layout, button or indicator could not be simpler. Lets say you wanted to actually use a `DotBarIndicator` rather than the `LineBarIndicator`:
+So swapping in another type of layout, button or indicator could not be simpler.
+
+Lets say you wanted to actually use a `DotBarIndicator` rather than the `LineBarIndicator`:
 
 ```swift
 let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
