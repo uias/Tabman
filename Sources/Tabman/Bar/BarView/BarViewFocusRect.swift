@@ -45,48 +45,62 @@ internal struct BarViewFocusRect {
     /// - Parameter isProgressive: Whether the rect should be displayed as progressive (i.e. always increases from initial position)
     /// - Parameter includeOverscroll: Whether to include overscrolling if relevant.
     /// - Returns: Rect with additional factors accounted for.
-    func rect(isProgressive: Bool, includeOverscroll: Bool) -> CGRect {
+    func rect(isProgressive: Bool, overscrollBehavior: BarIndicator.OverscrollBehavior) -> CGRect {
         switch isProgressive {
         case true:
-            return progressiveRect(withOverscroll: includeOverscroll, for: rect)
+            return progressiveRect(with: overscrollBehavior, for: rect)
             
         case false:
-            return rect(withOverscroll: includeOverscroll, for: rect)
+            return rect(with: overscrollBehavior, for: rect)
         }
     }
 }
 
 private extension BarViewFocusRect {
     
-    func rect(withOverscroll: Bool, for rect: CGRect) -> CGRect {
-        guard withOverscroll else {
-            return rect
-        }
-        
-        if position < 0.0 {
-            return rect.offsetBy(dx: rect.width * position, dy: 0.0)
-        } else if position > capacity {
-            let delta = position - capacity
-            return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+    func rect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
+              for rect: CGRect) -> CGRect {
+        switch overscrollBehavior {
+            
+        case .bounce:
+            if position < 0.0 {
+                return rect.offsetBy(dx: rect.width * position, dy: 0.0)
+            } else if position > capacity {
+                let delta = position - capacity
+                return rect.offsetBy(dx: rect.width * delta, dy: 0.0)
+            }
+            
+        case .compress:
+            fatalError()
+            
+        default:
+             break
         }
         return rect
     }
     
-    func progressiveRect(withOverscroll: Bool, for rect: CGRect) -> CGRect {
+    func progressiveRect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
+                         for rect: CGRect) -> CGRect {
         var rect = rect
         
         rect.size.width += rect.origin.x
         rect.origin.x = 0.0
         
-        if withOverscroll {
+        switch overscrollBehavior {
+        case .bounce:
             if position < 0.0 {
                 rect.size.width += rect.width * position
             } else if position > capacity {
                 let delta = position - capacity
                 rect.size.width += rect.width * delta
             }
+            
+        case .compress:
+            fatalError()
+            
+        default:
+            break
         }
-        
         return rect
     }
 }

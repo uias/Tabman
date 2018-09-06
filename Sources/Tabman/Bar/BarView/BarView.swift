@@ -84,7 +84,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
      - `.progressive`: The bar will seemlessly transition between each button in progressive steps.
      - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
      
-     By default this is set to `.progressive`
+     Defaults to `.progressive`
      **/
     public var animationStyle: AnimationStyle = .progressive
     
@@ -224,7 +224,7 @@ extension BarView: Bar {
         let focusArea = grid.convert(layout.focusArea(for: pagePosition, capacity: capacity), from: layout.view) // raw focus area in grid coordinate space
         let focusRect = BarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
         indicatorLayoutHandler?.update(for: focusRect.rect(isProgressive: indicator.isProgressive,
-                                                           includeOverscroll: indicator.bounces)) // Update indicator layout
+                                                           overscrollBehavior: indicator.overscrollBehavior)) // Update indicator layout
         
         // New content offset for scroll view for focus frame
         // Designed to center the frame in the view if possible.

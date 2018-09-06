@@ -18,14 +18,29 @@ open class BarIndicator: UIView, LayoutPerformer {
         case footer
     }
     
+    public enum OverscrollBehavior {
+        case bounce
+        case compress
+        case none
+    }
+    
     // MARK: Properties
     
     open var displayStyle: DisplayStyle {
         fatalError("Return displayStyle in subclass")
     }
     
-    /// Whether the indicator should overscroll and 'bounce' at the end of page ranges.
-    public var bounces: Bool = true
+    /**
+     Behavior the indicator should exhibit when scrolling over the bounds of the bar.
+     
+     Options:
+     - `.bounce`: Bounce the indicator beyond the bounds of the bar.
+     - `.compress`: Compress the indicators width as overscroll occurs.
+     - `.none`: Don't do anything when overscrolling.
+     
+     Defaults to `.bounce`.
+     **/
+    public var overscrollBehavior: OverscrollBehavior = .bounce
     /// Whether the indicator should display progressively, traversing page indexes as progress.
     public var isProgressive: Bool = false
     
