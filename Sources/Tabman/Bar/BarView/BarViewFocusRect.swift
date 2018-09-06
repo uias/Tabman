@@ -96,16 +96,13 @@ private extension BarViewFocusRect {
         rect.origin.x = 0.0
         
         switch overscrollBehavior {
-        case .bounce:
+        case .bounce, .compress:
             if position < 0.0 {
                 rect.size.width += rect.width * position
-            } else if position > capacity {
+            } else if position > capacity && overscrollBehavior != .compress {
                 let delta = position - capacity
                 rect.size.width += rect.width * delta
             }
-            
-        case .compress:
-            fatalError()
             
         default:
             break
