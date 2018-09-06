@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ `BarIndicator` is a view that is displayed on a `BarView` to provide indication of the current page position.
+ **/
 open class BarIndicator: UIView, LayoutPerformer {
     
     // MARK: Types
@@ -18,6 +21,11 @@ open class BarIndicator: UIView, LayoutPerformer {
         case footer
     }
     
+    /// Behavior for overscrolling beyond bar bounds.
+    ///
+    /// - bounce: Bounce the indicator beyond the bounds of the bar.
+    /// - compress: Compress the indicators width as overscroll occurs.
+    /// - none: Don't do anything.
     public enum OverscrollBehavior {
         case bounce
         case compress
@@ -36,7 +44,7 @@ open class BarIndicator: UIView, LayoutPerformer {
      Options:
      - `.bounce`: Bounce the indicator beyond the bounds of the bar.
      - `.compress`: Compress the indicators width as overscroll occurs.
-     - `.none`: Don't do anything when overscrolling.
+     - `.none`: Don't do anything.
      
      Defaults to `.bounce`.
      **/

@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal class BarIndicatorContainer<IndicatorType: BarIndicator>: UIView {
+internal final class BarIndicatorContainer<IndicatorType: BarIndicator>: UIView {
     
     // MARK: Properties
     
