@@ -50,7 +50,7 @@ github "uias/Tabman" ~> 2.0
 ## 🚀 Usage
 
 ### First things first.
-Getting Tabman up and running could not be simpler. Get your `PageboyViewController` set up first...
+Get your `PageboyViewController` set up...
 
 ```swift
 class TabViewController: TabmanViewController {
@@ -81,6 +81,7 @@ extension TabViewController: PageboyViewControllerDataSource {
 }
 ```
 You can then add bars to the view controller and provide them with a data source.
+
 ```swift
 class TabViewController: TabmanViewController {
 
@@ -103,6 +104,91 @@ extension TabViewController: BarDataSource {
 }
 ```
 
+### Choosing an outfit.
+Tabman provides numerous easy to use styles out of the box:
+
+TODO
+
+### Customize to your hearts content.
+Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
+
+<p align="center">
+    <img src="Artwork/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
+</p>
+
+#### BarView
+`BarView` is the root view of every bar, and provides the glue for tying all the other distinct areas together. You can change a few things here, such as background style and animation behaviors. This is also the entry point for all other customization.
+
+```swift
+bar.background.style = .blur(style: .extraLight)
+bar.animationStyle = .snap
+```
+
+More: [**BarView Appearance Properties**]()
+
+#### BarLayout
+`BarLayout` is the foundation of a `BarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
+
+```swift
+bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+```
+More: [**BarLayout Appearance Properties**]()
+
+#### BarButton
+`BarButton` views are populated in the `BarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
+
+As you will most likely dealing with more than one button, you can modify the whole set at once:
+
+```swift
+bar.buttons.customize { (button) in
+	button.color = .orange
+	button.selectedColor = .red
+}
+```
+
+*This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
+
+More: [**BarButton Appearance Properties**]()
+
+#### BarIndicator
+Last, but certainly not least, is the `BarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
+
+```swift
+bar.indicator.overscrollBehavior = .compress
+bar.indicator.weight = .heavy
+```
+
+More: [**BarIndicator Appearance Properties**]()
+
+## 🎨 Going Completely Custom
+Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
+
+Each `BarView` is composed of three generic constraints which map directly to the distinct areas within itself: (`BarLayout`, `BarButton`, `BarIndicator`).
+
+This means...
+
+```swift
+// ...That the preset...
+let bar = Bar.ButtonBar()
+
+// ...is actually under the hood:
+let bar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
+```
+So swapping in another type of layout, button or indicator could not be simpler. Lets say you wanted to actually use a `DotBarIndicator` rather than the `LineBarIndicator`:
+
+```swift
+let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
+```
+That's as easy as it is.
+
+### What if I want something crazy?
+As replacing the type of layout, button or indicator is as simple as described above, you have the ability to define your own subclasses without too much of a headache.
+
+The following guides should help you get on the right path...
+
+* [**Custom BarLayout**]() - I want to change how the buttons in my bar are laid out and how they are displayed.
+* [**Custom BarButton**]() - I want to change what appears in my bar buttons.
+* [**Custom BarIndicator**]() - I want to create my own type of indicator.
 
 ## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
