@@ -33,7 +33,7 @@
 		46BBCF602143C962003238FD /* PageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF472143C962003238FD /* PageStatusView.swift */; };
 		46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */; };
 		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
-		46BBCF762143F18D003238FD /* TabmanViewController+BarBackgroundExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF752143F18D003238FD /* TabmanViewController+BarBackgroundExtension.swift */; };
+		46BBCF792143F267003238FD /* TabmanViewController+BarBackgroundExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF782143F266003238FD /* TabmanViewController+BarBackgroundExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +79,7 @@
 		46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabPageViewController+Settings.swift"; sourceTree = "<group>"; };
 		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BBCF4A2143C962003238FD /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		46BBCF752143F18D003238FD /* TabmanViewController+BarBackgroundExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TabmanViewController+BarBackgroundExtension.swift"; path = "../../Extras/TabmanViewController+BarBackgroundExtension.swift"; sourceTree = "<group>"; };
+		46BBCF782143F266003238FD /* TabmanViewController+BarBackgroundExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TabmanViewController+BarBackgroundExtension.swift"; path = "../../Extras/TabmanViewController+BarBackgroundExtension.swift"; sourceTree = "<group>"; };
 		AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C1D68F89D0728DCA126B0A /* Pods_Pageboy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pageboy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,15 +105,15 @@
 				46BBCF422143C962003238FD /* AppDelegate.swift */,
 				46BBCF462143C962003238FD /* TabPageViewController.swift */,
 				46BBCF4A2143C962003238FD /* ChildViewController.swift */,
-				46BBCF752143F18D003238FD /* TabmanViewController+BarBackgroundExtension.swift */,
 				46BBCF392143C962003238FD /* Tabman.storyboard */,
-				46BBCF652143C991003238FD /* Extras */,
+				46BBCF772143F245003238FD /* Tabman Extras */,
+				46BBCF652143C991003238FD /* Example Extras */,
 				46BBCF6A2143CA31003238FD /* Resources */,
 			);
 			path = "Tabman-Example";
 			sourceTree = "<group>";
 		};
-		46BBCF652143C991003238FD /* Extras */ = {
+		46BBCF652143C991003238FD /* Example Extras */ = {
 			isa = PBXGroup;
 			children = (
 				46BBCF402143C962003238FD /* Launch.storyboard */,
@@ -125,7 +125,7 @@
 				46BBCF682143C9D7003238FD /* Components */,
 				46BBCF692143CA0E003238FD /* Utilities */,
 			);
-			name = Extras;
+			name = "Example Extras";
 			sourceTree = "<group>";
 		};
 		46BBCF662143C999003238FD /* Settings */ = {
@@ -178,6 +178,14 @@
 				46BBCF492143C962003238FD /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		46BBCF772143F245003238FD /* Tabman Extras */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF782143F266003238FD /* TabmanViewController+BarBackgroundExtension.swift */,
+			);
+			name = "Tabman Extras";
 			sourceTree = "<group>";
 		};
 		D623B1D51E1D32D700527F3D = {
@@ -361,7 +369,7 @@
 				46BBCF562143C962003238FD /* EnumCollection.swift in Sources */,
 				46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */,
 				46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */,
-				46BBCF762143F18D003238FD /* TabmanViewController+BarBackgroundExtension.swift in Sources */,
+				46BBCF792143F267003238FD /* TabmanViewController+BarBackgroundExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
