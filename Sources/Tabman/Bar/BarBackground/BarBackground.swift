@@ -26,8 +26,6 @@ open class BarBackground: UIView {
     
     // MARK: Properties
 
-    private var backgroundView: UIView?
-    
     /**
      Style of the visible background.
      
@@ -38,18 +36,14 @@ open class BarBackground: UIView {
             update(for: style)
         }
     }
+    
     @available(*, unavailable)
     open override var backgroundColor: UIColor? {
         didSet {
         }
     }
     
-    internal var layoutController: BarBackgroundLayoutController?
-    public var extendsEdgesBeyondSafeArea: Bool = false {
-        didSet {
-            
-        }
-    }
+    private var backgroundView: UIView?
     
     // MARK: Init
     
