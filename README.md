@@ -194,7 +194,7 @@ The following guides should help you get on the right path...
 * [**Custom BarIndicator**]() - I want to create my own type of indicator.
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Documentation/TROUBLESHOOTING.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
