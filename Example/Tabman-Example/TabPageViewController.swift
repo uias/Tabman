@@ -57,14 +57,6 @@ class TabPageViewController: TabmanViewController {
         
     }
     
-    override func viewSafeAreaInsetsDidChange() {
-        if #available(iOS 11, *) {
-            super.viewSafeAreaInsetsDidChange()
-        
-            print(view.safeAreaInsets)
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
