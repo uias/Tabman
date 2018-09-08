@@ -122,13 +122,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         var constraints = [NSLayoutConstraint]()
         
         view.addSubview(background)
-        background.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(contentsOf: [
-            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            background.topAnchor.constraint(equalTo: view.topAnchor),
-            background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            background.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
+        background.layoutController = BarBackgroundLayoutController(in: view, for: background)
         
         view.addSubview(rootContainer)
         rootContainer.translatesAutoresizingMaskIntoConstraints = false
