@@ -13,9 +13,8 @@
         <!--Navigation Controller-->
         <scene sceneID="id5-6d-9ap">
             <objects>
-                <navigationController id="NJ2-ua-euL" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="NJ2-ua-euL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q0R-cW-g9h" customClass="TransparentNavigationBar" customModule="Tabman_Example" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
