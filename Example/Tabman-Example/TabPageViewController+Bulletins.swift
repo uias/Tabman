@@ -50,7 +50,7 @@ extension TabPageViewController {
 extension TabPageViewController: SettingsBulletinPageDelegate {
     
     func settingsBulletin(_ bulletin: SettingsBulletinPage, requiresPageInsertionAt index: PageIndex) {
-        viewControllers.insert(makeChildViewController(at: index), at: index)
+        viewControllers.insert(makeChildViewController(), at: index)
         insertPage(at: index, then: .scrollToUpdate)
     }
     

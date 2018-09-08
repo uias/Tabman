@@ -34,6 +34,7 @@
 		46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */; };
 		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
 		46BBCF792143F267003238FD /* TabmanViewController+BarBackgroundExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF782143F266003238FD /* TabmanViewController+BarBackgroundExtension.swift */; };
+		46BBCF7B2143F97E003238FD /* CircularBarActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,7 @@
 		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BBCF4A2143C962003238FD /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		46BBCF782143F266003238FD /* TabmanViewController+BarBackgroundExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TabmanViewController+BarBackgroundExtension.swift"; path = "../../Extras/TabmanViewController+BarBackgroundExtension.swift"; sourceTree = "<group>"; };
+		46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarActionButton.swift; sourceTree = "<group>"; };
 		AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C1D68F89D0728DCA126B0A /* Pods_Pageboy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pageboy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				46BBCF412143C962003238FD /* ActionButton.swift */,
 				46BBCF322143C962003238FD /* SettingsOptionButton.swift */,
 				46BBCF3F2143C962003238FD /* PageStepper.swift */,
+				46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BBCF7B2143F97E003238FD /* CircularBarActionButton.swift in Sources */,
 				46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */,
 				46BBCF4B2143C962003238FD /* Gradients.swift in Sources */,
 				46BBCF5D2143C962003238FD /* TabPageViewController+Bulletins.swift in Sources */,

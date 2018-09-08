@@ -26,8 +26,8 @@ class TabPageViewController: TabmanViewController {
     
     lazy var viewControllers: [UIViewController] = {
         var viewControllers = [UIViewController]()
-        for i in 0 ..< 5 {
-            viewControllers.append(makeChildViewController(at: i))
+        for _ in 0 ..< 5 {
+            viewControllers.append(makeChildViewController())
         }
         return viewControllers
     }()
@@ -49,6 +49,10 @@ class TabPageViewController: TabmanViewController {
         }
         bar.indicator.tintColor = .white
         bar.indicator.weight = .light
+        
+        let plusButton = CircularBarActionButton(action: .add)
+        plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
+        bar.trailingAccessoryView = plusButton
         
         addBarWithExtendingBackground(bar,
                                       dataSource: self,
@@ -80,6 +84,12 @@ class TabPageViewController: TabmanViewController {
         scrollToPage(.previous, animated: true)
     }
     
+    @objc func insertPage(_ sender: UIBarButtonItem) {
+        let index = viewControllers.count
+        viewControllers.append(makeChildViewController())
+        insertPage(at: index, then: .scrollToUpdate)
+    }
+    
     // MARK: Bulletins
     
     func showBulletin(_ manager: BLTNItemManager?) {
@@ -91,7 +101,7 @@ class TabPageViewController: TabmanViewController {
     
     // MARK: View Controllers
     
-    func makeChildViewController(at index: Int?) -> ChildViewController {
+    func makeChildViewController() -> ChildViewController {
         let storyboard = UIStoryboard(name: "Tabman", bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
     }
