@@ -167,6 +167,6 @@ extension TabPageViewController: PageboyViewControllerDataSource {
 extension TabPageViewController: BarDataSource {
     
     func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
-        return BarItem(title: "Page \(index + 1)")
+        return BarItem(title: "Page No. \(index + 1)")
     }
 }

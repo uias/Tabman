@@ -13,7 +13,9 @@ public final class LabelBarButton: BarButton {
     // MARK: Defaults
     
     private struct Defaults {
-        static let contentInset: UIEdgeInsets = UIEdgeInsets(top: 12.0, left: 8.0, bottom: 12.0, right: 8.0)
+        static let contentInset = UIEdgeInsets(top: 12.0, left: 8.0, bottom: 12.0, right: 8.0)
+        static let font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+        static let text = "Item"
     }
     
     // MARK: Properties
@@ -51,8 +53,9 @@ public final class LabelBarButton: BarButton {
         NSLayoutConstraint.activate(constraints)
         
         label.textAlignment = .center
-        label.text = "Item"
         
+        label.text = Defaults.text
+        label.font = Defaults.font
         self.contentInset = Defaults.contentInset
     }
     
