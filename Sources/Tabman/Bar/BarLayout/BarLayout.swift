@@ -13,7 +13,7 @@ import UIKit
  
  Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarLayout`.
  **/
-open class BarLayout: LayoutPerformer, BarViewFocusProvider {
+open class BarLayout: BarViewFocusProvider {
     
     // MARK: Types
     
@@ -76,57 +76,45 @@ open class BarLayout: LayoutPerformer, BarViewFocusProvider {
     
     public required init() {}
     
-    // MARK: LayoutPerformer
-    
-    public private(set) var hasPerformedLayout = false
-
-    internal func performLayout(parent: BarLayoutParent,
-                                insetGuides: BarLayoutInsetGuides) {
-        self.parent = parent
-        self.insetGuides = insetGuides
-        performLayout(in: view)
-    }
-    
-    open func performLayout(in view: UIView) {
-        guard !hasPerformedLayout else {
-            fatalError("performLayout() can only be called once.")
-        }
-        hasPerformedLayout = true
-    }
-    
     // MARK: Lifecycle
     
-    /**
-     Insert new bar buttons into the layout from a specified index.
-     
-     - Parameter buttons: The buttons to insert.
-     - Parameter index: The index to start inserting the buttons at.
-     **/
+    internal func layout(parent: BarLayoutParent,
+                         insetGuides: BarLayoutInsetGuides) {
+        self.parent = parent
+        self.insetGuides = insetGuides
+        layout(in: view)
+    }
+    
+    /// Layout the `BarLayout`.
+    ///
+    /// - Parameter view: The view to use as the root of the layout.
+    open func layout(in view: UIView) {
+    }
+    
+    /// Insert new bar buttons into the layout from a specified index.
+    ///
+    /// - Parameters:
+    ///   - buttons: The buttons to insert.
+    ///   - index: The index to start inserting the buttons at.
     open func insert(buttons: [BarButton], at index: Int) {
-        
     }
 
-    /**
-     Remove existing bar buttons from the layout.
-     
-     - Parameter buttons: The buttons to remove.
-     **/
+    /// Remove existing bar buttons from the layout.
+    ///
+    /// - Parameter buttons: The buttons to remove.
     open func remove(buttons: [BarButton]) {
-        
     }
 
     // MARK: BarViewFocusProvider
     
-    /**
-     Calculate the `focusRect` for the current position and capacity.
-     
-     This rect defines the area of the layout that should currently be highlighted for the selected bar button.
-
-     - Parameter position: Current position to display.
-     - Parameter capacity: Capacity of the bar (items).
-     
-     - Returns: Calculated focus rect.
-     **/
+    /// Calculate the `focusRect` for the current position and capacity.
+    ///
+    /// This rect defines the area of the layout that should currently be highlighted for the selected bar button.
+    ///
+    /// - Parameters:
+    ///   - position: Current position to display.
+    ///   - capacity: Capacity of the bar (items).
+    /// - Returns: Calculated focus rect.
     open func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         fatalError("Implement in subclass")
     }

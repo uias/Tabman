@@ -12,7 +12,7 @@ import Pageboy
 /**
  View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
  **/
-open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView, LayoutPerformer {
+open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
     
     // MARK: Types
     
@@ -93,7 +93,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     public required init() {
         super.init(frame: .zero)
         buttons.interactionHandler = self
-        performLayout(in: self)
+        layout(in: self)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -110,15 +110,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         }
     }
     
-    // MARK: LayoutPerformer
-    
-    public private(set) var hasPerformedLayout = false
-    
-    public func performLayout(in view: UIView) {
-        guard !hasPerformedLayout else {
-            fatalError("performLayout() can only be called once.")
-        }
-        hasPerformedLayout = true
+    private func layout(in view: UIView) {
         var constraints = [NSLayoutConstraint]()
         
         view.addSubview(background)
@@ -165,7 +157,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
         
         NSLayoutConstraint.activate(constraints)
         
-        layout.performLayout(parent: self, insetGuides: contentInsetGuides)
+        layout.layout(parent: self, insetGuides: contentInsetGuides)
         self.indicatorLayoutHandler = container(for: indicator).layoutHandler
     }
 }

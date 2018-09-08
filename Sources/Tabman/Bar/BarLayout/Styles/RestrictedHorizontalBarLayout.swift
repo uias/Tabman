@@ -43,8 +43,8 @@ open class RestrictedHorizontalBarLayout: HorizontalBarLayout {
     
     // MARK: Lifecycle
     
-    open override func performLayout(in view: UIView) {
-        super.performLayout(in: view)
+    open override func layout(in view: UIView) {
+        super.layout(in: view)
         super.isPagingEnabled = true
     }
     

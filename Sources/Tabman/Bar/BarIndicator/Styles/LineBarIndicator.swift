@@ -53,8 +53,8 @@ open class LineBarIndicator: BarIndicator {
     
     // MARK: Lifecycle
     
-    public override func performLayout(in view: UIView) {
-        super.performLayout(in: view)
+    public override func layout(in view: UIView) {
+        super.layout(in: view)
         
         let heightConstraint = heightAnchor.constraint(equalToConstant: weight.rawValue)
         heightConstraint.isActive = true

@@ -35,8 +35,8 @@ open class HorizontalBarLayout: BarLayout {
     
     // MARK: Lifecycle
     
-    open override func performLayout(in view: UIView) {
-        super.performLayout(in: view)
+    open override func layout(in view: UIView) {
+        super.layout(in: view)
         
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false

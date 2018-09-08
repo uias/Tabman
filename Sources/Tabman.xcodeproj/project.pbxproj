@@ -12,7 +12,6 @@
 		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
 		4613CBF2214187EE000E6766 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */; };
 		4613CBF421418804000E6766 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF321418804000E6766 /* UIColor+Interpolation.swift */; };
-		4613CBF721418839000E6766 /* LayoutPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF521418839000E6766 /* LayoutPerformer.swift */; };
 		4613CBF821418839000E6766 /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF621418839000E6766 /* WeakContainer.swift */; };
 		4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */; };
 		4628609A213EDB63009C707F /* BarViewFocusRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46286099213EDB63009C707F /* BarViewFocusRect.swift */; };
@@ -71,7 +70,6 @@
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
 		4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
 		4613CBF321418804000E6766 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
-		4613CBF521418839000E6766 /* LayoutPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPerformer.swift; sourceTree = "<group>"; };
 		4613CBF621418839000E6766 /* WeakContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46286099213EDB63009C707F /* BarViewFocusRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewFocusRect.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		4612BD0F20C9B7F5001A37B5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				4613CBF521418839000E6766 /* LayoutPerformer.swift */,
 				4613CBF621418839000E6766 /* WeakContainer.swift */,
 				4612BD1020C9B851001A37B5 /* BarMath.swift */,
 			);
@@ -565,7 +562,6 @@
 				462941EB2111EB7C00345B52 /* BarView.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				462FB6ED2137216700768088 /* HorizontalBarLayout.swift in Sources */,
-				4613CBF721418839000E6766 /* LayoutPerformer.swift in Sources */,
 				462FB6F1213724EB00768088 /* HiddenBarIndicator.swift in Sources */,
 				46E96329211B3A01004C7468 /* BarIndicator.swift in Sources */,
 				4613CBF2214187EE000E6766 /* CGRect+Interpolation.swift in Sources */,

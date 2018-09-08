@@ -11,7 +11,7 @@ import UIKit
 /**
  `BarIndicator` is a view that is displayed on a `BarView` to provide indication of the current page position.
  **/
-open class BarIndicator: UIView, LayoutPerformer {
+open class BarIndicator: UIView {
     
     // MARK: Types
     
@@ -70,16 +70,11 @@ open class BarIndicator: UIView, LayoutPerformer {
     }
     
     private func initialize() {
-        performLayout(in: self)
+        layout(in: self)
     }
     
-    // MARK: LayoutPerformer
+    // MARK: Lifecycle
     
-    public private(set) var hasPerformedLayout: Bool = false
-    public func performLayout(in view: UIView) {
-        guard !hasPerformedLayout else {
-            return
-        }
-        hasPerformedLayout = true
+    public func layout(in view: UIView) {
     }
 }

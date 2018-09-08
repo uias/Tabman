@@ -39,8 +39,8 @@ public final class LabelBarButton: BarButton {
     
     // MARK: Lifecycle
     
-    public override func performLayout(in view: UIView) {
-        super.performLayout(in: view)
+    public override func layout(in view: UIView) {
+        super.layout(in: view)
         
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false

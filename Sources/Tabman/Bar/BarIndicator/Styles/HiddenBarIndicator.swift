@@ -28,8 +28,8 @@ public final class HiddenBarIndicator: BarIndicator {
     
     // MARK: Lifecycle
     
-    public override func performLayout(in view: UIView) {
-        super.performLayout(in: view)
+    public override func layout(in view: UIView) {
+        super.layout(in: view)
         
         super.isHidden = true
     }

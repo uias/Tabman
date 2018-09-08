@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BarButton: UIControl, LayoutPerformer {
+open class BarButton: UIControl {
     
     // MARK: Types
     
@@ -82,20 +82,13 @@ open class BarButton: UIControl, LayoutPerformer {
         contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
         
-        performLayout(in: contentView)
-    }
-    
-    // MARK: LayoutPerformer
-    
-    public private(set) var hasPerformedLayout = false
-    
-    open func performLayout(in view: UIView) {
-        guard !hasPerformedLayout else {
-            fatalError("performLayout() can only be called once.")
-        }
+        layout(in: contentView)
     }
     
     // MARK: Lifecycle
+    
+    open func layout(in view: UIView) {
+    }
     
     open func populate(for item: BarItem) {
     }
