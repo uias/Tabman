@@ -15,8 +15,8 @@ enum SettingsBulletinDataSource {
     // MARK: Pages
     
     static func makeIntroPage() -> BLTNPageItem {
-        let page = BLTNPageItem(title: "Pageboy")
-        page.descriptionText = "A simple, highly informative page view controller."
+        let page = BLTNPageItem(title: "Tabman")
+        page.descriptionText = "A powerful paging view controller with tab bar."
         page.image = #imageLiteral(resourceName: "ic_welcome_icon")
         page.actionButtonTitle = "Continue"
         page.isDismissable = false
