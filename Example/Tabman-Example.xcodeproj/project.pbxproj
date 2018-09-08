@@ -10,7 +10,7 @@
 		0B6475C463F2CACA689E663D /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1660D3AF22E83DE4EC0B1510 /* Pods_Tabman_Example.framework */; };
 		46BBCF2C2143C92D003238FD /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BBCF2B2143C92D003238FD /* Tabman.framework */; };
 		46BBCF4B2143C962003238FD /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF302143C962003238FD /* Gradients.swift */; };
-		46BBCF4C2143C962003238FD /* PageViewController+BarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */; };
+		46BBCF4C2143C962003238FD /* TabPageViewController+BarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF312143C962003238FD /* TabPageViewController+BarButtons.swift */; };
 		46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF322143C962003238FD /* SettingsOptionButton.swift */; };
 		46BBCF4E2143C962003238FD /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF332143C962003238FD /* UIColor+Interpolation.swift */; };
 		46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF342143C962003238FD /* GradientViewController.swift */; };
@@ -27,11 +27,11 @@
 		46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF412143C962003238FD /* ActionButton.swift */; };
 		46BBCF5B2143C962003238FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF422143C962003238FD /* AppDelegate.swift */; };
 		46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */; };
-		46BBCF5D2143C962003238FD /* PageViewController+Bulletins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */; };
+		46BBCF5D2143C962003238FD /* TabPageViewController+Bulletins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF442143C962003238FD /* TabPageViewController+Bulletins.swift */; };
 		46BBCF5E2143C962003238FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF452143C962003238FD /* GradientView.swift */; };
 		46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF462143C962003238FD /* TabPageViewController.swift */; };
 		46BBCF602143C962003238FD /* PageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF472143C962003238FD /* PageStatusView.swift */; };
-		46BBCF612143C962003238FD /* PageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* PageViewController+Settings.swift */; };
+		46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */; };
 		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 		36BC348764D5DB88AE176A95 /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
 		46BBCF2B2143C92D003238FD /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BBCF302143C962003238FD /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
-		46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+BarButtons.swift"; sourceTree = "<group>"; };
+		46BBCF312143C962003238FD /* TabPageViewController+BarButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabPageViewController+BarButtons.swift"; sourceTree = "<group>"; };
 		46BBCF322143C962003238FD /* SettingsOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionButton.swift; sourceTree = "<group>"; };
 		46BBCF332143C962003238FD /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		46BBCF342143C962003238FD /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
@@ -71,11 +71,11 @@
 		46BBCF412143C962003238FD /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		46BBCF422143C962003238FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utilities.swift"; sourceTree = "<group>"; };
-		46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Bulletins.swift"; sourceTree = "<group>"; };
+		46BBCF442143C962003238FD /* TabPageViewController+Bulletins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabPageViewController+Bulletins.swift"; sourceTree = "<group>"; };
 		46BBCF452143C962003238FD /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		46BBCF462143C962003238FD /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
 		46BBCF472143C962003238FD /* PageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStatusView.swift; sourceTree = "<group>"; };
-		46BBCF482143C962003238FD /* PageViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Settings.swift"; sourceTree = "<group>"; };
+		46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabPageViewController+Settings.swift"; sourceTree = "<group>"; };
 		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BBCF4A2143C962003238FD /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,9 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				46BBCF402143C962003238FD /* Launch.storyboard */,
-				46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */,
-				46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */,
-				46BBCF482143C962003238FD /* PageViewController+Settings.swift */,
+				46BBCF312143C962003238FD /* TabPageViewController+BarButtons.swift */,
+				46BBCF442143C962003238FD /* TabPageViewController+Bulletins.swift */,
+				46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */,
 				46BBCF662143C999003238FD /* Settings */,
 				46BBCF672143C9C3003238FD /* Styling */,
 				46BBCF682143C9D7003238FD /* Components */,
@@ -340,8 +340,8 @@
 			files = (
 				46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */,
 				46BBCF4B2143C962003238FD /* Gradients.swift in Sources */,
-				46BBCF5D2143C962003238FD /* PageViewController+Bulletins.swift in Sources */,
-				46BBCF4C2143C962003238FD /* PageViewController+BarButtons.swift in Sources */,
+				46BBCF5D2143C962003238FD /* TabPageViewController+Bulletins.swift in Sources */,
+				46BBCF4C2143C962003238FD /* TabPageViewController+BarButtons.swift in Sources */,
 				46BBCF582143C962003238FD /* PageStepper.swift in Sources */,
 				46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */,
 				46BBCF5E2143C962003238FD /* GradientView.swift in Sources */,
@@ -356,7 +356,7 @@
 				46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */,
 				46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */,
 				46BBCF562143C962003238FD /* EnumCollection.swift in Sources */,
-				46BBCF612143C962003238FD /* PageViewController+Settings.swift in Sources */,
+				46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */,
 				46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  PageViewControllerAppearance.swift
+//  TabPageViewController+BarButtons.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 15/02/2017.

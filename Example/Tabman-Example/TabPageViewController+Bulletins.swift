@@ -1,5 +1,5 @@
 //
-//  PageViewController+Bulletins.swift
+//  TabPageViewController+Bulletins.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 21/07/2018.

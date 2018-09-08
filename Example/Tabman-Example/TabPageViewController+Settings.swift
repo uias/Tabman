@@ -1,5 +1,5 @@
 //
-//  PageViewController+Settings.swift
+//  TabPageViewController+Settings.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 19/07/2018.
