@@ -14,18 +14,10 @@ target 'Tabman-Example' do
   use_frameworks!
   lib_pods
 
+  pod 'BulletinBoard', '~> 2.0'
+  pod 'SnapKit', '~> 4.0'
+
 end
-
-# target 'Tabman-UITests' do
-#   workspace 'Tabman'
-#   project './UI Tests/Tabman-UITests.xcodeproj'
-
-#   use_frameworks!
-#   lib_pods
-
-#   pod 'PureLayout', '~> 3.0'
-
-# end
 
 target 'Tabman' do
   workspace 'Tabman'
@@ -39,4 +31,17 @@ target 'Tabman' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  
+  # convert incompatible pods back to Swift 4.1
+  myTargets = ['BulletinBoard', 'SnapKit']  
+  installer.pods_project.targets.each do |target|
+    if myTargets.include? target.name
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.1'
+      end
+    end
+  end
 end

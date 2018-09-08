@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Tabman-Example
+//  Pageboy-Example
 //
-//  Created by Merrick Sapsford on 17/02/2017.
+//  Created by Merrick Sapsford on 04/01/2017.
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NJ2-ua-euL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="id5-6d-9ap">
+            <objects>
+                <navigationController id="NJ2-ua-euL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q0R-cW-g9h" customClass="TransparentNavigationBar" customModule="Pageboy_Example" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0Zk-gc-Ntb" kind="relationship" relationship="rootViewController" id="xIB-JM-zyf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKJ-DI-Kgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="146"/>
+        </scene>
+        <!--Gradient View Controller-->
+        <scene sceneID="sXf-av-TlA">
+            <objects>
+                <viewController id="0Zk-gc-Ntb" customClass="GradientViewController" customModule="Pageboy_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M51-op-TiG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-Vm-UP2" customClass="GradientView" customModule="Pageboy_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aG-3R-ODU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="z4M-Sj-thn" kind="embed" id="yU4-wz-KcZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ae9-Vm-UP2" firstAttribute="bottom" secondItem="M51-op-TiG" secondAttribute="bottom" id="4Py-kT-507"/>
+                            <constraint firstItem="Ae9-Vm-UP2" firstAttribute="top" secondItem="M51-op-TiG" secondAttribute="top" id="VHE-6S-Y06"/>
+                            <constraint firstItem="4aG-3R-ODU" firstAttribute="bottom" secondItem="kzu-HP-NcF" secondAttribute="bottom" id="WNn-bO-UeD"/>
+                            <constraint firstItem="Ae9-Vm-UP2" firstAttribute="leading" secondItem="M51-op-TiG" secondAttribute="leading" id="b1y-zV-h6u"/>
+                            <constraint firstItem="4aG-3R-ODU" firstAttribute="top" secondItem="kzu-HP-NcF" secondAttribute="top" id="c4m-XF-tZe"/>
+                            <constraint firstItem="4aG-3R-ODU" firstAttribute="trailing" secondItem="kzu-HP-NcF" secondAttribute="trailing" id="gpZ-KH-OZm"/>
+                            <constraint firstItem="Ae9-Vm-UP2" firstAttribute="trailing" secondItem="M51-op-TiG" secondAttribute="trailing" id="nUt-3d-YTK"/>
+                            <constraint firstItem="4aG-3R-ODU" firstAttribute="leading" secondItem="kzu-HP-NcF" secondAttribute="leading" id="vXo-5V-kPh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kzu-HP-NcF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qHA-82-8lA"/>
+                    <connections>
+                        <outlet property="gradientView" destination="Ae9-Vm-UP2" id="pxj-om-gWr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSz-ds-7ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="144.3778110944528"/>
+        </scene>
+        <!--Pageboy-->
+        <scene sceneID="aUW-TR-4BD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pageboy" id="z4M-Sj-thn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LtR-zb-7Lq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="635"/>
+        </scene>
+    </scenes>
+</document>

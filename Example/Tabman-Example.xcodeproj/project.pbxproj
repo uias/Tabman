@@ -3,240 +3,293 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		462941D62111CFA300345B52 /* TestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941D52111CFA300345B52 /* TestBar.swift */; };
-		463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C759751E83CFA300471973 /* Tabman.framework */; };
-		46C314AF20EBA5450093D2AF /* SelectionStateBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */; };
-		46DC3F0D211300DB0085FF37 /* MyCustomBarViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */; };
-		A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */; };
-		D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0D81E5733A80020B8AE /* AppDelegate.swift */; };
-		D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DC1E5733A80020B8AE /* Main.storyboard */; };
-		D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0DF1E5733A80020B8AE /* Assets.xcassets */; };
-		D62AC0E31E5733A80020B8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */; };
-		D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1041E5736A10020B8AE /* ChildViewController.swift */; };
-		D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC1061E5736A10020B8AE /* TabViewController.swift */; };
+		0B6475C463F2CACA689E663D /* Pods_Tabman_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1660D3AF22E83DE4EC0B1510 /* Pods_Tabman_Example.framework */; };
+		46BBCF2C2143C92D003238FD /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BBCF2B2143C92D003238FD /* Tabman.framework */; };
+		46BBCF4B2143C962003238FD /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF302143C962003238FD /* Gradients.swift */; };
+		46BBCF4C2143C962003238FD /* PageViewController+BarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */; };
+		46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF322143C962003238FD /* SettingsOptionButton.swift */; };
+		46BBCF4E2143C962003238FD /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF332143C962003238FD /* UIColor+Interpolation.swift */; };
+		46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF342143C962003238FD /* GradientViewController.swift */; };
+		46BBCF502143C962003238FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF352143C962003238FD /* Assets.xcassets */; };
+		46BBCF512143C962003238FD /* SettingsBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF362143C962003238FD /* SettingsBulletinPage.swift */; };
+		46BBCF522143C962003238FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF372143C962003238FD /* LaunchScreen.storyboard */; };
+		46BBCF532143C962003238FD /* Pageboy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF392143C962003238FD /* Pageboy.storyboard */; };
+		46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */; };
+		46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */; };
+		46BBCF562143C962003238FD /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3D2143C962003238FD /* EnumCollection.swift */; };
+		46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */; };
+		46BBCF582143C962003238FD /* PageStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3F2143C962003238FD /* PageStepper.swift */; };
+		46BBCF592143C962003238FD /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF402143C962003238FD /* Launch.storyboard */; };
+		46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF412143C962003238FD /* ActionButton.swift */; };
+		46BBCF5B2143C962003238FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF422143C962003238FD /* AppDelegate.swift */; };
+		46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */; };
+		46BBCF5D2143C962003238FD /* PageViewController+Bulletins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */; };
+		46BBCF5E2143C962003238FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF452143C962003238FD /* GradientView.swift */; };
+		46BBCF5F2143C962003238FD /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF462143C962003238FD /* PageViewController.swift */; };
+		46BBCF602143C962003238FD /* PageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF472143C962003238FD /* PageStatusView.swift */; };
+		46BBCF612143C962003238FD /* PageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* PageViewController+Settings.swift */; };
+		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D6C759741E83CFA300471973 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D62AC0B21E5733810020B8AE;
-			remoteInfo = Tabman;
+/* Begin PBXCopyFilesBuildPhase section */
+		D6E73A701E51F7C400A8D5A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6C759761E83CFA300471973 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D62AC0BB1E5733810020B8AE;
-			remoteInfo = TabmanTests;
-		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		462941D52111CFA300345B52 /* TestBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBar.swift; sourceTree = "<group>"; };
-		46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStateBarButton.swift; sourceTree = "<group>"; };
-		46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomBarViewLayout.swift; sourceTree = "<group>"; };
-		7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
-		7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
-		94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
-		AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D62AC0D51E5733A80020B8AE /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D62AC0D81E5733A80020B8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D62AC0DD1E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D62AC0DF1E5733A80020B8AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D62AC0E21E5733A80020B8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D62AC0E41E5733A80020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D62AC1041E5736A10020B8AE /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		D62AC1061E5736A10020B8AE /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tabman.xcodeproj; path = ../Sources/Tabman.xcodeproj; sourceTree = "<group>"; };
+		1660D3AF22E83DE4EC0B1510 /* Pods_Tabman_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D5D537913042076AC16780 /* Pods-Pageboy-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pageboy-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Pageboy-Example/Pods-Pageboy-Example.release.xcconfig"; sourceTree = "<group>"; };
+		36BC348764D5DB88AE176A95 /* Pods-Tabman-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.release.xcconfig"; sourceTree = "<group>"; };
+		46BBCF2B2143C92D003238FD /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BBCF302143C962003238FD /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+BarButtons.swift"; sourceTree = "<group>"; };
+		46BBCF322143C962003238FD /* SettingsOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionButton.swift; sourceTree = "<group>"; };
+		46BBCF332143C962003238FD /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
+		46BBCF342143C962003238FD /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
+		46BBCF352143C962003238FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46BBCF362143C962003238FD /* SettingsBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBulletinPage.swift; sourceTree = "<group>"; };
+		46BBCF382143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46BBCF3A2143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pageboy.storyboard; sourceTree = "<group>"; };
+		46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBulletinDataSource.swift; sourceTree = "<group>"; };
+		46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
+		46BBCF3D2143C962003238FD /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
+		46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModificationBulletinPage.swift; sourceTree = "<group>"; };
+		46BBCF3F2143C962003238FD /* PageStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStepper.swift; sourceTree = "<group>"; };
+		46BBCF402143C962003238FD /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		46BBCF412143C962003238FD /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		46BBCF422143C962003238FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utilities.swift"; sourceTree = "<group>"; };
+		46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Bulletins.swift"; sourceTree = "<group>"; };
+		46BBCF452143C962003238FD /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		46BBCF462143C962003238FD /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		46BBCF472143C962003238FD /* PageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStatusView.swift; sourceTree = "<group>"; };
+		46BBCF482143C962003238FD /* PageViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Settings.swift"; sourceTree = "<group>"; };
+		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46BBCF4A2143C962003238FD /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C1D68F89D0728DCA126B0A /* Pods_Pageboy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pageboy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DA8DCCF2018C397CC96DF4 /* Pods-Pageboy-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pageboy-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Pageboy-Example/Pods-Pageboy-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D62AC0D21E5733A80020B8AE /* Frameworks */ = {
+		D623B1DB1E1D32D700527F3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463B421E202C942300EC2E86 /* Tabman.framework in Frameworks */,
-				A171DDDDAD7B02D7AE399B42 /* Pods_Tabman_Example.framework in Frameworks */,
+				46BBCF2C2143C92D003238FD /* Tabman.framework in Frameworks */,
+				0B6475C463F2CACA689E663D /* Pods_Tabman_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30B297C173A389AB5B2B68EF /* Pods */ = {
+		46BBCF2F2143C962003238FD /* Tabman-Example */ = {
 			isa = PBXGroup;
 			children = (
-				2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */,
-				94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D62AC0CC1E5733A80020B8AE = {
-			isa = PBXGroup;
-			children = (
-				D62AC0D71E5733A80020B8AE /* Tabman-Example */,
-				D62AC0D61E5733A80020B8AE /* Products */,
-				D6C759651E83CE6300471973 /* Frameworks */,
-				30B297C173A389AB5B2B68EF /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		D62AC0D61E5733A80020B8AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC0D51E5733A80020B8AE /* Tabman-Example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D62AC0D71E5733A80020B8AE /* Tabman-Example */ = {
-			isa = PBXGroup;
-			children = (
-				D62AC0D81E5733A80020B8AE /* AppDelegate.swift */,
-				D62AC1061E5736A10020B8AE /* TabViewController.swift */,
-				462941D52111CFA300345B52 /* TestBar.swift */,
-				D62AC1041E5736A10020B8AE /* ChildViewController.swift */,
-				D62AC0DC1E5733A80020B8AE /* Main.storyboard */,
-				46C314AE20EBA5450093D2AF /* SelectionStateBarButton.swift */,
-				46DC3F0C211300DB0085FF37 /* MyCustomBarViewLayout.swift */,
-				D62AC10F1E5736BE0020B8AE /* Resources */,
+				46BBCF422143C962003238FD /* AppDelegate.swift */,
+				46BBCF462143C962003238FD /* PageViewController.swift */,
+				46BBCF4A2143C962003238FD /* ChildViewController.swift */,
+				46BBCF392143C962003238FD /* Pageboy.storyboard */,
+				46BBCF652143C991003238FD /* Extras */,
+				46BBCF6A2143CA31003238FD /* Resources */,
 			);
 			path = "Tabman-Example";
 			sourceTree = "<group>";
 		};
-		D62AC10F1E5736BE0020B8AE /* Resources */ = {
+		46BBCF652143C991003238FD /* Extras */ = {
 			isa = PBXGroup;
 			children = (
-				D62AC0DF1E5733A80020B8AE /* Assets.xcassets */,
-				D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */,
-				D62AC0E41E5733A80020B8AE /* Info.plist */,
+				46BBCF402143C962003238FD /* Launch.storyboard */,
+				46BBCF312143C962003238FD /* PageViewController+BarButtons.swift */,
+				46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */,
+				46BBCF482143C962003238FD /* PageViewController+Settings.swift */,
+				46BBCF662143C999003238FD /* Settings */,
+				46BBCF672143C9C3003238FD /* Styling */,
+				46BBCF682143C9D7003238FD /* Components */,
+				46BBCF692143CA0E003238FD /* Utilities */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		46BBCF662143C999003238FD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */,
+				46BBCF362143C962003238FD /* SettingsBulletinPage.swift */,
+				46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		46BBCF672143C9C3003238FD /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF302143C962003238FD /* Gradients.swift */,
+			);
+			name = Styling;
+			sourceTree = "<group>";
+		};
+		46BBCF682143C9D7003238FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF452143C962003238FD /* GradientView.swift */,
+				46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */,
+				46BBCF342143C962003238FD /* GradientViewController.swift */,
+				46BBCF472143C962003238FD /* PageStatusView.swift */,
+				46BBCF412143C962003238FD /* ActionButton.swift */,
+				46BBCF322143C962003238FD /* SettingsOptionButton.swift */,
+				46BBCF3F2143C962003238FD /* PageStepper.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		46BBCF692143CA0E003238FD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */,
+				46BBCF332143C962003238FD /* UIColor+Interpolation.swift */,
+				46BBCF3D2143C962003238FD /* EnumCollection.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		46BBCF6A2143CA31003238FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF352143C962003238FD /* Assets.xcassets */,
+				46BBCF372143C962003238FD /* LaunchScreen.storyboard */,
+				46BBCF492143C962003238FD /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		D6C759651E83CE6300471973 /* Frameworks */ = {
+		D623B1D51E1D32D700527F3D = {
 			isa = PBXGroup;
 			children = (
-				D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */,
-				7BF6B4941E9555DE00BE68B5 /* Pageboy.framework */,
-				7BF6B4951E9555DE00BE68B5 /* PureLayout.framework */,
-				AEB424488E41694D848208F0 /* Pods_Tabman_Example.framework */,
+				46BBCF2F2143C962003238FD /* Tabman-Example */,
+				D6CC55831ECCCCB700A7FBB4 /* Frameworks */,
+				D623B1DF1E1D32D700527F3D /* Products */,
+				E89E66555AB13D5969586923 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D623B1DF1E1D32D700527F3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D623B1DE1E1D32D700527F3D /* Tabman-Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6CC55831ECCCCB700A7FBB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46BBCF2B2143C92D003238FD /* Tabman.framework */,
+				C5C1D68F89D0728DCA126B0A /* Pods_Pageboy_Example.framework */,
+				1660D3AF22E83DE4EC0B1510 /* Pods_Tabman_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D6C759701E83CFA300471973 /* Products */ = {
+		E89E66555AB13D5969586923 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D6C759751E83CFA300471973 /* Tabman.framework */,
-				D6C759771E83CFA300471973 /* TabmanTests.xctest */,
+				E8DA8DCCF2018C397CC96DF4 /* Pods-Pageboy-Example.debug.xcconfig */,
+				22D5D537913042076AC16780 /* Pods-Pageboy-Example.release.xcconfig */,
+				AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */,
+				36BC348764D5DB88AE176A95 /* Pods-Tabman-Example.release.xcconfig */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D62AC0D41E5733A80020B8AE /* Tabman-Example */ = {
+		D623B1DD1E1D32D700527F3D /* Tabman-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D62AC0E71E5733A80020B8AE /* Build configuration list for PBXNativeTarget "Tabman-Example" */;
+			buildConfigurationList = D623B1F01E1D32D700527F3D /* Build configuration list for PBXNativeTarget "Tabman-Example" */;
 			buildPhases = (
-				EE7713597E46317E0CA21A5E /* [CP] Check Pods Manifest.lock */,
-				D62AC0D11E5733A80020B8AE /* Sources */,
-				D62AC0D21E5733A80020B8AE /* Frameworks */,
-				D62AC0D31E5733A80020B8AE /* Resources */,
-				929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */,
+				BF43A48B7FD85A3BD59BE132 /* [CP] Check Pods Manifest.lock */,
+				D623B1DA1E1D32D700527F3D /* Sources */,
+				D623B1DB1E1D32D700527F3D /* Frameworks */,
+				D623B1DC1E1D32D700527F3D /* Resources */,
+				D6E73A701E51F7C400A8D5A5 /* Embed Frameworks */,
+				1C801D1CF6D073978EA7D11A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Tabman-Example";
-			productName = "Tabman-Example";
-			productReference = D62AC0D51E5733A80020B8AE /* Tabman-Example.app */;
+			productName = "Pageboy-Example";
+			productReference = D623B1DE1E1D32D700527F3D /* Tabman-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D62AC0CD1E5733A80020B8AE /* Project object */ = {
+		D623B1D61E1D32D700527F3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
-					D62AC0D41E5733A80020B8AE = {
+					D623B1DD1E1D32D700527F3D = {
 						CreatedOnToolsVersion = 8.2;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D62AC0D01E5733A80020B8AE /* Build configuration list for PBXProject "Tabman-Example" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = D623B1D91E1D32D700527F3D /* Build configuration list for PBXProject "Tabman-Example" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D62AC0CC1E5733A80020B8AE;
-			productRefGroup = D62AC0D61E5733A80020B8AE /* Products */;
+			mainGroup = D623B1D51E1D32D700527F3D;
+			productRefGroup = D623B1DF1E1D32D700527F3D /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D6C759701E83CFA300471973 /* Products */;
-					ProjectRef = D6C7596F1E83CFA300471973 /* Tabman.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				D62AC0D41E5733A80020B8AE /* Tabman-Example */,
+				D623B1DD1E1D32D700527F3D /* Tabman-Example */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		D6C759751E83CFA300471973 /* Tabman.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Tabman.framework;
-			remoteRef = D6C759741E83CFA300471973 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D6C759771E83CFA300471973 /* TabmanTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TabmanTests.xctest;
-			remoteRef = D6C759761E83CFA300471973 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		D62AC0D31E5733A80020B8AE /* Resources */ = {
+		D623B1DC1E1D32D700527F3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62AC0E31E5733A80020B8AE /* LaunchScreen.storyboard in Resources */,
-				D62AC0E01E5733A80020B8AE /* Assets.xcassets in Resources */,
-				D62AC0DE1E5733A80020B8AE /* Main.storyboard in Resources */,
+				46BBCF502143C962003238FD /* Assets.xcassets in Resources */,
+				46BBCF532143C962003238FD /* Pageboy.storyboard in Resources */,
+				46BBCF522143C962003238FD /* LaunchScreen.storyboard in Resources */,
+				46BBCF592143C962003238FD /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */ = {
+		1C801D1CF6D073978EA7D11A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,19 +297,23 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE7713597E46317E0CA21A5E /* [CP] Check Pods Manifest.lock */ = {
+		BF43A48B7FD85A3BD59BE132 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,42 +334,56 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D62AC0D11E5733A80020B8AE /* Sources */ = {
+		D623B1DA1E1D32D700527F3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462941D62111CFA300345B52 /* TestBar.swift in Sources */,
-				46C314AF20EBA5450093D2AF /* SelectionStateBarButton.swift in Sources */,
-				D62AC0D91E5733A80020B8AE /* AppDelegate.swift in Sources */,
-				D62AC1091E5736A10020B8AE /* ChildViewController.swift in Sources */,
-				46DC3F0D211300DB0085FF37 /* MyCustomBarViewLayout.swift in Sources */,
-				D62AC10B1E5736A10020B8AE /* TabViewController.swift in Sources */,
+				46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */,
+				46BBCF4B2143C962003238FD /* Gradients.swift in Sources */,
+				46BBCF5D2143C962003238FD /* PageViewController+Bulletins.swift in Sources */,
+				46BBCF4C2143C962003238FD /* PageViewController+BarButtons.swift in Sources */,
+				46BBCF582143C962003238FD /* PageStepper.swift in Sources */,
+				46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */,
+				46BBCF5E2143C962003238FD /* GradientView.swift in Sources */,
+				46BBCF602143C962003238FD /* PageStatusView.swift in Sources */,
+				46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */,
+				46BBCF5F2143C962003238FD /* PageViewController.swift in Sources */,
+				46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */,
+				46BBCF632143C962003238FD /* ChildViewController.swift in Sources */,
+				46BBCF4E2143C962003238FD /* UIColor+Interpolation.swift in Sources */,
+				46BBCF512143C962003238FD /* SettingsBulletinPage.swift in Sources */,
+				46BBCF5B2143C962003238FD /* AppDelegate.swift in Sources */,
+				46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */,
+				46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */,
+				46BBCF562143C962003238FD /* EnumCollection.swift in Sources */,
+				46BBCF612143C962003238FD /* PageViewController+Settings.swift in Sources */,
+				46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D62AC0DC1E5733A80020B8AE /* Main.storyboard */ = {
+		46BBCF372143C962003238FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D62AC0DD1E5733A80020B8AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D62AC0E11E5733A80020B8AE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D62AC0E21E5733A80020B8AE /* Base */,
+				46BBCF382143C962003238FD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		46BBCF392143C962003238FD /* Pageboy.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46BBCF3A2143C962003238FD /* Base */,
+			);
+			name = Pageboy.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D62AC0E51E5733A80020B8AE /* Debug */ = {
+		D623B1EE1E1D32D700527F3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -366,10 +437,12 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		D62AC0E61E5733A80020B8AE /* Release */ = {
+		D623B1EF1E1D32D700527F3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -415,60 +488,68 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D62AC0E81E5733A80020B8AE /* Debug */ = {
+		D623B1F11E1D32D700527F3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F495B032D90A7824CC450A0 /* Pods-Tabman-Example.debug.xcconfig */;
+			baseConfigurationReference = AF8D722783640A035F9F742E /* Pods-Tabman-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Tabman-Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D62AC0E91E5733A80020B8AE /* Release */ = {
+		D623B1F21E1D32D700527F3D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94B5974164DDB288BE63B35A /* Pods-Tabman-Example.release.xcconfig */;
+			baseConfigurationReference = 36BC348764D5DB88AE176A95 /* Pods-Tabman-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Tabman-Example/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D62AC0D01E5733A80020B8AE /* Build configuration list for PBXProject "Tabman-Example" */ = {
+		D623B1D91E1D32D700527F3D /* Build configuration list for PBXProject "Tabman-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D62AC0E51E5733A80020B8AE /* Debug */,
-				D62AC0E61E5733A80020B8AE /* Release */,
+				D623B1EE1E1D32D700527F3D /* Debug */,
+				D623B1EF1E1D32D700527F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D62AC0E71E5733A80020B8AE /* Build configuration list for PBXNativeTarget "Tabman-Example" */ = {
+		D623B1F01E1D32D700527F3D /* Build configuration list for PBXNativeTarget "Tabman-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D62AC0E81E5733A80020B8AE /* Debug */,
-				D62AC0E91E5733A80020B8AE /* Release */,
+				D623B1F11E1D32D700527F3D /* Debug */,
+				D623B1F21E1D32D700527F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D62AC0CD1E5733A80020B8AE /* Project object */;
+	rootObject = D623B1D61E1D32D700527F3D /* Project object */;
 }

@@ -2,12 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example/Tabman-Example.xcodeproj">
+      location = "group:/Users/merrick/Dev/Projects/Tabman/Example/Tabman-Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Sources/Tabman.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Example/Tabman-Example.xcodeproj">
    </FileRef>
 </Workspace>
