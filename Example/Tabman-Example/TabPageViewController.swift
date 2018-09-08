@@ -50,10 +50,10 @@ class TabPageViewController: TabmanViewController {
         bar.indicator.tintColor = .white
         bar.indicator.weight = .light
         
-        addBarWithExtendedBackground(bar,
-                                     dataSource: self,
-                                     location: .top,
-                                     backgroundStyle: .flat(color: UIColor.white.withAlphaComponent(0.3)))
+        addBarWithExtendingBackground(bar,
+                                      dataSource: self,
+                                      location: .top,
+                                      backgroundStyle: .flat(color: UIColor.white.withAlphaComponent(0.3)))
         
     }
     
