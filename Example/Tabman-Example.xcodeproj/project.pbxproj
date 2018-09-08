@@ -29,7 +29,7 @@
 		46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */; };
 		46BBCF5D2143C962003238FD /* PageViewController+Bulletins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */; };
 		46BBCF5E2143C962003238FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF452143C962003238FD /* GradientView.swift */; };
-		46BBCF5F2143C962003238FD /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF462143C962003238FD /* PageViewController.swift */; };
+		46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF462143C962003238FD /* TabPageViewController.swift */; };
 		46BBCF602143C962003238FD /* PageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF472143C962003238FD /* PageStatusView.swift */; };
 		46BBCF612143C962003238FD /* PageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* PageViewController+Settings.swift */; };
 		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
@@ -73,7 +73,7 @@
 		46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utilities.swift"; sourceTree = "<group>"; };
 		46BBCF442143C962003238FD /* PageViewController+Bulletins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Bulletins.swift"; sourceTree = "<group>"; };
 		46BBCF452143C962003238FD /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		46BBCF462143C962003238FD /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		46BBCF462143C962003238FD /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
 		46BBCF472143C962003238FD /* PageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStatusView.swift; sourceTree = "<group>"; };
 		46BBCF482143C962003238FD /* PageViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageViewController+Settings.swift"; sourceTree = "<group>"; };
 		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				46BBCF422143C962003238FD /* AppDelegate.swift */,
-				46BBCF462143C962003238FD /* PageViewController.swift */,
+				46BBCF462143C962003238FD /* TabPageViewController.swift */,
 				46BBCF4A2143C962003238FD /* ChildViewController.swift */,
 				46BBCF392143C962003238FD /* Pageboy.storyboard */,
 				46BBCF652143C991003238FD /* Extras */,
@@ -347,7 +347,7 @@
 				46BBCF5E2143C962003238FD /* GradientView.swift in Sources */,
 				46BBCF602143C962003238FD /* PageStatusView.swift in Sources */,
 				46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */,
-				46BBCF5F2143C962003238FD /* PageViewController.swift in Sources */,
+				46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */,
 				46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */,
 				46BBCF632143C962003238FD /* ChildViewController.swift in Sources */,
 				46BBCF4E2143C962003238FD /* UIColor+Interpolation.swift in Sources */,

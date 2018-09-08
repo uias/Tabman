@@ -1,6 +1,6 @@
 //
 //  PageViewController+Bulletins.swift
-//  Pageboy-Example
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 21/07/2018.
 //  Copyright © 2018 UI At Six. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import BLTNBoard
 import Pageboy
 
-extension PageViewController {
+extension TabPageViewController {
     
     // MARK: Keys
     
@@ -47,15 +47,15 @@ extension PageViewController {
     }
 }
 
-extension PageViewController: SettingsBulletinPageDelegate {
+extension TabPageViewController: SettingsBulletinPageDelegate {
     
     func settingsBulletin(_ bulletin: SettingsBulletinPage, requiresPageInsertionAt index: PageIndex) {
         viewControllers.insert(makeChildViewController(at: index), at: index)
-        insertPage(at: index)
+        insertPage(at: index, then: .scrollToUpdate)
     }
     
     func settingsBulletin(_ bulletin: SettingsBulletinPage, requiresPageDeletionAt index: PageIndex) {
         viewControllers.remove(at: index)
-        deletePage(at: index)
+        deletePage(at: index, then: .doNothing)
     }
 }

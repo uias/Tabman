@@ -37,6 +37,12 @@ open class BarBackground: UIView {
         }
     }
     
+    @available(*, unavailable)
+    open override var backgroundColor: UIColor? {
+        didSet {
+        }
+    }
+    
     private var backgroundView: UIView?
     
     // MARK: Init
@@ -46,6 +52,7 @@ open class BarBackground: UIView {
         super.init(frame: .zero)
         
         isUserInteractionEnabled = false
+        super.backgroundColor = .clear
         
         update(for: style)
     }
@@ -64,7 +71,7 @@ private extension BarBackground {
         guard let backgroundView = view(for: style) else {
             return
         }
-        
+        self.backgroundView = backgroundView
         addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

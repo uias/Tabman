@@ -1,6 +1,6 @@
 //
 //  ChildViewController.swift
-//  Pageboy-Example
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 13/02/2017.
 //  Copyright © 2018 UI At Six. All rights reserved.
@@ -23,7 +23,7 @@ class ChildViewController: UIViewController {
     }
     
     private func updateIndexLabel() {
-        if let index = (parentPageboy as? PageViewController)?.viewControllers.index(of: self) {
+        if let index = (parentPageboy as? TabPageViewController)?.viewControllers.index(of: self) {
             label.text = "Page " + String(index + 1)
             
             let isFirstPage = index == 0

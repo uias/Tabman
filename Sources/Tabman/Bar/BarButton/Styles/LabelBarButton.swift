@@ -23,7 +23,7 @@ public final class LabelBarButton: BarButton {
     public var color: UIColor = .black {
         didSet {
             if !isSelected {
-                label.textColor = selectedColor
+                label.textColor = color
             }
         }
     }

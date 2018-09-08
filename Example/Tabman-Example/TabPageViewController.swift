@@ -1,6 +1,6 @@
 //
-//  PageViewController.swift
-//  Pageboy-Example
+//  TabPageViewController.swift
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 04/01/2017.
 //  Copyright © 2018 UI At Six. All rights reserved.
@@ -8,9 +8,10 @@
 
 import UIKit
 import Pageboy
+import Tabman
 import BLTNBoard
 
-class PageViewController: PageboyViewController {
+class TabPageViewController: TabmanViewController {
     
     // MARK: Properties
     
@@ -37,7 +38,17 @@ class PageViewController: PageboyViewController {
         super.viewDidLoad()
         
         dataSource = self
-        delegate = self
+        
+        let bar = Bar.ButtonBar()
+        addBar(bar, dataSource: self, at: .top)
+        
+        // Customization
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+        bar.background.style = .flat(color: UIColor.white.withAlphaComponent(0.5))
+        bar.buttons.customize { (button) in
+            button.selectedColor = .white
+            button.color = UIColor.white.withAlphaComponent(0.4)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,10 +89,64 @@ class PageViewController: PageboyViewController {
         let storyboard = UIStoryboard(name: "Pageboy", bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
     }
+    
+    // MARK: PageboyViewControllerDelegate
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                               willScrollToPageAt index: PageboyViewController.PageIndex,
+                               direction: PageboyViewController.NavigationDirection,
+                               animated: Bool) {
+        super.pageboyViewController(pageboyViewController,
+                                    willScrollToPageAt: index,
+                                    direction: direction,
+                                    animated: animated)
+//        print("willScrollToPageAtIndex: \(index)")
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                               didScrollTo position: CGPoint,
+                               direction: PageboyViewController.NavigationDirection,
+                               animated: Bool) {
+        super.pageboyViewController(pageboyViewController,
+                                    didScrollTo: position,
+                                    direction: direction,
+                                    animated: animated)
+        //        print("didScrollToPosition: \(position)")
+        
+        let relativePosition = navigationOrientation == .vertical ? position.y : position.x
+        gradient?.gradientOffset = relativePosition
+        statusView.currentPosition = relativePosition
+        
+        updateBarButtonsForCurrentIndex()
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                               didScrollToPageAt index: PageboyViewController.PageIndex,
+                               direction: PageboyViewController.NavigationDirection,
+                               animated: Bool) {
+        super.pageboyViewController(pageboyViewController,
+                                    didScrollToPageAt: index,
+                                    direction: direction,
+                                    animated: animated)
+        
+        //        print("didScrollToPageAtIndex: \(index)")
+        
+        gradient?.gradientOffset = CGFloat(index)
+        statusView.currentIndex = index
+        updateBarButtonsForCurrentIndex()
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                               didReloadWith currentViewController: UIViewController,
+                               currentPageIndex: PageIndex) {
+        super.pageboyViewController(pageboyViewController,
+                                    didReloadWith: currentViewController,
+                                    currentPageIndex: currentPageIndex)
+    }
 }
 
 // MARK: PageboyViewControllerDataSource
-extension PageViewController: PageboyViewControllerDataSource {
+extension TabPageViewController: PageboyViewControllerDataSource {
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         let count = viewControllers.count
@@ -99,43 +164,9 @@ extension PageViewController: PageboyViewControllerDataSource {
     }
 }
 
-// MARK: PageboyViewControllerDelegate
-extension PageViewController: PageboyViewControllerDelegate {
+extension TabPageViewController: BarDataSource {
     
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               willScrollToPageAt index: PageboyViewController.PageIndex,
-                               direction: PageboyViewController.NavigationDirection,
-                               animated: Bool) {
-        print("willScrollToPageAtIndex: \(index)")
-    }
-    
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               didScrollTo position: CGPoint,
-                               direction: PageboyViewController.NavigationDirection,
-                               animated: Bool) {
-//        print("didScrollToPosition: \(position)")
-        
-        let relativePosition = navigationOrientation == .vertical ? position.y : position.x
-        gradient?.gradientOffset = relativePosition
-        statusView.currentPosition = relativePosition
-        
-        updateBarButtonsForCurrentIndex()
-    }
-    
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               didScrollToPageAt index: PageboyViewController.PageIndex,
-                               direction: PageboyViewController.NavigationDirection,
-                               animated: Bool) {
-//        print("didScrollToPageAtIndex: \(index)")
-
-        gradient?.gradientOffset = CGFloat(index)
-        statusView.currentIndex = index
-        updateBarButtonsForCurrentIndex()
-    }
-    
-    func pageboyViewController(_ pageboyViewController: PageboyViewController,
-                               didReloadWith currentViewController: UIViewController,
-                               currentPageIndex: PageIndex) {
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
+        return BarItem(title: "Page \(index + 1)")
     }
 }
-

@@ -1,6 +1,6 @@
 //
 //  TransparentNavigationBar.swift
-//  Pageboy-Example
+//  Tabman-Example
 //
 //  Created by Merrick Sapsford on 15/02/2017.
 //  Copyright © 2018 UI At Six. All rights reserved.
