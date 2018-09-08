@@ -184,7 +184,7 @@ let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ```
 That's as easy as it is.
 
-### What if I want something crazy?
+### What if I want my own thing?
 As replacing the type of layout, button or indicator is as simple as described above, you have the ability to define your own subclasses without too much of a headache.
 
 The following guides should help you get on the right path...
