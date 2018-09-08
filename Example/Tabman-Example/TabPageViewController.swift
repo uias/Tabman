@@ -49,6 +49,8 @@ class TabPageViewController: TabmanViewController {
             button.selectedColor = .white
             button.color = UIColor.white.withAlphaComponent(0.4)
         }
+        bar.indicator.tintColor = .white
+        bar.indicator.weight = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {

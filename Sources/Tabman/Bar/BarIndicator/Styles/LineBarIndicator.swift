@@ -31,6 +31,12 @@ open class LineBarIndicator: BarIndicator {
         return .footer
     }
     
+    open override var tintColor: UIColor! {
+        didSet {
+            backgroundColor = tintColor
+        }
+    }
+    
     public var weight: Weight = .medium {
         didSet {
             weightConstraint?.constant = weight.rawValue
