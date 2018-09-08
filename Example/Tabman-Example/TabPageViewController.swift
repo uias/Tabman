@@ -44,7 +44,7 @@ class TabPageViewController: TabmanViewController {
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-        bar.background.style = .flat(color: UIColor.white.withAlphaComponent(0.5))
+        bar.background.style = .flat(color: UIColor.white.withAlphaComponent(0.2))
         bar.buttons.customize { (button) in
             button.selectedColor = .white
             button.color = UIColor.white.withAlphaComponent(0.4)
@@ -86,7 +86,7 @@ class TabPageViewController: TabmanViewController {
     // MARK: View Controllers
     
     func makeChildViewController(at index: Int?) -> ChildViewController {
-        let storyboard = UIStoryboard(name: "Pageboy", bundle: .main)
+        let storyboard = UIStoryboard(name: "Tabman", bundle: .main)
         return storyboard.instantiateViewController(withIdentifier: "ChildViewController") as! ChildViewController
     }
     

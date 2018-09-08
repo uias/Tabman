@@ -17,7 +17,7 @@
 		46BBCF502143C962003238FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF352143C962003238FD /* Assets.xcassets */; };
 		46BBCF512143C962003238FD /* SettingsBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF362143C962003238FD /* SettingsBulletinPage.swift */; };
 		46BBCF522143C962003238FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF372143C962003238FD /* LaunchScreen.storyboard */; };
-		46BBCF532143C962003238FD /* Pageboy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF392143C962003238FD /* Pageboy.storyboard */; };
+		46BBCF532143C962003238FD /* Tabman.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF392143C962003238FD /* Tabman.storyboard */; };
 		46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */; };
 		46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */; };
 		46BBCF562143C962003238FD /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3D2143C962003238FD /* EnumCollection.swift */; };
@@ -61,7 +61,7 @@
 		46BBCF352143C962003238FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46BBCF362143C962003238FD /* SettingsBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBulletinPage.swift; sourceTree = "<group>"; };
 		46BBCF382143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		46BBCF3A2143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pageboy.storyboard; sourceTree = "<group>"; };
+		46BBCF3A2143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabman.storyboard; sourceTree = "<group>"; };
 		46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBulletinDataSource.swift; sourceTree = "<group>"; };
 		46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
 		46BBCF3D2143C962003238FD /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 				46BBCF422143C962003238FD /* AppDelegate.swift */,
 				46BBCF462143C962003238FD /* TabPageViewController.swift */,
 				46BBCF4A2143C962003238FD /* ChildViewController.swift */,
-				46BBCF392143C962003238FD /* Pageboy.storyboard */,
+				46BBCF392143C962003238FD /* Tabman.storyboard */,
 				46BBCF652143C991003238FD /* Extras */,
 				46BBCF6A2143CA31003238FD /* Resources */,
 			);
@@ -280,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BBCF502143C962003238FD /* Assets.xcassets in Resources */,
-				46BBCF532143C962003238FD /* Pageboy.storyboard in Resources */,
+				46BBCF532143C962003238FD /* Tabman.storyboard in Resources */,
 				46BBCF522143C962003238FD /* LaunchScreen.storyboard in Resources */,
 				46BBCF592143C962003238FD /* Launch.storyboard in Resources */,
 			);
@@ -372,12 +372,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		46BBCF392143C962003238FD /* Pageboy.storyboard */ = {
+		46BBCF392143C962003238FD /* Tabman.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				46BBCF3A2143C962003238FD /* Base */,
 			);
-			name = Pageboy.storyboard;
+			name = Tabman.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
