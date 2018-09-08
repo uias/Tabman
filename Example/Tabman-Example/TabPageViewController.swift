@@ -40,17 +40,29 @@ class TabPageViewController: TabmanViewController {
         dataSource = self
         
         let bar = Bar.ButtonBar()
-        addBar(bar, dataSource: self, at: .top)
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-        bar.background.style = .flat(color: UIColor.white.withAlphaComponent(0.2))
         bar.buttons.customize { (button) in
             button.selectedColor = .white
             button.color = UIColor.white.withAlphaComponent(0.4)
         }
         bar.indicator.tintColor = .white
         bar.indicator.weight = .light
+        
+        addBarWithExtendedBackground(bar,
+                                     dataSource: self,
+                                     location: .top,
+                                     backgroundStyle: .flat(color: UIColor.white.withAlphaComponent(0.3)))
+        
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        if #available(iOS 11, *) {
+            super.viewSafeAreaInsetsDidChange()
+        
+            print(view.safeAreaInsets)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

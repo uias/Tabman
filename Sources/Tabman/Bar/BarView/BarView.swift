@@ -71,7 +71,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
      
      Defaults to `UIColor.white`.
      **/
-    public var background = BarBackground(style: .flat(color: .white))
+    public var background = BarBackground(style: .clear)
 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
