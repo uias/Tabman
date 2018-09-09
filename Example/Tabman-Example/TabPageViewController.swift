@@ -52,6 +52,7 @@ class TabPageViewController: TabmanViewController {
         
         let plusButton = CircularBarActionButton(action: .add)
         plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
+        plusButton.tintColor = .white
         bar.trailingAccessoryView = plusButton
         
         addBarWithExtendingBackground(bar,
