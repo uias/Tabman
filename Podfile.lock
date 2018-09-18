@@ -1,11 +1,11 @@
 PODS:
-  - AutoInsetter (1.2.5)
+  - AutoInsetter (1.3.0)
   - BulletinBoard (2.0.1)
   - Pageboy (3.0.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - AutoInsetter (~> 1.2.0)
+  - AutoInsetter (~> 1.3.0)
   - BulletinBoard (~> 2.0)
   - Pageboy (from `https://github.com/uias/Pageboy`, branch `pageboy3`)
   - SnapKit (~> 4.0)
@@ -27,11 +27,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/uias/Pageboy
 
 SPEC CHECKSUMS:
-  AutoInsetter: c125e1f99180d7796ccc4f73995bbd467effcb73
+  AutoInsetter: 0ea4dddc17042ab45114ec5d5980764efae98584
   BulletinBoard: 99a428f91f64d0ffabf8a8104f79ecd064e2a4db
   Pageboy: 044ba3f3ed0e8db42622edb12241769cdc7b8c22
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 7da75b929feb0f578944daf9c997a6c335d626fa
+PODFILE CHECKSUM: c2fffe8fc55f80b71cd68c5520a41a03a794a616
 
 COCOAPODS: 1.5.3
