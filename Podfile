@@ -14,7 +14,7 @@ target 'Tabman-Example' do
   use_frameworks!
   lib_pods
 
-  pod 'BulletinBoard', '~> 2.0'
+  pod 'BulletinBoard', '~> 2.0.2'
   pod 'SnapKit', '~> 4.0'
 
 end
@@ -36,7 +36,7 @@ end
 post_install do |installer|
   
   # convert incompatible pods back to Swift 4.1
-  myTargets = ['BulletinBoard', 'SnapKit']  
+  myTargets = ['SnapKit']  
   installer.pods_project.targets.each do |target|
     if myTargets.include? target.name
       target.build_configurations.each do |config|
