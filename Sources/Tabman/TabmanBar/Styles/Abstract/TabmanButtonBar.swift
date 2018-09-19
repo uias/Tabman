@@ -199,6 +199,8 @@ internal class TabmanButtonBar: TabmanBar {
                 self.indicatorLeftMargin?.constant = 0.0
             }
         }
+        
+        self.indicatorBottomMargin?.constant = -1 * (appearance.indicator.bottomInset ?? defaultAppearance.indicator.bottomInset!) // Atif updates
     }
     
     //

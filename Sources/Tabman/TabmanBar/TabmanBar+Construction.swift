@@ -16,6 +16,7 @@ extension TabmanBar {
     internal func clearAndConstructBar() {
         self.indicatorWidth?.isActive = false
         self.indicatorLeftMargin?.isActive = false
+        self.indicatorBottomMargin?.isActive = false // Atif Updates
         self.clearBar()
         
         // no items yet

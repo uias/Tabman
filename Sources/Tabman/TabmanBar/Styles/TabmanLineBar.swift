@@ -45,7 +45,7 @@ internal class TabmanLineBar: TabmanBar {
         contentView.addSubview(indicator)
         self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.left)
         indicator.pinToSuperviewEdge(.top)
-        indicator.pinToSuperviewEdge(.bottom)
+        self.indicatorBottomMargin = indicator.pinToSuperviewEdge(.bottom) // Atif Updates
         self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
 }

@@ -31,6 +31,9 @@ public extension TabmanBar {
             public var compresses: Bool?
             /// Whether to use rounded corners on line indicators.
             public var useRoundedCorners: Bool?
+            /// The spacing at the bottom of the Indicator in the bar.
+            public var bottomInset: CGFloat?
+            
         }
         
         public struct Separator {
@@ -149,6 +152,7 @@ public extension TabmanBar {
             indicator.useRoundedCorners = false
             indicator.lineWeight = .normal
             indicator.color = UIView.defaultTintColor
+            indicator.bottomInset = 0.0 // Atif Updates
             
             // bottom separator
             bottomSeparator.edgeInsets = .zero

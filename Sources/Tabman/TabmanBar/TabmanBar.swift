@@ -109,6 +109,7 @@ open class TabmanBar: UIView, TabmanBarLifecycle {
         maskView.backgroundColor = .black
         return maskView
     }()
+    internal var indicatorBottomMargin: NSLayoutConstraint? // Atif Updates
     internal var indicatorLeftMargin: NSLayoutConstraint?
     internal var indicatorWidth: NSLayoutConstraint?
     internal var indicatorIsProgressive: Bool = TabmanBar.Appearance.defaultAppearance.indicator.isProgressive ?? false {

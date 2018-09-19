@@ -75,7 +75,7 @@ internal class TabmanStaticButtonBar: TabmanButtonBar {
     public override func add(indicator: TabmanIndicator, to contentView: UIView) {
         
         contentView.addSubview(indicator)
-        indicator.pinToSuperviewEdge(.bottom)
+        self.indicatorBottomMargin = indicator.pinToSuperviewEdge(.bottom) // Atif Updates
         self.indicatorLeftMargin = indicator.pinToSuperviewEdge(.leading)
         self.indicatorWidth = indicator.set(.width, to: 0.0)
     }
