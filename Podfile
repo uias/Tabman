@@ -2,8 +2,8 @@ platform :ios, '9.0'
 
 def lib_pods
 
-  pod 'Pageboy', '~> 2.5.0'
-  pod 'AutoInsetter', '~> 1.2.0'
+  pod 'Pageboy', '~> 2.6.0'
+  pod 'AutoInsetter', '~> 1.3.0'
 
 end
 
