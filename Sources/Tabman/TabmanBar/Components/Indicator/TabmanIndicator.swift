@@ -88,9 +88,9 @@ open class TabmanIndicator: UIView, TabmanIndicatorLifecycle {
         let layerPosition = self.preferredLayerPosition()
         switch layerPosition {
         case .background:
-            self.superview?.sendSubview(toBack: self)
+            self.superview?.sendSubviewToBack(self)
         default:
-            self.superview?.bringSubview(toFront: self)
+            self.superview?.bringSubviewToFront(self)
         }
     }
     
