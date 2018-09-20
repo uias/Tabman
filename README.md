@@ -45,7 +45,7 @@ For details on using older versions of Tabman or Swift please see [Compatibility
 Tabman is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Tabman', '~> 1.0'
+pod 'Tabman', '~> 1.10'
 ```
 
 And run `pod install`.
@@ -61,7 +61,7 @@ $ brew install carthage
 Add Tabman to your `Cartfile`:
 
 ```ogdl
-github "uias/Tabman" ~> 1.0
+github "uias/Tabman" ~> 1.10
 ```
 
 ## 🚀 Usage
