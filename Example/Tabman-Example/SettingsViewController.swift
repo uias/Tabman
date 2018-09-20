@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
         let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = closeButton
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 50.0
         self.tableView.tableFooterView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 1.0))
         
@@ -151,7 +151,7 @@ extension SettingsViewController: SettingsOptionsViewControllerDelegate {
 extension SettingsViewController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationControllerOperation,
+                              animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {

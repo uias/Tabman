@@ -640,7 +640,7 @@
 					};
 					D62AC0B11E5733810020B8AE = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					D62AC0BA1E5733810020B8AE = {
@@ -1150,8 +1150,7 @@
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1173,8 +1172,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

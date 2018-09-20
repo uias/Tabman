@@ -29,7 +29,7 @@ extension TabViewController {
     }
     
     func setUpGradientView() {
-        view.sendSubview(toBack: self.gradientView)
+        view.sendSubviewToBack(self.gradientView)
         gradientView.direction = .custom(start: CGPoint(x: 0.4, y: 0.0),
                                          end: CGPoint(x: 1.0, y: 1.0))
     }

@@ -84,7 +84,7 @@ internal class TabmanButtonBar: TabmanBar {
     public var color: UIColor = Appearance.defaultAppearance.state.color!
     public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
   
-    public var imageRenderingMode: UIImageRenderingMode = Appearance.defaultAppearance.style.imageRenderingMode! {
+    public var imageRenderingMode: UIImage.RenderingMode = Appearance.defaultAppearance.style.imageRenderingMode! {
         didSet {
             guard oldValue != imageRenderingMode else {
                 return
