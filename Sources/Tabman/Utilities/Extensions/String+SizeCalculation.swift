@@ -6,6 +6,8 @@
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
+import UIKit
+
 internal extension String {
 
     /// Calculates the width needed to render the receiver in the given font within the given height.
