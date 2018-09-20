@@ -22,7 +22,7 @@ class SettingsNavigationController: UINavigationController {
         
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
         self.view.addSubview(blurView)
-        self.view.sendSubview(toBack: blurView)
+        self.view.sendSubviewToBack(blurView)
         blurView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         
         blurView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,7 @@ class SettingsNavigationController: UINavigationController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var titleTextAttributes: [NSAttributedStringKey : Any] = [.foregroundColor : UIColor.black]
+        var titleTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor : UIColor.black]
         if #available(iOS 8.2, *) {
             titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18.0, weight: UIFont.Weight.regular)
         }

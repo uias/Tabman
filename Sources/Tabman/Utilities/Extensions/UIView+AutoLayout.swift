@@ -97,7 +97,7 @@ internal extension UIView {
     @discardableResult
     func match(_ dimension: Dimension, of view: UIView, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         let constraints = addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
-            let attribute: NSLayoutAttribute = (dimension == .width) ? .width : .height
+            let attribute: NSLayoutConstraint.Attribute = (dimension == .width) ? .width : .height
             return [NSLayoutConstraint(item: self,
                                        attribute: attribute,
                                        relatedBy: .equal,
@@ -126,7 +126,7 @@ internal extension UIView {
         let superview = guardForSuperview()
 
         return addConstraints(priority: priority, { () -> [NSLayoutConstraint] in
-            let attribute: NSLayoutAttribute = (axis == .horizontal) ? .centerY : .centerX
+            let attribute: NSLayoutConstraint.Attribute = (axis == .horizontal) ? .centerY : .centerX
             return [NSLayoutConstraint(item: self,
                                        attribute: attribute,
                                        relatedBy: .equal,
@@ -138,7 +138,7 @@ internal extension UIView {
     }
     
     func setContentCompressionResistance(for axis: Axis, to priority: UILayoutPriority) {
-        let axis: UILayoutConstraintAxis = (axis == .horizontal) ? .horizontal : .vertical
+        let axis: NSLayoutConstraint.Axis = (axis == .horizontal) ? .horizontal : .vertical
         self.setContentCompressionResistancePriority(priority, for: axis)
     }
     

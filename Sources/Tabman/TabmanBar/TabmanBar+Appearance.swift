@@ -100,7 +100,7 @@ public extension TabmanBar {
             @available(*, deprecated: 1.7.0, message: "Use appearance.bottomSeparator.color")
             public var bottomSeparatorColor: UIColor?
             /// The image rendering mode for items that have an image
-            public var imageRenderingMode: UIImageRenderingMode?
+            public var imageRenderingMode: UIImage.RenderingMode?
         }
         
         public struct Text {

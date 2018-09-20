@@ -1,10 +1,9 @@
 language: objective-c
-osx_image: xcode9.3beta
+osx_image: xcode10
 before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 - bundle install
-- bundle exec pod repo update
 script:
 - .travis/build.sh
 after_success:
