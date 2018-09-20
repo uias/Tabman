@@ -68,7 +68,7 @@ class TabmanStaticBarIndicatorTransition: TabmanIndicatorTransition {
                 var integral: Float = 0.0
                 let progress = CGFloat(modff(Float(position), &integral))
 
-                let indicatorDiff = (indicatorWidth * fabs(progress))
+                let indicatorDiff = (indicatorWidth * abs(progress))
                 indicatorWidth -= indicatorDiff
                 
                 if progress > 0.0 {

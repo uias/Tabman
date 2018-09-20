@@ -67,8 +67,8 @@ import UIKit
             animation.toValue = colors
             animation.duration = duration
             animation.isRemovedOnCompletion = true
-            animation.fillMode = CAMediaTimingFillMode.forwards
-            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+            animation.fillMode = .forwards
+            animation.timingFunction = CAMediaTimingFunction(name: .linear)
             self.gradientLayer?.add(animation, forKey: "colors")
         }
     }
