@@ -39,21 +39,21 @@ class TabPageViewController: TabmanViewController {
         
         dataSource = self
         
-        let bar = Bar.ButtonBar()
+        let bar = Bar.LineBar()
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-        bar.buttons.customize { (button) in
-            button.selectedColor = .white
-            button.color = UIColor.white.withAlphaComponent(0.4)
-        }
+//        bar.buttons.customize { (button) in
+//            button.selectedColor = .white
+//            button.color = UIColor.white.withAlphaComponent(0.4)
+//        }
         bar.indicator.tintColor = .white
         bar.indicator.weight = .light
         
-        let plusButton = CircularBarActionButton(action: .add)
-        plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
-        plusButton.tintColor = .white
-        bar.trailingAccessoryView = plusButton
+//        let plusButton = CircularBarActionButton(action: .add)
+//        plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
+//        plusButton.tintColor = .white
+//        bar.trailingAccessoryView = plusButton
         
         addBarWithExtendingBackground(bar,
                                       dataSource: self,
