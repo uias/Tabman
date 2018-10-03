@@ -11,7 +11,7 @@ import Pageboy
 import AutoInsetter
 
 /// Page view controller with a bar indicator component.
-open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate {
+open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate, BarDelegate {
     
     // MARK: Types
     
@@ -105,6 +105,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             return
         }
         activeBars.forEach({ $0.reloadData(for: self, at: 0...pageCount - 1, context: .full)})
+    }
+    
+    // MARK: BarDelegate
+    
+    open func bar(_ bar: Bar,
+                  didRequestScrollToPageAt index: PageboyViewController.PageIndex) {
+        scrollToPage(.at(index: index), animated: true, completion: nil)
     }
 }
 
@@ -219,14 +226,6 @@ private extension TabmanViewController {
                    capacity: capacity,
                    direction: direction,
                    shouldAnimate: animated)
-    }
-}
-
-// MARK: Bar Updates
-extension TabmanViewController: BarDelegate {
-    
-    public func bar(_ bar: Bar, didRequestScrollToPageAt index: PageboyViewController.PageIndex) {
-        scrollToPage(.at(index: index), animated: true, completion: nil)
     }
 }
 
