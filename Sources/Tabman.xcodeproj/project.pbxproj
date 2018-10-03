@@ -462,7 +462,6 @@
 				463DE9832006B77E00709671 /* Headers */,
 				463DE9852006B77E00709671 /* Resources */,
 				463DE9862006B77E00709671 /* Increment Build Number */,
-				465F47BB21539AB7008AA976 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -557,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nfi\n";
 		};
 		463DE9862006B77E00709671 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -572,28 +571,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list HEAD --count`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\necho \"Incremented the build number ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
-		};
-		465F47BB21539AB7008AA976 /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pageboy.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoInsetter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
