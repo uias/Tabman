@@ -1,5 +1,5 @@
 //
-//  RestrictedHorizontalBarLayout.swift
+//  ConstrainedHorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Layout that displays a limited number of visible bar buttons sequentially along the horizontal axis.
-open class RestrictedHorizontalBarLayout: HorizontalBarLayout {
+open class ConstrainedHorizontalBarLayout: HorizontalBarLayout {
     
     // MARK: Properties
     
@@ -54,7 +54,7 @@ open class RestrictedHorizontalBarLayout: HorizontalBarLayout {
     }
 }
 
-private extension RestrictedHorizontalBarLayout {
+private extension ConstrainedHorizontalBarLayout {
     
     func constrain(views: [UIView], for maximumCount: Int) {
         if let oldConstraints = viewWidthConstraints {

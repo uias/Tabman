@@ -11,6 +11,6 @@ import Foundation
 public extension Bar {
  
     public typealias ButtonBar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
-    public typealias TabBar = BarView<RestrictedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>
+    public typealias TabBar = BarView<ConstrainedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>
     public typealias LineBar = BarView<BarLayout.None, BarButton.None, LineBarIndicator>
 }
