@@ -61,6 +61,13 @@ public final class TabItemBarButton: BarButton {
         imageView.backgroundColor = .lightGray
         label.text = "Item"
     }
+    
+    public override func populate(for item: BarItem) {
+        super.populate(for: item)
+        
+        label.text = item.title
+        imageView.image = item.image
+    }
 }
 
 public extension TabItemBarButton {

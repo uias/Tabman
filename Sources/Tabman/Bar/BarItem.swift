@@ -10,11 +10,29 @@ import Foundation
 
 public struct BarItem {
     
+    // MARK: Properties
+    
     public let title: String?
+    public let image: UIImage?
     
     internal var assignedIndex: Int?
     
+    // MARK: Init
+    
     public init(title: String) {
+        self.init(with: title, image: nil)
+    }
+    
+    public init(image: UIImage) {
+        self.init(with: nil, image: image)
+    }
+    
+    public init(title: String, image: UIImage) {
+        self.init(with: title, image: image)
+    }
+    
+    private init(with title: String?, image: UIImage?) {
         self.title = title
+        self.image = image
     }
 }
