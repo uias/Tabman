@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'Pageboy', '~> 3.0.0'
   s.dependency 'AutoInsetter', '~> 1.3.0'
-
+  
 end

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Pageboy
 
 public protocol BarDataSource: class {
     
@@ -17,7 +16,7 @@ public protocol BarDataSource: class {
 public protocol BarDelegate: class {
     
     func bar(_ bar: Bar,
-             didRequestScrollToPageAt index: PageboyViewController.PageIndex)
+             didRequestScrollToPageAt index: Int)
 }
 
 /// Context for causing a reload of a bar.
@@ -29,6 +28,17 @@ public enum BarReloadContext {
     case full
     case insertion
     case deletion
+}
+
+/// Semantic direction of an update to the bar.
+///
+/// - none: No direction.
+/// - forward: A forward direction (increasing).
+/// - reverse: A reverse direction (reversing).
+public enum BarUpdateDirection {
+    case none
+    case forward
+    case reverse
 }
 
 /// A conforming `UIView` that can display a page position for a TabmanViewController.
@@ -60,6 +70,6 @@ public protocol Bar: AnyObject where Self: UIView {
     ///   - shouldAnimate: Whether the bar should animate the update.
     func update(for pagePosition: CGFloat,
                 capacity: Int,
-                direction: PageboyViewController.NavigationDirection,
+                direction: BarUpdateDirection,
                 shouldAnimate: Bool)
 }

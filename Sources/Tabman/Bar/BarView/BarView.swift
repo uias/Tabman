@@ -203,7 +203,7 @@ extension BarView: Bar {
     
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: PageboyViewController.NavigationDirection,
+                       direction: BarUpdateDirection,
                        shouldAnimate: Bool) {
         
         let (pagePosition, animated) = updateValues(for: animationStyle,
@@ -343,7 +343,7 @@ extension BarView {
         }
         update(for: indicatedPosition,
                capacity: buttons.all.count,
-               direction: .neutral,
+               direction: .none,
                shouldAnimate: true)
     }
 }

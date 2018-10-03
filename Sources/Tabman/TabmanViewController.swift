@@ -224,8 +224,19 @@ private extension TabmanViewController {
         
         bar.update(for: position,
                    capacity: capacity,
-                   direction: direction,
+                   direction: updateDirection(for: direction),
                    shouldAnimate: animated)
+    }
+    
+    private func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> BarUpdateDirection {
+        switch navigationDirection {
+        case .forward:
+            return .forward
+        case .neutral:
+            return .none
+        case .reverse:
+            return .reverse
+        }
     }
 }
 
