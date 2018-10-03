@@ -9,9 +9,7 @@
 import UIKit
 import Pageboy
 
-/**
- View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
- **/
+/// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
 open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
     
     // MARK: Types
@@ -165,8 +163,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
 // MARK: - Bar
 extension BarView: Bar {
     
-    public func reloadData(for viewController: TabmanViewController,
-                           at indexes: ClosedRange<Int>,
+    public func reloadData(at indexes: ClosedRange<Int>,
                            context: BarReloadContext) {
         guard let dataSource = self.dataSource else {
             return
@@ -177,7 +174,7 @@ extension BarView: Bar {
             
             var newButtons = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
-                var item = dataSource.barItem(for: viewController, at: index)
+                var item = dataSource.barItem(for: self, at: index)
                 item.assignedIndex = index
                 
                 let button = ButtonType()
@@ -354,7 +351,7 @@ extension BarView: BarButtonInteractionHandler {
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,
                               at index: Int) {
-        delegate?.bar(self, didRequestScrollToPageAt: index)
+        delegate?.bar(self, didRequestScrollTo: index)
     }
 }
 

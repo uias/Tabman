@@ -8,15 +8,28 @@
 
 import UIKit
 
+/// Data source that provides bar with items.
 public protocol BarDataSource: class {
     
-    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem
+    /// Provide a `BarItem` for an index in the bar.
+    ///
+    /// - Parameters:
+    ///   - bar: The bar.
+    ///   - index: Index of the item.
+    /// - Returns: The BarItem.
+    func barItem(for bar: Bar, at index: Int) -> BarItem
 }
 
+/// Delegate that provides bar with responses to user interaction.
 public protocol BarDelegate: class {
     
+    /// Bar requires scrolling to a new page following a user interaction.
+    ///
+    /// - Parameters:
+    ///   - bar: The bar.
+    ///   - index: The new index.
     func bar(_ bar: Bar,
-             didRequestScrollToPageAt index: Int)
+             didRequestScrollTo index: Int)
 }
 
 /// Context for causing a reload of a bar.
@@ -53,11 +66,9 @@ public protocol Bar: AnyObject where Self: UIView {
     /// Reload the data within the bar.
     ///
     /// - Parameters:
-    ///   - viewController: View Controller ot use for reloading.
     ///   - indexes: The indexes to reload.
     ///   - context: The context for the reload.
-    func reloadData(for viewController: TabmanViewController,
-                    at indexes: ClosedRange<Int>,
+    func reloadData(at indexes: ClosedRange<Int>,
                     context: BarReloadContext)
     
     
