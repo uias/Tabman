@@ -23,6 +23,8 @@
 		46324A7A213A99860059D469 /* TabmanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A79213A99860059D469 /* TabmanViewControllerTests.swift */; };
 		46324A7C213A99E30059D469 /* MockBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7B213A99E30059D469 /* MockBarDataSource.swift */; };
 		46324A7E213A9C700059D469 /* MockTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7D213A9C700059D469 /* MockTabmanViewController.swift */; };
+		468EDFBA2164C51200C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
+		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		469E5724215E1DC1004FF071 /* BarIndicator+None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5723215E1DC1004FF071 /* BarIndicator+None.swift */; };
 		469E5726215E1E4F004FF071 /* BarButton+None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5725215E1E4F004FF071 /* BarButton+None.swift */; };
 		469E5728215E1F34004FF071 /* BarLayout+None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5727215E1F34004FF071 /* BarLayout+None.swift */; };
@@ -116,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468EDFBA2164C51200C27982 /* AutoInsetter.framework in Frameworks */,
+				468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +655,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -673,6 +678,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

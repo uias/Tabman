@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46BBCF2C2143C92D003238FD /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BBCF2B2143C92D003238FD /* Tabman.framework */; };
+		468EDFBE2164C6F700C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFBC2164C6F700C27982 /* Pageboy.framework */; };
+		468EDFBF2164C6F700C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFBD2164C6F700C27982 /* AutoInsetter.framework */; };
+		468EDFC22164C77500C27982 /* BLTNBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC02164C77400C27982 /* BLTNBoard.framework */; };
+		468EDFC32164C77500C27982 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC12164C77400C27982 /* SnapKit.framework */; };
+		468EDFC52164C78800C27982 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC42164C78800C27982 /* Tabman.framework */; };
+		468EDFC62164C78800C27982 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC42164C78800C27982 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46BBCF4B2143C962003238FD /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF302143C962003238FD /* Gradients.swift */; };
 		46BBCF4C2143C962003238FD /* TabPageViewController+BarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF312143C962003238FD /* TabPageViewController+BarButtons.swift */; };
 		46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF322143C962003238FD /* SettingsOptionButton.swift */; };
@@ -43,6 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				468EDFC62164C78800C27982 /* Tabman.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +56,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		46BBCF2B2143C92D003238FD /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		468EDFBC2164C6F700C27982 /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		468EDFBD2164C6F700C27982 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
+		468EDFC02164C77400C27982 /* BLTNBoard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BLTNBoard.framework; path = Carthage/Build/iOS/BLTNBoard.framework; sourceTree = "<group>"; };
+		468EDFC12164C77400C27982 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		468EDFC42164C78800C27982 /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BBCF302143C962003238FD /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		46BBCF312143C962003238FD /* TabPageViewController+BarButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabPageViewController+BarButtons.swift"; sourceTree = "<group>"; };
 		46BBCF322143C962003238FD /* SettingsOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOptionButton.swift; sourceTree = "<group>"; };
@@ -86,7 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BBCF2C2143C92D003238FD /* Tabman.framework in Frameworks */,
+				468EDFC22164C77500C27982 /* BLTNBoard.framework in Frameworks */,
+				468EDFC32164C77500C27982 /* SnapKit.framework in Frameworks */,
+				468EDFC52164C78800C27982 /* Tabman.framework in Frameworks */,
+				468EDFBE2164C6F700C27982 /* Pageboy.framework in Frameworks */,
+				468EDFBF2164C6F700C27982 /* AutoInsetter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +203,7 @@
 				46BBCF2F2143C962003238FD /* Tabman-Example */,
 				D6CC55831ECCCCB700A7FBB4 /* Frameworks */,
 				D623B1DF1E1D32D700527F3D /* Products */,
+				468EDFC42164C78800C27982 /* Tabman.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,7 +218,10 @@
 		D6CC55831ECCCCB700A7FBB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46BBCF2B2143C92D003238FD /* Tabman.framework */,
+				468EDFC02164C77400C27982 /* BLTNBoard.framework */,
+				468EDFC12164C77400C27982 /* SnapKit.framework */,
+				468EDFBD2164C6F700C27982 /* AutoInsetter.framework */,
+				468EDFBC2164C6F700C27982 /* Pageboy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D623B1F01E1D32D700527F3D /* Build configuration list for PBXNativeTarget "Tabman-Example" */;
 			buildPhases = (
+				468EDFC72164C7AA00C27982 /* Copy Carthage Frameworks */,
 				D623B1DA1E1D32D700527F3D /* Sources */,
 				D623B1DB1E1D32D700527F3D /* Frameworks */,
 				D623B1DC1E1D32D700527F3D /* Resources */,
@@ -277,6 +296,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		468EDFC72164C7AA00C27982 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BLTNBoard.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pageboy.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoInsetter.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BLTNBoard.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D623B1DA1E1D32D700527F3D /* Sources */ = {
@@ -447,6 +495,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(INHERITED)",
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(SRCROOT)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";
@@ -464,6 +517,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(INHERITED)",
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(SRCROOT)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uias.Tabman-Example";

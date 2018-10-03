@@ -1,0 +1,2 @@
+github "alexaubry/BulletinBoard" ~> 2.0.0
+github "SnapKit/SnapKit" ~> 4.0.0
