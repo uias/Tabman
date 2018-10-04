@@ -210,7 +210,8 @@ internal class TabmanButtonBar: TabmanBar {
                                 customize: TabmanButtonBarItemCustomize) {
         
         var previousButton: UIButton?
-        for (index, item) in items.enumerated() {
+        
+        for item in items {
             
             let button = UIButton()
             view.addSubview(button)
@@ -254,7 +255,7 @@ internal class TabmanButtonBar: TabmanBar {
             } else { // pin to leading
                 self.edgeMarginConstraints.append(button.pinToSuperviewEdge(.leading, priority: UILayoutPriority(500)))
             }
-            if index == items.count - 1 {
+            if item === items.last {
                 self.edgeMarginConstraints.append(button.pinToSuperviewEdge(.trailing, priority: UILayoutPriority(500)))
             }
             
