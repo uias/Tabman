@@ -11,7 +11,7 @@ import UIKit
 public extension TabmanBar {
     
     /// An item to display in a TabmanBar.
-    public struct Item {
+    public class Item {
         
         // MARK: Properties
         
