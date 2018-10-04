@@ -213,33 +213,8 @@ internal class TabmanButtonBar: TabmanBar {
         
         for item in items {
             
-            let button = UIButton()
+            let button = makeAndConfigureButton(for: item)
             view.addSubview(button)
-            
-            if let image = item.image, let title = item.title {
-                // resize images to fit
-                let resizedImage = image.resize(toSize: Defaults.titleWithImageSize)
-                if resizedImage.size != .zero {
-                    button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
-                }
-                button.setTitle(title, for: .normal)
-                // Nudge it over a little bit
-                button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
-            } else if let title = item.title {
-                button.setTitle(title, for: .normal)
-            } else if let image = item.image {
-                // resize images to fit
-                let resizedImage = image.resize(toSize: Defaults.itemImageSize)
-                if resizedImage.size != .zero {
-                    button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
-                }
-            }
-            
-            // appearance
-            button.titleLabel?.adjustsFontSizeToFitWidth = true
-            button.titleLabel?.font = self.textFont
-            
-            // layout
             button.set(.height, to: Defaults.minimumItemHeight, priority: UILayoutPriority(500))
             button.pinToSuperviewEdge(.top)
             button.pinToSuperviewEdge(.bottom)
@@ -262,16 +237,45 @@ internal class TabmanButtonBar: TabmanBar {
             // allow button to be compressed
             button.setContentCompressionResistance(for: .horizontal, to: UILayoutPriority(400))
             
-            // Accessibility
-            button.accessibilityLabel = item.accessibilityLabel
-            button.accessibilityHint = item.accessibilityHint
-            if let accessibilityTraits = item.accessibilityTraits {
-                button.accessibilityTraits = accessibilityTraits
-            }
-            
             customize(button, previousButton)
             previousButton = button
         }
+    }
+    
+    private func makeAndConfigureButton(for item: TabmanBar.Item) -> UIButton {
+        let button = UIButton()
+        
+        if let image = item.image, let title = item.title {
+            // resize images to fit
+            let resizedImage = image.resize(toSize: Defaults.titleWithImageSize)
+            if resizedImage.size != .zero {
+                button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
+            }
+            button.setTitle(title, for: .normal)
+            // Nudge it over a little bit
+            button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 0.0)
+        } else if let title = item.title {
+            button.setTitle(title, for: .normal)
+        } else if let image = item.image {
+            // resize images to fit
+            let resizedImage = image.resize(toSize: Defaults.itemImageSize)
+            if resizedImage.size != .zero {
+                button.setImage(resizedImage.withRenderingMode(imageRenderingMode), for: .normal)
+            }
+        }
+        
+        // appearance
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.font = self.textFont
+        
+        // Accessibility
+        button.accessibilityLabel = item.accessibilityLabel
+        button.accessibilityHint = item.accessibilityHint
+        if let accessibilityTraits = item.accessibilityTraits {
+            button.accessibilityTraits = accessibilityTraits
+        }
+        
+        return button
     }
     
     internal enum ButtonContext {
