@@ -11,53 +11,36 @@ import UIKit
 /// UIScrollView with internally managed contentView.
 internal class ContentViewScrollView: UIScrollView {
     
-    //
     // MARK: Types
-    //
     
     enum Dimension {
         case width
         case height
     }
     
-    //
     // MARK: Properties
-    //
     
-    private(set) var contentView: UIView!
+    let contentView = UIView()
     
-    //
     // MARK: Init
-    //
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.initContentView()
+        self.initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initContentView()
+        self.initialize()
     }
     
-    init() {
-        super.init(frame: .zero)
-        self.initContentView()
-    }
-    
-    private func initContentView() {
-        self.translatesAutoresizingMaskIntoConstraints = false
+    private func initialize() {
         
-        let contentView = UIView()
         self.addSubview(contentView)
         contentView.pinToSuperviewEdges()
-        
-        self.contentView = contentView
     }
     
-    //
     // MARK: Layout
-    //
     
     func matchParent(_ parent: UIView, on dimension: UIView.Dimension) {
         switch dimension {
