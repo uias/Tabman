@@ -11,8 +11,7 @@ import Tabman
 
 class MockBarDataSource: BarDataSource {
     
-    func barItem(for tabViewController: TabmanViewController,
-                 at index: Int) -> BarItem {
+    func barItem(for bar: Bar, at index: Int) -> BarItem {
         return BarItem(title: "Mock Page \(index)")
     }
 }

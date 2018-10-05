@@ -12,6 +12,8 @@ import Pageboy
 
 class MockBarView: UIView, Bar {
     
+    
+    
     weak var dataSource: BarDataSource?
     weak var delegate: BarDelegate?
     
@@ -30,16 +32,11 @@ class MockBarView: UIView, Bar {
     
     // MARK: Bar
     
-    func reloadData(for viewController: TabmanViewController,
-                    at indexes: ClosedRange<Int>,
-                    context: BarReloadContext) {
+    func reloadData(at indexes: ClosedRange<Int>, context: BarReloadContext) {
         
     }
     
-    func update(for pagePosition: CGFloat,
-                capacity: Int,
-                direction: PageboyViewController.NavigationDirection,
-                shouldAnimate: Bool) {
+    func update(for pagePosition: CGFloat, capacity: Int, direction: BarUpdateDirection, shouldAnimate: Bool) {
         
     }
 }
