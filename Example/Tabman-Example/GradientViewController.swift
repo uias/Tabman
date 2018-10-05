@@ -63,7 +63,7 @@ class GradientViewController: UIViewController {
         
         if let top = lowerGradient.top.interpolate(between: upperGradient.top, percent: percentage),
             let bottom = lowerGradient.bottom.interpolate(between: upperGradient.bottom, percent: percentage) {
-            gradientView.colors = [top, bottom]
+//            gradientView.colors = [top, bottom]
         }
     }
     

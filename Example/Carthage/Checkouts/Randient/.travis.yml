@@ -1,0 +1,14 @@
+language: objective-c
+osx_image: xcode10
+
+install:
+- bundle install
+
+before_script:
+- bundle exec danger
+
+script: 
+- .travis/build.sh
+
+notifications:
+  email: false
