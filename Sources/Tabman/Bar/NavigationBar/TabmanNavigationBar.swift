@@ -8,25 +8,43 @@
 
 import UIKit
 
+/// Bar which mimicks the appearance of `UINavigationBar`.
+///
+/// Contains an internal `TMBar` and forwards on all bar responsibility to this instance.
 open class TabmanNavigationBar: UIView {
     
     // MARK: Properties
     
     private let bar: TMBar
+    
+    private lazy var contentView = makeContentView()
     private var barView: UIView {
         return bar as! UIView
     }
-    private lazy var backgroundView = TMBarBackgroundView(style: self.backgroundStyle)
-    private lazy var extendingView = UIView()
     private lazy var separatorView = makeSeparatorView()
+
+    private lazy var extendingView = UIView()
+    private lazy var backgroundView = TMBarBackgroundView(style: self.backgroundStyle)
     
     @available(*, unavailable)
     open override var backgroundColor: UIColor? {
         didSet {}
     }
+    /// Background style of the navigation bar.
+    ///
+    /// Defaults to `.blur(style: .extraLight)`.
     public var backgroundStyle: TMBarBackgroundView.Style = .blur(style: .extraLight) {
         didSet {
             backgroundView.style = backgroundStyle
+        }
+    }
+    /// Color of the separator at the bottom of the navigation bar.
+    ///
+    /// Defaults to `UIColor.white.withAlphaComponent(0.5)`.
+    public var separatorColor: UIColor = UIColor.white.withAlphaComponent(0.5) {
+        didSet {
+            separatorView.backgroundColor = separatorColor
+            separatorView.isHidden = separatorColor == .clear
         }
     }
     
@@ -36,6 +54,9 @@ open class TabmanNavigationBar: UIView {
         fatalError("Use init(for:viewController:) - TabmanNavigationBar does not support Interface Builder")
     }
     
+    /// Create a navigation bar.
+    ///
+    /// - Parameter bar: Bar to embed in the navigation bar.
     public required init(for bar: TMBar) {
         self.bar = bar
         super.init(frame: .zero)
@@ -45,25 +66,10 @@ open class TabmanNavigationBar: UIView {
     
     private func layout(in view: UIView) {
         
-        addSubview(extendingView)
+        // Extended views
+        
+        view.addSubview(extendingView)
         extendingView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(separatorView)
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
-        
-        addSubview(barView)
-        barView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            barView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            barView.topAnchor.constraint(equalTo: topAnchor),
-            barView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            barView.bottomAnchor.constraint(equalTo: separatorView.topAnchor)
-            ])
         
         extendingView.addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +80,19 @@ open class TabmanNavigationBar: UIView {
             backgroundView.bottomAnchor.constraint(equalTo: extendingView.bottomAnchor)
             ])
         
+        // Content
+        
+        view.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        
+        contentView.addArrangedSubview(barView)
+        contentView.addArrangedSubview(separatorView)
     }
     
     // MARK: Layout
@@ -126,9 +145,16 @@ extension TabmanNavigationBar: TMBar {
 
 private extension TabmanNavigationBar {
     
+    func makeContentView() -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        return stackView
+    }
+    
     func makeSeparatorView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.backgroundColor = self.separatorColor
+        view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.heightAnchor.constraint(equalToConstant: 0.25)
             ])
