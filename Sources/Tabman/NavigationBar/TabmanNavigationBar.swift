@@ -17,55 +17,61 @@ open class TabmanNavigationBar: UIView {
         return bar as! UIView
     }
     
+    private weak var viewController: UIViewController!
+    
     let safeContainer = UIView()
     
     // MARK: Init
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init(for bar: Bar) - TabmanNavigationBar does not support Interface Builder")
+        fatalError("Use init(for:viewController:) - TabmanNavigationBar does not support Interface Builder")
     }
     
-    public required init(for bar: Bar) {
+    public required init(for bar: Bar, viewController: UIViewController) {
         self.bar = bar
+        self.viewController = viewController
         super.init(frame: .zero)
         
-        layout(in: self)
+        addSubview(safeContainer)
+        safeContainer.translatesAutoresizingMaskIntoConstraints = false
+        safeContainer.addSubview(barView)
+        barView.translatesAutoresizingMaskIntoConstraints = false
+        
+        backgroundColor = .blue
+        safeContainer.backgroundColor = .red
     }
     
     // MARK: Lifecycle
     
-    private func layout(in view: UIView) {
-        
-        view.addSubview(safeContainer)
-        safeContainer.translatesAutoresizingMaskIntoConstraints = false
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        guard safeContainer.constraints.isEmpty else {
+            fatalError("Something weird has happened, the navigation bar appears to have already been added to a superview before.")
+        }
         
         if #available(iOS 11, *) {
             NSLayoutConstraint.activate([
-                safeContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-                safeContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                safeContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-                safeContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                safeContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+                safeContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+                safeContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+                safeContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
         } else {
             NSLayoutConstraint.activate([
-                safeContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                safeContainer.topAnchor.constraint(equalTo: view.topAnchor),
-                safeContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                safeContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+                safeContainer.topAnchor.constraint(equalTo: viewController.topLayoutGuide.bottomAnchor),
+                safeContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
                 safeContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
         }
         
-        safeContainer.addSubview(barView)
-        barView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             barView.leadingAnchor.constraint(equalTo: safeContainer.leadingAnchor),
             barView.topAnchor.constraint(equalTo: safeContainer.topAnchor),
             barView.trailingAnchor.constraint(equalTo: safeContainer.trailingAnchor),
             barView.bottomAnchor.constraint(equalTo: safeContainer.bottomAnchor)
             ])
-        
-        backgroundColor = .blue
-        safeContainer.backgroundColor = .red
     }
 }
 
