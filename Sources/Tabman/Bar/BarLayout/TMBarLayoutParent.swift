@@ -8,9 +8,16 @@
 
 import UIKit
 
+/// The object that acts as a parent to a `TMBarLayout`.
+///
+/// This is expected to be a view that can directly maniuplate the frames that the layout is
+/// contained within to handle content inset and other properties that are accessible from the
+/// layout but expected that a parent view is responsible for.
 internal protocol TMBarLayoutParent: class {
     
+    /// Content inset that is applied to the frame of the layout.
     var contentInset: UIEdgeInsets { get set }
     
+    /// Whether paging is enabled for a scroll view that contains the layout.
     var isPagingEnabled: Bool { get set }
 }

@@ -8,11 +8,9 @@
 
 import UIKit
 
-/**
- `TMBarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
- 
- Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarLayout`.
- **/
+/// `TMBarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
+///
+/// Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available subclass such as `TMHorizontalBarLayout`.
 open class TMBarLayout: TMBarViewFocusProvider {
     
     // MARK: Types
