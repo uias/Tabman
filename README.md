@@ -90,7 +90,7 @@ class TabViewController: TabmanViewController {
 
         self.dataSource = self
 
-        let bar = Bar.ButtonBar()
+        let bar = TMBar.ButtonBar()
         self.addBar(bar, dataSource: self, at: .top)
     }
 }
@@ -116,8 +116,8 @@ Bar customization is available via properties on each functional area of the bar
     <img src=".artwork/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
 </p>
 
-#### BarView
-`BarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.
+#### TMBarView
+`TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.
 
 ```swift
 bar.background.style = .blur(style: .extraLight)
@@ -125,18 +125,18 @@ bar.animationStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-More: [**BarView Appearance Properties**]()
+More: [**TMBarView Appearance Properties**]()
 
-#### BarLayout
-`BarLayout` is the foundation of a `BarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
+#### TMBarLayout
+`TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
 
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
-More: [**BarLayout Appearance Properties**]()
+More: [**TMBarLayout Appearance Properties**]()
 
-#### BarButton
-`BarButton` views are populated in the `BarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
+#### TMBarButton
+`TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
 
 As you will most likely dealing with more than one button, you can modify the whole set at once:
 
@@ -149,22 +149,22 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-More: [**BarButton Appearance Properties**]()
+More: [**TMBarButton Appearance Properties**]()
 
-#### BarIndicator
-Last, but certainly not least, is the `BarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
+#### TMBarIndicator
+Last, but certainly not least, is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
 
 ```swift
 bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-More: [**BarIndicator Appearance Properties**]()
+More: [**TMBarIndicator Appearance Properties**]()
 
 ## 🎨 Going Completely Custom
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
 
-Each `BarView` is composed of three generic constraints which map directly to the distinct areas within itself: (`BarLayout`, `BarButton`, `BarIndicator`).
+Each `TMBarView` is composed of three generic constraints which map directly to the distinct areas within itself: (`TMBarLayout`, `TMBarButton`, `TMBarIndicator`).
 
 This means...
 
