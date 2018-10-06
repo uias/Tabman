@@ -1,5 +1,5 @@
 //
-//  BarLayoutInsetGuides.swift
+//  TMBarLayoutInsetGuides.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 08/08/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Object that provides layout guides for bar layout insets.
-internal protocol BarLayoutInsetGuides: class {
+internal protocol TMBarLayoutInsetGuides: class {
     
     /// The leading inset guide for the layout.
     var leadingInset: UILayoutGuide { get }

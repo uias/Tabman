@@ -1,5 +1,5 @@
 //
-//  BarLayout+None.swift
+//  TMBarLayout+None.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/09/2018.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-public extension BarLayout {
+public extension TMBarLayout {
     
     /// Layout that won't display any visible bar buttons.
     ///
     /// The indicator will be visible and equally distributed in the layout width.
-    public final class None: BarLayout {
+    public final class None: TMBarLayout {
         
         // MARK: Properties
         
         @available(*, unavailable)
-        public override var contentMode: BarLayout.ContentMode {
+        public override var contentMode: TMBarLayout.ContentMode {
             set {
                 fatalError("\(type(of: self)) does not support updating contentMode")
             } get {

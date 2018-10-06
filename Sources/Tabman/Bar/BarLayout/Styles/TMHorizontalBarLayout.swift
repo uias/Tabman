@@ -1,5 +1,5 @@
 //
-//  HorizontalBarLayout.swift
+//  TMHorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Layout that displays bar buttons sequentially along the horizontal axis.
-open class HorizontalBarLayout: BarLayout {
+open class TMHorizontalBarLayout: TMBarLayout {
     
     // MARK: Defaults
     
@@ -22,7 +22,7 @@ open class HorizontalBarLayout: BarLayout {
     
     internal let stackView = UIStackView()
     
-    public override var contentMode: BarLayout.ContentMode {
+    public override var contentMode: TMBarLayout.ContentMode {
         didSet {
             switch contentMode {
             case .fill:
@@ -88,7 +88,7 @@ open class HorizontalBarLayout: BarLayout {
 }
 
 // MARK: - Customization
-public extension HorizontalBarLayout {
+public extension TMHorizontalBarLayout {
     
     public var interButtonSpacing: CGFloat {
         set {

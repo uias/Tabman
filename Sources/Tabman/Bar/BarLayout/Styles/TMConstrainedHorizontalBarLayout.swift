@@ -1,5 +1,5 @@
 //
-//  ConstrainedHorizontalBarLayout.swift
+//  TMConstrainedHorizontalBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
@@ -9,12 +9,12 @@
 import UIKit
 
 /// Layout that displays a limited number of visible bar buttons sequentially along the horizontal axis.
-open class ConstrainedHorizontalBarLayout: HorizontalBarLayout {
+open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     
     // MARK: Properties
     
     @available(*, unavailable)
-    public override var contentMode: BarLayout.ContentMode {
+    public override var contentMode: TMBarLayout.ContentMode {
         set {
             fatalError("\(type(of: self)) does not support updating contentMode")
         } get {
@@ -54,7 +54,7 @@ open class ConstrainedHorizontalBarLayout: HorizontalBarLayout {
     }
 }
 
-private extension ConstrainedHorizontalBarLayout {
+private extension TMConstrainedHorizontalBarLayout {
     
     func constrain(views: [UIView], for maximumCount: Int) {
         if let oldConstraints = viewWidthConstraints {

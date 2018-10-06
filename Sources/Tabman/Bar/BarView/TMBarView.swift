@@ -10,7 +10,7 @@ import UIKit
 import Pageboy
 
 /// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
-open class TMBarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
+open class TMBarView<LayoutType: TMBarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
     
     // MARK: Types
     
@@ -278,7 +278,7 @@ public extension TMBarView {
     }
 }
 
-extension TMBarView: BarLayoutParent {
+extension TMBarView: TMBarLayoutParent {
     
     var contentInset: UIEdgeInsets {
         set {

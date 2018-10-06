@@ -1,5 +1,5 @@
 //
-//  BarLayout.swift
+//  TMBarLayout.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
@@ -9,11 +9,11 @@
 import UIKit
 
 /**
- `BarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
+ `TMBarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
  
  Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarLayout`.
  **/
-open class BarLayout: TMBarViewFocusProvider {
+open class TMBarLayout: TMBarViewFocusProvider {
     
     // MARK: Types
     
@@ -27,10 +27,10 @@ open class BarLayout: TMBarViewFocusProvider {
     /// Container view which contains actual contents
     public let view = UIView()
     /// The parent of the layout.
-    private weak var parent: BarLayoutParent!
+    private weak var parent: TMBarLayoutParent!
     
     /// Layout Guides that provide inset values.
-    private weak var insetGuides: BarLayoutInsetGuides!
+    private weak var insetGuides: TMBarLayoutInsetGuides!
     public var layoutGuide: UILayoutGuide {
         return insetGuides!.content
     }
@@ -78,8 +78,8 @@ open class BarLayout: TMBarViewFocusProvider {
     
     // MARK: Lifecycle
     
-    internal func layout(parent: BarLayoutParent,
-                         insetGuides: BarLayoutInsetGuides) {
+    internal func layout(parent: TMBarLayoutParent,
+                         insetGuides: TMBarLayoutInsetGuides) {
         self.parent = parent
         self.insetGuides = insetGuides
         layout(in: view)
@@ -120,7 +120,7 @@ open class BarLayout: TMBarViewFocusProvider {
     }
 }
 
-private extension BarLayout {
+private extension TMBarLayout {
     
     /// Update any constraints that are needed to satisfy a new ContentMode.
     ///

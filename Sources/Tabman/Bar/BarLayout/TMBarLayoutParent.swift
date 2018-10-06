@@ -1,5 +1,5 @@
 //
-//  BarLayoutParent.swift
+//  TMBarLayoutParent.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 08/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal protocol BarLayoutParent: class {
+internal protocol TMBarLayoutParent: class {
     
     var contentInset: UIEdgeInsets { get set }
     
