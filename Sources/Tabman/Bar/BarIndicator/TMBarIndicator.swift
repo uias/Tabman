@@ -8,9 +8,7 @@
 
 import UIKit
 
-/**
- `TMBarIndicator` is a view that is displayed on a `BarView` to provide indication of the current page position.
- **/
+/// View that provides indication of the current page position.
 open class TMBarIndicator: UIView {
     
     // MARK: Types
@@ -38,16 +36,15 @@ open class TMBarIndicator: UIView {
         fatalError("Return displayStyle in subclass")
     }
     
-    /**
-     Behavior the indicator should exhibit when scrolling over the bounds of the bar.
-     
-     Options:
-     - `.bounce`: Bounce the indicator beyond the bounds of the bar.
-     - `.compress`: Compress the indicators width as overscroll occurs.
-     - `.none`: Don't do anything.
-     
-     Defaults to `.bounce`.
-     **/
+    
+     /// Behavior the indicator should exhibit when scrolling over the bounds of the bar.
+     ///
+     /// Options:
+     /// - `.bounce`: Bounce the indicator beyond the bounds of the bar.
+     /// - `.compress`: Compress the indicators width as overscroll occurs.
+     /// - `.none`: Don't do anything.
+     ///
+     /// Defaults to `.bounce`.
     public var overscrollBehavior: OverscrollBehavior = .bounce
     /// Whether the indicator should display progressively, traversing page indexes as progress.
     public var isProgressive: Bool = false

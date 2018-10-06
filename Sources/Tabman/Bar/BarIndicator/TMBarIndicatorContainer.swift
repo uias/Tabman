@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// Container view that embeds a `TMBarIndicator`.
+///
+/// Used for providing AutoLayout properties to `TMBarIndicatorLayoutHandler`.
 internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIView {
     
     // MARK: Properties
