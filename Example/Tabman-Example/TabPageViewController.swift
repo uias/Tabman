@@ -65,7 +65,6 @@ class TabPageViewController: TabmanViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        gradient?.gradients = Gradients.all
         addBarButtonsIfNeeded()
     }
     
@@ -131,7 +130,7 @@ class TabPageViewController: TabmanViewController {
         //        print("didScrollToPosition: \(position)")
         
         let relativePosition = navigationOrientation == .vertical ? position.y : position.x
-        gradient?.gradientOffset = relativePosition
+        gradient?.gradientOffset = relativePosition / CGFloat((pageboyViewController.pageCount ?? 1) - 1)
         statusView.currentPosition = relativePosition
         
         updateBarButtonsForCurrentIndex()
@@ -148,7 +147,7 @@ class TabPageViewController: TabmanViewController {
         
         //        print("didScrollToPageAtIndex: \(index)")
         
-        gradient?.gradientOffset = CGFloat(index)
+        gradient?.gradientOffset = CGFloat(index) / CGFloat((pageboyViewController.pageCount ?? 1) - 1)
         statusView.currentIndex = index
         updateBarButtonsForCurrentIndex()
     }

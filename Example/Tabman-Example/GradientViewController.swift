@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import Randient
 
 class GradientViewController: UIViewController {
     
-    // MARK: Properties
-    
-    @IBOutlet private var gradientView: GradientView!
-    
-    var gradients: [Gradient]? {
-        didSet {
-            update(for: gradientOffset)
-        }
+    private struct Defaults {
+        static let startPoint = CGPoint(x: 0.5, y: 0.0)
+        static let endPoint = CGPoint(x: 0.5, y: 1.0)
     }
     
+    // MARK: Properties
+    
+    @IBOutlet private var gradientView: RandientView!
+    
+    /// Offset to adjust the gradient start / end points.
     var gradientOffset: CGFloat = 0.0 {
         didSet {
             update(for: gradientOffset)
@@ -39,6 +40,13 @@ class GradientViewController: UIViewController {
     
     // MARK: Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gradientView.startPoint = Defaults.startPoint
+        gradientView.endPoint = Defaults.endPoint
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -48,30 +56,14 @@ class GradientViewController: UIViewController {
     // MARK: Updating
     
     private func update(for offset: CGFloat) {
-        var sanitizedOffset = offset
-        if sanitizedOffset < 0.0 {
-            sanitizedOffset = 1.0 + sanitizedOffset
-        }
         
-        var integral: Double = 0.0
-        let percentage = CGFloat(modf(Double(sanitizedOffset), &integral))
-        let lowerIndex = Int(floor(offset))
-        let upperIndex = Int(ceil(offset))
+        let defaultStartPoint = Defaults.startPoint
+        let defaultEndPoint = Defaults.endPoint
         
-        let lowerGradient = gradient(for: lowerIndex)
-        let upperGradient = gradient(for: upperIndex)
-        
-        if let top = lowerGradient.top.interpolate(between: upperGradient.top, percent: percentage),
-            let bottom = lowerGradient.bottom.interpolate(between: upperGradient.bottom, percent: percentage) {
-//            gradientView.colors = [top, bottom]
-        }
-    }
-    
-    private func gradient(for index: Int) -> Gradient {
-        guard let gradients = self.gradients, index >= 0 && index < gradients.count else {
-            return .defaultGradient
-        }
-        
-        return gradients[index]
+        let gradientPointOffset = (offset / 2)
+        gradientView.startPoint = CGPoint(x: defaultStartPoint.x - (defaultStartPoint.x * gradientPointOffset),
+                                          y: -gradientPointOffset)
+        gradientView.endPoint = CGPoint(x: defaultEndPoint.x + (defaultEndPoint.x * gradientPointOffset),
+                                        y: defaultEndPoint.y + (defaultEndPoint.y * gradientPointOffset))
     }
 }
