@@ -14,8 +14,8 @@ class MockBarView: UIView, TabmanBar {
     
     
     
-    weak var dataSource: BarDataSource?
-    weak var delegate: BarDelegate?
+    weak var dataSource: TMBarDataSource?
+    weak var delegate: TMBarDelegate?
     
     // MARK: Lifecycle
     
@@ -32,11 +32,11 @@ class MockBarView: UIView, TabmanBar {
     
     // MARK: Bar
     
-    func reloadData(at indexes: ClosedRange<Int>, context: BarReloadContext) {
+    func reloadData(at indexes: ClosedRange<Int>, context: TMBarReloadContext) {
         
     }
     
-    func update(for pagePosition: CGFloat, capacity: Int, direction: BarUpdateDirection, shouldAnimate: Bool) {
+    func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, shouldAnimate: Bool) {
         
     }
 }

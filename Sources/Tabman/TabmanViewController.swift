@@ -11,7 +11,7 @@ import Pageboy
 import AutoInsetter
 
 /// Page view controller with a bar indicator component.
-open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate, BarDelegate {
+open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate, TMBarDelegate {
     
     // MARK: Types
     
@@ -119,7 +119,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 public extension TabmanViewController {
     
     func addBar(_ bar: TMBar,
-                dataSource: BarDataSource,
+                dataSource: TMBarDataSource,
                 at location: BarLocation) {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
@@ -226,7 +226,7 @@ private extension TabmanViewController {
                    shouldAnimate: animated)
     }
     
-    private func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> BarUpdateDirection {
+    private func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> TMBarUpdateDirection {
         switch navigationDirection {
         case .forward:
             return .forward

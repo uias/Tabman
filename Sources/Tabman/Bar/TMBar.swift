@@ -9,7 +9,7 @@
 import UIKit
 
 /// Data source that provides bar with items.
-public protocol BarDataSource: class {
+public protocol TMBarDataSource: class {
     
     /// Provide a `BarItem` for an index in the bar.
     ///
@@ -21,7 +21,7 @@ public protocol BarDataSource: class {
 }
 
 /// Delegate that provides bar with responses to user interaction.
-public protocol BarDelegate: class {
+public protocol TMBarDelegate: class {
     
     /// Bar requires scrolling to a new page following a user interaction.
     ///
@@ -37,7 +37,7 @@ public protocol BarDelegate: class {
 /// - full: A full reload has taken place.
 /// - insertion: A page insertion has taken place.
 /// - deletion: A page deletion has taken place.
-public enum BarReloadContext {
+public enum TMBarReloadContext {
     case full
     case insertion
     case deletion
@@ -48,7 +48,7 @@ public enum BarReloadContext {
 /// - none: No direction.
 /// - forward: A forward direction (increasing).
 /// - reverse: A reverse direction (reversing).
-public enum BarUpdateDirection {
+public enum TMBarUpdateDirection {
     case none
     case forward
     case reverse
@@ -58,9 +58,9 @@ public enum BarUpdateDirection {
 public protocol TMBar: AnyObject where Self: UIView {
     
     /// Object that acts as a data source to the bar.
-    var dataSource: BarDataSource? { get set }
+    var dataSource: TMBarDataSource? { get set }
     /// Object that acts as a delegate to the bar.
-    var delegate: BarDelegate? { get set }
+    var delegate: TMBarDelegate? { get set }
     
     /// Reload the data within the bar.
     ///
@@ -68,7 +68,7 @@ public protocol TMBar: AnyObject where Self: UIView {
     ///   - indexes: The indexes to reload.
     ///   - context: The context for the reload.
     func reloadData(at indexes: ClosedRange<Int>,
-                    context: BarReloadContext)
+                    context: TMBarReloadContext)
     
     
     /// Update the display in the bar for a particular page position.
@@ -80,6 +80,6 @@ public protocol TMBar: AnyObject where Self: UIView {
     ///   - shouldAnimate: Whether the bar should animate the update.
     func update(for pagePosition: CGFloat,
                 capacity: Int,
-                direction: BarUpdateDirection,
+                direction: TMBarUpdateDirection,
                 shouldAnimate: Bool)
 }

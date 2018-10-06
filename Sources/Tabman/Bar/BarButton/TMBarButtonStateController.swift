@@ -23,7 +23,7 @@ internal final class TMBarButtonStateController: TMBarButtonController {
     
     // MARK: Update
     
-    func update(for position: CGFloat, direction: BarUpdateDirection) {
+    func update(for position: CGFloat, direction: TMBarUpdateDirection) {
         let capacity = barButtons.count
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard barButtons.count > range.upperBound else {

@@ -92,7 +92,7 @@ open class TabmanNavigationBar: UIView {
 
 extension TabmanNavigationBar: TMBar {
     
-    public weak var dataSource: BarDataSource? {
+    public weak var dataSource: TMBarDataSource? {
         get {
             return bar.dataSource
         } set {
@@ -100,7 +100,7 @@ extension TabmanNavigationBar: TMBar {
         }
     }
     
-    public var delegate: BarDelegate? {
+    public var delegate: TMBarDelegate? {
         get {
             return bar.delegate
         } set {
@@ -109,13 +109,13 @@ extension TabmanNavigationBar: TMBar {
     }
     
     public func reloadData(at indexes: ClosedRange<Int>,
-                           context: BarReloadContext) {
+                           context: TMBarReloadContext) {
         bar.reloadData(at: indexes, context: context)
     }
     
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: BarUpdateDirection,
+                       direction: TMBarUpdateDirection,
                        shouldAnimate: Bool) {
         bar.update(for: pagePosition,
                    capacity: capacity,

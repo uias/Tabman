@@ -178,7 +178,7 @@ extension TabPageViewController: PageboyViewControllerDataSource {
     }
 }
 
-extension TabPageViewController: BarDataSource {
+extension TabPageViewController: TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItem {
         return TMBarItem(title: "Page No. \(index + 1)")

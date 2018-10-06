@@ -56,13 +56,13 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     }
     
     /// Object that acts as a data source to the BarView.
-    public weak var dataSource: BarDataSource?
+    public weak var dataSource: TMBarDataSource?
     /**
      Object that acts as a delegate to the BarView.
      
      By default this is set to the `TabmanViewController` the bar is added to.
      **/
-    public weak var delegate: BarDelegate?
+    public weak var delegate: TMBarDelegate?
     
     /**
      Background of the BarView.
@@ -164,7 +164,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
 extension TMBarView: TMBar {
     
     public func reloadData(at indexes: ClosedRange<Int>,
-                           context: BarReloadContext) {
+                           context: TMBarReloadContext) {
         guard let dataSource = self.dataSource else {
             return
         }
@@ -200,7 +200,7 @@ extension TMBarView: TMBar {
     
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
-                       direction: BarUpdateDirection,
+                       direction: TMBarUpdateDirection,
                        shouldAnimate: Bool) {
         
         let (pagePosition, animated) = updateValues(for: animationStyle,

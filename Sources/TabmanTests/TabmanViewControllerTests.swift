@@ -13,7 +13,7 @@ import Pageboy
 class TabmanViewControllerTests: XCTestCase {
     
     var viewController: TabmanViewController!
-    var barDataSource: BarDataSource!
+    var barDataSource: TMBarDataSource!
     
     // MARK: Set Up
     
