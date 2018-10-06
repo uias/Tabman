@@ -16,10 +16,19 @@ open class TabmanNavigationBar: UIView {
     private var barView: UIView {
         return bar as! UIView
     }
+    private lazy var backgroundView = BarBackground(style: self.backgroundStyle)
+    private lazy var extendingView = UIView()
+    private lazy var separatorView = makeSeparatorView()
     
-    private let extendingView = UIView()
-    
-    public let background = BarBackground(style: .blur(style: .light))
+    @available(*, unavailable)
+    open override var backgroundColor: UIColor? {
+        didSet {}
+    }
+    public var backgroundStyle: BarBackground.Style = .blur(style: .extraLight) {
+        didSet {
+            backgroundView.style = backgroundStyle
+        }
+    }
     
     // MARK: Init
     
@@ -39,22 +48,30 @@ open class TabmanNavigationBar: UIView {
         addSubview(extendingView)
         extendingView.translatesAutoresizingMaskIntoConstraints = false
         
+        addSubview(separatorView)
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        
         addSubview(barView)
         barView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             barView.leadingAnchor.constraint(equalTo: leadingAnchor),
             barView.topAnchor.constraint(equalTo: topAnchor),
             barView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            barView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            barView.bottomAnchor.constraint(equalTo: separatorView.topAnchor)
             ])
         
-        extendingView.addSubview(background)
-        background.translatesAutoresizingMaskIntoConstraints = false
+        extendingView.addSubview(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            background.leadingAnchor.constraint(equalTo: extendingView.leadingAnchor),
-            background.topAnchor.constraint(equalTo: extendingView.topAnchor),
-            background.trailingAnchor.constraint(equalTo: extendingView.trailingAnchor),
-            background.bottomAnchor.constraint(equalTo: extendingView.bottomAnchor)
+            backgroundView.leadingAnchor.constraint(equalTo: extendingView.leadingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: extendingView.topAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: extendingView.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: extendingView.bottomAnchor)
             ])
         
     }
@@ -104,5 +121,17 @@ extension TabmanNavigationBar: Bar {
                    capacity: capacity,
                    direction: direction,
                    shouldAnimate: shouldAnimate)
+    }
+}
+
+private extension TabmanNavigationBar {
+    
+    func makeSeparatorView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        NSLayoutConstraint.activate([
+            view.heightAnchor.constraint(equalToConstant: 0.25)
+            ])
+        return view
     }
 }

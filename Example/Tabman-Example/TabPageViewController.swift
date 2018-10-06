@@ -43,24 +43,21 @@ class TabPageViewController: TabmanViewController {
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-        bar.buttons.customize { (button) in
-            button.selectedColor = .white
-            button.color = UIColor.white.withAlphaComponent(0.4)
-        }
-        bar.indicator.tintColor = .white
-        bar.indicator.weight = .light
+//        bar.buttons.customize { (button) in
+//            button.selectedColor = .white
+//            button.color = UIColor.white.withAlphaComponent(0.4)
+//        }
+//        bar.indicator.tintColor = .white
+//        bar.indicator.weight = .light
         
         let plusButton = CircularBarActionButton(action: .add)
         plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
         plusButton.tintColor = .white
         bar.trailingAccessoryView = plusButton
         
-//        addBar(TabmanNavigationBar(for: bar), dataSource: self, at: .top)
         addBar(TabmanNavigationBar(for: bar),
                dataSource: self,
                at: .top)
-        
-        addBar(Bar.ButtonBar(), dataSource: self, at: .top)
     }
     
     override func viewWillAppear(_ animated: Bool) {
