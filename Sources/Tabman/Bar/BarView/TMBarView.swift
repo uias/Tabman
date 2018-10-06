@@ -69,7 +69,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
      
      Defaults to `UIColor.white`.
      **/
-    public var background = BarBackground(style: .clear)
+    public var background = TMBarBackgroundView(style: .clear)
 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()

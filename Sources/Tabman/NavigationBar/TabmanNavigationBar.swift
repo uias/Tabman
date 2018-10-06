@@ -16,7 +16,7 @@ open class TabmanNavigationBar: UIView {
     private var barView: UIView {
         return bar as! UIView
     }
-    private lazy var backgroundView = BarBackground(style: self.backgroundStyle)
+    private lazy var backgroundView = TMBarBackgroundView(style: self.backgroundStyle)
     private lazy var extendingView = UIView()
     private lazy var separatorView = makeSeparatorView()
     
@@ -24,7 +24,7 @@ open class TabmanNavigationBar: UIView {
     open override var backgroundColor: UIColor? {
         didSet {}
     }
-    public var backgroundStyle: BarBackground.Style = .blur(style: .extraLight) {
+    public var backgroundStyle: TMBarBackgroundView.Style = .blur(style: .extraLight) {
         didSet {
             backgroundView.style = backgroundStyle
         }

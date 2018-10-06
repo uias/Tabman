@@ -42,7 +42,7 @@ open class TMBarButton: UIControl {
         }
     }
     
-    public let background = BarBackground()
+    public let background = TMBarBackgroundView()
     
     // MARK: Init
     

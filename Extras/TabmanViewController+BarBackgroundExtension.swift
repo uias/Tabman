@@ -28,7 +28,7 @@ public extension TabmanViewController {
     public func addBarWithExtendingBackground(_ bar: TMBar,
                                               dataSource: TMBarDataSource,
                                               location: BarLocation,
-                                              backgroundStyle: BarBackground.Style) {
+                                              backgroundStyle: TMBarBackgroundView.Style) {
         switch location {
         case .custom:
             addBar(bar, dataSource: dataSource, at: location)
@@ -40,7 +40,7 @@ public extension TabmanViewController {
                                                                bottomLayoutGuide: self.bottomLayoutGuide)
             addBar(bar, dataSource: dataSource, at: .custom(view: container.safeAreaView, layout: nil))
             
-            let background = BarBackground(style: backgroundStyle)
+            let background = TMBarBackgroundView(style: backgroundStyle)
             background.translatesAutoresizingMaskIntoConstraints = false
             container.insertSubview(background, at: 0)
             NSLayoutConstraint.activate([

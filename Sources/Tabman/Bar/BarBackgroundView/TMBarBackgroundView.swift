@@ -1,5 +1,5 @@
 //
-//  BarBackground.swift
+//  TMBarBackgroundView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 29/08/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// A view that displays a specified background style.
-open class BarBackground: UIView {
+open class TMBarBackgroundView: UIView {
     
     /// Style of background.
     ///
@@ -63,7 +63,7 @@ open class BarBackground: UIView {
     }
 }
 
-private extension BarBackground {
+private extension TMBarBackgroundView {
     
     func update(for style: Style) {
         cleanUp(backgroundView: backgroundView)
