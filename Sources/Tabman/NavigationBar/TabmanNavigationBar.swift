@@ -17,9 +17,9 @@ open class TabmanNavigationBar: UIView {
         return bar as! UIView
     }
     
-    private weak var viewController: UIViewController!
+    private let extendingView = UIView()
     
-    let safeContainer = UIView()
+    public let background = BarBackground(style: .blur(style: .light))
     
     // MARK: Init
     
@@ -27,50 +27,48 @@ open class TabmanNavigationBar: UIView {
         fatalError("Use init(for:viewController:) - TabmanNavigationBar does not support Interface Builder")
     }
     
-    public required init(for bar: Bar, viewController: UIViewController) {
+    public required init(for bar: Bar) {
         self.bar = bar
-        self.viewController = viewController
         super.init(frame: .zero)
         
-        addSubview(safeContainer)
-        safeContainer.translatesAutoresizingMaskIntoConstraints = false
-        safeContainer.addSubview(barView)
-        barView.translatesAutoresizingMaskIntoConstraints = false
-        
-        backgroundColor = .blue
-        safeContainer.backgroundColor = .red
+        layout(in: self)
     }
     
-    // MARK: Lifecycle
+    private func layout(in view: UIView) {
+        
+        addSubview(extendingView)
+        extendingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(barView)
+        barView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            barView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            barView.topAnchor.constraint(equalTo: topAnchor),
+            barView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            barView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        
+        extendingView.addSubview(background)
+        background.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            background.leadingAnchor.constraint(equalTo: extendingView.leadingAnchor),
+            background.topAnchor.constraint(equalTo: extendingView.topAnchor),
+            background.trailingAnchor.constraint(equalTo: extendingView.trailingAnchor),
+            background.bottomAnchor.constraint(equalTo: extendingView.bottomAnchor)
+            ])
+        
+    }
+    
+    // MARK: Layout
     
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        guard safeContainer.constraints.isEmpty else {
-            fatalError("Something weird has happened, the navigation bar appears to have already been added to a superview before.")
-        }
-        
-        if #available(iOS 11, *) {
-            NSLayoutConstraint.activate([
-                safeContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-                safeContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                safeContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-                safeContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
-                ])
-        } else {
-            NSLayoutConstraint.activate([
-                safeContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
-                safeContainer.topAnchor.constraint(equalTo: viewController.topLayoutGuide.bottomAnchor),
-                safeContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
-                safeContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
-                ])
-        }
-        
         
         NSLayoutConstraint.activate([
-            barView.leadingAnchor.constraint(equalTo: safeContainer.leadingAnchor),
-            barView.topAnchor.constraint(equalTo: safeContainer.topAnchor),
-            barView.trailingAnchor.constraint(equalTo: safeContainer.trailingAnchor),
-            barView.bottomAnchor.constraint(equalTo: safeContainer.bottomAnchor)
+            extendingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            extendingView.topAnchor.constraint(equalTo: superview!.superview!.topAnchor),
+            extendingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
 }

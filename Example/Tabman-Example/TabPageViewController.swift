@@ -56,7 +56,7 @@ class TabPageViewController: TabmanViewController {
         bar.trailingAccessoryView = plusButton
         
 //        addBar(TabmanNavigationBar(for: bar), dataSource: self, at: .top)
-        addBar(TabmanNavigationBar(for: bar, viewController: self),
+        addBar(TabmanNavigationBar(for: bar),
                dataSource: self,
                at: .top)
         

@@ -154,7 +154,7 @@ public extension TabmanViewController {
         if #available(iOS 11, *) {
             topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
         } else {
-            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.topAnchor))
+            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor))
         }
         NSLayoutConstraint.activate(topConstraints)
         
@@ -169,7 +169,7 @@ public extension TabmanViewController {
         if #available(iOS 11, *) {
             bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
         } else {
-            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor))
+            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor))
         }
         NSLayoutConstraint.activate(bottomConstraints)
     }
