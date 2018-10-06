@@ -31,8 +31,8 @@
 		46A9D28C213C3005001D9A70 /* TMBarViewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */; };
 		46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* TMBar.swift */; };
 		46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */; };
-		46E598EC2168C0F200D8A138 /* TabmanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598EB2168C0F200D8A138 /* TabmanNavigationBar.swift */; };
 		46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */; };
+		46E598F2216902A500D8A138 /* TabmanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */; };
 		46E9631E211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift */; };
 		46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* TMBarLayout.swift */; };
 		46E96321211B3A01004C7468 /* TMBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96311211B3A01004C7468 /* TMBarButton.swift */; };
@@ -88,8 +88,8 @@
 		46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewGrid.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* TMBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBar.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusProvider.swift; sourceTree = "<group>"; };
-		46E598EB2168C0F200D8A138 /* TabmanNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanNavigationBar.swift; sourceTree = "<group>"; };
 		46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarBackgroundView.swift; sourceTree = "<group>"; };
+		46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanNavigationBar.swift; sourceTree = "<group>"; };
 		46E9630D211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMConstrainedHorizontalBarLayout.swift; sourceTree = "<group>"; };
 		46E9630F211B3A01004C7468 /* TMBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarLayout.swift; sourceTree = "<group>"; };
 		46E96311211B3A01004C7468 /* TMBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarButton.swift; sourceTree = "<group>"; };
@@ -187,19 +187,12 @@
 				46E96310211B3A01004C7468 /* BarButton */,
 				46E96319211B3A01004C7468 /* BarIndicator */,
 				46E598ED2168FD3100D8A138 /* BarBackgroundView */,
+				46E598F0216902A500D8A138 /* NavigationBar */,
 				46E96334211B4AF6004C7468 /* Generic */,
 				4612BD0F20C9B7F5001A37B5 /* Utility */,
 				4613CBF0214187EE000E6766 /* Extensions */,
 			);
 			path = Bar;
-			sourceTree = "<group>";
-		};
-		46E598EA2168C0E600D8A138 /* NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				46E598EB2168C0F200D8A138 /* TabmanNavigationBar.swift */,
-			);
-			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		46E598ED2168FD3100D8A138 /* BarBackgroundView */ = {
@@ -208,6 +201,14 @@
 				46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */,
 			);
 			path = BarBackgroundView;
+			sourceTree = "<group>";
+		};
+		46E598F0216902A500D8A138 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		46E96309211B3A01004C7468 /* BarLayout */ = {
@@ -307,7 +308,6 @@
 				D62AC0B51E5733810020B8AE /* Tabman.h */,
 				D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */,
 				46B7FDF920BC52D000E9BB7E /* Bar */,
-				46E598EA2168C0E600D8A138 /* NavigationBar */,
 				D62AC0B61E5733810020B8AE /* Info.plist */,
 			);
 			path = Tabman;
@@ -488,6 +488,7 @@
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,
 				469E5726215E1E4F004FF071 /* TMBarButton+None.swift in Sources */,
 				46E96327211B3A01004C7468 /* TMBarButtonCollection.swift in Sources */,
+				46E598F2216902A500D8A138 /* TabmanNavigationBar.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
 				46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */,
@@ -502,7 +503,6 @@
 				46E96328211B3A01004C7468 /* TMBarIndicatorLayoutHandler.swift in Sources */,
 				46E96326211B3A01004C7468 /* TMBarButtonInteractionController.swift in Sources */,
 				46E96321211B3A01004C7468 /* TMBarButton.swift in Sources */,
-				46E598EC2168C0F200D8A138 /* TabmanNavigationBar.swift in Sources */,
 				46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */,
 				4613CBF821418839000E6766 /* WeakContainer.swift in Sources */,
 				46E96339211B7F03004C7468 /* TMBarLayoutParent.swift in Sources */,
