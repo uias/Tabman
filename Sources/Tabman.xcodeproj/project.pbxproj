@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4612BCE720C86815001A37B5 /* BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCE620C86815001A37B5 /* BarItem.swift */; };
-		4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* Bar+Templates.swift */; };
+		4612BCF220C88D24001A37B5 /* TabmanBar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* TabmanBar+Templates.swift */; };
 		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
 		4613CBF2214187EE000E6766 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */; };
 		4613CBF421418804000E6766 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF321418804000E6766 /* UIColor+Interpolation.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		4612BCE620C86815001A37B5 /* BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarItem.swift; sourceTree = "<group>"; };
-		4612BCF120C88D24001A37B5 /* Bar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bar+Templates.swift"; sourceTree = "<group>"; };
+		4612BCF120C88D24001A37B5 /* TabmanBar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanBar+Templates.swift"; sourceTree = "<group>"; };
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
 		4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
 		4613CBF321418804000E6766 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				46B7FDFA20BC537000E9BB7E /* TabmanBar.swift */,
-				4612BCF120C88D24001A37B5 /* Bar+Templates.swift */,
+				4612BCF120C88D24001A37B5 /* TabmanBar+Templates.swift */,
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
 				462941D92111EB7C00345B52 /* BarView */,
 				46E96309211B3A01004C7468 /* BarLayout */,
@@ -509,7 +509,7 @@
 				46E96339211B7F03004C7468 /* BarLayoutParent.swift in Sources */,
 				4613CBF421418804000E6766 /* UIColor+Interpolation.swift in Sources */,
 				46E96331211B439C004C7468 /* LineBarIndicator.swift in Sources */,
-				4612BCF220C88D24001A37B5 /* Bar+Templates.swift in Sources */,
+				4612BCF220C88D24001A37B5 /* TabmanBar+Templates.swift in Sources */,
 				46E96323211B3A01004C7468 /* LabelBarButton.swift in Sources */,
 				46E9631E211B3A01004C7468 /* ConstrainedHorizontalBarLayout.swift in Sources */,
 				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,

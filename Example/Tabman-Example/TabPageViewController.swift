@@ -39,7 +39,7 @@ class TabPageViewController: TabmanViewController {
         
         dataSource = self
         
-        let bar = TabmanBar.ButtonBar()
+        let bar = TabmanBar.Buttons()
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
