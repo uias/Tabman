@@ -10,7 +10,7 @@ import Foundation
 
 public extension TMBar {
  
-    public typealias Buttons = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
-    public typealias Tabs = BarView<ConstrainedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>
-    public typealias Line = BarView<BarLayout.None, BarButton.None, LineBarIndicator>
+    public typealias Buttons = TMBarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
+    public typealias Tabs = TMBarView<ConstrainedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>
+    public typealias Line = TMBarView<BarLayout.None, BarButton.None, LineBarIndicator>
 }

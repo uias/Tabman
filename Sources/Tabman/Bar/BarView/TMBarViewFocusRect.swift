@@ -1,5 +1,5 @@
 //
-//  BarViewFocusRect.swift
+//  TMBarViewFocusRect.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 04/09/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Rect struct similar to CGRect that provides ability to take factors such as capacity and position into account.
-internal struct BarViewFocusRect {
+internal struct TMBarViewFocusRect {
     
     // MARK: Properties
     
@@ -56,7 +56,7 @@ internal struct BarViewFocusRect {
     }
 }
 
-private extension BarViewFocusRect {
+private extension TMBarViewFocusRect {
     
     func rect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
               for rect: CGRect) -> CGRect {

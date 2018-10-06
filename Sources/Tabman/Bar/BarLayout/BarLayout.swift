@@ -13,7 +13,7 @@ import UIKit
  
  Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available Tabman subclass such as `ButtonBarLayout`.
  **/
-open class BarLayout: BarViewFocusProvider {
+open class BarLayout: TMBarViewFocusProvider {
     
     // MARK: Types
     

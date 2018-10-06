@@ -1,5 +1,5 @@
 //
-//  BarViewLayoutGuides.swift
+//  TMBarViewContentInsetGuides.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 01/08/2018.
@@ -11,7 +11,7 @@ import UIKit
 /// Content Inset guides for a bar view.
 ///
 /// Contains layout guides for content views taking any contentInset into account.
-internal final class BarViewContentInsetGuides: BarLayoutInsetGuides {
+internal final class TMBarViewContentInsetGuides: BarLayoutInsetGuides {
     
     // MARK: Properties
     
@@ -48,7 +48,7 @@ internal final class BarViewContentInsetGuides: BarLayoutInsetGuides {
     
     // MARK: Init
     
-    init<LayoutType, ButtonType, IndicatorType>(for barView: BarView<LayoutType, ButtonType, IndicatorType>) {
+    init<LayoutType, ButtonType, IndicatorType>(for barView: TMBarView<LayoutType, ButtonType, IndicatorType>) {
         barView.addLayoutGuide(leadingInset)
         barView.addLayoutGuide(content)
         barView.addLayoutGuide(trailingInset)

@@ -1,5 +1,5 @@
 //
-//  BarViewGrid.swift
+//  TMBarViewGrid.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 02/09/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// 'Grid' view containig vertical / horizontal stack views.
-internal final class BarViewGrid: UIView {
+internal final class TMBarViewGrid: UIView {
     
     // MARK: Properties
     

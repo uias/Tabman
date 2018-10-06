@@ -1,5 +1,5 @@
 //
-//  BarViewFocusProvider.swift
+//  TMBarViewFocusProvider.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// An object that can provide focus related positional data to a BarView.
-public protocol BarViewFocusProvider: class {
+public protocol TMBarViewFocusProvider: class {
     
     /**
      Calculate the 'focusArea' for the current position and capacity.

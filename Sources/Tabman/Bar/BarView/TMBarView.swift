@@ -1,5 +1,5 @@
 //
-//  BarView.swift
+//  TMBarView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 01/08/2018.
@@ -10,7 +10,7 @@ import UIKit
 import Pageboy
 
 /// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
-open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
+open class TMBarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
     
     // MARK: Types
     
@@ -25,13 +25,13 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
     
     private let rootContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
-    private var grid: BarViewGrid!
+    private var grid: TMBarViewGrid!
 
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
     
     private var indicatedPosition: CGFloat?
-    private lazy var contentInsetGuides = BarViewContentInsetGuides(for: self)
+    private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
@@ -142,7 +142,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
             ])
         
         // Set up grid - stack views that content views are added to.
-        self.grid = BarViewGrid(with: layout.view)
+        self.grid = TMBarViewGrid(with: layout.view)
         scrollView.addSubview(grid)
         grid.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
@@ -161,7 +161,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
 }
 
 // MARK: - Bar
-extension BarView: TMBar {
+extension TMBarView: TMBar {
     
     public func reloadData(at indexes: ClosedRange<Int>,
                            context: BarReloadContext) {
@@ -211,7 +211,7 @@ extension BarView: TMBar {
         
         // Get focus area for updating indicator layout
         let focusArea = grid.convert(layout.focusArea(for: pagePosition, capacity: capacity), from: layout.view) // raw focus area in grid coordinate space
-        let focusRect = BarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
+        let focusRect = TMBarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
         indicatorLayoutHandler?.update(for: focusRect.rect(isProgressive: indicator.isProgressive,
                                                            overscrollBehavior: indicator.overscrollBehavior)) // Update indicator layout
         
@@ -258,7 +258,7 @@ extension BarView: TMBar {
 }
 
 // MARK: - Customization
-public extension BarView {
+public extension TMBarView {
     
     /// Whether the layout should be allowed to be scrolled by the user.
     public var isScrollEnabled: Bool {
@@ -278,7 +278,7 @@ public extension BarView {
     }
 }
 
-extension BarView: BarLayoutParent {
+extension TMBarView: BarLayoutParent {
     
     var contentInset: UIEdgeInsets {
         set {
@@ -306,7 +306,7 @@ extension BarView: BarLayoutParent {
 }
 
 // MARK: - Indicator
-extension BarView {
+extension TMBarView {
     
     /// Create a container for an indicator to be displayed in. Will also add the container to the view hierarchy.
     ///
@@ -346,7 +346,7 @@ extension BarView {
 }
 
 // MARK: - Interaction
-extension BarView: BarButtonInteractionHandler {
+extension TMBarView: BarButtonInteractionHandler {
     
     func barButtonInteraction(controller: BarButtonInteractionController,
                               didHandlePressOf button: BarButton,
@@ -356,7 +356,7 @@ extension BarView: BarButtonInteractionHandler {
 }
 
 // MARK: - Accessory Views
-private extension BarView {
+private extension TMBarView {
     
     enum AccessoryLocation {
         case leading
