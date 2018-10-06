@@ -55,10 +55,24 @@ class TabPageViewController: TabmanViewController {
         plusButton.tintColor = .white
         bar.trailingAccessoryView = plusButton
         
-        addBarWithExtendingBackground(bar,
-                                      dataSource: self,
-                                      location: .top,
-                                      backgroundStyle: .flat(color: UIColor.white.withAlphaComponent(0.3)))
+//        addBar(TabmanNavigationBar(for: bar), dataSource: self, at: .top)
+        addBar(TabmanNavigationBar(for: bar),
+               dataSource: self,
+               at: .custom(view: self.view, layout: { (view) in
+                
+                let superview = view.superview!
+                view.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+                    view.topAnchor.constraint(equalTo: superview.topAnchor),
+                    view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+                    ])
+        }))
+        
+//        addBarWithExtendingBackground(bar,
+//                                      dataSource: self,
+//                                      location: .top,
+//                                      backgroundStyle: .flat(color: UIColor.white.withAlphaComponent(0.3)))
         
     }
     

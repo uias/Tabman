@@ -38,7 +38,7 @@ public extension TabmanViewController {
                                                                at: location,
                                                                topLayoutGuide: self.topLayoutGuide,
                                                                bottomLayoutGuide: self.bottomLayoutGuide)
-            addBar(bar, dataSource: dataSource, at: .custom(view: container.safeAreaView))
+            addBar(bar, dataSource: dataSource, at: .custom(view: container.safeAreaView, layout: nil))
             
             let background = BarBackground(style: backgroundStyle)
             background.translatesAutoresizingMaskIntoConstraints = false

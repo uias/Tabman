@@ -62,7 +62,6 @@ public protocol Bar: AnyObject where Self: UIView {
     /// Object that acts as a delegate to the bar.
     var delegate: BarDelegate? { get set }
     
-    
     /// Reload the data within the bar.
     ///
     /// - Parameters:

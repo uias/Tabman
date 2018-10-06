@@ -18,7 +18,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     public enum BarLocation {
         case top
         case bottom
-        case custom(view: UIView)
+        case custom(view: UIView, layout: ((UIView) -> Void)?)
     }
     
     // MARK: Properties
@@ -120,8 +120,7 @@ public extension TabmanViewController {
     
     func addBar(_ bar: Bar,
                 dataSource: BarDataSource,
-                at location: BarLocation,
-                layout: ((UIView) -> Void)? = nil) {
+                at location: BarLocation) {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
@@ -133,7 +132,7 @@ public extension TabmanViewController {
         bar.delegate = self
         
         addActiveBar(bar)
-        layoutView(barView, at: location, customLayout: layout)
+        layoutView(barView, at: location)
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
         
@@ -176,24 +175,23 @@ public extension TabmanViewController {
     }
     
     private func layoutView(_ view: UIView,
-                            at location: BarLocation,
-                            customLayout: ((UIView) -> Void)?) {
+                            at location: BarLocation) {
         switch location {
         case .top:
             topBarContainer.addArrangedSubview(view)
         case .bottom:
             bottomBarContainer.addArrangedSubview(view)
-        case .custom(let customSuperview):
-            customSuperview.addSubview(view)
-            if customLayout != nil {
-                customLayout?(view)
+        case .custom(let superview, let layout):
+            superview.addSubview(view)
+            if layout != nil {
+                layout?(view)
             } else {
                 view.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    view.leadingAnchor.constraint(equalTo: customSuperview.leadingAnchor),
-                    view.topAnchor.constraint(equalTo: customSuperview.topAnchor),
-                    view.trailingAnchor.constraint(equalTo: customSuperview.trailingAnchor),
-                    view.bottomAnchor.constraint(equalTo: customSuperview.bottomAnchor)
+                    view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+                    view.topAnchor.constraint(equalTo: superview.topAnchor),
+                    view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+                    view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
                     ])
             }
         }
