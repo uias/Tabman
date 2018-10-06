@@ -62,7 +62,7 @@ public final class TabItemBarButton: BarButton {
         label.text = "Item"
     }
     
-    public override func populate(for item: BarItem) {
+    public override func populate(for item: TMBarItem) {
         super.populate(for: item)
         
         label.text = item.title

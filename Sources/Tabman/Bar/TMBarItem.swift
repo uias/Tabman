@@ -1,5 +1,5 @@
 //
-//  BarItem.swift
+//  TMBarItem.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BarItem {
+public struct TMBarItem {
     
     // MARK: Properties
     

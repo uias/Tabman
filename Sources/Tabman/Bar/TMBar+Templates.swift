@@ -1,5 +1,5 @@
 //
-//  TabmanBar+Templates.swift
+//  TMBar+Templates.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension TabmanBar {
+public extension TMBar {
  
     public typealias Buttons = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
     public typealias Tabs = BarView<ConstrainedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>

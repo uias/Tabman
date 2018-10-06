@@ -161,7 +161,7 @@ open class BarView<LayoutType: BarLayout, ButtonType: BarButton, IndicatorType: 
 }
 
 // MARK: - Bar
-extension BarView: TabmanBar {
+extension BarView: TMBar {
     
     public func reloadData(at indexes: ClosedRange<Int>,
                            context: BarReloadContext) {

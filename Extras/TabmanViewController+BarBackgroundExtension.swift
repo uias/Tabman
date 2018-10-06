@@ -25,7 +25,7 @@ public extension TabmanViewController {
     ///   - dataSource: Data source to use for the bar.
     ///   - location: Location of the bar in the view controller.
     ///   - backgroundStyle: Background style to apply (and extend).
-    public func addBarWithExtendingBackground(_ bar: TabmanBar,
+    public func addBarWithExtendingBackground(_ bar: TMBar,
                                               dataSource: BarDataSource,
                                               location: BarLocation,
                                               backgroundStyle: BarBackground.Style) {

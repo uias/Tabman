@@ -90,7 +90,7 @@ open class BarButton: UIControl {
     open func layout(in view: UIView) {
     }
     
-    open func populate(for item: BarItem) {
+    open func populate(for item: TMBarItem) {
     }
     
     open func update(for selectionState: SelectionState) {
