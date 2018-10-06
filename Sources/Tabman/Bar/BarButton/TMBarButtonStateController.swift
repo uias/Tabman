@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A bar button controller that is responsible for handling the control state of buttons.
 internal final class TMBarButtonStateController: TMBarButtonController {
     
     // MARK: Properties

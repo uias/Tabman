@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A controller which is responsible for a collection of bar buttons.
 internal class TMBarButtonController {
     
     // MARK: Properties

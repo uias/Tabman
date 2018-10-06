@@ -15,6 +15,7 @@ internal protocol TMBarButtonInteractionHandler: class {
                               at index: Int)
 }
 
+/// A bar button controller that is responsbile for handling interaction that occurs in bar buttons.
 internal final class TMBarButtonInteractionController: TMBarButtonController {
     
     // MARK: Properties
