@@ -32,7 +32,7 @@
 		46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* TMBar.swift */; };
 		46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */; };
 		46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */; };
-		46E598F2216902A500D8A138 /* TabmanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */; };
+		46E598F4216906C300D8A138 /* TMNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598F3216906C300D8A138 /* TMNavigationBar.swift */; };
 		46E9631E211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift */; };
 		46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* TMBarLayout.swift */; };
 		46E96321211B3A01004C7468 /* TMBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96311211B3A01004C7468 /* TMBarButton.swift */; };
@@ -89,7 +89,7 @@
 		46B7FDFA20BC537000E9BB7E /* TMBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBar.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusProvider.swift; sourceTree = "<group>"; };
 		46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarBackgroundView.swift; sourceTree = "<group>"; };
-		46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanNavigationBar.swift; sourceTree = "<group>"; };
+		46E598F3216906C300D8A138 /* TMNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMNavigationBar.swift; sourceTree = "<group>"; };
 		46E9630D211B3A01004C7468 /* TMConstrainedHorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMConstrainedHorizontalBarLayout.swift; sourceTree = "<group>"; };
 		46E9630F211B3A01004C7468 /* TMBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarLayout.swift; sourceTree = "<group>"; };
 		46E96311211B3A01004C7468 /* TMBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarButton.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		46E598F0216902A500D8A138 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				46E598F1216902A500D8A138 /* TabmanNavigationBar.swift */,
+				46E598F3216906C300D8A138 /* TMNavigationBar.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -488,7 +488,6 @@
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,
 				469E5726215E1E4F004FF071 /* TMBarButton+None.swift in Sources */,
 				46E96327211B3A01004C7468 /* TMBarButtonCollection.swift in Sources */,
-				46E598F2216902A500D8A138 /* TabmanNavigationBar.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
 				46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */,
@@ -515,6 +514,7 @@
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 				46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */,
 				469E5724215E1DC1004FF071 /* TMBarIndicator+None.swift in Sources */,
+				46E598F4216906C300D8A138 /* TMNavigationBar.swift in Sources */,
 				4628609A213EDB63009C707F /* TMBarViewFocusRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

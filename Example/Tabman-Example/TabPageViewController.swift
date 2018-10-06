@@ -55,7 +55,7 @@ class TabPageViewController: TabmanViewController {
         plusButton.tintColor = .white
         bar.trailingAccessoryView = plusButton
         
-        addBar(TabmanNavigationBar(for: bar),
+        addBar(TMNavigationBar(for: bar),
                dataSource: self,
                at: .top)
     }

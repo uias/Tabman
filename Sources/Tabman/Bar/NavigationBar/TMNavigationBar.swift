@@ -1,5 +1,5 @@
 //
-//  TabmanNavigationBar.swift
+//  TMNavigationBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/10/2018.
@@ -11,7 +11,7 @@ import UIKit
 /// Bar which mimicks the appearance of `UINavigationBar`.
 ///
 /// Contains an internal `TMBar` and forwards on all bar responsibility to this instance.
-open class TabmanNavigationBar: UIView {
+open class TMNavigationBar: UIView {
     
     // MARK: Properties
     
@@ -109,7 +109,7 @@ open class TabmanNavigationBar: UIView {
     }
 }
 
-extension TabmanNavigationBar: TMBar {
+extension TMNavigationBar: TMBar {
     
     public weak var dataSource: TMBarDataSource? {
         get {
@@ -143,7 +143,7 @@ extension TabmanNavigationBar: TMBar {
     }
 }
 
-private extension TabmanNavigationBar {
+private extension TMNavigationBar {
     
     func makeContentView() -> UIStackView {
         let stackView = UIStackView()
