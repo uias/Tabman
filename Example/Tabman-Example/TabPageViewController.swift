@@ -130,7 +130,7 @@ class TabPageViewController: TabmanViewController {
         //        print("didScrollToPosition: \(position)")
         
         let relativePosition = navigationOrientation == .vertical ? position.y : position.x
-        gradient?.gradientOffset = relativePosition / CGFloat((pageboyViewController.pageCount ?? 1) - 1)
+        gradient?.gradientOffset = gradientOffset(for: relativePosition)
         statusView.currentPosition = relativePosition
         
         updateBarButtonsForCurrentIndex()
@@ -147,7 +147,7 @@ class TabPageViewController: TabmanViewController {
         
         //        print("didScrollToPageAtIndex: \(index)")
         
-        gradient?.gradientOffset = CGFloat(index) / CGFloat((pageboyViewController.pageCount ?? 1) - 1)
+        gradient?.gradientOffset = gradientOffset(for: CGFloat(index))
         statusView.currentIndex = index
         updateBarButtonsForCurrentIndex()
     }
@@ -184,5 +184,12 @@ extension TabPageViewController: BarDataSource {
     
     func barItem(for bar: Bar, at index: Int) -> BarItem {
         return BarItem(title: "Page No. \(index + 1)")
+    }
+}
+
+private extension TabPageViewController {
+    
+    private func gradientOffset(for position: CGFloat) -> CGFloat {
+        return position / CGFloat((self.pageCount ?? 1) - 1)
     }
 }
