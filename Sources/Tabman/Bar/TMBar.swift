@@ -70,7 +70,6 @@ public protocol TMBar: AnyObject where Self: UIView {
     func reloadData(at indexes: ClosedRange<Int>,
                     context: TMBarReloadContext)
     
-    
     /// Update the display in the bar for a particular page position.
     ///
     /// - Parameters:

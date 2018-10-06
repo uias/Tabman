@@ -15,6 +15,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Types
     
+    /// Location of the bar in the view controller.
+    ///
+    /// - top: Pin to the top of the safe area.
+    /// - bottom: Pin to the bottom of the safe area.
+    /// - custom: Add the view to a custom view and provide custom layout.
+    ///           If no layout is provided, all edge anchors will be constrained
+    ///           to the superview.
     public enum BarLocation {
         case top
         case bottom
