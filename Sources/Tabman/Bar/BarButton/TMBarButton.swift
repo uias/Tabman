@@ -8,10 +8,16 @@
 
 import UIKit
 
+/// A button that appears in a bar and provides the interaction for initiating a page index update.
 open class TMBarButton: UIControl {
     
     // MARK: Types
     
+    /// Selection state of the button.
+    ///
+    /// - unselected: Unselected - Current page index is not currently mapped to the button.
+    /// - partial: Partially selected - Current page index is either arriving or departing from the mapped button.
+    /// - selected: Selected - Current page index is mapped to the button.
     public enum SelectionState {
         case unselected
         case partial(delta: CGFloat)
@@ -26,6 +32,7 @@ open class TMBarButton: UIControl {
     private var contentViewTrailing: NSLayoutConstraint!
     private var contentViewBottom: NSLayoutConstraint!
 
+    /// Content inset of the button contents.
     public var contentInset: UIEdgeInsets = .zero {
         didSet {
             contentViewLeading.constant = contentInset.left
@@ -35,6 +42,7 @@ open class TMBarButton: UIControl {
         }
     }
     
+    /// Selection state of the button.
     public var selectionState: SelectionState = .unselected {
         didSet {
             self.isSelected = selectionState == .selected
@@ -42,7 +50,8 @@ open class TMBarButton: UIControl {
         }
     }
     
-    public let background = TMBarBackgroundView()
+    /// Background view.
+    public let backgroundView = TMBarBackgroundView()
     
     // MARK: Init
     
@@ -63,13 +72,13 @@ open class TMBarButton: UIControl {
     
     private func initialize() {
         
-        addSubview(background)
-        background.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            background.leadingAnchor.constraint(equalTo: leadingAnchor),
-            background.topAnchor.constraint(equalTo: topAnchor),
-            background.trailingAnchor.constraint(equalTo: trailingAnchor),
-            background.bottomAnchor.constraint(equalTo: bottomAnchor)
+            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         
         contentView.isUserInteractionEnabled = false

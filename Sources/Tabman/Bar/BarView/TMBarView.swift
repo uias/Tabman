@@ -64,12 +64,10 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
      **/
     public weak var delegate: TMBarDelegate?
     
-    /**
-     Background of the BarView.
-     
-     Defaults to `UIColor.white`.
-     **/
-    public var background = TMBarBackgroundView(style: .clear)
+    /// Background of the BarView.
+    ///
+    /// Note: Defaults to `UIColor.clear`.
+    public var backgroundView = TMBarBackgroundView(style: .clear)
 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
@@ -111,13 +109,13 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private func layout(in view: UIView) {
         var constraints = [NSLayoutConstraint]()
         
-        view.addSubview(background)
-        background.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
-            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            background.topAnchor.constraint(equalTo: view.topAnchor),
-            background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            background.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
         
         view.addSubview(rootContainer)
