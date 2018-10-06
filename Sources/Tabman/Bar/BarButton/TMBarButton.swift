@@ -1,5 +1,5 @@
 //
-//  BarButton.swift
+//  TMBarButton.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BarButton: UIControl {
+open class TMBarButton: UIControl {
     
     // MARK: Types
     
@@ -101,9 +101,9 @@ open class BarButton: UIControl {
     }
 }
 
-extension BarButton.SelectionState: Equatable {
+extension TMBarButton.SelectionState: Equatable {
     
-    static func from(rawValue: CGFloat) -> BarButton.SelectionState {
+    static func from(rawValue: CGFloat) -> TMBarButton.SelectionState {
         switch rawValue {
         case 0.0:
             return .unselected
@@ -125,7 +125,7 @@ extension BarButton.SelectionState: Equatable {
         }
     }
     
-    public static func == (lhs: BarButton.SelectionState, rhs: BarButton.SelectionState) -> Bool {
+    public static func == (lhs: TMBarButton.SelectionState, rhs: TMBarButton.SelectionState) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
 }

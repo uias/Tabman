@@ -48,7 +48,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
         super.isPagingEnabled = true
     }
     
-    open override func insert(buttons: [BarButton], at index: Int) {
+    open override func insert(buttons: [TMBarButton], at index: Int) {
         super.insert(buttons: buttons, at: index)
         constrain(views: buttons, for: visibleButtonCount)
     }

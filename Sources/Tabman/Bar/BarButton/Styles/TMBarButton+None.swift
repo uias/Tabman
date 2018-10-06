@@ -1,5 +1,5 @@
 //
-//  BarButton+None.swift
+//  TMBarButton+None.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/09/2018.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-public extension BarButton {
+public extension TMBarButton {
     
-    public final class None: BarButton {
+    public final class None: TMBarButton {
         
         // MARK: Properties
         

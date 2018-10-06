@@ -1,5 +1,5 @@
 //
-//  LabelBarButton.swift
+//  TMLabelBarButton.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class LabelBarButton: BarButton {
+public final class TMLabelBarButton: TMBarButton {
     
     // MARK: Defaults
     
@@ -65,7 +65,7 @@ public final class LabelBarButton: BarButton {
         label.text = item.title
     }
     
-    public override func update(for selectionState: BarButton.SelectionState) {
+    public override func update(for selectionState: TMBarButton.SelectionState) {
         
         let transitionColor = color.interpolate(with: selectedColor,
                                                 percent: selectionState.rawValue)
@@ -74,7 +74,7 @@ public final class LabelBarButton: BarButton {
 }
 
 // MARK: - Label manipulation
-public extension LabelBarButton {
+public extension TMLabelBarButton {
     
     public var text: String? {
         set {

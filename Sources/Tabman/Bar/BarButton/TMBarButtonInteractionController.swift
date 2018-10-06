@@ -1,5 +1,5 @@
 //
-//  BarButtonInteractionController.swift
+//  TMBarButtonInteractionController.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 05/07/2018.
@@ -8,22 +8,22 @@
 
 import Foundation
 
-internal protocol BarButtonInteractionHandler: class {
+internal protocol TMBarButtonInteractionHandler: class {
     
-    func barButtonInteraction(controller: BarButtonInteractionController,
-                              didHandlePressOf button: BarButton,
+    func barButtonInteraction(controller: TMBarButtonInteractionController,
+                              didHandlePressOf button: TMBarButton,
                               at index: Int)
 }
 
-internal final class BarButtonInteractionController: BarButtonController {
+internal final class TMBarButtonInteractionController: TMBarButtonController {
     
     // MARK: Properties
     
-    private weak var handler: BarButtonInteractionHandler?
+    private weak var handler: TMBarButtonInteractionHandler?
     
     // MARK: Init
     
-    init(for barButtons: [BarButton], handler: BarButtonInteractionHandler) {
+    init(for barButtons: [TMBarButton], handler: TMBarButtonInteractionHandler) {
         self.handler = handler
         super.init(for: barButtons)
         
@@ -32,13 +32,13 @@ internal final class BarButtonInteractionController: BarButtonController {
         })
     }
     
-    override init(for barButtons: [BarButton]?) {
+    override init(for barButtons: [TMBarButton]?) {
         fatalError("Use init(for barButtons: handler:)")
     }
     
     // MARK: Actions
     
-    @objc private func barButtonPressed(_ sender: BarButton) {
+    @objc private func barButtonPressed(_ sender: TMBarButton) {
         guard let index = barButtons.index(where: { $0.object === sender }) else {
             return
         }

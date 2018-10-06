@@ -50,7 +50,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
         self.interButtonSpacing = Defaults.interButtonSpacing
     }
     
-    open override func insert(buttons: [BarButton], at index: Int) {
+    open override func insert(buttons: [TMBarButton], at index: Int) {
         var currentIndex = index
         for button in buttons {
             if index >= stackView.arrangedSubviews.count { // just add
@@ -62,7 +62,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
         }
     }
     
-    open override func remove(buttons: [BarButton]) {
+    open override func remove(buttons: [TMBarButton]) {
         for button in buttons {
             stackView.removeArrangedSubview(button)
         }

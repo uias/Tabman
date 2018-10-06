@@ -1,5 +1,5 @@
 //
-//  BarButtonStateController.swift
+//  TMBarButtonStateController.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 03/07/2018.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-internal final class BarButtonStateController: BarButtonController {
+internal final class TMBarButtonStateController: TMBarButtonController {
     
     // MARK: Properties
     
-    private weak var selectedButton: BarButton? {
+    private weak var selectedButton: TMBarButton? {
         didSet {
             if oldValue !== selectedButton {
                 oldValue?.selectionState = .unselected

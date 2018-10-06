@@ -1,5 +1,5 @@
 //
-//  BarButtonHandler.swift
+//  TMBarButtonCollection.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 03/08/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class BarButtonCollection<BarButtonType: BarButton> {
+public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
     
     // MARK: Types
     
@@ -20,8 +20,8 @@ public final class BarButtonCollection<BarButtonType: BarButton> {
     /// Raw collection of currently active bar buttons.
     public internal(set) var all = [BarButtonType]() {
         didSet {
-            self.stateController = BarButtonStateController(for: all)
-            self.interactionController = BarButtonInteractionController(for: all, handler: self)
+            self.stateController = TMBarButtonStateController(for: all)
+            self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
             
             for button in all {
                 customization?(button)
@@ -32,18 +32,18 @@ public final class BarButtonCollection<BarButtonType: BarButton> {
     private var customization: Customization?
     
     /// Controller which handles button state updates.
-    internal private(set) var stateController: BarButtonStateController!
+    internal private(set) var stateController: TMBarButtonStateController!
     /// Controller which handles button interaction.
-    internal private(set) var interactionController: BarButtonInteractionController!
+    internal private(set) var interactionController: TMBarButtonInteractionController!
     
     /// External handler that responds to interaction controller events.
-    internal weak var interactionHandler: BarButtonInteractionHandler?
+    internal weak var interactionHandler: TMBarButtonInteractionHandler?
     
     // MARK: Init
     
     init() {
-        self.stateController = BarButtonStateController(for: all)
-        self.interactionController = BarButtonInteractionController(for: all, handler: self)
+        self.stateController = TMBarButtonStateController(for: all)
+        self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
     }
     
     // MARK: Customization
@@ -63,10 +63,10 @@ public final class BarButtonCollection<BarButtonType: BarButton> {
     }
 }
 
-extension BarButtonCollection: BarButtonInteractionHandler {
+extension TMBarButtonCollection: TMBarButtonInteractionHandler {
     
-    func barButtonInteraction(controller: BarButtonInteractionController,
-                              didHandlePressOf button: BarButton,
+    func barButtonInteraction(controller: TMBarButtonInteractionController,
+                              didHandlePressOf button: TMBarButton,
                               at index: Int) {
         interactionHandler?.barButtonInteraction(controller: controller,
                                                  didHandlePressOf: button,

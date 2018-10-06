@@ -1,5 +1,5 @@
 //
-//  TabItemBarButton.swift
+//  TMTabItemBarButton.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 02/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class TabItemBarButton: BarButton {
+public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Defaults
     
@@ -70,7 +70,7 @@ public final class TabItemBarButton: BarButton {
     }
 }
 
-public extension TabItemBarButton {
+public extension TMTabItemBarButton {
     
     public var imageSize: CGSize {
         set {

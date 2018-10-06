@@ -10,7 +10,7 @@ import UIKit
 import Pageboy
 
 /// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
-open class TMBarView<LayoutType: TMBarLayout, ButtonType: BarButton, IndicatorType: BarIndicator>: UIView {
+open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: BarIndicator>: UIView {
     
     // MARK: Types
     
@@ -36,7 +36,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: BarButton, IndicatorTy
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
     /// The bar buttons that are currently displayed in the bar view.
-    public let buttons = BarButtonCollection<ButtonType>()
+    public let buttons = TMBarButtonCollection<ButtonType>()
 
     /// Accessory View that is visible at the leading end of the bar view.
     open var leadingAccessoryView: UIView? {
@@ -346,10 +346,10 @@ extension TMBarView {
 }
 
 // MARK: - Interaction
-extension TMBarView: BarButtonInteractionHandler {
+extension TMBarView: TMBarButtonInteractionHandler {
     
-    func barButtonInteraction(controller: BarButtonInteractionController,
-                              didHandlePressOf button: BarButton,
+    func barButtonInteraction(controller: TMBarButtonInteractionController,
+                              didHandlePressOf button: TMBarButton,
                               at index: Int) {
         delegate?.bar(self, didRequestScrollTo: index)
     }

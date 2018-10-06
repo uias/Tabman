@@ -96,13 +96,13 @@ open class TMBarLayout: TMBarViewFocusProvider {
     /// - Parameters:
     ///   - buttons: The buttons to insert.
     ///   - index: The index to start inserting the buttons at.
-    open func insert(buttons: [BarButton], at index: Int) {
+    open func insert(buttons: [TMBarButton], at index: Int) {
     }
 
     /// Remove existing bar buttons from the layout.
     ///
     /// - Parameter buttons: The buttons to remove.
-    open func remove(buttons: [BarButton]) {
+    open func remove(buttons: [TMBarButton]) {
     }
 
     // MARK: BarViewFocusProvider

@@ -41,10 +41,10 @@ public extension TMBarLayout {
             super.contentMode = .fit
         }
         
-        public override func insert(buttons: [BarButton], at index: Int) {
+        public override func insert(buttons: [TMBarButton], at index: Int) {
         }
         
-        public override func remove(buttons: [BarButton]) {
+        public override func remove(buttons: [TMBarButton]) {
         }
         
         public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
