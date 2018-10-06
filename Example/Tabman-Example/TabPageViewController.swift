@@ -39,7 +39,7 @@ class TabPageViewController: TabmanViewController {
         
         dataSource = self
         
-        let bar = Bar.ButtonBar()
+        let bar = TabmanBar.ButtonBar()
         
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
@@ -180,7 +180,7 @@ extension TabPageViewController: PageboyViewControllerDataSource {
 
 extension TabPageViewController: BarDataSource {
     
-    func barItem(for bar: Bar, at index: Int) -> BarItem {
+    func barItem(for bar: TabmanBar, at index: Int) -> BarItem {
         return BarItem(title: "Page No. \(index + 1)")
     }
 }

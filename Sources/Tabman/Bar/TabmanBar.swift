@@ -1,5 +1,5 @@
 //
-//  Bar.swift
+//  TabmanBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/05/2018.
@@ -17,7 +17,7 @@ public protocol BarDataSource: class {
     ///   - bar: The bar.
     ///   - index: Index of the item.
     /// - Returns: The BarItem.
-    func barItem(for bar: Bar, at index: Int) -> BarItem
+    func barItem(for bar: TabmanBar, at index: Int) -> BarItem
 }
 
 /// Delegate that provides bar with responses to user interaction.
@@ -28,7 +28,7 @@ public protocol BarDelegate: class {
     /// - Parameters:
     ///   - bar: The bar.
     ///   - index: The new index.
-    func bar(_ bar: Bar,
+    func bar(_ bar: TabmanBar,
              didRequestScrollTo index: Int)
 }
 
@@ -55,7 +55,7 @@ public enum BarUpdateDirection {
 }
 
 /// A conforming `UIView` that can display a page position for a TabmanViewController.
-public protocol Bar: AnyObject where Self: UIView {
+public protocol TabmanBar: AnyObject where Self: UIView {
     
     /// Object that acts as a data source to the bar.
     var dataSource: BarDataSource? { get set }

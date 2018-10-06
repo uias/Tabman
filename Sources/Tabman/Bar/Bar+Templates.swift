@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Bar {
+public extension TabmanBar {
  
     public typealias ButtonBar = BarView<HorizontalBarLayout, LabelBarButton, LineBarIndicator>
     public typealias TabBar = BarView<ConstrainedHorizontalBarLayout, TabItemBarButton, BarIndicator.None>

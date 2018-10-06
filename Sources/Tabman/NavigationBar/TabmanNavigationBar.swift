@@ -12,7 +12,7 @@ open class TabmanNavigationBar: UIView {
     
     // MARK: Properties
     
-    private let bar: Bar
+    private let bar: TabmanBar
     private var barView: UIView {
         return bar as! UIView
     }
@@ -36,7 +36,7 @@ open class TabmanNavigationBar: UIView {
         fatalError("Use init(for:viewController:) - TabmanNavigationBar does not support Interface Builder")
     }
     
-    public required init(for bar: Bar) {
+    public required init(for bar: TabmanBar) {
         self.bar = bar
         super.init(frame: .zero)
         
@@ -90,7 +90,7 @@ open class TabmanNavigationBar: UIView {
     }
 }
 
-extension TabmanNavigationBar: Bar {
+extension TabmanNavigationBar: TabmanBar {
     
     public weak var dataSource: BarDataSource? {
         get {

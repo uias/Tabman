@@ -30,7 +30,7 @@
 		469E5728215E1F34004FF071 /* BarLayout+None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5727215E1F34004FF071 /* BarLayout+None.swift */; };
 		46A9D28A213C145D001D9A70 /* BarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* BarIndicatorContainer.swift */; };
 		46A9D28C213C3005001D9A70 /* BarViewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* BarViewGrid.swift */; };
-		46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* Bar.swift */; };
+		46B7FDFB20BC537000E9BB7E /* TabmanBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* TabmanBar.swift */; };
 		46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */; };
 		46E598EC2168C0F200D8A138 /* TabmanNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598EB2168C0F200D8A138 /* TabmanNavigationBar.swift */; };
 		46E9631E211B3A01004C7468 /* ConstrainedHorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630D211B3A01004C7468 /* ConstrainedHorizontalBarLayout.swift */; };
@@ -87,7 +87,7 @@
 		469E5727215E1F34004FF071 /* BarLayout+None.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarLayout+None.swift"; sourceTree = "<group>"; };
 		46A9D289213C145D001D9A70 /* BarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarIndicatorContainer.swift; sourceTree = "<group>"; };
 		46A9D28B213C3005001D9A70 /* BarViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewGrid.swift; sourceTree = "<group>"; };
-		46B7FDFA20BC537000E9BB7E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		46B7FDFA20BC537000E9BB7E /* TabmanBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanBar.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* BarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewFocusProvider.swift; sourceTree = "<group>"; };
 		46E598EB2168C0F200D8A138 /* TabmanNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanNavigationBar.swift; sourceTree = "<group>"; };
 		46E9630D211B3A01004C7468 /* ConstrainedHorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainedHorizontalBarLayout.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		46B7FDF920BC52D000E9BB7E /* Bar */ = {
 			isa = PBXGroup;
 			children = (
-				46B7FDFA20BC537000E9BB7E /* Bar.swift */,
+				46B7FDFA20BC537000E9BB7E /* TabmanBar.swift */,
 				4612BCF120C88D24001A37B5 /* Bar+Templates.swift */,
 				4612BCE620C86815001A37B5 /* BarItem.swift */,
 				462941D92111EB7C00345B52 /* BarView */,
@@ -489,7 +489,7 @@
 				469E5726215E1E4F004FF071 /* BarButton+None.swift in Sources */,
 				46E96327211B3A01004C7468 /* BarButtonCollection.swift in Sources */,
 				462FB6EB21370D3B00768088 /* BarBackground.swift in Sources */,
-				46B7FDFB20BC537000E9BB7E /* Bar.swift in Sources */,
+				46B7FDFB20BC537000E9BB7E /* TabmanBar.swift in Sources */,
 				46E96320211B3A01004C7468 /* BarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* BarViewFocusProvider.swift in Sources */,
 				46E96325211B3A01004C7468 /* BarButtonStateController.swift in Sources */,

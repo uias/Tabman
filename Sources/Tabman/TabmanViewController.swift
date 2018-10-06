@@ -26,7 +26,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private let topBarContainer = UIStackView()
     private let bottomBarContainer = UIStackView()
     
-    private var activeBars = [Bar]()
+    private var activeBars = [TabmanBar]()
     
     // MARK: Init
     
@@ -109,7 +109,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: BarDelegate
     
-    open func bar(_ bar: Bar,
+    open func bar(_ bar: TabmanBar,
                   didRequestScrollTo index: PageboyViewController.PageIndex) {
         scrollToPage(.at(index: index), animated: true, completion: nil)
     }
@@ -118,7 +118,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 // MARK: - Bar Layout
 public extension TabmanViewController {
     
-    func addBar(_ bar: Bar,
+    func addBar(_ bar: TabmanBar,
                 dataSource: BarDataSource,
                 at location: BarLocation) {
         guard let barView = bar as? UIView else {
@@ -201,7 +201,7 @@ public extension TabmanViewController {
 // MARK: - Bar Management
 private extension TabmanViewController {
     
-    func addActiveBar(_ bar: Bar) {
+    func addActiveBar(_ bar: TabmanBar) {
         activeBars.append(bar)
     }
     
@@ -213,7 +213,7 @@ private extension TabmanViewController {
                                             animated: animated) })
     }
     
-    func updateBar(_ bar: Bar,
+    func updateBar(_ bar: TabmanBar,
                    to position: CGFloat?,
                    direction: NavigationDirection = .neutral,
                    animated: Bool) {
