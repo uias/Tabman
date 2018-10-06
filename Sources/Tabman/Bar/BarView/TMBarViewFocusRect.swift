@@ -45,7 +45,7 @@ internal struct TMBarViewFocusRect {
     /// - Parameter isProgressive: Whether the rect should be displayed as progressive (i.e. always increases from initial position)
     /// - Parameter includeOverscroll: Whether to include overscrolling if relevant.
     /// - Returns: Rect with additional factors accounted for.
-    func rect(isProgressive: Bool, overscrollBehavior: BarIndicator.OverscrollBehavior) -> CGRect {
+    func rect(isProgressive: Bool, overscrollBehavior: TMBarIndicator.OverscrollBehavior) -> CGRect {
         switch isProgressive {
         case true:
             return progressiveRect(with: overscrollBehavior, for: rect)
@@ -58,7 +58,7 @@ internal struct TMBarViewFocusRect {
 
 private extension TMBarViewFocusRect {
     
-    func rect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
+    func rect(with overscrollBehavior: TMBarIndicator.OverscrollBehavior,
               for rect: CGRect) -> CGRect {
         var rect = rect
         
@@ -88,7 +88,7 @@ private extension TMBarViewFocusRect {
         return rect
     }
     
-    func progressiveRect(with overscrollBehavior: BarIndicator.OverscrollBehavior,
+    func progressiveRect(with overscrollBehavior: TMBarIndicator.OverscrollBehavior,
                          for rect: CGRect) -> CGRect {
         var rect = rect
         

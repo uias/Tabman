@@ -1,5 +1,5 @@
 //
-//  BarIndicatorLayout.swift
+//  TMBarIndicatorLayoutHandler.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 14/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal final class BarIndicatorLayoutHandler {
+internal final class TMBarIndicatorLayoutHandler {
     
     // MARK: Properties
     

@@ -1,5 +1,5 @@
 //
-//  BarIndicator.swift
+//  TMBarIndicator.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
@@ -9,9 +9,9 @@
 import UIKit
 
 /**
- `BarIndicator` is a view that is displayed on a `BarView` to provide indication of the current page position.
+ `TMBarIndicator` is a view that is displayed on a `BarView` to provide indication of the current page position.
  **/
-open class BarIndicator: UIView {
+open class TMBarIndicator: UIView {
     
     // MARK: Types
     

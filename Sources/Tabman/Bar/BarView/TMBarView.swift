@@ -10,7 +10,7 @@ import UIKit
 import Pageboy
 
 /// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
-open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: BarIndicator>: UIView {
+open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView {
     
     // MARK: Types
     
@@ -73,7 +73,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
 
     /// The indicator that is displayed in this bar view.
     public let indicator = IndicatorType()
-    private var indicatorLayoutHandler: BarIndicatorLayoutHandler?
+    private var indicatorLayoutHandler: TMBarIndicatorLayoutHandler?
 
     /**
      Style to use when animating bar position updates.
@@ -312,8 +312,8 @@ extension TMBarView {
     ///
     /// - Parameter indicator: Indicator to create container for.
     /// - Returns: Indicator container.
-    private func container(for indicator: IndicatorType) -> BarIndicatorContainer<IndicatorType> {
-        let container = BarIndicatorContainer(for: indicator)
+    private func container(for indicator: IndicatorType) -> TMBarIndicatorContainer<IndicatorType> {
+        let container = TMBarIndicatorContainer(for: indicator)
         switch indicator.displayStyle {
         case .footer:
             grid.addFooterSubview(container)

@@ -1,5 +1,5 @@
 //
-//  BarIndicatorContainer.swift
+//  TMBarIndicatorContainer.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 02/09/2018.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-internal final class BarIndicatorContainer<IndicatorType: BarIndicator>: UIView {
+internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIView {
     
     // MARK: Properties
     
-    private(set) var layoutHandler: BarIndicatorLayoutHandler!
+    private(set) var layoutHandler: TMBarIndicatorLayoutHandler!
     
     // MARK: Init
     
@@ -42,7 +42,7 @@ internal final class BarIndicatorContainer<IndicatorType: BarIndicator>: UIView 
         let width = indicator.widthAnchor.constraint(equalToConstant: 0.0)
         
         NSLayoutConstraint.activate([leading, top, bottom, width])
-        self.layoutHandler = BarIndicatorLayoutHandler(leading: leading,
+        self.layoutHandler = TMBarIndicatorLayoutHandler(leading: leading,
                                                        width: width)
     }
 }

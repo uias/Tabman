@@ -1,5 +1,5 @@
 //
-//  BarIndicator+None.swift
+//  TMBarIndicator+None.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/09/2018.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-public extension BarIndicator {
+public extension TMBarIndicator {
     
     /// Indicator that is zero height and hidden.
     ///
     /// Use this if you do not want a visible indicator in the bar.
-    public final class None: BarIndicator {
+    public final class None: TMBarIndicator {
         
         // MARK: Properties
         
-        public override var displayStyle: BarIndicator.DisplayStyle {
+        public override var displayStyle: TMBarIndicator.DisplayStyle {
             return .fill
         }
         

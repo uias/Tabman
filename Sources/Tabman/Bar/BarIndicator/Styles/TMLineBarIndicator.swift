@@ -1,5 +1,5 @@
 //
-//  LineBarIndicator.swift
+//  TMLineBarIndicator.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class LineBarIndicator: BarIndicator {
+open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Types
     
@@ -27,7 +27,7 @@ open class LineBarIndicator: BarIndicator {
     
     // MARK: Properties
     
-    open override var displayStyle: BarIndicator.DisplayStyle {
+    open override var displayStyle: TMBarIndicator.DisplayStyle {
         return .footer
     }
     
@@ -72,7 +72,7 @@ open class LineBarIndicator: BarIndicator {
     }
 }
 
-private extension LineBarIndicator.Weight {
+private extension TMLineBarIndicator.Weight {
     
     var rawValue: CGFloat {
         switch self {
@@ -88,7 +88,7 @@ private extension LineBarIndicator.Weight {
     }
 }
 
-private extension LineBarIndicator.CornerStyle {
+private extension TMLineBarIndicator.CornerStyle {
     
     func cornerRadius(for weight: CGFloat, in frame: CGRect) -> CGFloat {
         switch self {
