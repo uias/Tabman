@@ -19,8 +19,6 @@ class TabPageViewController: TabmanViewController {
     var gradient: GradientViewController? {
         return parent as? GradientViewController
     }
-    var previousBarButton: UIBarButtonItem?
-    var nextBarButton: UIBarButtonItem?
     
     private var activeBulletinManager: BLTNItemManager?
     
@@ -67,8 +65,6 @@ class TabPageViewController: TabmanViewController {
             button.color = tintColor.withAlphaComponent(0.4)
         }
         bar.indicator.tintColor = tintColor
-        
-        addBarButtonsIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,8 +131,6 @@ class TabPageViewController: TabmanViewController {
         let relativePosition = navigationOrientation == .vertical ? position.y : position.x
         gradient?.gradientOffset = gradientOffset(for: relativePosition)
         statusView.currentPosition = relativePosition
-        
-        updateBarButtonsForCurrentIndex()
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
@@ -152,7 +146,6 @@ class TabPageViewController: TabmanViewController {
         
         gradient?.gradientOffset = gradientOffset(for: CGFloat(index))
         statusView.currentIndex = index
-        updateBarButtonsForCurrentIndex()
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController,
