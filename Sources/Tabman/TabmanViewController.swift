@@ -143,7 +143,7 @@ public extension TabmanViewController {
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
         
-        if let pageCount = self.pageCount {
+        if let pageCount = self.pageCount, pageCount > 0 {
             bar.reloadData(at: 0...pageCount - 1, context: .full)
         }
     }

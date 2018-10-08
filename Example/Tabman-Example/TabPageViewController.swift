@@ -24,6 +24,8 @@ class TabPageViewController: TabmanViewController {
     
     private var activeBulletinManager: BLTNItemManager?
     
+    let bar = TMBar.ButtonBar()
+    
     lazy var viewControllers: [UIViewController] = {
         var viewControllers = [UIViewController]()
         for _ in 0 ..< 5 {
@@ -38,23 +40,18 @@ class TabPageViewController: TabmanViewController {
         super.viewDidLoad()
         
         dataSource = self
-        
-        let bar = TMBar.ButtonBar()
-        
+
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-//        bar.buttons.customize { (button) in
-//            button.selectedColor = .white
-//            button.color = UIColor.white.withAlphaComponent(0.4)
-//        }
-//        bar.indicator.tintColor = .white
-//        bar.indicator.weight = .light
+        bar.indicator.weight = .light
         
+        // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)
         plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
         plusButton.tintColor = .white
         bar.trailingAccessoryView = plusButton
         
+        // Add the bar to the view controller - wrapping it in a `TMNavigationBar`.
         addBar(TMNavigationBar(for: bar),
                dataSource: self,
                at: .top)
@@ -62,6 +59,14 @@ class TabPageViewController: TabmanViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Customize bar colors for gradient background.
+        let tintColor = gradient?.activeColors?.first ?? .white
+        bar.buttons.customize { (button) in
+            button.selectedColor = tintColor
+            button.color = tintColor.withAlphaComponent(0.4)
+        }
+        bar.indicator.tintColor = tintColor
         
         addBarButtonsIfNeeded()
     }
