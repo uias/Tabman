@@ -104,12 +104,12 @@ extension TabViewController: BarDataSource {
 }
 ```
 
-### Choosing an outfit.
-Tabman provides numerous easy to use styles out of the box:
+### Choosing a look.
+Tabman provides numerous, easy to use styles out of the box:
 
 TODO
 
-### Customize to your hearts content.
+### Customize. Customize. Customize.
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
 <p align="center">
@@ -125,7 +125,7 @@ bar.animationStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-More: [**TMBarView Appearance Properties**]()
+**More: [**TMBarView Appearance Properties**]()**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
@@ -133,7 +133,7 @@ More: [**TMBarView Appearance Properties**]()
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
-More: [**TMBarLayout Appearance Properties**]()
+**More: [**TMBarLayout Appearance Properties**]()**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -149,17 +149,17 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-More: [**TMBarButton Appearance Properties**]()
+**More: [**TMBarButton Appearance Properties**]()**
 
 #### TMBarIndicator
-Last, but certainly not least, is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
+Lastly is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
 
 ```swift
 bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-More: [**TMBarIndicator Appearance Properties**]()
+**More: [**TMBarIndicator Appearance Properties**]()**
 
 ## 🎨 Going Completely Custom
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
