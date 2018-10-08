@@ -166,9 +166,7 @@ bar.indicator.weight = .heavy
 ## 🎨 Going Completely Custom
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
 
-Each `TMBarView` is composed of three generic constraints which map directly to the distinct areas within itself: (`TMBarLayout`, `TMBarButton`, `TMBarIndicator`).
-
-This means...
+`TMBarView` leverages generics to define and serve the three distinct functional areas of the bar. This means...
 
 ```swift
 // ...that the preset...
@@ -187,7 +185,7 @@ let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 That's as easy as it is.
 
 ### What if I want my own thing?
-As replacing the type of layout, button or indicator is as simple as described above, you have the ability to define your own subclasses without too much of a headache.
+As replacing the type of layout, button or indicator is as simple as above, you have the ability to define your own subclasses without too much of a headache.
 
 The following guides should help you get on the right path...
 
