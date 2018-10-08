@@ -10,7 +10,7 @@ import Foundation
 @testable import Tabman
 import Pageboy
 
-class MockBarView: UIView, TabmanBar {
+class MockBarView: UIView, TMBar {
     
     
     

@@ -82,7 +82,7 @@ class TabmanViewControllerTests: XCTestCase {
         let bar = MockBarView()
         viewController.addBar(bar,
                               dataSource: barDataSource,
-                              at: .custom(view: customContainer))
+                              at: .custom(view: customContainer, layout: nil))
         
         XCTAssertTrue(customContainer.subviews.first === bar)
     }
