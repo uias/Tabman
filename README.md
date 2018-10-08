@@ -127,7 +127,7 @@ bar.animationStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-**More: [**TMBarView Appearance Properties**](./Documentation/Customization/TMBARVIEW_APPEARANCE.md)**
+**More: [**TMBarView Customization**](./Documentation/Customization/TMBARVIEW_APPEARANCE.md)**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
@@ -135,7 +135,7 @@ bar.animationStyle = .snap
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
-**More: [**TMBarLayout Appearance Properties**](./Documentation/Customization/TMBARLAYOUT_APPEARANCE.md)**
+**More: [**TMBarLayout Customization**](./Documentation/Customization/TMBARLAYOUT_APPEARANCE.md)**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -151,7 +151,7 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-**More: [**TMBarButton Appearance Properties**](./Documentation/Customization/TMBARBUTTON_APPEARANCE.md)**
+**More: [**TMBarButton Customization**](./Documentation/Customization/TMBARBUTTON_APPEARANCE.md)**
 
 #### TMBarIndicator
 Lastly is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
@@ -161,7 +161,7 @@ bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-**More: [**TMBarIndicator Appearance Properties**](./Documentation/Customization/TMBARINDICATOR_APPEARANCE.md)**
+**More: [**TMBarIndicator Customization**](./Documentation/Customization/TMBARINDICATOR_APPEARANCE.md)**
 
 ## 🎨 Going Completely Custom
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.

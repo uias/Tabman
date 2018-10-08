@@ -16,6 +16,10 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     public typealias BarButtonCustomization = (ButtonType) -> Void
     
+    /// Animation style for indicated position updates.
+    ///
+    /// - progressive: The bar will seemlessly transition between each button in progressive steps.
+    /// - snap: The bar will transition between each button by rounding and snapping to each positional bound.
     public enum AnimationStyle {
         case progressive
         case snap
@@ -66,7 +70,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     /// Background of the BarView.
     ///
-    /// Note: Defaults to `UIColor.clear`.
+    /// Note: Default style is `UIColor.clear`.
     public var backgroundView = TMBarBackgroundView(style: .clear)
 
     /// The indicator that is displayed in this bar view.
@@ -258,7 +262,7 @@ extension TMBarView: TMBar {
 // MARK: - Customization
 public extension TMBarView {
     
-    /// Whether the layout should be allowed to be scrolled by the user.
+    /// Whether the bar contents should be allowed to be scrolled by the user.
     public var isScrollEnabled: Bool {
         set {
             scrollView.isScrollEnabled = newValue
