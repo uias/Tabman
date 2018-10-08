@@ -40,8 +40,9 @@ class TabPageViewController: TabmanViewController {
         dataSource = self
 
         // Customization
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
         bar.indicator.weight = .light
+        bar.indicator.cornerStyle = .eliptical
         
         // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)
