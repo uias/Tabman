@@ -127,7 +127,7 @@ bar.animationStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-**More: [**TMBarView Customization**](./Documentation/Customization/TMBarView%20Customization.md)**
+**More: [**TMBarView Customization**](./Docs/Customization/TMBarView%20Customization.md)**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
@@ -135,7 +135,7 @@ bar.animationStyle = .snap
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
-**More: [**TMBarLayout Customization**](./Documentation/Customization/TMBarLayout%20Customization.md)**
+**More: [**TMBarLayout Customization**](./Docs/Customization/TMBarLayout%20Customization.md)**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -151,7 +151,7 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-**More: [**TMBarButton Customization**](./Documentation/Customization/TMBarButton%20Customization.md)**
+**More: [**TMBarButton Customization**](./Docs/Customization/TMBarButton%20Customization.md)**
 
 #### TMBarIndicator
 Lastly is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
@@ -161,7 +161,7 @@ bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-**More: [**TMBarIndicator Customization**](./Documentation/Customization/TMBarIndicator%20Customization.md)**
+**More: [**TMBarIndicator Customization**](./Docs/Customization/TMBarIndicator%20Customization.md)**
 
 ## 🎨 Going Completely Custom
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
@@ -194,7 +194,7 @@ The following guides should help you get on the right path...
 * [**Custom BarIndicator**]() - I want to create my own type of indicator.
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Documentation/TROUBLESHOOTING.md).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
