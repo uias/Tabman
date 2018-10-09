@@ -3,13 +3,13 @@ author: UI At Six
 author_url: https://github.com/uias
 github_url: https://github.com/uias/Tabman
 # podspec: Tabman.podspec
-skip_undocumented: true
+# skip_undocumented: true
 
 copyright: '© 2018 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
 
 swift_version: 4.2
 
-# theme: fullwidth
+theme: fullwidth
 
 custom_categories:
   - name: Core
