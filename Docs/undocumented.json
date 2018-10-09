@@ -1,0 +1,698 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "line": 21,
+      "symbol": "TMBarBackgroundView.Style.clear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "line": 22,
+      "symbol": "TMBarBackgroundView.Style.flat(color:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "line": 23,
+      "symbol": "TMBarBackgroundView.Style.blur(style:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "line": 24,
+      "symbol": "TMBarBackgroundView.Style.custom(view:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "line": 50,
+      "symbol": "TMBarBackgroundView.init(style:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMBarButton+None.swift",
+      "line": 13,
+      "symbol": "TMBarButton.None",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMBarButton+None.swift",
+      "line": 17,
+      "symbol": "TMBarButton.None.isHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMBarButton+None.swift",
+      "line": 27,
+      "symbol": "TMBarButton.None.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": null,
+      "symbol": "TMLabelBarButton",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 11,
+      "symbol": "TMLabelBarButton",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 25,
+      "symbol": "TMLabelBarButton.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 32,
+      "symbol": "TMLabelBarButton.selectedColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 42,
+      "symbol": "TMLabelBarButton.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 62,
+      "symbol": "TMLabelBarButton.populate(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 68,
+      "symbol": "TMLabelBarButton.update(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 79,
+      "symbol": "TMLabelBarButton.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMTabItemBarButton.swift",
+      "line": null,
+      "symbol": "TMTabItemBarButton",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMTabItemBarButton.swift",
+      "line": 11,
+      "symbol": "TMTabItemBarButton",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMTabItemBarButton.swift",
+      "line": 31,
+      "symbol": "TMTabItemBarButton.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMTabItemBarButton.swift",
+      "line": 65,
+      "symbol": "TMTabItemBarButton.populate(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMTabItemBarButton.swift",
+      "line": 75,
+      "symbol": "TMTabItemBarButton.imageSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 22,
+      "symbol": "TMBarButton.SelectionState.unselected",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 23,
+      "symbol": "TMBarButton.SelectionState.partial(delta:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 24,
+      "symbol": "TMBarButton.SelectionState.selected",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 58,
+      "symbol": "TMBarButton.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 63,
+      "symbol": "TMBarButton.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 68,
+      "symbol": "TMBarButton.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 99,
+      "symbol": "TMBarButton.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 102,
+      "symbol": "TMBarButton.populate(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "line": 105,
+      "symbol": "TMBarButton.update(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButtonCollection.swift",
+      "line": 16,
+      "symbol": "TMBarButtonCollection.Customization",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMBarIndicator+None.swift",
+      "line": 20,
+      "symbol": "TMBarIndicator.None.displayStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMBarIndicator+None.swift",
+      "line": 24,
+      "symbol": "TMBarIndicator.None.isHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMBarIndicator+None.swift",
+      "line": 34,
+      "symbol": "TMBarIndicator.None.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 11,
+      "symbol": "TMLineBarIndicator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 15,
+      "symbol": "TMLineBarIndicator.Weight",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 16,
+      "symbol": "TMLineBarIndicator.Weight.light",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 17,
+      "symbol": "TMLineBarIndicator.Weight.medium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 18,
+      "symbol": "TMLineBarIndicator.Weight.heavy",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 19,
+      "symbol": "TMLineBarIndicator.Weight.custom(value:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 22,
+      "symbol": "TMLineBarIndicator.CornerStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 23,
+      "symbol": "TMLineBarIndicator.CornerStyle.square",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 24,
+      "symbol": "TMLineBarIndicator.CornerStyle.rounded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 25,
+      "symbol": "TMLineBarIndicator.CornerStyle.eliptical",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 30,
+      "symbol": "TMLineBarIndicator.displayStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 34,
+      "symbol": "TMLineBarIndicator.tintColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 40,
+      "symbol": "TMLineBarIndicator.weight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 48,
+      "symbol": "TMLineBarIndicator.cornerStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 56,
+      "symbol": "TMLineBarIndicator.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/Styles/TMLineBarIndicator.swift",
+      "line": 66,
+      "symbol": "TMLineBarIndicator.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 16,
+      "symbol": "TMBarIndicator.DisplayStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 17,
+      "symbol": "TMBarIndicator.DisplayStyle.header",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 18,
+      "symbol": "TMBarIndicator.DisplayStyle.fill",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 19,
+      "symbol": "TMBarIndicator.DisplayStyle.footer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 28,
+      "symbol": "TMBarIndicator.OverscrollBehavior.bounce",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 29,
+      "symbol": "TMBarIndicator.OverscrollBehavior.compress",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 30,
+      "symbol": "TMBarIndicator.OverscrollBehavior.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 35,
+      "symbol": "TMBarIndicator.displayStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 54,
+      "symbol": "TMBarIndicator.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 59,
+      "symbol": "TMBarIndicator.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 64,
+      "symbol": "TMBarIndicator.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "line": 75,
+      "symbol": "TMBarIndicator.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/Styles/TMHorizontalBarLayout.swift",
+      "line": 93,
+      "symbol": "TMHorizontalBarLayout.interButtonSpacing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 18,
+      "symbol": "TMBarLayout.ContentMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 19,
+      "symbol": "TMBarLayout.ContentMode.fill",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 20,
+      "symbol": "TMBarLayout.ContentMode.fit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 32,
+      "symbol": "TMBarLayout.layoutGuide",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 65,
+      "symbol": "TMBarLayout.isPagingEnabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "line": 75,
+      "symbol": "TMBarLayout.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 17,
+      "symbol": "TMBarView.BarButtonCustomization",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 24,
+      "symbol": "TMBarView.AnimationStyle.progressive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 25,
+      "symbol": "TMBarView.AnimationStyle.snap",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 93,
+      "symbol": "TMBarView.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 99,
+      "symbol": "TMBarView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 105,
+      "symbol": "TMBarView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/NavigationBar/TMNavigationBar.swift",
+      "line": 53,
+      "symbol": "TMNavigationBar.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/NavigationBar/TMNavigationBar.swift",
+      "line": 100,
+      "symbol": "TMNavigationBar.didMoveToSuperview()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar+Templates.swift",
+      "line": 13,
+      "symbol": "TMBar.ButtonBar",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar+Templates.swift",
+      "line": 14,
+      "symbol": "TMBar.TabBar",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar+Templates.swift",
+      "line": 15,
+      "symbol": "TMBar.LineBar",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 41,
+      "symbol": "TMBarReloadContext.full",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 42,
+      "symbol": "TMBarReloadContext.insertion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 43,
+      "symbol": "TMBarReloadContext.deletion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 52,
+      "symbol": "TMBarUpdateDirection.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 53,
+      "symbol": "TMBarUpdateDirection.forward",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "line": 54,
+      "symbol": "TMBarUpdateDirection.reverse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 11,
+      "symbol": "TMBarItem",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 15,
+      "symbol": "TMBarItem.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 16,
+      "symbol": "TMBarItem.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 22,
+      "symbol": "TMBarItem.init(title:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 26,
+      "symbol": "TMBarItem.init(image:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/TMBarItem.swift",
+      "line": 30,
+      "symbol": "TMBarItem.init(title:image:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 26,
+      "symbol": "TabmanViewController.BarLocation.top",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 27,
+      "symbol": "TabmanViewController.BarLocation.bottom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 28,
+      "symbol": "TabmanViewController.BarLocation.custom(view:layout:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 40,
+      "symbol": "TabmanViewController.init(nibName:bundle:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 45,
+      "symbol": "TabmanViewController.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 56,
+      "symbol": "TabmanViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 128,
+      "symbol": "TabmanViewController.addBar(_:dataSource:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/merrick/Dev/Projects/Tabman"
+}

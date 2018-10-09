@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TMNavigationBar Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/TMNavigationBar" class="dashAnchor"></a>
+    <a title="TMNavigationBar Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Tabman Docs</a> (49% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Tabman Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TMNavigationBar Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarBackgroundView.html">TMBarBackgroundView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarBackgroundView/Style.html">– Style</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarButton.html">TMBarButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarButton/SelectionState.html">– SelectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarButton/None.html">– None</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarButtonCollection.html">TMBarButtonCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarIndicator.html">TMBarIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarIndicator/DisplayStyle.html">– DisplayStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarIndicator/OverscrollBehavior.html">– OverscrollBehavior</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarIndicator/None.html">– None</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarLayout.html">TMBarLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarLayout/ContentMode.html">– ContentMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarLayout/None.html">– None</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarView.html">TMBarView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMBarView/AnimationStyle.html">– AnimationStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMConstrainedHorizontalBarLayout.html">TMConstrainedHorizontalBarLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMHorizontalBarLayout.html">TMHorizontalBarLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMLabelBarButton.html">TMLabelBarButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMLineBarIndicator.html">TMLineBarIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMLineBarIndicator/Weight.html">– Weight</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMLineBarIndicator/CornerStyle.html">– CornerStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMNavigationBar.html">TMNavigationBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TMTabItemBarButton.html">TMTabItemBarButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabmanViewController.html">TabmanViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabmanViewController/BarLocation.html">– BarLocation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TMBarReloadContext.html">TMBarReloadContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TMBarUpdateDirection.html">TMBarUpdateDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TMBar.html">TMBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TMBarDataSource.html">TMBarDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TMBarDelegate.html">TMBarDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TMBarViewFocusProvider.html">TMBarViewFocusProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/TMBarItem.html">TMBarItem</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TMNavigationBar</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMNavigationBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+
+                </div>
+              </div>
+            <p>Bar which mimicks the appearance of <code>UINavigationBar</code>.</p>
+
+<p>Contains an internal <code><a href="../Protocols/TMBar.html">TMBar</a></code> and forwards on all bar responsibility to this instance.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman15TMNavigationBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/backgroundStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman15TMNavigationBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp">backgroundStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Background style of the navigation bar.</p>
+
+<p>Defaults to <code>.blur(style: .extraLight)</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">backgroundStyle</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarBackgroundView.html">TMBarBackgroundView</a></span><span class="o">.</span><span class="kt">Style</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman15TMNavigationBarC14separatorColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/separatorColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman15TMNavigationBarC14separatorColorSo7UIColorCvp">separatorColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color of the separator at the bottom of the navigation bar.</p>
+
+<p>Defaults to <code>UIColor.white.withAlphaComponent(0.5)</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">separatorColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Init"></a>
+                <a name="//apple_ref/swift/Section/Init" class="dashAnchor"></a>
+                <a href="#/Init">
+                  <h3 class="section-name">Init</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Tabman@objc(cs)TMNavigationBar(im)initWithCoder:"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Tabman@objc(cs)TMNavigationBar(im)initWithCoder:">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman15TMNavigationBarC3forAcA5TMBar_p_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman15TMNavigationBarC3forAcA5TMBar_p_tcfc">init(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a navigation bar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="k">for</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Bar to embed in the navigation bar.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Layout"></a>
+                <a name="//apple_ref/swift/Section/Layout" class="dashAnchor"></a>
+                <a href="#/Layout">
+                  <h3 class="section-name">Layout</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Tabman@objc(cs)TMNavigationBar(im)didMoveToSuperview"></a>
+                    <a name="//apple_ref/swift/Method/didMoveToSuperview()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Tabman@objc(cs)TMNavigationBar(im)didMoveToSuperview">didMoveToSuperview()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">didMoveToSuperview</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarP10dataSourceAA0b4DataD0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/dataSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarP10dataSourceAA0b4DataD0_pSgvp">dataSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBarDataSource.html">TMBarDataSource</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarP8delegateAA0B8Delegate_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarP8delegateAA0B8Delegate_pSgvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBarDelegate.html">TMBarDelegate</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarP10reloadData2at7contextySNySiG_AA0B13ReloadContextOtF"></a>
+                    <a name="//apple_ref/swift/Method/reloadData(at:context:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarP10reloadData2at7contextySNySiG_AA0B13ReloadContextOtF">reloadData(at:context:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reloadData</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexes</span><span class="p">:</span> <span class="kt">ClosedRange</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">,</span>
+                       <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Enums/TMBarReloadContext.html">TMBarReloadContext</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarP6update3for8capacity9direction13shouldAnimatey12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOSbtF"></a>
+                    <a name="//apple_ref/swift/Method/update(for:capacity:direction:shouldAnimate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarP6update3for8capacity9direction13shouldAnimatey12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOSbtF">update(for:capacity:direction:shouldAnimate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="k">for</span> <span class="nv">pagePosition</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span>
+                   <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+                   <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/TMBarUpdateDirection.html">TMBarUpdateDirection</a></span><span class="p">,</span>
+                   <span class="nv">shouldAnimate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/uias/Tabman" target="_blank" rel="external">Merrick Sapsford</a>. All rights reserved. (Last updated: 2018-10-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
