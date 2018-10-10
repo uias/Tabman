@@ -275,35 +275,28 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 24,
-      "symbol": "TMBarView.AnimationStyle.progressive",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 19,
+      "symbol": "TMBarView.AnimationStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 25,
-      "symbol": "TMBarView.AnimationStyle.snap",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 93,
+      "line": 107,
       "symbol": "TMBarView.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 99,
+      "line": 113,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 105,
+      "line": 119,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

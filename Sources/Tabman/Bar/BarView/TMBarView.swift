@@ -16,10 +16,6 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     public typealias BarButtonCustomization = (ButtonType) -> Void
     
-    /// Animation style for indicated position updates.
-    ///
-    /// - progressive: The bar will seemlessly transition between each button in progressive steps.
-    /// - snap: The bar will transition between each button by rounding and snapping to each positional bound.
     public enum AnimationStyle {
         case progressive
         case snap
@@ -34,14 +30,34 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
     
+    private var indicatorLayoutHandler: TMBarIndicatorLayoutHandler?
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
+    
+    // MARK: Core
     
     /// The layout that is currently active in the bar view.
     public private(set) lazy var layout = LayoutType()
     /// The bar buttons that are currently displayed in the bar view.
     public let buttons = TMBarButtonCollection<ButtonType>()
-
+    /// The indicator that is displayed in this bar view.
+    public let indicator = IndicatorType()
+    /// Background of the BarView.
+    ///
+    /// Note: Default style is `UIColor.clear`.
+    public var backgroundView = TMBarBackgroundView(style: .clear)
+    
+    /// Object that acts as a data source to the BarView.
+    public weak var dataSource: TMBarDataSource?
+    /**
+     Object that acts as a delegate to the BarView.
+     
+     By default this is set to the `TabmanViewController` the bar is added to.
+     **/
+    public weak var delegate: TMBarDelegate?
+    
+    // MARK: Accessory Views
+    
     /// Accessory View that is visible at the leading end of the bar view.
     open var leadingAccessoryView: UIView? {
         didSet {
@@ -58,35 +74,33 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
                             at: .trailing)
         }
     }
+
+    // MARK: Customization
     
-    /// Object that acts as a data source to the BarView.
-    public weak var dataSource: TMBarDataSource?
-    /**
-     Object that acts as a delegate to the BarView.
-     
-     By default this is set to the `TabmanViewController` the bar is added to.
-     **/
-    public weak var delegate: TMBarDelegate?
-    
-    /// Background of the BarView.
+    /// Style to use when animating bar position updates.
     ///
-    /// Note: Default style is `UIColor.clear`.
-    public var backgroundView = TMBarBackgroundView(style: .clear)
-
-    /// The indicator that is displayed in this bar view.
-    public let indicator = IndicatorType()
-    private var indicatorLayoutHandler: TMBarIndicatorLayoutHandler?
-
-    /**
-     Style to use when animating bar position updates.
-     
-     Options:
-     - `.progressive`: The bar will seemlessly transition between each button in progressive steps.
-     - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
-     
-     Defaults to `.progressive`
-     **/
+    /// Options:
+    /// - `.progressive`: The bar will seemlessly transition between each button in progressive steps.
+    /// - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
+    ///
+    /// Defaults to `.progressive`.
     public var animationStyle: AnimationStyle = .progressive
+    /// Whether the bar contents should be allowed to be scrolled by the user.
+    public var isScrollEnabled: Bool {
+        set {
+            scrollView.isScrollEnabled = newValue
+        } get {
+            return scrollView.isScrollEnabled
+        }
+    }
+    /// Whether to fade the edges of the bar content.
+    public var fadeEdges: Bool {
+        set {
+            rootContainer.showFade = newValue
+        } get {
+            return rootContainer.showFade
+        }
+    }
     
     // MARK: Init
     
@@ -256,27 +270,6 @@ extension TMBarView: TMBar {
         }
         
         return (position, animated)
-    }
-}
-
-// MARK: - Customization
-public extension TMBarView {
-    
-    /// Whether the bar contents should be allowed to be scrolled by the user.
-    public var isScrollEnabled: Bool {
-        set {
-            scrollView.isScrollEnabled = newValue
-        } get {
-            return scrollView.isScrollEnabled
-        }
-    }
-    /// Whether to fade the edges of the bar content.
-    public var fadeEdges: Bool {
-        set {
-            rootContainer.showFade = newValue
-        } get {
-            return rootContainer.showFade
-        }
     }
 }
 

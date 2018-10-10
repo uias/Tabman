@@ -76,9 +76,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/TMBarView.html">TMBarView</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TMBarView.html#/s:6Tabman9TMBarViewC14AnimationStyleO">– AnimationStyle</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -181,53 +178,10 @@
           <div class="section-content">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Types"></a>
-                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
-                <a href="#/Types">
-                  <h3 class="section-name">Types</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman9TMBarViewC14AnimationStyleO"></a>
-                    <a name="//apple_ref/swift/Enum/AnimationStyle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC14AnimationStyleO">AnimationStyle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Animation style for indicated position updates.</p>
-
-<ul>
-<li>progressive: The bar will seemlessly transition between each button in progressive steps.</li>
-<li>snap: The bar will transition between each button by rounding and snapping to each positional bound.</li>
-</ul>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnimationStyle</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Properties"></a>
-                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
+                <a name="/Core"></a>
+                <a name="//apple_ref/swift/Section/Core" class="dashAnchor"></a>
+                <a href="#/Core">
+                  <h3 class="section-name">Core</h3>
                 </a>
               </div>
               <ul class="item-container">
@@ -288,9 +242,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman9TMBarViewC016leadingAccessoryC0So6UIViewCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/leadingAccessoryView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC016leadingAccessoryC0So6UIViewCSgvp">leadingAccessoryView</a>
+                    <a name="/s:6Tabman9TMBarViewC9indicatorq0_vp"></a>
+                    <a name="//apple_ref/swift/Property/indicator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC9indicatorq0_vp">indicator</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -298,14 +252,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Accessory View that is visible at the leading end of the bar view.</p>
+                        <p>The indicator that is displayed in this bar view.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">leadingAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">indicator</span><span class="p">:</span> <span class="kt">IndicatorType</span></code></pre>
 
                         </div>
                       </div>
@@ -315,9 +269,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman9TMBarViewC017trailingAccessoryC0So6UIViewCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/trailingAccessoryView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC017trailingAccessoryC0So6UIViewCSgvp">trailingAccessoryView</a>
+                    <a name="/s:6Tabman9TMBarViewC010backgroundC0AA0b10BackgroundC0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/backgroundView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC010backgroundC0AA0b10BackgroundC0Cvp">backgroundView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -325,14 +279,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Accessory View that is visible at the trailing end of the bar view.</p>
+                        <p>Background of the BarView.</p>
+
+<p>Note: Default style is <code>UIColor.clear</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">trailingAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">backgroundView</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarBackgroundView.html">TMBarBackgroundView</a></span></code></pre>
 
                         </div>
                       </div>
@@ -396,12 +352,23 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Accessory%20Views"></a>
+                <a name="//apple_ref/swift/Section/Accessory Views" class="dashAnchor"></a>
+                <a href="#/Accessory%20Views">
+                  <h3 class="section-name">Accessory Views</h3>
+                </a>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman9TMBarViewC010backgroundC0AA0b10BackgroundC0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/backgroundView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC010backgroundC0AA0b10BackgroundC0Cvp">backgroundView</a>
+                    <a name="/s:6Tabman9TMBarViewC016leadingAccessoryC0So6UIViewCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/leadingAccessoryView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC016leadingAccessoryC0So6UIViewCSgvp">leadingAccessoryView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -409,16 +376,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Background of the BarView.</p>
-
-<p>Note: Default style is <code>UIColor.clear</code>.</p>
+                        <p>Accessory View that is visible at the leading end of the bar view.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">backgroundView</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarBackgroundView.html">TMBarBackgroundView</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">leadingAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -428,9 +393,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman9TMBarViewC9indicatorq0_vp"></a>
-                    <a name="//apple_ref/swift/Property/indicator" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC9indicatorq0_vp">indicator</a>
+                    <a name="/s:6Tabman9TMBarViewC017trailingAccessoryC0So6UIViewCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/trailingAccessoryView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC017trailingAccessoryC0So6UIViewCSgvp">trailingAccessoryView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -438,20 +403,31 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The indicator that is displayed in this bar view.</p>
+                        <p>Accessory View that is visible at the trailing end of the bar view.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">indicator</span><span class="p">:</span> <span class="kt">IndicatorType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">trailingAccessoryView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Customization"></a>
+                <a name="//apple_ref/swift/Section/Customization" class="dashAnchor"></a>
+                <a href="#/Customization">
+                  <h3 class="section-name">Customization</h3>
+                </a>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -474,15 +450,68 @@
 <li><code>.snap</code>: The bar will transition between each button by rounding and snapping to each positional bound.</li>
 </ul>
 
-<p>Defaults to <code>.progressive</code>
-*</p>
+<p>Defaults to <code>.progressive</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animationStyle</span><span class="p">:</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">LayoutType</span><span class="p">,</span> <span class="kt">ButtonType</span><span class="p">,</span> <span class="kt">IndicatorType</span><span class="o">&gt;.</span><span class="kt"><a href="../Classes/TMBarView.html#/s:6Tabman9TMBarViewC14AnimationStyleO">AnimationStyle</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animationStyle</span><span class="p">:</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">LayoutType</span><span class="p">,</span> <span class="kt">ButtonType</span><span class="p">,</span> <span class="kt">IndicatorType</span><span class="o">&gt;.</span><span class="kt">AnimationStyle</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman9TMBarViewC15isScrollEnabledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isScrollEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC15isScrollEnabledSbvp">isScrollEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether the bar contents should be allowed to be scrolled by the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isScrollEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman9TMBarViewC9fadeEdgesSbvp"></a>
+                    <a name="//apple_ref/swift/Property/fadeEdges" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman9TMBarViewC9fadeEdgesSbvp">fadeEdges</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether to fade the edges of the bar content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">fadeEdges</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -550,71 +579,6 @@
                    <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
                    <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO">TMBarUpdateDirection</a></span><span class="p">,</span>
                    <span class="nv">shouldAnimate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Customization"></a>
-                <a name="//apple_ref/swift/Section/Customization" class="dashAnchor"></a>
-                <a href="#/Customization">
-                  <h3 class="section-name">Customization</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman9TMBarViewC15isScrollEnabledSbvp"></a>
-                    <a name="//apple_ref/swift/Property/isScrollEnabled" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC15isScrollEnabledSbvp">isScrollEnabled</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Whether the bar contents should be allowed to be scrolled by the user.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isScrollEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman9TMBarViewC9fadeEdgesSbvp"></a>
-                    <a name="//apple_ref/swift/Property/fadeEdges" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman9TMBarViewC9fadeEdgesSbvp">fadeEdges</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Whether to fade the edges of the bar content.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">fadeEdges</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
