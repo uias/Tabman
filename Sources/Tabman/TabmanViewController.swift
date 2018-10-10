@@ -30,10 +30,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Properties
     
-    private let topBarContainer = UIStackView()
-    private let bottomBarContainer = UIStackView()
+    internal let topBarContainer = UIStackView()
+    internal let bottomBarContainer = UIStackView()
     
     private var activeBars = [TMBar]()
+    
+    private var requiredInsets: TMInsets?
+    private let autoInsetter = AutoInsetter()
     
     // MARK: Init
     
@@ -58,6 +61,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         layoutContainers(in: view)
     }
     
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setNeedsInsetsUpdate()
+    }
+    
     // MARK: Pageboy Overrides
     
     open override func insertPage(at index: PageboyViewController.PageIndex,
@@ -78,6 +87,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                                     willScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
                                     animated: Bool) {
+        let viewController = dataSource?.viewController(for: self, at: index)
+        setNeedsInsetsUpdate(to: viewController)
+        
         if animated {
             updateActiveBars(to: CGFloat(index),
                              direction: direction,
@@ -108,6 +120,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
+        setNeedsInsetsUpdate(to: currentViewController)
+        
         guard let pageCount = pageboyViewController.pageCount else {
             return
         }
@@ -242,6 +256,25 @@ private extension TabmanViewController {
             return .none
         case .reverse:
             return .reverse
+        }
+    }
+}
+
+// MARK: - Insetting
+internal extension TabmanViewController {
+    
+    func setNeedsInsetsUpdate() {
+        setNeedsInsetsUpdate(to: currentViewController)
+    }
+    
+    func setNeedsInsetsUpdate(to viewController: UIViewController?) {
+        let insets = TMInsets.for(tabmanViewController: self)
+        self.requiredInsets = insets
+        
+        if #available(iOS 11, *) {
+            insets.apply(to: viewController)
+        } else {
+            autoInsetter.inset(viewController, requiredInsetSpec: insets)
         }
     }
 }
