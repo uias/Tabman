@@ -75,7 +75,6 @@
 		46286099213EDB63009C707F /* TMBarViewFocusRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusRect.swift; sourceTree = "<group>"; };
 		462941E42111EB7C00345B52 /* TMBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarView.swift; sourceTree = "<group>"; };
 		462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewContentInsetGuides.swift; sourceTree = "<group>"; };
-		462F85D9201B339800C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
 		462FB6EC2137216700768088 /* TMHorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMHorizontalBarLayout.swift; sourceTree = "<group>"; };
 		46324A77213A99250059D469 /* MockBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBarView.swift; sourceTree = "<group>"; };
@@ -114,7 +113,6 @@
 		D62AC0C21E5733810020B8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabmanViewController.swift; sourceTree = "<group>"; };
 		D65F101C1EAEA2730090980C /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
-		D68767011EAEA263003C8D11 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = ../Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,10 +336,8 @@
 		D62AC1531E5AF5500020B8AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				462F85D9201B339800C3D4D4 /* AutoInsetter.framework */,
 				462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */,
 				D65F101C1EAEA2730090980C /* Pageboy.framework */,
-				D68767011EAEA263003C8D11 /* PureLayout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

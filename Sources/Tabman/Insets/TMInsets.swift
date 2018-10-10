@@ -30,16 +30,6 @@ public final class TMInsets {
                                        bottom: tabmanViewController.bottomBarContainer.bounds.size.height,
                                        right: 0.0)
     }
-    
-    // MARK: UIViewController
-    
-    @available(iOS 11, *)
-    internal func apply(to viewController: UIViewController?) {
-        viewController?.additionalSafeAreaInsets = UIEdgeInsets(top: edgeInsets.top,
-                                                                left: 0.0,
-                                                                bottom: edgeInsets.bottom,
-                                                                right: 0.0)
-    }
 }
 
 private extension TMInsets {

@@ -271,11 +271,7 @@ internal extension TabmanViewController {
         let insets = TMInsets.for(tabmanViewController: self)
         self.requiredInsets = insets
         
-        if #available(iOS 11, *) {
-            insets.apply(to: viewController)
-        } else {
-            autoInsetter.inset(viewController, requiredInsetSpec: insets)
-        }
+        autoInsetter.inset(viewController, requiredInsetSpec: insets)
     }
 }
 
