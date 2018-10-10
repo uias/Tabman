@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AutoInsetter/Sources/AutoInsetter.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:/Users/merrick/Dev/Projects/Tabman/Example/Tabman-Example.xcodeproj">
    </FileRef>
    <FileRef

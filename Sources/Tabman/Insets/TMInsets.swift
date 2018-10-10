@@ -24,7 +24,7 @@ public final class TMInsets {
     // MARK: Init
     
     private init(tabmanViewController: TabmanViewController) {
-        self.safeAreaInsets = .zero
+        self.safeAreaInsets = TMInsets.makeSafeAreaInsets(for: tabmanViewController)
         self.edgeInsets = UIEdgeInsets(top: tabmanViewController.topBarContainer.bounds.size.height,
                                        left: 0.0,
                                        bottom: tabmanViewController.bottomBarContainer.bounds.size.height,
@@ -34,7 +34,7 @@ public final class TMInsets {
 
 private extension TMInsets {
     
-    func makeSafeAreaInsets(for viewController: UIViewController) -> UIEdgeInsets {
+    class func makeSafeAreaInsets(for viewController: UIViewController) -> UIEdgeInsets {
         if #available(iOS 11, *) {
             return viewController.view.safeAreaInsets
         } else {
