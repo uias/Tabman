@@ -40,9 +40,6 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
-    /// The last used animation duration.
-    private var previousAnimationDuration: TimeInterval?
-    
     // MARK: Components
     
     /// `TMBarLayout` that dictates display and behavior of bar buttons and other bar view components.
@@ -344,7 +341,7 @@ extension TMBarView {
                capacity: buttons.all.count,
                direction: .none,
                animation: TMBarAnimationConfig(isEnabled: true,
-                                               duration: self.previousAnimationDuration ?? TMBarViewDefaults.animationDuration))
+                                               duration: TMBarViewDefaults.animationDuration))
     }
 }
 
