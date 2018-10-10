@@ -1,4 +1,6 @@
+xcodebuild_arguments: ["-workspace", "Tabman.xcworkspace", "-scheme", "Tabman"]
 module: Tabman
+clean: true
 author: UI At Six
 author_url: https://github.com/uias
 github_url: https://github.com/uias/Tabman
