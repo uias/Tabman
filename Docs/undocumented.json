@@ -268,14 +268,14 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 17,
+      "line": 19,
       "symbol": "TMBarView.BarButtonCustomization",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 19,
+      "line": 21,
       "symbol": "TMBarView.AnimationStyle",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"

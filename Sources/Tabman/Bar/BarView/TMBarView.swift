@@ -9,7 +9,9 @@
 import UIKit
 import Pageboy
 
-/// View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.
+/// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
+/// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
+/// in the `TMBarView` type definition.
 open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView {
     
     // MARK: Types
@@ -34,26 +36,24 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
-    // MARK: Core
+    // MARK: Components
     
-    /// The layout that is currently active in the bar view.
+    /// `TMBarLayout` that dictates display and behavior of bar buttons and other bar view components.
     public private(set) lazy var layout = LayoutType()
-    /// The bar buttons that are currently displayed in the bar view.
+    /// Collection of `TMBarButton` objects that directly map to the `TMBarItem`s provided by the `dataSource`.
     public let buttons = TMBarButtonCollection<ButtonType>()
-    /// The indicator that is displayed in this bar view.
+    /// `TMBarIndicator` that is used to indicate the current bar index state.
     public let indicator = IndicatorType()
-    /// Background of the BarView.
+    /// Background view that appears behind all content in the bar view.
     ///
-    /// Note: Default style is `UIColor.clear`.
+    /// Note: Default style is `TMBarBackgroundView.Style.clear`.
     public var backgroundView = TMBarBackgroundView(style: .clear)
     
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: TMBarDataSource?
-    /**
-     Object that acts as a delegate to the BarView.
-     
-     By default this is set to the `TabmanViewController` the bar is added to.
-     **/
+    /// Object that acts as a delegate to the BarView.
+    ///
+    /// By default this is set to the `TabmanViewController` the bar is added to.
     public weak var delegate: TMBarDelegate?
     
     // MARK: Accessory Views
@@ -93,7 +93,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
             return scrollView.isScrollEnabled
         }
     }
-    /// Whether to fade the edges of the bar content.
+    /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
     public var fadeEdges: Bool {
         set {
             rootContainer.showFade = newValue

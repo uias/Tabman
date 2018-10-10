@@ -21,10 +21,10 @@ custom_categories:
   - name: Bar
     children:
     - TMBar
+    - TMBarView
     - TMBarItem
     - TMBarDataSource
     - TMBarDelegate
-    - TMBarView
 
   - name: Layout
     children:

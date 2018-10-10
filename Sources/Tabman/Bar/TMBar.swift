@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Data source that provides bar with items.
+/// Data source to a `TMBar` that is primarily responsible for providing a bar with contents.
 public protocol TMBarDataSource: class {
     
     /// Provide a `BarItem` for an index in the bar.
@@ -20,7 +20,7 @@ public protocol TMBarDataSource: class {
     func barItem(for bar: TMBar, at index: Int) -> TMBarItem
 }
 
-/// Delegate that provides bar with responses to user interaction.
+/// Delegate to a `TMBar` that is primarily responsible for handling user interaction within the bar.
 public protocol TMBarDelegate: class {
     
     /// Bar requires scrolling to a new page following a user interaction.
@@ -54,7 +54,13 @@ public enum TMBarUpdateDirection {
     case reverse
 }
 
-/// A conforming `UIView` that can display a page position for a TabmanViewController.
+/// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
+/// and displayed in a `TabmanViewController`.
+///
+/// `TMBar` is expected to display a `TMBarItem` collection provided by a data source visually
+/// in some form, and also respond to the current page position.
+///
+/// The default implementation of `TMBar` in Tabman is `TMBarView`.
 public protocol TMBar: AnyObject where Self: UIView {
     
     /// Object that acts as a data source to the bar.

@@ -68,13 +68,13 @@
                 <a class="nav-group-task-link" href="../Protocols/TMBar.html">TMBar</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TMBarView.html">TMBarView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/TMBarDataSource.html">TMBarDataSource</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/TMBarDelegate.html">TMBarDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TMBarView.html">TMBarView</a>
               </li>
             </ul>
           </li>
@@ -169,7 +169,13 @@
 
                 </div>
               </div>
-            <p>A conforming <code>UIView</code> that can display a page position for a TabmanViewController.</p>
+            <p><code>TMBar</code> is a protocol that is constrained to <code>UIView</code> types. Conforming view types can be added to
+and displayed in a <code><a href="../Classes/TabmanViewController.html">TabmanViewController</a></code>.</p>
+
+<p><code>TMBar</code> is expected to display a <code>TMBarItem</code> collection provided by a data source visually
+in some form, and also respond to the current page position.</p>
+
+<p>The default implementation of <code>TMBar</code> in Tabman is <code><a href="../Classes/TMBarView.html">TMBarView</a></code>.</p>
 
           </div>
         </section>

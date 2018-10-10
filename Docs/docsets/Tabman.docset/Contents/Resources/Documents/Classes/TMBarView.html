@@ -68,13 +68,13 @@
                 <a class="nav-group-task-link" href="../Protocols/TMBar.html">TMBar</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TMBarView.html">TMBarView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/TMBarDataSource.html">TMBarDataSource</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/TMBarDelegate.html">TMBarDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TMBarView.html">TMBarView</a>
               </li>
             </ul>
           </li>
@@ -169,7 +169,9 @@
 
                 </div>
               </div>
-            <p>View that conforms to be a Bar and displays BarItem objects in BarButtons inside a BarLayout.</p>
+            <p><code>TMBarView</code> is the default Tabman implementation of <code><a href="../Protocols/TMBar.html">TMBar</a></code>. A <code>UIView</code> that contains a <code><a href="../Classes/TMBarLayout.html">TMBarLayout</a></code> which displays
+a collection of <code><a href="../Classes/TMBarButton.html">TMBarButton</a></code>, and also a <code><a href="../Classes/TMBarIndicator.html">TMBarIndicator</a></code>. The types of these three components are defined by constraints
+in the <code>TMBarView</code> type definition.</p>
 
           </div>
         </section>
@@ -178,10 +180,10 @@
           <div class="section-content">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Core"></a>
-                <a name="//apple_ref/swift/Section/Core" class="dashAnchor"></a>
-                <a href="#/Core">
-                  <h3 class="section-name">Core</h3>
+                <a name="/Components"></a>
+                <a name="//apple_ref/swift/Section/Components" class="dashAnchor"></a>
+                <a href="#/Components">
+                  <h3 class="section-name">Components</h3>
                 </a>
               </div>
               <ul class="item-container">
@@ -198,7 +200,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The layout that is currently active in the bar view.</p>
+                        <p><code><a href="../Classes/TMBarLayout.html">TMBarLayout</a></code> that dictates display and behavior of bar buttons and other bar view components.</p>
 
                       </div>
                       <div class="declaration">
@@ -225,7 +227,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The bar buttons that are currently displayed in the bar view.</p>
+                        <p>Collection of <code><a href="../Classes/TMBarButton.html">TMBarButton</a></code> objects that directly map to the <code>TMBarItem</code>s provided by the <code><a href="../Classes/TMBarView.html#/s:6Tabman9TMBarViewC10dataSourceAA0b4DataE0_pSgXwvp">dataSource</a></code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -252,7 +254,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The indicator that is displayed in this bar view.</p>
+                        <p><code><a href="../Classes/TMBarIndicator.html">TMBarIndicator</a></code> that is used to indicate the current bar index state.</p>
 
                       </div>
                       <div class="declaration">
@@ -279,9 +281,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Background of the BarView.</p>
+                        <p>Background view that appears behind all content in the bar view.</p>
 
-<p>Note: Default style is <code>UIColor.clear</code>.</p>
+<p>Note: Default style is <code>TMBarBackgroundView.Style.clear</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -337,8 +339,7 @@
                       <div class="abstract">
                         <p>Object that acts as a delegate to the BarView.</p>
 
-<p>By default this is set to the <code><a href="../Classes/TabmanViewController.html">TabmanViewController</a></code> the bar is added to.
-*</p>
+<p>By default this is set to the <code><a href="../Classes/TabmanViewController.html">TabmanViewController</a></code> the bar is added to.</p>
 
                       </div>
                       <div class="declaration">
@@ -504,7 +505,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Whether to fade the edges of the bar content.</p>
+                        <p>Whether to fade the leading and trailing edges of the bar content to an alpha of 0.</p>
 
                       </div>
                       <div class="declaration">
