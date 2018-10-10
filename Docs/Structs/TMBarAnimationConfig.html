@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TMConstrainedHorizontalBarLayout Class Reference</title>
+    <title>TMBarAnimationConfig Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/TMConstrainedHorizontalBarLayout" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/TMBarAnimationConfig" class="dashAnchor"></a>
 
-    <a title="TMConstrainedHorizontalBarLayout Class Reference"></a>
+    <a title="TMBarAnimationConfig Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Tabman Reference</a>
       <img class="carat" src="../img/carat.png" />
-      TMConstrainedHorizontalBarLayout Class Reference
+      TMBarAnimationConfig Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -164,14 +164,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>TMConstrainedHorizontalBarLayout</h1>
+            <h1>TMBarAnimationConfig</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMConstrainedHorizontalBarLayout</span> <span class="p">:</span> <span class="kt"><a href="../Classes/TMHorizontalBarLayout.html">TMHorizontalBarLayout</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TMBarAnimationConfig</span></code></pre>
 
                 </div>
               </div>
-            <p>Layout that displays a limited number of visible bar buttons sequentially along the horizontal axis.</p>
+            <p>Configuration for a bar animation.</p>
 
           </div>
         </section>
@@ -179,20 +179,13 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Properties"></a>
-                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman32TMConstrainedHorizontalBarLayoutC18visibleButtonCountSivp"></a>
-                    <a name="//apple_ref/swift/Property/visibleButtonCount" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman32TMConstrainedHorizontalBarLayoutC18visibleButtonCountSivp">visibleButtonCount</a>
+                    <a name="/s:6Tabman20TMBarAnimationConfigV9isEnabledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman20TMBarAnimationConfigV9isEnabledSbvp">isEnabled</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -200,51 +193,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of buttons that can be visible in the layout at one time.</p>
+                        <p>Whether the animation is enabled.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">visibleButtonCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Lifecycle"></a>
-                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
-                <a href="#/Lifecycle">
-                  <h3 class="section-name">Lifecycle</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman32TMConstrainedHorizontalBarLayoutC6layout2inySo6UIViewC_tF"></a>
-                    <a name="//apple_ref/swift/Method/layout(in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman32TMConstrainedHorizontalBarLayoutC6layout2inySo6UIViewC_tF">layout(in:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">layout</span><span class="p">(</span><span class="k">in</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">isEnabled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -254,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman32TMConstrainedHorizontalBarLayoutC6insert7buttons2atySayAA11TMBarButtonCG_SitF"></a>
-                    <a name="//apple_ref/swift/Method/insert(buttons:at:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman32TMConstrainedHorizontalBarLayoutC6insert7buttons2atySayAA11TMBarButtonCG_SitF">insert(buttons:at:)</a>
+                    <a name="/s:6Tabman20TMBarAnimationConfigV8durationSdvp"></a>
+                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman20TMBarAnimationConfigV8durationSdvp">duration</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,13 +220,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Duration of the animation in seconds.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">insert</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">],</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
 
                         </div>
                       </div>

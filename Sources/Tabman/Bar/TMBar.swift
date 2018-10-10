@@ -54,8 +54,11 @@ public enum TMBarUpdateDirection {
     case reverse
 }
 
+/// Configuration for a bar animation.
 public struct TMBarAnimationConfig {
+    /// Whether the animation is enabled.
     public let isEnabled: Bool
+    /// Duration of the animation in seconds.
     public let duration: TimeInterval
 }
 

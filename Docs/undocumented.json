@@ -247,35 +247,35 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 19,
+      "line": 23,
       "symbol": "TMBarView.BarButtonCustomization",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 21,
+      "line": 25,
       "symbol": "TMBarView.AnimationStyle",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 107,
+      "line": 111,
       "symbol": "TMBarView.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 113,
+      "line": 117,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 119,
+      "line": 123,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
