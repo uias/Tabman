@@ -9,6 +9,10 @@
 import UIKit
 import Pageboy
 
+private struct TMBarViewDefaults {
+    static let animationDuration: TimeInterval = 0.25
+}
+
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
 /// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
 /// in the `TMBarView` type definition.
@@ -35,6 +39,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var indicatorLayoutHandler: TMBarIndicatorLayoutHandler?
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
+    
+    /// The last used animation duration.
+    private var previousAnimationDuration: TimeInterval?
     
     // MARK: Components
     
@@ -217,11 +224,11 @@ extension TMBarView: TMBar {
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
                        direction: TMBarUpdateDirection,
-                       shouldAnimate: Bool) {
+                       animation: TMBarAnimationConfig) {
         
         let (pagePosition, animated) = updateValues(for: animationStyle,
                                                     at: pagePosition,
-                                                    shouldAnimate: shouldAnimate)
+                                                    shouldAnimate: animation.isEnabled)
         self.indicatedPosition = pagePosition
         layoutIfNeeded()
         
@@ -248,7 +255,7 @@ extension TMBarView: TMBar {
         }
         
         if animated {
-            UIView.animate(withDuration: 0.25, animations: {
+            UIView.animate(withDuration: animation.duration, animations: {
                 update()
             })
         } else {
@@ -336,7 +343,8 @@ extension TMBarView {
         update(for: indicatedPosition,
                capacity: buttons.all.count,
                direction: .none,
-               shouldAnimate: true)
+               animation: TMBarAnimationConfig(isEnabled: true,
+                                               duration: self.previousAnimationDuration ?? TMBarViewDefaults.animationDuration))
     }
 }
 

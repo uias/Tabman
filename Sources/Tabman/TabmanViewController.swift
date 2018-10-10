@@ -226,11 +226,12 @@ private extension TabmanViewController {
                    animated: Bool) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
-        
+        let animation = TMBarAnimationConfig(isEnabled: animated,
+                                             duration: self.transitionAnimationDuration)
         bar.update(for: position,
                    capacity: capacity,
                    direction: updateDirection(for: direction),
-                   shouldAnimate: animated)
+                   animation: animation)
     }
     
     private func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> TMBarUpdateDirection {

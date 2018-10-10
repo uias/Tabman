@@ -54,6 +54,11 @@ public enum TMBarUpdateDirection {
     case reverse
 }
 
+public struct TMBarAnimationConfig {
+    public let isEnabled: Bool
+    public let duration: TimeInterval
+}
+
 /// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
 /// and displayed in a `TabmanViewController`.
 ///
@@ -86,5 +91,5 @@ public protocol TMBar: AnyObject where Self: UIView {
     func update(for pagePosition: CGFloat,
                 capacity: Int,
                 direction: TMBarUpdateDirection,
-                shouldAnimate: Bool)
+                animation: TMBarAnimationConfig)
 }
