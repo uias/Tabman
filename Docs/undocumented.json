@@ -44,16 +44,30 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
-      "line": null,
-      "symbol": "TMLabelBarButton",
-      "symbol_kind": "source.lang.swift.decl.extension",
+      "line": 26,
+      "symbol": "TMLabelBarButton.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
-      "line": 11,
-      "symbol": "TMLabelBarButton",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 92,
+      "symbol": "TMLabelBarButton.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 114,
+      "symbol": "TMLabelBarButton.populate(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/Styles/TMLabelBarButton.swift",
+      "line": 121,
+      "symbol": "TMLabelBarButton.update(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
