@@ -18,12 +18,7 @@ open class TMBarIndicator: UIView {
         case fill
         case footer
     }
-    
-    /// Behavior for overscrolling beyond bar bounds.
-    ///
-    /// - bounce: Bounce the indicator beyond the bounds of the bar.
-    /// - compress: Compress the indicators width as overscroll occurs.
-    /// - none: Don't do anything.
+
     public enum OverscrollBehavior {
         case bounce
         case compress

@@ -13,11 +13,6 @@ open class TMBarButton: UIControl {
     
     // MARK: Types
     
-    /// Selection state of the button.
-    ///
-    /// - unselected: Unselected - Current page index is not currently mapped to the button.
-    /// - partial: Partially selected - Current page index is either arriving or departing from the mapped button.
-    /// - selected: Selected - Current page index is mapped to the button.
     public enum SelectionState {
         case unselected
         case partial(delta: CGFloat)
@@ -32,6 +27,13 @@ open class TMBarButton: UIControl {
     private var contentViewTrailing: NSLayoutConstraint!
     private var contentViewBottom: NSLayoutConstraint!
 
+    // MARK: Components
+    
+    /// Background view.
+    public let backgroundView = TMBarBackgroundView()
+    
+    // MARK: Customization
+    
     /// Content inset of the button contents.
     public var contentInset: UIEdgeInsets = .zero {
         didSet {
@@ -42,16 +44,19 @@ open class TMBarButton: UIControl {
         }
     }
     
+    // MARK: State
+    
     /// Selection state of the button.
+    ///
+    /// - unselected: Unselected - Current page index is not currently mapped to the button.
+    /// - partial: Partially selected - Current page index is either arriving or departing from the mapped button.
+    /// - selected: Selected - Current page index is mapped to the button.
     public var selectionState: SelectionState = .unselected {
         didSet {
             self.isSelected = selectionState == .selected
             update(for: selectionState)
         }
     }
-    
-    /// Background view.
-    public let backgroundView = TMBarBackgroundView()
     
     // MARK: Init
     

@@ -72,63 +72,56 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 22,
-      "symbol": "TMBarButton.SelectionState.unselected",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": null,
+      "symbol": "TMBarButton.SelectionState",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 23,
-      "symbol": "TMBarButton.SelectionState.partial(delta:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 16,
+      "symbol": "TMBarButton.SelectionState",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 24,
-      "symbol": "TMBarButton.SelectionState.selected",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 58,
+      "line": 63,
       "symbol": "TMBarButton.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 63,
+      "line": 68,
       "symbol": "TMBarButton.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 68,
+      "line": 73,
       "symbol": "TMBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 99,
+      "line": 104,
       "symbol": "TMBarButton.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 102,
+      "line": 107,
       "symbol": "TMBarButton.populate(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 105,
+      "line": 110,
       "symbol": "TMBarButton.update(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -177,56 +170,42 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 28,
-      "symbol": "TMBarIndicator.OverscrollBehavior.bounce",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 29,
-      "symbol": "TMBarIndicator.OverscrollBehavior.compress",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 22,
+      "symbol": "TMBarIndicator.OverscrollBehavior",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 30,
-      "symbol": "TMBarIndicator.OverscrollBehavior.none",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 35,
       "symbol": "TMBarIndicator.displayStyle",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 54,
+      "line": 49,
       "symbol": "TMBarIndicator.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 59,
+      "line": 54,
       "symbol": "TMBarIndicator.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 64,
+      "line": 59,
       "symbol": "TMBarIndicator.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
-      "line": 75,
+      "line": 70,
       "symbol": "TMBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
