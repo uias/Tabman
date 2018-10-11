@@ -433,13 +433,6 @@
       "symbol": "TabmanViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 142,
-      "symbol": "TabmanViewController.addBar(_:dataSource:at:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/merrick/Dev/Projects/Tabman"

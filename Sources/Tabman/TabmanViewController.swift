@@ -139,9 +139,15 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 // MARK: - Bar Layout
 public extension TabmanViewController {
     
-    func addBar(_ bar: TMBar,
-                dataSource: TMBarDataSource,
-                at location: BarLocation) {
+    /// Add a new `TMBar` to the view controller.
+    ///
+    /// - Parameters:
+    ///   - bar: Bar to add.
+    ///   - dataSource: Data source for the bar.
+    ///   - location: Location of the bar.
+    public func addBar(_ bar: TMBar,
+                       dataSource: TMBarDataSource,
+                       at location: BarLocation) {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
@@ -248,7 +254,7 @@ private extension TabmanViewController {
                    animation: animation)
     }
     
-    private func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> TMBarUpdateDirection {
+    func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> TMBarUpdateDirection {
         switch navigationDirection {
         case .forward:
             return .forward
