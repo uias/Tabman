@@ -98,7 +98,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         }
     }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
-    public var fadeEdges: Bool {
+    public var fadesContentEdges: Bool {
         set {
             rootContainer.showFade = newValue
         } get {
