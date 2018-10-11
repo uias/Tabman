@@ -379,6 +379,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Insets/TMInsets.swift",
+      "line": null,
+      "symbol": "TMInsets",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Insets/TMInsets.swift",
+      "line": 12,
+      "symbol": "TMInsets",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 26,
       "symbol": "TabmanViewController.BarLocation.top",
@@ -401,28 +415,35 @@
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 40,
+      "line": 43,
       "symbol": "TabmanViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 45,
+      "line": 48,
       "symbol": "TabmanViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 56,
+      "line": 59,
       "symbol": "TabmanViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 128,
+      "line": 64,
+      "symbol": "TabmanViewController.viewDidLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 142,
       "symbol": "TabmanViewController.addBar(_:dataSource:at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -6,6 +6,7 @@ author_url: https://github.com/uias
 github_url: https://github.com/uias/Tabman
 # podspec: Tabman.podspec
 skip_undocumented: true
+output: Docs
 
 copyright: '© 2018 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
 

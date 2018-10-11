@@ -8,7 +8,11 @@
 
 import UIKit
 
-/// Layout that displays a limited number of visible bar buttons sequentially along the horizontal axis.
+/// Layout that displays bar buttons sequentially along the horizontal axis, but is constrained by the number of items it can display.
+///
+/// If the bar happens to contain more bar buttons than the `visibleButtonCount`, paging will be enabled. You should use this layout
+/// if you want to a horizontal layout with a limited amount of buttons, such as a tab bar. It's also worth noting that the button width
+/// is set to `bounds.size.width / visibleButtonCount` rather than using intrinsic sizing.
 open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     
     // MARK: Properties
@@ -31,7 +35,9 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     }
    
     private var viewWidthConstraints: [NSLayoutConstraint]?
-    /// The number of buttons that can be visible in the layout at one time.
+    /// The number of buttons to be visible in the layout.
+    ///
+    /// If the number of buttons exceeds this value, paging will be enabled.
     public var visibleButtonCount: Int = 5 {
         didSet {
             guard oldValue != visibleButtonCount else {
@@ -50,6 +56,8 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     
     open override func insert(buttons: [TMBarButton], at index: Int) {
         super.insert(buttons: buttons, at: index)
+        
+        // Constrain button widths to visible count on insertion
         constrain(views: buttons, for: visibleButtonCount)
     }
 }

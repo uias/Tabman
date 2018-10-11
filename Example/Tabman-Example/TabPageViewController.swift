@@ -53,7 +53,7 @@ class TabPageViewController: TabmanViewController {
         // Add the bar to the view controller - wrapping it in a `TMNavigationBar`.
         addBar(TMNavigationBar(for: bar),
                dataSource: self,
-               at: .top)        
+               at: .top)
     }
     
     override func viewWillAppear(_ animated: Bool) {
