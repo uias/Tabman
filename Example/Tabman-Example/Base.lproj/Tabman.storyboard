@@ -108,13 +108,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-Qg-QvG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="H7W-RR-GRb" id="QNA-dc-eGh"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cc-Dw-8mt">
                                 <rect key="frame" x="149.5" y="319" width="76.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
@@ -131,11 +124,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0cc-Dw-8mt" firstAttribute="centerX" secondItem="sgk-Ra-mVU" secondAttribute="centerX" id="EYF-z1-2o5"/>
-                            <constraint firstItem="8pN-Qg-QvG" firstAttribute="bottom" secondItem="sgk-Ra-mVU" secondAttribute="bottom" id="Hhx-S8-2te"/>
-                            <constraint firstItem="8pN-Qg-QvG" firstAttribute="top" secondItem="454-9C-Wci" secondAttribute="top" id="JqW-m1-G1i"/>
                             <constraint firstItem="bIS-p2-cmU" firstAttribute="centerX" secondItem="sgk-Ra-mVU" secondAttribute="centerX" id="MzV-na-IoD"/>
-                            <constraint firstItem="8pN-Qg-QvG" firstAttribute="trailing" secondItem="sgk-Ra-mVU" secondAttribute="trailing" id="N2b-3a-I32"/>
-                            <constraint firstItem="8pN-Qg-QvG" firstAttribute="leading" secondItem="sgk-Ra-mVU" secondAttribute="leading" id="ele-Ik-XQY"/>
                             <constraint firstItem="0cc-Dw-8mt" firstAttribute="centerY" secondItem="454-9C-Wci" secondAttribute="centerY" id="gNX-2D-f5g"/>
                             <constraint firstItem="bIS-p2-cmU" firstAttribute="top" secondItem="0cc-Dw-8mt" secondAttribute="bottom" constant="8" id="pJX-lJ-MwA"/>
                         </constraints>
