@@ -9,6 +9,8 @@
 import UIKit
 
 /// Layout that displays bar buttons sequentially along the horizontal axis.
+///
+/// Simple but versatile, `TMHorizontalBarLayout` lays `BarButton`s out in a horizontal `UIStackView`.
 open class TMHorizontalBarLayout: TMBarLayout {
     
     // MARK: Defaults
@@ -19,8 +21,9 @@ open class TMHorizontalBarLayout: TMBarLayout {
     }
     
     // MARK: Properties
-    
     internal let stackView = UIStackView()
+    
+    // MARK: Customization
     
     public override var contentMode: TMBarLayout.ContentMode {
         didSet {
@@ -30,6 +33,22 @@ open class TMHorizontalBarLayout: TMBarLayout {
             case .fit:
                 buttonDistribution = .fillEqually
             }
+        }
+    }
+    /// Spacing between each button.
+    public var interButtonSpacing: CGFloat {
+        set {
+            stackView.spacing = newValue
+        } get {
+            return stackView.spacing
+        }
+    }
+    /// Distribution of internal stack view.
+    private var buttonDistribution: UIStackView.Distribution {
+        set {
+            stackView.distribution = newValue
+        } get {
+            return stackView.distribution
         }
     }
     
@@ -84,25 +103,5 @@ open class TMHorizontalBarLayout: TMBarLayout {
                       y: 0.0,
                       width: lowerView.frame.size.width + interpolation.size.width,
                       height: view.bounds.size.height)
-    }
-}
-
-// MARK: - Customization
-public extension TMHorizontalBarLayout {
-    
-    public var interButtonSpacing: CGFloat {
-        set {
-            stackView.spacing = newValue
-        } get {
-            return stackView.spacing
-        }
-    }
-    
-    private var buttonDistribution: UIStackView.Distribution {
-        set {
-            stackView.distribution = newValue
-        } get {
-            return stackView.distribution
-        }
     }
 }

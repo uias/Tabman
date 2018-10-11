@@ -225,13 +225,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/Styles/TMHorizontalBarLayout.swift",
-      "line": 93,
-      "symbol": "TMHorizontalBarLayout.interButtonSpacing",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/merrick/Dev/Projects/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 18,
       "symbol": "TMBarLayout.ContentMode",
