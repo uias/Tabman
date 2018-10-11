@@ -1,5 +1,5 @@
 github "SnapKit/SnapKit" "4.0.1"
 github "alexaubry/BulletinBoard" "2.0.2"
-github "uias/AutoInsetter" "1.3.0"
+github "uias/AutoInsetter" "217544abd8911e891006c9232b86fe35a1e79c03"
 github "uias/Pageboy" "34606d4f54f2bbe931684a268575a4dff1621ce1"
 github "uias/Randient" "1.0.0"
