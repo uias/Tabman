@@ -209,11 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D623B1F01E1D32D700527F3D /* Build configuration list for PBXNativeTarget "Tabman-Example" */;
 			buildPhases = (
-				468EDFC72164C7AA00C27982 /* Copy Carthage Frameworks */,
 				D623B1DA1E1D32D700527F3D /* Sources */,
 				D623B1DB1E1D32D700527F3D /* Frameworks */,
 				D623B1DC1E1D32D700527F3D /* Resources */,
 				D6E73A701E51F7C400A8D5A5 /* Embed Frameworks */,
+				468EDFC72164C7AA00C27982 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,9 +284,9 @@
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/BLTNBoard.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Randient.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/BLTNBoard.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Randient.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputFileListPaths = (
@@ -471,9 +471,7 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(INHERITED)",
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -494,9 +492,7 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(INHERITED)",
-					"$(SRCROOT)/Carthage/Build/iOS",
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tabman-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
