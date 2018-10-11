@@ -100,12 +100,35 @@ open class TMNavigationBar: UIView {
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
+        guard self.superview != nil else {
+            return
+        }
+        guard let viewController = nextViewControllerInResponderChain() else {
+            fatalError("TMNavigationBar could not find view controller to use for layout guides.")
+        }
+        
         NSLayoutConstraint.activate([
             extendingView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            extendingView.topAnchor.constraint(equalTo: superview!.superview!.topAnchor),
+            extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
             extendingView.trailingAnchor.constraint(equalTo: trailingAnchor),
             extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+    
+    /// Traverses superview responder chain for the next `UIViewController`.
+    ///
+    /// Not so nice, but prevents having to inject a reference `UIViewController` as we need the layout guides.
+    ///
+    /// - Returns: Next view controller in responder chain.
+    private func nextViewControllerInResponderChain() -> UIViewController? {
+        var superview: UIView! = self.superview
+        while superview != nil {
+            if let viewController = superview.next as? UIViewController {
+                return viewController
+            }
+            superview = superview.superview
+        }
+        return nil
     }
 }
 
