@@ -29,7 +29,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     // MARK: Properties
     
-    private let rootContainer = EdgeFadedView()
+    private let rootContentStack = UIStackView()
+    
+    private let scrollViewContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
     private var grid: TMBarViewGrid!
 
@@ -100,9 +102,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
     public var fadesContentEdges: Bool {
         set {
-            rootContainer.showFade = newValue
+            scrollViewContainer.showFade = newValue
         } get {
-            return rootContainer.showFade
+            return scrollViewContainer.showFade
         }
     }
     
@@ -129,6 +131,37 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     }
     
     private func layout(in view: UIView) {
+        layoutRootViews(in: view)
+        
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollViewContainer.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor),
+            scrollView.topAnchor.constraint(equalTo: scrollViewContainer.topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: scrollViewContainer.bottomAnchor)
+            ])
+        rootContentStack.addArrangedSubview(scrollViewContainer)
+        
+        // Set up grid - stack views that content views are added to.
+        self.grid = TMBarViewGrid(with: layout.view)
+        scrollView.addSubview(grid)
+        grid.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            grid.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            grid.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            grid.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            grid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            grid.heightAnchor.constraint(equalTo: rootContentStack.heightAnchor)
+            ])
+        
+        layout.layout(parent: self, insetGuides: contentInsetGuides)
+        self.indicatorLayoutHandler = container(for: indicator).layoutHandler
+    }
+    
+    private func layoutRootViews(in view: UIView) {
         var constraints = [NSLayoutConstraint]()
         
         view.addSubview(backgroundView)
@@ -140,43 +173,18 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
         
-        view.addSubview(rootContainer)
-        rootContainer.translatesAutoresizingMaskIntoConstraints = false
+        rootContentStack.axis = .horizontal
+        view.addSubview(rootContentStack)
+        rootContentStack.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
-            rootContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            rootContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            rootContentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            rootContentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
-        self.rootContainerTop = rootContainer.topAnchor.constraint(equalTo: view.topAnchor)
-        self.rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContainer.bottomAnchor)
+        self.rootContainerTop = rootContentStack.topAnchor.constraint(equalTo: view.topAnchor)
+        self.rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContentStack.bottomAnchor)
         constraints.append(contentsOf: [rootContainerTop, rootContainerBottom])
         
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        rootContainer.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(contentsOf: [
-            scrollView.leadingAnchor.constraint(equalTo: rootContainer.leadingAnchor),
-            scrollView.topAnchor.constraint(equalTo: rootContainer.topAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: rootContainer.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: rootContainer.bottomAnchor)
-            ])
-        
-        // Set up grid - stack views that content views are added to.
-        self.grid = TMBarViewGrid(with: layout.view)
-        scrollView.addSubview(grid)
-        grid.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(contentsOf: [
-            grid.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            grid.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            grid.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            grid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            grid.heightAnchor.constraint(equalTo: rootContainer.heightAnchor)
-            ])
-        
         NSLayoutConstraint.activate(constraints)
-        
-        layout.layout(parent: self, insetGuides: contentInsetGuides)
-        self.indicatorLayoutHandler = container(for: indicator).layoutHandler
     }
 }
 
@@ -315,10 +323,10 @@ extension TMBarView {
         let container = TMBarIndicatorContainer(for: indicator)
         switch indicator.displayStyle {
         case .footer:
-            grid.addFooterSubview(container)
+            grid.addBottomSubview(container)
             
         case .header:
-            grid.addHeaderSubview(container)
+            grid.addTopSubview(container)
             
         case .fill:
             scrollView.addSubview(container)

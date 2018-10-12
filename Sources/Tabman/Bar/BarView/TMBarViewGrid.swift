@@ -63,11 +63,11 @@ internal final class TMBarViewGrid: UIView {
     
     // MARK: Layout
     
-    func addHeaderSubview(_ view: UIView) {
+    func addTopSubview(_ view: UIView) {
         verticalStack.insertArrangedSubview(view, at: 0)
     }
     
-    func addFooterSubview(_ view: UIView) {
+    func addBottomSubview(_ view: UIView) {
         verticalStack.addArrangedSubview(view)
     }
     
