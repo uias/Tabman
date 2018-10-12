@@ -42,6 +42,8 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
+    private var accessoryViews = [String: UIView]()
+    
     // MARK: Components
     
     /// `TMBarLayout` that dictates display and behavior of bar buttons and other bar view components.
@@ -62,25 +64,6 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// By default this is set to the `TabmanViewController` the bar is added to.
     public weak var delegate: TMBarDelegate?
     
-    // MARK: Accessory Views
-    
-    /// Accessory View that is visible at the leading end of the bar view.
-    open var leadingAccessoryView: UIView? {
-        didSet {
-            cleanUpOldAccessory(view: oldValue)
-            updateAccessory(view: leadingAccessoryView,
-                            at: .leading)
-        }
-    }
-    /// Accessory View that is visible at the trailing end of the bar view.
-    open var trailingAccessoryView: UIView? {
-        didSet {
-            cleanUpOldAccessory(view: oldValue)
-            updateAccessory(view: trailingAccessoryView,
-                            at: .trailing)
-        }
-    }
-
     // MARK: Customization
     
     /// Style to use when animating bar position updates.
@@ -246,7 +229,8 @@ extension TMBarView: TMBar {
         // New content offset for scroll view for focus frame
         // Designed to center the frame in the view if possible.
         let centeredFocusFrame = (bounds.size.width / 2) - (focusRect.size.width / 2) // focus frame centered in view
-        let maxOffsetX = (scrollView.contentSize.width - bounds.size.width) + contentInset.right // maximum possible x offset
+        let pinnedAccessoryWidth = (accessoryView(at: .leading(pinned: true))?.bounds.size.width ?? 0.0) + (accessoryView(at: .trailing(pinned: true))?.bounds.size.width ?? 0.0)
+        let maxOffsetX = (scrollView.contentSize.width - (bounds.size.width - pinnedAccessoryWidth)) + contentInset.right // maximum possible x offset
         let minOffsetX = -contentInset.left
         var contentOffset = CGPoint(x: (-centeredFocusFrame) + focusRect.origin.x, y: 0.0)
         
@@ -364,27 +348,70 @@ extension TMBarView: TMBarButtonInteractionHandler {
 }
 
 // MARK: - Accessory Views
-private extension TMBarView {
+public extension TMBarView {
     
-    enum AccessoryLocation {
-        case leading
-        case trailing
+    /// Location of accessory views.
+    ///
+    /// - leading: At the leading edge of the view.
+    ///            `pinned` set to true will make the view pin to the leading of the layout and always stay visible,
+    ///            where as false will result in the view scrolling with the layout.
+    /// - trailing: At the trailing edge of the view.
+    ///            `pinned` set to true will make the view pin to the trailing of the layout and always stay visible,
+    ///            where as false will result in the view scrolling with the layout.
+    public enum AccessoryLocation {
+        case leading(pinned: Bool)
+        case trailing(pinned: Bool)
+        
+        internal var key: String {
+            switch self {
+            case .leading(let pinned):
+                return "leading\(pinned ? "Pinned" : "")"
+            case .trailing(let pinned):
+                return "trailing\(pinned ? "Pinned" : "")"
+            }
+        }
     }
     
-    func cleanUpOldAccessory(view: UIView?) {
+    /// Set an accessory view for a location in the bar view.
+    ///
+    /// - Parameters:
+    ///   - view: Accessory view.
+    ///   - location: Location of the accessory.
+    public func setAccessoryView(_ view: UIView,
+                                 at location: AccessoryLocation) {
+        cleanUpOldAccessory(at: location)
+        updateAccessory(view: view, at: location)
+    }
+    
+    func accessoryView(at location: AccessoryLocation) -> UIView? {
+        return accessoryViews[location.key]
+    }
+    
+    private func cleanUpOldAccessory(at location: AccessoryLocation) {
+        let view = accessoryView(at: location)
         view?.removeFromSuperview()
+        accessoryViews[location.key] = nil
     }
     
-    func updateAccessory(view: UIView?, at location: AccessoryLocation) {
+    private func updateAccessory(view: UIView?, at location: AccessoryLocation) {
         guard let view = view else {
             return
         }
         
+        accessoryViews[location.key] = view
         switch location {
-        case .leading:
-            grid.addLeadingSubview(view)
-        case .trailing:
-            grid.addTrailingSubview(view)
+        case .leading(let pinned):
+            if pinned {
+                rootContentStack.insertArrangedSubview(view, at: 0)
+            } else {
+                grid.addLeadingSubview(view)
+            }
+        case .trailing(let pinned):
+            if pinned {
+                rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
+            } else {
+                grid.addTrailingSubview(view)
+            }
         }
         reloadIndicatorPosition()
     }
