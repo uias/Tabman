@@ -51,8 +51,8 @@ class TabPageViewController: TabmanViewController {
         plusButton.tintColor = .white
         bar.rightAccessoryView = plusButton
         
-        // Add the bar to the view controller - wrapping it in a `TMNavigationBar`.
-        addBar(TMNavigationBar(for: bar),
+        // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
+        addBar(TMSystemBar(for: bar),
                dataSource: self,
                at: .top)
     }
