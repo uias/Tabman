@@ -34,7 +34,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private let scrollViewContainer = EdgeFadedView()
     private let scrollView = UIScrollView()
     private var grid: TMBarViewGrid!
-
+    
+    private let scrollHandler: TMBarViewScrollHandler
+    
     private var rootContainerTop: NSLayoutConstraint!
     private var rootContainerBottom: NSLayoutConstraint!
     
@@ -131,8 +133,11 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     // MARK: Init
     
     public required init() {
+        self.scrollHandler = TMBarViewScrollHandler(for: scrollView)
         super.init(frame: .zero)
+        
         buttons.interactionHandler = self
+        scrollHandler.delegate = self
         layout(in: self)
     }
     
@@ -147,6 +152,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         
         UIView.performWithoutAnimation {
             reloadIndicatorPosition()
+            updateEdgeFades(for: scrollView.contentOffset)
         }
     }
     
@@ -289,6 +295,8 @@ extension TMBarView: TMBar {
         }
     }
 
+    // MARK: Updating
+    
     private func updateValues(for style: AnimationStyle,
                               at position: CGFloat,
                               shouldAnimate: Bool) -> (CGFloat, Bool) {
@@ -303,6 +311,15 @@ extension TMBarView: TMBar {
         }
         
         return (position, animated)
+    }
+    
+    func updateEdgeFades(for contentOffset: CGPoint) {
+        let contentSize = self.scrollView.contentSize
+        let leadingFade = abs(max(0.0, min(1.0, contentOffset.x / (contentSize.width / 10))))
+        let trailingFade = CGFloat(0.0)
+        
+        scrollViewContainer.leadingFade = leadingFade
+        scrollViewContainer.trailingFade = trailingFade
     }
 }
 
@@ -428,5 +445,15 @@ private extension TMBarView {
         }
         
         reloadIndicatorPosition()
+    }
+}
+
+extension TMBarView: TMBarViewScrollHandlerDelegate {
+    
+    func barViewScrollHandler(_ handler: TMBarViewScrollHandler,
+                              didReceiveUpdated contentOffset: CGPoint,
+                              from scrollView: UIScrollView) {
+        
+        updateEdgeFades(for: contentOffset)
     }
 }
