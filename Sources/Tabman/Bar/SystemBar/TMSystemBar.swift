@@ -107,12 +107,25 @@ open class TMSystemBar: UIView {
             fatalError("TMNavigationBar could not find view controller to use for layout guides.")
         }
         
-        NSLayoutConstraint.activate([
+        var constraints = [
             extendingView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
             extendingView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        ]
+        
+        let relativeFrame = viewController.view.convert(self.frame, from: self)
+        if relativeFrame.origin.y == 0 { // Pin to top anchor
+            constraints.append(contentsOf: [
+                extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
+                extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                ])
+        } else if relativeFrame.origin.y == viewController.view.bounds.size.height { // Pin to bottom anchor
+            constraints.append(contentsOf: [
+                extendingView.topAnchor.constraint(equalTo: topAnchor),
+                extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+                ])
+        }
+        
+        NSLayoutConstraint.activate(constraints)
     }
     
     /// Traverses superview responder chain for the next `UIViewController`.
