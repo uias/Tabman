@@ -36,11 +36,9 @@ open class TMHorizontalBarLayout: TMBarLayout {
         }
     }
     /// Spacing between each button.
-    public var interButtonSpacing: CGFloat {
-        set {
-            stackView.spacing = newValue
-        } get {
-            return stackView.spacing
+    public var interButtonSpacing = Defaults.interButtonSpacing {
+        didSet {
+            stackView.spacing = interButtonSpacing
         }
     }
     /// Distribution of internal stack view.
@@ -66,7 +64,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
         
-        self.interButtonSpacing = Defaults.interButtonSpacing
+        stackView.spacing = interButtonSpacing
     }
     
     open override func insert(buttons: [TMBarButton], at index: Int) {

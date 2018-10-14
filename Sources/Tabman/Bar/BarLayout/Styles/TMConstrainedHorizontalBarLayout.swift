@@ -33,6 +33,14 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
             return super.isPagingEnabled
         }
     }
+    @available(*, unavailable)
+    public override var interButtonSpacing: CGFloat {
+        set {
+            fatalError("\(type(of: self)) does not support updating interButtonSpacing")
+        } get {
+            return super.interButtonSpacing
+        }
+    }
    
     private var viewWidthConstraints: [NSLayoutConstraint]?
     /// The number of buttons to be visible in the layout.
@@ -52,6 +60,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     open override func layout(in view: UIView) {
         super.layout(in: view)
         super.isPagingEnabled = true
+        super.interButtonSpacing = 0.0
     }
     
     open override func insert(buttons: [TMBarButton], at index: Int) {
