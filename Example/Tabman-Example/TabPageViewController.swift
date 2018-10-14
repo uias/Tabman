@@ -49,7 +49,7 @@ class TabPageViewController: TabmanViewController {
         let plusButton = CircularBarActionButton(action: .add)
         plusButton.addTarget(self, action: #selector(insertPage(_:)), for: .touchUpInside)
         plusButton.tintColor = .white
-        bar.setAccessoryView(plusButton, at: .trailing(pinned: true))
+        bar.rightAccessoryView = plusButton
         
         // Add the bar to the view controller - wrapping it in a `TMNavigationBar`.
         addBar(TMNavigationBar(for: bar),

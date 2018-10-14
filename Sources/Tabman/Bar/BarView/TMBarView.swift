@@ -42,7 +42,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
-    private var accessoryViews = [String: UIView]()
+    private var accessoryViews = [AccessoryLocation: UIView]()
     
     // MARK: Components
     
@@ -55,7 +55,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// Background view that appears behind all content in the bar view.
     ///
     /// Note: Default style is `TMBarBackgroundView.Style.clear`.
-    public var backgroundView = TMBarBackgroundView(style: .clear)
+    public let backgroundView = TMBarBackgroundView(style: .clear)
     
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: TMBarDataSource?
@@ -63,6 +63,43 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     ///
     /// By default this is set to the `TabmanViewController` the bar is added to.
     public weak var delegate: TMBarDelegate?
+    
+    // MARK: Accessory Views
+    
+    /// View to display on the left (or leading) edge of the bar.
+    ///
+    /// This view is within the scroll view and is subject to scroll off-screen
+    /// with bar contents.
+    open var leftAccessoryView: UIView? {
+        didSet {
+            setAccessoryView(leftAccessoryView, at: .leading)
+        }
+    }
+    /// View to display on the left (or leading) edge of the bar.
+    ///
+    /// This view is not part of the scrollable bar contents and will be visible at all times.
+    open var leftPinnedAccessoryView: UIView? {
+        didSet {
+            setAccessoryView(leftPinnedAccessoryView, at: .leadingPinned)
+        }
+    }
+    /// View to display on the right (or trailing) edge of the bar.
+    ///
+    /// This view is within the scroll view and is subject to scroll off-screen
+    /// with bar contents.
+    open var rightAccessoryView: UIView? {
+        didSet {
+            setAccessoryView(rightAccessoryView, at: .trailing)
+        }
+    }
+    /// View to display on the right (or trailing) edge of the bar.
+    ///
+    /// This view is not part of the scrollable bar contents and will be visible at all times.
+    open var rightPinnedAccessoryView: UIView? {
+        didSet {
+            setAccessoryView(rightPinnedAccessoryView, at: .trailingPinned)
+        }
+    }
     
     // MARK: Customization
     
@@ -229,7 +266,7 @@ extension TMBarView: TMBar {
         // New content offset for scroll view for focus frame
         // Designed to center the frame in the view if possible.
         let centeredFocusFrame = (bounds.size.width / 2) - (focusRect.size.width / 2) // focus frame centered in view
-        let pinnedAccessoryWidth = (accessoryView(at: .leading(pinned: true))?.bounds.size.width ?? 0.0) + (accessoryView(at: .trailing(pinned: true))?.bounds.size.width ?? 0.0)
+        let pinnedAccessoryWidth = (accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
         let maxOffsetX = (scrollView.contentSize.width - (bounds.size.width - pinnedAccessoryWidth)) + contentInset.right // maximum possible x offset
         let minOffsetX = -contentInset.left
         var contentOffset = CGPoint(x: (-centeredFocusFrame) + focusRect.origin.x, y: 0.0)
@@ -347,72 +384,49 @@ extension TMBarView: TMBarButtonInteractionHandler {
     }
 }
 
-// MARK: - Accessory Views
-public extension TMBarView {
-    
-    /// Location of accessory views.
-    ///
-    /// - leading: At the leading edge of the view.
-    ///            `pinned` set to true will make the view pin to the leading of the layout and always stay visible,
-    ///            where as false will result in the view scrolling with the layout.
-    /// - trailing: At the trailing edge of the view.
-    ///            `pinned` set to true will make the view pin to the trailing of the layout and always stay visible,
-    ///            where as false will result in the view scrolling with the layout.
-    public enum AccessoryLocation {
-        case leading(pinned: Bool)
-        case trailing(pinned: Bool)
-        
-        internal var key: String {
-            switch self {
-            case .leading(let pinned):
-                return "leading\(pinned ? "Pinned" : "")"
-            case .trailing(let pinned):
-                return "trailing\(pinned ? "Pinned" : "")"
-            }
-        }
+// MARK: - Accessory View Management
+private extension TMBarView {
+
+    enum AccessoryLocation: String {
+        case leading
+        case leadingPinned
+        case trailing
+        case trailingPinned
     }
     
-    /// Set an accessory view for a location in the bar view.
-    ///
-    /// - Parameters:
-    ///   - view: Accessory view.
-    ///   - location: Location of the accessory.
-    public func setAccessoryView(_ view: UIView,
+    func setAccessoryView(_ view: UIView?,
                                  at location: AccessoryLocation) {
-        cleanUpOldAccessory(at: location)
-        updateAccessory(view: view, at: location)
+        cleanUpOldAccessoryView(at: location)
+        addAccessoryView(view, at: location)
     }
     
-    func accessoryView(at location: AccessoryLocation) -> UIView? {
-        return accessoryViews[location.key]
+    private func accessoryView(at location: AccessoryLocation) -> UIView? {
+        return accessoryViews[location]
     }
     
-    private func cleanUpOldAccessory(at location: AccessoryLocation) {
+    private func cleanUpOldAccessoryView(at location: AccessoryLocation) {
         let view = accessoryView(at: location)
         view?.removeFromSuperview()
-        accessoryViews[location.key] = nil
+        accessoryViews[location] = nil
     }
     
-    private func updateAccessory(view: UIView?, at location: AccessoryLocation) {
+    private func addAccessoryView(_ view: UIView?, at location: AccessoryLocation) {
         guard let view = view else {
             return
         }
         
-        accessoryViews[location.key] = view
+        accessoryViews[location] = view
         switch location {
-        case .leading(let pinned):
-            if pinned {
-                rootContentStack.insertArrangedSubview(view, at: 0)
-            } else {
-                grid.addLeadingSubview(view)
-            }
-        case .trailing(let pinned):
-            if pinned {
-                rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
-            } else {
-                grid.addTrailingSubview(view)
-            }
+        case .leading:
+            grid.addLeadingSubview(view)
+        case .leadingPinned:
+            rootContentStack.insertArrangedSubview(view, at: 0)
+        case .trailing:
+            grid.addTrailingSubview(view)
+        case .trailingPinned:
+            rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
         }
+        
         reloadIndicatorPosition()
     }
 }
