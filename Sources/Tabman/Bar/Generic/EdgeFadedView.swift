@@ -54,13 +54,13 @@ internal final class EdgeFadedView: UIView {
     // MARK: Updates
     
     private func updateFadeRatios() {
-//        print("Left: \(leadingFade), Right: \(trailingFade)")
         
         let leadingStartLocation = NSNumber(value: Float(Defaults.leadingStartLocation * leadingFade))
         let leadingEndLocation = NSNumber(value: Float(Defaults.leadingEndLocation * leadingFade))
         let trailingEndLocation = NSNumber(value: Float(1.0 - ((1.0 - Defaults.trailingEndLocation) * trailingFade)))
-        
+        let trailingStartLocation = NSNumber(value: Float(1.0 - ((1.0 - Defaults.trailingStartLocation) * trailingFade)))
+
         gradientLayer.locations = [leadingStartLocation, leadingEndLocation,
-                                   trailingEndLocation, 1.0]
+                                   trailingEndLocation, trailingStartLocation]
     }
 }
