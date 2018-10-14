@@ -14,8 +14,9 @@ public final class TMTabItemBarButton: TMBarButton {
     
     private struct Defaults {
         static let imagePadding: CGFloat = 8.0
-        static let labelTopPadding: CGFloat = 8.0
         static let imageSize = CGSize(width: 30.0, height: 30.0)
+        static let labelPadding: CGFloat = 4.0
+        static let labelTopPadding: CGFloat = 8.0
     }
     
     // MARK: Properties
@@ -45,8 +46,8 @@ public final class TMTabItemBarButton: TMBarButton {
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: Defaults.imagePadding),
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Defaults.labelPadding),
+            view.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
@@ -59,6 +60,7 @@ public final class TMTabItemBarButton: TMBarButton {
         imageHeight.isActive = true
         
         imageView.backgroundColor = .lightGray
+        label.adjustsFontSizeToFitWidth = true
         label.text = "Item"
     }
     
