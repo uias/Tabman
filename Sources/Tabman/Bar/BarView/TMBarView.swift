@@ -202,10 +202,17 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         rootContentStack.axis = .horizontal
         view.addSubview(rootContentStack)
         rootContentStack.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(contentsOf: [
-            rootContentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            rootContentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
+        if #available(iOS 11, *) {
+            constraints.append(contentsOf: [
+                rootContentStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                rootContentStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+                ])
+        } else {
+            constraints.append(contentsOf: [
+                rootContentStack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                rootContentStack.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+                ])
+        }
         self.rootContainerTop = rootContentStack.topAnchor.constraint(equalTo: view.topAnchor)
         self.rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContentStack.bottomAnchor)
         constraints.append(contentsOf: [rootContainerTop, rootContainerBottom])
