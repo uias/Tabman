@@ -21,6 +21,7 @@ internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIV
     
     init(for indicator: IndicatorType) {
         super.init(frame: .zero)
+        isUserInteractionEnabled = false
         layout(indicator: indicator)
     }
     
