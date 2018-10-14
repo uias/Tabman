@@ -16,7 +16,7 @@ public final class TMTabItemBarButton: TMBarButton {
         static let imagePadding: CGFloat = 8.0
         static let imageSize = CGSize(width: 30.0, height: 30.0)
         static let labelPadding: CGFloat = 4.0
-        static let labelTopPadding: CGFloat = 8.0
+        static let labelTopPadding: CGFloat = 6.0
     }
     
     // MARK: Properties
@@ -26,6 +26,24 @@ public final class TMTabItemBarButton: TMBarButton {
     
     private var imageWidth: NSLayoutConstraint!
     private var imageHeight: NSLayoutConstraint!
+    
+    // MARK: Customization
+    
+    /// Size of the image view in the button.
+    public var imageViewSize: CGSize {
+        set {
+            imageWidth.constant = newValue.width
+            imageHeight.constant = newValue.height
+        } get {
+            return CGSize(width: imageWidth.constant, height: imageHeight.constant)
+        }
+    }
+    /// Font of the text label.
+    public var font: UIFont = UIFont.systemFont(ofSize: 12.0, weight: .medium) {
+        didSet {
+            label.font = font
+        }
+    }
     
     // MARK: Lifecycle
     
@@ -59,8 +77,7 @@ public final class TMTabItemBarButton: TMBarButton {
         imageWidth.isActive = true
         imageHeight.isActive = true
         
-        imageView.backgroundColor = .lightGray
-        label.adjustsFontSizeToFitWidth = true
+        label.font = self.font
         label.text = "Item"
     }
     
@@ -69,17 +86,5 @@ public final class TMTabItemBarButton: TMBarButton {
         
         label.text = item.title
         imageView.image = item.image
-    }
-}
-
-public extension TMTabItemBarButton {
-    
-    public var imageSize: CGSize {
-        set {
-            imageWidth.constant = newValue.width
-            imageHeight.constant = newValue.height
-        } get {
-            return CGSize(width: imageWidth.constant, height: imageHeight.constant)
-        }
     }
 }
