@@ -315,7 +315,7 @@ extension TMBarView: TMBar {
     
     func updateEdgeFades(for contentOffset: CGPoint) {
         let contentSize = self.scrollView.contentSize
-        let offsetProgress = contentOffset.x / (contentSize.width - bounds.size.width) * 1.2
+        let offsetProgress = contentOffset.x / (contentSize.width - scrollViewContainer.bounds.size.width) * 1.2
 
         let leadingFade = abs(max(0.0, min(1.0, offsetProgress)))
         let trailingFade = abs(max(0.0, min(1.0, 1.0 - offsetProgress)))
