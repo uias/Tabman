@@ -17,7 +17,7 @@ public extension TMBarIndicator {
         
         // MARK: Properties
         
-        public override var displayStyle: TMBarIndicator.DisplayStyle {
+        public override var displayMode: TMBarIndicator.DisplayMode {
             return .fill
         }
         

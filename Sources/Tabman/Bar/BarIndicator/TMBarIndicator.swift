@@ -13,10 +13,15 @@ open class TMBarIndicator: UIView {
     
     // MARK: Types
     
-    public enum DisplayStyle {
-        case header
+    /// Display mode of the indicator in a bar.
+    ///
+    /// - top: Indicator goes above the bar contents.
+    /// - bottom: Indicator goes below the bar contents.
+    /// - fill: Indicator fills the height of the bar, behind the bar contents.
+    public enum DisplayMode {
+        case top
+        case bottom
         case fill
-        case footer
     }
 
     public enum OverscrollBehavior {
@@ -27,10 +32,10 @@ open class TMBarIndicator: UIView {
     
     // MARK: Properties
     
-    open var displayStyle: DisplayStyle {
-        fatalError("Return displayStyle in subclass")
+    /// Display mode for the indicator.
+    open var displayMode: DisplayMode {
+        fatalError("Return displayMode in subclass")
     }
-    
     
      /// Behavior the indicator should exhibit when scrolling over the bounds of the bar.
      ///

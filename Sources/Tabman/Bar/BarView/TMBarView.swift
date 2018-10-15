@@ -368,12 +368,12 @@ extension TMBarView {
     /// - Returns: Indicator container.
     private func container(for indicator: IndicatorType) -> TMBarIndicatorContainer<IndicatorType> {
         let container = TMBarIndicatorContainer(for: indicator)
-        switch indicator.displayStyle {
-        case .footer:
-            grid.addBottomSubview(container)
-            
-        case .header:
+        switch indicator.displayMode {
+        case .top:
             grid.addTopSubview(container)
+            
+        case .bottom:
+            grid.addBottomSubview(container)
             
         case .fill:
             scrollView.addSubview(container)

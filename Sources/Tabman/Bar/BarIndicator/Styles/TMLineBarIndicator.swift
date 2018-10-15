@@ -27,8 +27,8 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Properties
     
-    open override var displayStyle: TMBarIndicator.DisplayStyle {
-        return .footer
+    open override var displayMode: TMBarIndicator.DisplayMode {
+        return .bottom
     }
     
     open override var tintColor: UIColor! {
