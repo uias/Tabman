@@ -103,8 +103,6 @@ open class TMBarLayout: TMBarViewFocusProvider {
     open func remove(buttons: [TMBarButton]) {
     }
 
-    // MARK: BarViewFocusProvider
-    
     /// Calculate the `focusRect` for the current position and capacity.
     ///
     /// This rect defines the area of the layout that should currently be highlighted for the selected bar button.
