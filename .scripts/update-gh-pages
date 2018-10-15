@@ -1,20 +1,9 @@
 #!/bin/bash
 
-# ----- Early exit check
-
-if [ "$TRAVIS_BRANCH" != "" ]; then
-    # Exit if we are running inside travis but not on the iOS scheme
-    if [ "$SCHEME" != "iOS" ]; then
-        echo " <== Early exit - SCHEME='$SCHEME'"
-        exit 0
-    fi
-fi
-
-
 # ----- Configuration
 
-ORGANISATION=ReSwift
-NAME=ReSwift
+ORGANISATION=uias
+NAME=Tabman
 BRANCH=$([ "$TRAVIS_BRANCH" == "" ] && echo "master" || echo "$TRAVIS_BRANCH")
 SHA=`git rev-parse --verify HEAD --short`
 REPO=`git config remote.origin.url`
@@ -48,7 +37,6 @@ echo " ==> Generate documentation"
 
 # Exit if not running from travis
 if [ "$TRAVIS_BRANCH" == "" ]; then exit; fi
-if [ "$SCHEME" != "iOS" ]; then exit; fi
 
 pushd "$CHECKOUT_PATH"
 
