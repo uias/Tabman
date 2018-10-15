@@ -262,7 +262,7 @@ extension TMBarView: TMBar {
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
                        direction: TMBarUpdateDirection,
-                       animation: TMBarAnimationConfig) {
+                       animation: TMBarAnimation) {
         
         let (pagePosition, animated) = updateValues(for: animationStyle,
                                                     at: pagePosition,
@@ -395,7 +395,7 @@ extension TMBarView {
         update(for: indicatedPosition,
                capacity: buttons.all.count,
                direction: .none,
-               animation: TMBarAnimationConfig(isEnabled: true,
+               animation: TMBarAnimation(isEnabled: true,
                                                duration: TMBarViewDefaults.animationDuration))
     }
 }

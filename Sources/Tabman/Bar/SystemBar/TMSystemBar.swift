@@ -175,7 +175,7 @@ extension TMSystemBar: TMBar {
         bar.reloadData(at: indexes, context: context)
     }
     
-    public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMBarAnimationConfig) {
+    public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMBarAnimation) {
         bar.update(for: pagePosition, capacity: capacity, direction: direction, animation: animation)
     }
 }

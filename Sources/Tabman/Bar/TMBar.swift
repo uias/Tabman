@@ -55,7 +55,7 @@ public enum TMBarUpdateDirection {
 }
 
 /// Configuration for a bar animation.
-public struct TMBarAnimationConfig {
+public struct TMBarAnimation {
     /// Whether the animation is enabled.
     public let isEnabled: Bool
     /// Duration of the animation in seconds.
@@ -94,5 +94,5 @@ public protocol TMBar: AnyObject where Self: UIView {
     func update(for pagePosition: CGFloat,
                 capacity: Int,
                 direction: TMBarUpdateDirection,
-                animation: TMBarAnimationConfig)
+                animation: TMBarAnimation)
 }
