@@ -421,7 +421,7 @@ private extension TMBarView {
     }
     
     func setAccessoryView(_ view: UIView?,
-                                 at location: AccessoryLocation) {
+                          at location: AccessoryLocation) {
         cleanUpOldAccessoryView(at: location)
         addAccessoryView(view, at: location)
     }

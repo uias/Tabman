@@ -18,8 +18,8 @@ open class TMSystemBar: UIView {
     private let bar: TMBar
     
     private lazy var contentView = makeContentView()
-    private var barView: UIView {
-        return bar as! UIView
+    private var barView: UIView? {
+        return bar as? UIView
     }
     private lazy var separatorView = makeSeparatorView()
 
@@ -65,6 +65,9 @@ open class TMSystemBar: UIView {
     }
     
     private func layout(in view: UIView) {
+        guard let barView = self.barView else {
+            fatalError("For some reason we couldn't get barView - this should be impossible.")
+        }
         
         // Extended views
         
@@ -111,7 +114,7 @@ open class TMSystemBar: UIView {
         
         var constraints = [
             extendingView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            extendingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            extendingView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ]
         
         let relativeFrame = viewController.view.convert(self.frame, from: self)

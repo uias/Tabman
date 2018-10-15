@@ -71,13 +71,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(at: index...index, context: .insertion)})
+        activeBars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
         super.insertPage(at: index, then: updateBehavior)
     }
     
     open override func deletePage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(at: index...index, context: .deletion)})
+        activeBars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
         super.deletePage(at: index, then: updateBehavior)
     }
     
@@ -125,7 +125,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         guard let pageCount = pageboyViewController.pageCount else {
             return
         }
-        activeBars.forEach({ $0.reloadData(at: 0...pageCount - 1, context: .full)})
+        activeBars.forEach({ $0.reloadData(at: 0...pageCount - 1, context: .full) })
     }
     
     // MARK: BarDelegate
