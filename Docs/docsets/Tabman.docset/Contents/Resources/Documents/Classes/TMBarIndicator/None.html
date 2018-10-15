@@ -173,13 +173,13 @@
             <h1>None</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../../Classes/TMBarLayout.html">TMBarLayout</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../../Classes/TMBarIndicator.html">TMBarIndicator</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Layout that won&rsquo;t display any visible bar buttons.</p>
+            <p>Indicator that is zero height and hidden.</p>
 
-<p>The indicator will be visible and equally distributed in the layout width.</p>
+<p>Use this if you do not want a visible indicator in the bar.</p>
 
           </div>
         </section>
@@ -188,19 +188,19 @@
           <div class="section-content">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Lifecycle"></a>
-                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
-                <a href="#/Lifecycle">
-                  <h3 class="section-name">Lifecycle</h3>
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
                 </a>
               </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman11TMBarLayoutC4NoneC6layout2inySo6UIViewC_tF"></a>
-                    <a name="//apple_ref/swift/Method/layout(in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4NoneC6layout2inySo6UIViewC_tF">layout(in:)</a>
+                    <a name="/s:6Tabman14TMBarIndicatorC4NoneC11displayModeAC07DisplayF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/displayMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC4NoneC11displayModeAC07DisplayF0Ovp">displayMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,85 +214,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">layout</span><span class="p">(</span><span class="k">in</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman11TMBarLayoutC4NoneC6insert7buttons2atySayAA0B6ButtonCG_SitF"></a>
-                    <a name="//apple_ref/swift/Method/insert(buttons:at:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4NoneC6insert7buttons2atySayAA0B6ButtonCG_SitF">insert(buttons:at:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">insert</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">],</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman11TMBarLayoutC4NoneC6remove7buttonsySayAA0B6ButtonCG_tF"></a>
-                    <a name="//apple_ref/swift/Method/remove(buttons:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4NoneC6remove7buttonsySayAA0B6ButtonCG_tF">remove(buttons:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">])</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Tabman11TMBarLayoutC4NoneC9focusArea3for8capacitySo6CGRectV12CoreGraphics7CGFloatV_SitF"></a>
-                    <a name="//apple_ref/swift/Method/focusArea(for:capacity:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4NoneC9focusArea3for8capacitySo6CGRectV12CoreGraphics7CGFloatV_SitF">focusArea(for:capacity:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">focusArea</span><span class="p">(</span><span class="k">for</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">displayMode</span><span class="p">:</span> <span class="kt"><a href="../../Classes/TMBarIndicator.html">TMBarIndicator</a></span><span class="o">.</span><span class="kt"><a href="../../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO">DisplayMode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

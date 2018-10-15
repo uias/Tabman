@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TMNavigationBar Class Reference</title>
+    <title>TMSystemBar Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,16 +14,16 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/TMNavigationBar" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/TMSystemBar" class="dashAnchor"></a>
 
-    <a title="TMNavigationBar Class Reference"></a>
+    <a title="TMSystemBar Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
           Tabman Docs
         </a>
-         (61% documented)
+         (63% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Tabman Reference</a>
       <img class="carat" src="../img/carat.png" />
-      TMNavigationBar Class Reference
+      TMSystemBar Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -113,7 +113,10 @@
                 <a class="nav-group-task-link" href="../Classes/TMBarIndicator.html">TMBarIndicator</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC4NoneC">– None</a>
+                <a class="nav-group-task-link" href="../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO">– DisplayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TMBarIndicator/None.html">– None</a>
               </li>
             </ul>
           </li>
@@ -130,7 +133,7 @@
                 <a class="nav-group-task-link" href="../Classes/TMBarButtonCollection.html">TMBarButtonCollection</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TMNavigationBar.html">TMNavigationBar</a>
+                <a class="nav-group-task-link" href="../Classes/TMSystemBar.html">TMSystemBar</a>
               </li>
             </ul>
           </li>
@@ -157,7 +160,7 @@
             <a class="nav-group-name-link" href="../Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/TMBarAnimationConfig.html">TMBarAnimationConfig</a>
+                <a class="nav-group-task-link" href="../Structs/TMBarAnimation.html">TMBarAnimation</a>
               </li>
             </ul>
           </li>
@@ -167,14 +170,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>TMNavigationBar</h1>
+            <h1>TMSystemBar</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMNavigationBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMSystemBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                 </div>
               </div>
-            <p>Bar which mimicks the appearance of <code>UINavigationBar</code>.</p>
+            <p>Bar which mimicks the appearance of a UIKit <code>UINavigationBar</code> / <code>UITabBar</code>.</p>
 
 <p>Contains an internal <code><a href="../Protocols/TMBar.html">TMBar</a></code> and forwards on all bar responsibility to this instance.</p>
 
@@ -195,9 +198,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman15TMNavigationBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp"></a>
+                    <a name="/s:6Tabman11TMSystemBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp"></a>
                     <a name="//apple_ref/swift/Property/backgroundStyle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman15TMNavigationBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp">backgroundStyle</a>
+                    <a class="token" href="#/s:6Tabman11TMSystemBarC15backgroundStyleAA19TMBarBackgroundViewC0E0Ovp">backgroundStyle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,9 +227,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman15TMNavigationBarC14separatorColorSo7UIColorCvp"></a>
+                    <a name="/s:6Tabman11TMSystemBarC14separatorColorSo7UIColorCvp"></a>
                     <a name="//apple_ref/swift/Property/separatorColor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman15TMNavigationBarC14separatorColorSo7UIColorCvp">separatorColor</a>
+                    <a class="token" href="#/s:6Tabman11TMSystemBarC14separatorColorSo7UIColorCvp">separatorColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,9 +267,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman15TMNavigationBarC3forAcA5TMBar_p_tcfc"></a>
+                    <a name="/s:6Tabman11TMSystemBarC3forAcA5TMBar_p_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman15TMNavigationBarC3forAcA5TMBar_p_tcfc">init(for:)</a>
+                    <a class="token" href="#/s:6Tabman11TMSystemBarC3forAcA5TMBar_p_tcfc">init(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,9 +396,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Tabman5TMBarP6update3for8capacity9direction9animationy12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOAA0B15AnimationConfigVtF"></a>
+                    <a name="/s:6Tabman5TMBarP6update3for8capacity9direction9animationy12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOAA0B9AnimationVtF"></a>
                     <a name="//apple_ref/swift/Method/update(for:capacity:direction:animation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman5TMBarP6update3for8capacity9direction9animationy12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOAA0B15AnimationConfigVtF">update(for:capacity:direction:animation:)</a>
+                    <a class="token" href="#/s:6Tabman5TMBarP6update3for8capacity9direction9animationy12CoreGraphics7CGFloatV_SiAA0B15UpdateDirectionOAA0B9AnimationVtF">update(for:capacity:direction:animation:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -409,7 +412,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="k">for</span> <span class="nv">pagePosition</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO">TMBarUpdateDirection</a></span><span class="p">,</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Structs/TMBarAnimationConfig.html">TMBarAnimationConfig</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="k">for</span> <span class="nv">pagePosition</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO">TMBarUpdateDirection</a></span><span class="p">,</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Structs/TMBarAnimation.html">TMBarAnimation</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
