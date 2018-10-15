@@ -61,6 +61,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// Note: Default style is `TMBarBackgroundView.Style.clear`.
     public let backgroundView = TMBarBackgroundView(style: .clear)
     
+    /// Items that are displayed in the bar.
+    public private(set) var items: [TMBarItem]?
+    
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: TMBarDataSource?
     /// Object that acts as a delegate to the BarView.
@@ -232,13 +235,15 @@ extension TMBarView: TMBar {
             return
         }
         
+        var items = self.items ?? [TMBarItem]()
+        
         switch context {
         case .full, .insertion:
             
             var newButtons = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
-                var item = dataSource.barItem(for: self, at: index)
-                item.assignedIndex = index
+                let item = dataSource.barItem(for: self, at: index)
+                items.insert(item, at: index)
                 
                 let button = ButtonType()
                 button.populate(for: item)
@@ -254,10 +259,12 @@ extension TMBarView: TMBar {
             for index in indexes.lowerBound ... indexes.upperBound {
                 let button = buttons.all[index]
                 buttonsToRemove.append(button)
+                items.remove(at: index)
             }
             layout.remove(buttons: buttonsToRemove)
         }
         
+        self.items = items
         reloadIndicatorPosition()
     }
     

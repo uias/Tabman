@@ -14,9 +14,7 @@ public struct TMBarItem {
     
     public let title: String?
     public let image: UIImage?
-    
-    internal var assignedIndex: Int?
-    
+        
     // MARK: Init
     
     public init(title: String) {
