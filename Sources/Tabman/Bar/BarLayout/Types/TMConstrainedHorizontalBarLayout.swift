@@ -67,7 +67,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
         super.insert(buttons: buttons, at: index)
         
         // Constrain button widths to visible count on insertion
-        constrain(views: buttons, for: visibleButtonCount)
+        constrain(views: stackView.arrangedSubviews, for: visibleButtonCount)
     }
 }
 
