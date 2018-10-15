@@ -9,6 +9,8 @@
 import UIKit
 import Pageboy
 
+// swiftlint:disable file_length
+
 private struct TMBarViewDefaults {
     static let animationDuration: TimeInterval = 0.25
 }
