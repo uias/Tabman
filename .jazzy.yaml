@@ -22,6 +22,9 @@ custom_categories:
     - Example Projects
     - Contributing
     - Changelog
+    
+  - name: View Controller
+    children:
     - TabmanViewController
     
   - name: Bar
@@ -31,6 +34,7 @@ custom_categories:
     - TMBarItem
     - TMBarDataSource
     - TMBarDelegate
+    - TMSystemBar
 
   - name: Layout
     children:
