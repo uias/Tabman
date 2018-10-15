@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=".artwork/logo.png" width="890" alt="Tabman"/>
+    <img src="Docs/img/tm_logo.png" width="890" alt="Tabman"/>
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-    <img src=".artwork/header.png" width="890" alt="Tabman"/>
+    <img src="Docs/img/tm_header.png" width="890" alt="Tabman"/>
 </p>
  
 ## ⭐️ Features
@@ -115,7 +115,7 @@ TODO
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
 <p align="center">
-    <img src=".artwork/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
+    <img src="Docs/img/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
 </p>
 
 #### TMBarView
