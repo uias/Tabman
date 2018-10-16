@@ -35,8 +35,8 @@
 		46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */; };
 		46BBCF632143C962003238FD /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF4A2143C962003238FD /* ChildViewController.swift */; };
 		46BBCF7B2143F97E003238FD /* CircularBarActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */; };
-		46E057B6217615CA003FB809 /* AddPageBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B5217615CA003FB809 /* AddPageBulletinPage.swift */; };
 		46E057B821762BA7003FB809 /* BarOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B721762BA7003FB809 /* BarOptionButton.swift */; };
+		46E057BA21764185003FB809 /* AddBarBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B921764185003FB809 /* AddBarBulletinPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,8 +82,8 @@
 		46BBCF492143C962003238FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BBCF4A2143C962003238FD /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarActionButton.swift; sourceTree = "<group>"; };
-		46E057B5217615CA003FB809 /* AddPageBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageBulletinPage.swift; sourceTree = "<group>"; };
 		46E057B721762BA7003FB809 /* BarOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarOptionButton.swift; sourceTree = "<group>"; };
+		46E057B921764185003FB809 /* AddBarBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBarBulletinPage.swift; sourceTree = "<group>"; };
 		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,7 +136,7 @@
 				46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */,
 				46BBCF362143C962003238FD /* SettingsBulletinPage.swift */,
 				46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */,
-				46E057B5217615CA003FB809 /* AddPageBulletinPage.swift */,
+				46E057B921764185003FB809 /* AddBarBulletinPage.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -319,7 +319,6 @@
 				46E057B821762BA7003FB809 /* BarOptionButton.swift in Sources */,
 				46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */,
 				46BBCF602143C962003238FD /* PageStatusView.swift in Sources */,
-				46E057B6217615CA003FB809 /* AddPageBulletinPage.swift in Sources */,
 				46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */,
 				46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */,
 				46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */,
@@ -328,6 +327,7 @@
 				46BBCF512143C962003238FD /* SettingsBulletinPage.swift in Sources */,
 				46BBCF5B2143C962003238FD /* AppDelegate.swift in Sources */,
 				46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */,
+				46E057BA21764185003FB809 /* AddBarBulletinPage.swift in Sources */,
 				46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */,
 				46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */,
 				46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */,

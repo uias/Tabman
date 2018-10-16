@@ -1,5 +1,5 @@
 //
-//  AddPageBulletinPage.swift
+//  AddBarBulletinPage.swift
 //  Tabman-Example
 //
 //  Created by Merrick Sapsford on 16/10/2018.
@@ -10,7 +10,7 @@ import UIKit
 import BLTNBoard
 import Tabman
 
-final class AddPageBulletinPage: BLTNPageItem {
+final class AddBarBulletinPage: BLTNPageItem {
     
     enum BarType: String, CaseIterable {
         case buttonBar = "ButtonBar"
@@ -65,7 +65,7 @@ final class AddPageBulletinPage: BLTNPageItem {
     }
 }
 
-private extension AddPageBulletinPage {
+private extension AddBarBulletinPage {
     
     func makeTitleLabel(for type: BarType) -> UILabel {
         let label = UILabel()

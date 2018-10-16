@@ -124,7 +124,7 @@ class SettingsBulletinPage: BLTNPageItem {
     // MARK: Actions
     
     @objc private func addBarOptionPressed(_ sender: UIButton) {
-        let addOptionPage = AddPageBulletinPage(title: Option.addBar.displayTitle)
+        let addOptionPage = AddBarBulletinPage(title: Option.addBar.displayTitle)
         
         addOptionPage.appearance = appearance
         next = addOptionPage
