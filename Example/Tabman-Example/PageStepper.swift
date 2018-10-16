@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class PageStepper: UIControl {
     
@@ -61,31 +60,34 @@ class PageStepper: UIControl {
         let negativeButton = makeStepperButton(for: .negative)
         negativeButton.addTarget(self, action: #selector(negativeButtonPressed(_:)), for: .touchUpInside)
         addSubview(negativeButton)
-        negativeButton.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
+        negativeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            negativeButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            negativeButton.topAnchor.constraint(equalTo: topAnchor),
+            negativeButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
         self.negativeButton = negativeButton
         
         let positiveButton = makeStepperButton(for: .positive)
         positiveButton.addTarget(self, action: #selector(positiveButtonPressed(_:)), for: .touchUpInside)
         addSubview(positiveButton)
-        positiveButton.snp.makeConstraints { (make) in
-            make.trailing.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
+        positiveButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            positiveButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            positiveButton.topAnchor.constraint(equalTo: topAnchor),
+            positiveButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
         self.positiveButton = positiveButton
         
         let statusLabel = makeStatusLabel()
         addSubview(statusLabel)
-        statusLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(negativeButton.snp.trailing)
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.trailing.equalTo(positiveButton.snp.leading)
-        }
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            statusLabel.leadingAnchor.constraint(equalTo: negativeButton.trailingAnchor),
+            statusLabel.topAnchor.constraint(equalTo: topAnchor),
+            statusLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            statusLabel.trailingAnchor.constraint(equalTo: positiveButton.leadingAnchor)
+            ])
         self.statusLabel = statusLabel
         
         update(for: currentPage)
@@ -130,9 +132,8 @@ extension PageStepper {
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 10.0, left: 28.0, bottom: 10.0, right: 28.0)
         
-        button.snp.makeConstraints { (make) in
-            make.width.equalTo(80.0)
-        }
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
         
         return button
     }

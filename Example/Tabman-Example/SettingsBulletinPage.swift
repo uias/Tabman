@@ -22,6 +22,8 @@ class SettingsBulletinPage: BLTNPageItem {
     // MARK: Options
     
     private enum Option {
+        case addBar
+        case removeBar
         case modification
         case infiniteScrolling
         case autoScrolling
@@ -29,6 +31,10 @@ class SettingsBulletinPage: BLTNPageItem {
         
         var displayTitle: String {
             switch self {
+            case .addBar:
+                return "⚡️ Add new Bar"
+            case .removeBar:
+                return "⛔️ Remove a Bar"
             case .modification:
                 return "⚒ Modify Pages"
             case .infiniteScrolling:
@@ -45,6 +51,8 @@ class SettingsBulletinPage: BLTNPageItem {
     
     private weak var pageViewController: PageboyViewController!
     
+    private var addButtonOption: UIButton!
+    private var removeButtonOption: UIButton!
     private var modificationOption: UIButton!
     private var infiniteScrollOption: UIButton!
     private var autoScrollOption: UIButton!
@@ -62,6 +70,8 @@ class SettingsBulletinPage: BLTNPageItem {
     // MARK: Lifecycle
     
     override func tearDown() {
+        addButtonOption.removeTarget(self, action: nil, for: .touchUpInside)
+        removeButtonOption.removeTarget(self, action: nil, for: .touchUpInside)
         modificationOption.removeTarget(self, action: nil, for: .touchUpInside)
         infiniteScrollOption.removeTarget(self, action: nil, for: .touchUpInside)
         autoScrollOption.removeTarget(self, action: nil, for: .touchUpInside)
@@ -71,18 +81,24 @@ class SettingsBulletinPage: BLTNPageItem {
     override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
         let stack = interfaceBuilder.makeGroupStack(spacing: 16.0)
         
-        let modificationDetail = makeDetailLabel()
-        modificationDetail.text = "⚠️ NEW: In Pageboy 3, you can insert and remove pages dynamically from the page view controller."
-        stack.addArrangedSubview(modificationDetail)
+        let addBarOption = makeOptionButton(for: .addBar)
+        addBarOption.addTarget(self, action: #selector(addBarOptionPressed(_:)), for: .touchUpInside)
+        stack.addArrangedSubview(addBarOption)
+        self.addButtonOption = addBarOption
+        
+        let removeBarOption = makeOptionButton(for: .removeBar)
+        removeBarOption.addTarget(self, action: #selector(removeBarOptionPressed(_:)), for: .touchUpInside)
+        stack.addArrangedSubview(removeBarOption)
+        self.removeButtonOption = removeBarOption
+        
+        let pageboyDetail = makeDetailLabel()
+        pageboyDetail.text = "Pageboy Settings"
+        stack.addArrangedSubview(pageboyDetail)
         
         let modificationOption = makeOptionButton(for: .modification)
         modificationOption.addTarget(self, action: #selector(modificationOptionPressed(_:)), for: .touchUpInside)
         stack.addArrangedSubview(modificationOption)
         self.modificationOption = modificationOption
-        
-        let otherDetail = makeDetailLabel()
-        otherDetail.text = "Other cool things..."
-        stack.addArrangedSubview(otherDetail)
         
         let infiniteScrollOption = makeOptionToggleButton(for: .infiniteScrolling)
         infiniteScrollOption.addTarget(self, action: #selector(infiniteScrollToggled(_:)), for: .touchUpInside)
@@ -106,6 +122,18 @@ class SettingsBulletinPage: BLTNPageItem {
     }
     
     // MARK: Actions
+    
+    @objc private func addBarOptionPressed(_ sender: UIButton) {
+        let addOptionPage = AddPageBulletinPage(title: Option.addBar.displayTitle)
+        
+        addOptionPage.appearance = appearance
+        next = addOptionPage
+        manager?.displayNextItem()
+    }
+    
+    @objc private func removeBarOptionPressed(_ sender: UIButton) {
+        
+    }
     
     @objc private func modificationOptionPressed(_ sender: UIButton) {
         let modificationPage = PageModificationBulletinPage(title: Option.modification.displayTitle,
