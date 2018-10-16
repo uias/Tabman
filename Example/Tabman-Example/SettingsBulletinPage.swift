@@ -33,17 +33,34 @@ class SettingsBulletinPage: BLTNPageItem {
         var displayTitle: String {
             switch self {
             case .addBar:
-                return "⚡️ Add new Bar"
+                return "Add new Bar"
             case .removeBar:
-                return "⛔️ Remove a Bar"
+                return "Remove a Bar"
             case .modification:
-                return "⚒ Modify Pages"
+                return "Modify Pages"
             case .infiniteScrolling:
-                return "🎡 Infinite Scrolling"
+                return "Infinite Scrolling"
             case .autoScrolling:
-                return "🏎 Auto Scrolling"
+                return "Auto Scrolling"
             case .scrollEnabled:
-                return "👇 Scroll Enabled"
+                return "Scroll Enabled"
+            }
+        }
+        
+        var emoji: String {
+            switch self {
+            case .addBar:
+                return "⚡️"
+            case .removeBar:
+                return "⛔️"
+            case .modification:
+                return "⚒"
+            case .infiniteScrolling:
+                return "🎡"
+            case .autoScrolling:
+                return "🏎"
+            case .scrollEnabled:
+                return "👇"
             }
         }
     }
@@ -181,7 +198,7 @@ extension SettingsBulletinPage {
     private func makeOptionButton(for option: Option) -> SettingsOptionButton {
         
         let button = SettingsOptionButton()
-        button.setTitle(option.displayTitle, for: .normal)
+        button.setTitle("\(option.emoji) \(option.displayTitle)", for: .normal)
         button.tintColor = appearance.actionButtonColor
         
         return button
