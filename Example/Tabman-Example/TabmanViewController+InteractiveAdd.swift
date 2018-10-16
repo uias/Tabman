@@ -25,6 +25,8 @@ extension TabmanViewController: BarInteractiveOverlayViewDelegate {
     func interactiveOverlayView(_ view: BarInteractiveOverlayView,
                                 didRequestAdd bar: TMBar,
                                 at location: TabmanViewController.BarLocation) {
-        addBar(bar, dataSource: bar.dataSource!, at: location)
+        addBar(TMSystemBar(for: bar),
+               dataSource: bar.dataSource!,
+               at: location)
     }
 }

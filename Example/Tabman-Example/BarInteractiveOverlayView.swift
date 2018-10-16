@@ -18,6 +18,12 @@ protocol BarInteractiveOverlayViewDelegate: class {
 
 final class BarInteractiveOverlayView: UIView {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let areaButtonHeight: CGFloat = 70.0
+    }
+    
     // MARK: Types
     
     enum Context {
@@ -29,7 +35,7 @@ final class BarInteractiveOverlayView: UIView {
     
     let overlayView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         return view
     }()
     
@@ -82,7 +88,7 @@ final class BarInteractiveOverlayView: UIView {
             topAreaButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             topAreaButton.topAnchor.constraint(equalTo: topAnchor, constant: topAreaHeight),
             topAreaButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topAreaButton.heightAnchor.constraint(equalToConstant: 50.0)
+            topAreaButton.heightAnchor.constraint(equalToConstant: Defaults.areaButtonHeight)
             ])
         topAreaButton.addTarget(self, action: #selector(topAreaButtonPressed(_:)), for: .touchUpInside)
         
@@ -94,7 +100,7 @@ final class BarInteractiveOverlayView: UIView {
             bottomAreaButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomAnchor.constraint(equalTo: bottomAreaButton.bottomAnchor, constant: bottomAreaHeight),
             bottomAreaButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bottomAreaButton.heightAnchor.constraint(equalToConstant: 50.0)
+            bottomAreaButton.heightAnchor.constraint(equalToConstant: Defaults.areaButtonHeight)
             ])
         bottomAreaButton.addTarget(self, action: #selector(bottomAreaButtonPressed(_:)), for: .touchUpInside)
     }
@@ -166,7 +172,7 @@ private extension BarInteractiveOverlayView {
             button.setTitle("Bottom", for: .normal)
         }
         
-        button.backgroundColor = .red
+        button.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         return button
     }
 }
