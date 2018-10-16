@@ -37,6 +37,7 @@
 		46BBCF7B2143F97E003238FD /* CircularBarActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */; };
 		46E057B821762BA7003FB809 /* BarOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B721762BA7003FB809 /* BarOptionButton.swift */; };
 		46E057BA21764185003FB809 /* AddBarBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B921764185003FB809 /* AddBarBulletinPage.swift */; };
+		46E057BC21764504003FB809 /* TabmanViewController+InteractiveAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057BB21764504003FB809 /* TabmanViewController+InteractiveAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarActionButton.swift; sourceTree = "<group>"; };
 		46E057B721762BA7003FB809 /* BarOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarOptionButton.swift; sourceTree = "<group>"; };
 		46E057B921764185003FB809 /* AddBarBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBarBulletinPage.swift; sourceTree = "<group>"; };
+		46E057BB21764504003FB809 /* TabmanViewController+InteractiveAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+InteractiveAdd.swift"; sourceTree = "<group>"; };
 		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				46BBCF402143C962003238FD /* Launch.storyboard */,
 				46BBCF442143C962003238FD /* TabPageViewController+Bulletins.swift */,
 				46BBCF482143C962003238FD /* TabPageViewController+Settings.swift */,
+				46E057BB21764504003FB809 /* TabmanViewController+InteractiveAdd.swift */,
 				46BBCF662143C999003238FD /* Settings */,
 				46BBCF682143C9D7003238FD /* Components */,
 				46BBCF692143CA0E003238FD /* Utilities */,
@@ -318,6 +321,7 @@
 				46BBCF582143C962003238FD /* PageStepper.swift in Sources */,
 				46E057B821762BA7003FB809 /* BarOptionButton.swift in Sources */,
 				46BBCF4F2143C962003238FD /* GradientViewController.swift in Sources */,
+				46E057BC21764504003FB809 /* TabmanViewController+InteractiveAdd.swift in Sources */,
 				46BBCF602143C962003238FD /* PageStatusView.swift in Sources */,
 				46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */,
 				46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */,
