@@ -7,12 +7,24 @@
 //
 
 import UIKit
-import Tabman
+@testable import Tabman
 
 extension TabmanViewController {
     
     func addBarInteractively(_ bar: TMBar,
                              dataSource: TMBarDataSource) {
-        
+        bar.dataSource = dataSource
+        let overlay = BarInteractiveOverlayView.present(over: self,
+                                                        context: .add(bar: bar))
+        overlay.delegate = self
+    }
+}
+
+extension TabmanViewController: BarInteractiveOverlayViewDelegate {
+    
+    func interactiveOverlayView(_ view: BarInteractiveOverlayView,
+                                didRequestAdd bar: TMBar,
+                                at location: TabmanViewController.BarLocation) {
+        addBar(bar, dataSource: bar.dataSource!, at: location)
     }
 }

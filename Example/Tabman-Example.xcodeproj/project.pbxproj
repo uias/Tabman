@@ -38,6 +38,7 @@
 		46E057B821762BA7003FB809 /* BarOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B721762BA7003FB809 /* BarOptionButton.swift */; };
 		46E057BA21764185003FB809 /* AddBarBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057B921764185003FB809 /* AddBarBulletinPage.swift */; };
 		46E057BC21764504003FB809 /* TabmanViewController+InteractiveAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057BB21764504003FB809 /* TabmanViewController+InteractiveAdd.swift */; };
+		46E057BE2176756A003FB809 /* BarInteractiveOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E057BD2176756A003FB809 /* BarInteractiveOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +87,7 @@
 		46E057B721762BA7003FB809 /* BarOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarOptionButton.swift; sourceTree = "<group>"; };
 		46E057B921764185003FB809 /* AddBarBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBarBulletinPage.swift; sourceTree = "<group>"; };
 		46E057BB21764504003FB809 /* TabmanViewController+InteractiveAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+InteractiveAdd.swift"; sourceTree = "<group>"; };
+		46E057BD2176756A003FB809 /* BarInteractiveOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarInteractiveOverlayView.swift; sourceTree = "<group>"; };
 		D623B1DE1E1D32D700527F3D /* Tabman-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				46BBCF3F2143C962003238FD /* PageStepper.swift */,
 				46BBCF7A2143F97E003238FD /* CircularBarActionButton.swift */,
 				46E057B721762BA7003FB809 /* BarOptionButton.swift */,
+				46E057BD2176756A003FB809 /* BarInteractiveOverlayView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */,
 				46BBCF5F2143C962003238FD /* TabPageViewController.swift in Sources */,
 				46BBCF5C2143C962003238FD /* UINavigationController+Utilities.swift in Sources */,
+				46E057BE2176756A003FB809 /* BarInteractiveOverlayView.swift in Sources */,
 				46BBCF632143C962003238FD /* ChildViewController.swift in Sources */,
 				46BBCF4E2143C962003238FD /* UIColor+Interpolation.swift in Sources */,
 				46BBCF512143C962003238FD /* SettingsBulletinPage.swift in Sources */,
