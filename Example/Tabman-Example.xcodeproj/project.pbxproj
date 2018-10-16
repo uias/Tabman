@@ -23,7 +23,6 @@
 		46BBCF532143C962003238FD /* Tabman.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF392143C962003238FD /* Tabman.storyboard */; };
 		46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */; };
 		46BBCF552143C962003238FD /* TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */; };
-		46BBCF562143C962003238FD /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3D2143C962003238FD /* EnumCollection.swift */; };
 		46BBCF572143C962003238FD /* PageModificationBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */; };
 		46BBCF582143C962003238FD /* PageStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBCF3F2143C962003238FD /* PageStepper.swift */; };
 		46BBCF592143C962003238FD /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BBCF402143C962003238FD /* Launch.storyboard */; };
@@ -68,7 +67,6 @@
 		46BBCF3A2143C962003238FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabman.storyboard; sourceTree = "<group>"; };
 		46BBCF3B2143C962003238FD /* SettingsBulletinDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBulletinDataSource.swift; sourceTree = "<group>"; };
 		46BBCF3C2143C962003238FD /* TransparentNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationBar.swift; sourceTree = "<group>"; };
-		46BBCF3D2143C962003238FD /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		46BBCF3E2143C962003238FD /* PageModificationBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModificationBulletinPage.swift; sourceTree = "<group>"; };
 		46BBCF3F2143C962003238FD /* PageStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStepper.swift; sourceTree = "<group>"; };
 		46BBCF402143C962003238FD /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				46BBCF432143C962003238FD /* UINavigationController+Utilities.swift */,
 				46BBCF332143C962003238FD /* UIColor+Interpolation.swift */,
-				46BBCF3D2143C962003238FD /* EnumCollection.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 				46BBCF5B2143C962003238FD /* AppDelegate.swift in Sources */,
 				46BBCF4D2143C962003238FD /* SettingsOptionButton.swift in Sources */,
 				46BBCF542143C962003238FD /* SettingsBulletinDataSource.swift in Sources */,
-				46BBCF562143C962003238FD /* EnumCollection.swift in Sources */,
 				46BBCF612143C962003238FD /* TabPageViewController+Settings.swift in Sources */,
 				46BBCF5A2143C962003238FD /* ActionButton.swift in Sources */,
 			);

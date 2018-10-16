@@ -14,7 +14,7 @@ class PageModificationBulletinPage: BLTNPageItem {
     
     // MARK: Types
     
-    enum ModificationOption: String, EnumCollection {
+    enum ModificationOption: String, CaseIterable {
         case insertion = "Insert"
         case removal = "Remove"
     }
@@ -27,7 +27,7 @@ class PageModificationBulletinPage: BLTNPageItem {
     private weak var pageViewController: PageboyViewController!
     
     var modificationOption: ModificationOption {
-        return ModificationOption.all[optionSegmentedControl.selectedSegmentIndex]
+        return ModificationOption.allCases[optionSegmentedControl.selectedSegmentIndex]
     }
     var pageIndex: Int {
         return pageStepper.currentPage
@@ -52,7 +52,7 @@ class PageModificationBulletinPage: BLTNPageItem {
         intentPrompt.text = "I want to"
         stack.addArrangedSubview(intentPrompt)
         
-        let optionSegmentedControl = makeOptionSegmentedControl(for: ModificationOption.all)
+        let optionSegmentedControl = makeOptionSegmentedControl(for: ModificationOption.allCases)
         optionSegmentedControl.addTarget(self, action: #selector(modificationOptionUpdated(_:)), for: .valueChanged)
         stack.addArrangedSubview(optionSegmentedControl)
         self.optionSegmentedControl = optionSegmentedControl
@@ -72,7 +72,7 @@ class PageModificationBulletinPage: BLTNPageItem {
     // MARK: Actions
     
     @objc private func modificationOptionUpdated(_ sender: UISegmentedControl) {
-        let option = ModificationOption.all[sender.selectedSegmentIndex]
+        let option = ModificationOption.allCases[sender.selectedSegmentIndex]
         updateNumberOfPages(for: option)
     }
     
