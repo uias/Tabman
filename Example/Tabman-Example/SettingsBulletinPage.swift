@@ -8,6 +8,7 @@
 
 import UIKit
 import BLTNBoard
+import Tabman
 import Pageboy
 
 protocol SettingsBulletinPageDelegate: class {
@@ -49,7 +50,8 @@ class SettingsBulletinPage: BLTNPageItem {
     
     // MARK: Properties
     
-    private weak var pageViewController: PageboyViewController!
+    private weak var tabViewController: TabmanViewController!
+    private weak var barDataSource: TMBarDataSource!
     
     private var addButtonOption: UIButton!
     private var removeButtonOption: UIButton!
@@ -62,8 +64,11 @@ class SettingsBulletinPage: BLTNPageItem {
     
     // MARK: Init
     
-    init(title: String, pageViewController: PageboyViewController) {
-        self.pageViewController = pageViewController
+    init(title: String,
+         tabViewController: TabmanViewController,
+         barDataSource: TMBarDataSource) {
+        self.tabViewController = tabViewController
+        self.barDataSource = barDataSource
         super.init(title: title)
     }
     
@@ -102,19 +107,19 @@ class SettingsBulletinPage: BLTNPageItem {
         
         let infiniteScrollOption = makeOptionToggleButton(for: .infiniteScrolling)
         infiniteScrollOption.addTarget(self, action: #selector(infiniteScrollToggled(_:)), for: .touchUpInside)
-        infiniteScrollOption.isSelected = pageViewController.isInfiniteScrollEnabled
+        infiniteScrollOption.isSelected = tabViewController.isInfiniteScrollEnabled
         stack.addArrangedSubview(infiniteScrollOption)
         self.infiniteScrollOption = infiniteScrollOption
         
         let autoScrollOption = makeOptionToggleButton(for: .autoScrolling)
         autoScrollOption.addTarget(self, action: #selector(autoScrollToggled(_:)), for: .touchUpInside)
-        autoScrollOption.isSelected = pageViewController.autoScroller.isEnabled
+        autoScrollOption.isSelected = tabViewController.autoScroller.isEnabled
         stack.addArrangedSubview(autoScrollOption)
         self.autoScrollOption = autoScrollOption
         
         let scrollOption = makeOptionToggleButton(for: .scrollEnabled)
         scrollOption.addTarget(self, action: #selector(scrollEnabledToggled(_:)), for: .touchUpInside)
-        scrollOption.isSelected = pageViewController.isScrollEnabled
+        scrollOption.isSelected = tabViewController.isScrollEnabled
         stack.addArrangedSubview(scrollOption)
         self.scrollEnabledOption = scrollOption
         
@@ -124,7 +129,9 @@ class SettingsBulletinPage: BLTNPageItem {
     // MARK: Actions
     
     @objc private func addBarOptionPressed(_ sender: UIButton) {
-        let addOptionPage = AddBarBulletinPage(title: Option.addBar.displayTitle)
+        let addOptionPage = AddBarBulletinPage(title: Option.addBar.displayTitle,
+                                               tabViewController: self.tabViewController,
+                                               barDataSource: self.barDataSource)
         
         addOptionPage.appearance = appearance
         next = addOptionPage
@@ -137,7 +144,7 @@ class SettingsBulletinPage: BLTNPageItem {
     
     @objc private func modificationOptionPressed(_ sender: UIButton) {
         let modificationPage = PageModificationBulletinPage(title: Option.modification.displayTitle,
-                                                            pageViewController: pageViewController)
+                                                            pageViewController: tabViewController)
         modificationPage.actionHandler = { [unowned self] item in
             item.manager?.dismissBulletin()
             switch modificationPage.modificationOption {
@@ -153,19 +160,19 @@ class SettingsBulletinPage: BLTNPageItem {
     }
     
     @objc private func infiniteScrollToggled(_ sender: UIButton) {
-        pageViewController.isInfiniteScrollEnabled = sender.isSelected
+        tabViewController.isInfiniteScrollEnabled = sender.isSelected
     }
     
     @objc private func autoScrollToggled(_ sender: UIButton) {
         if sender.isSelected {
-            pageViewController.autoScroller.enable()
+            tabViewController.autoScroller.enable()
         } else {
-            pageViewController.autoScroller.disable()
+            tabViewController.autoScroller.disable()
         }
     }
     
     @objc private func scrollEnabledToggled(_ sender: UIButton) {
-        pageViewController.isScrollEnabled = sender.isSelected
+        tabViewController.isScrollEnabled = sender.isSelected
     }
 }
 

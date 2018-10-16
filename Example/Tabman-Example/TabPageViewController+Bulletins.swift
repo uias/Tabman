@@ -37,7 +37,8 @@ extension TabPageViewController {
     }
     
     func makeSettingsBulletinManager() -> BLTNItemManager {
-        let root = SettingsBulletinDataSource.makeSettingsPage(for: self)
+        let root = SettingsBulletinDataSource.makeSettingsPage(for: self,
+                                                               barDataSource: self)
         root.delegate = self
         
         let tintColor = gradient?.activeColors?.last

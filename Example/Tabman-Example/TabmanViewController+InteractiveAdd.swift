@@ -11,7 +11,7 @@ import Tabman
 
 extension TabmanViewController {
     
-    func interactivelyAddBar(_ bar: TMBar,
+    func addBarInteractively(_ bar: TMBar,
                              dataSource: TMBarDataSource) {
         
     }

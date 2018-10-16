@@ -8,7 +8,7 @@
 
 import UIKit
 import BLTNBoard
-import Pageboy
+import Tabman
 
 enum SettingsBulletinDataSource {
  
@@ -27,8 +27,11 @@ enum SettingsBulletinDataSource {
         return page
     }
     
-    static func makeSettingsPage(for pageViewController: PageboyViewController) -> SettingsBulletinPage {
-        let page = SettingsBulletinPage(title: "Settings", pageViewController: pageViewController)
+    static func makeSettingsPage(for tabViewController: TabmanViewController,
+                                 barDataSource: TMBarDataSource) -> SettingsBulletinPage {
+        let page = SettingsBulletinPage(title: "Settings",
+                                        tabViewController: tabViewController,
+                                        barDataSource: barDataSource)
         page.requiresCloseButton = false
         return page
     }

@@ -20,11 +20,18 @@ final class AddBarBulletinPage: BLTNPageItem {
     
     // MARK: Properties
     
+    private weak var tabViewController: TabmanViewController!
+    private weak var barDataSource: TMBarDataSource!
+    
     var barTypeButtons = [UIButton: BarType]()
     
     // MARK: Init
     
-    override init(title: String) {
+    init(title: String,
+         tabViewController: TabmanViewController,
+         barDataSource: TMBarDataSource) {
+        self.tabViewController = tabViewController
+        self.barDataSource = barDataSource
         super.init(title: title)
         
         self.requiresCloseButton = false
@@ -81,7 +88,9 @@ final class AddBarBulletinPage: BLTNPageItem {
             return
         }
         
-        dump(type)
+        tabViewController.addBarInteractively(type.makeBar(),
+                                              dataSource: barDataSource)
+        
         manager?.dismissBulletin()
     }
 }
@@ -106,5 +115,19 @@ private extension AddBarBulletinPage {
         }
         
         return button
+    }
+}
+
+private extension AddBarBulletinPage.BarType {
+    
+    func makeBar() -> TMBar {
+        switch self {
+        case .buttonBar:
+            return TMBar.ButtonBar()
+        case .tabBar:
+            return TMBar.TabBar()
+        case .lineBar:
+            return TMBar.LineBar()
+        }
     }
 }
