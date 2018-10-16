@@ -29,7 +29,23 @@ final class AddPageBulletinPage: BLTNPageItem {
     // MARK: Lifecycle
     
     override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
+        
+        let scrollView = UIScrollView()
+        let scrollWrapper = interfaceBuilder.wrapView(scrollView,
+                                                      width: nil,
+                                                      height: 300,
+                                                      position: .pinnedToEdges)
+        
         let stack = interfaceBuilder.makeGroupStack(spacing: 16.0)
+        scrollView.addSubview(stack)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stack.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stack.widthAnchor.constraint(equalTo: scrollWrapper.widthAnchor)
+            ])
         
         for type in BarType.allCases {
             let label = makeTitleLabel(for: type)
@@ -39,7 +55,13 @@ final class AddPageBulletinPage: BLTNPageItem {
             stack.addArrangedSubview(button)
         }
         
-        return [stack]
+        return [scrollWrapper]
+    }
+    
+    // MARK: Actions
+    
+    @objc private func optionButtonPressed(_ sender: UIButton) {
+        
     }
 }
 

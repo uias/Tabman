@@ -15,8 +15,18 @@ private struct Defaults {
 
 final class BarOptionButton<BarType: TMBar>: UIButton {
     
+    // MARK: Properties
+    
     let barContainer = UIView()
     let bar = BarType()
+    
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.25) {
+                self.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.95, y: 0.95) : .identity
+            }
+        }
+    }
     
     // MARK: Init
     
@@ -50,20 +60,29 @@ final class BarOptionButton<BarType: TMBar>: UIButton {
             barView.trailingAnchor.constraint(equalTo: barContainer.trailingAnchor),
             barView.bottomAnchor.constraint(equalTo: barContainer.bottomAnchor)
             ])
-        
+
         bar.dataSource = self
         bar.reloadData(at: 0 ... Defaults.barItemCount - 1,
                        context: .full)
-        bar.update(for: 0.0,
-                   capacity: Defaults.barItemCount,
-                   direction: .none,
-                   animation: TMBarAnimation(isEnabled: false, duration: 0.0))
+        
+        barContainer.isUserInteractionEnabled = false
         
         layer.borderColor = tintColor.cgColor
         layer.borderWidth = 2.0
         layer.cornerRadius = 12.0
 
         backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0)
+    }
+    
+    // MARK: Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        bar.update(for: 0.0,
+                   capacity: Defaults.barItemCount,
+                   direction: .none,
+                   animation: TMBarAnimation(isEnabled: false, duration: 0.0))
     }
 }
 
