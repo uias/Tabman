@@ -27,7 +27,7 @@ final class BarInteractiveOverlayView: UIView {
     // MARK: Types
     
     enum Context {
-        case add(bar: TMBar)
+        case add(bar: TMBar, estimatedSize: CGSize)
         case deletion
     }
     
@@ -50,9 +50,9 @@ final class BarInteractiveOverlayView: UIView {
         initialize()
         
         switch context {
-        case .add(let bar):
+        case .add(let bar, let estimatedSize):
             self.bar = bar
-            renderInsertionAreas(for: bar, in: viewController)
+            renderInsertionAreas(for: bar, estimatedSize: estimatedSize, in: viewController)
             
         case .deletion:
             fatalError()
@@ -77,17 +77,26 @@ final class BarInteractiveOverlayView: UIView {
     
     // MARK: Layout
     
-    private func renderInsertionAreas(for bar: TMBar, in viewController: TabmanViewController) {
+    private func renderInsertionAreas(for bar: TMBar,
+                                      estimatedSize: CGSize,
+                                      in viewController: TabmanViewController) {
+        
+        let barHeight: CGFloat
+        if estimatedSize != .zero {
+            barHeight = estimatedSize.height
+        } else {
+            barHeight = Defaults.areaButtonHeight
+        }
         
         // top area
         let topAreaInset: CGFloat
         let topAreaHeight: CGFloat
         if viewController.topBarContainer.frame.size.height != 0.0 {
             topAreaInset = viewController.topBarContainer.frame.maxY
-            topAreaHeight = Defaults.areaButtonHeight
+            topAreaHeight = barHeight
         } else {
             topAreaInset = 0.0
-            topAreaHeight = Defaults.areaButtonHeight + viewController.topBarContainer.frame.maxY
+            topAreaHeight = barHeight + viewController.topBarContainer.frame.maxY
         }
         let topAreaButton = makeAreaButton(for: .top)
         addSubview(topAreaButton)
@@ -105,10 +114,10 @@ final class BarInteractiveOverlayView: UIView {
         let bottomAreaHeight: CGFloat
         if viewController.bottomBarContainer.frame.size.height != 0.0 {
             bottomAreaInset = viewController.view.frame.height - viewController.bottomBarContainer.frame.minY
-            bottomAreaHeight = Defaults.areaButtonHeight
+            bottomAreaHeight = barHeight
         } else {
             bottomAreaInset = 0.0
-            bottomAreaHeight = Defaults.areaButtonHeight + (viewController.view.frame.height - viewController.bottomBarContainer.frame.minY)
+            bottomAreaHeight = barHeight + (viewController.view.frame.height - viewController.bottomBarContainer.frame.minY)
         }
         let bottomAreaButton = makeAreaButton(for: .bottom)
         addSubview(bottomAreaButton)

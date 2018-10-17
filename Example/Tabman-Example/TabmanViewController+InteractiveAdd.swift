@@ -12,10 +12,11 @@ import UIKit
 extension TabmanViewController {
     
     func addBarInteractively(_ bar: TMBar,
-                             dataSource: TMBarDataSource) {
+                             dataSource: TMBarDataSource,
+                             estimatedBarSize: CGSize = .zero) {
         bar.dataSource = dataSource
         let overlay = BarInteractiveOverlayView.present(over: self,
-                                                        context: .add(bar: bar))
+                                                        context: .add(bar: bar, estimatedSize: estimatedBarSize))
         overlay.delegate = self
     }
 }

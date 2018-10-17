@@ -13,12 +13,16 @@ private struct Defaults {
     static let barItemCount = 3
 }
 
-final class BarOptionButton<BarType: TMBar>: UIButton {
+class BarOptionButton: UIButton {
+    
+    var bar: TMBar!
+}
+
+final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
     
     // MARK: Properties
     
     let barContainer = UIView()
-    let bar = BarType()
     
     override var isHighlighted: Bool {
         didSet {
@@ -32,11 +36,13 @@ final class BarOptionButton<BarType: TMBar>: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.bar = BarType()
         initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.bar = BarType()
         initialize()
     }
     
@@ -51,7 +57,7 @@ final class BarOptionButton<BarType: TMBar>: UIButton {
             bottomAnchor.constraint(equalTo: barContainer.bottomAnchor, constant: 12.0)
             ])
         
-        let barView = bar as UIView
+        let barView = bar as! UIView
         barContainer.addSubview(barView)
         barView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

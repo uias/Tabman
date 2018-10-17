@@ -83,13 +83,14 @@ final class AddBarBulletinPage: BLTNPageItem {
     
     // MARK: Actions
     
-    @objc private func optionButtonPressed(_ sender: UIButton) {
+    @objc private func optionButtonPressed(_ sender: BarOptionButton) {
         guard let type = barTypeButtons[sender] else {
             return
         }
-        
+        let barView = sender.bar as! UIView
         tabViewController.addBarInteractively(type.makeBar(),
-                                              dataSource: barDataSource)
+                                              dataSource: barDataSource,
+                                              estimatedBarSize: barView.bounds.size)
         
         manager?.dismissBulletin()
     }
@@ -103,15 +104,15 @@ private extension AddBarBulletinPage {
         return label
     }
     
-    func makeBarOptionButton(for type: BarType) -> UIButton {
-        let button: UIButton
+    func makeBarOptionButton(for type: BarType) -> BarOptionButton {
+        let button: BarOptionButton
         switch type {
         case .buttonBar:
-            button = BarOptionButton<TMBar.ButtonBar>()
+            button = TypedBarOptionButton<TMBar.ButtonBar>()
         case .tabBar:
-            button = BarOptionButton<TMBar.TabBar>()
+            button = TypedBarOptionButton<TMBar.TabBar>()
         case .lineBar:
-            button = BarOptionButton<TMBar.LineBar>()
+            button = TypedBarOptionButton<TMBar.LineBar>()
         }
         
         return button
