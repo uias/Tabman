@@ -25,6 +25,8 @@ open class TMSystemBar: UIView {
 
     private lazy var extendingView = UIView()
     private lazy var backgroundView = TMBarBackgroundView(style: self.backgroundStyle)
+
+    private var hasExtendedEdges: Bool = false
     
     @available(*, unavailable)
     open override var backgroundColor: UIColor? {
@@ -100,17 +102,22 @@ open class TMSystemBar: UIView {
     
     // MARK: Layout
     
-    open override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        superview?.layoutIfNeeded()
         
-        guard self.superview != nil else {
+        extendViewEdgesIfNeeded()
+    }
+    
+    private func extendViewEdgesIfNeeded() {
+        guard let superview = self.superview, !hasExtendedEdges else {
             return
         }
         guard let viewController = nextViewControllerInResponderChain() else {
             fatalError("TMNavigationBar could not find view controller to use for layout guides.")
         }
-        
-        superview?.layoutIfNeeded()
+        hasExtendedEdges = true
+        viewController.view.layoutIfNeeded()
         
         var constraints = [
             extendingView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -121,19 +128,19 @@ open class TMSystemBar: UIView {
         if #available(iOS 11, *) {
             safeAreaInsets = viewController.view.safeAreaInsets
         } else {
-            safeAreaInsets = UIEdgeInsets(top: -viewController.topLayoutGuide.length,
+            safeAreaInsets = UIEdgeInsets(top: viewController.topLayoutGuide.length,
                                           left: 0.0,
-                                          bottom: -viewController.bottomLayoutGuide.length,
+                                          bottom: viewController.bottomLayoutGuide.length,
                                           right: 0.0)
         }
         
-        let relativeFrame = viewController.view.convert(self.frame, from: self)
+        let relativeFrame = viewController.view.convert(self.frame, from: superview)
         if relativeFrame.origin.y == safeAreaInsets.top { // Pin to top anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
-        } else if relativeFrame.origin.y == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
+        } else if relativeFrame.maxY == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
