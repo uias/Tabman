@@ -207,7 +207,7 @@ public extension TabmanViewController {
         case .top:
             topBarContainer.addArrangedSubview(view)
         case .bottom:
-            bottomBarContainer.addArrangedSubview(view)
+            bottomBarContainer.insertArrangedSubview(view, at: 0)
         case .custom(let superview, let layout):
             superview.addSubview(view)
             if layout != nil {
