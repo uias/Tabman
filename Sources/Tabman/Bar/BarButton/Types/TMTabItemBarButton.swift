@@ -29,7 +29,7 @@ public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Customization
     
-    /// Size of the image view in the button.
+    /// Size of the image view.
     public var imageViewSize: CGSize {
         set {
             imageWidth.constant = newValue.width
@@ -42,6 +42,14 @@ public final class TMTabItemBarButton: TMBarButton {
     public var font: UIFont = UIFont.systemFont(ofSize: 12.0, weight: .medium) {
         didSet {
             label.font = font
+        }
+    }
+    /// Content Mode for the image view.
+    public var imageContentMode: UIView.ContentMode {
+        set {
+            imageView.contentMode = newValue
+        } get {
+            return imageView.contentMode
         }
     }
     

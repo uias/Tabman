@@ -181,7 +181,8 @@ extension TabPageViewController: PageboyViewControllerDataSource {
 extension TabPageViewController: TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItem {
-        return TMBarItem(title: "Page No. \(index + 1)")
+        return TMBarItem(title: "Page No. \(index + 1)",
+                         image: EmojiBarButton.random().image)
     }
 }
 
