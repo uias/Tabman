@@ -15,7 +15,20 @@ private struct Defaults {
 
 class BarOptionButton: UIButton {
     
-    var bar: TMBar!
+    // MARK: Properties
+    
+    let bar: TMBar
+    
+    // MARK: Init
+    
+    init(bar: TMBar) {
+        self.bar = bar
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not supported")
+    }
 }
 
 final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
@@ -34,16 +47,13 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
     
     // MARK: Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.bar = BarType()
+    init() {
+        super.init(bar: BarType())
         initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.bar = BarType()
-        initialize()
+        fatalError("Not supported")
     }
     
     private func initialize() {
