@@ -141,6 +141,9 @@ final class BarInteractiveOverlayView: UIView {
             textArea.bottomAnchor.constraint(equalTo: bottomAreaButton.topAnchor)
             ])
         
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+        textArea.addGestureRecognizer(tapRecognizer)
+        
         let topAreaLabel = makeAreaLabel(For: .top)
         textArea.addSubview(topAreaLabel)
         topAreaLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -171,7 +174,7 @@ final class BarInteractiveOverlayView: UIView {
     
     // MARK: Lifecycle
     
-    func dismiss() {
+    @objc func dismiss() {
         UIView.animate(withDuration: 0.25, animations: {
             self.alpha = 0.0
         }) { (_) in
