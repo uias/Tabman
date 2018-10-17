@@ -117,13 +117,23 @@ open class TMSystemBar: UIView {
             extendingView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ]
         
+        let safeAreaInsets: UIEdgeInsets
+        if #available(iOS 11, *) {
+            safeAreaInsets = viewController.view.safeAreaInsets
+        } else {
+            safeAreaInsets = UIEdgeInsets(top: -viewController.topLayoutGuide.length,
+                                          left: 0.0,
+                                          bottom: -viewController.bottomLayoutGuide.length,
+                                          right: 0.0)
+        }
+        
         let relativeFrame = viewController.view.convert(self.frame, from: self)
-        if relativeFrame.origin.y == 0 { // Pin to top anchor
+        if relativeFrame.origin.y == safeAreaInsets.top { // Pin to top anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
-        } else if relativeFrame.origin.y == viewController.view.bounds.size.height { // Pin to bottom anchor
+        } else if relativeFrame.origin.y == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
