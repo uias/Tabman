@@ -41,7 +41,8 @@ final class AddBarBulletinPage: BLTNPageItem {
     
     override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
         
-        let scrollView = UIScrollView()
+        let scrollView = FadingScrollView()
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.layer.cornerRadius = 18.0
         
         let scrollWrapper = interfaceBuilder.wrapView(scrollView,
