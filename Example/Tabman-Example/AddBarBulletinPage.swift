@@ -101,6 +101,7 @@ private extension AddBarBulletinPage {
     func makeTitleLabel(for type: BarType) -> UILabel {
         let label = UILabel()
         label.text = type.rawValue
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         return label
     }
     
@@ -108,12 +109,14 @@ private extension AddBarBulletinPage {
         let button: BarOptionButton
         switch type {
         case .buttonBar:
-            button = TypedBarOptionButton<TMBar.ButtonBar>()
+            button = TypedBarOptionButton<TMBar.ButtonBar>(dataSource: self.barDataSource)
         case .tabBar:
-            button = TypedBarOptionButton<TMBar.TabBar>()
+            button = TypedBarOptionButton<TMBar.TabBar>(dataSource: self.barDataSource)
         case .lineBar:
-            button = TypedBarOptionButton<TMBar.LineBar>()
+            button = TypedBarOptionButton<TMBar.LineBar>(dataSource: self.barDataSource)
         }
+        
+        button.tintColor = appearance.actionButtonColor
         
         return button
     }

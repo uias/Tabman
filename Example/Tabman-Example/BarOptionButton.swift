@@ -45,9 +45,18 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
         }
     }
     
+    private weak var dataSource: TMBarDataSource!
+    
+    override var tintColor: UIColor! {
+        didSet {
+            layer.borderColor = tintColor.cgColor
+        }
+    }
+    
     // MARK: Init
     
-    init() {
+    init(dataSource: TMBarDataSource) {
+        self.dataSource = dataSource
         super.init(bar: BarType())
         initialize()
     }
@@ -77,7 +86,7 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
             barView.bottomAnchor.constraint(equalTo: barContainer.bottomAnchor)
             ])
 
-        bar.dataSource = self
+        bar.dataSource = dataSource
         bar.reloadData(at: 0 ... Defaults.barItemCount - 1,
                        context: .full)
         
@@ -99,12 +108,5 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
                    capacity: Defaults.barItemCount,
                    direction: .none,
                    animation: TMBarAnimation(isEnabled: false, duration: 0.0))
-    }
-}
-
-extension BarOptionButton: TMBarDataSource {
-    
-    func barItem(for bar: TMBar, at index: Int) -> TMBarItem {
-        return TMBarItem(title: "Page \(index + 1)")
     }
 }
