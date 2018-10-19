@@ -8,12 +8,18 @@
 
 import UIKit
 
+/// Definition of an item that can be displayed in a `TMBar`.
+///
+/// Properties of a `TMBarItemable` are optionally displayed in a `TMBar` depending on the layout / configuration.
 public protocol TMBarItemable {
     
+    /// Title of the item.
     var title: String? { get }
+    /// Image to display.
     var image: UIImage? { get }
 }
 
+/// Default `TMBarItemable` that can be displayed in a `TMBar`.
 public struct TMBarItem: TMBarItemable {
     
     // MARK: Properties
