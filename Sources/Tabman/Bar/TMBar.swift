@@ -17,7 +17,7 @@ public protocol TMBarDataSource: class {
     ///   - bar: The bar.
     ///   - index: Index of the item.
     /// - Returns: The BarItem.
-    func barItem(for bar: TMBar, at index: Int) -> TMBarItem
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable
 }
 
 /// Delegate to a `TMBar` that is primarily responsible for handling user interaction within the bar.

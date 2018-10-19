@@ -89,7 +89,7 @@ public final class TMTabItemBarButton: TMBarButton {
         label.text = "Item"
     }
     
-    public override func populate(for item: TMBarItem) {
+    public override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
         label.text = item.title

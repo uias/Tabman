@@ -62,7 +62,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     public let backgroundView = TMBarBackgroundView(style: .clear)
     
     /// Items that are displayed in the bar.
-    public private(set) var items: [TMBarItem]?
+    public private(set) var items: [TMBarItemable]?
     
     /// Object that acts as a data source to the BarView.
     public weak var dataSource: TMBarDataSource?
@@ -235,7 +235,7 @@ extension TMBarView: TMBar {
             return
         }
         
-        var items = self.items ?? [TMBarItem]()
+        var items = self.items ?? [TMBarItemable]()
         
         switch context {
         case .full, .insertion:

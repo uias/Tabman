@@ -8,7 +8,13 @@
 
 import UIKit
 
-public struct TMBarItem {
+public protocol TMBarItemable {
+    
+    var title: String? { get }
+    var image: UIImage? { get }
+}
+
+public struct TMBarItem: TMBarItemable {
     
     // MARK: Properties
     

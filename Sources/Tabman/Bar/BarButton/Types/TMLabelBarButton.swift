@@ -111,7 +111,7 @@ public final class TMLabelBarButton: TMBarButton {
         calculateFontIntrinsicContentSize(for: label.text)
     }
     
-    public override func populate(for item: TMBarItem) {
+    public override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
         label.text = item.title

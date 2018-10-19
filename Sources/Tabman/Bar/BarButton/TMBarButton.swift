@@ -104,7 +104,7 @@ open class TMBarButton: UIControl {
     open func layout(in view: UIView) {
     }
     
-    open func populate(for item: TMBarItem) {
+    open func populate(for item: TMBarItemable) {
     }
     
     open func update(for selectionState: SelectionState) {
