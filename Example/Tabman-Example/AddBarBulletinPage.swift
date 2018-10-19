@@ -102,6 +102,7 @@ private extension AddBarBulletinPage {
     func makeTitleLabel(for type: BarType) -> UILabel {
         let label = UILabel()
         label.text = type.rawValue
+        label.textColor = appearance.actionButtonColor
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         return label
     }
