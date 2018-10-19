@@ -32,7 +32,7 @@ open class TMSystemBar: UIView {
     open override var backgroundColor: UIColor? {
         didSet {}
     }
-    /// Background style of the navigation bar.
+    /// Background style of the system bar.
     ///
     /// Defaults to `.blur(style: .extraLight)`.
     public var backgroundStyle: TMBarBackgroundView.Style = .blur(style: .extraLight) {
@@ -40,7 +40,7 @@ open class TMSystemBar: UIView {
             backgroundView.style = backgroundStyle
         }
     }
-    /// Color of the separator at the bottom of the navigation bar.
+    /// Color of the separator at the bottom of the system bar.
     ///
     /// Defaults to `UIColor.white.withAlphaComponent(0.5)`.
     public var separatorColor: UIColor = UIColor.white.withAlphaComponent(0.5) {
@@ -53,12 +53,12 @@ open class TMSystemBar: UIView {
     // MARK: Init
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init(for:viewController:) - TabmanNavigationBar does not support Interface Builder")
+        fatalError("Use init(for:viewController:)")
     }
     
-    /// Create a navigation bar.
+    /// Create a system bar.
     ///
-    /// - Parameter bar: Bar to embed in the navigation bar.
+    /// - Parameter bar: Bar to embed in the system bar.
     public required init(for bar: TMBar) {
         self.bar = bar
         super.init(frame: .zero)
@@ -114,7 +114,7 @@ open class TMSystemBar: UIView {
             return
         }
         guard let viewController = nextViewControllerInResponderChain() else {
-            fatalError("TMNavigationBar could not find view controller to use for layout guides.")
+            fatalError("\(type(of: self)) could not find view controller to use for layout guides.")
         }
         hasExtendedEdges = true
         viewController.view.layoutIfNeeded()
