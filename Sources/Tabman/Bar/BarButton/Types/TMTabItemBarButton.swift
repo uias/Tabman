@@ -17,6 +17,7 @@ public final class TMTabItemBarButton: TMBarButton {
         static let imageSize = CGSize(width: 30.0, height: 30.0)
         static let labelPadding: CGFloat = 4.0
         static let labelTopPadding: CGFloat = 6.0
+        static let shrunkenImageScale: CGFloat = 0.9
     }
     
     // MARK: Properties
@@ -50,6 +51,19 @@ public final class TMTabItemBarButton: TMBarButton {
             imageView.contentMode = newValue
         } get {
             return imageView.contentMode
+        }
+    }
+    /// Whether to shrink the image view when unselected.
+    ///
+    /// Defaults to true.
+    public var shrinksImageWhenUnselected: Bool = true {
+        didSet {
+            guard shrinksImageWhenUnselected else {
+                return
+            }
+            if !self.isSelected {
+                imageView.transform = CGAffineTransform(scaleX: Defaults.shrunkenImageScale, y: Defaults.shrunkenImageScale)
+            }
         }
     }
     
@@ -94,5 +108,14 @@ public final class TMTabItemBarButton: TMBarButton {
         
         label.text = item.title
         imageView.image = item.image
+    }
+    
+    public override func update(for selectionState: TMBarButton.SelectionState) {
+        super.update(for: selectionState)
+        
+        if shrinksImageWhenUnselected {
+            let interpolatedScale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.shrunkenImageScale))
+            imageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
+        }
     }
 }
