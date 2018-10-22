@@ -33,7 +33,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     internal let topBarContainer = UIStackView()
     internal let bottomBarContainer = UIStackView()
     
-    private var activeBars = [TMBar]()
+    public private(set) var bars = [TMBar]()
     
     private var requiredInsets: TMInsets?
     private let autoInsetter = AutoInsetter()
@@ -71,13 +71,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
+        bars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
         super.insertPage(at: index, then: updateBehavior)
     }
     
     open override func deletePage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
-        activeBars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
+        bars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
         super.deletePage(at: index, then: updateBehavior)
     }
     
@@ -125,10 +125,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         guard let pageCount = pageboyViewController.pageCount else {
             return
         }
-        activeBars.forEach({ $0.reloadData(at: 0...pageCount - 1, context: .full) })
+        bars.forEach({ $0.reloadData(at: 0...pageCount - 1, context: .full) })
     }
     
-    // MARK: BarDelegate
+    // MARK: TMBarDelegate
     
     open func bar(_ bar: TMBar,
                   didRequestScrollTo index: PageboyViewController.PageIndex) {
@@ -158,7 +158,7 @@ public extension TabmanViewController {
         bar.dataSource = dataSource
         bar.delegate = self
         
-        addActiveBar(bar)
+        bars.append(bar)
         layoutView(barView, at: location)
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
@@ -166,6 +166,18 @@ public extension TabmanViewController {
         if let pageCount = self.pageCount, pageCount > 0 {
             bar.reloadData(at: 0...pageCount - 1, context: .full)
         }
+    }
+    
+    /// Remove a `TMBar` from the view controller.
+    ///
+    /// - Parameter bar: Bar to remove.
+    public func removeBar(_ bar: TMBar) {
+        guard let index = bars.index(where: { $0 === bar }) else {
+            return
+        }
+        
+        bars.remove(at: index)
+        (bar as? UIView)?.removeFromSuperview()
     }
     
     private func layoutContainers(in view: UIView) {
@@ -228,14 +240,10 @@ public extension TabmanViewController {
 // MARK: - Bar Management
 private extension TabmanViewController {
     
-    func addActiveBar(_ bar: TMBar) {
-        activeBars.append(bar)
-    }
-    
     func updateActiveBars(to position: CGFloat?,
                           direction: NavigationDirection = .neutral,
                           animated: Bool) {
-        activeBars.forEach({ self.updateBar($0, to: position,
+        bars.forEach({ self.updateBar($0, to: position,
                                             direction: direction,
                                             animated: animated) })
     }

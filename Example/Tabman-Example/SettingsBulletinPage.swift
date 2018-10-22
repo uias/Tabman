@@ -156,7 +156,8 @@ class SettingsBulletinPage: BLTNPageItem {
     }
     
     @objc private func removeBarOptionPressed(_ sender: UIButton) {
-        
+        manager?.dismissBulletin()
+        tabViewController.startInteractiveDeletion()
     }
     
     @objc private func modificationOptionPressed(_ sender: UIButton) {

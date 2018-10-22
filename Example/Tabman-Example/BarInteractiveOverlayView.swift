@@ -33,10 +33,14 @@ final class BarInteractiveOverlayView: UIView {
     
     // MARK: Properties
     
-    let overlayView: UIView = {
+    private weak var viewController: TabmanViewController!
+    
+    private let overlayView: UIView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         return view
     }()
+    private var removalButtons: [UIButton: TMBar]?
+    private let overlayMaskLayer = CAShapeLayer()
     
     private(set) var bar: TMBar?
     
@@ -46,16 +50,17 @@ final class BarInteractiveOverlayView: UIView {
     
     private init(for viewController: TabmanViewController,
                  context: Context) {
+        self.viewController = viewController
         super.init(frame: .zero)
         initialize()
         
         switch context {
         case .add(let bar, let estimatedSize):
             self.bar = bar
-            renderInsertionAreas(for: bar, estimatedSize: estimatedSize, in: viewController)
+            renderInsertionAreas(for: bar, estimatedSize: estimatedSize)
             
         case .deletion:
-            fatalError()
+            renderDeletionAreas(for: viewController.bars)
         }
     }
     
@@ -73,13 +78,15 @@ final class BarInteractiveOverlayView: UIView {
             overlayView.trailingAnchor.constraint(equalTo: trailingAnchor),
             overlayView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+        
+        overlayMaskLayer.fillColor = UIColor.black.cgColor
+        overlayView.layer.mask = overlayMaskLayer
     }
     
     // MARK: Layout
     
     private func renderInsertionAreas(for bar: TMBar,
-                                      estimatedSize: CGSize,
-                                      in viewController: TabmanViewController) {
+                                      estimatedSize: CGSize) {
         
         let barHeight: CGFloat
         if estimatedSize != .zero {
@@ -172,7 +179,59 @@ final class BarInteractiveOverlayView: UIView {
             ])
     }
     
+    private func renderDeletionAreas(for bars: [TMBar]) {
+        
+        let removalArea = UIView()
+        addSubview(removalArea)
+        removalArea.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            removalArea.leadingAnchor.constraint(equalTo: leadingAnchor),
+            removalArea.topAnchor.constraint(equalTo: topAnchor),
+            removalArea.trailingAnchor.constraint(equalTo: trailingAnchor),
+            removalArea.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+        removalArea.addGestureRecognizer(tapRecognizer)
+        
+        var removalButtons = [UIButton: TMBar]()
+        for bar in bars {
+            let barView = bar as! UIView
+            let frame = barView.superview!.convert(barView.frame, to: viewController.view)
+            
+            let removalButton = UIButton()
+            removalButton.addTarget(self, action: #selector(removalButtonPressed(_:)), for: .touchUpInside)
+            removalArea.addSubview(removalButton)
+            removalButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                removalButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.origin.x),
+                removalButton.topAnchor.constraint(equalTo: topAnchor, constant: frame.minY),
+                removalButton.widthAnchor.constraint(equalToConstant: frame.size.width),
+                removalButton.heightAnchor.constraint(equalToConstant: frame.size.height)
+                ])
+            
+            removalButtons[removalButton] = bar
+        }
+        self.removalButtons = removalButtons
+    }
+    
     // MARK: Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutIfNeeded()
+        
+        overlayMaskLayer.frame = bounds
+        let path = UIBezierPath(rect: overlayView.bounds)
+
+        if let removalButtons = removalButtons {
+            for button in removalButtons.keys {
+                path.append(UIBezierPath(rect: button.frame).reversing())
+            }
+        }
+        
+        overlayMaskLayer.path = path.cgPath
+    }
     
     @objc func dismiss() {
         UIView.animate(withDuration: 0.25, animations: {
@@ -197,6 +256,15 @@ final class BarInteractiveOverlayView: UIView {
             return
         }
         delegate?.interactiveOverlayView(self, didRequestAdd: bar, at: .bottom)
+        dismiss()
+    }
+    
+    @objc private func removalButtonPressed(_ sender: UIButton) {
+        guard let bar = removalButtons?[sender] else {
+            return
+        }
+        
+        viewController.removeBar(bar)
         dismiss()
     }
 }

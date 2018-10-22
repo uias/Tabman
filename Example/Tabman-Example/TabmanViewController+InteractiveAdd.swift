@@ -19,6 +19,11 @@ extension TabmanViewController {
                                                         context: .add(bar: bar, estimatedSize: estimatedBarSize))
         overlay.delegate = self
     }
+    
+    func startInteractiveDeletion() {
+        let overlay = BarInteractiveOverlayView.present(over: self, context: .deletion)
+        overlay.delegate = self
+    }
 }
 
 extension TabmanViewController: BarInteractiveOverlayViewDelegate {
