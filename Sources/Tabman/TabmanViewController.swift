@@ -46,6 +46,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     public var barInsets: UIEdgeInsets {
         return requiredInsets?.barInsets ?? .zero
     }
+    /// The layout guide representing the portion of the view controller's view that is not
+    /// obstructed by bars.
     public let barLayoutGuide: UILayoutGuide = {
         let guide = UILayoutGuide()
         guide.identifier = "barLayoutGuide"
@@ -292,7 +294,7 @@ private extension TabmanViewController {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
         let animation = TMBarAnimation(isEnabled: animated,
-                                             duration: self.transitionAnimationDuration)
+                                             duration: transition?.duration ?? 0.25)
         bar.update(for: position,
                    capacity: capacity,
                    direction: updateDirection(for: direction),
@@ -326,19 +328,5 @@ internal extension TabmanViewController {
         barLayoutGuideBottom?.constant = insets.spec.allRequiredInsets.bottom
 
         autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
-    }
-}
-
-internal extension TabmanViewController {
-    
-    var relativeCurrentPosition: CGFloat? {
-        guard let position = self.currentPosition else {
-            return nil
-        }
-        return self.navigationOrientation == .horizontal ? position.x : position.y
-    }
-    
-    var transitionAnimationDuration: TimeInterval {
-        return transition?.duration ?? 0.25
     }
 }
