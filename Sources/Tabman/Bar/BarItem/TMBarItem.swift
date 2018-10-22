@@ -11,7 +11,7 @@ import UIKit
 /// Definition of an item that can be displayed in a `TMBar`.
 ///
 /// Properties of a `TMBarItemable` are optionally displayed in a `TMBar` depending on the layout / configuration.
-public protocol TMBarItemable {
+public protocol TMBarItemable: class {
     
     /// Title of the item.
     var title: String? { get }
@@ -20,7 +20,7 @@ public protocol TMBarItemable {
 }
 
 /// Default `TMBarItemable` that can be displayed in a `TMBar`.
-public struct TMBarItem: TMBarItemable {
+public final class TMBarItem: TMBarItemable {
     
     // MARK: Properties
     
@@ -29,15 +29,15 @@ public struct TMBarItem: TMBarItemable {
         
     // MARK: Init
     
-    public init(title: String) {
+    public convenience init(title: String) {
         self.init(with: title, image: nil)
     }
     
-    public init(image: UIImage) {
+    public convenience init(image: UIImage) {
         self.init(with: nil, image: image)
     }
     
-    public init(title: String, image: UIImage) {
+    public convenience init(title: String, image: UIImage) {
         self.init(with: title, image: image)
     }
     

@@ -21,6 +21,9 @@ open class TMBarButton: UIControl {
     
     // MARK: Properties
     
+    /// Bar Item that is associated with the button.
+    public let item: TMBarItemable
+    
     private let contentView = UIView()
     private var contentViewLeading: NSLayoutConstraint!
     private var contentViewTop: NSLayoutConstraint!
@@ -60,19 +63,14 @@ open class TMBarButton: UIControl {
     
     // MARK: Init
     
-    public required init() {
+    public required init(for item: TMBarItemable) {
+        self.item = item
         super.init(frame: .zero)
         initialize()
     }
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-    
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
+        fatalError("Not supported - Use init(for item)")
     }
     
     private func initialize() {

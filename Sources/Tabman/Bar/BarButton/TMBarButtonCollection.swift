@@ -15,9 +15,9 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
     
     public typealias Customization = (BarButtonType) -> Void
     
-    // MARK: Properties
+    // MARK: Buttons
     
-    /// Raw collection of currently active bar buttons.
+    /// All bar buttons.
     public internal(set) var all = [BarButtonType]() {
         didSet {
             self.stateController = TMBarButtonStateController(for: all)
@@ -41,7 +41,7 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
     
     // MARK: Init
     
-    init() {
+    internal init() {
         self.stateController = TMBarButtonStateController(for: all)
         self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
     }
@@ -60,6 +60,19 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
         all.forEach { (button) in
             customize(button)
         }
+    }
+    
+    // MARK: Utility
+    
+    /// Get a button that is associated with a bar item.
+    ///
+    /// - Parameter item: Item to search for.
+    /// - Returns: Associated bar button.
+    public func `for`(item: TMBarItemable) -> BarButtonType? {
+        guard let index = all.index(where: { ($0.item === item) }) else {
+            return nil
+        }
+        return all[index]
     }
 }
 
