@@ -273,7 +273,7 @@ extension TMBarView: TMBar {
                        direction: TMBarUpdateDirection,
                        animation: TMBarAnimation) {
         
-        let (pagePosition, animated) = updateValues(for: animationStyle,
+        let (pagePosition, animated) = adjustValues(for: animationStyle,
                                                     at: pagePosition,
                                                     shouldAnimate: animation.isEnabled)
         self.indicatedPosition = pagePosition
@@ -313,7 +313,7 @@ extension TMBarView: TMBar {
 
     // MARK: Updating
     
-    private func updateValues(for style: AnimationStyle,
+    private func adjustValues(for style: AnimationStyle,
                               at position: CGFloat,
                               shouldAnimate: Bool) -> (CGFloat, Bool) {
         var position = position
