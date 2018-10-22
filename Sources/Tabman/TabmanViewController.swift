@@ -28,12 +28,14 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         case custom(view: UIView, layout: ((UIView) -> Void)?)
     }
     
-    // MARK: Properties
+    // MARK: Views
     
     internal let topBarContainer = UIStackView()
     internal let bottomBarContainer = UIStackView()
     
     public private(set) var bars = [TMBar]()
+    
+    // MARK: Insets
     
     private var requiredInsets: Insets?
     private let autoInsetter = AutoInsetter()
@@ -87,7 +89,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         setNeedsInsetsUpdate()
     }
     
-    // MARK: Pageboy Overrides
+    // MARK: Pageboy
     
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
@@ -100,8 +102,6 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         bars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
         super.deletePage(at: index, then: updateBehavior)
     }
-    
-    // MARK: PageboyViewControllerDelegate
     
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     willScrollToPageAt index: PageIndex,
