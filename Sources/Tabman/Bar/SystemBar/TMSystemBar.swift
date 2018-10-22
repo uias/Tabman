@@ -21,7 +21,6 @@ open class TMSystemBar: UIView {
     private var barView: UIView? {
         return bar as? UIView
     }
-    private lazy var separatorView = makeSeparatorView()
 
     private lazy var extendingView = UIView()
     private lazy var backgroundView = TMBarBackgroundView(style: self.backgroundStyle)
@@ -40,13 +39,15 @@ open class TMSystemBar: UIView {
             backgroundView.style = backgroundStyle
         }
     }
-    /// Color of the separator at the bottom of the system bar.
+    /// Color of the separator at the edges of the system bar.
     ///
     /// Defaults to `UIColor.white.withAlphaComponent(0.5)`.
     public var separatorColor: UIColor = UIColor.white.withAlphaComponent(0.5) {
         didSet {
-            separatorView.backgroundColor = separatorColor
-            separatorView.isHidden = separatorColor == .clear
+            contentView.arrangedSubviews.filter({ $0 is SeparatorView }).forEach { (view) in
+                view.backgroundColor = separatorColor
+                view.isHidden = separatorColor == .clear
+            }
         }
     }
     
@@ -97,7 +98,6 @@ open class TMSystemBar: UIView {
             ])
         
         contentView.addArrangedSubview(barView)
-        contentView.addArrangedSubview(separatorView)
     }
     
     // MARK: Layout
@@ -140,16 +140,20 @@ open class TMSystemBar: UIView {
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
+            contentView.addArrangedSubview(makeSeparatorView())
         } else if relativeFrame.maxY == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
                 ])
+            contentView.insertArrangedSubview(makeSeparatorView(), at: 0)
         } else { // Don't do any extension
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
+            contentView.insertArrangedSubview(makeSeparatorView(), at: 0)
+            contentView.addArrangedSubview(makeSeparatorView())
         }
         
         NSLayoutConstraint.activate(constraints)
@@ -208,8 +212,8 @@ private extension TMSystemBar {
         return stackView
     }
     
-    func makeSeparatorView() -> UIView {
-        let view = UIView()
+    func makeSeparatorView() -> SeparatorView {
+        let view = SeparatorView()
         view.backgroundColor = self.separatorColor
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -218,3 +222,5 @@ private extension TMSystemBar {
         return view
     }
 }
+
+private final class SeparatorView: UIView {}
