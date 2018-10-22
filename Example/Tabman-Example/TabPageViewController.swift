@@ -15,6 +15,7 @@ class TabPageViewController: TabmanViewController {
     
     // MARK: Properties
     
+    @IBOutlet private weak var footerViewContainer: UIView!
     @IBOutlet private weak var statusView: PageStatusView!
     var gradient: GradientViewController? {
         return parent as? GradientViewController
@@ -36,6 +37,10 @@ class TabPageViewController: TabmanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Pin footer views (status and settings button etc.) to the bar layout guide
+        // so that they will move when bars are added to the view.
+        barLayoutGuide.bottomAnchor.constraint(equalTo: footerViewContainer.bottomAnchor, constant: 20.0).isActive = true
         
         dataSource = self
 

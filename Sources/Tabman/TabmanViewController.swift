@@ -35,8 +35,24 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     public private(set) var bars = [TMBar]()
     
-    private var requiredInsets: TMInsets?
+    private var requiredInsets: Insets?
     private let autoInsetter = AutoInsetter()
+    /// The insets that are required to safely layout content between the bars
+    /// that have been added.
+    ///
+    /// This will only take account of bars that are added to the `.top` or `.bottom`
+    /// locations - bars that are added to custom locations are responsible for handling
+    /// their own insets.
+    public var barInsets: UIEdgeInsets {
+        return requiredInsets?.barInsets ?? .zero
+    }
+    public let barLayoutGuide: UILayoutGuide = {
+        let guide = UILayoutGuide()
+        guide.identifier = "barLayoutGuide"
+        return guide
+    }()
+    private var barLayoutGuideTop: NSLayoutConstraint?
+    private var barLayoutGuideBottom: NSLayoutConstraint?
     
     // MARK: Init
     
@@ -58,6 +74,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        configureBarLayoutGuide(barLayoutGuide)
+        
         layoutContainers(in: view)
     }
     
@@ -235,6 +253,25 @@ public extension TabmanViewController {
             }
         }
     }
+    
+    private func configureBarLayoutGuide(_ guide: UILayoutGuide) {
+        guard barLayoutGuide.owningView == nil else {
+            return
+        }
+        
+        view.addLayoutGuide(barLayoutGuide)
+        let barLayoutGuideTop = barLayoutGuide.topAnchor.constraint(equalTo: view.topAnchor)
+        let barLayoutGuideBottom = view.bottomAnchor.constraint(equalTo: barLayoutGuide.bottomAnchor)
+        
+        NSLayoutConstraint.activate([
+            barLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            barLayoutGuideTop,
+            barLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            barLayoutGuideBottom
+            ])
+        self.barLayoutGuideTop = barLayoutGuideTop
+        self.barLayoutGuideBottom = barLayoutGuideBottom
+    }
 }
 
 // MARK: - Bar Management
@@ -282,10 +319,13 @@ internal extension TabmanViewController {
     }
     
     func setNeedsInsetsUpdate(to viewController: UIViewController?) {
-        let insets = TMInsets.for(tabmanViewController: self)
+        let insets = Insets.for(tabmanViewController: self)
         self.requiredInsets = insets
         
-        autoInsetter.inset(viewController, requiredInsetSpec: insets)
+        barLayoutGuideTop?.constant = insets.spec.allRequiredInsets.top
+        barLayoutGuideBottom?.constant = insets.spec.allRequiredInsets.bottom
+
+        autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
     }
 }
 
