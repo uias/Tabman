@@ -157,7 +157,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         
         UIView.performWithoutAnimation {
             reloadIndicatorPosition()
-            updateEdgeFades(for: scrollView.contentOffset)
+            updateEdgeFades(for: scrollView)
         }
     }
     
@@ -329,15 +329,15 @@ extension TMBarView: TMBar {
         return (position, animated)
     }
     
-    func updateEdgeFades(for contentOffset: CGPoint) {
-        let contentSize = self.scrollView.contentSize
-        let offsetProgress = contentOffset.x / (contentSize.width - scrollViewContainer.bounds.size.width) * 1.2
-
-        let leadingFade = abs(max(0.0, min(1.0, offsetProgress)))
-        let trailingFade = abs(max(0.0, min(1.0, 1.0 - offsetProgress)))
+    func updateEdgeFades(for scrollView: UIScrollView) {
         
-        scrollViewContainer.leadingFade = leadingFade
-        scrollViewContainer.trailingFade = trailingFade
+        let contentSizeRatio = ((scrollView.contentSize.width - scrollView.bounds.size.width) / 2)
+        
+        let leadingOffsetRatio = max(0.0, min(1.0, (scrollView.contentOffset.x / contentSizeRatio)))
+        let trailingOffsetRatio = max(0.0, min(1.0, ((scrollView.contentSize.width - scrollView.bounds.size.width) - scrollView.contentOffset.x) / contentSizeRatio))
+        
+        scrollViewContainer.leadingFade = leadingOffsetRatio
+        scrollViewContainer.trailingFade = trailingOffsetRatio
     }
 }
 
@@ -472,6 +472,6 @@ extension TMBarView: TMBarViewScrollHandlerDelegate {
                               didReceiveUpdated contentOffset: CGPoint,
                               from scrollView: UIScrollView) {
         
-        updateEdgeFades(for: contentOffset)
+        updateEdgeFades(for: scrollView)
     }
 }
