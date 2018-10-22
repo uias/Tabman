@@ -74,6 +74,14 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
         }
         return all[index]
     }
+    
+    /// Get buttons associated with bar items.
+    ///
+    /// - Parameter items: Items to search for.
+    /// - Returns: Associated bar buttons.
+    public func `for`(items: TMBarItemable...) -> [BarButtonType] {
+        return items.compactMap({ self.for(item: $0) })
+    }
 }
 
 extension TMBarButtonCollection: TMBarButtonInteractionHandler {
