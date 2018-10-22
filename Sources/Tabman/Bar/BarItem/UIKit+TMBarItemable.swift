@@ -1,5 +1,5 @@
 //
-//  UINavigationItem+TMBarItem.swift
+//  UIKit+TMBarItem.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 19/10/2018.
@@ -13,4 +13,7 @@ extension UINavigationItem: TMBarItemable {
     public var image: UIImage? {
         return nil
     }
+}
+
+extension UITabBarItem: TMBarItemable {
 }

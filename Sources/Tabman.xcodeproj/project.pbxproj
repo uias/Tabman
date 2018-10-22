@@ -14,7 +14,7 @@
 		4613CBF821418839000E6766 /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF621418839000E6766 /* WeakContainer.swift */; };
 		4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */; };
 		46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196A4D2179C7BB00B51D0F /* TMBarItem.swift */; };
-		46196A502179C7C800B51D0F /* UINavigationItem+TMBarItemable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196A4F2179C7C800B51D0F /* UINavigationItem+TMBarItemable.swift */; };
+		46196A502179C7C800B51D0F /* UIKit+TMBarItemable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196A4F2179C7C800B51D0F /* UIKit+TMBarItemable.swift */; };
 		4628609A213EDB63009C707F /* TMBarViewFocusRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46286099213EDB63009C707F /* TMBarViewFocusRect.swift */; };
 		462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941E42111EB7C00345B52 /* TMBarView.swift */; };
 		462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */; };
@@ -75,7 +75,7 @@
 		4613CBF621418839000E6766 /* WeakContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 		4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46196A4D2179C7BB00B51D0F /* TMBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarItem.swift; sourceTree = "<group>"; };
-		46196A4F2179C7C800B51D0F /* UINavigationItem+TMBarItemable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+TMBarItemable.swift"; sourceTree = "<group>"; };
+		46196A4F2179C7C800B51D0F /* UIKit+TMBarItemable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+TMBarItemable.swift"; sourceTree = "<group>"; };
 		46286099213EDB63009C707F /* TMBarViewFocusRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusRect.swift; sourceTree = "<group>"; };
 		462941E42111EB7C00345B52 /* TMBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarView.swift; sourceTree = "<group>"; };
 		462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewContentInsetGuides.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				46196A4D2179C7BB00B51D0F /* TMBarItem.swift */,
-				46196A4F2179C7C800B51D0F /* UINavigationItem+TMBarItemable.swift */,
+				46196A4F2179C7C800B51D0F /* UIKit+TMBarItemable.swift */,
 			);
 			path = BarItem;
 			sourceTree = "<group>";
@@ -539,7 +539,7 @@
 				4612BCF220C88D24001A37B5 /* TMBar+Templates.swift in Sources */,
 				46CCBAD72174BDF600C370E1 /* TMBarButton+None.swift in Sources */,
 				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,
-				46196A502179C7C800B51D0F /* UINavigationItem+TMBarItemable.swift in Sources */,
+				46196A502179C7C800B51D0F /* UIKit+TMBarItemable.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 				46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */,
 				4628609A213EDB63009C707F /* TMBarViewFocusRect.swift in Sources */,
