@@ -115,7 +115,7 @@ open class TMBarButton: UIControl {
 
 extension TMBarButton.SelectionState: Equatable {
     
-    static func from(rawValue: CGFloat) -> TMBarButton.SelectionState {
+    public static func from(rawValue: CGFloat) -> TMBarButton.SelectionState {
         switch rawValue {
         case 0.0:
             return .unselected
@@ -126,7 +126,7 @@ extension TMBarButton.SelectionState: Equatable {
         }
     }
     
-    var rawValue: CGFloat {
+    public var rawValue: CGFloat {
         switch self {
         case .unselected:
             return 0.0
