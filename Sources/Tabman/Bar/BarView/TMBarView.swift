@@ -34,7 +34,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     private let rootContentStack = UIStackView()
     
     private let scrollViewContainer = EdgeFadedView()
-    private let scrollView = UIScrollView()
+    private let scrollView = GestureScrollView()
     private var grid: TMBarViewGrid!
     
     private let scrollHandler: TMBarViewScrollHandler
@@ -121,9 +121,9 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// Whether the bar contents should be allowed to be scrolled by the user.
     public var isScrollEnabled: Bool {
         set {
-            scrollView.isScrollEnabled = newValue
+            scrollView.scrollMode = isScrollEnabled ? .interactive : .none
         } get {
-            return scrollView.isScrollEnabled
+            return scrollView.scrollMode == .interactive ? true : false
         }
     }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.

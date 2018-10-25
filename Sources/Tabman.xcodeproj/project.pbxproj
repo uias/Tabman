@@ -18,6 +18,7 @@
 		4628609A213EDB63009C707F /* TMBarViewFocusRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46286099213EDB63009C707F /* TMBarViewFocusRect.swift */; };
 		462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941E42111EB7C00345B52 /* TMBarView.swift */; };
 		462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */; };
+		4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4629F0E621825F21001919F2 /* GestureScrollView.swift */; };
 		462F7F31217387E50036080C /* TMBarViewScrollHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */; };
 		462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F3321739D5A0036080C /* TMSystemBar.swift */; };
 		46324A78213A99250059D469 /* MockBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A77213A99250059D469 /* MockBarView.swift */; };
@@ -79,6 +80,7 @@
 		46286099213EDB63009C707F /* TMBarViewFocusRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusRect.swift; sourceTree = "<group>"; };
 		462941E42111EB7C00345B52 /* TMBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarView.swift; sourceTree = "<group>"; };
 		462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewContentInsetGuides.swift; sourceTree = "<group>"; };
+		4629F0E621825F21001919F2 /* GestureScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureScrollView.swift; sourceTree = "<group>"; };
 		462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewScrollHandler.swift; sourceTree = "<group>"; };
 		462F7F3321739D5A0036080C /* TMSystemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMSystemBar.swift; sourceTree = "<group>"; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				46E96335211B4B06004C7468 /* EdgeFadedView.swift */,
+				4629F0E621825F21001919F2 /* GestureScrollView.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				46E9632E211B3BFB004C7468 /* TMBarLayoutInsetGuides.swift in Sources */,
 				4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */,
 				46A9D28C213C3005001D9A70 /* TMBarViewGrid.swift in Sources */,
+				4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */,
 				462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */,
 				46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */,
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,
