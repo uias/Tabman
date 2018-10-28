@@ -50,11 +50,13 @@ internal final class GestureScrollView: UIScrollView {
         switch scrollMode {
         case .interactive:
             super.isScrollEnabled = true
+            removeSwipeGestureRecognizers()
         case .swipe:
             super.isScrollEnabled = false
             addSwipeGestureRecognizers()
         case .none:
             super.isScrollEnabled = false
+            removeSwipeGestureRecognizers()
         }
     }
 }
@@ -71,7 +73,16 @@ private extension GestureScrollView {
         let positiveSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         positiveSwipeRecognizer.direction = .right
         addGestureRecognizer(positiveSwipeRecognizer)
-        self.negativeSwipeRecognizer = positiveSwipeRecognizer
+        self.positiveSwipeRecognizer = positiveSwipeRecognizer
+    }
+    
+    func removeSwipeGestureRecognizers() {
+        if let negativeSwipeRecognizer = negativeSwipeRecognizer {
+            removeGestureRecognizer(negativeSwipeRecognizer)
+        }
+        if let positiveSwipeRecognizer = positiveSwipeRecognizer {
+            removeGestureRecognizer(positiveSwipeRecognizer)
+        }
     }
     
     @objc func didSwipe(_ recognizer: UISwipeGestureRecognizer) {

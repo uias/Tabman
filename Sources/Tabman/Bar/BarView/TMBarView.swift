@@ -124,14 +124,12 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     ///
     /// Defaults to `.progressive`.
     public var animationStyle: AnimationStyle = .progressive
-    /// Whether the bar contents should be allowed to be scrolled by the user.
-    public var isScrollEnabled: Bool {
-        set {
-            scrollView.scrollMode = isScrollEnabled ? .interactive : .none
-        } get {
-            return scrollView.scrollMode == .interactive ? true : false
-        }
-    }
+    /// The type of scrolling interaction to allow.
+    ///
+    /// Options:
+    /// - `.interactive`: The bar contents can be scrolled interactively.
+    /// - `.swipe`: The bar contents can be scrolled through with swipe gestures.
+    /// - `.none`: The bar contents can't be scrolled at all.
     public var scrollMode: ScrollMode {
         set {
             scrollView.scrollMode = GestureScrollView.ScrollMode(rawValue: newValue.rawValue)!
