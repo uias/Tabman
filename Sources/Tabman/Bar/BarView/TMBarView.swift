@@ -500,9 +500,9 @@ extension TMBarView: GestureScrollViewGestureDelegate {
     func scrollView(_ scrollView: GestureScrollView, didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction) {
         let index = Int(indicatedPosition ?? 0)
         switch direction {
-        case .left, .up:
-            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
         case .right, .down:
+            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
+        case .left, .up:
             delegate?.bar(self, didRequestScrollTo: min(buttons.all.count - 1, index + 1))
         default:
             fatalError()
