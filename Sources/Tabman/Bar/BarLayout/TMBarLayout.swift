@@ -95,12 +95,14 @@ open class TMBarLayout: TMBarViewFocusProvider {
     ///   - buttons: The buttons to insert.
     ///   - index: The index to start inserting the buttons at.
     open func insert(buttons: [TMBarButton], at index: Int) {
+        fatalError("insert(buttons:at:) must be implemented in subclass.")
     }
 
     /// Remove existing bar buttons from the layout.
     ///
     /// - Parameter buttons: The buttons to remove.
     open func remove(buttons: [TMBarButton]) {
+        fatalError("remove(buttons:) must be implemented in subclass.")
     }
 
     /// Calculate the `focusRect` for the current position and capacity.
