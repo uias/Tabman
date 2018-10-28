@@ -67,16 +67,8 @@ private extension GestureScrollView {
     
     func addSwipeGestureRecognizers() {
         
-        let negativeDirection: UISwipeGestureRecognizer.Direction
-        let positiveDirection: UISwipeGestureRecognizer.Direction
-        
-        if contentSize.width > contentSize.height {
-            negativeDirection = .left
-            positiveDirection = .right
-        } else {
-            negativeDirection = .up
-            positiveDirection = .down
-        }
+        let negativeDirection: UISwipeGestureRecognizer.Direction = .left
+        let positiveDirection: UISwipeGestureRecognizer.Direction = .right
         
         let negativeSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         negativeSwipeRecognizer.direction = negativeDirection
