@@ -14,6 +14,7 @@ protocol GestureScrollViewGestureDelegate: class {
                     didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction)
 }
 
+/// Scroll view which provides enhanced scroll modes via gestures.
 internal final class GestureScrollView: UIScrollView {
     
     // MARK: Types
@@ -65,13 +66,25 @@ internal final class GestureScrollView: UIScrollView {
 private extension GestureScrollView {
     
     func addSwipeGestureRecognizers() {
+        
+        let negativeDirection: UISwipeGestureRecognizer.Direction
+        let positiveDirection: UISwipeGestureRecognizer.Direction
+        
+        if contentSize.width > contentSize.height {
+            negativeDirection = .left
+            positiveDirection = .right
+        } else {
+            negativeDirection = .up
+            positiveDirection = .down
+        }
+        
         let negativeSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
-        negativeSwipeRecognizer.direction = .left
+        negativeSwipeRecognizer.direction = negativeDirection
         addGestureRecognizer(negativeSwipeRecognizer)
         self.negativeSwipeRecognizer = negativeSwipeRecognizer
         
         let positiveSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
-        positiveSwipeRecognizer.direction = .right
+        positiveSwipeRecognizer.direction = positiveDirection
         addGestureRecognizer(positiveSwipeRecognizer)
         self.positiveSwipeRecognizer = positiveSwipeRecognizer
     }
