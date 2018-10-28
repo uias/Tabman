@@ -327,6 +327,15 @@ internal extension TabmanViewController {
         barLayoutGuideTop?.constant = insets.spec.allRequiredInsets.top
         barLayoutGuideBottom?.constant = insets.spec.allRequiredInsets.bottom
 
-        autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
+        // Don't inset TabmanViewController using AutoInsetter
+        if viewController is TabmanViewController {
+            if #available(iOS 11, *) {
+                if viewController?.additionalSafeAreaInsets != insets.spec.additionalRequiredInsets {
+                    viewController?.additionalSafeAreaInsets = insets.spec.additionalRequiredInsets
+                }
+            }
+        } else {
+            autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
+        }
     }
 }
