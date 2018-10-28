@@ -82,6 +82,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     open override func remove(buttons: [TMBarButton]) {
         for button in buttons {
             stackView.removeArrangedSubview(button)
+            button.removeFromSuperview()
         }
     }
     
