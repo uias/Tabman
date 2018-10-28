@@ -29,6 +29,12 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         case snap
     }
     
+    public enum ScrollMode: Int {
+        case interactive
+        case swipe
+        case none
+    }
+    
     // MARK: Properties
     
     private let rootContentStack = UIStackView()
@@ -126,6 +132,13 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
             return scrollView.scrollMode == .interactive ? true : false
         }
     }
+    public var scrollMode: ScrollMode {
+        set {
+            scrollView.scrollMode = GestureScrollView.ScrollMode(rawValue: newValue.rawValue)!
+        } get {
+            return ScrollMode(rawValue: scrollView.scrollMode.rawValue)!
+        }
+    }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
     public var fadesContentEdges: Bool {
         set {
@@ -143,6 +156,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         
         buttons.interactionHandler = self
         scrollHandler.delegate = self
+        scrollView.gestureDelegate = self
         layout(in: self)
     }
     
@@ -478,5 +492,20 @@ extension TMBarView: TMBarViewScrollHandlerDelegate {
                               from scrollView: UIScrollView) {
         
         updateEdgeFades(for: scrollView)
+    }
+}
+
+extension TMBarView: GestureScrollViewGestureDelegate {
+    
+    func scrollView(_ scrollView: GestureScrollView, didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction) {
+        let index = Int(indicatedPosition ?? 0)
+        switch direction {
+        case .left, .up:
+            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
+        case .right, .down:
+            delegate?.bar(self, didRequestScrollTo: min(buttons.all.count - 1, index + 1))
+        default:
+            fatalError()
+        }
     }
 }
