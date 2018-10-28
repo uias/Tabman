@@ -240,6 +240,11 @@ extension TMBarView: TMBar {
         switch context {
         case .full, .insertion:
             
+            if context == .full && buttons.all.count > 0 { // remove existing buttons
+                layout.remove(buttons: buttons.all)
+                buttons.all.removeAll()
+            }
+            
             var newButtons = [ButtonType]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let item = dataSource.barItem(for: self, at: index)
