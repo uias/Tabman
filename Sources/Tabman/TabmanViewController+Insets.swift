@@ -11,6 +11,7 @@ import AutoInsetter
 
 public extension TabmanViewController {
     
+    /// Object containing inset data that is required for all bars in a `TabmanViewController`.
     public struct Insets {
         
         static func `for`(tabmanViewController: TabmanViewController) -> Insets {

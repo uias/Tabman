@@ -33,9 +33,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     internal let topBarContainer = UIStackView()
     internal let bottomBarContainer = UIStackView()
     
+    /// All bars that have been added to the view controller.
     public private(set) var bars = [TMBar]()
     
-    // MARK: Insets
+    // MARK: Layout
     
     private var requiredInsets: Insets?
     private let autoInsetter = AutoInsetter()
