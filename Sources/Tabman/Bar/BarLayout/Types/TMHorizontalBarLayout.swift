@@ -28,7 +28,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     public override var contentMode: TMBarLayout.ContentMode {
         didSet {
             switch contentMode {
-            case .fill:
+            case .intrinsic:
                 buttonDistribution = .fill
             case .fit:
                 buttonDistribution = .fillEqually

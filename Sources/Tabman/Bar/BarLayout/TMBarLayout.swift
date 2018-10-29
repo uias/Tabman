@@ -16,7 +16,7 @@ open class TMBarLayout: TMBarViewFocusProvider {
     // MARK: Types
     
     public enum ContentMode {
-        case fill
+        case intrinsic
         case fit
     }
     
@@ -37,15 +37,15 @@ open class TMBarLayout: TMBarViewFocusProvider {
     private var widthConstraint: NSLayoutConstraint?
     
     /**
-     The display mode in which to display the content in the layout.
+     The content mode in which to display the content in the layout.
      
      Options:
-     - `.fill`: The layout and contents will be intrinsically sized, taking up as much space as required.
+     - `.intrinsic`: The layout and contents will be intrinsically sized, taking up as much space as required.
      - `.fit`: The layout and it's contents will be restricted to fitting within the bounds of the bar.
      
-     By default this is set to `.fill`
+     By default this is set to `.intrinsic`
     **/
-    public var contentMode: ContentMode = .fill {
+    public var contentMode: ContentMode = .intrinsic {
         didSet {
             guard oldValue != contentMode else {
                 return
