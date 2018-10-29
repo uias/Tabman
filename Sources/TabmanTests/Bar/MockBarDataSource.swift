@@ -11,7 +11,7 @@ import Tabman
 
 class MockBarDataSource: TMBarDataSource {
     
-    func barItem(for bar: TMBar, at index: Int) -> TMBarItem {
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: "Mock Page \(index)")
     }
 }
