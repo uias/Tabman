@@ -25,14 +25,6 @@ public extension TMBarLayout {
                 return super.contentMode
             }
         }
-        @available(*, unavailable)
-        public override var isPagingEnabled: Bool {
-            set {
-                fatalError("\(type(of: self)) does not support updating isPagingEnabled")
-            } get {
-                return super.isPagingEnabled
-            }
-        }
         
         // MARK: Lifecycle
         

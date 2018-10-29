@@ -62,13 +62,6 @@ open class TMBarLayout: TMBarViewFocusProvider {
             return parent.contentInset
         }
     }
-    public var isPagingEnabled: Bool {
-        set {
-            parent.isPagingEnabled = newValue
-        } get {
-            return parent.isPagingEnabled
-        }
-    }
     
     // MARK: Init
     
