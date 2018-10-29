@@ -51,22 +51,38 @@ github "uias/Tabman" ~> 2.0
 
 ## 🚀 Usage
 
-### First things first.
-Get your `PageboyViewController` set up...
+### The Basics
+1) Set up your view controller with the an array of view controllers that you want to appear.
+2) Set the `PageboyViewControllerDataSource` data source of the `TabmanViewController`.
+3) Create, customize and add as many `TMBar`s as you want.
 
 ```swift
+import Tabman
+import Pageboy
+
 class TabViewController: TabmanViewController {
 
-    let viewControllers = [UIViewController(), UIViewController()]
+    private var viewControllers = [UIViewController(), UIViewController()]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.dataSource = self
+
+        // Create bar
+        let bar = TMBar.ButtonBar()
+        bar.animationStyle = .snap // Customize
+
+        // Add to view
+        addBar(bar, dataSource: self, at: .top)
     }
 }
+```
 
-extension TabViewController: PageboyViewControllerDataSource {
+4) Configure your data sources.
+
+```swift
+extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
 
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
@@ -80,24 +96,6 @@ extension TabViewController: PageboyViewControllerDataSource {
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
-}
-```
-You can then add bars to the view controller and provide them with a data source.
-
-```swift
-class TabViewController: TabmanViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.dataSource = self
-
-        let bar = TMBar.ButtonBar()
-        self.addBar(bar, dataSource: self, at: .top)
-    }
-}
-
-extension TabViewController: BarDataSource {
 
     func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
         let title = "Page \(index)"
@@ -106,12 +104,12 @@ extension TabViewController: BarDataSource {
 }
 ```
 
-### Choosing a look.
+### Choosing a look
 Tabman provides numerous, easy to use styles out of the box:
 
 TODO
 
-### Customize. Customize. Customize.
+### Customize all the things
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
 <p align="center">
@@ -130,7 +128,7 @@ bar.animationStyle = .snap
 **More: [**TMBarView Customization**](./Docs/Customization/TMBarView%20Customization.md)**
 
 #### TMBarLayout
-`TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. You should look here if you want to change things such as button spacing, content insets and other layout things.
+`TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. Look here if you want to change things such as button spacing, content insets and other layout'y things.
 
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
@@ -154,7 +152,7 @@ bar.buttons.customize { (button) in
 **More: [**TMBarButton Customization**](./Docs/Customization/TMBarButton%20Customization.md)**
 
 #### TMBarIndicator
-Lastly is the `TMBarIndicator` - which as the name implies indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
+Lastly is `TMBarIndicator` - which indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
 
 ```swift
 bar.indicator.overscrollBehavior = .compress
@@ -163,7 +161,7 @@ bar.indicator.weight = .heavy
 
 **More: [**TMBarIndicator Customization**](./Docs/Customization/TMBarIndicator%20Customization.md)**
 
-## 🎨 Going Completely Custom
+## 🎨 Advanced Customization
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
 
 `TMBarView` leverages generics to define and serve the three distinct functional areas of the bar. This means...
@@ -184,14 +182,13 @@ let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ```
 That's as easy as it is.
 
-### What if I want my own thing?
+### Doing my own thing
 As replacing the type of layout, button or indicator is as simple as above, you have the ability to define your own subclasses without too much of a headache.
 
-The following guides should help you get on the right path...
+[**Custom Tabman Components**]()
 
-* [**Custom BarLayout**]() - I want to change how the buttons in my bar are laid out and how they are displayed.
-* [**Custom BarButton**]() - I want to change what appears in my bar buttons.
-* [**Custom BarIndicator**]() - I want to create my own type of indicator.
+There are also a example projects that showcase custom layouts and such:
+- [**Tinderbar**](https://github.com/uias/Tinderbar) - Tinder iOS app layout built with Tabman.
 
 ## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
