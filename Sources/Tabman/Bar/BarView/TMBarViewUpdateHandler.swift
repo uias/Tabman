@@ -24,13 +24,13 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         let focusArea: CGRect
         let focusRect: TMBarViewFocusRect
         
-        fileprivate let animation: TMBarAnimation
+        fileprivate let animation: TMAnimation
         
         init(position: CGFloat,
              capacity: Int,
              direction: TMBarUpdateDirection,
              focusArea: CGRect,
-             animation: TMBarAnimation) {
+             animation: TMAnimation) {
             self.position = position
             self.capacity = capacity
             self.direction = direction
@@ -49,7 +49,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
          at position: CGFloat,
          capacity: Int,
          direction: TMBarUpdateDirection,
-         expectedAnimation: TMBarAnimation) {
+         expectedAnimation: TMAnimation) {
         self.barView = barView
         
         let focusArea = barView.grid.convert(barView.layout.focusArea(for: position, capacity: capacity),
@@ -121,7 +121,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     ///   - style: Style of animation.
     ///   - expected: Existing animation.
     /// - Returns: Animation relevant for style.
-    private func makeAnimation(for style: TMAnimationStyle, expected: TMBarAnimation) -> TMBarAnimation {
+    private func makeAnimation(for style: TMAnimationStyle, expected: TMAnimation) -> TMAnimation {
         let isEnabled: Bool
         switch style {
         case .none:
@@ -134,7 +134,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
             isEnabled = true
         }
         
-        return TMBarAnimation(isEnabled: isEnabled, duration: expected.duration)
+        return TMAnimation(isEnabled: isEnabled, duration: expected.duration)
     }
     
     /// Make focus area.

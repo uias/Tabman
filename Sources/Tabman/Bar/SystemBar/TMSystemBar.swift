@@ -199,7 +199,7 @@ extension TMSystemBar: TMBar {
         bar.reloadData(at: indexes, context: context)
     }
     
-    public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMBarAnimation) {
+    public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: pagePosition, capacity: capacity, direction: direction, animation: animation)
     }
 }

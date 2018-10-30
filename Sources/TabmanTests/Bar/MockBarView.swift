@@ -36,7 +36,7 @@ class MockBarView: UIView, TMBar {
         
     }
     
-    func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMBarAnimation) {
+    func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         
     }
 }

@@ -294,7 +294,7 @@ private extension TabmanViewController {
                    animated: Bool) {
         let position = position ?? 0.0
         let capacity = self.pageCount ?? 0
-        let animation = TMBarAnimation(isEnabled: animated,
+        let animation = TMAnimation(isEnabled: animated,
                                              duration: transition?.duration ?? 0.25)
         bar.update(for: position,
                    capacity: capacity,

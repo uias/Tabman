@@ -54,14 +54,6 @@ public enum TMBarUpdateDirection {
     case reverse
 }
 
-/// Configuration for a bar animation.
-public struct TMBarAnimation {
-    /// Whether the animation is enabled.
-    public let isEnabled: Bool
-    /// Duration of the animation in seconds.
-    public let duration: TimeInterval
-}
-
 /// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
 /// and displayed in a `TabmanViewController`.
 ///
@@ -94,5 +86,5 @@ public protocol TMBar: AnyObject where Self: UIView {
     func update(for pagePosition: CGFloat,
                 capacity: Int,
                 direction: TMBarUpdateDirection,
-                animation: TMBarAnimation)
+                animation: TMAnimation)
 }

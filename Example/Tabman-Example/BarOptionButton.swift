@@ -107,6 +107,6 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
         bar.update(for: 0.0,
                    capacity: Defaults.barItemCount,
                    direction: .none,
-                   animation: TMBarAnimation(isEnabled: false, duration: 0.0))
+                   animation: TMAnimation(isEnabled: false, duration: 0.0))
     }
 }

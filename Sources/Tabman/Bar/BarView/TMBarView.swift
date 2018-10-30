@@ -111,14 +111,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     // MARK: Customization
     
-    /// Style to use when animating bar position updates.
-    ///
-    /// Options:
-    /// - `.progressive`: The bar will seemlessly transition between each button in progressive steps.
-    /// - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
-    ///
-    /// Defaults to `.progressive`.
-    public var animationStyle: TMAnimationStyle = .progressive
+    internal let animationStyle: TMAnimationStyle = .progressive
     /// The type of scrolling interaction to allow.
     ///
     /// Options:
@@ -283,7 +276,7 @@ extension TMBarView: TMBar {
     public func update(for pagePosition: CGFloat,
                        capacity: Int,
                        direction: TMBarUpdateDirection,
-                       animation: TMBarAnimation) {
+                       animation: TMAnimation) {
         
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: pagePosition,
@@ -390,7 +383,7 @@ extension TMBarView {
         update(for: indicatedPosition,
                capacity: buttons.all.count,
                direction: .none,
-               animation: TMBarAnimation(isEnabled: true,
+               animation: TMAnimation(isEnabled: true,
                                                duration: TMBarViewDefaults.animationDuration))
     }
 }
