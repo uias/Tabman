@@ -18,7 +18,7 @@ private struct TMBarViewDefaults {
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
 /// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
 /// in the `TMBarView` type definition.
-open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView, TMAnimationStyleable {
+open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView, TMTransitionStyleable {
     
     // MARK: Types
     
@@ -111,7 +111,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     // MARK: Customization
     
-    internal let animationStyle: TMAnimationStyle = .progressive
+    internal let transitionStyle: TMTransitionStyle = .progressive
     /// The type of scrolling interaction to allow.
     ///
     /// Options:

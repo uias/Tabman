@@ -66,8 +66,8 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     /// - Parameters:
     ///   - component: Component to update.
     ///   - action: Action closure with Component relevant context.
-    func update(component: TMAnimationStyleable, action: @escaping (Context) -> Void) {
-        let animationStyle = component.animationStyle
+    func update(component: TMTransitionStyleable, action: @escaping (Context) -> Void) {
+        let animationStyle = component.transitionStyle
         let context = generateContext(from: self.context, animationStyle: animationStyle)
         
         if context.animation.isEnabled {
@@ -85,9 +85,9 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     ///
     /// - Parameters:
     ///   - context: Original context.
-    ///   - animationStyle: Animation style.
+    ///   - transitionStyle: Animation style.
     /// - Returns: Context relevant for animation style.
-    private func generateContext(from context: Context, animationStyle: TMAnimationStyle) -> Context {
+    private func generateContext(from context: Context, animationStyle: TMTransitionStyle) -> Context {
         let position = makePosition(from: context.position, for: animationStyle)
         let focusArea = makeFocusArea(for: position, capacity: context.capacity)
         let animation = makeAnimation(for: animationStyle, expected: context.animation)
@@ -102,12 +102,12 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     ///
     /// - Parameters:
     ///   - position: Original position.
-    ///   - animationStyle: Animation style.
+    ///   - transitionStyle: Animation style.
     /// - Returns: Position relevant for animation style.
-    private func makePosition(from position: CGFloat, for animationStyle: TMAnimationStyle) -> CGFloat {
+    private func makePosition(from position: CGFloat, for animationStyle: TMTransitionStyle) -> CGFloat {
         switch animationStyle {
             
-        case .snap:
+        case .snap, .none:
             return round(position)
             
         default:
@@ -121,7 +121,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     ///   - style: Style of animation.
     ///   - expected: Existing animation.
     /// - Returns: Animation relevant for style.
-    private func makeAnimation(for style: TMAnimationStyle, expected: TMAnimation) -> TMAnimation {
+    private func makeAnimation(for style: TMTransitionStyle, expected: TMAnimation) -> TMAnimation {
         let isEnabled: Bool
         switch style {
         case .none:

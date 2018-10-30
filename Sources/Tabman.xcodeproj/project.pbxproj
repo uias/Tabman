@@ -29,6 +29,7 @@
 		464264DF217E12A20001C4AF /* TabmanViewController+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264DE217E12A20001C4AF /* TabmanViewController+Insets.swift */; };
 		464E9095218857490096308E /* TMAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E9094218857490096308E /* TMAnimation.swift */; };
 		464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */; };
+		464E90992188853F0096308E /* TMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90982188853F0096308E /* TMTransition.swift */; };
 		468EDFBA2164C51200C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
 		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */; };
@@ -94,6 +95,7 @@
 		464264DE217E12A20001C4AF /* TabmanViewController+Insets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+Insets.swift"; sourceTree = "<group>"; };
 		464E9094218857490096308E /* TMAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAnimation.swift; sourceTree = "<group>"; };
 		464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewUpdateHandler.swift; sourceTree = "<group>"; };
+		464E90982188853F0096308E /* TMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTransition.swift; sourceTree = "<group>"; };
 		46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarIndicatorContainer.swift; sourceTree = "<group>"; };
 		46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewGrid.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* TMBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBar.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				46B7FDFA20BC537000E9BB7E /* TMBar.swift */,
 				4612BCF120C88D24001A37B5 /* TMBar+Templates.swift */,
 				464E9094218857490096308E /* TMAnimation.swift */,
+				464E90982188853F0096308E /* TMTransition.swift */,
 				46196A4C2179C7BB00B51D0F /* BarItem */,
 				462941D92111EB7C00345B52 /* BarView */,
 				46E96309211B3A01004C7468 /* BarLayout */,
@@ -518,6 +521,7 @@
 				4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */,
 				46A9D28C213C3005001D9A70 /* TMBarViewGrid.swift in Sources */,
 				4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */,
+				464E90992188853F0096308E /* TMTransition.swift in Sources */,
 				462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */,
 				46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */,
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,

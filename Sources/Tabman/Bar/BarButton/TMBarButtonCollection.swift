@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimationStyleable {
+public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMTransitionStyleable {
     
     // MARK: Types
     
@@ -41,8 +41,8 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimatio
     
     // MARK: Customization
     
-    /// Style of animation to use for transitioning between buttons.
-    public var animationStyle: TMAnimationStyle = .progressive
+    /// Style to use when transitioning between buttons.
+    public var transitionStyle: TMTransitionStyle = .progressive
     
     // MARK: Init
     
