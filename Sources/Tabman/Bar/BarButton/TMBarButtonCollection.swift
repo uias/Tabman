@@ -39,6 +39,9 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimatio
     /// External handler that responds to interaction controller events.
     internal weak var interactionHandler: TMBarButtonInteractionHandler?
     
+    // MARK: Customization
+    
+    /// Style of animation to use for transitioning between buttons.
     public var animationStyle: TMAnimationStyle = .progressive
     
     // MARK: Init

@@ -30,7 +30,7 @@ open class TMBarIndicator: UIView, TMAnimationStyleable {
         case none
     }
     
-    // MARK: Properties
+    // MARK: Customization
     
     /// Display mode for the indicator.
     open var displayMode: DisplayMode {
@@ -46,9 +46,9 @@ open class TMBarIndicator: UIView, TMAnimationStyleable {
      ///
      /// Defaults to `.bounce`.
     public var overscrollBehavior: OverscrollBehavior = .bounce
-    /// Whether the indicator should display progressively, traversing page indexes as progress.
+    /// Whether the indicator should display progressively, traversing page indexes as visible progress.
     public var isProgressive: Bool = false
-    
+    /// Style of animation to use when updating the indicator.
     public var animationStyle: TMAnimationStyle = .progressive
     
     // MARK: Init
