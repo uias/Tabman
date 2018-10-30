@@ -111,7 +111,8 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     // MARK: Customization
     
-    internal let transitionStyle: TMTransitionStyle = .progressive
+    /// Transition style for updating bar view components such as scroll view.
+    internal var transitionStyle: TMTransitionStyle = .progressive
     /// The type of scrolling interaction to allow.
     ///
     /// Options:
