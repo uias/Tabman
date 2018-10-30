@@ -9,7 +9,7 @@
 import UIKit
 
 /// View that provides indication of the current page position.
-open class TMBarIndicator: UIView, TMAnimatable {
+open class TMBarIndicator: UIView, TMAnimationStyleable {
     
     // MARK: Types
     

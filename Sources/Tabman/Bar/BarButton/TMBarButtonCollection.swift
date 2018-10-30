@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimatable {
+public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimationStyleable {
     
     // MARK: Types
     

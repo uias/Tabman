@@ -1,5 +1,5 @@
 //
-//  TMAnimationStyle.swift
+//  TMAnimation.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/10/2018.
@@ -14,7 +14,8 @@ public enum TMAnimationStyle {
     case none
 }
 
-internal protocol TMAnimatable {
+/// Object that can provide an animation style.
+internal protocol TMAnimationStyleable: class {
     
     var animationStyle: TMAnimationStyle { get }
 }

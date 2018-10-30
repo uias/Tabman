@@ -66,7 +66,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     /// - Parameters:
     ///   - component: Component to update.
     ///   - action: Action closure with Component relevant context.
-    func update(component: TMAnimatable, action: @escaping (Context) -> Void) {
+    func update(component: TMAnimationStyleable, action: @escaping (Context) -> Void) {
         let animationStyle = component.animationStyle
         let context = generateContext(from: self.context, animationStyle: animationStyle)
         
