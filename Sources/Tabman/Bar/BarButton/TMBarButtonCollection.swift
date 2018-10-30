@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
+public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMAnimatable {
     
     // MARK: Types
     
@@ -38,6 +38,8 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
     
     /// External handler that responds to interaction controller events.
     internal weak var interactionHandler: TMBarButtonInteractionHandler?
+    
+    public var animationStyle: TMAnimationStyle = .progressive
     
     // MARK: Init
     

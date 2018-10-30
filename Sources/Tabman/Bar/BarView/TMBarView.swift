@@ -18,16 +18,11 @@ private struct TMBarViewDefaults {
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
 /// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
 /// in the `TMBarView` type definition.
-open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView {
+open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView, TMAnimatable {
     
     // MARK: Types
     
     public typealias BarButtonCustomization = (ButtonType) -> Void
-    
-    public enum AnimationStyle {
-        case progressive
-        case snap
-    }
     
     public enum ScrollMode: Int {
         case interactive
@@ -37,11 +32,11 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     // MARK: Properties
     
-    private let rootContentStack = UIStackView()
+    internal let rootContentStack = UIStackView()
     
-    private let scrollViewContainer = EdgeFadedView()
-    private let scrollView = GestureScrollView()
-    private var grid: TMBarViewGrid!
+    internal let scrollViewContainer = EdgeFadedView()
+    internal let scrollView = GestureScrollView()
+    internal private(set) var grid: TMBarViewGrid!
     
     private let scrollHandler: TMBarViewScrollHandler
     
@@ -123,7 +118,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// - `.snap`: The bar will transition between each button by rounding and snapping to each positional bound.
     ///
     /// Defaults to `.progressive`.
-    public var animationStyle: AnimationStyle = .progressive
+    public var animationStyle: TMAnimationStyle = .progressive
     /// The type of scrolling interaction to allow.
     ///
     /// Options:
@@ -290,61 +285,43 @@ extension TMBarView: TMBar {
                        direction: TMBarUpdateDirection,
                        animation: TMBarAnimation) {
         
-        let (pagePosition, animated) = adjustValues(for: animationStyle,
-                                                    at: pagePosition,
-                                                    shouldAnimate: animation.isEnabled)
+        let handler = TMBarViewUpdateHandler(for: self,
+                                             at: pagePosition,
+                                             capacity: capacity,
+                                             direction: direction,
+                                             expectedAnimation: animation)
         self.indicatedPosition = pagePosition
         layoutIfNeeded()
         
-        // Get focus area for updating indicator layout
-        let focusArea = grid.convert(layout.focusArea(for: pagePosition, capacity: capacity), from: layout.view) // raw focus area in grid coordinate space
-        let focusRect = TMBarViewFocusRect(rect: focusArea, at: pagePosition, capacity: capacity)
-        indicatorLayoutHandler?.update(for: focusRect.rect(isProgressive: indicator.isProgressive,
-                                                           overscrollBehavior: indicator.overscrollBehavior)) // Update indicator layout
-        
-        // New content offset for scroll view for focus frame
-        // Designed to center the frame in the view if possible.
-        let centeredFocusFrame = (bounds.size.width / 2) - (focusRect.size.width / 2) // focus frame centered in view
-        let pinnedAccessoryWidth = (accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
-        let maxOffsetX = (scrollView.contentSize.width - (bounds.size.width - pinnedAccessoryWidth)) + contentInset.right // maximum possible x offset
-        let minOffsetX = -contentInset.left
-        var contentOffset = CGPoint(x: (-centeredFocusFrame) + focusRect.origin.x, y: 0.0)
-        
-        contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX)) // Constrain the offset to bounds
-        
-        let update = {
-            self.layoutIfNeeded()
-            
-            self.buttons.stateController.update(for: pagePosition, direction: direction)
-            self.scrollView.contentOffset = contentOffset
+        // Update indicator
+        handler.update(component: indicator) { (context) in
+            self.indicatorLayoutHandler?.update(for: context.focusRect.rect(isProgressive: self.indicator.isProgressive,
+                                                                            overscrollBehavior: self.indicator.overscrollBehavior)) // Update indicator layout
+            self.indicator.superview?.layoutIfNeeded()
         }
         
-        if animated {
-            UIView.animate(withDuration: animation.duration, animations: {
-                update()
-            })
-        } else {
-            update()
+        // Update buttons
+        handler.update(component: buttons) { (context) in
+            self.buttons.stateController.update(for: context.position,
+                                                direction: context.direction)
+        }
+        
+        // Update bar view
+        handler.update(component: self) { (context) in
+            
+            let centeredFocusFrame = (self.bounds.size.width / 2) - (context.focusRect.size.width / 2) // focus frame centered in view
+            let pinnedAccessoryWidth = (self.accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (self.accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
+            let maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.contentInset.right // maximum possible x offset
+            let minOffsetX = -self.contentInset.left
+            var contentOffset = CGPoint(x: (-centeredFocusFrame) + context.focusRect.origin.x, y: 0.0)
+            
+            contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
+            
+            self.scrollView.contentOffset = contentOffset
         }
     }
 
     // MARK: Updating
-    
-    private func adjustValues(for style: AnimationStyle,
-                              at position: CGFloat,
-                              shouldAnimate: Bool) -> (CGFloat, Bool) {
-        var position = position
-        var animated = shouldAnimate
-        switch style {
-        case .snap:
-            position = round(position)
-            animated = true
-            
-        default: break
-        }
-        
-        return (position, animated)
-    }
     
     func updateEdgeFades(for scrollView: UIScrollView) {
         

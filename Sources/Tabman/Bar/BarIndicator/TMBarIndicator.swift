@@ -9,7 +9,7 @@
 import UIKit
 
 /// View that provides indication of the current page position.
-open class TMBarIndicator: UIView {
+open class TMBarIndicator: UIView, TMAnimatable {
     
     // MARK: Types
     
@@ -48,6 +48,8 @@ open class TMBarIndicator: UIView {
     public var overscrollBehavior: OverscrollBehavior = .bounce
     /// Whether the indicator should display progressively, traversing page indexes as progress.
     public var isProgressive: Bool = false
+    
+    public var animationStyle: TMAnimationStyle = .progressive
     
     // MARK: Init
     
