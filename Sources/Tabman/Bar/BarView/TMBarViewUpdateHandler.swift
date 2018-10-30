@@ -8,8 +8,13 @@
 
 import UIKit
 
+/// Handler for executing positional updates on bar view components.
+///
+/// Interprets and calculates appropriate values for updates dependent on component animation styles. All components which use
+/// this must conform to `TMAnimateable`.
 internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator> {
     
+    /// Context which describes the current positional and focus values for the bar view.
     struct Context {
         
         let position: CGFloat
@@ -35,7 +40,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         }
     }
     
-    let barView: TMBarView<LayoutType, ButtonType, IndicatorType>
+    private weak var barView: TMBarView<LayoutType, ButtonType, IndicatorType>!
     let context: Context
     
     // MARK: Init
@@ -56,6 +61,11 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
                                animation: expectedAnimation)
     }
     
+    /// Update a component.
+    ///
+    /// - Parameters:
+    ///   - component: Component to update.
+    ///   - action: Action closure with Component relevant context.
     func update(component: TMAnimatable, action: @escaping (Context) -> Void) {
         let animationStyle = component.animationStyle
         let context = generateContext(from: self.context, animationStyle: animationStyle)
@@ -71,6 +81,12 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     
     // MARK: Utility
     
+    /// Generate a new context from an existing one, that takes account of animation style.
+    ///
+    /// - Parameters:
+    ///   - context: Original context.
+    ///   - animationStyle: Animation style.
+    /// - Returns: Context relevant for animation style.
     private func generateContext(from context: Context, animationStyle: TMAnimationStyle) -> Context {
         let position = makePosition(from: context.position, for: animationStyle)
         let focusArea = makeFocusArea(for: position, capacity: context.capacity)
@@ -82,6 +98,12 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
                        animation: animation)
     }
     
+    /// Generate a new position dependending on animation style.
+    ///
+    /// - Parameters:
+    ///   - position: Original position.
+    ///   - animationStyle: Animation style.
+    /// - Returns: Position relevant for animation style.
     private func makePosition(from position: CGFloat, for animationStyle: TMAnimationStyle) -> CGFloat {
         switch animationStyle {
             
@@ -93,6 +115,12 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         }
     }
     
+    /// Make animation for an animation style.
+    ///
+    /// - Parameters:
+    ///   - style: Style of animation.
+    ///   - expected: Existing animation.
+    /// - Returns: Animation relevant for style.
     private func makeAnimation(for style: TMAnimationStyle, expected: TMBarAnimation) -> TMBarAnimation {
         let isEnabled: Bool
         switch style {
@@ -109,6 +137,12 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         return TMBarAnimation(isEnabled: isEnabled, duration: expected.duration)
     }
     
+    /// Make focus area.
+    ///
+    /// - Parameters:
+    ///   - position: Position.
+    ///   - capacity: Capacity.
+    /// - Returns: Focus area.
     private func makeFocusArea(for position: CGFloat, capacity: Int) -> CGRect {
         return barView.grid.convert(barView.layout.focusArea(for: position, capacity: capacity),
                                     from: barView.layout.view)
