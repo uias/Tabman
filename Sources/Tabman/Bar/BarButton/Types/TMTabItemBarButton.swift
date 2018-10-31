@@ -30,6 +30,24 @@ public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Customization
     
+    /// Tint color of the button when unselected / normal.
+    public override var tintColor: UIColor! {
+        didSet {
+            if !isSelected {
+                imageView.tintColor = tintColor
+                label.textColor = tintColor
+            }
+        }
+    }
+    /// Tint color of the button when selected.
+    public var selectedTintColor: UIColor! {
+        didSet {
+            if isSelected {
+                imageView.tintColor = selectedTintColor
+                label.textColor = selectedTintColor
+            }
+        }
+    }
     /// Size of the image view.
     public var imageViewSize: CGSize {
         set {
@@ -99,6 +117,8 @@ public final class TMTabItemBarButton: TMBarButton {
         imageWidth.isActive = true
         imageHeight.isActive = true
         
+        selectedTintColor = tintColor
+        tintColor = .black
         label.font = self.font
         label.text = "Item"
     }
@@ -112,6 +132,11 @@ public final class TMTabItemBarButton: TMBarButton {
     
     public override func update(for selectionState: TMBarButton.SelectionState) {
         super.update(for: selectionState)
+        
+        let transitionColor = tintColor.interpolate(with: selectedTintColor,
+                                                percent: selectionState.rawValue)
+        imageView.tintColor = transitionColor
+        label.textColor = transitionColor
         
         if shrinksImageWhenUnselected {
             let interpolatedScale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.shrunkenImageScale))
