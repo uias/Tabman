@@ -57,7 +57,7 @@ class TabPageViewController: TabmanViewController {
         bar.rightAccessoryView = plusButton
         
         // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
-        addBar(TMSystemBar(for: bar),
+        addBar(bar.systemBar(),
                dataSource: self,
                at: .top)
     }

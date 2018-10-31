@@ -8,6 +8,16 @@
 
 import UIKit
 
+public extension TMBar {
+    
+    /// Embed the bar in a 'system' bar that will mimick `UINavigationBar` and `UITabBar`.
+    ///
+    /// - Returns: System bar.
+    public func systemBar() -> TMSystemBar {
+        return TMSystemBar(for: self)
+    }
+}
+
 /// Bar which mimicks the appearance of a UIKit `UINavigationBar` / `UITabBar`.
 ///
 /// Contains an internal `TMBar` and forwards on all bar responsibility to this instance.
@@ -54,13 +64,13 @@ open class TMSystemBar: UIView {
     // MARK: Init
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init(for:viewController:)")
+        fatalError("Interface Builder is not supported")
     }
     
     /// Create a system bar.
     ///
     /// - Parameter bar: Bar to embed in the system bar.
-    public required init(for bar: TMBar) {
+    internal init(for bar: TMBar) {
         self.bar = bar
         super.init(frame: .zero)
         
