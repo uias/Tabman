@@ -278,14 +278,13 @@ extension TMBarView: TMBar {
                        capacity: Int,
                        direction: TMBarUpdateDirection,
                        animation: TMAnimation) {
-        
+        self.indicatedPosition = position
+
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
                                              capacity: capacity,
                                              direction: direction,
                                              expectedAnimation: animation)
-        self.indicatedPosition = position
-        layoutIfNeeded()
         
         // Update indicator
         handler.update(component: indicator) { (context) in

@@ -145,6 +145,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         let focusArea = barView.grid.convert(barView.layout.focusArea(for: position, capacity: capacity),
                                              from: barView.layout.view)
         self.focusArea = focusArea
+        barView.layoutIfNeeded()
         return focusArea
     }
 }
