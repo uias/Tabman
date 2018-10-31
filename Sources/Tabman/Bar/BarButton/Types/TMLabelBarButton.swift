@@ -50,20 +50,19 @@ public final class TMLabelBarButton: TMBarButton {
             return label.text
         }
     }
-    
     /// Color of the text when unselected / normal.
-    public var color: UIColor = .black {
+    public override var tintColor: UIColor! {
         didSet {
             if !isSelected {
-                label.textColor = color
+                label.textColor = tintColor
             }
         }
     }
     /// Color of the text when selected.
-    public var selectedColor: UIColor = UIView.defaultTintColor {
+    public var selectedTintColor: UIColor! {
         didSet {
             if isSelected  {
-                label.textColor = selectedColor
+                label.textColor = selectedTintColor
             }
         }
     }
@@ -106,6 +105,8 @@ public final class TMLabelBarButton: TMBarButton {
         
         label.text = Defaults.text
         label.font = self.font
+        selectedTintColor = tintColor
+        tintColor = .black
         self.contentInset = Defaults.contentInset
         
         calculateFontIntrinsicContentSize(for: label.text)
@@ -120,8 +121,8 @@ public final class TMLabelBarButton: TMBarButton {
     
     public override func update(for selectionState: TMBarButton.SelectionState) {
         
-        let transitionColor = color.interpolate(with: selectedColor,
-                                                percent: selectionState.rawValue)
+        let transitionColor = tintColor.interpolate(with: selectedTintColor,
+                                                    percent: selectionState.rawValue)
         label.textColor = transitionColor
         
         // Because we can't animate nicely between fonts 😩

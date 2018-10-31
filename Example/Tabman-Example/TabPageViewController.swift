@@ -68,8 +68,8 @@ class TabPageViewController: TabmanViewController {
         // Customize bar colors for gradient background.
         let tintColor = gradient?.activeColors?.first ?? .white
         bar.buttons.customize { (button) in
-            button.selectedColor = tintColor
-            button.color = tintColor.withAlphaComponent(0.4)
+            button.selectedTintColor = tintColor
+            button.tintColor = tintColor.withAlphaComponent(0.4)
         }
         bar.indicator.tintColor = tintColor
     }
