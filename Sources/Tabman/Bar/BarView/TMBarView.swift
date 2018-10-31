@@ -274,17 +274,17 @@ extension TMBarView: TMBar {
         reloadIndicatorPosition()
     }
     
-    public func update(for pagePosition: CGFloat,
+    public func update(for position: CGFloat,
                        capacity: Int,
                        direction: TMBarUpdateDirection,
                        animation: TMAnimation) {
         
         let handler = TMBarViewUpdateHandler(for: self,
-                                             at: pagePosition,
+                                             at: position,
                                              capacity: capacity,
                                              direction: direction,
                                              expectedAnimation: animation)
-        self.indicatedPosition = pagePosition
+        self.indicatedPosition = position
         layoutIfNeeded()
         
         // Update indicator

@@ -83,7 +83,7 @@ public protocol TMBar: AnyObject where Self: UIView {
     ///   - capacity: The capacity of the bar.
     ///   - direction: Semantic direction of the update.
     ///   - shouldAnimate: Whether the bar should animate the update.
-    func update(for pagePosition: CGFloat,
+    func update(for position: CGFloat,
                 capacity: Int,
                 direction: TMBarUpdateDirection,
                 animation: TMAnimation)
