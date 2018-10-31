@@ -279,6 +279,7 @@ extension TMBarView: TMBar {
                        direction: TMBarUpdateDirection,
                        animation: TMAnimation) {
         self.indicatedPosition = position
+        layoutIfNeeded()
 
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
