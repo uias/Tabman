@@ -21,11 +21,11 @@ public extension TMBar {
 /// Bar which mimicks the appearance of a UIKit `UINavigationBar` / `UITabBar`.
 ///
 /// Contains an internal `TMBar` and forwards on all bar responsibility to this instance.
-open class TMSystemBar: UIView {
+public final class TMSystemBar: UIView {
     
     // MARK: Properties
     
-    private let bar: TMBar
+    public let bar: TMBar
     
     private lazy var contentView = makeContentView()
     private var barView: UIView? {
@@ -38,7 +38,7 @@ open class TMSystemBar: UIView {
     private var hasExtendedEdges: Bool = false
     
     @available(*, unavailable)
-    open override var backgroundColor: UIColor? {
+    public override var backgroundColor: UIColor? {
         didSet {}
     }
     /// Background style of the system bar.
