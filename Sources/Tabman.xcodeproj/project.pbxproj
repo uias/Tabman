@@ -43,6 +43,7 @@
 		46CCBADE2174BE0900C370E1 /* TMConstrainedHorizontalBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBADB2174BE0900C370E1 /* TMConstrainedHorizontalBarLayout.swift */; };
 		46CCBAE22174BE1900C370E1 /* TMBarIndicator+None.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAE02174BE1900C370E1 /* TMBarIndicator+None.swift */; };
 		46CCBAE32174BE1900C370E1 /* TMLineBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAE12174BE1900C370E1 /* TMLineBarIndicator.swift */; };
+		46D8775B218B62E700C83076 /* TMChevronBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D8775A218B62E700C83076 /* TMChevronBarIndicator.swift */; };
 		46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */; };
 		46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */; };
 		46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9630F211B3A01004C7468 /* TMBarLayout.swift */; };
@@ -107,6 +108,7 @@
 		46CCBADB2174BE0900C370E1 /* TMConstrainedHorizontalBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMConstrainedHorizontalBarLayout.swift; sourceTree = "<group>"; };
 		46CCBAE02174BE1900C370E1 /* TMBarIndicator+None.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TMBarIndicator+None.swift"; sourceTree = "<group>"; };
 		46CCBAE12174BE1900C370E1 /* TMLineBarIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMLineBarIndicator.swift; sourceTree = "<group>"; };
+		46D8775A218B62E700C83076 /* TMChevronBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMChevronBarIndicator.swift; sourceTree = "<group>"; };
 		46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewFocusProvider.swift; sourceTree = "<group>"; };
 		46E598EE2168FD3100D8A138 /* TMBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarBackgroundView.swift; sourceTree = "<group>"; };
 		46E9630F211B3A01004C7468 /* TMBarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarLayout.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				46CCBAE02174BE1900C370E1 /* TMBarIndicator+None.swift */,
 				46CCBAE12174BE1900C370E1 /* TMLineBarIndicator.swift */,
+				46D8775A218B62E700C83076 /* TMChevronBarIndicator.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */,
 				46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */,
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,
+				46D8775B218B62E700C83076 /* TMChevronBarIndicator.swift in Sources */,
 				46E96327211B3A01004C7468 /* TMBarButtonCollection.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
 				464E9095218857490096308E /* TMAnimation.swift in Sources */,
