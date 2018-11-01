@@ -18,7 +18,7 @@ class GradientViewController: UIViewController {
     
     // MARK: Properties
     
-    @IBOutlet private var gradientView: RandientView!
+    @IBOutlet private var gradientView: GradientView!
     
     /// Offset to adjust the gradient start / end points.
     var gradientOffset: CGFloat = 0.0 {
@@ -42,6 +42,8 @@ class GradientViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradientView.setGradient(.ibizaSunset, animated: false)
         
         gradientView.startPoint = Defaults.startPoint
         gradientView.endPoint = Defaults.endPoint
