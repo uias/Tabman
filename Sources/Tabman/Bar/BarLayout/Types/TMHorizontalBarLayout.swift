@@ -68,6 +68,8 @@ open class TMHorizontalBarLayout: TMBarLayout {
     }
     
     open override func insert(buttons: [TMBarButton], at index: Int) {
+        super.insert(buttons: buttons, at: index)
+        
         var currentIndex = index
         for button in buttons {
             if index >= stackView.arrangedSubviews.count { // just add
@@ -80,6 +82,8 @@ open class TMHorizontalBarLayout: TMBarLayout {
     }
     
     open override func remove(buttons: [TMBarButton]) {
+        super.remove(buttons: buttons)
+        
         for button in buttons {
             stackView.removeArrangedSubview(button)
             button.removeFromSuperview()
