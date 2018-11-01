@@ -20,6 +20,7 @@ custom_categories:
   - name: Documentation
     children:
     - Example Projects
+    - Going Custom
     - Contributing
     - Changelog
     
