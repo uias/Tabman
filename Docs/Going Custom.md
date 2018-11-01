@@ -82,3 +82,67 @@ Implementing the above functions should provide the flexibility to create any ty
 - [**TinderBarLayout**](https://github.com/uias/Tinderbar/blob/master/Sources/Tinderbar/Bars/TinderBar/TinderBarLayout.swift) - Layout for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
 
 ## Custom Bar Buttons
+Bar buttons are the indiviual interactable buttons that appear in the bar, and allow the user to directly manipulate the indicated position.
+
+### Basics
+Create a subclass of `TMBarButton`.
+
+```swift
+import Tabman
+
+class CustomBarButton: TMBarButton {
+}
+```
+
+`TMBarButton` inherits from `UIControl`, so all the usual responder events are available. A default `.touchUpInside` handler is added to all bar buttons in a bar view, to allow for them to be selected by the user.
+
+### Lifecycle
+The following mandatory lifecycle events occur in a `TMBarButton`, a custom implementation is required to implement **all** of them.
+
+```swift
+class CustomBarButton: TMBarButton {
+	
+	override func layout(in view: UIView) {
+		super.layout(in: view)
+		// Point at which to construct your custom bar button.
+		//
+		// Adding all views to the `view` parameter.
+	}
+	
+	override func populate(for item: TMBarItemable) {
+		super.populate(for: item)
+		// Populate your bar button with the data from a bar item.
+		//
+		// For example, if you only had an image view in your bar button,
+		// set the image views image to `item.image`.
+	}
+}
+```
+
+### State
+One of the key responsibilities of a bar button is to display state, whether it is currently selected or unselected; and also to be able to smoothly interpolate between these two states. `TMBarButton.SelectionState` is used to handle this.
+
+```swift
+public enum SelectionState {
+    case unselected
+    case partial(delta: CGFloat)
+    case selected
+}
+```
+*A `rawValue` property is also available which provides a `CGFloat` from 0.0 to 1.0 reflecting the state.*
+
+Another lifecycle event is available to handle updating the state:
+
+```swift
+override func update(for selectionState: TMBarButton.SelectionState) {
+	// Update your colors, transforms etc. to reflect being selected / unselected.
+	//
+	// This is wrapped in a `UIView` animation closure when animated transitions occur,
+	// so all properties should be animateable.
+}
+```
+
+*If you call `super.update(for: selectionState)` a default state is provided - the bar buttons will transition between alpha of 0.5 and 1.0 depending on the state.*
+
+### Examples
+- [**TinderBarButton**](https://github.com/uias/Tinderbar/blob/master/Sources/Tinderbar/Bars/TinderBar/TinderBarButton.swift) - Buttons for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
