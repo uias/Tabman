@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Simple indicator that displays as a horizontal line.
 open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Types
@@ -27,24 +28,43 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Properties
     
+    private var weightConstraint: NSLayoutConstraint?
+    
     open override var displayMode: TMBarIndicator.DisplayMode {
         return .bottom
     }
+
+    // MARK: Customization
     
+    /// Color of the line.
     open override var tintColor: UIColor! {
         didSet {
             backgroundColor = tintColor
         }
     }
-    
+    /// Weight of the line.
+    ///
+    /// Options:
+    /// - light: 2.0 pt
+    /// - medium: 4.0 pt
+    /// - heavy: 8.0 pt
+    /// - custom: Custom weight.
+    ///
+    /// Default: `.medium`
     public var weight: Weight = .medium {
         didSet {
             weightConstraint?.constant = weight.rawValue
             setNeedsLayout()
         }
     }
-    private var weightConstraint: NSLayoutConstraint?
-    
+    /// Corner style for the ends of the line.
+    ///
+    /// Options:
+    /// - square: Corners are squared off.
+    /// - rounded: Corners are rounded.
+    /// - eliptical: Corners are completely circular.
+    ///
+    /// Default: `.square`.
     public var cornerStyle: CornerStyle = .square {
         didSet {
             setNeedsLayout()
