@@ -4,8 +4,10 @@ Tabman provides the facility to create custom components, allowing for you to ma
 
 ### Contents
 - [Overview](#overview)
-- [Custom Layout](#custom-layout)
+- [Custom Bar Layout](#custom-bar-layout)
 - [Custom Bar Buttons](#custom-bar-buttons)
+- [Custom Bar Indicator](#custom-bar-indicator)
+- [Next Steps](#next-steps)
 
 ## Overview
 
@@ -26,7 +28,7 @@ Meaning interchanging layouts, button styles and indicators is as easy as changi
 ```swift
 TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMLineBarIndicator>
 ```
-## Custom Layout
+## Custom Bar Layout
 If you want to change the way that bar buttons are displayed, where they appear or in general just do something a bit different - creating a custom layout is probably the way to go.
 
 ### Basics
@@ -35,7 +37,7 @@ Create a subclass of `TMBarLayout`.
 ```swift
 import Tabman
 
-class CustomLayout: TMBarLayout {
+class CustomBarLayout: TMBarLayout {
 }
 ```
 
@@ -49,7 +51,7 @@ class CustomLayout: TMBarLayout {
 The following lifecycle events occur in a `TMBarLayout`, and a custom implementation is required to implement **all** of them.
 
 ```swift
-class CustomLayout: TMBarLayout {
+class CustomBarLayout: TMBarLayout {
 
 	override func layout(in view: UIView) {
 		// Point at which to construct your custom layout.
@@ -124,9 +126,9 @@ One of the key responsibilities of a bar button is to display state, whether it 
 
 ```swift
 public enum SelectionState {
-    case unselected
-    case partial(delta: CGFloat)
-    case selected
+	case unselected
+	case partial(delta: CGFloat)
+	case selected
 }
 ```
 *A `rawValue` property is also available which provides a `CGFloat` from 0.0 to 1.0 reflecting the state.*
@@ -146,3 +148,63 @@ override func update(for selectionState: TMBarButton.SelectionState) {
 
 ### Examples
 - [**TinderBarButton**](https://github.com/uias/Tinderbar/blob/master/Sources/Tinderbar/Bars/TinderBar/TinderBarButton.swift) - Buttons for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
+
+## Custom Bar Indicator
+The bar indicator is a view that simply displays the current position in the bar, and is not expected to provide any interaction.
+
+### Basics
+Create a subclass of `TMBarIndicator`.
+
+```swift
+import Tabman
+
+class CustomBarIndicator: TMBarIndicator {
+}
+```
+
+An additional extra that is required for an indicator, is to inform the bar view how it needs to be displayed. For this there is the `DisplayMode` enum.
+
+```swift
+public enum DisplayMode {
+	case top
+	case bottom
+	case fill
+}
+```
+
+The cases in `DisplayMode` result in the following:
+
+- `top`: Indicator goes above the bar contents.
+- `bottom`: Indicator goes below the bar contents.
+- `fill`: Indicator fills the height of the bar, behind the bar contents.
+
+You **must** return the desired `DisplayMode` for the indicator in the `displayMode` property.
+
+```swift
+open override var displayMode: TMBarIndicator.DisplayMode {
+	return .bottom
+}
+```
+
+### Lifecycle
+
+The lifecycle for `TMBarIndicator` is really simple, requiring only layout.
+
+```swift
+class CustomBarIndicator: TMBarIndicator {
+	override func layout(in view: UIView) {
+		super.layout(in: view)
+	
+		// Create your indicator in `view`.
+	}
+}
+```
+
+## Next Steps
+So now you've created your custom layouts / buttons / indicators - how do you use them? Well as mentioned previously, you can really easily mix and match all of them in `TMBarView`.
+
+```swift
+let customLayoutBar = TMBarView<CustomBarLayout, TMLabelBarButton, TMBarIndicator.None>
+let customButtonBar = TMBarView<TMHorizontalBarLayout, CustomBarButton, TMLineBarIndicator>
+let allCustomBar = TMBarView<CustomBarLayout, CustomBarButton, CustomBarIndicator>
+```
