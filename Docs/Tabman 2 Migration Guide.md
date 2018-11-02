@@ -10,7 +10,15 @@ Tabman 2 is the latest major release of Tabman; ™️ A powerful paging view co
 - Swift 4.2
 
 ## What's new
-TODO
+
+- Completely rebuilt bar layout engine.
+- Ability to dynamically add and remove bars.
+- Redesigned bar component structure with enhanced extensibility.
+- Simplified, more powerful customization.
+- Support for Pageboy 3, with dynamic page insertion and removal.
+- Improved animation engine, with smoother and more configurable transitioning.
+- Ability to add accessory views to bar.
+- More reliable auto insetting of child view controllers.
 
 ## Changes
 
@@ -81,3 +89,36 @@ Tabman now leverages generics to fix this problem, with properties on `TMBarLayo
 |------------|----------|
 | `appearance.state.selectedColor` | `TMLabelBarButton.selectedTintColor` `TMTabItemBarButton.selectedTintColor` |
 | `appearance.state.color` | `TMLabelBarButton.tintColor` `TMTabItemBarButton.tintColor` |
+
+#### Layout
+
+| Tabman 1.x | Tabman 2 |
+|------------|----------|
+| `appearance.layout.interItemSpacing ` | `TMHorizontalBarLayout.interItemSpacing` |
+| `appearance.layout.edgeInset` | `TMBarLayout.contentInset` |
+| `appearance.layout.height` | Removed |
+| `appearance.layout.itemVerticalPadding` | `TMBarLayout.contentInset` |
+| `appearance.layout.itemDistribution` | `TMBarLayout.contentMode` |
+| `appearance.layout.minimumItemWidth` | Removed |
+| `appearance.layout.extendBackgroundEdgeInsets` | Embed bar in `TMSystemBar` using `TMBar.systemBar()`|
+
+#### Interaction
+
+| Tabman 1.x | Tabman 2 |
+|------------|----------|
+| `appearance.interaction.isScrollEnabled` | `TMBarView.scrollMode` |
+
+#### Style
+
+| Tabman 1.x | Tabman 2 |
+|------------|----------|
+| `appearance.style.background` | `TMBarView.backgroundView` |
+| `appearance.style.showEdgeFade` | `TMBarView.fadesContentEdges` |
+| `appearance.style.imageRenderingMode`| Removed |
+
+#### Text
+
+| Tabman 1.x | Tabman 2 |
+|------------|----------|
+| `appearance.text.font` | `TMLabelBarButton.font` |
+| `appearance.text.selectedFont` | `TMLabelBarButton.selectedFont` |
