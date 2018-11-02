@@ -125,7 +125,7 @@ bar.animationStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-**More: [**TMBarView Customization**](./Docs/Customization/TMBarView%20Customization.md)**
+**More: [**TMBarView Docs**]()**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. Look here if you want to change things such as button spacing, content insets and other layout'y things.
@@ -133,7 +133,7 @@ bar.animationStyle = .snap
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
-**More: [**TMBarLayout Customization**](./Docs/Customization/TMBarLayout%20Customization.md)**
+**More: [**TMBarLayout Docs**]()**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -149,8 +149,6 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-**More: [**TMBarButton Customization**](./Docs/Customization/TMBarButton%20Customization.md)**
-
 #### TMBarIndicator
 Lastly is `TMBarIndicator` - which indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
 
@@ -159,7 +157,7 @@ bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-**More: [**TMBarIndicator Customization**](./Docs/Customization/TMBarIndicator%20Customization.md)**
+**More: [**TMBarIndicator Docs**]()**
 
 ## 🎨 Advanced Customization
 Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
@@ -188,6 +186,7 @@ As replacing the type of layout, button or indicator is as simple as above, you 
 [**Custom Tabman Components**]()
 
 There are also a example projects that showcase custom layouts and such:
+
 - [**Tinderbar**](https://github.com/uias/Tinderbar) - Tinder iOS app layout built with Tabman.
 
 ## ⚠️ Troubleshooting
