@@ -178,10 +178,9 @@ Lets say you wanted to actually use a `DotBarIndicator` rather than the `LineBar
 ```swift
 let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ```
-That's as easy as it is.
 
 ### Doing my own thing
-As replacing the type of layout, button or indicator is as simple as above, you have the ability to define your own subclasses without too much of a headache.
+As replacing the type of layout, button or indicator is as easy as above; you have the ability to define your own subclasses without too much of a headache.
 
 [**Custom Tabman Components**]()
 
