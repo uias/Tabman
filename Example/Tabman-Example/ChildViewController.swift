@@ -14,7 +14,7 @@ class ChildViewController: UIViewController {
     @IBOutlet private weak var promptLabel: UILabel!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     override func viewWillAppear(_ animated: Bool) {
