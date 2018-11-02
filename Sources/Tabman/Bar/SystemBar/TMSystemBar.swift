@@ -112,7 +112,7 @@ public final class TMSystemBar: UIView {
     
     // MARK: Layout
     
-    open override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         superview?.layoutIfNeeded()
         
