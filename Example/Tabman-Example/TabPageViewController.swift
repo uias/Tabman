@@ -46,6 +46,7 @@ class TabPageViewController: TabmanViewController {
 
         // Customization
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
+        bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true

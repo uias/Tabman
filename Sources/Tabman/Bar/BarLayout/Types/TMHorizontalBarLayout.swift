@@ -16,7 +16,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     // MARK: Defaults
     
     private struct Defaults {
-        static let interButtonSpacing: CGFloat = 8.0
+        static let interButtonSpacing: CGFloat = 16.0
         static let minimumRecommendedButtonWidth: CGFloat = 40.0
     }
     

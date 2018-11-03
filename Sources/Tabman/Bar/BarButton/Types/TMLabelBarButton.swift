@@ -16,7 +16,7 @@ public final class TMLabelBarButton: TMBarButton {
     // MARK: Defaults
     
     private struct Defaults {
-        static let contentInset = UIEdgeInsets(top: 12.0, left: 8.0, bottom: 12.0, right: 8.0)
+        static let contentInset = UIEdgeInsets(top: 12.0, left: 0.0, bottom: 12.0, right: 0.0)
         static let font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
         static let text = "Item"
     }
