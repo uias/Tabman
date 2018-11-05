@@ -20,6 +20,12 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         case fit
     }
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+    }
+    
     // MARK: Properties
     
     /// Container view which contains actual contents
@@ -81,6 +87,10 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
                          insetGuides: TMBarLayoutInsetGuides) {
         self.parent = parent
         self.insetGuides = insetGuides
+        
+        // Apply defaults
+        contentInset = Defaults.contentInset
+
         layout(in: view)
     }
     
