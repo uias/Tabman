@@ -26,6 +26,14 @@ internal final class TMBarViewGrid: UIView {
         return stackView
     }()
     
+    var horizontalSpacing: CGFloat {
+        set {
+            horizontalStack.spacing = newValue
+        } get {
+            return horizontalStack.spacing
+        }
+    }
+    
     // MARK: Init
     
     init(with mainView: UIView) {

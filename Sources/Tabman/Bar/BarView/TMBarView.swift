@@ -337,6 +337,7 @@ extension TMBarView: TMBarLayoutParent {
             scrollView.contentInset = sanitizedContentInset
             scrollView.contentOffset.x -= sanitizedContentInset.left
             
+            grid.horizontalSpacing = max(contentInset.left, contentInset.right)
             rootContainerTop.constant = newValue.top
             rootContainerBottom.constant = newValue.bottom
         } get {
