@@ -27,8 +27,6 @@ class SettingsBulletinPage: BLTNPageItem {
         case removeBar
         case modification
         case infiniteScrolling
-        case autoScrolling
-        case scrollEnabled
         
         var displayTitle: String {
             switch self {
@@ -40,10 +38,6 @@ class SettingsBulletinPage: BLTNPageItem {
                 return "Modify Pages"
             case .infiniteScrolling:
                 return "Infinite Scrolling"
-            case .autoScrolling:
-                return "Auto Scrolling"
-            case .scrollEnabled:
-                return "Scroll Enabled"
             }
         }
         
@@ -57,10 +51,6 @@ class SettingsBulletinPage: BLTNPageItem {
                 return "⚒"
             case .infiniteScrolling:
                 return "🎡"
-            case .autoScrolling:
-                return "🏎"
-            case .scrollEnabled:
-                return "👇"
             }
         }
     }
@@ -74,8 +64,6 @@ class SettingsBulletinPage: BLTNPageItem {
     private var removeButtonOption: UIButton!
     private var modificationOption: UIButton!
     private var infiniteScrollOption: UIButton!
-    private var autoScrollOption: UIButton!
-    private var scrollEnabledOption: UIButton!
     
     weak var delegate: SettingsBulletinPageDelegate?
     
@@ -96,8 +84,6 @@ class SettingsBulletinPage: BLTNPageItem {
         removeButtonOption.removeTarget(self, action: nil, for: .touchUpInside)
         modificationOption.removeTarget(self, action: nil, for: .touchUpInside)
         infiniteScrollOption.removeTarget(self, action: nil, for: .touchUpInside)
-        autoScrollOption.removeTarget(self, action: nil, for: .touchUpInside)
-        scrollEnabledOption.removeTarget(self, action: nil, for: .touchUpInside)
     }
     
     override func makeViewsUnderTitle(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
@@ -127,18 +113,6 @@ class SettingsBulletinPage: BLTNPageItem {
         infiniteScrollOption.isSelected = tabViewController.isInfiniteScrollEnabled
         stack.addArrangedSubview(infiniteScrollOption)
         self.infiniteScrollOption = infiniteScrollOption
-        
-        let autoScrollOption = makeOptionToggleButton(for: .autoScrolling)
-        autoScrollOption.addTarget(self, action: #selector(autoScrollToggled(_:)), for: .touchUpInside)
-        autoScrollOption.isSelected = tabViewController.autoScroller.isEnabled
-        stack.addArrangedSubview(autoScrollOption)
-        self.autoScrollOption = autoScrollOption
-        
-        let scrollOption = makeOptionToggleButton(for: .scrollEnabled)
-        scrollOption.addTarget(self, action: #selector(scrollEnabledToggled(_:)), for: .touchUpInside)
-        scrollOption.isSelected = tabViewController.isScrollEnabled
-        stack.addArrangedSubview(scrollOption)
-        self.scrollEnabledOption = scrollOption
         
         return [stack]
     }
