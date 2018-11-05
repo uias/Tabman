@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFH-7B-hz3">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="24" y="596" width="327" height="51"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ah-A0-oEL" customClass="PageStatusView" customModule="Tabman_Example" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="38" width="183" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="51"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04I-si-tu1" userLabel="Separator">
                                                 <rect key="frame" x="0.0" y="0.0" width="1" height="51"/>
@@ -32,22 +32,22 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zAN-qu-d8I">
-                                                <rect key="frame" x="9" y="0.0" width="174" height="51"/>
+                                                <rect key="frame" x="9" y="0.0" width="154.5" height="51"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-wz-IQV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-wz-IQV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wE-cv-fvA">
-                                                        <rect key="frame" x="0.0" y="17" width="174" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Position: 0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6wE-cv-fvA">
+                                                        <rect key="frame" x="0.0" y="17" width="154.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fp-LH-zNg">
-                                                        <rect key="frame" x="0.0" y="34" width="174" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Page: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Fp-LH-zNg">
+                                                        <rect key="frame" x="0.0" y="34" width="154.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                         </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYw-O7-Pmx" customClass="ActionButton" customModule="Tabman_Example" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="38" width="120" height="51"/>
+                                        <rect key="frame" x="207" y="0.0" width="120" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="z0O-1T-N5U"/>
                                         </constraints>
@@ -91,6 +91,7 @@
                                     <constraint firstItem="1Ah-A0-oEL" firstAttribute="top" secondItem="ZFH-7B-hz3" secondAttribute="top" id="GfS-RL-UyJ"/>
                                     <constraint firstAttribute="bottom" secondItem="JYw-O7-Pmx" secondAttribute="bottom" id="R0b-kl-SWP"/>
                                     <constraint firstItem="JYw-O7-Pmx" firstAttribute="height" secondItem="1Ah-A0-oEL" secondAttribute="height" id="VNo-QG-om7"/>
+                                    <constraint firstItem="JYw-O7-Pmx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Ah-A0-oEL" secondAttribute="trailing" constant="8" id="iUk-ue-yqC"/>
                                     <constraint firstAttribute="trailing" secondItem="JYw-O7-Pmx" secondAttribute="trailing" id="ruj-g0-ebm"/>
                                 </constraints>
                             </view>
