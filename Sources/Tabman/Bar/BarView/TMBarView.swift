@@ -60,7 +60,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     /// Background view that appears behind all content in the bar view.
     ///
     /// Note: Default style is `TMBarBackgroundView.Style.clear`.
-    public let backgroundView = TMBarBackgroundView(style: .clear)
+    public let backgroundView = TMBarBackgroundView(style: .blur(style: .extraLight))
     
     /// Items that are displayed in the bar.
     public private(set) var items: [TMBarItemable]?
