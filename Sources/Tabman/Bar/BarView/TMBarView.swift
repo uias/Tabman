@@ -366,7 +366,7 @@ extension TMBarView {
             grid.addBottomSubview(container)
             
         case .fill:
-            scrollView.addSubview(container)
+            scrollView.insertSubview(container, at: 0)
             container.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 container.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),

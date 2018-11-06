@@ -88,7 +88,7 @@ open class TMLineBarIndicator: TMBarIndicator {
         
         superview?.layoutIfNeeded()
         layer.cornerRadius = cornerStyle.cornerRadius(for: weight.rawValue,
-                                                      in: self.bounds)
+                                                      in: bounds)
     }
 }
 
