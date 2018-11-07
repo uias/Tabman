@@ -32,6 +32,8 @@ open class TMChevronBarIndicator: TMBarIndicator {
         return .bottom
     }
     
+    // MARK: Customization
+    
     /// Size of the chevron.
     ///
     /// Options:
@@ -58,7 +60,6 @@ open class TMChevronBarIndicator: TMBarIndicator {
     
     public override func layout(in view: UIView) {
         super.layout(in: view)
-        
         
         view.addSubview(chevronContainer)
         chevronContainer.translatesAutoresizingMaskIntoConstraints = false
