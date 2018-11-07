@@ -22,6 +22,13 @@ internal final class TMBarButtonStateController: TMBarButtonController {
         }
     }
     
+    // MARK: Init
+    
+    override init(for barButtons: [TMBarButton]) {
+        super.init(for: barButtons)
+        barButtons.forEach({ $0.selectionState = .unselected })
+    }
+    
     // MARK: Update
     
     func update(for position: CGFloat, direction: TMBarUpdateDirection) {
