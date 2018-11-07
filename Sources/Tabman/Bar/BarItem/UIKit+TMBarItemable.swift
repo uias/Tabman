@@ -17,3 +17,10 @@ extension UINavigationItem: TMBarItemable {
 
 extension UITabBarItem: TMBarItemable {
 }
+
+extension UIViewController: TMBarItemable {
+    
+    public var image: UIImage? {
+        return tabBarItem.image
+    }
+}
