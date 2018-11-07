@@ -217,6 +217,10 @@ extension TMSystemBar: TMBar {
         }
     }
     
+    public var items: [TMBarItemable]? {
+        return bar.items
+    }
+    
     public func reloadData(at indexes: ClosedRange<Int>,
                            context: TMBarReloadContext) {
         bar.reloadData(at: indexes, context: context)

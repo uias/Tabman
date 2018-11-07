@@ -68,6 +68,9 @@ public protocol TMBar: AnyObject where Self: UIView {
     /// Object that acts as a delegate to the bar.
     var delegate: TMBarDelegate? { get set }
     
+    /// Items that are currently displayed in the bar.
+    var items: [TMBarItemable]? { get }
+    
     /// Reload the data within the bar.
     ///
     /// - Parameters:
