@@ -46,7 +46,7 @@ open class TMBlockBarIndicator: TMBarIndicator {
     public override func layout(in view: UIView) {
         super.layout(in: view)
         
-        self.backgroundColor = tintColor
+        self.backgroundColor = .lightGray
     }
     
     open override func layoutSubviews() {

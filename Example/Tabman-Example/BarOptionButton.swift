@@ -18,23 +18,8 @@ class BarOptionButton: UIButton {
     // MARK: Properties
     
     let bar: TMBar
-    
-    // MARK: Init
-    
-    init(bar: TMBar) {
-        self.bar = bar
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not supported")
-    }
-}
+    private weak var dataSource: TMBarDataSource!
 
-final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
-    
-    // MARK: Properties
-    
     let barContainer = UIView()
     
     override var isHighlighted: Bool {
@@ -45,7 +30,6 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
         }
     }
     
-    private weak var dataSource: TMBarDataSource!
     
     override var tintColor: UIColor! {
         didSet {
@@ -55,9 +39,10 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
     
     // MARK: Init
     
-    init(dataSource: TMBarDataSource) {
+    init(bar: TMBar, dataSource: TMBarDataSource) {
+        self.bar = bar
         self.dataSource = dataSource
-        super.init(bar: BarType())
+        super.init(frame: .zero)
         initialize()
     }
     
@@ -85,7 +70,7 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
             barView.trailingAnchor.constraint(equalTo: barContainer.trailingAnchor),
             barView.bottomAnchor.constraint(equalTo: barContainer.bottomAnchor)
             ])
-
+        
         bar.dataSource = dataSource
         bar.reloadData(at: 0 ... Defaults.barItemCount - 1,
                        context: .full)
@@ -95,7 +80,7 @@ final class TypedBarOptionButton<BarType: TMBar>: BarOptionButton {
         layer.borderColor = tintColor.cgColor
         layer.borderWidth = 2.0
         layer.cornerRadius = 12.0
-
+        
         backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0)
     }
     

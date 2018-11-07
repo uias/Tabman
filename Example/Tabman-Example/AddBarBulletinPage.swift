@@ -108,18 +108,8 @@ private extension AddBarBulletinPage {
     }
     
     func makeBarOptionButton(for type: BarType) -> BarOptionButton {
-        let button: BarOptionButton
-        switch type {
-        case .buttonBar:
-            button = TypedBarOptionButton<TMBar.ButtonBar>(dataSource: self.barDataSource)
-        case .tabBar:
-            button = TypedBarOptionButton<TMBar.TabBar>(dataSource: self.barDataSource)
-        case .lineBar:
-            button = TypedBarOptionButton<TMBar.LineBar>(dataSource: self.barDataSource)
-        }
-        
+        let button = BarOptionButton(bar: type.makeBar(), dataSource: barDataSource)
         button.tintColor = appearance.actionButtonColor
-        
         return button
     }
 }
