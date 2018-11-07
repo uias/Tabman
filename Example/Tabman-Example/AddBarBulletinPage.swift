@@ -16,6 +16,7 @@ final class AddBarBulletinPage: BLTNPageItem {
         case buttonBar = "ButtonBar"
         case tabBar = "TabBar"
         case lineBar = "LineBar"
+        case blockButtonBar = "BlockButtonBar"
     }
     
     // MARK: Properties
@@ -124,6 +125,8 @@ private extension AddBarBulletinPage.BarType {
             return TMBar.TabBar()
         case .lineBar:
             return TMBar.LineBar()
+        case .blockButtonBar:
+            return TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBlockBarIndicator>()
         }
     }
 }
