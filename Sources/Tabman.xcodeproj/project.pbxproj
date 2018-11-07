@@ -34,7 +34,7 @@
 		468EDFBA2164C51200C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
 		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */; };
-		46A9D28C213C3005001D9A70 /* TMBarViewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */; };
+		46A9D28C213C3005001D9A70 /* TMBarViewLayoutGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */; };
 		46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* TMBar.swift */; };
 		46CCBAD52174BDF600C370E1 /* TMTabItemBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAD22174BDF600C370E1 /* TMTabItemBarButton.swift */; };
 		46CCBAD62174BDF600C370E1 /* TMLabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAD32174BDF600C370E1 /* TMLabelBarButton.swift */; };
@@ -100,7 +100,7 @@
 		464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewUpdateHandler.swift; sourceTree = "<group>"; };
 		464E90982188853F0096308E /* TMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTransition.swift; sourceTree = "<group>"; };
 		46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarIndicatorContainer.swift; sourceTree = "<group>"; };
-		46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewGrid.swift; sourceTree = "<group>"; };
+		46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewLayoutGrid.swift; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* TMBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBar.swift; sourceTree = "<group>"; };
 		46CCBAD22174BDF600C370E1 /* TMTabItemBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTabItemBarButton.swift; sourceTree = "<group>"; };
 		46CCBAD32174BDF600C370E1 /* TMLabelBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMLabelBarButton.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				462941E42111EB7C00345B52 /* TMBarView.swift */,
-				46A9D28B213C3005001D9A70 /* TMBarViewGrid.swift */,
+				46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */,
 				462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */,
 				46DC3F0A2113006C0085FF37 /* TMBarViewFocusProvider.swift */,
 				46286099213EDB63009C707F /* TMBarViewFocusRect.swift */,
@@ -526,7 +526,7 @@
 				464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */,
 				462203432191EB9B008CD536 /* TMBlockBarIndicator.swift in Sources */,
 				4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */,
-				46A9D28C213C3005001D9A70 /* TMBarViewGrid.swift in Sources */,
+				46A9D28C213C3005001D9A70 /* TMBarViewLayoutGrid.swift in Sources */,
 				4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */,
 				464E90992188853F0096308E /* TMTransition.swift in Sources */,
 				462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */,

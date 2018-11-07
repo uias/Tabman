@@ -142,7 +142,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     ///   - capacity: Capacity.
     /// - Returns: Focus area.
     private func makeFocusArea(for position: CGFloat, capacity: Int) -> CGRect {
-        let focusArea = barView.grid.convert(barView.layout.focusArea(for: position, capacity: capacity),
+        let focusArea = barView.layoutGrid.convert(barView.layout.focusArea(for: position, capacity: capacity),
                                              from: barView.layout.view)
         self.focusArea = focusArea
         barView.layoutIfNeeded()
