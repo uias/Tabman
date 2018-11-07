@@ -271,7 +271,9 @@ extension TMBarView: TMBar {
         }
         
         self.items = items
-        reloadIndicatorPosition()
+        UIView.performWithoutAnimation {
+            reloadIndicatorPosition()
+        }
     }
     
     public func update(for position: CGFloat,
