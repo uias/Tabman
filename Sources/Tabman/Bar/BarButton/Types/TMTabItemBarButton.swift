@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// `TMBarButton` which mimics appearance of a `UITabBarItem`, containing a image and label vertically aligned.
 public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Defaults

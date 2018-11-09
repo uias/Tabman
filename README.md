@@ -133,6 +133,11 @@ bar.animationStyle = .snap
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
+
+##### Available Types
+- `TMHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis.
+- `TMConstrainedHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis, but is constrained by the number of items it can display.
+
 **More: [**TMBarLayout Docs**]()**
 
 #### TMBarButton
@@ -149,6 +154,13 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
+##### Available Types
+- `TMLabelBarButton` - Button which contains a single text label.
+- `TMTabItemBarButton` - Button which mimics appearance of a `UITabBarItem`, containing a image and label vertically aligned.
+- `TMBarButton.None` - Display no visible bar buttons.
+
+**More: [**TMBarButton Docs**]()**
+
 #### TMBarIndicator
 Lastly is `TMBarIndicator` - which indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
 
@@ -156,6 +168,13 @@ Lastly is `TMBarIndicator` - which indicates the current page index status for t
 bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
+
+##### Available Types
+- `TMLineBarIndicator` - Simple indicator that displays as a horizontal line.
+- `TMChevronBarIndicator` - Indicator that displays a vertical chevron centered along the X-axis.
+- `TMBlockBarIndicator` - Indicator that fills the bar, displaying a solid color.
+- `TMDotBarIndicator` - Indicator that displays a circular dot centered along the X-axis.
+- `TMBarIndicator.None` - Display no visible indicator.
 
 **More: [**TMBarIndicator Docs**]()**
 
