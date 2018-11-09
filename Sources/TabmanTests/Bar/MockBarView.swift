@@ -12,7 +12,7 @@ import Pageboy
 
 class MockBarView: UIView, TMBar {
     
-    
+    private(set) var items: [TMBarItemable]?
     
     weak var dataSource: TMBarDataSource?
     weak var delegate: TMBarDelegate?
