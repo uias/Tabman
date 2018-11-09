@@ -2,7 +2,7 @@
 
 This document outlines the various changes required to migrate to Tabman 2 from a previous version of Tabman.
 
-Tabman 2 is the latest major release of Tabman; ™️ A powerful paging view controller with tab bar for iOS. Tabman 2 introduces several API-breaking changes that should be made aware of.
+Tabman 2 is the latest major release of Tabman; A powerful paging view controller with tab bar for iOS. Tabman 2 introduces several API-breaking changes that should be made aware of.
 
 ## Requirements
 - iOS 9
@@ -122,3 +122,19 @@ Tabman now leverages generics to fix this problem, with properties on `TMBarLayo
 |------------|----------|
 | `appearance.text.font` | `TMLabelBarButton.font` |
 | `appearance.text.selectedFont` | `TMLabelBarButton.selectedFont` |
+
+### Bar Behaviors
+Previously certain behaviors (such as hiding the bar) could be configured using `bar.behaviors` - this has been removed in Tabman 2. The reason behind this is that the raw views are now exposed via the Tabman API, meaning that custom behaviors can be implemented much easier. 
+
+For example, hiding the bar when only one item is visible:
+
+```swift
+func viewDidLoad() {
+	super.viewDidLoad()
+	
+	let bar = TMBar.ButtonBar()
+	addBar(bar, dataSource: self, at: .top)
+	
+	bar.isHidden = bar.items?.count <= 1
+}
+```
