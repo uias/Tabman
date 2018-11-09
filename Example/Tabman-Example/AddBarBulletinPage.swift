@@ -90,7 +90,7 @@ final class AddBarBulletinPage: BLTNPageItem {
             return
         }
         let barView = sender.bar as! UIView
-        tabViewController.addBarInteractively(type.makeBar(),
+        tabViewController.addBarInteractively(makeBar(for: type),
                                               dataSource: barDataSource,
                                               estimatedBarSize: barView.bounds.size)
         
@@ -109,24 +109,63 @@ private extension AddBarBulletinPage {
     }
     
     func makeBarOptionButton(for type: BarType) -> BarOptionButton {
-        let button = BarOptionButton(bar: type.makeBar(), dataSource: barDataSource)
+        let button = BarOptionButton(bar: makeBar(for: type), dataSource: barDataSource)
         button.tintColor = appearance.actionButtonColor
         return button
     }
 }
 
-private extension AddBarBulletinPage.BarType {
+private extension AddBarBulletinPage {
     
-    func makeBar() -> TMBar {
-        switch self {
+    func makeBar(for type: BarType) -> TMBar {
+        switch type {
         case .buttonBar:
-            return TMBar.ButtonBar()
+            return makeButtonBar()
         case .tabBar:
-            return TMBar.TabBar()
+            return makeTabBar()
         case .lineBar:
-            return TMBar.LineBar()
+            return makeLineBar()
         case .blockButtonBar:
-            return TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBlockBarIndicator>()
+            return makeBlockButtonBar()
         }
+    }
+    
+    private func makeButtonBar() -> TMBar {
+        let bar = TMBar.ButtonBar()
+        bar.indicator.tintColor = appearance.actionButtonColor
+        bar.buttons.customize { (button) in
+            button.selectedTintColor = self.appearance.actionButtonColor
+        }
+        return bar
+    }
+    
+    private func makeTabBar() -> TMBar {
+        let bar = TMBar.TabBar()
+        bar.buttons.customize { (button) in
+            button.selectedTintColor = self.appearance.actionButtonColor
+        }
+        return bar
+    }
+    
+    private func makeLineBar() -> TMBar {
+        let bar = TMBar.LineBar()
+        bar.indicator.tintColor = appearance.actionButtonColor
+        return bar
+    }
+    
+    private func makeBlockButtonBar() -> TMBar {
+        let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBlockBarIndicator>()
+        bar.indicator.backgroundColor = appearance.actionButtonColor
+        bar.indicator.cornerStyle = .rounded
+        bar.layout.contentInset.top = 8.0
+        bar.layout.contentInset.left = 16.0
+        bar.layout.contentInset.right = 16.0
+        bar.buttons.customize { (button) in
+            button.tintColor = .black
+            button.selectedTintColor = .white
+            button.contentInset.left = 8.0
+            button.contentInset.right = 8.0
+        }
+        return bar
     }
 }
