@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 internal class AnimateableLabel: UIView {
     
