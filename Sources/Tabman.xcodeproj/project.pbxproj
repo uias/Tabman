@@ -58,6 +58,7 @@
 		46E9632E211B3BFB004C7468 /* TMBarLayoutInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9632D211B3BFB004C7468 /* TMBarLayoutInsetGuides.swift */; };
 		46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96335211B4B06004C7468 /* EdgeFadedView.swift */; };
 		46E96339211B7F03004C7468 /* TMBarLayoutParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E96338211B7F03004C7468 /* TMBarLayoutParent.swift */; };
+		46EA239C2195DB660004E0AC /* AnimateableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA239B2195DB660004E0AC /* AnimateableLabel.swift */; };
 		46F608872193231500E2BD14 /* TMDotBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F608862193231500E2BD14 /* TMDotBarIndicator.swift */; };
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -125,6 +126,7 @@
 		46E9632D211B3BFB004C7468 /* TMBarLayoutInsetGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarLayoutInsetGuides.swift; sourceTree = "<group>"; };
 		46E96335211B4B06004C7468 /* EdgeFadedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeFadedView.swift; sourceTree = "<group>"; };
 		46E96338211B7F03004C7468 /* TMBarLayoutParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarLayoutParent.swift; sourceTree = "<group>"; };
+		46EA239B2195DB660004E0AC /* AnimateableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateableLabel.swift; sourceTree = "<group>"; };
 		46F608862193231500E2BD14 /* TMDotBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDotBarIndicator.swift; sourceTree = "<group>"; };
 		D62AC0B21E5733810020B8AE /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62AC0B51E5733810020B8AE /* Tabman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tabman.h; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				46E96335211B4B06004C7468 /* EdgeFadedView.swift */,
 				4629F0E621825F21001919F2 /* GestureScrollView.swift */,
+				46EA239B2195DB660004E0AC /* AnimateableLabel.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */,
 				462203432191EB9B008CD536 /* TMBlockBarIndicator.swift in Sources */,
 				4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */,
+				46EA239C2195DB660004E0AC /* AnimateableLabel.swift in Sources */,
 				46A9D28C213C3005001D9A70 /* TMBarViewLayoutGrid.swift in Sources */,
 				4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */,
 				464E90992188853F0096308E /* TMTransition.swift in Sources */,
