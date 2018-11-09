@@ -12,11 +12,16 @@ internal class AnimateableLabel: UIView {
     
     // MARK: Properties
     
+    override var intrinsicContentSize: CGSize {
+        return textLayer.preferredFrameSize()
+    }
+    
     private let textLayer = CATextLayer()
     
     var text: String? {
         didSet {
             textLayer.string = text
+            invalidateIntrinsicContentSize()
         }
     }
     var textColor: UIColor! {

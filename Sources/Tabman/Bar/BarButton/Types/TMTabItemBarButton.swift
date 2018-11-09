@@ -22,7 +22,7 @@ public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Properties
     
-    private let label = UILabel()
+    private let label = AnimateableLabel()
     private let imageView = UIImageView()
     
     private var imageWidth: NSLayoutConstraint!
