@@ -320,6 +320,11 @@ extension TMBarView: TMBar {
     // MARK: Updating
     
     func updateEdgeFades(for scrollView: UIScrollView) {
+        guard scrollView.contentSize.width > scrollView.bounds.size.width else {
+            scrollViewContainer.leadingFade = 0.0
+            scrollViewContainer.trailingFade = 0.0
+            return
+        }
         
         let contentSizeRatio = ((scrollView.contentSize.width - scrollView.bounds.size.width) / 2)
         
