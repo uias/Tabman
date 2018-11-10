@@ -29,7 +29,7 @@
 TODO
 
 ## 📋 Requirements
-Tabman requires iOS 9; and is written in Swift 4.2.
+Tabman requires iOS 9; and is written in Swift 4.
 
 ## 📲 Installation
 ### CocoaPods
@@ -170,7 +170,7 @@ bar.indicator.weight = .heavy
 **More: [**TMBarIndicator Docs**]()**
 
 ## 🎨 Advanced Customization
-Tabman provides the complete freedom to mix-and-match the built-in components; also define your own.
+Tabman provides the complete freedom to mix-and-match the built-in components; and also define your own.
 
 `TMBarView` leverages generics to define and serve the three distinct functional areas of the bar. This means...
 
