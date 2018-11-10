@@ -16,9 +16,6 @@
 	<a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
     </a>
-	<a href="https://codecov.io/gh/uias/Tabman">
-        <img src="https://codecov.io/gh/uias/Tabman/branch/master/graph/badge.svg" />
-    </a>
 	<a href="https://github.com/uias/Tabman/releases">
         <img src="https://img.shields.io/github/release/uias/Tabman.svg" />
     </a>
@@ -106,9 +103,18 @@ extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
 ```
 
 ### Choosing a look
-Tabman provides numerous, easy to use styles out of the box:
+Tabman provides numerous, easy to use template styles out of the box:
 
-TODO
+<p align="center">
+    <img src="Docs/img/bar_styles.png" width="890" alt="Bar Styles"/>
+</p>
+
+These are all available as types of `TMBar` in [TMBar+Templates]().
+
+```swift
+let bar = TMBar.ButtonBar()
+let tabBar = TMBar.TabBar()
+```
 
 ### Customize all the things
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
@@ -135,10 +141,6 @@ bar.animationStyle = .snap
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
 
-##### Available Types
-- `TMHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis.
-- `TMConstrainedHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis, but is constrained by the number of items it can display.
-
 **More: [**TMBarLayout Docs**]()**
 
 #### TMBarButton
@@ -155,11 +157,6 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-##### Available Types
-- `TMLabelBarButton` - Button which contains a single text label.
-- `TMTabItemBarButton` - Button which mimics appearance of a `UITabBarItem`, containing a image and label vertically aligned.
-- `TMBarButton.None` - Display no visible bar buttons.
-
 **More: [**TMBarButton Docs**]()**
 
 #### TMBarIndicator
@@ -169,13 +166,6 @@ Lastly is `TMBarIndicator` - which indicates the current page index status for t
 bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
-
-##### Available Types
-- `TMLineBarIndicator` - Simple indicator that displays as a horizontal line.
-- `TMChevronBarIndicator` - Indicator that displays a vertical chevron centered along the X-axis.
-- `TMBlockBarIndicator` - Indicator that fills the bar, displaying a solid color.
-- `TMDotBarIndicator` - Indicator that displays a circular dot centered along the X-axis.
-- `TMBarIndicator.None` - Display no visible indicator.
 
 **More: [**TMBarIndicator Docs**]()**
 
@@ -199,7 +189,25 @@ Lets say you wanted to actually use a `DotBarIndicator` rather than the `LineBar
 let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ```
 
-### Doing my own thing
+**The following components are available in Tabman:**
+
+#### Bar Layouts
+- `TMHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis.
+- `TMConstrainedHorizontalBarLayout` - Layout that displays bar buttons sequentially along the horizontal axis, but is constrained by the number of items it can display.
+
+#### Bar Buttons
+- `TMLabelBarButton` - Button which contains a single text label.
+- `TMTabItemBarButton` - Button which mimics appearance of a `UITabBarItem`, containing a image and label vertically aligned.
+- `TMBarButton.None` - Display no visible bar buttons.
+
+#### Bar Indicators
+- `TMLineBarIndicator` - Simple indicator that displays as a horizontal line.
+- `TMChevronBarIndicator` - Indicator that displays a vertical chevron centered along the X-axis.
+- `TMBlockBarIndicator` - Indicator that fills the bar, displaying a solid color.
+- `TMDotBarIndicator` - Indicator that displays a circular dot centered along the X-axis.
+- `TMBarIndicator.None` - Display no visible indicator.
+
+### Going Completely Custom
 As replacing the type of layout, button or indicator is as easy as above; you have the ability to define your own subclasses without too much of a headache.
 
 [**Custom Tabman Components**]()
@@ -207,6 +215,16 @@ As replacing the type of layout, button or indicator is as easy as above; you ha
 There are also a example projects that showcase custom layouts and such:
 
 - [**Tinderbar**](https://github.com/uias/Tinderbar) - Tinder iOS app layout built with Tabman.
+
+## 📐 Content Insetting
+Tabman uses [AutoInsetter](https://github.com/uias/AutoInsetter) to automatically adjust any content in its child view controllers so that it displays correctly beneath any visible bars. It provides the following behaviors:
+
+- Updates `contentInset` and `contentOffset` appropriately for any `UIScrollView` or derived subclass found in the child view controller's subviews.
+- Sets `additionalSafeAreaInsets` to reflect the required safe areas including the bar contents. Any views constrained to the safe area in the child view controller will be laid out correctly (**Only available in iOS 11 and above.**)
+
+`TabmanViewController` also provides `barLayoutGuide`, a `UILayoutGuide` that provides top and bottom anchors taking into account any bars added to the `.top` or `.bottom` `TabmanViewController.BarLocation` areas. The raw `UIEdgeInsets` are also available via `.barInsets`.
+
+*Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
 If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
