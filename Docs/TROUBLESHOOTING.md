@@ -10,7 +10,7 @@ Tabman is designed to automatically inset the contents of child view controllers
 
 <p align="center">
     </br>
-    <img src="Resources/autoinsetting.png" width="375" alt="Auto Insetting"/>
+    <img src="./img/autoinsetting.png" width="375" alt="Auto Insetting"/>
     </br>
 </p>
 
@@ -31,13 +31,13 @@ If you are using a custom view controller (and not something like a `UITableView
 The auto insetting engine in Tabman calculates and applies all insets relative to the superview, rather than any layout guides. Therefore you need to ensure that your `UIScrollView` is constrained directly to the superview, as shown below:
 
 <p align="center">
-    <img src="Resources/autoinsetting_constraints.png" width="890" alt="Auto Insetting"/>
+    <img src="./img/autoinsetting_constraints.png" width="890" alt="Auto Insetting"/>
 </p>
 
 As you can see, the constraints for the `UITableView` are pinned to the superview rather than the `topLayoutGuide` or `Safe Area`.
 
 <p align="center">
-    <img src="Resources/autoinsetting_constraints_detail.png" width="262" alt="Auto Insetting Constraints"/>
+    <img src="./img/autoinsetting_constraints_detail.png" width="262" alt="Auto Insetting Constraints"/>
 </p>
 
 ### 3) Watch out for UIKit
