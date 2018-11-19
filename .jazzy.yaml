@@ -12,7 +12,7 @@ documentation: Docs/tmp/docs/*md
 
 copyright: '© 2018 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
 
-swift_version: 4.2.1
+swift_version: 4.2
 
 theme: fullwidth
 
