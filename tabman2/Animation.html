@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other Structures  Reference</title>
+    <title>Animation  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Section/Other Structures" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Section/Animation" class="dashAnchor"></a>
 
-    <a title="Other Structures  Reference"></a>
+    <a title="Animation  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Tabman Reference</a>
       <img class="carat" src="img/carat.png" />
-      Other Structures  Reference
+      Animation  Reference
     </p>
 
     <div class="content-wrapper">
@@ -137,6 +137,9 @@
                 <a class="nav-group-task-link" href="Classes/TMBarButton.html">TMBarButton</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBarButtonCollection.html">TMBarButtonCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/TMLabelBarButton.html">TMLabelBarButton</a>
               </li>
               <li class="nav-group-task">
@@ -171,6 +174,17 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Animation.html">Animation</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/TMAnimation.html">TMAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Animation.html#/s:6Tabman17TMTransitionStyleO">TMTransitionStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Other Guides.html">Other Guides</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -187,9 +201,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/TMBarBackgroundView.html#/s:6Tabman19TMBarBackgroundViewC5StyleO">– Style</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/TMBarButtonCollection.html">TMBarButtonCollection</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -200,9 +211,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO">TMBarUpdateDirection</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Other Enums.html#/s:6Tabman17TMTransitionStyleO">TMTransitionStyle</a>
               </li>
             </ul>
           </li>
@@ -228,23 +236,14 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Other Structs.html">Other Structures</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/TMAnimation.html">TMAnimation</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
 
         <section class="section">
           <div class="section-content">
-            <h1>Other Structures</h1>
-            <p>The following structures are available globally.</p>
-
+            <h1>Animation</h1>
+            
           </div>
         </section>
 
@@ -279,6 +278,46 @@
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/TMAnimation.swift#L12-L17">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman17TMTransitionStyleO"></a>
+                    <a name="//apple_ref/swift/Enum/TMTransitionStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman17TMTransitionStyleO">TMTransitionStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Style of transition to use for updates.</p>
+
+<ul>
+<li>progressive: Progress will transition smoothly, and interpolate between values.</li>
+<li>snap: Progress will transition between ranges when the mid-threshold is reached using animation.</li>
+<li>none: Progress will transition between ranges when the mid-threshold is reached without any animation.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TMTransitionStyle</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/TMTransition.swift#L16-L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
