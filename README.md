@@ -68,7 +68,7 @@ class TabViewController: TabmanViewController {
 
         // Create bar
         let bar = TMBar.ButtonBar()
-        bar.animationStyle = .snap // Customize
+        bar.transitionStyle = .snap // Customize
 
         // Add to view
         addBar(bar, dataSource: self, at: .top)
@@ -124,11 +124,11 @@ Bar customization is available via properties on each functional area of the bar
 </p>
 
 #### TMBarView
-`TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.
+`TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and transitioning behavior.
 
 ```swift
 bar.background.style = .blur(style: .extraLight)
-bar.animationStyle = .snap
+bar.transitionStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 

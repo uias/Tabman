@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// :nodoc:
 extension UINavigationItem: TMBarItemable {
     
     public var image: UIImage? {
@@ -15,9 +16,11 @@ extension UINavigationItem: TMBarItemable {
     }
 }
 
+/// :nodoc:
 extension UITabBarItem: TMBarItemable {
 }
 
+/// :nodoc:
 extension UIViewController: TMBarItemable {
     
     public var image: UIImage? {
