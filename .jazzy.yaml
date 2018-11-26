@@ -48,6 +48,7 @@ custom_categories:
   - name: Buttons
     children:
     - TMBarButton
+    - TMBarButtonCollection
     - TMLabelBarButton
     - TMTabItemBarButton
 
@@ -58,3 +59,8 @@ custom_categories:
     - TMBlockBarIndicator
     - TMChevronBarIndicator
     - TMDotBarIndicator
+
+  - name: Animation
+    children:
+    - TMAnimation
+    - TMTransitionStyle
