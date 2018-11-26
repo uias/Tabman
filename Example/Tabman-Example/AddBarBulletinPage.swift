@@ -157,9 +157,7 @@ private extension AddBarBulletinPage {
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBlockBarIndicator>()
         bar.indicator.backgroundColor = appearance.actionButtonColor
         bar.indicator.cornerStyle = .rounded
-        bar.layout.contentInset.top = 8.0
-        bar.layout.contentInset.left = 16.0
-        bar.layout.contentInset.right = 16.0
+        bar.layout.contentInset = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
         bar.buttons.customize { (button) in
             button.tintColor = .black
             button.selectedTintColor = .white
