@@ -10,7 +10,9 @@ import UIKit
 import Pageboy
 import AutoInsetter
 
-/// Page view controller with a bar indicator component.
+/// A view controller which embeds a `PageboyViewController` and provides the ability to add bars which
+/// can directly manipulate, control and display the status of the page view controller. It also handles
+/// automatic insetting of child view controller contents.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate, TMBarDelegate {
     
     // MARK: Types
