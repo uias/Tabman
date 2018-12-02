@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Tabman Docs
         </a>
-         (66% documented)
+         (67% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -211,17 +211,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO">TMBarUpdateDirection</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Other Extensions.html">Other Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Extensions/UINavigationItem.html">UINavigationItem</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Extensions/UIViewController.html">UIViewController</a>
               </li>
             </ul>
           </li>
@@ -537,6 +526,111 @@ in some form, and also respond to the current page position.</p>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift#L16-L18">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarPAAE9ButtonBara"></a>
+                    <a name="//apple_ref/swift/Alias/ButtonBar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarPAAE9ButtonBara">ButtonBar</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default button bar, very reminiscent of the Android <code>FragmentPagerAdapter</code>. It consists
+of a horizontal layout containing label bar buttons, and a line indicator at the bottom.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ButtonBar</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TMBarView.html">TMBarView</a></span><span class="o">&lt;</span><span class="kt"><a href="../Classes/TMHorizontalBarLayout.html">TMHorizontalBarLayout</a></span><span class="p">,</span> <span class="kt"><a href="../Classes/TMLabelBarButton.html">TMLabelBarButton</a></span><span class="p">,</span> <span class="kt"><a href="../Classes/TMLineBarIndicator.html">TMLineBarIndicator</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/TMBar+Templates.swift#L15">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarPAAE6TabBara"></a>
+                    <a name="//apple_ref/swift/Alias/TabBar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarPAAE6TabBara">TabBar</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>iOS &lsquo;UITabBar&rsquo; style bar, featuring a constrained horizontal layout, tab item bar buttons with a
+vertically aligned image and label, and no visible indicator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">TabBar</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TMBarView.html">TMBarView</a></span><span class="o">&lt;</span><span class="kt"><a href="../Classes/TMConstrainedHorizontalBarLayout.html">TMConstrainedHorizontalBarLayout</a></span><span class="p">,</span> <span class="kt"><a href="../Classes/TMTabItemBarButton.html">TMTabItemBarButton</a></span><span class="p">,</span> <span class="kt"><a href="../Classes/TMBarIndicator.html">TMBarIndicator</a></span><span class="o">.</span><span class="kt">None</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/TMBar+Templates.swift#L18">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Tabman5TMBarPAAE7LineBara"></a>
+                    <a name="//apple_ref/swift/Alias/LineBar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman5TMBarPAAE7LineBara">LineBar</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bar which features only a line indicator, and no buttons.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">LineBar</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TMBarView.html">TMBarView</a></span><span class="o">&lt;</span><span class="kt"><a href="../Classes/TMBarLayout.html">TMBarLayout</a></span><span class="o">.</span><span class="kt">None</span><span class="p">,</span> <span class="kt"><a href="../Classes/TMBarButton.html">TMBarButton</a></span><span class="o">.</span><span class="kt">None</span><span class="p">,</span> <span class="kt"><a href="../Classes/TMLineBarIndicator.html">TMLineBarIndicator</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/uias/Tabman/tree/tabman2/Sources/Tabman/Bar/TMBar+Templates.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

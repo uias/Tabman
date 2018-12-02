@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           Tabman Docs
         </a>
-         (66% documented)
+         (67% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -215,17 +215,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Other Extensions.html">Other Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/UINavigationItem.html">UINavigationItem</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/UIViewController.html">UIViewController</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Other Protocols.html">Other Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -244,7 +233,7 @@
           <div class="section-content">
             <h1>Documentation</h1>
             <p align="center">
-    <img src="Docs/img/tm_logo.png" width="890" alt="Tabman"/>
+    <img src="img/tm_logo.png" width="890" alt="Tabman"/>
 </p>
 
 <p align="center">
@@ -307,7 +296,7 @@
 
         <span class="c1">// Create bar</span>
         <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
-        <span class="n">bar</span><span class="o">.</span><span class="n">animationStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">snap</span> <span class="c1">// Customize</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">transitionStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">snap</span> <span class="c1">// Customize</span>
 
         <span class="c1">// Add to view</span>
         <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
@@ -360,9 +349,9 @@
 </p>
 <h4 id='tmbarview' class='heading'>TMBarView</h4>
 
-<p><code><a href="Classes/TMBarView.html">TMBarView</a></code> is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.</p>
+<p><code><a href="Classes/TMBarView.html">TMBarView</a></code> is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and transitioning behavior.</p>
 <pre class="highlight swift"><code><span class="n">bar</span><span class="o">.</span><span class="n">background</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="o">.</span><span class="nf">blur</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">extraLight</span><span class="p">)</span>
-<span class="n">bar</span><span class="o">.</span><span class="n">animationStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">snap</span>
+<span class="n">bar</span><span class="o">.</span><span class="n">transitionStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">snap</span>
 </code></pre>
 
 <p><em>This is also the entry point for all other customization.</em></p>
