@@ -18,6 +18,9 @@ before_install:
 - brew outdated carthage || brew upgrade carthage
 - bundle install
 
+before_script:
+- bundle exec danger
+
 script:
 - .scripts/build
 
