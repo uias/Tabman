@@ -499,28 +499,28 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 66,
+      "line": 71,
       "symbol": "TabmanViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 71,
+      "line": 76,
       "symbol": "TabmanViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 82,
+      "line": 87,
       "symbol": "TabmanViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 89,
+      "line": 95,
       "symbol": "TabmanViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -429,6 +429,8 @@
 
 <p><code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code> also provides <code>barLayoutGuide</code>, a <code>UILayoutGuide</code> that provides top and bottom anchors taking into account any bars added to the <code>.top</code> or <code>.bottom</code> <code><a href="Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO">TabmanViewController.BarLocation</a></code> areas. The raw <code>UIEdgeInsets</code> are also available via <code>.barInsets</code>.</p>
 
+<p>Auto insetting can be <strong>disabled</strong> by setting <code>automaticallyAdjustsChildInsets</code> to <code>false</code> - however this <strong>must be done before <code>viewDidLoad</code></strong>.</p>
+
 <p><em>Tabman will not provide any insetting behavior for bars that are added to custom views.</em></p>
 <h2 id='troubleshooting' class='heading'>⚠️ Troubleshooting</h2>
 

@@ -231,7 +231,7 @@
 </ul>
 <h2 id='automatic-insetting' class='heading'>Automatic Insetting</h2>
 
-<p>Tabman is designed to automatically inset the contents of child view controllers that contain <code>UIScrollView</code> and other derived classes so that it shows correctly beneath the bar: </p>
+<p>Tabman is designed to automatically inset the contents of child view controllers that contain <code>UIScrollView</code> and other derived classes so that it shows correctly beneath the bar:</p>
 
 <p align="center">
     </br>
@@ -246,13 +246,13 @@
 <h3 id='1-ensure-it-39-s-turned-on' class='heading'>1) Ensure it&rsquo;s turned on</h3>
 
 <p>Make sure that auto insetting is enabled (it is by default).</p>
-<pre class="highlight swift"><code><span class="o">.</span><span class="n">automaticallyAdjustsChildScrollViewInsets</span> <span class="o">=</span> <span class="kc">true</span>
+<pre class="highlight swift"><code><span class="o">.</span><span class="n">automaticallyAdjustsChildInsets</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre>
 <h3 id='2-check-your-constraints' class='heading'>2) Check your constraints</h3>
 
-<p>If you are using a custom view controller (and not something like a <code>UITableViewController</code>), the way that your content scroll view is constrained to the superview is very important. </p>
+<p>If you are using a custom view controller (and not something like a <code>UITableViewController</code>), the way that your content scroll view is constrained to the superview is very important.</p>
 
-<p>The auto insetting engine in Tabman calculates and applies all insets relative to the superview, rather than any layout guides. Therefore you need to ensure that your <code>UIScrollView</code> is constrained directly to the superview, as shown below:</p>
+<p>It is recommended that your <code>UIScrollView</code> is constrained directly to the superview, as shown below:</p>
 
 <p align="center">
     <img src="./img/autoinsetting_constraints.png" width="890" alt="Auto Insetting"/>
@@ -265,7 +265,7 @@
 </p>
 <h3 id='3-watch-out-for-uikit' class='heading'>3) Watch out for UIKit</h3>
 
-<p>Tabman will also handle any <code>UIKit</code> properties that require modifying in order to get a reliable insetting behaviour. As we&rsquo;re providing a completely custom implementation, we disable a lot of the <code>UIKit</code> helper properties that would otherwise inset content correctly for system components such as a <code>UITabBar</code>. </p>
+<p>Tabman will also handle any <code>UIKit</code> properties that require modifying in order to get a reliable insetting behaviour. As we&rsquo;re providing a completely custom implementation, we disable a lot of the <code>UIKit</code> helper properties that would otherwise inset content correctly for system components such as a <code>UITabBar</code>.</p>
 
 <p>Therefore, you shouldn&rsquo;t need to modify or have any of the following in your view controller code:</p>
 <pre class="highlight swift"><code><span class="kt">UIScrollView</span><span class="o">.</span><span class="n">contentInsetAdjustmentBehavior</span>
