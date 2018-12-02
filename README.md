@@ -22,7 +22,11 @@
 ![](Docs/img/tm_header.png)
 
 ## ⭐️ Features
-TODO
+- Easy to implement page view controller with paging navigation bars.
+- Highly adaptable and powerful customization.
+- Fully extensible with mix-and-match component library.
+- Built on [Pageboy](https://github.com/uias/Pageboy), a powerful, informative page view controller.
+- Automatically insets child view controller contents.
 
 ## 📋 Requirements
 Tabman requires iOS 9; and is written in Swift 4.
