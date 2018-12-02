@@ -46,6 +46,7 @@ cp CONTRIBUTING.md "$TMP/docs/Contributing.md"
 cp CHANGELOG.md "$TMP/docs/Changelog.md"
 
 # Copy README as Documentation root.
+$DOC_PROC README.md "$TMP/compile/README.md"
 $DOC_PROC README.md "$TMP/sections/Documentation.md"
 
 # Compile our Docs/tmp + generate API docs using jazzy
