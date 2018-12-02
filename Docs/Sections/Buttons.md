@@ -1,0 +1,3 @@
+Buttons in a `TMBarView` are a provided in the form of a `TMBarButton` collection. The buttons have the primary responsibility of displaying paging, user interaction and visually providing the current paging state (if appropriate).
+
+Interaction with the `TMBarButton` collection of a `TMBarView` is provided via `TMBarButtonCollection`. This collection provides raw access to all displayed bar buttons, as well as utilities for customization.
