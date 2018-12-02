@@ -10,6 +10,9 @@ import UIKit
 
 public extension TMBarButton {
     
+    /// Button that is zero height and hidden.
+    ///
+    /// Use this if you do not want visible buttons in the bar.
     public final class None: TMBarButton {
         
         // MARK: Properties
