@@ -100,18 +100,21 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Pageboy
     
+    /// :nodoc:
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
         bars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
         super.insertPage(at: index, then: updateBehavior)
     }
     
+    /// :nodoc:
     open override func deletePage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
         bars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
         super.deletePage(at: index, then: updateBehavior)
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     willScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
@@ -126,6 +129,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollTo position: CGPoint,
                                     direction: NavigationDirection,
@@ -137,6 +141,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
@@ -146,6 +151,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                          animated: false)
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
@@ -159,6 +165,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: TMBarDelegate
     
+    /// :nodoc:
     open func bar(_ bar: TMBar,
                   didRequestScrollTo index: PageboyViewController.PageIndex) {
         scrollToPage(.at(index: index), animated: true, completion: nil)
