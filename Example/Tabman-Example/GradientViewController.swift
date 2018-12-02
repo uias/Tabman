@@ -43,7 +43,7 @@ class GradientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gradientView.setGradient(.ibizaSunset, animated: false)
+        gradientView.setGradient(.amin, animated: false)
         
         gradientView.startPoint = Defaults.startPoint
         gradientView.endPoint = Defaults.endPoint
