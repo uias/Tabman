@@ -9,16 +9,16 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMTransitionStyleable {
+public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionStyleable {
     
     // MARK: Types
     
-    public typealias Customization = (BarButtonType) -> Void
+    public typealias Customization = (BarButton) -> Void
     
     // MARK: Buttons
     
     /// All bar buttons.
-    public internal(set) var all = [BarButtonType]() {
+    public internal(set) var all = [BarButton]() {
         didSet {
             self.stateController = TMBarButtonStateController(for: all)
             self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
@@ -73,7 +73,7 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMTransiti
     ///
     /// - Parameter item: Item to search for.
     /// - Returns: Associated bar button.
-    public func `for`(item: TMBarItemable) -> BarButtonType? {
+    public func `for`(item: TMBarItemable) -> BarButton? {
         guard let index = all.index(where: { ($0.item === item) }) else {
             return nil
         }
@@ -84,7 +84,7 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMTransiti
     ///
     /// - Parameter items: Items to search for.
     /// - Returns: Associated bar buttons.
-    public func `for`(items: TMBarItemable...) -> [BarButtonType] {
+    public func `for`(items: TMBarItemable...) -> [BarButton] {
         return items.compactMap({ self.for(item: $0) })
     }
 }

@@ -18,11 +18,11 @@ private struct TMBarViewDefaults {
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
 /// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
 /// in the `TMBarView` type definition.
-open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator>: UIView, TMTransitionStyleable {
+open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator>: UIView, TMTransitionStyleable {
     
     // MARK: Types
     
-    public typealias BarButtonCustomization = (ButtonType) -> Void
+    public typealias BarButtonCustomization = (Button) -> Void
     
     public enum ScrollMode: Int {
         case interactive
@@ -52,11 +52,11 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     // MARK: Components
     
     /// `TMBarLayout` that dictates display and behavior of bar buttons and other bar view components.
-    public private(set) lazy var layout = LayoutType()
+    public private(set) lazy var layout = Layout()
     /// Collection of `TMBarButton` objects that directly map to the `TMBarItem`s provided by the `dataSource`.
-    public let buttons = TMBarButtonCollection<ButtonType>()
+    public let buttons = TMBarButtonCollection<Button>()
     /// `TMBarIndicator` that is used to indicate the current bar index state.
-    public let indicator = IndicatorType()
+    public let indicator = Indicator()
     /// Background view that appears behind all content in the bar view.
     ///
     /// Note: Default style is `.blur(style: .extraLight)`.
