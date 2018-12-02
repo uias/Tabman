@@ -93,9 +93,16 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/Types/TMBarButton+None.swift",
-      "line": 13,
-      "symbol": "TMBarButton.None",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 20,
+      "symbol": "TMBarButton.None.isHidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/Types/TMBarButton+None.swift",
+      "line": 30,
+      "symbol": "TMBarButton.None.layout(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
