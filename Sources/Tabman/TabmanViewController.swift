@@ -42,6 +42,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     private var requiredInsets: Insets?
     private let autoInsetter = AutoInsetter()
+    /// Whether to automatically adjust child view controller content insets with bar geometry.
+    ///
+    /// This must be set before `viewDidLoad`, setting it after this point will result in no change.
+    /// Default is `true`.
+    public var automaticallyAdjustsChildInsets: Bool = true
     /// The insets that are required to safely layout content between the bars
     /// that have been added.
     ///
@@ -81,8 +86,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        configureBarLayoutGuide(barLayoutGuide)
+        autoInsetter.isEnabled = automaticallyAdjustsChildInsets
         
+        configureBarLayoutGuide(barLayoutGuide)
         layoutContainers(in: view)
     }
     

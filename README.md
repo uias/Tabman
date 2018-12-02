@@ -217,6 +217,8 @@ Tabman uses [AutoInsetter](https://github.com/uias/AutoInsetter) to automaticall
 
 `TabmanViewController` also provides `barLayoutGuide`, a `UILayoutGuide` that provides top and bottom anchors taking into account any bars added to the `.top` or `.bottom` `TabmanViewController.BarLocation` areas. The raw `UIEdgeInsets` are also available via `.barInsets`.
 
+Auto insetting can be **disabled** by setting `automaticallyAdjustsChildInsets` to `false` - however this **must be done before `viewDidLoad`**.
+
 *Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
