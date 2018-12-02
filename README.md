@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="Docs/img/tm_logo.png" width="890" alt="Tabman"/>
-</p>
+![](Docs/img/tm_logo.png)
 
 <p align="center">
     <a href="https://travis-ci.org/uias/Tabman">
@@ -21,10 +19,8 @@
     </a>
 </p>
 
-<p align="center">
-    <img src="Docs/img/tm_header.png" width="890" alt="Tabman"/>
-</p>
- 
+![](Docs/img/tm_header.png)
+
 ## ⭐️ Features
 TODO
 
@@ -105,9 +101,7 @@ extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
 
-<p align="center">
-    <img src="Docs/img/bar_styles.png" width="890" alt="Bar Styles"/>
-</p>
+![](Docs/img/bar_styles.png)
 
 These are all available as types of `TMBar` in [TMBar+Templates]().
 
@@ -119,9 +113,8 @@ let tabBar = TMBar.TabBar()
 ### Customize all the things
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
-<p align="center">
-    <img src="Docs/img/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
-</p>
+![](Docs/img/bar_breakdown.png)
+
 
 #### TMBarView
 `TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and transitioning behavior.
