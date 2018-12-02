@@ -8,8 +8,6 @@ osx_image: xcode10.1
 
 env:
   global:
-    - LC_CTYPE=en_US.UTF-8
-    - LANG=en_US.UTF-8
     - FRAMEWORK_NAME="Tabman"
     - UPDATE_DOCS="true"
 
