@@ -54,11 +54,11 @@ blockquote {
   color: #858585;
   border-left: 4px solid #e5e5e5; }
 
-img {
+svg, img {
   max-width: 100%; }
 
 a {
-  color: #4183c4;
+  color: #CA3522;
   text-decoration: none; }
   a:hover, a:focus {
     outline: 0;
@@ -113,7 +113,7 @@ pre code {
   padding: 8px;
   font-size: 0.875em;
   background: #444;
-  color: #999; }
+  color: #ccc; }
 
 .header-col {
   margin: 0;
@@ -171,11 +171,13 @@ pre code {
 
 .nav-group-task {
   font-size: 1em;
-  list-style-type: none;
-  white-space: nowrap; }
+  list-style-type: none; }
 
 .nav-group-task-link {
   color: #808080; }
+
+.current-page {
+  color: #CA3522; }
 
 .main-content {
   order: 1; }
@@ -228,48 +230,46 @@ pre code {
   .item .token {
     padding-left: 3px;
     margin-left: 0px;
-    font-size: 1rem; }
+    font-size: 1.1rem; }
   .item .declaration-note {
     font-size: .85em;
     color: #808080;
     font-style: italic; }
 
-.pointer-container {
-  border-bottom: 1px solid #ddd;
-  left: -23px;
-  padding-bottom: 13px;
-  position: relative;
-  width: 110%; }
+.item-heading {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  position: relative; }
+  .item-heading:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: -47px;
+    top: 50%;
+    margin-top: -10px;
+    border-right: 4px solid #999;
+    border-top: 4px solid #999;
+    transform: rotate(45deg);
+    transition: opacity 0.3s;
+    opacity: 0; }
 
+.item:hover .item-heading:before {
+  opacity: 1; }
+
+.pointer-container,
 .pointer {
-  left: 21px;
-  top: 7px;
-  display: block;
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-left: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-  background: #fff;
-  transform: rotate(45deg); }
+  display: none; }
 
-.height-container {
-  display: none;
-  position: relative;
-  width: 100%;
-  overflow: hidden; }
-  .height-container .section {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-top-width: 0;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding: 8px 16px; }
+.height-container .section {
+  border: none;
+  margin: 8px 4px 32px;
+  padding: 8px 0; }
 
 .aside, .language {
   padding: 6px 12px;
   margin: 12px 0;
-  border-left: 5px solid #dddddd;
+  border-left: 4px solid #dddddd;
   overflow-y: hidden; }
   .aside .aside-title, .language .aside-title {
     font-size: 9px;
@@ -283,12 +283,12 @@ pre code {
     margin-bottom: 0; }
 
 .language {
-  border-left: 5px solid #cde9f4; }
+  border-left: 4px solid #CA3522; }
   .language .aside-title {
-    color: #4183c4; }
+    color: #CA3522; }
 
 .aside-warning {
-  border-left: 5px solid #ff6666; }
+  border-left: 4px solid #ff6666; }
   .aside-warning .aside-title {
     color: #ff0000; }
 
@@ -313,6 +313,17 @@ pre code {
 .slightly-smaller {
   font-size: 0.9em; }
 
+.button {
+  border: 1px solid #CA3522;
+  display: inline-block;
+  padding: 2px 10px;
+  margin-right: 4px;
+  transition: all 0.3s; }
+  .button:hover, .button:focus {
+    text-decoration: none;
+    border-color: #333;
+    color: #333; }
+
 .footer {
   padding: 8px 16px;
   background: #444;
@@ -321,48 +332,9 @@ pre code {
   .footer p {
     margin: 8px 0; }
   .footer a {
-    color: #fff; }
+    color: #FB9C44; }
 
-html.dash .header, html.dash .breadcrumbs, html.dash .navigation {
+html.dash .header, html.dash .breadcrumbs, html.dash .navigation, html.dash .footer {
   display: none; }
 html.dash .height-container {
   display: block; }
-
-form[role=search] input {
-  font: 16px/1.7 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 0 10px;
-  margin: 0;
-  border: none;
-  border-radius: 1em; }
-  .loading form[role=search] input {
-    background: white url(../img/spinner.gif) center right 4px no-repeat; }
-form[role=search] .tt-menu {
-  margin: 0;
-  min-width: 300px;
-  background: #fbfbfb;
-  color: #333;
-  border: 1px solid #ddd; }
-form[role=search] .tt-highlight {
-  font-weight: bold; }
-form[role=search] .tt-suggestion {
-  font: 16px/1.7 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0 8px; }
-  form[role=search] .tt-suggestion span {
-    display: table-cell;
-    white-space: nowrap; }
-  form[role=search] .tt-suggestion .doc-parent-name {
-    width: 100%;
-    text-align: right;
-    font-weight: normal;
-    font-size: 0.9em;
-    padding-left: 16px; }
-form[role=search] .tt-suggestion:hover,
-form[role=search] .tt-suggestion.tt-cursor {
-  cursor: pointer;
-  background-color: #4183c4;
-  color: #fff; }
-form[role=search] .tt-suggestion:hover .doc-parent-name,
-form[role=search] .tt-suggestion.tt-cursor .doc-parent-name {
-  color: #fff; }
