@@ -40,7 +40,7 @@ if [ "$TRAVIS_BRANCH" == "" ]; then exit; fi
 
 pushd "$CHECKOUT_PATH"
 
-    git config user.name "Travis CI"
+    git config user.name "uias-bot"
     git config user.email "$COMMIT_AUTHOR_EMAIL"
 
     # Exit if there are no changes to the documentation
