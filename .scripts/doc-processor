@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+def replaceOccurences(source, value, replacement)
+    result = source.sub value, replacement
+    result
+end
+
+file_in = ARGV[0]
+file_out = ARGV[1]
+puts("[Processing]: #{file_in}")
+
+input = IO.read(file_in)
+
+result = input
+
+# Sanitize any image refs
+result = replaceOccurences(result, "Docs/img", "img")
+
+# Finalize
+IO.write(file_out, result)
+puts("[Processed]: #{file_out}")

@@ -30,6 +30,8 @@ TMP=Docs/tmp
 GITHUB=https://github.com/$ORGANISATION/$NAME
 URL=http://$ORGANISATION.github.io/$NAME
 
+DOC_PROC=.scripts/doc-processor
+
 # ----- Setup and generate docs
 
 # Clean $TMP folder
@@ -44,7 +46,7 @@ cp CONTRIBUTING.md "$TMP/docs/Contributing.md"
 cp CHANGELOG.md "$TMP/docs/Changelog.md"
 
 # Copy README as Documentation root.
-cp README.md "$TMP/sections/Documentation.md"
+$DOC_PROC README.md "$TMP/sections/Documentation.md"
 
 # Compile our Docs/tmp + generate API docs using jazzy
 jazzy \
