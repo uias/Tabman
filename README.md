@@ -22,7 +22,7 @@
 ![](Docs/img/tm_header.png)
 
 ## ⭐️ Features
-- Easy to implement page view controller with paging navigation bars.
+- Easy to implement page view controller with interactive indicator bars.
 - Highly adaptable and powerful customization.
 - Fully extensible with mix-and-match component library.
 - Built on [Pageboy](https://github.com/uias/Pageboy), a powerful, informative page view controller.
