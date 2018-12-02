@@ -11,7 +11,7 @@ import Foundation
 /// Container view that embeds a `TMBarIndicator`.
 ///
 /// Used for providing AutoLayout properties to `TMBarIndicatorLayoutHandler`.
-internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIView {
+internal final class TMBarIndicatorContainer<Indicator: TMBarIndicator>: UIView {
     
     // MARK: Properties
     
@@ -19,7 +19,7 @@ internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIV
     
     // MARK: Init
     
-    init(for indicator: IndicatorType) {
+    init(for indicator: Indicator) {
         super.init(frame: .zero)
         isUserInteractionEnabled = false
         layout(indicator: indicator)
@@ -32,7 +32,7 @@ internal final class TMBarIndicatorContainer<IndicatorType: TMBarIndicator>: UIV
     
     // MARK: Layout
     
-    private func layout(indicator: IndicatorType) {
+    private func layout(indicator: Indicator) {
         guard indicator.superview == nil else {
             fatalError("Indicator already has a superview.")
         }

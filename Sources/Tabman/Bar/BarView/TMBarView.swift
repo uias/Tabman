@@ -246,12 +246,12 @@ extension TMBarView: TMBar {
                 buttons.all.removeAll()
             }
             
-            var newButtons = [ButtonType]()
+            var newButtons = [Button]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let item = dataSource.barItem(for: self, at: index)
                 items.insert(item, at: index)
                 
-                let button = ButtonType(for: item)
+                let button = Button(for: item)
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)
@@ -261,7 +261,7 @@ extension TMBarView: TMBar {
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
-            var buttonsToRemove = [ButtonType]()
+            var buttonsToRemove = [Button]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let button = buttons.all[index]
                 buttonsToRemove.append(button)
@@ -363,7 +363,7 @@ extension TMBarView {
     ///
     /// - Parameter indicator: Indicator to create container for.
     /// - Returns: Indicator container.
-    private func container(for indicator: IndicatorType) -> TMBarIndicatorContainer<IndicatorType> {
+    private func container(for indicator: Indicator) -> TMBarIndicatorContainer<Indicator> {
         let container = TMBarIndicatorContainer(for: indicator)
         switch indicator.displayMode {
         case .top:

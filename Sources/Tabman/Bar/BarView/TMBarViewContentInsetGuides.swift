@@ -48,7 +48,7 @@ internal final class TMBarViewContentInsetGuides: TMBarLayoutInsetGuides {
     
     // MARK: Init
     
-    init<LayoutType, ButtonType, IndicatorType>(for barView: TMBarView<LayoutType, ButtonType, IndicatorType>) {
+    init<Layout, Button, Indicator>(for barView: TMBarView<Layout, Button, Indicator>) {
         barView.addLayoutGuide(leadingInset)
         barView.addLayoutGuide(content)
         barView.addLayoutGuide(trailingInset)

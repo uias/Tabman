@@ -12,7 +12,7 @@ import UIKit
 ///
 /// Interprets and calculates appropriate values for updates dependent on component animation styles. All components which use
 /// this must conform to `TMAnimateable`.
-internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType: TMBarButton, IndicatorType: TMBarIndicator> {
+internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator> {
     
     /// Context which describes the current positional and focus values for the bar view.
     struct Context {
@@ -36,7 +36,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
         }
     }
     
-    private weak var barView: TMBarView<LayoutType, ButtonType, IndicatorType>!
+    private weak var barView: TMBarView<Layout, Button, Indicator>!
     private let position: CGFloat
     private let capacity: Int
     private let direction: TMBarUpdateDirection
@@ -46,7 +46,7 @@ internal final class TMBarViewUpdateHandler<LayoutType: TMBarLayout, ButtonType:
     
     // MARK: Init
     
-    init(for barView: TMBarView<LayoutType, ButtonType, IndicatorType>,
+    init(for barView: TMBarView<Layout, Button, Indicator>,
          at position: CGFloat,
          capacity: Int,
          direction: TMBarUpdateDirection,
