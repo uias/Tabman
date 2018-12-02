@@ -226,7 +226,7 @@ Auto insetting can be **disabled** by setting `automaticallyAdjustsChildInsets` 
 *Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/Troubleshooting.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 
