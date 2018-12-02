@@ -41,7 +41,7 @@ if [ "$TRAVIS_BRANCH" == "" ]; then exit; fi
 pushd "$CHECKOUT_PATH"
 
     git config user.name "uias-bot"
-    git config user.email "$COMMIT_AUTHOR_EMAIL"
+    git config user.email "uias@sapsford.tech"
 
     # Exit if there are no changes to the documentation
     echo " ==> Check for documentation changes"
