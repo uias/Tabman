@@ -58,7 +58,7 @@ svg, img {
   max-width: 100%; }
 
 a {
-  color: #CA3522;
+  color: #8E2DE2;
   text-decoration: none; }
   a:hover, a:focus {
     outline: 0;
@@ -177,7 +177,7 @@ pre code {
   color: #808080; }
 
 .current-page {
-  color: #CA3522; }
+  color: #8E2DE2; }
 
 .main-content {
   order: 1; }
@@ -283,9 +283,9 @@ pre code {
     margin-bottom: 0; }
 
 .language {
-  border-left: 4px solid #CA3522; }
+  border-left: 4px solid #8E2DE2; }
   .language .aside-title {
-    color: #CA3522; }
+    color: #8E2DE2; }
 
 .aside-warning {
   border-left: 4px solid #ff6666; }
@@ -314,7 +314,7 @@ pre code {
   font-size: 0.9em; }
 
 .button {
-  border: 1px solid #CA3522;
+  border: 1px solid #8E2DE2;
   display: inline-block;
   padding: 2px 10px;
   margin-right: 4px;
@@ -332,7 +332,7 @@ pre code {
   .footer p {
     margin: 8px 0; }
   .footer a {
-    color: #FB9C44; }
+    color: #DC2430; }
 
 html.dash .header, html.dash .breadcrumbs, html.dash .navigation, html.dash .footer {
   display: none; }
