@@ -1,6 +1,6 @@
 
 has_source_changes = !git.modified_files.grep(/Sources.*\.swift/).empty? || !git.added_files.grep(/Sources.*\.swift/).empty?
-has_tests_changes = !git.modified_files.grep(/Sources\/TabmanTests.*\.swift/).empty? || !git.added_files.grep(/Sources\/TabmanTests.*\.swift/).empty?
+has_tests_changes = !git.modified_files.grep(/Sources\/PageboyTests.*\.swift/).empty? || !git.added_files.grep(/Sources\/PageboyTests.*\.swift/).empty?
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
