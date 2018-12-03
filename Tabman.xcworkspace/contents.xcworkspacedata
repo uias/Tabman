@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/merrick/Dev/Projects/Tabman/Example/Tabman-Example.xcodeproj">
+      location = "group:Example/Tabman-Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Sources/Tabman.xcodeproj">
