@@ -114,7 +114,7 @@ let bar = TMBar.ButtonBar()
 let tabBar = TMBar.TabBar()
 ```
 
-### Customize all the things
+### Customization
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
 ![](Docs/img/bar_breakdown.png)
