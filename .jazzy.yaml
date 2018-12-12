@@ -1,0 +1,67 @@
+xcodebuild_arguments: ["-workspace", "Tabman.xcworkspace", "-scheme", "Tabman"]
+module: Tabman
+clean: true
+author: UI At Six
+author_url: https://github.com/uias
+github_url: https://github.com/uias/Tabman
+# podspec: Tabman.podspec
+
+skip_undocumented: true
+readme: Docs/tmp/compile/README.md
+abstract: Docs/tmp/sections/*.md
+documentation: Docs/tmp/docs/*md
+
+theme: Docs/jazzy-theme/
+
+copyright: '© 2018 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
+
+# swift_version: 4.2
+
+custom_categories:
+  - name: Documentation
+    children:
+    - Example Projects
+    - Going Custom
+    - Contributing
+    - Changelog
+    - Tabman 2 Migration Guide
+    - Troubleshooting
+    
+  - name: View Controller
+    children:
+    - TabmanViewController
+    
+  - name: Bar
+    children:
+    - TMBar
+    - TMBarView
+    - TMBarItem
+    - TMBarDataSource
+    - TMBarDelegate
+    - TMSystemBar
+
+  - name: Layout
+    children:
+    - TMBarLayout
+    - TMHorizontalBarLayout
+    - TMConstrainedHorizontalBarLayout
+
+  - name: Buttons
+    children:
+    - TMBarButton
+    - TMBarButtonCollection
+    - TMLabelBarButton
+    - TMTabItemBarButton
+
+  - name: Indicator
+    children:
+    - TMBarIndicator
+    - TMLineBarIndicator
+    - TMBlockBarIndicator
+    - TMChevronBarIndicator
+    - TMDotBarIndicator
+
+  - name: Animation
+    children:
+    - TMAnimation
+    - TMTransitionStyle

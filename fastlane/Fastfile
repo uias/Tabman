@@ -11,6 +11,7 @@ platform :ios do
       command: "bootstrap",
       platform: "iOS"
     )
+    sh("bundle exec pod repo update")
   end
 
   desc "Run unit tests and check library"

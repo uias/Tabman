@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
+#### 2.x Releases
+- `2.0.x` Releases - [2.0.0](#200)
+
 #### 1.x Releases
 - `1.10.x` Releases - [1.10.0](#1100) |  [1.10.1](#1101) | [1.1.0.2](#1102)
 - `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192)
@@ -23,6 +26,31 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.0.0](https://github.com/uias/Tabman/releases/tag/2.0.0)
+Released on 2018-12-02
+
+Basically, everything has changed.
+
+#### Added
+- Redesigned and completely re-engineered bar layout system.
+- Support for dynamic page insertion & deletion via Pageboy 3.
+- Support for multiple bars, including dynamic addition and removal.
+- Simplified, more powerful customization via constrained types.
+- Ability to add accessory views to bars.
+- Support for `UIKit` components such as `UINavigationItem` to bar items.
+- Dramatically simplified creation and integration of custom components.
+
+#### Updated
+- Improved animation & transitioning engine.
+- All views are now exposed via public API.
+
+#### Fixed
+- Numerous issues with automatic insetting of child contents.
+- A whole lot of performance fixes.
+- Numerous memory problems.
+
+---
+
 ## [1.10.2](https://github.com/uias/Tabman/releases/tag/1.10.2)
 Released on 2018-10-04
 

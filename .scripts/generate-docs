@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# ----- Check for dependencies
+
+JAZZY=$(which jazzy)
+if [ $? != 0 ]; then
+    echo -e "Jazzy is required to generate documentation. Install it with:\n"
+    echo -e "    gem install jazzy\n"
+    exit
+fi
+echo "Using jazzy: $JAZZY"
+
+
+# ----- Commandline options
+
+if [ "$BRANCH" == "" ]; then
+  BRANCH=$([ "$1" == "" ] && echo "master" || echo "$1")
+fi
+
+if [ "$OUTPUT_PATH" == "" ]; then
+  OUTPUT_PATH=$([ "$2" == "" ] && echo "Docs/output/$BRANCH" || echo "$2")
+fi
+
+
+# ----- Configuration
+
+ORGANISATION=uias
+NAME=Tabman
+TMP=Docs/tmp
+GITHUB=https://github.com/$ORGANISATION/$NAME
+URL=http://$ORGANISATION.github.io/$NAME
+
+DOC_PROC=.scripts/doc-processor
+
+# ----- Setup and generate docs
+
+# Clean $TMP folder
+if [ -d "$TMP" ]; then rm -rf "$TMP"; fi
+mkdir -p $TMP/{compile,docs,sections}
+
+cp Docs/Sections/*.md $TMP/sections/
+cp Docs/*.md $TMP/docs/
+
+# Copy remaining root docs
+cp CONTRIBUTING.md "$TMP/docs/Contributing.md"
+cp CHANGELOG.md "$TMP/docs/Changelog.md"
+
+# Copy README as Documentation root.
+$DOC_PROC README.md "$TMP/compile/README.md"
+$DOC_PROC README.md "$TMP/sections/Documentation.md"
+
+# Compile our Docs/tmp + generate API docs using jazzy
+jazzy \
+  --config .jazzy.yaml \
+  --clean \
+  --output "$OUTPUT_PATH" \
+  --module-version "$BRANCH" \
+  --root-url "$URL/$BRANCH/" \
+  --github_url "$GITHUB" \
+  --github-file-prefix "$GITHUB/tree/$BRANCH"
+
+cp Docs/img/* $OUTPUT_PATH/img/

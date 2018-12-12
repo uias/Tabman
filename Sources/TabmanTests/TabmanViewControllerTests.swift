@@ -1,8 +1,8 @@
 //
 //  TabmanViewControllerTests.swift
-//  Tabman
+//  TabmanTests
 //
-//  Created by Merrick Sapsford on 08/03/2017.
+//  Created by Merrick Sapsford on 01/09/2018.
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
@@ -11,104 +11,79 @@ import XCTest
 import Pageboy
 
 class TabmanViewControllerTests: XCTestCase {
-
-    var tabmanViewController: TabmanTestViewController!
-
+    
+    var viewController: TabmanViewController!
+    var barDataSource: TMBarDataSource!
+    
+    // MARK: Set Up
+    
     override func setUp() {
         super.setUp()
         
-        self.tabmanViewController = TabmanTestViewController()
-        if #available(iOS 9.0, *) {
-            self.tabmanViewController.loadViewIfNeeded()
-        }
+        self.viewController = MockTabmanViewController()
+        self.barDataSource = MockBarDataSource()
+        
+        viewController.view.frame = CGRect(x: 0.0, y: 0.0,
+                                           width: 375,
+                                           height: 667)
+        viewController.view.layoutIfNeeded()
     }
     
-    /// Test that the item count limit on a TabmanBar is correctly handled
-    /// with valid data.
-    func testItemCountLimit() {
-        self.tabmanViewController.bar.style = .blockTabBar
-        self.tabmanViewController.bar.items = [TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test")]
+    override func tearDown() {
+        super.tearDown()
         
-        XCTAssertTrue(self.tabmanViewController.tabmanBar?.items?.count == 5,
-                      "TabmanBar itemCountLimit is not evaluated correctly for valid item count.")
+        self.viewController = nil
+        self.barDataSource = nil
     }
     
-    /// Test that the item count limit on a TabmanBar is correctly handled
-    /// with data that exceeds the limit.
-    func testItemCountLimitExceeded() {
-        self.tabmanViewController.bar.style = .blockTabBar
-        self.tabmanViewController.bar.items = [TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test"),
-                                               TabmanBar.Item(title: "test")]
+    // MARK: Tests
+    
+    /// Test that bar can be added to view controller.
+    func testAddBar() {
         
-        XCTAssertNil(self.tabmanViewController.tabmanBar?.items,
-                     "TabmanBar itemCountLimit is not evaluated correctly for invalid item count.")
+        let bar = MockBarView()
+        viewController.addBar(bar,
+                              dataSource: barDataSource,
+                              at: .top)
+        XCTAssertNotNil(bar.superview)
     }
     
-    // MARK: Attachment
-    
-    /// Test that TabmanViewController allows attaching of an external TabmanBar correctly.
-    func testAttachExternalBar() {
-        let testBar = TabmanTestBar()
+    /// Test that bar added to .top location is at top of view controller.
+    func testAddBarToTop() {
         
-        self.tabmanViewController.attach(bar: testBar)
+        let bar = MockBarView()
+        viewController.addBar(bar,
+                              dataSource: barDataSource,
+                              at: .top)
         
-        XCTAssertTrue(self.tabmanViewController.attachedTabmanBar != nil &&
-            self.tabmanViewController.tabmanBar?.isHidden ?? false &&
-            self.tabmanViewController.attachedTabmanBar!.dataSource != nil,
-                      "Attaching external TabmanBar does not work correctly.")
+        let frame = viewController.view.convert(bar.frame,
+                                                from: bar.superview)
+        XCTAssert(frame.origin.y < viewController.view.frame.size.height / 2)
     }
     
-    /// Test that TabmanViewController handles detaching of an external TabmanBar correctly.
-    func testDetachExternalBar() {
-        let testBar = TabmanTestBar()
-        self.tabmanViewController.attach(bar: testBar)
+    /// Test that bar added to .bottom location is at bottom of view controller.
+    func testAddBarToBottom() {
         
-        let detachedBar = self.tabmanViewController.detachAttachedBar()
+        let bar = MockBarView()
+        viewController.addBar(bar,
+                              dataSource: barDataSource,
+                              at: .bottom)
         
-        XCTAssertTrue(self.tabmanViewController.attachedTabmanBar == nil &&
-            self.tabmanViewController.tabmanBar?.isHidden ?? true == false &&
-            detachedBar?.dataSource == nil,
-                      "Detaching external TabmanBar does not clean up correctly.")
+        let frame = viewController.view.convert(bar.frame,
+                                                from: bar.superview)
+        XCTAssert(frame.origin.y > viewController.view.frame.size.height / 2)
     }
     
-    // MARK: Embedding
-    
-    /// Test that TambmanViewController handles embedding internal TabmanBar in an external view.
-    func testEmbedBarExternally() {
-        let testView = UIView()
-        self.tabmanViewController.embedBar(in: testView)
+    /// Test that bar added to .custom location is in custom view.
+    func testAddBarToCustomView() {
         
-        XCTAssertTrue(testView.subviews.count != 0 &&
-            self.tabmanViewController.tabmanBar?.superview === testView &&
-            self.tabmanViewController.embeddingView === testView,
-                      "Embedding TabmanBar in an external view does not embed correctly.")
-    }
-    
-    /// Test that TambmanViewController handles disembedding internal TabmanBar from an external view.
-    func testDisembedBar() {
-        let testView = UIView()
-        self.tabmanViewController.embedBar(in: testView)
-
-        self.tabmanViewController.disembedBar()
+        let customContainer = UIView()
         
-        XCTAssertTrue(testView.subviews.count == 0 &&
-            self.tabmanViewController.tabmanBar?.superview !== testView &&
-            self.tabmanViewController.embeddingView == nil,
-                      "Disembedding TabmanBar from an external view does not clean up correctly.")
-    }
-    
-    // MARK: Insetting
-    
-    /// Test that automaticallyAdjustsScrollViewInsets is set to false.
-    func testAutomaticallyAdjustScrollViewInsetsFlag() {
-        XCTAssertFalse(self.tabmanViewController.automaticallyAdjustsScrollViewInsets)
+        let bar = MockBarView()
+        viewController.addBar(bar,
+                              dataSource: barDataSource,
+                              at: .custom(view: customContainer, layout: nil))
+        
+        XCTAssertTrue(customContainer.subviews.first === bar)
     }
 }

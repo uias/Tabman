@@ -1,0 +1,3 @@
+github "alexaubry/BulletinBoard" ~> 2.0.0
+github "SnapKit/SnapKit" ~> 4.0.0
+github "uias/Randient" ~> 1.0.0

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "463DE9482006B77E00709671"
+               BlueprintIdentifier = "D62AC0B11E5733810020B8AE"
                BuildableName = "Tabman.framework"
                BlueprintName = "Tabman"
-               ReferencedContainer = "container:Tabman.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62AC0BA1E5733810020B8AE"
-               BuildableName = "TabmanTests.xctest"
-               BlueprintName = "TabmanTests"
                ReferencedContainer = "container:Tabman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463DE9482006B77E00709671"
+            BlueprintIdentifier = "D62AC0B11E5733810020B8AE"
             BuildableName = "Tabman.framework"
             BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
@@ -78,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463DE9482006B77E00709671"
+            BlueprintIdentifier = "D62AC0B11E5733810020B8AE"
             BuildableName = "Tabman.framework"
             BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
@@ -96,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463DE9482006B77E00709671"
+            BlueprintIdentifier = "D62AC0B11E5733810020B8AE"
             BuildableName = "Tabman.framework"
             BlueprintName = "Tabman"
             ReferencedContainer = "container:Tabman.xcodeproj">
