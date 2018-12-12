@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>TMBarIndicator Class Reference</title>
+    <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
+    <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
+    <meta charset='utf-8'>
+    <script src='../js/jquery.min.js' defer></script>
+    <script src='../js/jazzy.js' defer></script>
+  </head>
+  <body>
+
+    <a name='//apple_ref/swift/Class/TMBarIndicator' class='dashAnchor'></a>
+
+    <a title='TMBarIndicator Class Reference'></a>
+
+    <header class='header'>
+      <p class='header-col header-col--primary'>
+        <a class='header-link' href='../index.html'>
+          Tabman Docs
+        </a>
+         (66% documented)
+      </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='https://github.com/uias/Tabman'>
+            <img class='header-icon' src='../img/gh.png'/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='dash-feed://http%3A%2F%2Fuias%2Egithub%2Eio%2FTabman%2Fmaster%2Fdocsets%2FTabman%2Exml'>
+            <img class='header-icon' src='../img/dash.png'/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class='breadcrumbs'>
+      <a class='breadcrumb' href='../index.html'>Tabman Reference</a>
+      <img class='carat' src='../img/carat.png' />
+      TMBarIndicator Class Reference
+    </p>
+
+    <div class='content-wrapper'>
+      <nav class='navigation'>
+        <ul class='nav-groups'>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Documentation.html'>Documentation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../example-projects.html'>Example Projects</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../contributing.html'>Contributing</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../changelog.html'>Changelog</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../troubleshooting.html'>Troubleshooting</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../View Controller.html'>View Controller</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController.html'>TabmanViewController</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO'>– BarLocation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController/Insets.html'>– Insets</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Bar.html'>Bar</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBar.html'>TMBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarView.html'>TMBarView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarItem.html'>TMBarItem</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarDataSource.html'>TMBarDataSource</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarDelegate.html'>TMBarDelegate</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Layout.html'>Layout</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html'>TMBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHorizontalBarLayout.html'>TMHorizontalBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMConstrainedHorizontalBarLayout.html'>TMConstrainedHorizontalBarLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Buttons.html'>Buttons</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButton.html'>TMBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButton.html#/s:6Tabman11TMBarButtonC4NoneC'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButtonCollection.html'>TMBarButtonCollection</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMLabelBarButton.html'>TMLabelBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Indicator.html'>Indicator</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator.html'>TMBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO'>– DisplayMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMLineBarIndicator.html'>TMLineBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBlockBarIndicator.html'>TMBlockBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMChevronBarIndicator.html'>TMChevronBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMDotBarIndicator.html'>TMDotBarIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Animation.html'>Animation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/TMAnimation.html'>TMAnimation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Animation.html#/s:6Tabman17TMTransitionStyleO'>TMTransitionStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Classes.html'>Other Classes</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarBackgroundView.html'>TMBarBackgroundView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarBackgroundView.html#/s:6Tabman19TMBarBackgroundViewC5StyleO'>– Style</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Enumerations.html'>Other Enumerations</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Other Enums.html#/s:6Tabman18TMBarReloadContextO'>TMBarReloadContext</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Other Enums.html#/s:6Tabman20TMBarUpdateDirectionO'>TMBarUpdateDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Protocols.html'>Other Protocols</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarItemable.html'>TMBarItemable</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarViewFocusProvider.html'>TMBarViewFocusProvider</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class='main-content'>
+
+        <section class='section'>
+          <div class='section-content'>
+            <h1>TMBarIndicator</h1>
+              <div class='declaration'>
+                <div class='language'>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarIndicator</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">TMTransitionStyleable</span></code></pre>
+
+                </div>
+              </div>
+            <p>View that provides indication of the current page position.</p>
+
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-content'>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Types"></a>
+                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
+                <a href="#/Types">
+                  <h3 class="section-name">Types</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC11DisplayModeO"></a>
+                    <a name="//apple_ref/swift/Enum/DisplayMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC11DisplayModeO">DisplayMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Display mode of the indicator in a bar.</p>
+
+<ul>
+<li>top: Indicator goes above the bar contents.</li>
+<li>bottom: Indicator goes below the bar contents.</li>
+<li>fill: Indicator fills the height of the bar, behind the bar contents.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DisplayMode</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift#L21-L25" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Customization"></a>
+                <a name="//apple_ref/swift/Section/Customization" class="dashAnchor"></a>
+                <a href="#/Customization">
+                  <h3 class="section-name">Customization</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC11displayModeAC07DisplayE0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/displayMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC11displayModeAC07DisplayE0Ovp">displayMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Display mode for the indicator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">displayMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO">DisplayMode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift#L36-L38" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC18overscrollBehaviorAC010OverscrollE0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/overscrollBehavior" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC18overscrollBehaviorAC010OverscrollE0Ovp">overscrollBehavior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Behavior the indicator should exhibit when scrolling over the bounds of the bar.</p>
+
+<p>Options:</p>
+
+<ul>
+<li><code>.bounce</code>: Bounce the indicator beyond the bounds of the bar.</li>
+<li><code>.compress</code>: Compress the indicators width as overscroll occurs.</li>
+<li><code>.none</code>: Don&rsquo;t do anything.</li>
+</ul>
+
+<p>Defaults to <code>.bounce</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">overscrollBehavior</span><span class="p">:</span> <span class="kt">TMBarIndicator</span><span class="o">.</span><span class="kt">OverscrollBehavior</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift#L48" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC13isProgressiveSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isProgressive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC13isProgressiveSbvp">isProgressive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether the indicator should display progressively, traversing page indexes as visible progress.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isProgressive</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift#L50" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC15transitionStyleAA012TMTransitionE0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/transitionStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC15transitionStyleAA012TMTransitionE0Ovp">transitionStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Style of transition to use when updating the indicator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">transitionStyle</span><span class="p">:</span> <span class="kt"><a href="../Animation.html#/s:6Tabman17TMTransitionStyleO">TMTransitionStyle</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift#L52" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman14TMBarIndicatorC4NoneC"></a>
+                    <a name="//apple_ref/swift/Class/None" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman14TMBarIndicatorC4NoneC">None</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicator that is zero height and hidden.</p>
+
+<p>Use this if you do not want a visible indicator in the bar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../Classes/TMBarIndicator.html">TMBarIndicator</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="../Classes/TMBarIndicator/None.html" class="button">See more</a>
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift#L16-L39" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class='footer'>
+      <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.9.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
