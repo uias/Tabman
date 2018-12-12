@@ -25,13 +25,6 @@ platform :ios do
   lane :deploy do
     test
 
-    begin
-      ensure_git_branch
-    rescue
-      puts 'Not on master, exiting...'
-      exit 0
-    end
-
     podspec = "Tabman.podspec"
     version = version_get_podspec(path: podspec)
 
