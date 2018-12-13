@@ -209,7 +209,7 @@ As replacing the type of layout, button or indicator is as easy as above; you ha
 
 [**Custom Tabman Components**](https://uias.github.io/Tabman/master/going-custom.html)
 
-There are also a example projects that showcase custom layouts and such:
+There are also example projects that showcase custom layouts and such:
 
 - [**Tinderbar**](https://github.com/uias/Tinderbar) - Tinder iOS app layout built with Tabman.
 
