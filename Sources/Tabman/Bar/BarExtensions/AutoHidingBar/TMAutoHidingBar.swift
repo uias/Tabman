@@ -10,23 +10,41 @@ import UIKit
 
 public extension TMBar {
     
-    public func autoHiding() -> TMAutoHidingBar {
-        return TMAutoHidingBar(for: self)
+    public func autoHiding(trigger: TMAutoHidingBar.Trigger) -> TMAutoHidingBar {
+        return TMAutoHidingBar(for: self, trigger: trigger)
     }
 }
 
 public final class TMAutoHidingBar: UIView {
     
+    // MARK: Types
+    
+    public enum Trigger {
+        case time(duration: TimeInterval)
+    }
+    
+    public enum HideTransition {
+        case drawer
+        case fade
+    }
+    
     // MARK: Properties
     
     public let bar: TMBar
+    public let trigger: Trigger
+    
+    private var triggerHandler: TMAutoHidingTriggerHandler!
+    
+    public var hideTransition: HideTransition = .drawer
     
     // MARK: Init
     
-    internal init(for bar: TMBar) {
+    internal init(for bar: TMBar, trigger: Trigger) {
         self.bar = bar
+        self.trigger = trigger
         super.init(frame: .zero)
         
+        self.triggerHandler = makeTriggerHandler(for: trigger)
         layout(barView: bar as? UIView)
     }
     
@@ -49,6 +67,15 @@ public final class TMAutoHidingBar: UIView {
             barView.trailingAnchor.constraint(equalTo: trailingAnchor),
             barView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+    
+    // MARK: Triggers
+    
+    private func makeTriggerHandler(for trigger: Trigger) -> TMAutoHidingTriggerHandler {
+        switch trigger {
+        case .time(let duration):
+            return TMAutoHidingTimeTriggerHandler(for: self, duration: duration)
+        }
     }
 }
 
