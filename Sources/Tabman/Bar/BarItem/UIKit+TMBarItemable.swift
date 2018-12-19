@@ -19,11 +19,3 @@ extension UINavigationItem: TMBarItemable {
 /// :nodoc:
 extension UITabBarItem: TMBarItemable {
 }
-
-/// :nodoc:
-extension UIViewController: TMBarItemable {
-    
-    public var image: UIImage? {
-        return tabBarItem.image
-    }
-}
