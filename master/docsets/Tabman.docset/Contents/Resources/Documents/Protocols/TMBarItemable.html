@@ -93,6 +93,9 @@
                 <a class='nav-group-task-link' href='../Classes/TMBarView.html'>TMBarView</a>
               </li>
               <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarItemable.html'>TMBarItemable</a>
+              </li>
+              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Classes/TMBarItem.html'>TMBarItem</a>
               </li>
               <li class='nav-group-task'>
@@ -206,9 +209,6 @@
             <a class='nav-group-name-link' href='../Other Protocols.html'>Other Protocols</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../Protocols/TMBarItemable.html'>TMBarItemable</a>
-              </li>
-              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Protocols/TMBarViewFocusProvider.html'>TMBarViewFocusProvider</a>
               </li>
             </ul>
@@ -229,6 +229,10 @@
             <p>Definition of an item that can be displayed in a <code><a href="../Protocols/TMBar.html">TMBar</a></code>.</p>
 
 <p>Properties of a <code>TMBarItemable</code> are optionally displayed in a <code><a href="../Protocols/TMBar.html">TMBar</a></code> depending on the layout / configuration.</p>
+
+<p>Tabman adds extensions to UIKit components to natively support <code>TMBarItemable</code>, such as <code>UINavigationItem</code> and
+<code>UITabBarItem</code>. Therefore for example, simply returning a <code>UIViewController</code> <code>navigationItem</code> as a <code>TMBarItemable</code> is
+fully supported.</p>
 
           </div>
         </section>
@@ -263,7 +267,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L17" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L21" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -294,7 +298,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L19" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L23" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

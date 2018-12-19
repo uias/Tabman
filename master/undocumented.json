@@ -324,21 +324,21 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
-      "line": 32,
+      "line": 36,
       "symbol": "TMBarItem.init(title:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
-      "line": 36,
+      "line": 40,
       "symbol": "TMBarItem.init(image:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
-      "line": 40,
+      "line": 44,
       "symbol": "TMBarItem.init(title:image:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
