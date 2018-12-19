@@ -15,6 +15,11 @@ public struct TMAnimation {
     /// Duration of the animation in seconds.
     public let duration: TimeInterval
 
+    /// Create an animation configuration.
+    ///
+    /// - Parameters:
+    ///   - isEnabled: Whether the animation is enabled.
+    ///   - duration: Duration of the animation in seconds.
     public init(isEnabled: Bool, duration: TimeInterval) {
         self.isEnabled = isEnabled
         self.duration = duration
