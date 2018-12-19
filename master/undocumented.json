@@ -421,6 +421,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/TMAnimation.swift",
+      "line": 18,
+      "symbol": "TMAnimation.init(isEnabled:duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 41,
       "symbol": "TMBarReloadContext.full",
