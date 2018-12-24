@@ -81,7 +81,7 @@ class TabViewController: TabmanViewController {
 4) Configure your data sources.
 
 ```swift
-extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
+extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
