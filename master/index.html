@@ -295,7 +295,7 @@
 <p><em>When adding a bar, you can choose to add it to the predefined areas (<code>.top</code>, <code>.bottom</code>) or to a custom view with <code>.custom(view, layout)</code>. If you set <code>layout</code> to be <code>nil</code>, the bar will be constrained to leading, trailing, top and bottom anchors of the view automatically.</em></p>
 
 <p>4) Configure your data sources.</p>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TabViewController</span><span class="p">:</span> <span class="kt">PageboyViewControllerDataSource</span><span class="p">,</span> <span class="kt">BarDataSource</span> <span class="p">{</span>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TabViewController</span><span class="p">:</span> <span class="kt">PageboyViewControllerDataSource</span><span class="p">,</span> <span class="kt">TMBarDataSource</span> <span class="p">{</span>
 
     <span class="kd">func</span> <span class="nf">numberOfViewControllers</span><span class="p">(</span><span class="k">in</span> <span class="nv">pageboyViewController</span><span class="p">:</span> <span class="kt">PageboyViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">viewControllers</span><span class="o">.</span><span class="n">count</span>
