@@ -27,6 +27,20 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [2.1.1](https://github.com/uias/Tabman/releases/tag/2.1.1)
+Released on 2018-12-24
+
+#### Updated
+- Make `TMHorizontalBarLayout` properties `open`.
+- Make `TMConstrainedHorizontalBarLayout` properties `open`.
+- Make `TMLabelBarButton`  `open`.
+- Make `TMTabItemBarButton` `open`.
+
+#### Fixed
+- [#358](https://github.com/uias/Tabman/pull/358) Fix typo of TMBarDataSource in README.
+    - by [jxltom](https://github.com/jxltom).
+
 ## [2.1.0](https://github.com/uias/Tabman/releases/tag/2.1.0)
 Released on 2018-12-19
 
