@@ -51,35 +51,28 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 66,
-      "symbol": "TMBarButton.init(for:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 72,
+      "line": 81,
       "symbol": "TMBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 102,
+      "line": 111,
       "symbol": "TMBarButton.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 105,
+      "line": 114,
       "symbol": "TMBarButton.populate(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 108,
+      "line": 117,
       "symbol": "TMBarButton.update(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
