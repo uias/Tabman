@@ -23,7 +23,7 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
-    private weak var intrinsicSuperview: UIView!
+    private weak var intrinsicSuperview: UIView?
     
     private let contentView = UIView()
     private var contentViewLeading: NSLayoutConstraint!
@@ -46,7 +46,7 @@ open class TMBarButton: UIControl {
             contentViewTrailing.constant = contentInset.right
             contentViewBottom.constant = contentInset.bottom
             
-            intrinsicSuperview.setNeedsLayout()
+            intrinsicSuperview?.setNeedsLayout()
         }
     }
     
@@ -70,8 +70,8 @@ open class TMBarButton: UIControl {
     ///
     /// - Parameters:
     ///   - item: Item to create the bar button for.
-    ///   - intrinsicSuperview: View that is used for intrinsic sizing and layout of the view.
-    public required init(for item: TMBarItemable, intrinsicSuperview: UIView) {
+    ///   - intrinsicSuperview: View that can be notified whenever any intrinsic layout changes occur.
+    public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         self.item = item
         self.intrinsicSuperview = intrinsicSuperview
         super.init(frame: .zero)
