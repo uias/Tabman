@@ -29,7 +29,7 @@
 - Automatically insets child view controller contents.
 
 ## 📋 Requirements
-Tabman requires iOS 9; and is written in Swift 4.
+Tabman requires iOS 9; and is written in Swift 4.2.
 
 ## 📲 Installation
 ### CocoaPods
