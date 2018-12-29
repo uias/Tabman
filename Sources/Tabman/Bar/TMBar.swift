@@ -55,6 +55,7 @@ public enum TMBarUpdateDirection {
 }
 
 /// `BaseTMBar` is a base protocol of AnyObject to avoid Swift compiler error
+/// :nodoc:
 public protocol BaseTMBar: AnyObject { }
 
 /// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
