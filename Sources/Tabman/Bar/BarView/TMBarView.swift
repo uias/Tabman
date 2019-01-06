@@ -18,7 +18,7 @@ private struct TMBarViewDefaults {
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
 /// a collection of `TMBarButton`, and also a `TMBarIndicator`. The types of these three components are defined by constraints
 /// in the `TMBarView` type definition.
-open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator>: UIView, TMTransitionStyleable {
+open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator>: UIView, TMTransitionStyleable, TMBarLayoutParent {
     
     // MARK: Types
     
@@ -132,6 +132,31 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             scrollViewContainer.showFade = newValue
         } get {
             return scrollViewContainer.showFade
+        }
+    }
+    
+    // MARK: TMBarLayoutParent
+    
+    var contentInset: UIEdgeInsets {
+        set {
+            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
+            scrollView.contentInset = sanitizedContentInset
+            scrollView.contentOffset.x -= sanitizedContentInset.left
+            
+            layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
+            rootContainerTop.constant = newValue.top
+            rootContainerBottom.constant = newValue.bottom
+        } get {
+            return UIEdgeInsets(top: rootContainerTop.constant,
+                                left: scrollView.contentInset.left,
+                                bottom: rootContainerBottom.constant,
+                                right: scrollView.contentInset.right)
+        }
+    }
+    
+    var alignment: TMBarLayout.Alignment = .leading {
+        didSet {
+            
         }
     }
     
@@ -333,26 +358,6 @@ extension TMBarView: TMBar {
         
         scrollViewContainer.leadingFade = leadingOffsetRatio
         scrollViewContainer.trailingFade = trailingOffsetRatio
-    }
-}
-
-extension TMBarView: TMBarLayoutParent {
-    
-    var contentInset: UIEdgeInsets {
-        set {
-            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
-            scrollView.contentInset = sanitizedContentInset
-            scrollView.contentOffset.x -= sanitizedContentInset.left
-            
-            layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
-            rootContainerTop.constant = newValue.top
-            rootContainerBottom.constant = newValue.bottom
-        } get {
-            return UIEdgeInsets(top: rootContainerTop.constant,
-                                left: scrollView.contentInset.left,
-                                bottom: rootContainerBottom.constant,
-                                right: scrollView.contentInset.right)
-        }
     }
 }
 

@@ -20,6 +20,11 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         case fit
     }
     
+    public enum Alignment {
+        case leading
+        case center
+    }
+    
     // MARK: Properties
     
     /// Container view which contains actual contents
@@ -70,7 +75,13 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
             return parent.transitionStyle
         }
     }
-    
+    public var alignment: Alignment {
+        set {
+            parent.alignment = newValue
+        } get {
+            return parent.alignment
+        }
+    }
     // MARK: Init
     
     public required init() {}

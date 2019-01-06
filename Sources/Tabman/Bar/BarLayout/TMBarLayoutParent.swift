@@ -17,4 +17,7 @@ internal protocol TMBarLayoutParent: TMTransitionStyleable {
     
     /// Content inset that is applied to the frame of the layout.
     var contentInset: UIEdgeInsets { get set }
+    
+    /// Alignment that is applied to the layout.
+    var alignment: TMBarLayout.Alignment { get set }
 }
