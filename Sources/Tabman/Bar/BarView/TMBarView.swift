@@ -137,26 +137,15 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     
     // MARK: TMBarLayoutParent
     
-    var contentInset: UIEdgeInsets {
-        set {
-            let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: newValue.left, bottom: 0.0, right: newValue.right)
-            scrollView.contentInset = sanitizedContentInset
-            scrollView.contentOffset.x -= sanitizedContentInset.left
-            
-            layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
-            rootContainerTop.constant = newValue.top
-            rootContainerBottom.constant = newValue.bottom
-        } get {
-            return UIEdgeInsets(top: rootContainerTop.constant,
-                                left: scrollView.contentInset.left,
-                                bottom: rootContainerBottom.constant,
-                                right: scrollView.contentInset.right)
+    var contentInset: UIEdgeInsets = .zero {
+        didSet {
+            updateScrollViewContentInset()
         }
     }
     
     var alignment: TMBarLayout.Alignment = .leading {
         didSet {
-            
+            updateScrollViewContentInset()
         }
     }
     
@@ -176,7 +165,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         fatalError("BarView does not support Interface Builder")
     }
     
-    // MARK: Lifecycle
+    // MARK: Layout
     
     open override func layoutSubviews() {
         super.layoutSubviews()
@@ -249,6 +238,30 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         constraints.append(contentsOf: [rootContainerTop, rootContainerBottom])
         
         NSLayoutConstraint.activate(constraints)
+    }
+
+    private func updateScrollViewContentInset() {
+        
+        let alignmentInset: CGFloat
+        switch alignment {
+        case .center:
+            let buttonWidth = (buttons.all.first?.bounds.size.width ?? 0.0) / 2.0
+            var width = bounds.size.width / 2
+            if #available(iOS 11, *) {
+                width -= safeAreaInsets.left
+            }
+            alignmentInset = width - buttonWidth
+        default:
+            alignmentInset = 0.0
+        }
+        
+        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: alignmentInset + contentInset.left, bottom: 0.0, right: contentInset.right)
+        scrollView.contentInset = sanitizedContentInset
+        scrollView.contentOffset.x -= sanitizedContentInset.left
+        
+        layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
+        rootContainerTop.constant = contentInset.top
+        rootContainerBottom.constant = contentInset.bottom
     }
 }
 
@@ -391,6 +404,8 @@ extension TMBarView {
     }
     
     private func reloadIndicatorPosition() {
+        updateScrollViewContentInset()
+        
         guard let indicatedPosition = self.indicatedPosition else {
             return
         }
