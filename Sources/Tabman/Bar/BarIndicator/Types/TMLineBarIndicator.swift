@@ -51,7 +51,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     /// - custom: Custom weight.
     ///
     /// Default: `.medium`
-    public var weight: Weight = .medium {
+    open var weight: Weight = .medium {
         didSet {
             weightConstraint?.constant = weight.rawValue
             setNeedsLayout()
@@ -65,7 +65,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     /// - eliptical: Corners are completely circular.
     ///
     /// Default: `.square`.
-    public var cornerStyle: CornerStyle = .square {
+    open var cornerStyle: CornerStyle = .square {
         didSet {
             setNeedsLayout()
         }

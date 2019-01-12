@@ -34,7 +34,7 @@ open class TMDotBarIndicator: TMBarIndicator {
     
     // MARK: Customization
     
-    public var size: Size = .medium {
+    open var size: Size = .medium {
         didSet {
             guard size.rawValue != oldValue.rawValue else {
                 return

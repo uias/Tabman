@@ -35,7 +35,7 @@ open class TMBlockBarIndicator: TMBarIndicator {
     /// - eliptical: Corners are completely circular.
     ///
     /// Default: `.square`.
-    public var cornerStyle: CornerStyle = .square {
+    open var cornerStyle: CornerStyle = .square {
         didSet {
             setNeedsLayout()
         }

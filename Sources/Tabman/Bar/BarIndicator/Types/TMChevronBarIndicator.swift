@@ -41,7 +41,7 @@ open class TMChevronBarIndicator: TMBarIndicator {
     /// - medium: (14 x 12pt)
     /// - large: (20 x 16pt)
     /// - custom: A custom size.
-    public var size: Size = .medium {
+    open var size: Size = .medium {
         didSet {
             guard size.rawValue != oldValue.rawValue else {
                 return
