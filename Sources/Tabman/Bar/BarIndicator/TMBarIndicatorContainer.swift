@@ -40,7 +40,7 @@ internal final class TMBarIndicatorContainer<Indicator: TMBarIndicator>: UIView 
         addSubview(indicator)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         
-        let leading = indicator.leadingAnchor.constraint(equalTo: leadingAnchor)
+        let leading = indicator.leftAnchor.constraint(equalTo: leftAnchor)
         let top = indicator.topAnchor.constraint(equalTo: topAnchor)
         let bottom = indicator.bottomAnchor.constraint(equalTo: bottomAnchor)
         let width = indicator.widthAnchor.constraint(equalToConstant: 0.0)
