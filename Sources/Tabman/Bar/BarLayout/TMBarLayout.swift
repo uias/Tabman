@@ -54,7 +54,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         }
     }
     /// Inset to apply to the outside of the layout.
-    public var contentInset: UIEdgeInsets {
+    open var contentInset: UIEdgeInsets {
         set {
             insetGuides.insets = newValue
             parent.contentInset = newValue

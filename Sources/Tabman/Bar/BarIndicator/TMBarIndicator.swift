@@ -49,7 +49,7 @@ open class TMBarIndicator: UIView, TMTransitionStyleable {
     /// Whether the indicator should display progressively, traversing page indexes as visible progress.
     open var isProgressive: Bool = false
     /// Style of transition to use when updating the indicator.
-    open var transitionStyle: TMTransitionStyle = .progressive
+    public var transitionStyle: TMTransitionStyle = .progressive
     
     // MARK: Init
     
