@@ -51,7 +51,7 @@ open class TMDotBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         view.addSubview(dotContainer)

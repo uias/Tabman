@@ -43,7 +43,7 @@ open class TMBlockBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         self.backgroundColor = tintColor.withAlphaComponent(0.25)

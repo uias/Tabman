@@ -73,7 +73,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         let heightConstraint = heightAnchor.constraint(equalToConstant: weight.rawValue)
