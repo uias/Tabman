@@ -45,9 +45,9 @@ open class TMBarIndicator: UIView, TMTransitionStyleable {
      /// - `.none`: Don't do anything.
      ///
      /// Defaults to `.bounce`.
-    public var overscrollBehavior: OverscrollBehavior = .bounce
+    open var overscrollBehavior: OverscrollBehavior = .bounce
     /// Whether the indicator should display progressively, traversing page indexes as visible progress.
-    public var isProgressive: Bool = false
+    open var isProgressive: Bool = false
     /// Style of transition to use when updating the indicator.
     public var transitionStyle: TMTransitionStyle = .progressive
     
@@ -74,6 +74,6 @@ open class TMBarIndicator: UIView, TMTransitionStyleable {
     
     // MARK: Lifecycle
     
-    public func layout(in view: UIView) {
+    open func layout(in view: UIView) {
     }
 }

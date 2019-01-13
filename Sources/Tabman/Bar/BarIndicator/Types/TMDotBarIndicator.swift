@@ -34,7 +34,7 @@ open class TMDotBarIndicator: TMBarIndicator {
     
     // MARK: Customization
     
-    public var size: Size = .medium {
+    open var size: Size = .medium {
         didSet {
             guard size.rawValue != oldValue.rawValue else {
                 return
@@ -51,7 +51,7 @@ open class TMDotBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         view.addSubview(dotContainer)
