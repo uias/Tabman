@@ -123,7 +123,8 @@ private extension TMBarViewFocusRect {
                 rect.size.width +=  delta
             } else if position > capacity && overscrollBehavior != .compress {
                 let delta = position - capacity
-                rect.size.width += rect.width * delta
+                let xOffset = (maxRect.size.width - rect.width) * delta
+                rect = rect.offsetBy(dx: isLeftToRight ? xOffset : -xOffset, dy: 0.0)
             }
             
         default:
