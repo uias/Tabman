@@ -14,6 +14,7 @@ internal struct TMBarViewFocusRect {
     // MARK: Properties
     
     private let rect: CGRect
+    private let maxRect: CGRect
     private let position: CGFloat
     private let capacity: CGFloat
     private let layoutDirection: UIUserInterfaceLayoutDirection
@@ -36,8 +37,9 @@ internal struct TMBarViewFocusRect {
     ///   - position: The current page position.
     ///   - capacity: The capacity to use.
     ///   - layoutDirection: Layout direction of the user interface.
-    init(rect: CGRect, at position: CGFloat, capacity: Int, layoutDirection: UIUserInterfaceLayoutDirection) {
+    init(rect: CGRect, maxRect: CGRect, at position: CGFloat, capacity: Int, layoutDirection: UIUserInterfaceLayoutDirection) {
         self.rect = rect
+        self.maxRect = maxRect
         self.position = position
         self.capacity = CGFloat(capacity - 1) // Rect capacity is actually zero indexed
         self.layoutDirection = layoutDirection
@@ -102,14 +104,23 @@ private extension TMBarViewFocusRect {
     func progressiveRect(with overscrollBehavior: TMBarIndicator.OverscrollBehavior,
                          for rect: CGRect) -> CGRect {
         var rect = rect
+        let isLeftToRight = layoutDirection == .leftToRight
         
-        rect.size.width += rect.origin.x
-        rect.origin.x = 0.0
+        if isLeftToRight {
+            rect.size.width += rect.origin.x
+            rect.origin.x = 0.0
+        } else {
+            rect.size.width = maxRect.size.width - rect.origin.x
+        }
         
         switch overscrollBehavior {
         case .bounce, .compress:
             if position < 0.0 {
-                rect.size.width += rect.width * position
+                let delta = rect.width * position
+                if !isLeftToRight {
+                    rect.origin.x -= delta
+                }
+                rect.size.width +=  delta
             } else if position > capacity && overscrollBehavior != .compress {
                 let delta = position - capacity
                 rect.size.width += rect.width * delta

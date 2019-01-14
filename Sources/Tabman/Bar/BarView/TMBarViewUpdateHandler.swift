@@ -21,19 +21,23 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         let capacity: Int
         let direction: TMBarUpdateDirection
         
+        let maxArea: CGRect
         let focusArea: CGRect
         let focusRect: TMBarViewFocusRect
         
         init(position: CGFloat,
              capacity: Int,
              direction: TMBarUpdateDirection,
+             maxArea: CGRect,
              focusArea: CGRect,
              layoutDirection: UIUserInterfaceLayoutDirection) {
             self.position = position
             self.capacity = capacity
             self.direction = direction
+            self.maxArea = maxArea
             self.focusArea = focusArea
             self.focusRect = TMBarViewFocusRect(rect: focusArea,
+                                                maxRect: maxArea,
                                                 at: position,
                                                 capacity: capacity,
                                                 layoutDirection: layoutDirection)
@@ -97,6 +101,7 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         return Context(position: makePosition(from: position, for: transitionStyle),
                        capacity: capacity,
                        direction: direction,
+                       maxArea: CGRect(origin: .zero, size: barView.scrollView.contentSize),
                        focusArea: focusArea,
                        layoutDirection: UIView.userInterfaceLayoutDirection(for: barView.semanticContentAttribute))
     }

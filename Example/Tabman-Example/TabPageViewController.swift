@@ -49,8 +49,7 @@ class TabPageViewController: TabmanViewController {
         bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
-        bar.fadesContentEdges = true
-        bar.indicator.overscrollBehavior = .compress
+//        bar.fadesContentEdges = true
         bar.indicator.isProgressive = true
         
         // Add a '+' button the trailing end of the bar to insert more pages.
