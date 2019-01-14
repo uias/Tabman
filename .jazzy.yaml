@@ -13,7 +13,7 @@ documentation: Docs/tmp/docs/*md
 
 theme: Docs/jazzy-theme/
 
-copyright: '© 2018 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
+copyright: '© 2019 [UI At Six](https://github.com/uias) under [open source license](https://github.com/uias/Tabman/blob/master/LICENSE).'
 
 # swift_version: 4.2
 
