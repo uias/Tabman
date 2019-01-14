@@ -27,12 +27,16 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         init(position: CGFloat,
              capacity: Int,
              direction: TMBarUpdateDirection,
-             focusArea: CGRect) {
+             focusArea: CGRect,
+             layoutDirection: UIUserInterfaceLayoutDirection) {
             self.position = position
             self.capacity = capacity
             self.direction = direction
             self.focusArea = focusArea
-            self.focusRect = TMBarViewFocusRect(rect: focusArea, at: position, capacity: capacity)
+            self.focusRect = TMBarViewFocusRect(rect: focusArea,
+                                                at: position,
+                                                capacity: capacity,
+                                                layoutDirection: layoutDirection)
         }
     }
     
@@ -93,7 +97,8 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         return Context(position: makePosition(from: position, for: transitionStyle),
                        capacity: capacity,
                        direction: direction,
-                       focusArea: focusArea)
+                       focusArea: focusArea,
+                       layoutDirection: UIView.userInterfaceLayoutDirection(for: barView.semanticContentAttribute))
     }
     
     /// Generate a new position dependending on animation style.
