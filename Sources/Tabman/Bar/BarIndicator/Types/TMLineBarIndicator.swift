@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -51,7 +51,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     /// - custom: Custom weight.
     ///
     /// Default: `.medium`
-    public var weight: Weight = .medium {
+    open var weight: Weight = .medium {
         didSet {
             weightConstraint?.constant = weight.rawValue
             setNeedsLayout()
@@ -65,7 +65,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     /// - eliptical: Corners are completely circular.
     ///
     /// Default: `.square`.
-    public var cornerStyle: CornerStyle = .square {
+    open var cornerStyle: CornerStyle = .square {
         didSet {
             setNeedsLayout()
         }
@@ -73,7 +73,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         let heightConstraint = heightAnchor.constraint(equalToConstant: weight.rawValue)

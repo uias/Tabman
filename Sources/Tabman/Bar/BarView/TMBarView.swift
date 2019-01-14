@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 01/08/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -251,7 +251,7 @@ extension TMBarView: TMBar {
                 let item = dataSource.barItem(for: self, at: index)
                 items.insert(item, at: index)
                 
-                let button = Button(for: item)
+                let button = Button(for: item, intrinsicSuperview: self)
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)

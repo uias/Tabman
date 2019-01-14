@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -54,7 +54,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         }
     }
     /// Inset to apply to the outside of the layout.
-    public var contentInset: UIEdgeInsets {
+    open var contentInset: UIEdgeInsets {
         set {
             insetGuides.insets = newValue
             parent.contentInset = newValue

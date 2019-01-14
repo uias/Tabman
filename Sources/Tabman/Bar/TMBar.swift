@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/05/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -54,6 +54,10 @@ public enum TMBarUpdateDirection {
     case reverse
 }
 
+/// `BaseTMBar` is a base protocol of AnyObject to avoid Swift compiler error
+/// :nodoc:
+public protocol BaseTMBar: AnyObject { }
+
 /// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
 /// and displayed in a `TabmanViewController`.
 ///
@@ -61,7 +65,7 @@ public enum TMBarUpdateDirection {
 /// in some form, and also respond to the current page position.
 ///
 /// The default implementation of `TMBar` in Tabman is `TMBarView`.
-public protocol TMBar: AnyObject where Self: UIView {
+public protocol TMBar: BaseTMBar where Self: UIView {
     
     /// Object that acts as a data source to the bar.
     var dataSource: TMBarDataSource? { get set }

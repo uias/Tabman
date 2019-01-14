@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -23,6 +23,7 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
+    private weak var intrinsicSuperview: UIView?
     
     private let contentView = UIView()
     private var contentViewLeading: NSLayoutConstraint!
@@ -38,12 +39,14 @@ open class TMBarButton: UIControl {
     // MARK: Customization
     
     /// Content inset of the button contents.
-    public var contentInset: UIEdgeInsets = .zero {
+    open var contentInset: UIEdgeInsets = .zero {
         didSet {
             contentViewLeading.constant = contentInset.left
             contentViewTop.constant = contentInset.top
             contentViewTrailing.constant = contentInset.right
             contentViewBottom.constant = contentInset.bottom
+            
+            intrinsicSuperview?.setNeedsLayout()
         }
     }
     
@@ -63,8 +66,14 @@ open class TMBarButton: UIControl {
     
     // MARK: Init
     
-    public required init(for item: TMBarItemable) {
+    /// Initialize a bar button.
+    ///
+    /// - Parameters:
+    ///   - item: Item to create the bar button for.
+    ///   - intrinsicSuperview: View that can be notified whenever any intrinsic layout changes occur.
+    public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         self.item = item
+        self.intrinsicSuperview = intrinsicSuperview
         super.init(frame: .zero)
         initialize()
     }

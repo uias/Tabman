@@ -3,13 +3,13 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 02/08/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
 
 /// `TMBarButton` which mimics appearance of a `UITabBarItem`, containing a image and label vertically aligned.
-public final class TMTabItemBarButton: TMBarButton {
+open class TMTabItemBarButton: TMBarButton {
     
     // MARK: Defaults
     
@@ -32,7 +32,7 @@ public final class TMTabItemBarButton: TMBarButton {
     // MARK: Customization
     
     /// Tint color of the button when unselected / normal.
-    public override var tintColor: UIColor! {
+    open override var tintColor: UIColor! {
         didSet {
             if !isSelected {
                 imageView.tintColor = tintColor
@@ -41,7 +41,7 @@ public final class TMTabItemBarButton: TMBarButton {
         }
     }
     /// Tint color of the button when selected.
-    public var selectedTintColor: UIColor! {
+    open var selectedTintColor: UIColor! {
         didSet {
             if isSelected {
                 imageView.tintColor = selectedTintColor
@@ -50,7 +50,7 @@ public final class TMTabItemBarButton: TMBarButton {
         }
     }
     /// Size of the image view.
-    public var imageViewSize: CGSize {
+    open var imageViewSize: CGSize {
         set {
             imageWidth.constant = newValue.width
             imageHeight.constant = newValue.height
@@ -59,13 +59,13 @@ public final class TMTabItemBarButton: TMBarButton {
         }
     }
     /// Font of the text label.
-    public var font: UIFont = UIFont.systemFont(ofSize: 12.0, weight: .medium) {
+    open var font: UIFont = UIFont.systemFont(ofSize: 12.0, weight: .medium) {
         didSet {
             label.font = font
         }
     }
     /// Content Mode for the image view.
-    public var imageContentMode: UIView.ContentMode {
+    open var imageContentMode: UIView.ContentMode {
         set {
             imageView.contentMode = newValue
         } get {
@@ -75,7 +75,7 @@ public final class TMTabItemBarButton: TMBarButton {
     /// Whether to shrink the image view when unselected.
     ///
     /// Defaults to true.
-    public var shrinksImageWhenUnselected: Bool = true {
+    open var shrinksImageWhenUnselected: Bool = true {
         didSet {
             guard shrinksImageWhenUnselected else {
                 return
@@ -88,7 +88,7 @@ public final class TMTabItemBarButton: TMBarButton {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         label.textAlignment = .center
@@ -124,14 +124,14 @@ public final class TMTabItemBarButton: TMBarButton {
         label.text = "Item"
     }
     
-    public override func populate(for item: TMBarItemable) {
+    open override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
         label.text = item.title
         imageView.image = item.image
     }
     
-    public override func update(for selectionState: TMBarButton.SelectionState) {
+    open override func update(for selectionState: TMBarButton.SelectionState) {
         super.update(for: selectionState)
         
         let transitionColor = tintColor.interpolate(with: selectedTintColor,

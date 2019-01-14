@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/05/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     // MARK: Customization
     
-    public override var contentMode: TMBarLayout.ContentMode {
+    open override var contentMode: TMBarLayout.ContentMode {
         didSet {
             switch contentMode {
             case .intrinsic:
@@ -36,7 +36,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
         }
     }
     /// Spacing between each button.
-    public var interButtonSpacing = Defaults.interButtonSpacing {
+    open var interButtonSpacing = Defaults.interButtonSpacing {
         didSet {
             stackView.spacing = interButtonSpacing
         }

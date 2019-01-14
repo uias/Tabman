@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 /// `TMBarButton` that consists of a single label - that's it!
 ///
 /// Probably the most commonly seen example of a bar button.
-public final class TMLabelBarButton: TMBarButton {
+open class TMLabelBarButton: TMBarButton {
     
     // MARK: Defaults
     
@@ -23,7 +23,7 @@ public final class TMLabelBarButton: TMBarButton {
     
     // MARK: Properties
     
-    public override var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         if let fontIntrinsicContentSize = self.fontIntrinsicContentSize {
             return fontIntrinsicContentSize
         }
@@ -33,7 +33,7 @@ public final class TMLabelBarButton: TMBarButton {
     
     private let label = AnimateableLabel()
     
-    public override var contentInset: UIEdgeInsets {
+    open override var contentInset: UIEdgeInsets {
         set {
             super.contentInset = newValue
             calculateFontIntrinsicContentSize(for: text)
@@ -43,7 +43,7 @@ public final class TMLabelBarButton: TMBarButton {
     }
     
     /// Text to display in the button.
-    public var text: String? {
+    open var text: String? {
         set {
             label.text = newValue
         } get {
@@ -51,7 +51,7 @@ public final class TMLabelBarButton: TMBarButton {
         }
     }
     /// Color of the text when unselected / normal.
-    public override var tintColor: UIColor! {
+    open override var tintColor: UIColor! {
         didSet {
             if !isSelected {
                 label.textColor = tintColor
@@ -59,7 +59,7 @@ public final class TMLabelBarButton: TMBarButton {
         }
     }
     /// Color of the text when selected.
-    public var selectedTintColor: UIColor! {
+    open var selectedTintColor: UIColor! {
         didSet {
             if isSelected  {
                 label.textColor = selectedTintColor
@@ -67,7 +67,7 @@ public final class TMLabelBarButton: TMBarButton {
         }
     }
     /// Font of the text when unselected / normal.
-    public var font: UIFont = Defaults.font {
+    open var font: UIFont = Defaults.font {
         didSet {
             calculateFontIntrinsicContentSize(for: text)
             if !isSelected || selectedFont == nil {
@@ -76,7 +76,7 @@ public final class TMLabelBarButton: TMBarButton {
         }
     }
     /// Font of the text when selected.
-    public var selectedFont: UIFont? {
+    open var selectedFont: UIFont? {
         didSet {
             calculateFontIntrinsicContentSize(for: text)
             guard let selectedFont = self.selectedFont, isSelected else {
@@ -88,7 +88,7 @@ public final class TMLabelBarButton: TMBarButton {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         view.addSubview(label)
@@ -112,14 +112,14 @@ public final class TMLabelBarButton: TMBarButton {
         calculateFontIntrinsicContentSize(for: label.text)
     }
     
-    public override func populate(for item: TMBarItemable) {
+    open override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
         label.text = item.title
         calculateFontIntrinsicContentSize(for: item.title)
     }
     
-    public override func update(for selectionState: TMBarButton.SelectionState) {
+    open override func update(for selectionState: TMBarButton.SelectionState) {
         
         let transitionColor = tintColor.interpolate(with: selectedTintColor,
                                                     percent: selectionState.rawValue)

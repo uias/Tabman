@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 26/06/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     // MARK: Properties
     
     @available(*, unavailable)
-    public override var contentMode: TMBarLayout.ContentMode {
+    open override var contentMode: TMBarLayout.ContentMode {
         set {
             fatalError("\(type(of: self)) does not support updating contentMode")
         } get {
@@ -26,7 +26,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
         }
     }
     @available(*, unavailable)
-    public override var interButtonSpacing: CGFloat {
+    open override var interButtonSpacing: CGFloat {
         set {
             fatalError("\(type(of: self)) does not support updating interButtonSpacing")
         } get {
@@ -38,7 +38,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     /// The number of buttons to be visible in the layout.
     ///
     /// If the number of buttons exceeds this value, paging will be enabled.
-    public var visibleButtonCount: Int = 5 {
+    open var visibleButtonCount: Int = 5 {
         didSet {
             guard oldValue != visibleButtonCount else {
                 return

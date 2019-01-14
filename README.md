@@ -36,14 +36,14 @@ Tabman requires iOS 9; and is written in Swift 4.
 Tabman is available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod 'Tabman', '~> 2.0'
+pod 'Tabman', '~> 2.1'
 ```
 
 ### Carthage
 Tabman is also available through [Carthage](https://github.com/Carthage/Carthage):
 
 ```ogdl
-github "uias/Tabman" ~> 2.0
+github "uias/Tabman" ~> 2.1
 ```
 
 ## 🚀 Usage
@@ -75,12 +75,13 @@ class TabViewController: TabmanViewController {
     }
 }
 ```
+
 *When adding a bar, you can choose to add it to the predefined areas (`.top`, `.bottom`) or to a custom view with `.custom(view, layout)`. If you set `layout` to be `nil`, the bar will be constrained to leading, trailing, top and bottom anchors of the view automatically.*
 
 4) Configure your data sources.
 
 ```swift
-extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
+extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
@@ -95,12 +96,14 @@ extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
         return nil
     }
 
-    func barItem(for tabViewController: TabmanViewController, at index: Int) -> BarItem {
+    func barItem(for tabViewController: TabmanViewController, at index: Int) -> TMBarItemable {
         let title = "Page \(index)"
-        return BarItem(title: title)
+        return TMBarItem(title: title)
     }
 }
 ```
+
+*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`.*
 
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
@@ -129,6 +132,11 @@ bar.transitionStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
+##### 🧲 Properties of  Interest
+- `backgroundView` - `TMBarBackgroundView` which provides background styling.
+- `scrollMode` - What type of interactive scrolling to allow.
+- `fadesContentEdges` - Whether to fade the edges of the bar contents as it goes off-screen.
+
 **More: [**TMBarView Docs**](https://uias.github.io/Tabman/master/Bar.html)**
 
 #### TMBarLayout
@@ -137,6 +145,11 @@ bar.transitionStyle = .snap
 ```swift
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
+
+##### 🧲 Properties of  Interest
+- `contentMode` - How the layout should display its contents; either restricted to the bar width with `.fit` or intrinsically sized with `.intrinsic`.
+- `contentInset` - Inset to be applied to the edges of the layout.
+- `transitionStyle` - How the layout should perform transition animations.
 
 **More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
 
@@ -154,6 +167,11 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
+##### 🧲 Properties of  Interest
+- `backgroundView` - `TMBarBackgroundView` which provides background styling.
+- `contentInset` - Inset to be applied to the edges of the button.
+- `transitionStyle` (`TMBarButtonCollection`) - How the buttons should should perform transition animations.
+
 **More: [**TMBarButton Docs**](https://uias.github.io/Tabman/master/Buttons.html)**
 
 #### TMBarIndicator
@@ -163,6 +181,11 @@ Lastly is `TMBarIndicator` - which indicates the current page index status for t
 bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
+
+##### 🧲 Properties of  Interest
+- `overscrollBehavior` - How the indicator should handle scrolling beyond the bounds of the bar items.
+- `isProgressive` - Whether the indicator should act progressively when transitioning through page indexes.
+- `transitionStyle` - How the indicator should should perform transition animations.
 
 **More: [**TMBarIndicator Docs**](https://uias.github.io/Tabman/master/Indicator.html)**
 

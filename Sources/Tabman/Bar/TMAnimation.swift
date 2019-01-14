@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/10/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import Foundation
@@ -14,4 +14,14 @@ public struct TMAnimation {
     public let isEnabled: Bool
     /// Duration of the animation in seconds.
     public let duration: TimeInterval
+
+    /// Create an animation configuration.
+    ///
+    /// - Parameters:
+    ///   - isEnabled: Whether the animation is enabled.
+    ///   - duration: Duration of the animation in seconds.
+    public init(isEnabled: Bool, duration: TimeInterval) {
+        self.isEnabled = isEnabled
+        self.duration = duration
+    }
 }
