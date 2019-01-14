@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/10/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -21,18 +21,26 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         let capacity: Int
         let direction: TMBarUpdateDirection
         
+        let maxArea: CGRect
         let focusArea: CGRect
         let focusRect: TMBarViewFocusRect
         
         init(position: CGFloat,
              capacity: Int,
              direction: TMBarUpdateDirection,
-             focusArea: CGRect) {
+             maxArea: CGRect,
+             focusArea: CGRect,
+             layoutDirection: UIUserInterfaceLayoutDirection) {
             self.position = position
             self.capacity = capacity
             self.direction = direction
+            self.maxArea = maxArea
             self.focusArea = focusArea
-            self.focusRect = TMBarViewFocusRect(rect: focusArea, at: position, capacity: capacity)
+            self.focusRect = TMBarViewFocusRect(rect: focusArea,
+                                                maxRect: maxArea,
+                                                at: position,
+                                                capacity: capacity,
+                                                layoutDirection: layoutDirection)
         }
     }
     
@@ -93,7 +101,9 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
         return Context(position: makePosition(from: position, for: transitionStyle),
                        capacity: capacity,
                        direction: direction,
-                       focusArea: focusArea)
+                       maxArea: CGRect(origin: .zero, size: barView.scrollView.contentSize),
+                       focusArea: focusArea,
+                       layoutDirection: UIView.userInterfaceLayoutDirection(for: barView.semanticContentAttribute))
     }
     
     /// Generate a new position dependending on animation style.

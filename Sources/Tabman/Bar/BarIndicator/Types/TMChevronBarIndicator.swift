@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 01/11/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -41,7 +41,7 @@ open class TMChevronBarIndicator: TMBarIndicator {
     /// - medium: (14 x 12pt)
     /// - large: (20 x 16pt)
     /// - custom: A custom size.
-    public var size: Size = .medium {
+    open var size: Size = .medium {
         didSet {
             guard size.rawValue != oldValue.rawValue else {
                 return
@@ -58,7 +58,7 @@ open class TMChevronBarIndicator: TMBarIndicator {
     
     // MARK: Lifecycle
     
-    public override func layout(in view: UIView) {
+    open override func layout(in view: UIView) {
         super.layout(in: view)
         
         view.addSubview(chevronContainer)

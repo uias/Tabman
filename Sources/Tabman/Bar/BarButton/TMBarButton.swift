@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
-//  Copyright © 2018 UI At Six. All rights reserved.
+//  Copyright © 2019 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -39,7 +39,7 @@ open class TMBarButton: UIControl {
     // MARK: Customization
     
     /// Content inset of the button contents.
-    public var contentInset: UIEdgeInsets = .zero {
+    open var contentInset: UIEdgeInsets = .zero {
         didSet {
             contentViewLeading.constant = contentInset.left
             contentViewTop.constant = contentInset.top
