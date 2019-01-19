@@ -145,6 +145,11 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         scrollHandler.delegate = self
         scrollView.gestureDelegate = self
         layout(in: self)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(itemNeedsUpdate(_:)),
+                                               name: TMBarItemableNeedsUpdateNotification,
+                                               object: nil)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -224,6 +229,20 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         constraints.append(contentsOf: [rootContainerTop, rootContainerBottom])
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    // MARK: Notifications
+    
+    @objc private func itemNeedsUpdate(_ notification: Notification) {
+        guard let item = notification.object as? TMBarItemable else {
+            return
+        }
+        guard let button = buttons.all.filter({ $0.item === item }).first else {
+            return
+        }
+        
+        button.populate(for: item)
+        reloadIndicatorPosition()
     }
 }
 
@@ -398,12 +417,25 @@ extension TMBarView {
 }
 
 // MARK: - Interaction
-extension TMBarView: TMBarButtonInteractionHandler {
+extension TMBarView: TMBarButtonInteractionHandler, GestureScrollViewGestureDelegate {
     
     func barButtonInteraction(controller: TMBarButtonInteractionController,
                               didHandlePressOf button: TMBarButton,
                               at index: Int) {
         delegate?.bar(self, didRequestScrollTo: index)
+    }
+    
+    func scrollView(_ scrollView: GestureScrollView,
+                    didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction) {
+        let index = Int(indicatedPosition ?? 0)
+        switch direction {
+        case .right, .down:
+            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
+        case .left, .up:
+            delegate?.bar(self, didRequestScrollTo: min(buttons.all.count - 1, index + 1))
+        default:
+            fatalError()
+        }
     }
 }
 
@@ -461,20 +493,5 @@ extension TMBarView: TMBarViewScrollHandlerDelegate {
                               from scrollView: UIScrollView) {
         
         updateEdgeFades(for: scrollView)
-    }
-}
-
-extension TMBarView: GestureScrollViewGestureDelegate {
-    
-    func scrollView(_ scrollView: GestureScrollView, didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction) {
-        let index = Int(indicatedPosition ?? 0)
-        switch direction {
-        case .right, .down:
-            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
-        case .left, .up:
-            delegate?.bar(self, didRequestScrollTo: min(buttons.all.count - 1, index + 1))
-        default:
-            fatalError()
-        }
     }
 }
