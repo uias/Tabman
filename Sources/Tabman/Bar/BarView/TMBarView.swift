@@ -345,16 +345,17 @@ extension TMBarView: TMBar {
         // Update bar view
         handler.update(component: self) { (context) in
             
-            let centeredFocusFrame = (self.bounds.size.width / 2) - (context.focusRect.size.width / 2) // focus frame centered in view
             let pinnedAccessoryWidth = (self.accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (self.accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
-            
             let maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.scrollView.contentInset.right // maximum possible x offset
             let minOffsetX = -self.scrollView.contentInset.left
             
-            var contentOffset = CGPoint(x: (-centeredFocusFrame) + context.focusRect.origin.x, y: 0.0)
-            contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
+            // Aim to use a focus origin that centers the button in the bar.
+            // If the minimum viable x offset is greater than the center of the bar however, use that.
+            let centeredFocusOrigin = min(-(self.bounds.size.width / 2) - (context.focusRect.size.width / 2), minOffsetX)
             
-            print("contentOffset: \(contentOffset.x) min: \(minOffsetX) max: \(maxOffsetX)")
+            // Create offset and sanitize for bounds.
+            var contentOffset = CGPoint(x: centeredFocusOrigin + context.focusRect.origin.x, y: 0.0)
+            contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
             
             self.scrollView.contentOffset = contentOffset
         }
