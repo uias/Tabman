@@ -241,6 +241,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     }
 
     private func updateScrollViewContentInset() {
+        print("updateScrollViewContentInset")
         
         let alignmentInset: CGFloat
         switch alignment {
@@ -310,6 +311,8 @@ extension TMBarView: TMBar {
         
         self.items = items
         UIView.performWithoutAnimation {
+            layoutIfNeeded()
+            updateScrollViewContentInset()
             reloadIndicatorPosition()
         }
     }
@@ -320,7 +323,7 @@ extension TMBarView: TMBar {
                        animation: TMAnimation) {
         self.indicatedPosition = position
         layoutIfNeeded()
-
+        
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
                                              capacity: capacity,
@@ -404,8 +407,6 @@ extension TMBarView {
     }
     
     private func reloadIndicatorPosition() {
-        updateScrollViewContentInset()
-        
         guard let indicatedPosition = self.indicatedPosition else {
             return
         }
