@@ -249,6 +249,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         
         let alignmentInset: CGFloat
         switch alignment {
+        case .leading:
+            alignmentInset = 0.0
         case .center:
             let buttonWidth = (buttons.all.first?.bounds.size.width ?? 0.0) / 2.0
             var width = bounds.size.width / 2
@@ -256,8 +258,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
                 width -= safeAreaInsets.left
             }
             alignmentInset = width - buttonWidth
-        default:
-            alignmentInset = 0.0
+        case .trailing:
+            let buttonWidth = (buttons.all.first?.bounds.size.width ?? 0.0)
+            var width = bounds.size.width
+            if #available(iOS 11, *) {
+                width -= safeAreaInsets.left
+            }
+            alignmentInset = width - buttonWidth
         }
         
         let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: alignmentInset + contentInset.left, bottom: 0.0, right: contentInset.right)
