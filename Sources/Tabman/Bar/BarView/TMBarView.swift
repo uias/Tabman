@@ -348,10 +348,11 @@ extension TMBarView: TMBar {
             
             let centeredFocusFrame = (self.bounds.size.width / 2) - (context.focusRect.size.width / 2) // focus frame centered in view
             let pinnedAccessoryWidth = (self.accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (self.accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
-            let maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.contentInset.right // maximum possible x offset
-            let minOffsetX = -self.contentInset.left
-            var contentOffset = CGPoint(x: (-centeredFocusFrame) + context.focusRect.origin.x, y: 0.0)
             
+            let maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.scrollView.contentInset.right // maximum possible x offset
+            let minOffsetX = -self.scrollView.contentInset.left
+            
+            var contentOffset = CGPoint(x: (-centeredFocusFrame) + context.focusRect.origin.x, y: 0.0)
             contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
             
             self.scrollView.contentOffset = contentOffset
