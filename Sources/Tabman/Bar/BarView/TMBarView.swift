@@ -372,8 +372,12 @@ extension TMBarView: TMBar {
         handler.update(component: self) { (context) in
             
             let pinnedAccessoryWidth = (self.accessoryView(at: .leadingPinned)?.bounds.size.width ?? 0.0) + (self.accessoryView(at: .trailingPinned)?.bounds.size.width ?? 0.0)
-            let maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.scrollView.contentInset.right // maximum possible x offset
+            var maxOffsetX = (self.scrollView.contentSize.width - (self.bounds.size.width - pinnedAccessoryWidth)) + self.scrollView.contentInset.right // maximum possible x offset
             let minOffsetX = -self.scrollView.contentInset.left
+            
+            if #available(iOS 11, *) {
+                maxOffsetX += self.safeAreaInsets.right
+            }
             
             // Aim to use a focus origin that centers the button in the bar.
             // If the minimum viable x offset is greater than the center of the bar however, use that.
