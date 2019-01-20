@@ -241,7 +241,6 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     }
 
     private func updateScrollViewContentInset() {
-        print("updateScrollViewContentInset")
         
         let alignmentInset: CGFloat
         switch alignment {
@@ -354,6 +353,8 @@ extension TMBarView: TMBar {
             
             var contentOffset = CGPoint(x: (-centeredFocusFrame) + context.focusRect.origin.x, y: 0.0)
             contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
+            
+            print("contentOffset: \(contentOffset.x) min: \(minOffsetX) max: \(maxOffsetX)")
             
             self.scrollView.contentOffset = contentOffset
         }
