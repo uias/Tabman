@@ -377,10 +377,12 @@ extension TMBarView: TMBar {
             
             // Aim to use a focus origin that centers the button in the bar.
             // If the minimum viable x offset is greater than the center of the bar however, use that.
-            let centeredFocusOrigin = min(-(self.bounds.size.width / 2) - (context.focusRect.size.width / 2), minOffsetX)
-            
+            let focusRectCenterX = context.focusRect.origin.x + (context.focusRect.size.width / 2)
+            let barCenterX = (self.bounds.size.width / 2) - focusRectCenterX
+            let centeredFocusOrigin = CGPoint(x: -barCenterX, y: 0.0)
+
             // Create offset and sanitize for bounds.
-            var contentOffset = CGPoint(x: centeredFocusOrigin + context.focusRect.origin.x, y: 0.0)
+            var contentOffset = centeredFocusOrigin
             contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
             
             self.scrollView.contentOffset = contentOffset
