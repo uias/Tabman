@@ -13,6 +13,7 @@ import Pageboy
 
 private struct TMBarViewDefaults {
     static let animationDuration: TimeInterval = 0.25
+    static let spacing: CGFloat = 8.0
 }
 
 /// `TMBarView` is the default Tabman implementation of `TMBar`. A `UIView` that contains a `TMBarLayout` which displays
@@ -134,6 +135,16 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             return scrollViewContainer.showFade
         }
     }
+    /// Spacing between components in the bar, such as between the layout and accessory views.
+    ///
+    /// Defaults to `8.0`.
+    public var spacing: CGFloat {
+        set {
+            layoutGrid.horizontalSpacing = newValue
+        } get {
+            return layoutGrid.horizontalSpacing
+        }
+    }
     
     // MARK: TMBarLayoutParent
     
@@ -198,6 +209,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         
         // Set up grid - stack views that content views are added to.
         self.layoutGrid = TMBarViewLayoutGrid(with: layout.view)
+        layoutGrid.horizontalSpacing = TMBarViewDefaults.spacing
         scrollView.addSubview(layoutGrid)
         layoutGrid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -271,7 +283,6 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         scrollView.contentInset = sanitizedContentInset
         scrollView.contentOffset.x -= sanitizedContentInset.left
         
-        layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
         rootContainerTop.constant = contentInset.top
         rootContainerBottom.constant = contentInset.bottom
     }
