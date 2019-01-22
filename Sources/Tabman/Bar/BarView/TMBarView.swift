@@ -384,10 +384,19 @@ extension TMBarView: TMBar {
             let focusRectCenterX = context.focusRect.origin.x + (context.focusRect.size.width / 2)
             let barCenterX = (self.bounds.size.width / 2) - focusRectCenterX
             let centeredFocusOrigin = CGPoint(x: -barCenterX, y: 0.0)
-
+            
             // Create offset and sanitize for bounds.
             var contentOffset = centeredFocusOrigin
             contentOffset.x = max(minOffsetX, min(contentOffset.x, maxOffsetX))
+            
+            // Calculate how far the scroll view leading content inset is actually off 'center' as a delta.
+            // As the target for this update is to center the focusRect in the bar, we have to append
+            // this delta to the offset otherwise the inset could be ignored.
+            let actualCenterX = ((self.bounds.size.width - (self.buttons.all.first?.bounds.size.width ?? 0.0 )) / 2)
+            let offCenterDelta = self.scrollView.contentInset.left - actualCenterX
+            if offCenterDelta > 0.0 {
+                contentOffset.x -= offCenterDelta
+            }
             
             self.scrollView.contentOffset = contentOffset
         }
