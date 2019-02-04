@@ -20,7 +20,7 @@ public final class TMAutoHidingBar: UIView {
     // MARK: Types
     
     public enum Trigger {
-        case time(duration: TimeInterval)
+        case time(duration: TimeInterval, interactionView: UIView)
     }
     
     public enum HideTransition {
@@ -73,8 +73,10 @@ public final class TMAutoHidingBar: UIView {
     
     private func makeTriggerHandler(for trigger: Trigger) -> TMAutoHidingTriggerHandler {
         switch trigger {
-        case .time(let duration):
-            return TMAutoHidingTimeTriggerHandler(for: self, duration: duration)
+        case .time(let duration, let interactionView):
+            return TMAutoHidingTimeTriggerHandler(for: self,
+                                                  duration: duration,
+                                                  interactionView: interactionView)
         }
     }
 }
