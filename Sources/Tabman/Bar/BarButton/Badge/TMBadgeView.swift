@@ -13,8 +13,8 @@ open class TMBadgeView: UIView {
     // MARK: Defaults
     
     private struct Defaults {
-        static let contentInset = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
-        static let font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        static let contentInset = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
+        static let font = UIFont.systemFont(ofSize: 12, weight: .medium)
     }
     
     // MARK: Properties
