@@ -11,6 +11,13 @@ import UIKit
 /// A button that appears in a bar and provides the interaction for initiating a page index update.
 open class TMBarButton: UIControl {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let contentSpacing: CGFloat = 8.0
+        static let contentInset = UIEdgeInsets.zero
+    }
+    
     // MARK: Types
     
     public enum SelectionState {
@@ -23,13 +30,15 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
-    private weak var intrinsicSuperview: UIView?
     
-    private let contentView = UIView()
+    private weak var intrinsicSuperview: UIView?
+    private let contentView = UIStackView()
     private var contentViewLeading: NSLayoutConstraint!
     private var contentViewTop: NSLayoutConstraint!
     private var contentViewTrailing: NSLayoutConstraint!
     private var contentViewBottom: NSLayoutConstraint!
+    
+    private let contentContainer = UIView()
 
     // MARK: Components
     
@@ -39,7 +48,7 @@ open class TMBarButton: UIControl {
     // MARK: Customization
     
     /// Content inset of the button contents.
-    open var contentInset: UIEdgeInsets = .zero {
+    open var contentInset: UIEdgeInsets = Defaults.contentInset {
         didSet {
             contentViewLeading.constant = contentInset.left
             contentViewTop.constant = contentInset.top
@@ -49,6 +58,16 @@ open class TMBarButton: UIControl {
             intrinsicSuperview?.setNeedsLayout()
         }
     }
+    /// Spacing between content views, such as the button content and accessory views.
+    internal var contentSpacing: CGFloat = Defaults.contentSpacing {
+        didSet {
+            contentView.spacing = contentSpacing
+        }
+    }
+    
+    /// Badge View
+    public let badge = TMBadgeView()
+    private let badgeContainer = UIView()
     
     // MARK: State
     
@@ -84,6 +103,17 @@ open class TMBarButton: UIControl {
     
     private func initialize() {
         
+        layoutBackgroundView()
+        layoutContentView()
+        layoutAccessoryViews()
+        
+        layout(in: contentContainer)
+    }
+    
+    // MARK: Layout
+    
+    private func layoutBackgroundView() {
+        
         addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -92,7 +122,12 @@ open class TMBarButton: UIControl {
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+    
+    private func layoutContentView() {
         
+        contentView.axis = .horizontal
+        contentView.spacing = Defaults.contentSpacing
         contentView.isUserInteractionEnabled = false
         addSubview(contentView)
         
@@ -103,7 +138,22 @@ open class TMBarButton: UIControl {
         contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
         
-        layout(in: contentView)
+        contentView.addArrangedSubview(contentContainer)
+    }
+    
+    private func layoutAccessoryViews() {
+        
+        badgeContainer.addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            badge.leadingAnchor.constraint(equalTo: badgeContainer.leadingAnchor),
+            badge.topAnchor.constraint(greaterThanOrEqualTo: badgeContainer.topAnchor),
+            badgeContainer.bottomAnchor.constraint(greaterThanOrEqualTo: badge.bottomAnchor),
+            badgeContainer.trailingAnchor.constraint(equalTo: badge.trailingAnchor),
+            badge.centerYAnchor.constraint(equalTo: badgeContainer.centerYAnchor)
+            ])
+        
+        contentView.addArrangedSubview(badgeContainer)
     }
     
     // MARK: Lifecycle
