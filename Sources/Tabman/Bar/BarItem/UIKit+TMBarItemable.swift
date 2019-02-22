@@ -14,6 +14,10 @@ extension UINavigationItem: TMBarItemable {
     public var image: UIImage? {
         return nil
     }
+    
+    public var badgeValue: String? {
+        return nil
+    }
 }
 
 /// :nodoc:

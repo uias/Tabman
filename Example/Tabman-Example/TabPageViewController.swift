@@ -83,6 +83,8 @@ class TabPageViewController: TabmanViewController {
         super.viewDidAppear(animated)
         
         showBulletin(makeIntroBulletinManager())
+        
+        (bar.items?.first as? TMBarItem)?.badgeValue = "1"
     }
     
     // MARK: Actions

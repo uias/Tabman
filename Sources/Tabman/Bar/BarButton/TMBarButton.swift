@@ -162,6 +162,10 @@ open class TMBarButton: UIControl {
     }
     
     open func populate(for item: TMBarItemable) {
+        let showBadge = item.badgeValue != nil
+        badge.value = item.badgeValue
+        badge.isHidden = !showBadge
+        badgeContainer.isHidden = badge.isHidden
     }
     
     open func update(for selectionState: SelectionState) {
