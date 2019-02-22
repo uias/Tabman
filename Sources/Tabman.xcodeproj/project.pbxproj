@@ -315,8 +315,8 @@
 				46E96316211B3A01004C7468 /* TMBarButtonStateController.swift */,
 				46E96317211B3A01004C7468 /* TMBarButtonInteractionController.swift */,
 				46E96318211B3A01004C7468 /* TMBarButtonCollection.swift */,
-				461196EA222004E30033FE04 /* Badge */,
 				46CCBAD12174BDF600C370E1 /* Types */,
+				461196EA222004E30033FE04 /* Badge */,
 			);
 			path = BarButton;
 			sourceTree = "<group>";

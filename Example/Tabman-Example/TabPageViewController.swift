@@ -62,6 +62,9 @@ class TabPageViewController: TabmanViewController {
         addBar(bar.systemBar(),
                dataSource: self,
                at: .top)
+        
+        let tabBar = TMBar.TabBar()
+        addBar(tabBar.systemBar(), dataSource: self, at: .bottom)
     }
     
     override func viewWillAppear(_ animated: Bool) {

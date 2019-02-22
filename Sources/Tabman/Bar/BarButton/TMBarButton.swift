@@ -105,9 +105,9 @@ open class TMBarButton: UIControl {
         
         layoutBackgroundView()
         layoutContentView()
-        layoutAccessoryViews()
         
         layout(in: contentContainer)
+        layoutBadgeView(badge, in: contentContainer)
     }
     
     // MARK: Layout
@@ -141,7 +141,12 @@ open class TMBarButton: UIControl {
         contentView.addArrangedSubview(contentContainer)
     }
     
-    private func layoutAccessoryViews() {
+    // MARK: Lifecycle
+    
+    open func layout(in view: UIView) {
+    }
+    
+    open func layoutBadgeView(_ badge: TMBadgeView, in view: UIView) {
         
         badgeContainer.addSubview(badge)
         badge.translatesAutoresizingMaskIntoConstraints = false
@@ -154,11 +159,6 @@ open class TMBarButton: UIControl {
             ])
         
         contentView.addArrangedSubview(badgeContainer)
-    }
-    
-    // MARK: Lifecycle
-    
-    open func layout(in view: UIView) {
     }
     
     open func populate(for item: TMBarItemable) {

@@ -124,6 +124,16 @@ open class TMTabItemBarButton: TMBarButton {
         label.text = "Item"
     }
     
+    open override func layoutBadgeView(_ badge: TMBadgeView, in view: UIView) {
+        
+        view.addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            badge.topAnchor.constraint(equalTo: view.topAnchor),
+            view.trailingAnchor.constraint(equalTo: badge.trailingAnchor)
+            ])
+    }
+    
     open override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
