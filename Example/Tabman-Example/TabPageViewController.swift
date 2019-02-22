@@ -83,8 +83,6 @@ class TabPageViewController: TabmanViewController {
         super.viewDidAppear(animated)
         
         showBulletin(makeIntroBulletinManager())
-        
-        (bar.items?.first as? TMBarItem)?.badgeValue = "1"
     }
     
     // MARK: Actions
@@ -193,8 +191,10 @@ extension TabPageViewController: PageboyViewControllerDataSource {
 extension TabPageViewController: TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        return TMBarItem(title: "Page No. \(index + 1)",
-                         image: EmojiBarButton.random().image)
+        let item = TMBarItem(title: "Page No. \(index + 1)",
+            image: EmojiBarButton.random().image)
+        item.badgeValue = "1"
+        return item
     }
 }
 

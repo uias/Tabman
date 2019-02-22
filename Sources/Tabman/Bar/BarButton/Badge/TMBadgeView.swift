@@ -21,14 +21,14 @@ open class TMBadgeView: UIView {
     
     private let label = UILabel()
     
-    open var value: String? {
+    internal var value: String? {
         set {
             label.text = newValue
         } get {
             return label.text
         }
     }
-    open var attributedValue: NSAttributedString? {
+    internal var attributedValue: NSAttributedString? {
         set {
             label.attributedText = newValue
         } get {
