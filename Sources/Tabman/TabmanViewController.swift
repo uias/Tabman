@@ -90,7 +90,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        autoInsetter.isEnabled = automaticallyAdjustsChildInsets
+        
+        if automaticallyAdjustsChildInsets {
+            autoInsetter.enable(for: self)
+        }
         
         configureBarLayoutGuide(barLayoutGuide)
         layoutContainers(in: view)
