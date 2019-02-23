@@ -68,7 +68,7 @@ class TabViewController: TabmanViewController {
 
         // Create bar
         let bar = TMBar.ButtonBar()
-        bar.transitionStyle = .snap // Customize
+        bar.layout.transitionStyle = .snap // Customize
 
         // Add to view
         addBar(bar, dataSource: self, at: .top)
