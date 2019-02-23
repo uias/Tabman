@@ -15,6 +15,7 @@ open class TMBadgeView: UIView {
     private struct Defaults {
         static let contentInset = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
         static let font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        static let textColor = UIColor.white
     }
     
     // MARK: Properties
@@ -85,6 +86,7 @@ open class TMBadgeView: UIView {
         
         label.textAlignment = .center
         label.font = Defaults.font
+        label.textColor = Defaults.textColor
         backgroundColor = tintColor
         
         label.text = "1"
