@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
-- `2.1.x` Releases - [2.1.0](#210) | [2.1.1](#211) | [2.1.2](#212) | [2.1.3](#213)
+- `2.1.x` Releases - [2.1.0](#210) | [2.1.1](#211) | [2.1.2](#212) | [2.1.3](#213) | [2.1.4](#214)
 - `2.0.x` Releases - [2.0.0](#200)
 
 #### 1.x Releases
@@ -27,6 +27,12 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+
+## [2.1.4](https://github.com/uias/Tabman/releases/tag/2.1.4)
+Released on 2019-02-23
+
+#### Fixed
+- [#383](https://github.com/uias/Tabman/issues/383) Child insetting issues on iOS 10.
 
 ## [2.1.3](https://github.com/uias/Tabman/releases/tag/2.1.3)
 Released on 2019-01-14
