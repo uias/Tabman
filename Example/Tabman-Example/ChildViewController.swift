@@ -13,8 +13,6 @@ class ChildViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var promptLabel: UILabel!
-
-    private var badgeCount = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -37,10 +35,5 @@ class ChildViewController: UIViewController {
             }
             promptLabel.text = prompt
         }
-    }
-    
-    @IBAction private func badge(_ sender: UIButton) {
-        badgeCount += 1
-        tabmanBarItems?.forEach({ $0.badgeValue = badgeCount != 0 ? "\(badgeCount)" : nil })
     }
 }
