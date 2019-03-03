@@ -162,7 +162,6 @@ open class TMBarButton: UIControl {
             ])
         
         contentView.addArrangedSubview(badgeContainer)
-        updateBadgeVisibility(false, animated: false)
     }
     
     /// Populate the button with a bar item.
