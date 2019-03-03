@@ -297,8 +297,10 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             return
         }
         
-        button.populate(for: item)
-        reloadIndicatorPosition()
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+            button.populate(for: item)
+            self.reloadIndicatorPosition()
+        }, completion: nil)
     }
 }
 

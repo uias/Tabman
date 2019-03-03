@@ -167,7 +167,7 @@ class TabPageViewController: TabmanViewController {
 }
 
 // MARK: PageboyViewControllerDataSource
-extension TabPageViewController: PageboyViewControllerDataSource {
+extension TabPageViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         let count = viewControllers.count
@@ -183,9 +183,6 @@ extension TabPageViewController: PageboyViewControllerDataSource {
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
-}
-
-extension TabPageViewController: TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: "Page No. \(index + 1)",

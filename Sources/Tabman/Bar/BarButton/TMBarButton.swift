@@ -11,6 +11,12 @@ import UIKit
 /// A button that appears in a bar and provides the interaction for initiating a page index update.
 open class TMBarButton: UIControl {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let contentInset = UIEdgeInsets.zero
+    }
+    
     // MARK: Types
     
     public enum SelectionState {
@@ -23,8 +29,8 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
-    private weak var intrinsicSuperview: UIView?
     
+    private weak var intrinsicSuperview: UIView?
     private let contentView = UIView()
     private var contentViewLeading: NSLayoutConstraint!
     private var contentViewTop: NSLayoutConstraint!
@@ -39,7 +45,7 @@ open class TMBarButton: UIControl {
     // MARK: Customization
     
     /// Content inset of the button contents.
-    open var contentInset: UIEdgeInsets = .zero {
+    open var contentInset: UIEdgeInsets = Defaults.contentInset {
         didSet {
             contentViewLeading.constant = contentInset.left
             contentViewTop.constant = contentInset.top
@@ -49,6 +55,9 @@ open class TMBarButton: UIControl {
             intrinsicSuperview?.setNeedsLayout()
         }
     }
+    
+    /// Badge View
+    public let badge = TMBadgeView()
     
     // MARK: State
     
@@ -84,6 +93,17 @@ open class TMBarButton: UIControl {
     
     private func initialize() {
         
+        layoutBackgroundView()
+        layoutContentView()
+        
+        layout(in: contentView)
+        layoutBadge(badge, in: contentView)
+    }
+    
+    // MARK: Layout
+    
+    private func layoutBackgroundView() {
+        
         addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -92,6 +112,9 @@ open class TMBarButton: UIControl {
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+    
+    private func layoutContentView() {
         
         contentView.isUserInteractionEnabled = false
         addSubview(contentView)
@@ -102,18 +125,34 @@ open class TMBarButton: UIControl {
         contentViewTrailing = trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
-        
-        layout(in: contentView)
     }
     
     // MARK: Lifecycle
     
+    /// Layout the Bar Button.
+    ///
+    /// - Parameter view: The view to use as the root of the button.
     open func layout(in view: UIView) {
     }
     
-    open func populate(for item: TMBarItemable) {
+    /// Layout the badge view for the button.
+    ///
+    /// - Parameters:
+    ///   - badge: Badge view.
+    ///   - view: View to use for layout.
+    open func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
     }
     
+    /// Populate the button with a bar item.
+    ///
+    /// - Parameter item: Item to populate.
+    open func populate(for item: TMBarItemable) {
+        badge.value = item.badgeValue
+    }
+    
+    /// Update the button for a new selection state.
+    ///
+    /// - Parameter selectionState: Selection state.
     open func update(for selectionState: SelectionState) {
         let minimumAlpha: CGFloat = 0.5
         let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
