@@ -17,6 +17,7 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
     
     // MARK: Properties
     
+    //swiftlint:disable unused_setter_value
     @available(*, unavailable)
     open override var contentMode: TMBarLayout.ContentMode {
         set {
@@ -25,6 +26,8 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
             return super.contentMode
         }
     }
+    
+    //swiftlint:disable unused_setter_value
     @available(*, unavailable)
     open override var interButtonSpacing: CGFloat {
         set {

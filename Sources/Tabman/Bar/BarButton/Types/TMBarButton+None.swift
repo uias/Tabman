@@ -17,6 +17,7 @@ public extension TMBarButton {
         
         // MARK: Properties
         
+        //swiftlint:disable unused_setter_value
         public override var isHidden: Bool {
             set {
                 super.isHidden = true
