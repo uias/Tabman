@@ -24,6 +24,9 @@ public protocol TMBarItemable: class {
     /// Image to display.
     var image: UIImage? { get }
     
+    /// Badge value to display.
+    var badgeValue: String? { get set }
+    
     /// Inform the bar that the item has been updated.
     ///
     /// This will notify any button that is responsible for the item
@@ -51,6 +54,12 @@ public final class TMBarItem: TMBarItemable {
         }
     }
     public var image: UIImage?  {
+        didSet {
+            setNeedsUpdate()
+        }
+    }
+    
+    public var badgeValue: String? {
         didSet {
             setNeedsUpdate()
         }

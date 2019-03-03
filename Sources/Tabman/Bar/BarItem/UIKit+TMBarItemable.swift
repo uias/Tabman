@@ -14,6 +14,14 @@ extension UINavigationItem: TMBarItemable {
     public var image: UIImage? {
         return nil
     }
+    
+    //swiftlint:disable unused_setter_value
+    public var badgeValue: String? {
+        get {
+            return nil
+        }
+        set {}
+    }
 }
 
 /// :nodoc:
