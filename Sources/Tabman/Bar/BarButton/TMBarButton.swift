@@ -170,9 +170,10 @@ open class TMBarButton: UIControl {
     /// - Parameter item: Item to populate.
     open func populate(for item: TMBarItemable) {
         let showBadge = item.badgeValue != nil
-        badge.value = item.badgeValue
+        if showBadge {
+            badge.value = item.badgeValue
+        }
         updateBadgeVisibility(showBadge, animated: true)
-        badgeContainer.isHidden = badge.isHidden
     }
     
     /// Update the button for a new selection state.
@@ -225,12 +226,14 @@ extension TMBarButton {
         if isVisible {
             guard animated else {
                 badge.isHidden = false
+                badgeContainer.isHidden = false
                 return
             }
             
             badge.alpha = 0.0
             badge.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
             badge.isHidden = false
+            badgeContainer.isHidden = false
 
             UIView.animate(withDuration: 0.2) {
                 self.badge.transform = .identity
@@ -239,6 +242,7 @@ extension TMBarButton {
         } else {
             guard animated else {
                 badge.isHidden = true
+                badgeContainer.isHidden = true
                 return
             }
             
@@ -248,6 +252,7 @@ extension TMBarButton {
             }, completion: { (isFinished) in
                 if isFinished {
                     self.badge.isHidden = true
+                    self.badgeContainer.isHidden = true
                     self.badge.transform = .identity
                     self.badge.alpha = 1.0
                 }
