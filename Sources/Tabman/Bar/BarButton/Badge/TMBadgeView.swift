@@ -21,6 +21,7 @@ open class TMBadgeView: UIView {
     
     // MARK: Properties
     
+    private let contentView = UIView()
     private let label = UILabel()
     
     internal var value: String? {
@@ -53,7 +54,7 @@ open class TMBadgeView: UIView {
     }
     open override var tintColor: UIColor! {
         didSet {
-            backgroundColor = tintColor
+            contentView.backgroundColor = tintColor
         }
     }
     
@@ -71,14 +72,23 @@ open class TMBadgeView: UIView {
     
     private func initialize() {
         
+        addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            ])
+        
         let contentInset = Defaults.contentInset
-        addSubview(label)
+        contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: contentInset.left),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: contentInset.top),
-            trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: contentInset.right),
-            bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: contentInset.bottom)
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: contentInset.left),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentInset.top),
+            contentView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: contentInset.right),
+            contentView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: contentInset.bottom)
             ])
         
         NSLayoutConstraint.activate([
@@ -90,7 +100,7 @@ open class TMBadgeView: UIView {
         label.textColor = Defaults.textColor
         tintColor = Defaults.tintColor
         
-        label.text = "1"
+        label.text = "."
     }
     
     // MARK: Lifecycle
@@ -98,6 +108,6 @@ open class TMBadgeView: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = bounds.size.height / 2.0
+        contentView.layer.cornerRadius = bounds.size.height / 2.0
     }
 }
