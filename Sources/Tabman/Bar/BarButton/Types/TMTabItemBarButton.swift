@@ -125,7 +125,8 @@ open class TMTabItemBarButton: TMBarButton {
         label.text = "Item"
     }
     
-    open override func layoutBadgeView(_ badge: TMBadgeView, in view: UIView) {
+    open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
+        super.layoutBadge(badge, in: view)
         
         let insets = Defaults.badgeInsets
         view.addSubview(badge)

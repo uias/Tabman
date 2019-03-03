@@ -32,6 +32,8 @@ open class TMLabelBarButton: TMBarButton {
     private var fontIntrinsicContentSize: CGSize?
     
     private let label = AnimateableLabel()
+    private let badgeContainer = UIView()
+    private var badgeContainerWidth: NSLayoutConstraint?
     
     open override var contentInset: UIEdgeInsets {
         set {
@@ -92,13 +94,22 @@ open class TMLabelBarButton: TMBarButton {
         super.layout(in: view)
         
         view.addSubview(label)
+        view.addSubview(badgeContainer)
         label.translatesAutoresizingMaskIntoConstraints = false
+        badgeContainer.translatesAutoresizingMaskIntoConstraints = false
+        let badgeContainerWidth = badgeContainer.widthAnchor.constraint(equalToConstant: 0.0)
         let constraints = [
-            view.leadingAnchor.constraint(equalTo: label.leadingAnchor),
-            view.topAnchor.constraint(equalTo: label.topAnchor),
-            view.trailingAnchor.constraint(equalTo: label.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: label.bottomAnchor)
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            view.bottomAnchor.constraint(equalTo: label.bottomAnchor),
+            badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor),
+            badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
+            view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: badgeContainer.bottomAnchor),
+            badgeContainerWidth
         ]
+        self.badgeContainerWidth = badgeContainerWidth
+        
         NSLayoutConstraint.activate(constraints)
         
         label.textAlignment = .center
@@ -108,8 +119,23 @@ open class TMLabelBarButton: TMBarButton {
         selectedTintColor = tintColor
         tintColor = .black
         self.contentInset = Defaults.contentInset
+        badgeContainer.clipsToBounds = true
         
         calculateFontIntrinsicContentSize(for: label.text)
+        
+        badgeContainer.backgroundColor = .red
+    }
+    
+    open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
+        super.layoutBadge(badge, in: view)
+        
+        badgeContainer.addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            badge.leadingAnchor.constraint(equalTo: badgeContainer.leadingAnchor),
+            badge.topAnchor.constraint(equalTo: badgeContainer.topAnchor),
+            badgeContainer.bottomAnchor.constraint(equalTo: badge.bottomAnchor)
+            ])
     }
     
     open override func populate(for item: TMBarItemable) {
@@ -117,6 +143,8 @@ open class TMLabelBarButton: TMBarButton {
         
         label.text = item.title
         calculateFontIntrinsicContentSize(for: item.title)
+    
+        badgeContainerWidth?.constant = badge.isHidden ? 0.0 : badge.bounds.size.width
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
