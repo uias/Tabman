@@ -29,7 +29,7 @@ open class TMBadgeView: UIView {
             if value != nil {
                 label.text = value
             }
-            updateContentVisibility(for: value, animated: true)
+            updateContentVisibility(for: value)
         }
     }
     internal var attributedValue: NSAttributedString? {
@@ -102,7 +102,7 @@ open class TMBadgeView: UIView {
         tintColor = Defaults.tintColor
         
         label.text = "."
-        updateContentVisibility(for: nil, animated: false)
+        updateContentVisibility(for: nil)
     }
     
     // MARK: Lifecycle
@@ -115,44 +115,21 @@ open class TMBadgeView: UIView {
     
     // MARK: Animations
     
-    private func updateContentVisibility(for value: String?, animated: Bool) {
+    private func updateContentVisibility(for value: String?) {
         switch value {
         case .none: // hidden
-            guard !isHidden else {
+            guard contentView.alpha == 1.0 else {
                 return
             }
-            guard animated else {
-                isHidden = true
-                return
-            }
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                self.contentView.alpha = 0.0
-                self.contentView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-            }, completion: { (isFinished) in
-                if isFinished {
-                    self.contentView.transform = .identity
-                    self.isHidden = true
-                    self.contentView.alpha = 1.0
-                }
-            })
+            contentView.alpha = 0.0
+            contentView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
             
         case .some: // visible
-            guard isHidden else {
+            guard contentView.alpha == 0.0 else {
                 return
             }
-            guard animated else {
-                isHidden = false
-                return
-            }
-            
-            contentView.alpha = 0.0
-            isHidden = false
-            self.contentView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-            UIView.animate(withDuration: 0.2) {
-                self.contentView.alpha = 1.0
-                self.contentView.transform = .identity
-            }
+            contentView.alpha = 1.0
+            contentView.transform = .identity
         }
     }
 }

@@ -34,6 +34,7 @@ open class TMLabelBarButton: TMBarButton {
     
     private let label = AnimateableLabel()
     private let badgeContainer = UIView()
+    private var badgeContainerLeading: NSLayoutConstraint?
     private var badgeContainerWidth: NSLayoutConstraint?
     
     open override var contentInset: UIEdgeInsets {
@@ -98,17 +99,19 @@ open class TMLabelBarButton: TMBarButton {
         view.addSubview(badgeContainer)
         label.translatesAutoresizingMaskIntoConstraints = false
         badgeContainer.translatesAutoresizingMaskIntoConstraints = false
+        let badgeContainerLeading = badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor)
         let badgeContainerWidth = badgeContainer.widthAnchor.constraint(equalToConstant: 0.0)
         let constraints = [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             label.topAnchor.constraint(equalTo: view.topAnchor),
             view.bottomAnchor.constraint(equalTo: label.bottomAnchor),
-            badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.badgeLeadingInset),
+            badgeContainerLeading,
             badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
             view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
             view.bottomAnchor.constraint(equalTo: badgeContainer.bottomAnchor),
             badgeContainerWidth
         ]
+        self.badgeContainerLeading = badgeContainerLeading
         self.badgeContainerWidth = badgeContainerWidth
         
         NSLayoutConstraint.activate(constraints)
@@ -120,7 +123,6 @@ open class TMLabelBarButton: TMBarButton {
         selectedTintColor = tintColor
         tintColor = .black
         self.contentInset = Defaults.contentInset
-        badgeContainer.clipsToBounds = true
         
         calculateFontIntrinsicContentSize(for: label.text)
     }
@@ -143,7 +145,9 @@ open class TMLabelBarButton: TMBarButton {
         label.text = item.title
         calculateFontIntrinsicContentSize(for: item.title)
     
-        badgeContainerWidth?.constant = badge.value == nil ? 0.0 : badge.bounds.size.width
+        let isBadgeVisible = badge.value != nil
+        badgeContainerWidth?.constant =  isBadgeVisible ? badge.bounds.size.width : 0.0
+        badgeContainerLeading?.constant = isBadgeVisible ? Defaults.badgeLeadingInset : 0.0
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
