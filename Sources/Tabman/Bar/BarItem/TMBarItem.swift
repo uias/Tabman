@@ -25,7 +25,7 @@ public protocol TMBarItemable: class {
     var image: UIImage? { get }
     
     /// Badge value to display.
-    var badgeValue: String? { get }
+    var badgeValue: String? { get set }
     
     /// Inform the bar that the item has been updated.
     ///

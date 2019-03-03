@@ -15,8 +15,12 @@ extension UINavigationItem: TMBarItemable {
         return nil
     }
     
+    //swiftlint:disable unused_setter_value
     public var badgeValue: String? {
-        return nil
+        get {
+            return nil
+        }
+        set {}
     }
 }
 

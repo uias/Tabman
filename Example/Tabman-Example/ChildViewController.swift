@@ -41,6 +41,6 @@ class ChildViewController: UIViewController {
     
     @IBAction private func badge(_ sender: UIButton) {
         badgeCount += 1
-        tabmanBarItems?.compactMap({ $0 as? TMBarItem }).forEach({ $0.badgeValue = "\(badgeCount)" })
+        tabmanBarItems?.forEach({ $0.badgeValue = "\(badgeCount)" })
     }
 }
