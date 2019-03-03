@@ -13,6 +13,6 @@ public extension UIViewController {
     
     /// Parent TabmanViewController if it exists.
     public var tabmanParent: TabmanViewController? {
-        return parentPageboy as? TabmanViewController
+        return pageboyParent as? TabmanViewController
     }
 }
