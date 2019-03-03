@@ -121,6 +121,25 @@ class CustomBarButton: TMBarButton {
 }
 ```
 
+#### Badges & Other Extras
+`TMBarButton` has a `TMBadgeView` property (`.badge`) which can be used to display badge values on an individual button. Due to the nature of how custom a button is, Tabman does not attempt to layout this view automatically. To add support (or not) for badge views to your button, simply override the following:
+
+```swift
+override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
+
+	view.addSubview(badge)
+	badge.translatesAutoresizingMaskIntoConstraints = false
+
+	// Constrain to top right corner of button.
+	NSLayoutConstraint.activate([
+		badge.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+		badge.topAnchor.constraint(equalTo: view.topAnchor)
+	])
+}
+```
+
+*The badge value is automatically applied in `populate(for item:)` in `TMBarButton`.*
+
 ### State
 One of the key responsibilities of a bar button is to display state, whether it is currently selected or unselected; and also to be able to smoothly interpolate between these two states. `TMBarButton.SelectionState` is used to handle this.
 
