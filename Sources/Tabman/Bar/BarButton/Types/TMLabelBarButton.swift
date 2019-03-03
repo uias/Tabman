@@ -19,6 +19,7 @@ open class TMLabelBarButton: TMBarButton {
         static let contentInset = UIEdgeInsets(top: 12.0, left: 0.0, bottom: 12.0, right: 0.0)
         static let font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
         static let text = "Item"
+        static let badgeLeadingInset: CGFloat = 8.0
     }
     
     // MARK: Properties
@@ -102,7 +103,7 @@ open class TMLabelBarButton: TMBarButton {
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             label.topAnchor.constraint(equalTo: view.topAnchor),
             view.bottomAnchor.constraint(equalTo: label.bottomAnchor),
-            badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor),
+            badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.badgeLeadingInset),
             badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
             view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
             view.bottomAnchor.constraint(equalTo: badgeContainer.bottomAnchor),
@@ -122,8 +123,6 @@ open class TMLabelBarButton: TMBarButton {
         badgeContainer.clipsToBounds = true
         
         calculateFontIntrinsicContentSize(for: label.text)
-        
-        badgeContainer.backgroundColor = .red
     }
     
     open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
