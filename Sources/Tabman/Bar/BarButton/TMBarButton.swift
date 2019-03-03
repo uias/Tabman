@@ -143,6 +143,9 @@ open class TMBarButton: UIControl {
     
     // MARK: Lifecycle
     
+    /// Layout the Bar Button.
+    ///
+    /// - Parameter view: The view to use as the root of the button.
     open func layout(in view: UIView) {
     }
     
@@ -162,6 +165,9 @@ open class TMBarButton: UIControl {
         updateBadgeVisibility(false, animated: false)
     }
     
+    /// Populate the button with a bar item.
+    ///
+    /// - Parameter item: Item to populate.
     open func populate(for item: TMBarItemable) {
         let showBadge = item.badgeValue != nil
         badge.value = item.badgeValue
@@ -169,6 +175,9 @@ open class TMBarButton: UIControl {
         badgeContainer.isHidden = badge.isHidden
     }
     
+    /// Update the button for a new selection state.
+    ///
+    /// - Parameter selectionState: Selection state.
     open func update(for selectionState: SelectionState) {
         let minimumAlpha: CGFloat = 0.5
         let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
