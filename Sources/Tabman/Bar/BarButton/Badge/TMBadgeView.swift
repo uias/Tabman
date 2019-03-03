@@ -25,10 +25,11 @@ open class TMBadgeView: UIView {
     private let label = UILabel()
     
     internal var value: String? {
-        set {
-            label.text = newValue
-        } get {
-            return label.text
+        didSet {
+            if value != nil {
+                label.text = value
+            }
+            updateContentVisibility(for: value, animated: true)
         }
     }
     internal var attributedValue: NSAttributedString? {
@@ -101,6 +102,7 @@ open class TMBadgeView: UIView {
         tintColor = Defaults.tintColor
         
         label.text = "."
+        updateContentVisibility(for: nil, animated: false)
     }
     
     // MARK: Lifecycle
@@ -109,5 +111,48 @@ open class TMBadgeView: UIView {
         super.layoutSubviews()
         
         contentView.layer.cornerRadius = bounds.size.height / 2.0
+    }
+    
+    // MARK: Animations
+    
+    private func updateContentVisibility(for value: String?, animated: Bool) {
+        switch value {
+        case .none: // hidden
+            guard !isHidden else {
+                return
+            }
+            guard animated else {
+                isHidden = true
+                return
+            }
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                self.contentView.alpha = 0.0
+                self.contentView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            }, completion: { (isFinished) in
+                if isFinished {
+                    self.contentView.transform = .identity
+                    self.isHidden = true
+                    self.contentView.alpha = 1.0
+                }
+            })
+            
+        case .some: // visible
+            guard isHidden else {
+                return
+            }
+            guard animated else {
+                isHidden = false
+                return
+            }
+            
+            contentView.alpha = 0.0
+            isHidden = false
+            self.contentView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+            UIView.animate(withDuration: 0.2) {
+                self.contentView.alpha = 1.0
+                self.contentView.transform = .identity
+            }
+        }
     }
 }

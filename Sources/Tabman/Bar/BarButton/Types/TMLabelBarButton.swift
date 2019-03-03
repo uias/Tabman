@@ -143,7 +143,7 @@ open class TMLabelBarButton: TMBarButton {
         label.text = item.title
         calculateFontIntrinsicContentSize(for: item.title)
     
-        badgeContainerWidth?.constant = badge.isHidden ? 0.0 : badge.bounds.size.width
+        badgeContainerWidth?.constant = badge.value == nil ? 0.0 : badge.bounds.size.width
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
