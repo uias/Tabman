@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Tabman
 
 class ChildViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var promptLabel: UILabel!
 
+    private var badgeCount = 0
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
@@ -23,7 +26,7 @@ class ChildViewController: UIViewController {
     }
     
     private func updateIndexLabel() {
-        if let index = (parentPageboy as? TabPageViewController)?.viewControllers.index(of: self) {
+        if let index = (pageboyParent as? TabPageViewController)?.viewControllers.index(of: self) {
             label.text = "Page " + String(index + 1)
             
             let isFirstPage = index == 0
@@ -34,5 +37,10 @@ class ChildViewController: UIViewController {
             }
             promptLabel.text = prompt
         }
+    }
+    
+    @IBAction private func badge(_ sender: UIButton) {
+        badgeCount += 1
+        tabmanBarItems?.compactMap({ $0 as? TMBarItem }).forEach({ $0.badgeValue = "\(badgeCount)" })
     }
 }

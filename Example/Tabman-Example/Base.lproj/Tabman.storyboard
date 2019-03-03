@@ -134,11 +134,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20n-cj-vBI">
+                                <rect key="frame" x="165.5" y="364" width="44" height="30"/>
+                                <state key="normal" title="Badge"/>
+                                <connections>
+                                    <action selector="badge:" destination="H7W-RR-GRb" eventType="touchUpInside" id="A6B-bQ-bcj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="20n-cj-vBI" firstAttribute="centerX" secondItem="454-9C-Wci" secondAttribute="centerX" id="9af-gv-49L"/>
                             <constraint firstItem="0cc-Dw-8mt" firstAttribute="centerX" secondItem="sgk-Ra-mVU" secondAttribute="centerX" id="EYF-z1-2o5"/>
                             <constraint firstItem="bIS-p2-cmU" firstAttribute="centerX" secondItem="sgk-Ra-mVU" secondAttribute="centerX" id="MzV-na-IoD"/>
+                            <constraint firstItem="20n-cj-vBI" firstAttribute="top" secondItem="0cc-Dw-8mt" secondAttribute="bottom" constant="16" id="fs8-tD-zXi"/>
                             <constraint firstItem="0cc-Dw-8mt" firstAttribute="centerY" secondItem="454-9C-Wci" secondAttribute="centerY" id="gNX-2D-f5g"/>
                             <constraint firstItem="bIS-p2-cmU" firstAttribute="top" secondItem="0cc-Dw-8mt" secondAttribute="bottom" constant="8" id="pJX-lJ-MwA"/>
                         </constraints>
