@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Badge that displays a label inside a colored eliptical view.
 open class TMBadgeView: UIView {
     
     // MARK: Defaults
@@ -24,6 +25,7 @@ open class TMBadgeView: UIView {
     private let contentView = UIView()
     private let label = UILabel()
     
+    /// Value to display.
     internal var value: String? {
         didSet {
             if value != nil {
@@ -32,6 +34,7 @@ open class TMBadgeView: UIView {
             updateContentVisibility(for: value)
         }
     }
+    /// Attributed value to display.
     internal var attributedValue: NSAttributedString? {
         set {
             label.attributedText = newValue
@@ -39,6 +42,7 @@ open class TMBadgeView: UIView {
             return label.attributedText
         }
     }
+    /// Font for the label.
     open var font: UIFont {
         set {
             label.font = newValue
@@ -46,6 +50,7 @@ open class TMBadgeView: UIView {
             return label.font
         }
     }
+    /// Text color of the label.
     open var textColor: UIColor {
         set {
             label.textColor = newValue
@@ -53,6 +58,7 @@ open class TMBadgeView: UIView {
             return label.textColor
         }
     }
+    /// Tint which is used as background color.
     open override var tintColor: UIColor! {
         didSet {
             contentView.backgroundColor = tintColor
