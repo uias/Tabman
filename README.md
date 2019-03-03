@@ -25,7 +25,7 @@
 - Easy to implement page view controller with interactive indicator bars.
 - Highly adaptable and powerful customization.
 - Fully extensible with mix-and-match component library.
-- Built on [Pageboy](https://github.com/uias/Pageboy), a powerful, informative page view controller.
+- Built on [Pageboy](https://github.com/uias/Pageboy), a simple, informative page view controller.
 - Automatically insets child view controller contents.
 
 ## 📋 Requirements
