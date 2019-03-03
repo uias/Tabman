@@ -173,7 +173,8 @@ open class TMBarButton: UIControl {
         if showBadge {
             badge.value = item.badgeValue
         }
-        updateBadgeVisibility(showBadge, animated: true)
+        badge.isHidden = !showBadge
+        badgeContainer.isHidden = badge.isHidden
     }
     
     /// Update the button for a new selection state.
@@ -213,50 +214,5 @@ extension TMBarButton.SelectionState: Equatable {
     
     public static func == (lhs: TMBarButton.SelectionState, rhs: TMBarButton.SelectionState) -> Bool {
         return lhs.rawValue == rhs.rawValue
-    }
-}
-
-extension TMBarButton {
-    
-    private func updateBadgeVisibility(_ isVisible: Bool, animated: Bool) {
-        guard !badge.isHidden != isVisible else {
-            return
-        }
-        
-        if isVisible {
-            guard animated else {
-                badge.isHidden = false
-                badgeContainer.isHidden = false
-                return
-            }
-            
-            badge.alpha = 0.0
-            badge.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-            badge.isHidden = false
-            badgeContainer.isHidden = false
-
-            UIView.animate(withDuration: 0.2) {
-                self.badge.transform = .identity
-                self.badge.alpha = 1.0
-            }
-        } else {
-            guard animated else {
-                badge.isHidden = true
-                badgeContainer.isHidden = true
-                return
-            }
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                self.badge.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-                self.badge.alpha = 0.0
-            }, completion: { (isFinished) in
-                if isFinished {
-                    self.badge.isHidden = true
-                    self.badgeContainer.isHidden = true
-                    self.badge.transform = .identity
-                    self.badge.alpha = 1.0
-                }
-            })
-        }
     }
 }

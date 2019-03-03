@@ -40,7 +40,7 @@ class ChildViewController: UIViewController {
     }
     
     @IBAction private func badge(_ sender: UIButton) {
-        badgeCount += 1
-        tabmanBarItems?.forEach({ $0.badgeValue = "\(badgeCount)" })
+        badgeCount = badgeCount == 0 ? 1 : 0
+        tabmanBarItems?.forEach({ $0.badgeValue = badgeCount == 1 ? "\(badgeCount)" : nil })
     }
 }
