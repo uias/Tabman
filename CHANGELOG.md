@@ -36,6 +36,7 @@ Released on 2019-01-14
 - [#363](https://github.com/uias/Tabman/issues/363) `.alignment` property to `TMBarLayout` to adjust content alignment.
 - [#378](https://github.com/uias/Tabman/pull/378) `.spacing` property to `TMBarView` to adjust spacing between bar content / accessory views.
 - [#373](https://github.com/uias/Tabman/pull/373) `setNeedsUpdate()` to `TMBarItemable` to allow for dynamic item updates. 
+- [#387](https://github.com/uias/Tabman/issues/387) Ability to show badges on `TMBarButton`.
 
 #### Updated
 - [#378](https://github.com/uias/Tabman/pull/378) Improved bar transitioning behavior when adjusting selected tab.
