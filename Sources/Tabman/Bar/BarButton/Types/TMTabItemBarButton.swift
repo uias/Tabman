@@ -181,7 +181,7 @@ open class TMTabItemBarButton: TMBarButton {
                 imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Defaults.imagePadding),
                 imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: Defaults.imagePadding),
                 container.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.imagePadding),
-                label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Defaults.imagePadding),
+                label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Defaults.labelPadding),
                 label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: Defaults.labelPadding),
                 container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
                 container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
@@ -218,7 +218,7 @@ extension TMTabItemBarButton {
     private func defaultFont(for device: UIDevice) -> UIFont {
         switch device.userInterfaceIdiom {
         case .pad:
-            return UIFont.systemFont(ofSize: 13.0, weight: .medium)
+            return UIFont.systemFont(ofSize: 14.0, weight: .medium)
         default:
             return UIFont.systemFont(ofSize: 10.0, weight: .medium)
         }
