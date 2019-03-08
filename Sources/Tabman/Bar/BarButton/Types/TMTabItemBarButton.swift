@@ -165,51 +165,76 @@ open class TMTabItemBarButton: TMBarButton {
         }
         NSLayoutConstraint.deactivate(componentConstraints ?? [])
         
-        var constraints = [NSLayoutConstraint]()
+        let constraints: [NSLayoutConstraint]
         if orientation.isLandscape || traitCollection.horizontalSizeClass == .regular {
             
-            constraints.append(contentsOf: [
-                container.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor),
-                container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
-                parent.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor),
-                parent.bottomAnchor.constraint(greaterThanOrEqualTo: container.bottomAnchor),
-                container.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-                container.centerYAnchor.constraint(greaterThanOrEqualTo: parent.centerYAnchor)
-                ])
+            let imagePadding = traitCollection.horizontalSizeClass == .compact ? Defaults.imagePadding / 2 : Defaults.imagePadding
+            let labelPadding = Defaults.labelPadding
             
-            constraints.append(contentsOf: [
-                imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Defaults.imagePadding),
-                imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: Defaults.imagePadding),
-                container.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.imagePadding),
-                label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Defaults.labelPadding),
-                label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: Defaults.labelPadding),
-                container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-                container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
-                label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-                ])
-            
+            constraints = makeHorizontalAlignedConstraints(in: parent,
+                                                           imagePadding: imagePadding,
+                                                           labelPadding: labelPadding)
         } else {
             
-            constraints.append(contentsOf: [
-                container.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
-                container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
-                parent.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-                parent.bottomAnchor.constraint(equalTo: container.bottomAnchor)
-                ])
+            let imagePadding = Defaults.imagePadding
+            let labelPadding =  Defaults.labelPadding
             
-            constraints.append(contentsOf: [
-                imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: Defaults.imagePadding),
-                imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: Defaults.imagePadding),
-                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
-                label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Defaults.labelPadding),
-                container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-                label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
-            ])
+            constraints = makeVerticalAlignedConstraints(in: parent,
+                                                         imagePadding: imagePadding,
+                                                         labelPadding: labelPadding)
         }
         
         componentConstraints = constraints
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    private func makeHorizontalAlignedConstraints(in parent: UIView,
+                                                  imagePadding: CGFloat,
+                                                  labelPadding: CGFloat) -> [NSLayoutConstraint] {
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(contentsOf: [
+            container.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor),
+            container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
+            parent.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor),
+            parent.bottomAnchor.constraint(greaterThanOrEqualTo: container.bottomAnchor),
+            container.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+            container.centerYAnchor.constraint(greaterThanOrEqualTo: parent.centerYAnchor)
+            ])
+        
+        constraints.append(contentsOf: [
+            imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: imagePadding),
+            imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
+            container.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: imagePadding),
+            label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: labelPadding),
+            label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: labelPadding),
+            container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
+            container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: labelPadding),
+            label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+            ])
+        return constraints
+    }
+    
+    private func makeVerticalAlignedConstraints(in parent: UIView,
+                                                imagePadding: CGFloat,
+                                                labelPadding: CGFloat) -> [NSLayoutConstraint] {
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(contentsOf: [
+            container.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+            container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
+            parent.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            parent.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            ])
+        
+        constraints.append(contentsOf: [
+            imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
+            imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: imagePadding),
+            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: labelPadding),
+            container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
+            label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            ])
+        return constraints
     }
 }
 
