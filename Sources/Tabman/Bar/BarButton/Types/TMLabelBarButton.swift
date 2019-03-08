@@ -139,15 +139,20 @@ open class TMLabelBarButton: TMBarButton {
             ])
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        badge.layoutIfNeeded()
+        updateBadgeConstraints()
+    }
+    
     open override func populate(for item: TMBarItemable) {
         super.populate(for: item)
         
         label.text = item.title
         calculateFontIntrinsicContentSize(for: item.title)
     
-        let isBadgeVisible = badge.value != nil
-        badgeContainerWidth?.constant =  isBadgeVisible ? badge.bounds.size.width : 0.0
-        badgeContainerLeading?.constant = isBadgeVisible ? Defaults.badgeLeadingInset : 0.0
+        updateBadgeConstraints()
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
@@ -170,6 +175,14 @@ open class TMLabelBarButton: TMBarButton {
                 }, completion: nil)
             }
         }
+    }
+    
+    // MARK: Layout
+    
+    private func updateBadgeConstraints() {
+        let isBadgeVisible = badge.value != nil
+        badgeContainerWidth?.constant =  isBadgeVisible ? badge.bounds.size.width : 0.0
+        badgeContainerLeading?.constant = isBadgeVisible ? Defaults.badgeLeadingInset : 0.0
     }
 }
 
