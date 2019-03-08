@@ -171,6 +171,7 @@ bar.buttons.customize { (button) in
 - `backgroundView` - `TMBarBackgroundView` which provides background styling.
 - `contentInset` - Inset to be applied to the edges of the button.
 - `transitionStyle` (`TMBarButtonCollection`) - How the buttons should should perform transition animations.
+- `badge` - `TMBadgeView` that displays `badgeValue` from bar item.
 
 **More: [**TMBarButton Docs**](https://uias.github.io/Tabman/master/Buttons.html)**
 
