@@ -103,7 +103,7 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 }
 ```
 
-*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`.*
+*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`. However they don't support dynamic updating, such as setting `.title` after it has been provided to the data source.*
 
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
