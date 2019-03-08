@@ -166,6 +166,7 @@ bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right:
 - `contentMode` - How the layout should display its contents; either restricted to the bar width with `.fit` or intrinsically sized with `.intrinsic`.
 - `contentInset` - Inset to be applied to the edges of the layout.
 - `transitionStyle` - How the layout should perform transition animations.
+- `alignment` - How the layout should be aligned in the bar.
 
 **More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
 
