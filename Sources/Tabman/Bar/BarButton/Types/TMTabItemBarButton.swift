@@ -30,6 +30,9 @@ open class TMTabItemBarButton: TMBarButton {
     private var imageWidth: NSLayoutConstraint!
     private var imageHeight: NSLayoutConstraint!
     
+    private var componentLayoutView: UIView?
+    private var componentConstraints: [NSLayoutConstraint]?
+    
     // MARK: Customization
     
     /// Tint color of the button when unselected / normal.
@@ -91,6 +94,7 @@ open class TMTabItemBarButton: TMBarButton {
     
     open override func layout(in view: UIView) {
         super.layout(in: view)
+        componentLayoutView = view
         
         label.textAlignment = .center
         
@@ -100,17 +104,6 @@ open class TMTabItemBarButton: TMBarButton {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        // core layout
-        let constraints = [
-            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Defaults.imagePadding),
-            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: Defaults.imagePadding),
-            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Defaults.labelPadding),
-            view.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         
         // set image size
@@ -156,5 +149,49 @@ open class TMTabItemBarButton: TMBarButton {
             let interpolatedScale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.shrunkenImageScale))
             imageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
         }
+    }
+    
+    // MARK: Layout
+    
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if let view = componentLayoutView {
+            makeComponentConstraints(for: UIDevice.current.orientation, parent: view)
+        }
+    }
+    
+    private func makeComponentConstraints(for orientation: UIDeviceOrientation, parent: UIView) {
+        NSLayoutConstraint.deactivate(componentConstraints ?? [])
+        
+        let constraints: [NSLayoutConstraint]
+        if orientation.isPortrait {
+            
+            constraints = [
+                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
+                imageView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor, constant: Defaults.imagePadding),
+                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
+                label.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.labelPadding),
+                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
+                label.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
+            ]
+            
+        } else {
+            
+            constraints = [
+                imageView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.imagePadding),
+                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
+                parent.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.imagePadding),
+                label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Defaults.imagePadding),
+                label.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor, constant: Defaults.labelPadding),
+                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
+                parent.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
+                label.centerYAnchor.constraint(equalTo: parent.centerYAnchor)
+            ]
+        }
+        
+        componentConstraints = constraints
+        NSLayoutConstraint.activate(constraints)
     }
 }
