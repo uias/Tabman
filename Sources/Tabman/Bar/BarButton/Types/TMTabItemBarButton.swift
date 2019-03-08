@@ -165,19 +165,7 @@ open class TMTabItemBarButton: TMBarButton {
         NSLayoutConstraint.deactivate(componentConstraints ?? [])
         
         let constraints: [NSLayoutConstraint]
-        if orientation.isPortrait {
-            
-            constraints = [
-                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
-                imageView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor, constant: Defaults.imagePadding),
-                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
-                label.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.labelPadding),
-                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-                label.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
-            ]
-            
-        } else {
+        if orientation.isLandscape || traitCollection.horizontalSizeClass == .regular {
             
             constraints = [
                 imageView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.imagePadding),
@@ -188,6 +176,18 @@ open class TMTabItemBarButton: TMBarButton {
                 parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
                 parent.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
                 label.centerYAnchor.constraint(equalTo: parent.centerYAnchor)
+            ]
+            
+        } else {
+            
+            constraints = [
+                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
+                imageView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor, constant: Defaults.imagePadding),
+                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
+                label.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.labelPadding),
+                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
+                label.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
             ]
         }
         
