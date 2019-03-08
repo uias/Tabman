@@ -20,11 +20,12 @@ class ChildViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         updateIndexLabel()
     }
     
     private func updateIndexLabel() {
-        if let index = (pageboyParent as? TabPageViewController)?.viewControllers.index(of: self) {
+        if let index = pageboyPageIndex {
             label.text = "Page " + String(index + 1)
             
             let isFirstPage = index == 0
