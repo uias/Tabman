@@ -63,7 +63,7 @@ open class TMTabItemBarButton: TMBarButton {
         }
     }
     /// Font of the text label.
-    open var font: UIFont = UIFont.systemFont(ofSize: 12.0, weight: .medium) {
+    open var font: UIFont! {
         didSet {
             label.font = font
         }
@@ -95,8 +95,6 @@ open class TMTabItemBarButton: TMBarButton {
     open override func layout(in view: UIView) {
         super.layout(in: view)
         
-        label.textAlignment = .center
-        
         view.addSubview(container)
         container.addSubview(imageView)
         container.addSubview(label)
@@ -115,8 +113,9 @@ open class TMTabItemBarButton: TMBarButton {
         
         selectedTintColor = tintColor
         tintColor = .black
-        label.font = self.font
+        font = defaultFont(for: .current)
         label.text = "Item"
+        label.textAlignment = .center
     }
     
     open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
@@ -211,5 +210,17 @@ open class TMTabItemBarButton: TMBarButton {
         
         componentConstraints = constraints
         NSLayoutConstraint.activate(constraints)
+    }
+}
+
+extension TMTabItemBarButton {
+    
+    private func defaultFont(for device: UIDevice) -> UIFont {
+        switch device.userInterfaceIdiom {
+        case .pad:
+            return UIFont.systemFont(ofSize: 13.0, weight: .medium)
+        default:
+            return UIFont.systemFont(ofSize: 10.0, weight: .medium)
+        }
     }
 }
