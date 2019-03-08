@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461196EC222004EF0033FE04 /* TMBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461196EB222004EF0033FE04 /* TMBadgeView.swift */; };
+		4611970E2221B7E70033FE04 /* UIViewController+Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */; };
 		4612BCF220C88D24001A37B5 /* TMBar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* TMBar+Templates.swift */; };
 		4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BD1020C9B851001A37B5 /* BarMath.swift */; };
 		4613CBF2214187EE000E6766 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		461196EB222004EF0033FE04 /* TMBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBadgeView.swift; sourceTree = "<group>"; };
+		4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Tabman.swift"; sourceTree = "<group>"; };
 		4612BCF120C88D24001A37B5 /* TMBar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMBar+Templates.swift"; sourceTree = "<group>"; };
 		4612BD1020C9B851001A37B5 /* BarMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMath.swift; sourceTree = "<group>"; };
 		4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
@@ -158,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461196EA222004E30033FE04 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				461196EB222004EF0033FE04 /* TMBadgeView.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 		4612BD0F20C9B7F5001A37B5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				464264DC217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift */,
+				4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +319,7 @@
 				46E96317211B3A01004C7468 /* TMBarButtonInteractionController.swift */,
 				46E96318211B3A01004C7468 /* TMBarButtonCollection.swift */,
 				46CCBAD12174BDF600C370E1 /* Types */,
+				461196EA222004E30033FE04 /* Badge */,
 			);
 			path = BarButton;
 			sourceTree = "<group>";
@@ -550,6 +564,7 @@
 				46CCBADC2174BE0900C370E1 /* TMHorizontalBarLayout.swift in Sources */,
 				462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */,
 				462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */,
+				461196EC222004EF0033FE04 /* TMBadgeView.swift in Sources */,
 				46CCBAE22174BE1900C370E1 /* TMBarIndicator+None.swift in Sources */,
 				462F7F31217387E50036080C /* TMBarViewScrollHandler.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
@@ -572,6 +587,7 @@
 				46CCBAD72174BDF600C370E1 /* TMBarButton+None.swift in Sources */,
 				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,
 				46196A502179C7C800B51D0F /* UIKit+TMBarItemable.swift in Sources */,
+				4611970E2221B7E70033FE04 /* UIViewController+Tabman.swift in Sources */,
 				D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */,
 				46E598EF2168FD3200D8A138 /* TMBarBackgroundView.swift in Sources */,
 				4628609A213EDB63009C707F /* TMBarViewFocusRect.swift in Sources */,

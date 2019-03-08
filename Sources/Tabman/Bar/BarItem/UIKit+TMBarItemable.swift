@@ -10,9 +10,21 @@ import UIKit
 
 /// :nodoc:
 extension UINavigationItem: TMBarItemable {
-    
+
+    //swiftlint:disable unused_setter_value
+
     public var image: UIImage? {
-        return nil
+        set {}
+        get {
+            return nil
+        }
+    }
+    
+    public var badgeValue: String? {
+        set {}
+        get {
+            return nil
+        }
     }
 }
 

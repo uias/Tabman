@@ -50,6 +50,7 @@ class TabPageViewController: TabmanViewController {
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
+        bar.spacing = 16.0
         
         // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)
@@ -166,7 +167,7 @@ class TabPageViewController: TabmanViewController {
 }
 
 // MARK: PageboyViewControllerDataSource
-extension TabPageViewController: PageboyViewControllerDataSource {
+extension TabPageViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         let count = viewControllers.count
@@ -182,9 +183,6 @@ extension TabPageViewController: PageboyViewControllerDataSource {
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
-}
-
-extension TabPageViewController: TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: "Page No. \(index + 1)",

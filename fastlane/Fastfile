@@ -18,7 +18,7 @@ platform :ios do
   lane :test do
     bootstrap
     scan(workspace: "Tabman.xcworkspace", scheme: "Tabman", clean: true)
-    pod_lib_lint(verbose: false, allow_warnings: true)
+    #pod_lib_lint(verbose: false, allow_warnings: true)
   end
 
   desc "Deploy a new version to CocoaPods and GitHub"

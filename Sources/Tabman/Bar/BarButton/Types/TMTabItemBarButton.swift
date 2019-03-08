@@ -19,6 +19,7 @@ open class TMTabItemBarButton: TMBarButton {
         static let labelPadding: CGFloat = 4.0
         static let labelTopPadding: CGFloat = 6.0
         static let shrunkenImageScale: CGFloat = 0.9
+        static let badgeInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 0.0, right: 4.0)
     }
     
     // MARK: Properties
@@ -122,6 +123,18 @@ open class TMTabItemBarButton: TMBarButton {
         tintColor = .black
         label.font = self.font
         label.text = "Item"
+    }
+    
+    open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
+        super.layoutBadge(badge, in: view)
+        
+        let insets = Defaults.badgeInsets
+        view.addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            badge.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
+            view.trailingAnchor.constraint(equalTo: badge.trailingAnchor, constant: insets.right)
+            ])
     }
     
     open override func populate(for item: TMBarItemable) {
