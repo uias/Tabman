@@ -34,7 +34,15 @@ Released on TBD
 
 #### Updated
 - Make `TMBarItem` `open`.
-- Make `title`, `image`, and `badgeValue` open on `TMBarItem`.
+- Make `.title` open on `TMBarItem`.
+- Make `.image` open on `TMBarItem`.
+- Make `.badgeValue` open on `TMBarItem`.
+- Make `.items` `open` on `TMBarView`.
+- Make `.dataSource` `open` on `TMBarView`.
+- Make `.delegate` `open` on `TMBarView`.
+- Make `.scrollMode` `open` on `TMBarView`.
+- Make `.fadesContentEdges` `open` on `TMBarView`.
+- Make `.spacing` `open` on `TMBarView`.
 
 ---
 ## [2.2.0](https://github.com/uias/Tabman/releases/tag/2.2.0)
