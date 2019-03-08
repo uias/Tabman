@@ -1,2 +1,2 @@
-github "uias/Pageboy" "3.1.0"
+github "uias/Pageboy" ~> 3.1
 github "uias/AutoInsetter" ~> 1.5
