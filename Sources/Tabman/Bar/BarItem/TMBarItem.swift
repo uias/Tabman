@@ -44,22 +44,22 @@ extension TMBarItemable {
 }
 
 /// Default `TMBarItemable` that can be displayed in a `TMBar`.
-public final class TMBarItem: TMBarItemable {
+open class TMBarItem: TMBarItemable {
     
     // MARK: Properties
     
-    public var title: String? {
+    open var title: String? {
         didSet  {
             setNeedsUpdate()
         }
     }
-    public var image: UIImage?  {
+    open var image: UIImage?  {
         didSet {
             setNeedsUpdate()
         }
     }
     
-    public var badgeValue: String? {
+    open var badgeValue: String? {
         didSet {
             setNeedsUpdate()
         }
