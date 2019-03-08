@@ -334,8 +334,24 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
+<h3 id='bar-items' class='heading'>Bar Items</h3>
 
-<p><em>UIKit objects such as <code>UINavigationItem</code> and <code>UITabBarItem</code> also conform to <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code>. However they don&rsquo;t support dynamic updating, such as setting <code>.title</code> after it has been provided to the data source.</em></p>
+<p>A bar will ask for a <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code> for each page that is provided to the <code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code> <code>dataSource</code>. <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code> is a  protocol that can be used for custom item types, the default in Tabman being <code><a href="Classes/TMBarItem.html">TMBarItem</a></code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="kt">TMBarItem</span><span class="p">()</span>
+<span class="n">item</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Item 1"</span>
+<span class="n">item</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"item.png"</span><span class="p">)</span>
+<span class="n">item</span><span class="o">.</span><span class="n">badgeValue</span> <span class="o">=</span> <span class="s">"New"</span>
+</code></pre>
+<h4 id='uikit-itemables' class='heading'>UIKit Itemables</h4>
+
+<p>Tabman also provides support for some native <code>UIKit</code> types as <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code>:</p>
+
+<ul>
+<li><code>UINavigationItem</code></li>
+<li><code>UITabBarItem</code></li>
+</ul>
+
+<p><em>These types are unfortunately unable to support the dynamic updating of the bar when setting properties.</em></p>
 <h3 id='choosing-a-look' class='heading'>Choosing a look</h3>
 
 <p>Tabman provides numerous, easy to use template styles out of the box:</p>
