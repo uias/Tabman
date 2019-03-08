@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Badge that displays a label inside a colored eliptical view.
+///
 open class TMBadgeView: UIView {
     
     // MARK: Defaults

@@ -36,14 +36,14 @@ Tabman requires iOS 9; and is written in Swift 4.
 Tabman is available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod 'Tabman', '~> 2.1'
+pod 'Tabman', '~> 2.2'
 ```
 
 ### Carthage
 Tabman is also available through [Carthage](https://github.com/Carthage/Carthage):
 
 ```ogdl
-github "uias/Tabman" ~> 2.1
+github "uias/Tabman" ~> 2.2
 ```
 
 ## 🚀 Usage
