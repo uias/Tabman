@@ -24,9 +24,9 @@ custom_categories:
     - Going Custom
     - Contributing
     - Changelog
-    - Tabman 2 Migration Guide
     - Troubleshooting
-    
+    - Tabman 2 Migration Guide
+
   - name: View Controller
     children:
     - TabmanViewController
@@ -53,6 +53,7 @@ custom_categories:
     - TMBarButtonCollection
     - TMLabelBarButton
     - TMTabItemBarButton
+    - TMBadgeView
 
   - name: Indicator
     children:

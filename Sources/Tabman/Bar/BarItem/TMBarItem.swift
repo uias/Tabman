@@ -20,9 +20,9 @@ internal let TMBarItemableNeedsUpdateNotification = Notification.Name(rawValue: 
 public protocol TMBarItemable: class {
     
     /// Title of the item.
-    var title: String? { get }
+    var title: String? { get set }
     /// Image to display.
-    var image: UIImage? { get }
+    var image: UIImage? { get set }
     
     /// Badge value to display.
     var badgeValue: String? { get set }
@@ -69,16 +69,20 @@ public final class TMBarItem: TMBarItemable {
     
     /// Create an Item with a title.
     ///
-    /// - Parameter title: Title of the item.
-    public convenience init(title: String) {
-        self.init(with: title, image: nil)
+    /// - Parameters:
+    ///   - title: Title of the item.
+    ///   - badgeValue: Badge value to display.
+    public convenience init(title: String, badgeValue: String? = nil) {
+        self.init(with: title, image: nil, badgeValue: badgeValue)
     }
     
     /// Create an Item with an image.
     ///
-    /// - Parameter image: Image of the item.
-    public convenience init(image: UIImage) {
-        self.init(with: nil, image: image)
+    /// - Parameters:
+    ///   - image: Image of the item.
+    ///   - badgeValue: Badge value to display.
+    public convenience init(image: UIImage, badgeValue: String? = nil) {
+        self.init(with: nil, image: image, badgeValue: badgeValue)
     }
     
     /// Create an Item with a title and an image.
@@ -86,12 +90,14 @@ public final class TMBarItem: TMBarItemable {
     /// - Parameters:
     ///   - title: Title of the item.
     ///   - image: Image of the item.
-    public convenience init(title: String, image: UIImage) {
-        self.init(with: title, image: image)
+    ///   - badgeValue: Badge value to display.
+    public convenience init(title: String, image: UIImage, badgeValue: String? = nil) {
+        self.init(with: title, image: image, badgeValue: badgeValue)
     }
     
-    private init(with title: String?, image: UIImage?) {
+    private init(with title: String?, image: UIImage?, badgeValue: String?) {
         self.title = title
         self.image = image
+        self.badgeValue = badgeValue
     }
 }

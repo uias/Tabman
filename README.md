@@ -36,14 +36,14 @@ Tabman requires iOS 9; and is written in Swift 4.
 Tabman is available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod 'Tabman', '~> 2.1'
+pod 'Tabman', '~> 2.2'
 ```
 
 ### Carthage
 Tabman is also available through [Carthage](https://github.com/Carthage/Carthage):
 
 ```ogdl
-github "uias/Tabman" ~> 2.1
+github "uias/Tabman" ~> 2.2
 ```
 
 ## 🚀 Usage
@@ -103,7 +103,23 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 }
 ```
 
-*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`.*
+### Bar Items
+A bar will ask for a `TMBarItemable` for each page that is provided to the `TabmanViewController` `dataSource`. `TMBarItemable` is a  protocol that can be used for custom item types, the default in Tabman being `TMBarItem`:
+
+```swift
+let item = TMBarItem()
+item.title = "Item 1"
+item.image = UIImage(named: "item.png")
+item.badgeValue = "New"
+```
+
+#### UIKit Itemables
+
+Tabman also provides support for some native `UIKit` types as `TMBarItemable`:
+- `UINavigationItem`
+- `UITabBarItem`
+
+*These types are unfortunately unable to support the dynamic updating of the bar when setting properties.*
 
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
@@ -150,6 +166,7 @@ bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right:
 - `contentMode` - How the layout should display its contents; either restricted to the bar width with `.fit` or intrinsically sized with `.intrinsic`.
 - `contentInset` - Inset to be applied to the edges of the layout.
 - `transitionStyle` - How the layout should perform transition animations.
+- `alignment` - How the layout should be aligned in the bar.
 
 **More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
 
@@ -171,6 +188,7 @@ bar.buttons.customize { (button) in
 - `backgroundView` - `TMBarBackgroundView` which provides background styling.
 - `contentInset` - Inset to be applied to the edges of the button.
 - `transitionStyle` (`TMBarButtonCollection`) - How the buttons should should perform transition animations.
+- `badge` - `TMBadgeView` that displays `badgeValue` from bar item.
 
 **More: [**TMBarButton Docs**](https://uias.github.io/Tabman/master/Buttons.html)**
 
@@ -249,7 +267,7 @@ Auto insetting can be **disabled** by setting `automaticallyAdjustsChildInsets` 
 *Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/Troubleshooting.md).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](https://uias.github.io/Tabman/master/troubleshooting.html).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 

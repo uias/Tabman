@@ -36,13 +36,14 @@ Released on 2019-01-14
 - [#363](https://github.com/uias/Tabman/issues/363) `.alignment` property to `TMBarLayout` to adjust content alignment.
 - [#378](https://github.com/uias/Tabman/pull/378) `.spacing` property to `TMBarView` to adjust spacing between bar content / accessory views.
 - [#373](https://github.com/uias/Tabman/pull/373) `setNeedsUpdate()` to `TMBarItemable` to allow for dynamic item updates. 
-- [#387](https://github.com/uias/Tabman/issues/387) Ability to show badges on `TMBarButton`.
-- `tabmanParent` to `UIViewController`.
+- [#387](https://github.com/uias/Tabman/issues/387) Ability to show badges on `TMBarButton` via `.badgeValue` on `TMBarItemable`..
+- [#392](https://github.com/uias/Tabman/pull/392) `tabmanParent` to `UIViewController`.
+- [#392](https://github.com/uias/Tabman/pull/392) `tabmanBarItems` to `UIViewController`.
 
 #### Updated
 - [#378](https://github.com/uias/Tabman/pull/378) Improved bar transitioning behavior when adjusting selected tab.
-- [#373](https://github.com/uias/Tabman/pull/373) `.title` is now mutable on `TMBarItem`.
-- [#373](https://github.com/uias/Tabman/pull/373) `.image` is now mutable on `TMBarItem`.
+- [#373](https://github.com/uias/Tabman/pull/373) `.title` is now mutable on `TMBarItemable`.
+- [#373](https://github.com/uias/Tabman/pull/373) `.image` is now mutable on `TMBarItemable`.
 
 ---
 
