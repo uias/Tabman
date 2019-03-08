@@ -24,13 +24,13 @@ open class TMTabItemBarButton: TMBarButton {
     
     // MARK: Properties
     
+    private let container = UIView()
     private let label = AnimateableLabel()
     private let imageView = UIImageView()
     
     private var imageWidth: NSLayoutConstraint!
     private var imageHeight: NSLayoutConstraint!
     
-    private var componentLayoutView: UIView?
     private var componentConstraints: [NSLayoutConstraint]?
     
     // MARK: Customization
@@ -94,13 +94,14 @@ open class TMTabItemBarButton: TMBarButton {
     
     open override func layout(in view: UIView) {
         super.layout(in: view)
-        componentLayoutView = view
         
         label.textAlignment = .center
         
-        view.addSubview(imageView)
-        view.addSubview(label)
+        view.addSubview(container)
+        container.addSubview(imageView)
+        container.addSubview(label)
         
+        container.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -156,39 +157,56 @@ open class TMTabItemBarButton: TMBarButton {
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        if let view = componentLayoutView {
-            makeComponentConstraints(for: UIDevice.current.orientation, parent: view)
-        }
+        makeComponentConstraints(for: UIDevice.current.orientation)
     }
     
-    private func makeComponentConstraints(for orientation: UIDeviceOrientation, parent: UIView) {
+    private func makeComponentConstraints(for orientation: UIDeviceOrientation) {
+        guard let parent = container.superview else {
+            return
+        }
         NSLayoutConstraint.deactivate(componentConstraints ?? [])
         
-        let constraints: [NSLayoutConstraint]
+        var constraints = [NSLayoutConstraint]()
         if orientation.isLandscape || traitCollection.horizontalSizeClass == .regular {
             
-            constraints = [
-                imageView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.imagePadding),
-                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
-                parent.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.imagePadding),
+            constraints.append(contentsOf: [
+                container.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor),
+                container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
+                parent.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor),
+                parent.bottomAnchor.constraint(greaterThanOrEqualTo: container.bottomAnchor),
+                container.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
+                container.centerYAnchor.constraint(greaterThanOrEqualTo: parent.centerYAnchor)
+                ])
+            
+            constraints.append(contentsOf: [
+                imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Defaults.imagePadding),
+                imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: Defaults.imagePadding),
+                container.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.imagePadding),
                 label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: Defaults.imagePadding),
-                label.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor, constant: Defaults.labelPadding),
-                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-                parent.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
-                label.centerYAnchor.constraint(equalTo: parent.centerYAnchor)
-            ]
+                label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: Defaults.labelPadding),
+                container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
+                container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: Defaults.labelPadding),
+                label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+                ])
             
         } else {
             
-            constraints = [
-                imageView.topAnchor.constraint(equalTo: parent.topAnchor, constant: Defaults.imagePadding),
-                imageView.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor, constant: Defaults.imagePadding),
+            constraints.append(contentsOf: [
+                container.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
+                container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
+                parent.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+                parent.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+                ])
+            
+            constraints.append(contentsOf: [
+                imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: Defaults.imagePadding),
+                imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+                imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: Defaults.imagePadding),
                 label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
-                label.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: Defaults.labelPadding),
-                parent.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
-                label.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
-            ]
+                label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: Defaults.labelPadding),
+                container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: Defaults.labelPadding),
+                label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            ])
         }
         
         componentConstraints = constraints
