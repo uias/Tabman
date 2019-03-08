@@ -20,9 +20,9 @@ internal let TMBarItemableNeedsUpdateNotification = Notification.Name(rawValue: 
 public protocol TMBarItemable: class {
     
     /// Title of the item.
-    var title: String? { get }
+    var title: String? { get set }
     /// Image to display.
-    var image: UIImage? { get }
+    var image: UIImage? { get set }
     
     /// Badge value to display.
     var badgeValue: String? { get set }

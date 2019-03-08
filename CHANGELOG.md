@@ -42,8 +42,8 @@ Released on 2019-01-14
 
 #### Updated
 - [#378](https://github.com/uias/Tabman/pull/378) Improved bar transitioning behavior when adjusting selected tab.
-- [#373](https://github.com/uias/Tabman/pull/373) `.title` is now mutable on `TMBarItem`.
-- [#373](https://github.com/uias/Tabman/pull/373) `.image` is now mutable on `TMBarItem`.
+- [#373](https://github.com/uias/Tabman/pull/373) `.title` is now mutable on `TMBarItemable`.
+- [#373](https://github.com/uias/Tabman/pull/373) `.image` is now mutable on `TMBarItemable`.
 
 ---
 
