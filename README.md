@@ -103,7 +103,23 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 }
 ```
 
-*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`. However they don't support dynamic updating, such as setting `.title` after it has been provided to the data source.*
+### Bar Items
+A bar will ask for a `TMBarItemable` for each page that is provided to the `TabmanViewController` `dataSource`. `TMBarItemable` is a  protocol that can be used for custom item types, the default in Tabman being `TMBarItem`:
+
+```swift
+let item = TMBarItem()
+item.title = "Item 1"
+item.image = UIImage(named: "item.png")
+item.badgeValue = "New"
+```
+
+#### UIKit Itemables
+
+Tabman also provides support for some native `UIKit` types as `TMBarItemable`:
+- `UINavigationItem`
+- `UITabBarItem`
+
+*These types are unfortunately unable to support the dynamic updating of the bar when setting properties.*
 
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
