@@ -19,7 +19,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (66% documented)
+         (72% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -62,10 +62,10 @@
                 <a class='nav-group-task-link' href='changelog.html'>Changelog</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
+                <a class='nav-group-task-link' href='troubleshooting.html'>Troubleshooting</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='troubleshooting.html'>Troubleshooting</a>
+                <a class='nav-group-task-link' href='tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
               </li>
             </ul>
           </li>
@@ -116,6 +116,12 @@
                 <a class='nav-group-task-link' href='Classes/TMBarLayout.html'>TMBarLayout</a>
               </li>
               <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO'>– ContentMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO'>– Alignment</a>
+              </li>
+              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMBarLayout/None.html'>– None</a>
               </li>
               <li class='nav-group-task'>
@@ -133,7 +139,7 @@
                 <a class='nav-group-task-link' href='Classes/TMBarButton.html'>TMBarButton</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='Classes/TMBarButton.html#/s:6Tabman11TMBarButtonC4NoneC'>– None</a>
+                <a class='nav-group-task-link' href='Classes/TMBarButton/None.html'>– None</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMBarButtonCollection.html'>TMBarButtonCollection</a>
@@ -143,6 +149,9 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBadgeView.html'>TMBadgeView</a>
               </li>
             </ul>
           </li>
@@ -206,6 +215,14 @@
             </ul>
           </li>
           <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Other Extensions.html'>Other Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Extensions/UIViewController.html'>UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
             <a class='nav-group-name-link' href='Other Protocols.html'>Other Protocols</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
@@ -248,7 +265,7 @@
 <li>Easy to implement page view controller with interactive indicator bars.</li>
 <li>Highly adaptable and powerful customization.</li>
 <li>Fully extensible with mix-and-match component library.</li>
-<li>Built on <a href="https://github.com/uias/Pageboy">Pageboy</a>, a powerful, informative page view controller.</li>
+<li>Built on <a href="https://github.com/uias/Pageboy">Pageboy</a>, a simple, informative page view controller.</li>
 <li>Automatically insets child view controller contents.</li>
 </ul>
 <h2 id='requirements' class='heading'>📋 Requirements</h2>
@@ -258,12 +275,12 @@
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
 <p>Tabman is available through <a href="http://cocoapods.org">CocoaPods</a>:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Tabman'</span><span class="p">,</span> <span class="s1">'~&gt; 2.1'</span>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Tabman'</span><span class="p">,</span> <span class="s1">'~&gt; 2.2'</span>
 </code></pre>
 <h3 id='carthage' class='heading'>Carthage</h3>
 
 <p>Tabman is also available through <a href="https://github.com/Carthage/Carthage">Carthage</a>:</p>
-<pre class="highlight plaintext"><code>github "uias/Tabman" ~&gt; 2.1
+<pre class="highlight plaintext"><code>github "uias/Tabman" ~&gt; 2.2
 </code></pre>
 <h2 id='usage' class='heading'>🚀 Usage</h2>
 <h3 id='the-basics' class='heading'>The Basics</h3>
@@ -318,7 +335,7 @@
 <span class="p">}</span>
 </code></pre>
 
-<p><em>UIKit objects such as <code>UINavigationItem</code> and <code>UITabBarItem</code> also conform to <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code>.</em></p>
+<p><em>UIKit objects such as <code>UINavigationItem</code> and <code>UITabBarItem</code> also conform to <code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code>. However they don&rsquo;t support dynamic updating, such as setting <code>.title</code> after it has been provided to the data source.</em></p>
 <h3 id='choosing-a-look' class='heading'>Choosing a look</h3>
 
 <p>Tabman provides numerous, easy to use template styles out of the box:</p>
@@ -383,6 +400,7 @@
 <li><code>backgroundView</code> - <code><a href="Classes/TMBarBackgroundView.html">TMBarBackgroundView</a></code> which provides background styling.</li>
 <li><code>contentInset</code> - Inset to be applied to the edges of the button.</li>
 <li><code>transitionStyle</code> (<code><a href="Classes/TMBarButtonCollection.html">TMBarButtonCollection</a></code>) - How the buttons should should perform transition animations.</li>
+<li><code>badge</code> - <code><a href="Classes/TMBadgeView.html">TMBadgeView</a></code> that displays <code>badgeValue</code> from bar item.</li>
 </ul>
 
 <p><strong>More: <a href="https://uias.github.io/Tabman/master/Buttons.html"><strong>TMBarButton Docs</strong></a></strong></p>
@@ -431,7 +449,7 @@
 <ul>
 <li><code><a href="Classes/TMLabelBarButton.html">TMLabelBarButton</a></code> - Button which contains a single text label.</li>
 <li><code><a href="Classes/TMTabItemBarButton.html">TMTabItemBarButton</a></code> - Button which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.</li>
-<li><code><a href="Classes/TMBarButton.html#/s:6Tabman11TMBarButtonC4NoneC">TMBarButton.None</a></code> - Display no visible bar buttons.</li>
+<li><code><a href="Classes/TMBarButton/None.html">TMBarButton.None</a></code> - Display no visible bar buttons.</li>
 </ul>
 <h4 id='bar-indicators' class='heading'>Bar Indicators</h4>
 
@@ -469,7 +487,7 @@
 <p><em>Tabman will not provide any insetting behavior for bars that are added to custom views.</em></p>
 <h2 id='troubleshooting' class='heading'>⚠️ Troubleshooting</h2>
 
-<p>If you are encountering issues with Tabman, please check out the <a href="Docs/Troubleshooting.md">Troubleshooting Guide</a>.</p>
+<p>If you are encountering issues with Tabman, please check out the <a href="https://uias.github.io/Tabman/master/troubleshooting.html">Troubleshooting Guide</a>.</p>
 
 <p>If you&rsquo;re still having problems, feel free to raise an <a href="https://github.com/uias/Tabman/issues/new">issue</a>.</p>
 <h2 id='about' class='heading'>👨🏻‍💻 About</h2>
@@ -603,33 +621,6 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/documentation.Tabman 2 Migration Guide"></a>
-                    <a name="//apple_ref/swift/Guide/Tabman 2 Migration Guide" class="dashAnchor"></a>
-                    <a class="token" href="#/documentation.Tabman 2 Migration Guide">Tabman 2 Migration Guide</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                          <a href="tabman-2-migration-guide.html" class="button">See more</a>
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
                     <a name="/documentation.Troubleshooting"></a>
                     <a name="//apple_ref/swift/Guide/Troubleshooting" class="dashAnchor"></a>
                     <a class="token" href="#/documentation.Troubleshooting">Troubleshooting</a>
@@ -645,6 +636,33 @@
                       <div class="slightly-smaller">
                         
                           <a href="troubleshooting.html" class="button">See more</a>
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/documentation.Tabman 2 Migration Guide"></a>
+                    <a name="//apple_ref/swift/Guide/Tabman 2 Migration Guide" class="dashAnchor"></a>
+                    <a class="token" href="#/documentation.Tabman 2 Migration Guide">Tabman 2 Migration Guide</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="tabman-2-migration-guide.html" class="button">See more</a>
                         
                       </div>
                     </section>

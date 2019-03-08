@@ -19,7 +19,7 @@
         <a class='header-link' href='../index.html'>
           Tabman Docs
         </a>
-         (66% documented)
+         (72% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -62,10 +62,10 @@
                 <a class='nav-group-task-link' href='../changelog.html'>Changelog</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
+                <a class='nav-group-task-link' href='../troubleshooting.html'>Troubleshooting</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../troubleshooting.html'>Troubleshooting</a>
+                <a class='nav-group-task-link' href='../tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
               </li>
             </ul>
           </li>
@@ -116,6 +116,12 @@
                 <a class='nav-group-task-link' href='../Classes/TMBarLayout.html'>TMBarLayout</a>
               </li>
               <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO'>– ContentMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO'>– Alignment</a>
+              </li>
+              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Classes/TMBarLayout/None.html'>– None</a>
               </li>
               <li class='nav-group-task'>
@@ -133,7 +139,7 @@
                 <a class='nav-group-task-link' href='../Classes/TMBarButton.html'>TMBarButton</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../Classes/TMBarButton.html#/s:6Tabman11TMBarButtonC4NoneC'>– None</a>
+                <a class='nav-group-task-link' href='../Classes/TMBarButton/None.html'>– None</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Classes/TMBarButtonCollection.html'>TMBarButtonCollection</a>
@@ -143,6 +149,9 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBadgeView.html'>TMBadgeView</a>
               </li>
             </ul>
           </li>
@@ -206,6 +215,14 @@
             </ul>
           </li>
           <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Extensions.html'>Other Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIViewController.html'>UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
             <a class='nav-group-name-link' href='../Other Protocols.html'>Other Protocols</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
@@ -235,6 +252,90 @@
 
         <section class='section'>
           <div class='section-content'>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Types"></a>
+                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
+                <a href="#/Types">
+                  <h3 class="section-name">Types</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC11ContentModeO"></a>
+                    <a name="//apple_ref/swift/Enum/ContentMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC11ContentModeO">ContentMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to display the contents of the layout.</p>
+
+<ul>
+<li>intrinsic: The layout and contents will be intrinsically sized, taking up as much space as required.</li>
+<li>fit: The layout and it&rsquo;s contents will be restricted to fitting within the bounds of the bar.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ContentMode</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L22-L25" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC9AlignmentO"></a>
+                    <a name="//apple_ref/swift/Enum/Alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC9AlignmentO">Alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to align the layout in the parent.</p>
+
+<ul>
+<li>.leading: The layout will be aligned from the leading edge of the parent.</li>
+<li>.center: The layout will be aligned from the center of the parent.</li>
+<li>.trailing: The layout will be aligned from the trailing edge of the parent.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Alignment</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L32-L36" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Properties"></a>
@@ -270,7 +371,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L26" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L41" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -304,13 +405,13 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">contentMode</span><span class="p">:</span> <span class="kt">TMBarLayout</span><span class="o">.</span><span class="kt">ContentMode</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">contentMode</span><span class="p">:</span> <span class="kt">TMBarLayout</span><span class="o">.</span><span class="kt"><a href="../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO">ContentMode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L48-L55" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L63-L70" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -341,7 +442,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L57-L64" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L72-L79" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -372,7 +473,46 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L66-L72" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L81-L87" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC9alignmentAC9AlignmentOvp"></a>
+                    <a name="//apple_ref/swift/Property/alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC9alignmentAC9AlignmentOvp">alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to align the layout in the bar.</p>
+
+<p>Options:</p>
+
+<ul>
+<li><code>.leading</code>: The layout will be aligned from the leading edge of the parent.</li>
+<li><code>.center</code>: The layout will be aligned from the center of the parent.</li>
+<li><code>.trailing</code>: The layout will be aligned from the trailing edge of the parent.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">alignment</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO">Alignment</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L96-L102" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -433,7 +573,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L91-L92" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L120-L121" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -495,7 +635,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L99-L100" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L128-L129" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -545,7 +685,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L105-L106" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L134-L135" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -613,7 +753,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L116-L118" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L145-L147" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -652,7 +792,7 @@
                         
                           <a href="../Classes/TMBarLayout/None.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/Types/TMBarLayout+None.swift#L16-L58" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarLayout/Types/TMBarLayout+None.swift#L16-L59" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
