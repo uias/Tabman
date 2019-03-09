@@ -43,6 +43,7 @@ Released on TBD
 - Make `.scrollMode` `open` on `TMBarView`.
 - Make `.fadesContentEdges` `open` on `TMBarView`.
 - Make `.spacing` `open` on `TMBarView`.
+- [#396](https://github.com/uias/Tabman/issues/396) Improved layout adaptability of `TMTabItemBarButton` on iPad and in landscape.
 
 ---
 ## [2.2.0](https://github.com/uias/Tabman/releases/tag/2.2.0)
