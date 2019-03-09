@@ -165,6 +165,10 @@ open class TMTabItemBarButton: TMBarButton {
         NSLayoutConstraint.deactivate(componentConstraints ?? [])
         
         let constraints: [NSLayoutConstraint]
+        
+        // If landscape or we are a `.regular` size class
+        // Translates to:  Landscape || iPad
+        // Tab views will be aligned horizontally.
         if orientation.isLandscape || traitCollection.horizontalSizeClass == .regular {
             
             let imagePadding = traitCollection.horizontalSizeClass == .compact ? Defaults.imagePadding / 2 : Defaults.imagePadding
@@ -173,7 +177,7 @@ open class TMTabItemBarButton: TMBarButton {
             constraints = makeHorizontalAlignedConstraints(in: parent,
                                                            imagePadding: imagePadding,
                                                            labelPadding: labelPadding)
-        } else {
+        } else { // Default (Portrait on compact) - Vertical alignment
             
             let imagePadding = Defaults.imagePadding
             let labelPadding =  Defaults.labelPadding
