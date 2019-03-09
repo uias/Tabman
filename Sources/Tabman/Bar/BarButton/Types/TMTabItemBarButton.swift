@@ -19,7 +19,7 @@ open class TMTabItemBarButton: TMBarButton {
         static let labelPadding: CGFloat = 4.0
         static let labelTopPadding: CGFloat = 6.0
         static let shrunkenImageScale: CGFloat = 0.9
-        static let badgeInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 0.0, right: 4.0)
+        static let badgeInsets = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 0.0, right: 4.0)
     }
     
     // MARK: Properties
@@ -125,8 +125,7 @@ open class TMTabItemBarButton: TMBarButton {
         view.addSubview(badge)
         badge.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            badge.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
-            view.trailingAnchor.constraint(equalTo: badge.trailingAnchor, constant: insets.right)
+            badge.topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top)
             ])
     }
     
@@ -192,6 +191,8 @@ open class TMTabItemBarButton: TMBarButton {
                                                   imagePadding: CGFloat,
                                                   labelPadding: CGFloat) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
+        
+        // Container
         constraints.append(contentsOf: [
             container.leadingAnchor.constraint(greaterThanOrEqualTo: parent.leadingAnchor),
             container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
@@ -201,6 +202,7 @@ open class TMTabItemBarButton: TMBarButton {
             container.centerYAnchor.constraint(greaterThanOrEqualTo: parent.centerYAnchor)
             ])
         
+        // Label / Image
         constraints.append(contentsOf: [
             imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: imagePadding),
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
@@ -211,6 +213,13 @@ open class TMTabItemBarButton: TMBarButton {
             container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: labelPadding),
             label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
             ])
+        
+        // Badge
+        let badgeInsets = Defaults.badgeInsets
+        constraints.append(contentsOf: [
+            badge.leadingAnchor.constraint(equalTo: container.trailingAnchor, constant: badgeInsets.left)
+            ])
+        
         return constraints
     }
     
@@ -218,6 +227,8 @@ open class TMTabItemBarButton: TMBarButton {
                                                 imagePadding: CGFloat,
                                                 labelPadding: CGFloat) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
+        
+        // Container
         constraints.append(contentsOf: [
             container.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
             container.topAnchor.constraint(greaterThanOrEqualTo: parent.topAnchor),
@@ -225,6 +236,7 @@ open class TMTabItemBarButton: TMBarButton {
             parent.bottomAnchor.constraint(equalTo: container.bottomAnchor)
             ])
         
+        // Label / Image
         constraints.append(contentsOf: [
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
             imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
@@ -234,6 +246,13 @@ open class TMTabItemBarButton: TMBarButton {
             container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
             label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
             ])
+        
+        // Badge
+        let badgeInsets = Defaults.badgeInsets
+        constraints.append(contentsOf: [
+            parent.trailingAnchor.constraint(equalTo: badge.trailingAnchor, constant: badgeInsets.right)
+            ])
+        
         return constraints
     }
 }
