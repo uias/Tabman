@@ -98,6 +98,10 @@ open class TMBarButton: UIControl {
         
         layout(in: contentView)
         layoutBadge(badge, in: contentView)
+
+        accessibilityLabel = item.accessibilityLabel
+        accessibilityHint = item.accessibilityHint
+        accessibilityTraits = [.button]
     }
     
     // MARK: Layout
@@ -158,6 +162,15 @@ open class TMBarButton: UIControl {
         let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
         
         self.alpha = alpha
+
+        switch selectionState {
+        case .selected:
+            accessibilityTraits.insert(.selected)
+        case .unselected:
+            accessibilityTraits.remove(.selected)
+        default:
+            break
+        }
     }
 }
 

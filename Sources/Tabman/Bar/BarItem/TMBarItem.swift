@@ -26,6 +26,12 @@ public protocol TMBarItemable: class {
     
     /// Badge value to display.
     var badgeValue: String? { get set }
+
+    /// Returns a short description of the button.
+    var accessibilityLabel: String? { get set }
+
+    /// A brief description of the result of performing an action on the accessibility element, in a localized string.
+    var accessibilityHint: String? { get set }
     
     /// Inform the bar that the item has been updated.
     ///
@@ -45,6 +51,7 @@ extension TMBarItemable {
 
 /// Default `TMBarItemable` that can be displayed in a `TMBar`.
 public final class TMBarItem: TMBarItemable {
+
     
     // MARK: Properties
     
@@ -60,6 +67,18 @@ public final class TMBarItem: TMBarItemable {
     }
     
     public var badgeValue: String? {
+        didSet {
+            setNeedsUpdate()
+        }
+    }
+
+    public var accessibilityLabel: String? {
+        didSet {
+            setNeedsUpdate()
+        }
+    }
+
+    public var accessibilityHint: String? {
         didSet {
             setNeedsUpdate()
         }
