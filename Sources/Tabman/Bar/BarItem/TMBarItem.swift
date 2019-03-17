@@ -83,6 +83,8 @@ public final class TMBarItem: TMBarItemable {
             setNeedsUpdate()
         }
     }
+
+    public var isAccessibilityElement: Bool { return true }
         
     // MARK: Init
     

@@ -99,9 +99,10 @@ open class TMBarButton: UIControl {
         layout(in: contentView)
         layoutBadge(badge, in: contentView)
 
-        accessibilityLabel = item.accessibilityLabel
+        accessibilityLabel = item.accessibilityLabel ?? item.title
         accessibilityHint = item.accessibilityHint
         accessibilityTraits = [.button]
+        isAccessibilityElement = true
     }
     
     // MARK: Layout
