@@ -169,6 +169,9 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         buttons.interactionHandler = self
         scrollHandler.delegate = self
         scrollView.gestureDelegate = self
+        if #available(iOSApplicationExtension 10.0, *) {
+            accessibilityTraits = [.tabBar]
+        }
         layout(in: self)
         
         NotificationCenter.default.addObserver(self,
@@ -301,6 +304,23 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             button.populate(for: item)
             self.reloadIndicatorPosition()
         }, completion: nil)
+    }
+
+    // MARK: UIAccessibilityContainer
+
+    override open func accessibilityElementCount() -> Int {
+        return buttons.all.count
+    }
+
+    override open func accessibilityElement(at index: Int) -> Any? {
+        return buttons.all[index]
+    }
+
+    open override func index(ofAccessibilityElement element: Any) -> Int {
+        guard let item = element as? Button else {
+            return 0
+        }
+        return buttons.all.firstIndex(of: item) ?? 0
     }
 }
 
