@@ -157,6 +157,7 @@ open class TMLabelBarButton: TMBarButton {
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
+        super.update(for: selectionState)
         
         let transitionColor = tintColor.interpolate(with: selectedTintColor,
                                                     percent: selectionState.rawValue)
