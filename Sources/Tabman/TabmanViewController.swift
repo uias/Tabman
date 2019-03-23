@@ -105,6 +105,17 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         setNeedsInsetsUpdate()
     }
     
+    /// A method for calculating insets that are required to layout content between the bars
+    /// that have been added.
+    ///
+    /// One can override this method with their own implementation for custom bar inset calculation, to
+    /// take advantage of automatic insets updates for all Tabman's pages during its lifecycle.
+    ///
+    /// - Returns: information about required insets for current state.
+    open func calculateRequiredInsets() -> Insets {
+        return Insets.for(tabmanViewController: self)
+    }
+    
     // MARK: Pageboy
     
     /// :nodoc:
@@ -344,7 +355,7 @@ internal extension TabmanViewController {
     }
     
     func setNeedsInsetsUpdate(to viewController: UIViewController?) {
-        let insets = Insets.for(tabmanViewController: self)
+        let insets = calculateRequiredInsets()
         self.requiredInsets = insets
         
         barLayoutGuideTop?.constant = insets.spec.allRequiredInsets.top

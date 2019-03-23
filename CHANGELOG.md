@@ -32,6 +32,10 @@ All notable changes to this project will be documented in this file.
 ## [2.3.0](https://github.com/uias/Tabman/releases/tag/2.3.0)
 Released on TBD
 
+#### Added
+- Ability to override automatic inset values via `calculateRequiredInsets()` on `TabmanViewController`.
+     - by [WingedDoom](https://github.com/WingedDoom)
+
 #### Updated
 - Make `TMBarItem` `open`.
 - Make `.title` open on `TMBarItem`.
