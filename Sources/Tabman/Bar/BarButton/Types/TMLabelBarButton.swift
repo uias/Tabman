@@ -117,6 +117,7 @@ open class TMLabelBarButton: TMBarButton {
         NSLayoutConstraint.activate(constraints)
         
         label.textAlignment = .center
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         
         label.text = Defaults.text
         label.font = self.font
