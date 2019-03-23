@@ -52,11 +52,11 @@ extension TMBarItemable {
 /// :nodoc:
 public extension TMBarItemable {
     
-    var accessibilityLabel: String? {
+    public var accessibilityLabel: String? {
         return nil
     }
     
-    var accessibilityHint: String? {
+    public var accessibilityHint: String? {
         return nil
     }
 }
