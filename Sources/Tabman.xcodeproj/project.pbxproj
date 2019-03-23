@@ -177,7 +177,6 @@
 			children = (
 				4613CBF621418839000E6766 /* WeakContainer.swift */,
 				4612BD1020C9B851001A37B5 /* BarMath.swift */,
-				462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -344,6 +343,7 @@
 				46E96335211B4B06004C7468 /* EdgeFadedView.swift */,
 				4629F0E621825F21001919F2 /* GestureScrollView.swift */,
 				46EA239B2195DB660004E0AC /* AnimateableLabel.swift */,
+				462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";

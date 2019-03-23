@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// View which provides the necessary container utilities for setting a view
+/// as a `UINavigationItem.titleView`.
 class ViewTitleViewContainer: UIView {
     
     // MARK: Properties

@@ -24,6 +24,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// - custom: Add the view to a custom view and provide custom layout.
     ///           If no layout is provided, all edge anchors will be constrained
     ///           to the superview.
+    /// - navigationItem: Set as a `UINavigationItem.titleView`.
     public enum BarLocation {
         case top
         case bottom
