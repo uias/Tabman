@@ -28,6 +28,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         case top
         case bottom
         case custom(view: UIView, layout: ((UIView) -> Void)?)
+        case navigationItem(item: UINavigationItem)
     }
     
     // MARK: Views
@@ -287,6 +288,13 @@ public extension TabmanViewController {
                     view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
                     ])
             }
+        case .navigationItem(let item):
+            let container = ViewTitleViewContainer(for: view)
+            
+            container.frame = CGRect(x: 0.0, y: 0.0, width: 300, height: 50)
+            container.layoutIfNeeded()
+            
+            item.titleView = container
         }
     }
     
