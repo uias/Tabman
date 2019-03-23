@@ -274,13 +274,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
-      "line": 87,
-      "symbol": "TMBarItem.isAccessibilityElement",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 23,
       "symbol": "TMBarLayout.ContentMode.intrinsic",
@@ -352,36 +345,15 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 183,
+      "line": 180,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 189,
+      "line": 186,
       "symbol": "TMBarView.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 311,
-      "symbol": "TMBarView.accessibilityElementCount()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 315,
-      "symbol": "TMBarView.accessibilityElement(at:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 319,
-      "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
