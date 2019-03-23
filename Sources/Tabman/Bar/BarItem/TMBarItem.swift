@@ -49,6 +49,18 @@ extension TMBarItemable {
     }
 }
 
+/// :nodoc:
+public extension TMBarItemable {
+    
+    var accessibilityLabel: String? {
+        return nil
+    }
+    
+    var accessibilityHint: String? {
+        return nil
+    }
+}
+
 /// Default `TMBarItemable` that can be displayed in a `TMBar`.
 open class TMBarItem: TMBarItemable {
     
