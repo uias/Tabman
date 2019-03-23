@@ -49,6 +49,26 @@ extension TMBarItemable {
     }
 }
 
+/// :nodoc:
+public extension TMBarItemable {
+    
+    //swiftlint:disable unused_setter_value
+
+    public var accessibilityLabel: String? {
+        set {}
+        get {
+            return nil
+        }
+    }
+    
+    public var accessibilityHint: String? {
+        set {}
+        get {
+            return nil
+        }
+    }
+}
+
 /// Default `TMBarItemable` that can be displayed in a `TMBar`.
 open class TMBarItem: TMBarItemable {
     
