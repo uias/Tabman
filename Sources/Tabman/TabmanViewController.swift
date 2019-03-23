@@ -207,14 +207,13 @@ public extension TabmanViewController {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
-        guard barView.superview == nil else {
-            fatalError("Bar has already been added to view hierarchy.")
-        }
         
         bar.dataSource = dataSource
         bar.delegate = self
         
-        bars.append(bar)
+        if bars.contains(where: { $0 === bar }) == false {
+            bars.append(bar)
+        }
         layoutView(barView, at: location)
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
@@ -271,6 +270,8 @@ public extension TabmanViewController {
     
     private func layoutView(_ view: UIView,
                             at location: BarLocation) {
+        view.removeFromSuperview()
+        
         switch location {
         case .top:
             topBarContainer.addArrangedSubview(view)
