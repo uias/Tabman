@@ -52,12 +52,20 @@ extension TMBarItemable {
 /// :nodoc:
 public extension TMBarItemable {
     
+    //swiftlint:disable unused_setter_value
+
     public var accessibilityLabel: String? {
-        return nil
+        set {}
+        get {
+            return nil
+        }
     }
     
     public var accessibilityHint: String? {
-        return nil
+        set {}
+        get {
+            return nil
+        }
     }
 }
 
