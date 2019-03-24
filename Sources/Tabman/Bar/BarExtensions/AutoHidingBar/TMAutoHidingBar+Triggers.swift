@@ -21,6 +21,12 @@ internal class TMAutoHidingTriggerHandler {
     init(for bar: TMAutoHidingBar) {
         self.bar = bar
     }
+    
+    // MARK: Lifecycle
+    
+    func invalidate() {
+        bar.show(animated: true, completion: nil)
+    }
 }
 
 internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {

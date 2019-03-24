@@ -53,7 +53,6 @@ public final class TMAutoHidingBar: UIView {
         
         self.triggerHandler = makeTriggerHandler(for: trigger)
         
-        clipsToBounds = true
         layout(barView: barView)
     }
     
@@ -95,12 +94,28 @@ public final class TMAutoHidingBar: UIView {
         switch hideTransition  {
         case .drawer:
             barViewTopPin?.constant = -barView.bounds.size.height
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
                 self.layoutIfNeeded()
+                self.barView.alpha = 0.0
             }, completion: completion)
         case .fade:
             UIView.animate(withDuration: 0.2, animations: {
                 self.barView.alpha = 0.0
+            }, completion: completion)
+        }
+    }
+    
+    internal func show(animated: Bool, completion: ((Bool) -> Void)?) {
+        switch hideTransition {
+        case .drawer:
+            barViewTopPin?.constant = 0.0
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                self.layoutIfNeeded()
+                self.barView.alpha = 1.0
+            }, completion: completion)
+        case .fade:
+            UIView.animate(withDuration: 0.2, animations: {
+                self.barView.alpha = 1.0
             }, completion: completion)
         }
     }
@@ -135,5 +150,7 @@ extension TMAutoHidingBar: TMBar {
     
     public func update(for position: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: position, capacity: capacity, direction: direction, animation: animation)
+        
+        triggerHandler.invalidate()
     }
 }
