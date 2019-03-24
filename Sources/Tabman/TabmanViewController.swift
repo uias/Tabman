@@ -21,15 +21,15 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     ///
     /// - top: Pin to the top of the safe area.
     /// - bottom: Pin to the bottom of the safe area.
+    /// - navigationItem: Set as a `UINavigationItem.titleView`.
     /// - custom: Add the view to a custom view and provide custom layout.
     ///           If no layout is provided, all edge anchors will be constrained
     ///           to the superview.
-    /// - navigationItem: Set as a `UINavigationItem.titleView`.
     public enum BarLocation {
         case top
         case bottom
-        case custom(view: UIView, layout: ((UIView) -> Void)?)
         case navigationItem(item: UINavigationItem)
+        case custom(view: UIView, layout: ((UIView) -> Void)?)
     }
     
     // MARK: Views
