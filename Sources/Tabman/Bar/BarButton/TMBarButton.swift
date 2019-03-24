@@ -129,7 +129,12 @@ open class TMBarButton: UIControl {
         contentViewTop = contentView.topAnchor.constraint(equalTo: topAnchor)
         contentViewTrailing = trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
+        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        
+        contentViewTop.priority = .defaultHigh
+        contentViewBottom.priority = .defaultHigh
+        
+        NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom, contentViewCenterY])
     }
     
     // MARK: Lifecycle

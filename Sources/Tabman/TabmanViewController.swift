@@ -21,12 +21,14 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     ///
     /// - top: Pin to the top of the safe area.
     /// - bottom: Pin to the bottom of the safe area.
+    /// - navigationItem: Set as a `UINavigationItem.titleView`.
     /// - custom: Add the view to a custom view and provide custom layout.
     ///           If no layout is provided, all edge anchors will be constrained
     ///           to the superview.
     public enum BarLocation {
         case top
         case bottom
+        case navigationItem(item: UINavigationItem)
         case custom(view: UIView, layout: ((UIView) -> Void)?)
     }
     
@@ -205,14 +207,13 @@ public extension TabmanViewController {
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
-        guard barView.superview == nil else {
-            fatalError("Bar has already been added to view hierarchy.")
-        }
         
         bar.dataSource = dataSource
         bar.delegate = self
         
-        bars.append(bar)
+        if bars.contains(where: { $0 === bar }) == false {
+            bars.append(bar)
+        }
         layoutView(barView, at: location)
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
@@ -269,6 +270,8 @@ public extension TabmanViewController {
     
     private func layoutView(_ view: UIView,
                             at location: BarLocation) {
+        view.removeFromSuperview()
+        
         switch location {
         case .top:
             topBarContainer.addArrangedSubview(view)
@@ -287,6 +290,13 @@ public extension TabmanViewController {
                     view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
                     ])
             }
+        case .navigationItem(let item):
+            let container = ViewTitleViewContainer(for: view)
+            
+            container.frame = CGRect(x: 0.0, y: 0.0, width: 300, height: 50)
+            container.layoutIfNeeded()
+            
+            item.titleView = container
         }
     }
     
