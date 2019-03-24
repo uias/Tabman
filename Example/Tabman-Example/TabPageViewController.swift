@@ -45,13 +45,12 @@ class TabPageViewController: TabmanViewController {
         dataSource = self
 
         // Customization
-//        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
         bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
-//        bar.spacing = 16.0
-        bar.backgroundView.style = .clear
+        bar.spacing = 16.0
         
         // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)
@@ -59,15 +58,14 @@ class TabPageViewController: TabmanViewController {
         plusButton.tintColor = .white
         bar.rightAccessoryView = plusButton
         
+        // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
+        addBar(bar.systemBar(),
+               dataSource: self,
+               at: .top)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
-        addBar(bar,
-               dataSource: self,
-               at: .navigationItem(item: parent!.navigationItem))
         
         // Customize bar colors for gradient background.
         let tintColor = gradient?.activeColors?.first ?? .white
