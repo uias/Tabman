@@ -46,12 +46,11 @@ class TabPageViewController: TabmanViewController {
 
         // Customization
 //        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 4.0, right: 0.0)
         bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
-        bar.spacing = 16.0
+//        bar.spacing = 16.0
         bar.backgroundView.style = .clear
         
         // Add a '+' button the trailing end of the bar to insert more pages.
