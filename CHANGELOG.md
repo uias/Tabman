@@ -33,7 +33,7 @@ All notable changes to this project will be documented in this file.
 Released on TBD
 
 ---
-## [2.2.0](https://github.com/uias/Tabman/releases/tag/2.2.1)
+## [2.2.1](https://github.com/uias/Tabman/releases/tag/2.2.1)
 Released on 2019-03-24
 
 #### Added

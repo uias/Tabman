@@ -71,6 +71,8 @@ override func viewWillAppear(animated: Bool) {
 ## custom
 If you want a completely custom location for your bar, this is also fully supported by Tabman. This allows you to be add the bar as a subview to a custom specified container view.
 
+⚠️**Note** - Using a custom view will prevent Tabman from providing automatic insetting support for the bar.
+
 ```swift
 let customContainer = UIView()
 
