@@ -40,6 +40,10 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
         super.init(for: bar)
         
         addGestureRecognizer(UITapGestureRecognizer.self, to: interactionView)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            bar.hide(animated: true, completion: nil)
+        }
     }
     
     @available(*, unavailable)

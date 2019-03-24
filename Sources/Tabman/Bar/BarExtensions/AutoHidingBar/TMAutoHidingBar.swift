@@ -31,8 +31,15 @@ public final class TMAutoHidingBar: UIView {
     // MARK: Properties
     
     public let bar: TMBar
+    private var barView: UIView {
+        guard let view = self.bar as? UIView else {
+            fatalError("Could not find barView")
+        }
+        return view
+    }
+    private var barViewTopPin: NSLayoutConstraint?
+
     public let trigger: Trigger
-    
     private var triggerHandler: TMAutoHidingTriggerHandler!
     
     public var hideTransition: HideTransition = .drawer
@@ -45,7 +52,9 @@ public final class TMAutoHidingBar: UIView {
         super.init(frame: .zero)
         
         self.triggerHandler = makeTriggerHandler(for: trigger)
-        layout(barView: bar as? UIView)
+        
+        clipsToBounds = true
+        layout(barView: barView)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -54,19 +63,19 @@ public final class TMAutoHidingBar: UIView {
     
     // MARK: Layout
     
-    private func layout(barView: UIView?) {
-        guard let barView = barView else {
-            fatalError("Could not find barView")
-        }
-        
+    private func layout(barView: UIView) {
         addSubview(barView)
         barView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let barViewTopPin = barView.topAnchor.constraint(equalTo: topAnchor)
         NSLayoutConstraint.activate([
             barView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            barView.topAnchor.constraint(equalTo: topAnchor),
+            barViewTopPin,
             barView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            barView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            heightAnchor.constraint(equalTo: barView.heightAnchor, multiplier: 1.0)
             ])
+        
+        self.barViewTopPin = barViewTopPin
     }
     
     // MARK: Triggers
@@ -79,8 +88,25 @@ public final class TMAutoHidingBar: UIView {
                                                   interactionView: interactionView)
         }
     }
+    
+    // MARK: Animations
+    
+    internal func hide(animated: Bool, completion: ((Bool) -> Void)?) {
+        switch hideTransition  {
+        case .drawer:
+            barViewTopPin?.constant = -barView.bounds.size.height
+            UIView.animate(withDuration: 0.2, animations: {
+                self.layoutIfNeeded()
+            }, completion: completion)
+        case .fade:
+            UIView.animate(withDuration: 0.2, animations: {
+                self.barView.alpha = 0.0
+            }, completion: completion)
+        }
+    }
 }
 
+// MARK: - Bar Lifecycle
 extension TMAutoHidingBar: TMBar {
     
     public var dataSource: TMBarDataSource? {
