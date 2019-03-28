@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBarButton {
+extension TMBarButton {
     
     /// Button that is zero height and hidden.
     ///

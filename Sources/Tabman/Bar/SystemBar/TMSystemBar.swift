@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBar {
+extension TMBar {
     
     /// Embed the bar in a 'system' bar that will mimick `UINavigationBar` and `UITabBar`.
     ///

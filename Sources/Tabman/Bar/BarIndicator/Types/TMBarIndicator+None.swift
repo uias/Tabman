@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBarIndicator {
+extension TMBarIndicator {
     
     /// Indicator that is zero height and hidden.
     ///

@@ -180,7 +180,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 }
 
 // MARK: - Bar Layout
-public extension TabmanViewController {
+extension TabmanViewController {
     
     /// Add a new `TMBar` to the view controller.
     ///

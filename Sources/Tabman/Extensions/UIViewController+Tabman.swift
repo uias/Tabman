@@ -9,7 +9,7 @@
 import UIKit
 import Pageboy
 
-public extension UIViewController {
+extension UIViewController {
     
     /// Parent TabmanViewController if it exists.
     public var tabmanParent: TabmanViewController? {

@@ -9,7 +9,7 @@
 import UIKit
 import AutoInsetter
 
-public extension TabmanViewController {
+extension TabmanViewController {
     
     /// Object containing inset data that is required for all bars in a `TabmanViewController`.
     public struct Insets {
@@ -63,7 +63,7 @@ public extension TabmanViewController {
     }
 }
 
-internal extension TabmanViewController {
+extension TabmanViewController {
     
     /// Spec for AutoInsetter
     internal struct InsetsSpec: AutoInsetSpec {
