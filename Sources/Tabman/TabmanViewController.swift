@@ -215,7 +215,7 @@ extension TabmanViewController {
     ///
     /// - Parameter bar: Bar to remove.
     public func removeBar(_ bar: TMBar) {
-        guard let index = bars.index(where: { $0 === bar }) else {
+        guard let index = bars.firstIndex(where: { $0 === bar }) else {
             return
         }
         

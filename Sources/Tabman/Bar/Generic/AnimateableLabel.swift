@@ -94,12 +94,12 @@ private extension AnimateableLabel {
             return .center
         case .justified:
             return .justified
-        case .left:
-            return .left
         case .natural:
             return .natural
         case .right:
             return .right
+        default:
+            return .left
         }
     }
     #else
