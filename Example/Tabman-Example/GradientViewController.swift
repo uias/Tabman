@@ -31,12 +31,21 @@ class GradientViewController: UIViewController {
         return gradientView.colors
     }
     
+    #if swift(>=4.2)
     override var childForStatusBarStyle: UIViewController? {
         return children.first
     }
     override var childForStatusBarHidden: UIViewController? {
         return children.first
     }
+    #else
+    override var childViewControllerForStatusBarStyle: UIViewController? {
+        return childViewControllers.first
+    }
+    override var childViewControllerForStatusBarHidden: UIViewController? {
+        return childViewControllers.first
+    }
+    #endif
     
     // MARK: Lifecycle
     

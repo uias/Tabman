@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBarLayout {
+extension TMBarLayout {
     
     /// Layout that won't display any visible bar buttons.
     ///
