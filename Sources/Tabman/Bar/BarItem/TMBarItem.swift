@@ -50,7 +50,7 @@ extension TMBarItemable {
 }
 
 /// :nodoc:
-public extension TMBarItemable {
+extension TMBarItemable {
     
     //swiftlint:disable unused_setter_value
 

@@ -15,7 +15,11 @@ class ViewTitleViewContainer: UIView {
     // MARK: Properties
     
     override var intrinsicContentSize: CGSize {
+        #if swift(>=4.2)
         return UIView.layoutFittingExpandedSize
+        #else
+        return UILayoutFittingExpandedSize
+        #endif
     }
     
     // MARK: Init
