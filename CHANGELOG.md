@@ -36,6 +36,7 @@ Released on TBD
 #### Added
 - Ability to override automatic inset values via `calculateRequiredInsets()` on `TabmanViewController`.
      - by [WingedDoom](https://github.com/WingedDoom)
+- [#404](https://github.com/uias/Tabman/issues/404) `adjustsAlphaOnSelection` to `TMBarButton`.
 
 #### Updated
 - Make `TMBarItem` `open`.
