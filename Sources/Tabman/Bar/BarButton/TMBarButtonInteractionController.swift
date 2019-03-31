@@ -40,7 +40,7 @@ internal final class TMBarButtonInteractionController: TMBarButtonController {
     // MARK: Actions
     
     @objc private func barButtonPressed(_ sender: TMBarButton) {
-        guard let index = barButtons.index(where: { $0.object === sender }) else {
+        guard let index = barButtons.firstIndex(where: { $0.object === sender }) else {
             return
         }
         handler?.barButtonInteraction(controller: self,

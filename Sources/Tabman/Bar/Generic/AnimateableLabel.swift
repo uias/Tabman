@@ -66,7 +66,11 @@ internal class AnimateableLabel: UIView {
     
     private func initialize() {
         
+        #if swift(>=4.2)
         textLayer.truncationMode = .end
+        #else
+        textLayer.truncationMode = kCATruncationEnd
+        #endif
         textLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(textLayer)
     }
@@ -90,12 +94,12 @@ private extension AnimateableLabel {
             return .center
         case .justified:
             return .justified
-        case .left:
-            return .left
         case .natural:
             return .natural
         case .right:
             return .right
+        default:
+            return .left
         }
     }
     #else

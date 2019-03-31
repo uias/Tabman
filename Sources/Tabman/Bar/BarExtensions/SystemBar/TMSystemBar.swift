@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBar {
+extension TMBar {
     
     /// Embed the bar in a 'system' bar that will mimick `UINavigationBar` and `UITabBar`.
     ///
@@ -29,7 +29,11 @@ public final class TMSystemBar: UIView {
     
     private lazy var contentView = makeContentView()
     private var barView: UIView? {
+        #if swift(>=5.0)
+        return bar
+        #else
         return bar as? UIView
+        #endif
     }
 
     private lazy var extendingView = UIView()

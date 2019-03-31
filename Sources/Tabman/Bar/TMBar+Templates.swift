@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension TMBar {
+extension TMBar {
  
     /// The default button bar, very reminiscent of the Android `FragmentPagerAdapter`. It consists
     /// of a horizontal layout containing label bar buttons, and a line indicator at the bottom.

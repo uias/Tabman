@@ -196,7 +196,12 @@ final class BarInteractiveOverlayView: UIView {
         
         var removalButtons = [UIButton: TMBar]()
         for bar in bars {
-            let barView = bar as! UIView
+            let barView: UIView
+            #if swift(>=5.0)
+            barView = bar
+            #else
+            barView = bar as! UIView
+            #endif
             let frame = barView.superview!.convert(barView.frame, to: viewController.view)
             
             let removalButton = UIButton()
