@@ -59,6 +59,12 @@ open class TMBarButton: UIControl {
     /// Badge View
     public let badge = TMBadgeView()
     
+    /// Whether the button should fade its alpha value when it is unselected.
+    ///
+    /// If enabled the button will interpolate between a minumum alpha of 0.5 and 1.0
+    /// depending on the current `selectionState`.
+    open var fadesWhenUnselected: Bool = true
+    
     // MARK: State
     
     /// Selection state of the button.
@@ -168,10 +174,13 @@ open class TMBarButton: UIControl {
     ///
     /// - Parameter selectionState: Selection state.
     open func update(for selectionState: SelectionState) {
-        let minimumAlpha: CGFloat = 0.5
-        let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
         
-        self.alpha = alpha
+        // Perform alpha update if enabled.
+        if fadesWhenUnselected {
+            let minimumAlpha: CGFloat = 0.5
+            let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
+            self.alpha = alpha
+        }
 
         switch selectionState {
         case .selected:
