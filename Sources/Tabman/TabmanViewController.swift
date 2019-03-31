@@ -193,7 +193,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
 }
 
 // MARK: - Bar Layout
-public extension TabmanViewController {
+extension TabmanViewController {
     
     /// Add a new `TMBar` to the view controller.
     ///
@@ -204,9 +204,13 @@ public extension TabmanViewController {
     public func addBar(_ bar: TMBar,
                        dataSource: TMBarDataSource,
                        at location: BarLocation) {
+        #if swift(>=5.0)
+        let barView = bar
+        #else
         guard let barView = bar as? UIView else {
             fatalError("Bar is expected to inherit from UIView")
         }
+        #endif
         
         bar.dataSource = dataSource
         bar.delegate = self
@@ -227,12 +231,16 @@ public extension TabmanViewController {
     ///
     /// - Parameter bar: Bar to remove.
     public func removeBar(_ bar: TMBar) {
-        guard let index = bars.index(where: { $0 === bar }) else {
+        guard let index = bars.firstIndex(where: { $0 === bar }) else {
             return
         }
         
         bars.remove(at: index)
+        #if swift(>=5.0)
+        bar.removeFromSuperview()
+        #else
         (bar as? UIView)?.removeFromSuperview()
+        #endif
     }
     
     private func layoutContainers(in view: UIView) {

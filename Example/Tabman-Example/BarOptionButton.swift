@@ -61,7 +61,12 @@ class BarOptionButton: UIButton {
             bottomAnchor.constraint(equalTo: barContainer.bottomAnchor, constant: 12.0)
             ])
         
-        let barView = bar as! UIView
+        let barView: UIView
+        #if swift(>=5.0)
+        barView = bar
+        #else
+        barView = bar as! UIView
+        #endif
         barContainer.addSubview(barView)
         barView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

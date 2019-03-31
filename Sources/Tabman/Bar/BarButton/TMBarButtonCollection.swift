@@ -74,7 +74,7 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
     /// - Parameter item: Item to search for.
     /// - Returns: Associated bar button.
     public func `for`(item: TMBarItemable) -> BarButton? {
-        guard let index = all.index(where: { ($0.item === item) }) else {
+        guard let index = all.firstIndex(where: { ($0.item === item) }) else {
             return nil
         }
         return all[index]

@@ -64,7 +64,11 @@ final class CircularBarActionButton: UIControl {
         widthAnchor.constraint(equalTo: heightAnchor).isActive = true
 
         shapeLayer.backgroundColor = tintColor.cgColor
+        #if swift(>=4.2)
         iconLayer.fillRule = .evenOdd
+        #else
+        iconLayer.fillRule = kCAFillRuleEvenOdd
+        #endif
         
         layer.addSublayer(shapeLayer)
         layer.mask = iconLayer
