@@ -1,7 +1,7 @@
 ### New Issue Checklist
 
 - [ ] Updated Tabman to the latest version
-- [ ] I took a look at the [Troubleshooting Guide](https://github.com/uias/Tabman/blob/master/Docs/TROUBLESHOOTING.md)
+- [ ] I took a look at the [Troubleshooting Guide](https://github.com/uias/Tabman/blob/master/Docs/Troubleshooting.md)
 - [ ] I searched for [existing GitHub issues](https://github.com/uias/Tabman/issues)
 
 ### Issue Description
