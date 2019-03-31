@@ -366,14 +366,14 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift",
-      "line": 66,
+      "line": 70,
       "symbol": "TMSystemBar.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift",
-      "line": 116,
+      "line": 120,
       "symbol": "TMSystemBar.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
