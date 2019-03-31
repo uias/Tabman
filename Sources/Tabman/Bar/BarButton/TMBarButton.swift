@@ -63,7 +63,7 @@ open class TMBarButton: UIControl {
     ///
     /// If enabled the button will interpolate between a minumum alpha of 0.5 and 1.0
     /// depending on the current `selectionState`.
-    open var fadesWhenUnselected: Bool = true
+    open var adjustsAlphaOnSelection: Bool = true
     
     // MARK: State
     
@@ -176,7 +176,7 @@ open class TMBarButton: UIControl {
     open func update(for selectionState: SelectionState) {
         
         // Perform alpha update if enabled.
-        if fadesWhenUnselected {
+        if adjustsAlphaOnSelection {
             let minimumAlpha: CGFloat = 0.5
             let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
             self.alpha = alpha
