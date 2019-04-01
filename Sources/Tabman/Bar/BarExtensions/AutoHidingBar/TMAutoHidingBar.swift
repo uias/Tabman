@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension TMBar {
+extension TMBar {
     
     public func autoHiding(trigger: TMAutoHidingBar.Trigger) -> TMAutoHidingBar {
         return TMAutoHidingBar(for: self, trigger: trigger)
