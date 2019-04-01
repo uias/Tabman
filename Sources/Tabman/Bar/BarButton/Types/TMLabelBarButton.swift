@@ -119,6 +119,7 @@ open class TMLabelBarButton: TMBarButton {
         label.textAlignment = .center
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         
+        adjustsAlphaOnSelection = false
         label.text = Defaults.text
         label.font = self.font
         selectedTintColor = tintColor
