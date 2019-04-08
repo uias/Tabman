@@ -4,7 +4,7 @@
     <a href="https://travis-ci.org/uias/Tabman">
         <img src="https://travis-ci.org/uias/Tabman.svg?branch=master" />
     </a>
-    <img src="https://img.shields.io/badge/Swift-4/5-orange.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Swift-4 | 5-orange.svg?style=flat" />
     <a href="https://cocoapods.org/pods/Tabman">
         <img src="https://img.shields.io/cocoapods/v/Tabman.svg" alt="CocoaPods" />
     </a>
