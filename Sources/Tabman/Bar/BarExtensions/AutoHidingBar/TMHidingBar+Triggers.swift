@@ -55,7 +55,7 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     }
     
     @available(*, unavailable)
-    override init(for bar: TMAutoHidingBar) {
+    override init(for bar: TMHidingBar) {
         fatalError()
     }
     
