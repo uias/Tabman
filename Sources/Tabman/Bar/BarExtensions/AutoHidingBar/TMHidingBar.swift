@@ -10,7 +10,7 @@ import UIKit
 
 extension TMBar {
     
-    public func autoHiding(trigger: TMHidingBar.Trigger) -> TMHidingBar {
+    public func hiding(trigger: TMHidingBar.Trigger) -> TMHidingBar {
         return TMHidingBar(for: self, trigger: trigger)
     }
 }
@@ -44,10 +44,14 @@ open class TMHidingBar: UIView {
     }
     private var barViewTopPin: NSLayoutConstraint?
 
+    /// Trigger that causes the bar to hide.
     public let trigger: Trigger
     private var triggerHandler: TMAutoHidingTriggerHandler?
     
-    public var hideTransition: HideTransition = .drawer
+    /// Transition to use when hiding and showing the bar.
+    ///
+    /// Defaults to `.drawer`.
+    open var hideTransition: HideTransition = .drawer
     
     // MARK: Init
     
@@ -97,6 +101,11 @@ open class TMHidingBar: UIView {
     
     // MARK: Animations
     
+    /// Hide the bar.
+    ///
+    /// - Parameters:
+    ///   - animated: Whether to animate the hide.
+    ///   - completion: Completion handler.
     open func hide(animated: Bool, completion: ((Bool) -> Void)?) {
         switch hideTransition  {
         case .drawer:
@@ -112,6 +121,11 @@ open class TMHidingBar: UIView {
         }
     }
     
+    /// Show the bar.
+    ///
+    /// - Parameters:
+    ///   - animated: Whether to animate the show.
+    ///   - completion: Completion handler.
     open func show(animated: Bool, completion: ((Bool) -> Void)?) {
         switch hideTransition {
         case .drawer:
