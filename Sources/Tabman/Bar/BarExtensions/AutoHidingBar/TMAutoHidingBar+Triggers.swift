@@ -85,12 +85,11 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     private func addGestureRecognizer(_ recognizer: UIGestureRecognizer.Type, to view: UIView) {
         let recognizer = recognizer.init(target: self, action: #selector(gestureActivated(_:)))
-        recognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(recognizer)
         gestureRecognizers.append(recognizer)
     }
     
     @objc private func gestureActivated(_ recognizer: UIGestureRecognizer) {
-        print("GESTURE")
+        invalidate()
     }
 }
