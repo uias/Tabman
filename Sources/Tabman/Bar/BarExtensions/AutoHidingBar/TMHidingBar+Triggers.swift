@@ -1,5 +1,5 @@
 //
-//  TMAutoHidingBar+Triggers.swift
+//  TMHidingBar+Triggers.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 17/12/2018.
@@ -12,7 +12,7 @@ internal class TMAutoHidingTriggerHandler {
     
     // MARK: Properties
     
-    internal private(set) weak var bar: TMAutoHidingBar!
+    internal private(set) weak var bar: TMHidingBar!
     
     var viewController: UIViewController? {
         return bar.delegate as? UIViewController
@@ -20,7 +20,7 @@ internal class TMAutoHidingTriggerHandler {
     
     // MARK: Init
     
-    init(for bar: TMAutoHidingBar) {
+    init(for bar: TMHidingBar) {
         self.bar = bar
     }
     
@@ -44,7 +44,7 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     // MARK: Init
     
-    init(for bar: TMAutoHidingBar, duration: TimeInterval, interactionView: UIView) {
+    init(for bar: TMHidingBar, duration: TimeInterval, interactionView: UIView) {
         self.duration = duration
         self.interactionView = interactionView
         super.init(for: bar)

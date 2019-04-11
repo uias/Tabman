@@ -1,5 +1,5 @@
 //
-//  TMAutoHidingBar.swift
+//  TMHidingBar.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 13/12/2018.
@@ -10,17 +10,18 @@ import UIKit
 
 extension TMBar {
     
-    public func autoHiding(trigger: TMAutoHidingBar.Trigger) -> TMAutoHidingBar {
-        return TMAutoHidingBar(for: self, trigger: trigger)
+    public func autoHiding(trigger: TMHidingBar.Trigger) -> TMHidingBar {
+        return TMHidingBar(for: self, trigger: trigger)
     }
 }
 
-public final class TMAutoHidingBar: UIView {
+open class TMHidingBar: UIView {
     
     // MARK: Types
     
     public enum Trigger {
         case time(duration: TimeInterval, interactionView: UIView)
+        case manual
     }
     
     public enum HideTransition {
@@ -44,7 +45,7 @@ public final class TMAutoHidingBar: UIView {
     private var barViewTopPin: NSLayoutConstraint?
 
     public let trigger: Trigger
-    private var triggerHandler: TMAutoHidingTriggerHandler!
+    private var triggerHandler: TMAutoHidingTriggerHandler?
     
     public var hideTransition: HideTransition = .drawer
     
@@ -83,18 +84,20 @@ public final class TMAutoHidingBar: UIView {
     
     // MARK: Triggers
     
-    private func makeTriggerHandler(for trigger: Trigger) -> TMAutoHidingTriggerHandler {
+    private func makeTriggerHandler(for trigger: Trigger) -> TMAutoHidingTriggerHandler? {
         switch trigger {
         case .time(let duration, let interactionView):
             return TMAutoHidingTimeTriggerHandler(for: self,
                                                   duration: duration,
                                                   interactionView: interactionView)
+        case .manual:
+            return nil
         }
     }
     
     // MARK: Animations
     
-    internal func hide(animated: Bool, completion: ((Bool) -> Void)?) {
+    open func hide(animated: Bool, completion: ((Bool) -> Void)?) {
         switch hideTransition  {
         case .drawer:
             barViewTopPin?.constant = -barView.bounds.size.height
@@ -109,7 +112,7 @@ public final class TMAutoHidingBar: UIView {
         }
     }
     
-    internal func show(animated: Bool, completion: ((Bool) -> Void)?) {
+    open func show(animated: Bool, completion: ((Bool) -> Void)?) {
         switch hideTransition {
         case .drawer:
             barViewTopPin?.constant = 0.0
@@ -126,7 +129,7 @@ public final class TMAutoHidingBar: UIView {
 }
 
 // MARK: - Bar Lifecycle
-extension TMAutoHidingBar: TMBar {
+extension TMHidingBar: TMBar {
     
     public var dataSource: TMBarDataSource? {
         get {
@@ -155,6 +158,6 @@ extension TMAutoHidingBar: TMBar {
     public func update(for position: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: position, capacity: capacity, direction: direction, animation: animation)
         
-        triggerHandler.invalidate()
+        triggerHandler?.invalidate()
     }
 }
