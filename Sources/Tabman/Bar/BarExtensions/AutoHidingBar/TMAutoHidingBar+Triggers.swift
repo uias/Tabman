@@ -10,7 +10,9 @@ import UIKit
 
 internal class TMAutoHidingTriggerHandler {
     
-    private weak var bar: TMAutoHidingBar!
+    // MARK: Properties
+    
+    internal private(set) weak var bar: TMAutoHidingBar!
     
     var viewController: UIViewController? {
         return bar.delegate as? UIViewController
@@ -38,6 +40,8 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     let duration: TimeInterval
     
+    private var timer: Timer?
+    
     // MARK: Init
     
     init(for bar: TMAutoHidingBar, duration: TimeInterval, interactionView: UIView) {
@@ -47,9 +51,7 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
         
         addGestureRecognizer(UITapGestureRecognizer.self, to: interactionView)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            bar.hide(animated: true, completion: nil)
-        }
+        resetDismissTimer()
     }
     
     @available(*, unavailable)
@@ -59,6 +61,24 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     deinit {
         gestureRecognizers.forEach({ interactionView?.removeGestureRecognizer($0) })
+    }
+    
+    // MARK: Overrides
+    
+    override func invalidate() {
+        super.invalidate()
+        resetDismissTimer()
+    }
+    
+    // MARK: Timers
+    
+    private func resetDismissTimer() {
+        timer?.invalidate()
+        if #available(iOSApplicationExtension 10.0, *) {
+            timer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false, block: { (_) in
+                self.bar.hide(animated: true, completion: nil)
+            })
+        }
     }
     
     // MARK: Gestures
