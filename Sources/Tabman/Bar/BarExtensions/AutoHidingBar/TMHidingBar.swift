@@ -118,14 +118,25 @@ open class TMHidingBar: UIView {
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
                     self.layoutIfNeeded()
                     self.barView.alpha = 0.0
-                }, completion: completion)
+                }, completion: { (isFinished) in
+                    if isFinished {
+                        self.isUserInteractionEnabled =  false
+                    }
+                    completion?(isFinished)
+                })
             case .fade:
                 UIView.animate(withDuration: 0.2, animations: {
                     self.barView.alpha = 0.0
-                }, completion: completion)
+                }, completion: { (isFinished) in
+                    if isFinished {
+                        self.isUserInteractionEnabled =  false
+                    }
+                    completion?(isFinished)
+                })
             }
         } else {
             barView.alpha = 0.0
+            isUserInteractionEnabled = false
         }
     }
     
@@ -149,15 +160,26 @@ open class TMHidingBar: UIView {
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
                     self.layoutIfNeeded()
                     self.barView.alpha = 1.0
-                }, completion: completion)
+                }, completion: { (isFinished) in
+                    if isFinished {
+                        self.isUserInteractionEnabled = true
+                    }
+                    completion?(isFinished)
+                })
             case .fade:
                 UIView.animate(withDuration: 0.2, animations: {
                     self.barView.alpha = 1.0
-                }, completion: completion)
+                }, completion: { (isFinished) in
+                    if isFinished {
+                        self.isUserInteractionEnabled =  true
+                    }
+                    completion?(isFinished)
+                })
             }
         } else {
             barViewTopPin?.constant = 0.0
             barView.alpha = 1.0
+            isUserInteractionEnabled = true
         }
     }
 }
