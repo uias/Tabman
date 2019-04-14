@@ -95,7 +95,7 @@ open class TMHidingBar: UIView {
                                                   duration: duration,
                                                   interactionView: interactionView)
         case .manual:
-            return nil
+            return TMAutoHidingTriggerHandler(for: self)
         }
     }
     
@@ -137,6 +137,9 @@ open class TMHidingBar: UIView {
         
         switch hideTransition {
         case .drawer:
+            barViewTopPin?.constant = -barView.bounds.size.height
+            layoutIfNeeded()
+            
             barViewTopPin?.constant = 0.0
             UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
                 self.layoutIfNeeded()
