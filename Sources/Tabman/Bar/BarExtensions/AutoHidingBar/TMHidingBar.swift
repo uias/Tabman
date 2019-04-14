@@ -111,17 +111,21 @@ open class TMHidingBar: UIView {
             return
         }
         
-        switch hideTransition  {
-        case .drawer:
-            barViewTopPin?.constant = -barView.bounds.size.height
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
-                self.layoutIfNeeded()
-                self.barView.alpha = 0.0
-            }, completion: completion)
-        case .fade:
-            UIView.animate(withDuration: 0.2, animations: {
-                self.barView.alpha = 0.0
-            }, completion: completion)
+        if animated {
+            switch hideTransition  {
+            case .drawer:
+                barViewTopPin?.constant = -barView.bounds.size.height
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
+                    self.layoutIfNeeded()
+                    self.barView.alpha = 0.0
+                }, completion: completion)
+            case .fade:
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.barView.alpha = 0.0
+                }, completion: completion)
+            }
+        } else {
+            barView.alpha = 0.0
         }
     }
     
@@ -135,20 +139,25 @@ open class TMHidingBar: UIView {
             return
         }
         
-        switch hideTransition {
-        case .drawer:
-            barViewTopPin?.constant = -barView.bounds.size.height
-            layoutIfNeeded()
-            
+        if animated {
+            switch hideTransition {
+            case .drawer:
+                barViewTopPin?.constant = -barView.bounds.size.height
+                layoutIfNeeded()
+                
+                barViewTopPin?.constant = 0.0
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                    self.layoutIfNeeded()
+                    self.barView.alpha = 1.0
+                }, completion: completion)
+            case .fade:
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.barView.alpha = 1.0
+                }, completion: completion)
+            }
+        } else {
             barViewTopPin?.constant = 0.0
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-                self.layoutIfNeeded()
-                self.barView.alpha = 1.0
-            }, completion: completion)
-        case .fade:
-            UIView.animate(withDuration: 0.2, animations: {
-                self.barView.alpha = 1.0
-            }, completion: completion)
+            barView.alpha = 1.0
         }
     }
 }
