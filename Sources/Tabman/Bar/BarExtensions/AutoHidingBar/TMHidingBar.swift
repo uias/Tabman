@@ -107,6 +107,10 @@ open class TMHidingBar: UIView {
     ///   - animated: Whether to animate the hide.
     ///   - completion: Completion handler.
     open func hide(animated: Bool, completion: ((Bool) -> Void)?) {
+        guard barView.alpha != 0.0 else {
+            return
+        }
+        
         switch hideTransition  {
         case .drawer:
             barViewTopPin?.constant = -barView.bounds.size.height
@@ -127,6 +131,10 @@ open class TMHidingBar: UIView {
     ///   - animated: Whether to animate the show.
     ///   - completion: Completion handler.
     open func show(animated: Bool, completion: ((Bool) -> Void)?) {
+        guard barView.alpha != 1.0 else {
+            return
+        }
+        
         switch hideTransition {
         case .drawer:
             barViewTopPin?.constant = 0.0
