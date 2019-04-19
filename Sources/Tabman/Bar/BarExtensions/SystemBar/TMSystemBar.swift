@@ -129,7 +129,8 @@ public final class TMSystemBar: UIView {
             return
         }
         guard let viewController = nextViewControllerInResponderChain() else {
-            fatalError("\(type(of: self)) could not find view controller to use for layout guides.")
+            print("\(type(of: self)) could not find view controller to use for layout guides.")
+            return
         }
         hasExtendedEdges = true
         viewController.view.layoutIfNeeded()

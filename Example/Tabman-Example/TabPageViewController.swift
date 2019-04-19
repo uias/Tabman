@@ -51,6 +51,7 @@ class TabPageViewController: TabmanViewController {
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
         bar.spacing = 16.0
+        bar.backgroundView.style = .clear
         
         // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)
@@ -59,9 +60,13 @@ class TabPageViewController: TabmanViewController {
         bar.rightAccessoryView = plusButton
         
         // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
-        addBar(bar.systemBar(),
+        let bar = self.bar.systemBar().hiding(trigger: .time(duration: 5))
+//        let bar = self.bar.systemBar().hiding(trigger: .manual)
+        addBar(bar,
                dataSource: self,
                at: .top)
+        
+        bar.hide(animated: false, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
