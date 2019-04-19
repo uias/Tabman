@@ -205,6 +205,7 @@ open class TMHidingBar: UIView {
 // MARK: - Bar Lifecycle
 extension TMHidingBar: TMBar {
     
+    /// :nodoc:
     public var dataSource: TMBarDataSource? {
         get {
             return bar.dataSource
@@ -213,6 +214,7 @@ extension TMHidingBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var delegate: TMBarDelegate? {
         get {
             return bar.delegate
@@ -221,14 +223,17 @@ extension TMHidingBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var items: [TMBarItemable]? {
         return bar.items
     }
     
+    /// :nodoc:
     public func reloadData(at indexes: ClosedRange<Int>, context: TMBarReloadContext) {
         bar.reloadData(at: indexes, context: context)
     }
     
+    /// :nodoc:
     public func update(for position: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: position, capacity: capacity, direction: direction, animation: animation)
         

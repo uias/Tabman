@@ -208,7 +208,8 @@ public final class TMSystemBar: UIView {
 
 extension TMSystemBar: TMBar {
     
-    public weak var dataSource: TMBarDataSource? {
+    /// :nodoc:
+    public var dataSource: TMBarDataSource? {
         get {
             return bar.dataSource
         } set {
@@ -216,6 +217,7 @@ extension TMSystemBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var delegate: TMBarDelegate? {
         get {
             return bar.delegate
@@ -224,15 +226,18 @@ extension TMSystemBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var items: [TMBarItemable]? {
         return bar.items
     }
     
+    /// :nodoc:
     public func reloadData(at indexes: ClosedRange<Int>,
                            context: TMBarReloadContext) {
         bar.reloadData(at: indexes, context: context)
     }
     
+    /// :nodoc:
     public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: pagePosition, capacity: capacity, direction: direction, animation: animation)
     }

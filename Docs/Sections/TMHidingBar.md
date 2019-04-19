@@ -25,6 +25,7 @@ TMBar.hiding(trigger:) -> TMHidingBar
 bar.hide(animated: true, completion: nil)
 bar.show(animated: true, completion: nil)
 ```
+*.show(animated:completion:) is automatically called when the bar is updated for a page change. You are responsible for calling it in any other desired scenario.*
 
 The transition that is used for animation is dependent on the `transition` property.
 ```swift
