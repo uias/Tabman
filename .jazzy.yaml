@@ -41,6 +41,7 @@ custom_categories:
     - TMBarDataSource
     - TMBarDelegate
     - TMSystemBar
+    - TMHidingBar
 
   - name: Layout
     children:
