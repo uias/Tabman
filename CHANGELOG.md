@@ -31,12 +31,20 @@ All notable changes to this project will be documented in this file.
 
 ---
 ## [2.4.0](https://github.com/uias/Tabman/releases/tag/2.4.0)
-Released on TBD
+Released on 2019-04-19
 
 #### Added
 - Ability to override automatic inset values via `calculateRequiredInsets()` on `TabmanViewController`.
      - by [WingedDoom](https://github.com/WingedDoom)
 - [#404](https://github.com/uias/Tabman/issues/404) `adjustsAlphaOnSelection` to `TMBarButton`.
+- [#338](https://github.com/uias/Tabman/issues/338) Ability to hide / show the bar with `TMHidingBar`.
+- [#403](https://github.com/uias/Tabman/issues/403) Accessibility support to `TMBarView`.
+     - by [iv-mexx](https://github.com/iv-mexx)
+- [#403](https://github.com/uias/Tabman/issues/403) Accessibility support to `TMBarItem`.
+     - by [iv-mexx](https://github.com/iv-mexx)
+- [#403](https://github.com/uias/Tabman/issues/403) Accessibility support to `TMBarButton`.
+     - by [iv-mexx](https://github.com/iv-mexx)
+- [#321](https://github.com/uias/Tabman/issues/321) `navigationItem(item:)` to `TabmanViewController.BarLocation` with support for embedding a `TMBar` in a `UINavigationBar`.
 
 #### Updated
 - Make `TMBarItem` `open`.
@@ -50,6 +58,7 @@ Released on TBD
 - Make `.fadesContentEdges` `open` on `TMBarView`.
 - Make `.spacing` `open` on `TMBarView`.
 - [#396](https://github.com/uias/Tabman/issues/396) Improved layout adaptability of `TMTabItemBarButton` on iPad and in landscape.
+- [#404](https://github.com/uias/Tabman/issues/404) `TMBarButton` no longer performs default fade transition in `update(for selectionState:)`
 
 ---
 ## [2.3.0](https://github.com/uias/Tabman/releases/tag/2.3.0)
