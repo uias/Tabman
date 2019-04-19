@@ -123,7 +123,7 @@ open class TMHidingBar: UIView {
     ///   - animated: Whether to animate the hide.
     ///   - completion: Completion handler.
     open func hide(animated: Bool, completion: ((Bool) -> Void)?) {
-        guard barView.alpha != 0.0 else {
+        guard isHidden == false else {
             return
         }
         
@@ -136,7 +136,7 @@ open class TMHidingBar: UIView {
                     self.barView.alpha = 0.0
                 }, completion: { (isFinished) in
                     if isFinished {
-                        self.isUserInteractionEnabled =  false
+                        self.isHidden = true
                     }
                     completion?(isFinished)
                 })
@@ -145,14 +145,14 @@ open class TMHidingBar: UIView {
                     self.barView.alpha = 0.0
                 }, completion: { (isFinished) in
                     if isFinished {
-                        self.isUserInteractionEnabled =  false
+                        self.isHidden = true
                     }
                     completion?(isFinished)
                 })
             }
         } else {
             barView.alpha = 0.0
-            isUserInteractionEnabled = false
+            isHidden = true
         }
     }
     
@@ -166,40 +166,38 @@ open class TMHidingBar: UIView {
     }
     
     internal func performShow(animated: Bool, completion: ((Bool) -> Void)?) {
-        guard barView.alpha != 1.0 else {
+        guard isHidden else {
             return
         }
         
         if animated {
-            switch hideTransition {
-            case .drawer:
-                barViewTopPin?.constant = -barView.bounds.size.height
-                layoutIfNeeded()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                self.isHidden = false
                 
-                barViewTopPin?.constant = 0.0
-                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                switch self.hideTransition {
+                case .drawer:
+                    self.barViewTopPin?.constant = -self.barView.bounds.size.height
                     self.layoutIfNeeded()
-                    self.barView.alpha = 1.0
-                }, completion: { (isFinished) in
-                    if isFinished {
-                        self.isUserInteractionEnabled = true
-                    }
-                    completion?(isFinished)
-                })
-            case .fade:
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.barView.alpha = 1.0
-                }, completion: { (isFinished) in
-                    if isFinished {
-                        self.isUserInteractionEnabled =  true
-                    }
-                    completion?(isFinished)
-                })
+                    
+                    self.barViewTopPin?.constant = 0.0
+                    UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                        self.layoutIfNeeded()
+                        self.barView.alpha = 1.0
+                    }, completion: { (isFinished) in
+                        completion?(isFinished)
+                    })
+                case .fade:
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.barView.alpha = 1.0
+                    }, completion: { (isFinished) in
+                        completion?(isFinished)
+                    })
+                }
             }
         } else {
             barViewTopPin?.constant = 0.0
             barView.alpha = 1.0
-            isUserInteractionEnabled = true
+            isHidden = false
         }
     }
 }
