@@ -60,13 +60,9 @@ class TabPageViewController: TabmanViewController {
         bar.rightAccessoryView = plusButton
         
         // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
-        let bar = self.bar.systemBar().hiding(trigger: .time(duration: 5))
-//        let bar = self.bar.systemBar().hiding(trigger: .manual)
-        addBar(bar,
+        addBar(bar.systemBar(),
                dataSource: self,
                at: .top)
-        
-        bar.hide(animated: false, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
