@@ -32,7 +32,7 @@ open class TMHidingBar: UIView {
     /// - time: Time based, will hide after a duration.
     /// - manual: Manually triggered only.
     public enum Trigger {
-        case time(duration: TimeInterval, interactionView: UIView)
+        case time(duration: TimeInterval)
         case manual
     }
     
@@ -107,10 +107,9 @@ open class TMHidingBar: UIView {
     
     private func makeTriggerHandler(for trigger: Trigger) -> TMAutoHidingTriggerHandler? {
         switch trigger {
-        case .time(let duration, let interactionView):
+        case .time(let duration):
             return TMAutoHidingTimeTriggerHandler(for: self,
-                                                  duration: duration,
-                                                  interactionView: interactionView)
+                                                  duration: duration)
         case .manual:
             return TMAutoHidingTriggerHandler(for: self)
         }
