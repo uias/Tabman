@@ -19,7 +19,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (72% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -50,10 +50,13 @@
             <a class='nav-group-name-link' href='Documentation.html'>Documentation</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
+                <a class='nav-group-task-link' href='adding-a-bar.html'>Adding a Bar</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
@@ -106,6 +109,15 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
               </li>
             </ul>
           </li>
@@ -395,7 +407,7 @@ in the <code>TMBarView</code> type definition.</p>
                         
                           <a href="Classes/TMBarView.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarView/TMBarView.swift#L22-L305" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarView/TMBarView.swift#L22-L329" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -438,7 +450,7 @@ fully supported.</p>
                         
                           <a href="Protocols/TMBarItemable.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L20-L37" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L20-L43" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -463,7 +475,7 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TMBarItem</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TMBarItemable.html">TMBarItemable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarItem</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TMBarItemable.html">TMBarItemable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -471,7 +483,7 @@ fully supported.</p>
                         
                           <a href="Classes/TMBarItem.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L47-L103" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L73-L143" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -510,7 +522,47 @@ fully supported.</p>
                         
                           <a href="Classes/TMSystemBar.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift#L24-L204" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift#L24-L207" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/c:@M@Tabman@objc(cs)TMHidingBar"></a>
+                    <a name="//apple_ref/swift/Class/TMHidingBar" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Tabman@objc(cs)TMHidingBar">TMHidingBar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bar which can be hidden using animated transitions.</p>
+
+<p>Supports manual show/hide triggering and also automatic triggers
+such as time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMHidingBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="Classes/TMHidingBar.html" class="button">See more</a>
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L26-L203" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

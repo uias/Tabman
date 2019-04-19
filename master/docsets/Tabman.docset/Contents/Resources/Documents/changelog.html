@@ -18,7 +18,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (72% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -49,10 +49,13 @@
             <a class='nav-group-name-link' href='Documentation.html'>Documentation</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
+                <a class='nav-group-task-link' href='adding-a-bar.html'>Adding a Bar</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
@@ -105,6 +108,15 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
               </li>
             </ul>
           </li>
@@ -243,6 +255,7 @@
 <h4 id='2-x-releases' class='heading'>2.x Releases</h4>
 
 <ul>
+<li><code>2.4.x</code> Releases - <a href="#240">2.4.0</a></li>
 <li><code>2.3.x</code> Releases - <a href="#230">2.3.0</a></li>
 <li><code>2.2.x</code> Releases - <a href="#220">2.2.0</a> | <a href="#221">2.2.1</a></li>
 <li><code>2.1.x</code> Releases - <a href="#210">2.1.0</a> | <a href="#211">2.1.1</a> | <a href="#212">2.1.2</a> | <a href="#213">2.1.3</a> | <a href="#214">2.1.4</a></li>
@@ -271,6 +284,54 @@
 <li><code>0.6.x</code> Releases - <a href="#060">0.6.0</a> | <a href="#061">0.6.1</a> | <a href="#062">0.6.2</a></li>
 <li><code>0.5.x</code> Releases - <a href="#050">0.5.0</a> | <a href="#051">0.5.1</a> | <a href="#052">0.5.2</a> | <a href="#053">0.5.3</a></li>
 <li><code>0.4.x</code> Releases - <a href="#040">0.4.0</a> | <a href="#041">0.4.1</a> | <a href="#042">0.4.2</a> | <a href="#043">0.4.3</a> | <a href="#044">0.4.4</a> | <a href="#045">0.4.5</a> | <a href="#046">0.4.6</a> | <a href="#047">0.4.7</a> | <a href="#048">0.4.8</a></li>
+</ul>
+
+<hr>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-2-4-0-2-4-0-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/2.4.0">2.4.0</a></h2>
+
+<p>Released on 2019-04-19</p>
+<h4 id='added' class='heading'>Added</h4>
+
+<ul>
+<li>Ability to override automatic inset values via <code>calculateRequiredInsets()</code> on <code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code>.
+
+<ul>
+<li>by <a href="https://github.com/WingedDoom">WingedDoom</a></li>
+</ul></li>
+<li><a href="https://github.com/uias/Tabman/issues/404">#404</a> <code>adjustsAlphaOnSelection</code> to <code><a href="Classes/TMBarButton.html">TMBarButton</a></code>.</li>
+<li><a href="https://github.com/uias/Tabman/issues/338">#338</a> Ability to hide / show the bar with <code><a href="Classes/TMHidingBar.html">TMHidingBar</a></code>.</li>
+<li><a href="https://github.com/uias/Tabman/issues/403">#403</a> Accessibility support to <code><a href="Classes/TMBarView.html">TMBarView</a></code>.
+
+<ul>
+<li>by <a href="https://github.com/iv-mexx">iv-mexx</a></li>
+</ul></li>
+<li><a href="https://github.com/uias/Tabman/issues/403">#403</a> Accessibility support to <code><a href="Classes/TMBarItem.html">TMBarItem</a></code>.
+
+<ul>
+<li>by <a href="https://github.com/iv-mexx">iv-mexx</a></li>
+</ul></li>
+<li><a href="https://github.com/uias/Tabman/issues/403">#403</a> Accessibility support to <code><a href="Classes/TMBarButton.html">TMBarButton</a></code>.
+
+<ul>
+<li>by <a href="https://github.com/iv-mexx">iv-mexx</a></li>
+</ul></li>
+<li><a href="https://github.com/uias/Tabman/issues/321">#321</a> <code>navigationItem(item:)</code> to <code><a href="Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO">TabmanViewController.BarLocation</a></code> with support for embedding a <code><a href="Protocols/TMBar.html">TMBar</a></code> in a <code>UINavigationBar</code>.</li>
+</ul>
+<h4 id='updated' class='heading'>Updated</h4>
+
+<ul>
+<li>Make <code><a href="Classes/TMBarItem.html">TMBarItem</a></code> <code>open</code>.</li>
+<li>Make <code>.title</code> open on <code><a href="Classes/TMBarItem.html">TMBarItem</a></code>.</li>
+<li>Make <code>.image</code> open on <code><a href="Classes/TMBarItem.html">TMBarItem</a></code>.</li>
+<li>Make <code>.badgeValue</code> open on <code><a href="Classes/TMBarItem.html">TMBarItem</a></code>.</li>
+<li>Make <code>.items</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li>Make <code>.dataSource</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li>Make <code>.delegate</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li>Make <code>.scrollMode</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li>Make <code>.fadesContentEdges</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li>Make <code>.spacing</code> <code>open</code> on <code><a href="Classes/TMBarView.html">TMBarView</a></code>.</li>
+<li><a href="https://github.com/uias/Tabman/issues/396">#396</a> Improved layout adaptability of <code><a href="Classes/TMTabItemBarButton.html">TMTabItemBarButton</a></code> on iPad and in landscape.</li>
+<li><a href="https://github.com/uias/Tabman/issues/404">#404</a> <code><a href="Classes/TMBarButton.html">TMBarButton</a></code> no longer performs default fade transition in <code>update(for selectionState:)</code></li>
 </ul>
 
 <hr>

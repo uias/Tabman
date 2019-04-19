@@ -19,7 +19,7 @@
         <a class='header-link' href='../index.html'>
           Tabman Docs
         </a>
-         (72% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -50,10 +50,13 @@
             <a class='nav-group-name-link' href='../Documentation.html'>Documentation</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='../example-projects.html'>Example Projects</a>
+                <a class='nav-group-task-link' href='../adding-a-bar.html'>Adding a Bar</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../example-projects.html'>Example Projects</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../contributing.html'>Contributing</a>
@@ -106,6 +109,15 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='../Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
               </li>
             </ul>
           </li>
@@ -279,6 +291,7 @@ automatic insetting of child view controller contents.</p>
 <ul>
 <li>top: Pin to the top of the safe area.</li>
 <li>bottom: Pin to the bottom of the safe area.</li>
+<li>navigationItem: Set as a <code>UINavigationItem.titleView</code>.</li>
 <li>custom: Add the view to a custom view and provide custom layout.
       If no layout is provided, all edge anchors will be constrained
       to the superview.</li>
@@ -295,7 +308,7 @@ automatic insetting of child view controller contents.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L27-L31" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L28-L33" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -337,7 +350,7 @@ automatic insetting of child view controller contents.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L39" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L41" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -382,7 +395,7 @@ Default is <code>true</code>.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L49" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L51" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -418,7 +431,7 @@ their own insets.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L60-L62" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L62-L64" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -450,7 +463,57 @@ obstructed by bars.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L65" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L67" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
+                <a href="#/Lifecycle">
+                  <h3 class="section-name">Lifecycle</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman0A14ViewControllerC23calculateRequiredInsetsAC0F0VyF"></a>
+                    <a name="//apple_ref/swift/Method/calculateRequiredInsets()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman0A14ViewControllerC23calculateRequiredInsetsAC0F0VyF">calculateRequiredInsets()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method for calculating insets that are required to layout content between the bars
+that have been added.</p>
+
+<p>One can override this method with their own implementation for custom bar inset calculation, to
+take advantage of automatic insets updates for all Tabman&rsquo;s pages during its lifecycle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">calculateRequiredInsets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TabmanViewController/Insets.html">Insets</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>information about required insets for current state.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L117-L119" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -487,7 +550,7 @@ obstructed by bars.</p>
                         
                           <a href="../Classes/TabmanViewController/Insets.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController+Insets.swift#L15-L63" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController+Insets.swift#L15-L70" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -574,7 +637,7 @@ obstructed by bars.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L191-L216" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L204-L228" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -624,7 +687,7 @@ obstructed by bars.</p>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L221-L232" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/TabmanViewController.swift#L233-L244" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

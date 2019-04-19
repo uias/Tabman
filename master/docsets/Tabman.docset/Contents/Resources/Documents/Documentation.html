@@ -19,7 +19,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (72% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -50,10 +50,13 @@
             <a class='nav-group-name-link' href='Documentation.html'>Documentation</a>
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
+                <a class='nav-group-task-link' href='adding-a-bar.html'>Adding a Bar</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
@@ -106,6 +109,15 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
               </li>
             </ul>
           </li>
@@ -275,12 +287,12 @@
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
 <p>Tabman is available through <a href="http://cocoapods.org">CocoaPods</a>:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Tabman'</span><span class="p">,</span> <span class="s1">'~&gt; 2.3'</span>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Tabman'</span><span class="p">,</span> <span class="s1">'~&gt; 2.4'</span>
 </code></pre>
 <h3 id='carthage' class='heading'>Carthage</h3>
 
 <p>Tabman is also available through <a href="https://github.com/Carthage/Carthage">Carthage</a>:</p>
-<pre class="highlight plaintext"><code>github "uias/Tabman" ~&gt; 2.3
+<pre class="highlight plaintext"><code>github "uias/Tabman" ~&gt; 2.4
 </code></pre>
 <h2 id='usage' class='heading'>🚀 Usage</h2>
 <h3 id='the-basics' class='heading'>The Basics</h3>
@@ -310,7 +322,7 @@
 <span class="p">}</span>
 </code></pre>
 
-<p><em>When adding a bar, you can choose to add it to the predefined areas (<code>.top</code>, <code>.bottom</code>) or to a custom view with <code>.custom(view, layout)</code>. If you set <code>layout</code> to be <code>nil</code>, the bar will be constrained to leading, trailing, top and bottom anchors of the view automatically.</em></p>
+<p><strong>When adding a bar, you can choose to add it to the predefined areas (<code>.top</code>, <code>.bottom</code>, <code>.navigationItem(item:)</code>) or to a custom view with <code>.custom(view:layout:)</code>. For more information, read the <a href="https://uias.github.io/Tabman/master/adding-a-bar.html">Adding a Bar</a> guide.</strong></p>
 
 <p>4) Configure your data sources.</p>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TabViewController</span><span class="p">:</span> <span class="kt">PageboyViewControllerDataSource</span><span class="p">,</span> <span class="kt">TMBarDataSource</span> <span class="p">{</span>
@@ -530,9 +542,9 @@
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/documentation.Example Projects"></a>
-                    <a name="//apple_ref/swift/Guide/Example Projects" class="dashAnchor"></a>
-                    <a class="token" href="#/documentation.Example Projects">Example Projects</a>
+                    <a name="/documentation.Adding a Bar"></a>
+                    <a name="//apple_ref/swift/Guide/Adding a Bar" class="dashAnchor"></a>
+                    <a class="token" href="#/documentation.Adding a Bar">Adding a Bar</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -544,7 +556,7 @@
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="example-projects.html" class="button">See more</a>
+                          <a href="adding-a-bar.html" class="button">See more</a>
                         
                       </div>
                     </section>
@@ -572,6 +584,33 @@
                       <div class="slightly-smaller">
                         
                           <a href="going-custom.html" class="button">See more</a>
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/documentation.Example Projects"></a>
+                    <a name="//apple_ref/swift/Guide/Example Projects" class="dashAnchor"></a>
+                    <a class="token" href="#/documentation.Example Projects">Example Projects</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="example-projects.html" class="button">See more</a>
                         
                       </div>
                     </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Other Extensions  Reference</title>
+    <title>Adding a Bar  Reference</title>
     <link rel='stylesheet' type='text/css' href='css/jazzy.css' />
     <link rel='stylesheet' type='text/css' href='css/highlight.css' />
     <meta charset='utf-8'>
@@ -10,9 +10,8 @@
   </head>
   <body>
 
-    <a name='//apple_ref/swift/Section/Other Extensions' class='dashAnchor'></a>
 
-    <a title='Other Extensions  Reference'></a>
+    <a title='Adding a Bar  Reference'></a>
 
     <header class='header'>
       <p class='header-col header-col--primary'>
@@ -40,7 +39,7 @@
     <p class='breadcrumbs'>
       <a class='breadcrumb' href='index.html'>Tabman Reference</a>
       <img class='carat' src='img/carat.png' />
-      Other Extensions  Reference
+      Adding a Bar  Reference
     </p>
 
     <div class='content-wrapper'>
@@ -248,51 +247,101 @@
 
         <section class='section'>
           <div class='section-content'>
-            <h1>Other Extensions</h1>
-            <p>The following extensions are available globally.</p>
+            
+            <h1 id='adding-a-bar' class='heading'>Adding a Bar</h1>
+
+<p><code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code> supports adding multiple bars to numerous locations on the view controller. This guide covers the intricacies of adding a bar to any of the available <code><a href="Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO">TabmanViewController.BarLocation</a></code> locations:</p>
+
+<ul>
+<li><a href="#top">top</a></li>
+<li><a href="#bottom">bottom</a></li>
+<li><a href="#navigationItem">navigationItem</a></li>
+<li><a href="#custom">custom</a></li>
+</ul>
+<h2 id='top' class='heading'>top</h2>
+
+<p>The <code>.top</code> location describes the area at the top of the view controller, insetted below any system areas such as the Safe Area. </p>
+
+<p>For example, if your view controller is within a <code>UINavigationController</code> which has a visbile <code>UINavigationBar</code> the <code>.top</code> location would describe the area directly below the navigation bar.</p>
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+    <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='extending-the-background' class='heading'>Extending the background</h4>
+
+<p>If you would like to use the <code><a href="Protocols/TMBar.html">TMBar</a></code> as a system bar similar to <code>UINavigationBar</code> or <code>UITabBar</code> you can use the <code><a href="Classes/TMSystemBar.html">TMSystemBar</a></code> wrapper.</p>
+
+<p>This will extend the background of the bar to the view edges, and add other extras such as a separator.</p>
+<pre class="highlight swift"><code><span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="nf">systemBar</span><span class="p">(),</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+</code></pre>
+<h2 id='bottom' class='heading'>bottom</h2>
+
+<p>The <code>.bottom</code> location describes the area at the bottom of the view controller, insetted above any system areas such as the Safe Area. </p>
+
+<p>For example, if your view controller is within a <code>UITabBarController</code>, the <code>.bottom</code> location would describe the area directly above the <code>UITabBar</code>.</p>
+<pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">TabBar</span><span class="p">()</span>
+    <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='extending-the-background' class='heading'>Extending the background</h4>
+
+<p>If you would like to use the <code><a href="Protocols/TMBar.html">TMBar</a></code> as a system bar similar to <code>UINavigationBar</code> or <code>UITabBar</code> you can use the <code><a href="Classes/TMSystemBar.html">TMSystemBar</a></code> wrapper.</p>
+
+<p>This will extend the background of the bar to the view edges, and add other extras such as a separator.</p>
+<pre class="highlight swift"><code><span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="nf">systemBar</span><span class="p">(),</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+</code></pre>
+<h2 id='navigationitem' class='heading'>navigationItem</h2>
+
+<p>Tabman also supports displaying a bar within a <code>UINavigationItem</code> as its <code>titleView</code>.</p>
+
+<p>Due to lifecycle events, it is recommended that you perform this in <code>viewWillAppear</code> rather than <code>viewDidLoad</code> and also retain your <code><a href="Protocols/TMBar.html">TMBar</a></code> to improve performance.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewWillAppear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span>
+
+    <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="nf">navigationItem</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">navigationItem</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='custom' class='heading'>custom</h2>
+
+<p>If you want a completely custom location for your bar, this is also fully supported by Tabman. This allows you to be add the bar as a subview to a custom specified container view.</p>
+
+<p>⚠️<strong>Note</strong> - Using a custom view will prevent Tabman from providing automatic insetting support for the bar.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">customContainer</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+    <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="n">customContainer</span><span class="p">,</span> <span class="nv">layout</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>This will automatically add the view as a subview to <code>customContainer</code> and constrain all four anchors (<code>leadingAnchor</code>, <code>topAnchor</code>, <code>trailingAnchor</code> and <code>bottomAnchor</code>) to be equal to the custom view.</p>
+<h4 id='custom-layout-constraints' class='heading'>Custom Layout Constraints</h4>
+
+<p>You might also want control over the constraints that are added to the bar when it&rsquo;s added to the custom view - this is where the <code>layout</code> parameter comes in. </p>
+
+<p>By setting this to <code>nil</code> you will get the default constraints that are described above, or you can use the closure to build your custom layout:</p>
+<pre class="highlight swift"><code><span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="n">customContainer</span><span class="p">,</span> <span class="nv">layout</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">bar</span><span class="p">)</span> <span class="k">in</span>
+    <span class="n">bar</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">customContainer</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">customContainer</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">)</span>
+        <span class="p">])</span>
+    <span class="p">}))</span>
+</code></pre>
 
           </div>
         </section>
 
-        <section class='section'>
-          <div class='section-content'>
-            <div class="task-group">
-              <ul class='item-container'>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/c:objc(cs)UIViewController"></a>
-                    <a name="//apple_ref/swift/Extension/UIViewController" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)UIViewController">UIViewController</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UIViewController</span> <span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">UIAppearanceContainer</span><span class="p">,</span> <span class="kt">UITraitEnvironment</span><span class="p">,</span> <span class="kt">UIContentContainer</span><span class="p">,</span> <span class="kt">UIFocusEnvironment</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                          <a href="Extensions/UIViewController.html" class="button">See more</a>
-                        
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
 
       </article>
     </div>

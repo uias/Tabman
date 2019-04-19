@@ -72,7 +72,7 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
-      "line": 90,
+      "line": 96,
       "symbol": "TMBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -100,8 +100,71 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 142,
+      "line": 144,
       "symbol": "TMLabelBarButton.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
+      "line": 155,
+      "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "line": 35,
+      "symbol": "TMHidingBar.Trigger.time(duration:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "line": 36,
+      "symbol": "TMHidingBar.Trigger.manual",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "line": 44,
+      "symbol": "TMHidingBar.Transition.drawer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "line": 45,
+      "symbol": "TMHidingBar.Transition.fade",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "line": 85,
+      "symbol": "TMHidingBar.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "line": 28,
+      "symbol": "TMSystemBar.bar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "line": 70,
+      "symbol": "TMSystemBar.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "line": 120,
+      "symbol": "TMSystemBar.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -274,6 +337,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
+      "line": 106,
+      "symbol": "TMBarItem.isAccessibilityElement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 23,
       "symbol": "TMBarLayout.ContentMode.intrinsic",
@@ -345,36 +415,36 @@
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 180,
+      "line": 187,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 186,
+      "line": 193,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift",
-      "line": 28,
-      "symbol": "TMSystemBar.bar",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift",
-      "line": 70,
-      "symbol": "TMSystemBar.init(coder:)",
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 315,
+      "symbol": "TMBarView.accessibilityElementCount()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/SystemBar/TMSystemBar.swift",
-      "line": 120,
-      "symbol": "TMSystemBar.layoutSubviews()",
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 319,
+      "symbol": "TMBarView.accessibilityElement(at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "line": 323,
+      "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -442,50 +512,71 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
+      "line": 50,
+      "symbol": "TabmanViewController.Insets.init(barInsets:safeAreaInsets:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
+      "line": 57,
+      "symbol": "TabmanViewController.Insets.makeSafeAreaInsets(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 28,
+      "line": 29,
       "symbol": "TabmanViewController.BarLocation.top",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 29,
+      "line": 30,
       "symbol": "TabmanViewController.BarLocation.bottom",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 30,
+      "line": 31,
+      "symbol": "TabmanViewController.BarLocation.navigationItem(item:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "line": 32,
       "symbol": "TabmanViewController.BarLocation.custom(view:layout:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 75,
+      "line": 77,
       "symbol": "TabmanViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 80,
+      "line": 82,
       "symbol": "TabmanViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 91,
+      "line": 93,
       "symbol": "TabmanViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/travis/build/uias/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 102,
+      "line": 104,
       "symbol": "TabmanViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>TMBarItemable Protocol Reference</title>
+    <title>TMHidingBar Class Reference</title>
     <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
     <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
     <meta charset='utf-8'>
@@ -10,9 +10,9 @@
   </head>
   <body>
 
-    <a name='//apple_ref/swift/Protocol/TMBarItemable' class='dashAnchor'></a>
+    <a name='//apple_ref/swift/Class/TMHidingBar' class='dashAnchor'></a>
 
-    <a title='TMBarItemable Protocol Reference'></a>
+    <a title='TMHidingBar Class Reference'></a>
 
     <header class='header'>
       <p class='header-col header-col--primary'>
@@ -40,7 +40,7 @@
     <p class='breadcrumbs'>
       <a class='breadcrumb' href='../index.html'>Tabman Reference</a>
       <img class='carat' src='../img/carat.png' />
-      TMBarItemable Protocol Reference
+      TMHidingBar Class Reference
     </p>
 
     <div class='content-wrapper'>
@@ -248,20 +248,58 @@
 
         <section class='section'>
           <div class='section-content'>
-            <h1>TMBarItemable</h1>
+            <h1>TMHidingBar</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarItemable</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMHidingBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                 </div>
               </div>
-            <p>Definition of an item that can be displayed in a <code><a href="../Protocols/TMBar.html">TMBar</a></code>.</p>
+            <p><code>TMHidingBar</code> allows you to hide/show a <code><a href="../Protocols/TMBar.html">TMBar</a></code> manually and automatically with triggers.</p>
 
-<p>Properties of a <code>TMBarItemable</code> are optionally displayed in a <code><a href="../Protocols/TMBar.html">TMBar</a></code> depending on the layout / configuration.</p>
+<p>It is provided as an extension to a <code><a href="../Protocols/TMBar.html">TMBar</a></code>, similar to <code><a href="../Classes/TMSystemBar.html">TMSystemBar</a></code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">hidingBar</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="nf">hiding</span><span class="p">(</span><span class="nv">trigger</span><span class="p">:</span> <span class="o">.</span><span class="nf">time</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre>
 
-<p>Tabman adds extensions to UIKit components to natively support <code>TMBarItemable</code>, such as <code>UINavigationItem</code> and
-<code>UITabBarItem</code>. Therefore for example, simply returning a <code>UIViewController</code> <code>navigationItem</code> as a <code>TMBarItemable</code> is
-fully supported.</p>
+<p>This would create a <code><a href="../Protocols/TMBar.html#/s:6Tabman5TMBarPAAE9ButtonBara">TMBar.ButtonBar</a></code> that is automatically hidden after 5 seconds.</p>
+
+<p><em>Recommendation - you should always use <code>.hiding()</code> as the final function when creating a bar.</em></p>
+
+<p><strong>As Tabman relies so heavily on type inference - you should ensure you are using the correct types for customization with the <code><a href="../Protocols/TMBar.html">TMBar</a></code> extensions. For example:</strong></p>
+<pre class="highlight swift"><code><span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">TMHorizontalBarLayout</span><span class="p">,</span> <span class="kt">TMLabelBarButton</span><span class="p">,</span> <span class="kt">TMLineBarIndicator</span><span class="o">&gt;</span>
+<span class="kt">TMBar</span><span class="o">.</span><span class="nf">hiding</span><span class="p">(</span><span class="nv">trigger</span><span class="p">:)</span> <span class="o">-&gt;</span> <span class="kt">TMHidingBar</span>
+</code></pre>
+<h2 id='hide-and-show' class='heading'>Hide and Show</h2>
+
+<p><code>TMHidingBar</code> provides show / hide functions that can be called at any time to hide the bar.</p>
+<pre class="highlight swift"><code><span class="n">bar</span><span class="o">.</span><span class="nf">hide</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">bar</span><span class="o">.</span><span class="nf">show</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre>
+
+<p><em>.show(animated:completion:) is automatically called when the bar is updated for a page change. You are responsible for calling it in any other desired scenario.</em></p>
+
+<p>The transition that is used for animation is dependent on the <code>transition</code> property.</p>
+<pre class="highlight swift"><code><span class="n">bar</span><span class="o">.</span><span class="n">transition</span> <span class="o">=</span> <span class="o">.</span><span class="n">drawer</span>
+<span class="n">bar</span><span class="o">.</span><span class="n">transition</span> <span class="o">=</span> <span class="o">.</span><span class="n">fade</span>
+</code></pre>
+<h3 id='triggers' class='heading'>Triggers</h3>
+
+<p><code>TMHidingBar</code> provides configurable triggers that are passed as the <code>trigger:</code> parameter during initialization. These triggers have the ability to automatically hide and show the bar based on their type. They can of course be overriden by manual show / hide function calls.</p>
+<h4 id='code-manual-code' class='heading'><code>.manual</code></h4>
+
+<p>The manual trigger does nothing, and allows you to show / hide the bar manually with show / hide calls.</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="n">manual</span>
+</code></pre>
+<h4 id='time' class='heading'>.time`</h4>
+
+<p>The time trigger will hide the bar after a specified <code>TimeInterval</code> has elapsed. </p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">time</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre>
+<p>Bar which can be hidden using animated transitions.</p>
+
+<p>Supports manual show/hide triggering and also automatic triggers
+such as time.</p>
 
           </div>
         </section>
@@ -269,13 +307,20 @@ fully supported.</p>
         <section class='section'>
           <div class='section-content'>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Types"></a>
+                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
+                <a href="#/Types">
+                  <h3 class="section-name">Types</h3>
+                </a>
+              </div>
               <ul class='item-container'>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman13TMBarItemableP5titleSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP5titleSSSgvp">title</a>
+                    <a name="/s:6Tabman11TMHidingBarC7TriggerO"></a>
+                    <a name="//apple_ref/swift/Enum/Trigger" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC7TriggerO">Trigger</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -283,20 +328,25 @@ fully supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Title of the item.</p>
+                        <p>Trigger that causes bar to hide.</p>
+
+<ul>
+<li>time: Time based, will hide after a duration.</li>
+<li>manual: Manually triggered only.</li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Trigger</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L23" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L34-L37" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -304,9 +354,9 @@ fully supported.</p>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman13TMBarItemableP5imageSo7UIImageCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/image" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP5imageSo7UIImageCSgvp">image</a>
+                    <a name="/s:6Tabman11TMHidingBarC10TransitionO"></a>
+                    <a name="//apple_ref/swift/Enum/Transition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC10TransitionO">Transition</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -314,20 +364,67 @@ fully supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Image to display.</p>
+                        <p>Transition to perform for hide / show animations.</p>
+
+<ul>
+<li>drawer: Collapse upwards like a closing drawer.</li>
+<li>fade: Fades in / out.</li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Transition</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L25" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L43-L46" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMHidingBarC3barAA5TMBar_pvp"></a>
+                    <a name="//apple_ref/swift/Property/bar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC3barAA5TMBar_pvp">bar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bar that is embedded and hidden / shown.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L51" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -335,9 +432,9 @@ fully supported.</p>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman13TMBarItemableP10badgeValueSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/badgeValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP10badgeValueSSSgvp">badgeValue</a>
+                    <a name="/s:6Tabman11TMHidingBarC7triggerAC7TriggerOvp"></a>
+                    <a name="//apple_ref/swift/Property/trigger" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC7triggerAC7TriggerOvp">trigger</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -345,20 +442,20 @@ fully supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Badge value to display.</p>
+                        <p>Trigger that causes the bar to hide.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">badgeValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">trigger</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO">Trigger</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L28" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L65" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -366,9 +463,9 @@ fully supported.</p>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman13TMBarItemableP18accessibilityLabelSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/accessibilityLabel" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP18accessibilityLabelSSSgvp">accessibilityLabel</a>
+                    <a name="/s:6Tabman11TMHidingBarC14hideTransitionAC0E0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/hideTransition" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC14hideTransitionAC0E0Ovp">hideTransition</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -376,20 +473,95 @@ fully supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a short description of the button.</p>
+                        <p>Transition to use when hiding and showing the bar.</p>
+
+<p>Defaults to <code>.drawer</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">accessibilityLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">hideTransition</span><span class="p">:</span> <span class="kt">TMHidingBar</span><span class="o">.</span><span class="kt"><a href="../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO">Transition</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L31" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L71" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Animations"></a>
+                <a name="//apple_ref/swift/Section/Animations" class="dashAnchor"></a>
+                <a href="#/Animations">
+                  <h3 class="section-name">Animations</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMHidingBarC4hide8animated10completionySb_ySbcSgtF"></a>
+                    <a name="//apple_ref/swift/Method/hide(animated:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC4hide8animated10completionySb_ySbcSgtF">hide(animated:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hide the bar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">hide</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether to animate the hide.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion handler.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L125-L157" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -397,9 +569,9 @@ fully supported.</p>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman13TMBarItemableP17accessibilityHintSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/accessibilityHint" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP17accessibilityHintSSSgvp">accessibilityHint</a>
+                    <a name="/s:6Tabman11TMHidingBarC4show8animated10completionySb_ySbcSgtF"></a>
+                    <a name="//apple_ref/swift/Method/show(animated:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMHidingBarC4show8animated10completionySb_ySbcSgtF">show(animated:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -407,63 +579,51 @@ fully supported.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A brief description of the result of performing an action on the accessibility element, in a localized string.</p>
+                        <p>Show the bar.</p>
 
                       </div>
                       <div class="declaration">
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">accessibilityHint</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">show</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
 
                         </div>
                       </div>
-                      <div class="slightly-smaller">
-                        
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L34" class="button">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/s:6Tabman13TMBarItemableP14setNeedsUpdateyyF"></a>
-                    <a name="//apple_ref/swift/Method/setNeedsUpdate()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarItemableP14setNeedsUpdateyyF">setNeedsUpdate()</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Inform the bar that the item has been updated.</p>
-
-<p>This will notify any button that is responsible for the item
-that it requires updating, and will call <code>populate(for: item)</code>.
-The bar indicator position will also be reloaded to reflect any
-layout updates.</p>
-
-                      </div>
-                      <h5>Default Implementation</h5>
-                      <div class="default_impl abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setNeedsUpdate</span><span class="p">()</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether to animate the show.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion handler.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarItem/TMBarItem.swift#L42" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift#L164-L166" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
