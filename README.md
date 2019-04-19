@@ -76,7 +76,7 @@ class TabViewController: TabmanViewController {
 }
 ```
 
-*When adding a bar, you can choose to add it to the predefined areas (`.top`, `.bottom`, `.navigationItem(item)`) or to a custom view with `.custom(view, layout)`. If you set `layout` to be `nil`, the bar will be constrained to leading, trailing, top and bottom anchors of the view automatically. For more information, read the [Adding a Bar](https://uias.github.io/Tabman/master/adding-a-bar.html) guide*
+**When adding a bar, you can choose to add it to the predefined areas (`.top`, `.bottom`, `.navigationItem(item:)`) or to a custom view with `.custom(view:layout:)`. For more information, read the [Adding a Bar](https://uias.github.io/Tabman/master/adding-a-bar.html) guide.**
 
 4) Configure your data sources.
 
