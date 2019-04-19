@@ -146,6 +146,10 @@ open class TMHidingBar: UIView {
     ///   - animated: Whether to animate the show.
     ///   - completion: Completion handler.
     open func show(animated: Bool, completion: ((Bool) -> Void)?) {
+        triggerHandler?.invalidate(animated: animated, completion: completion)
+    }
+    
+    internal func performShow(animated: Bool, completion: ((Bool) -> Void)?) {
         guard barView.alpha != 1.0 else {
             return
         }

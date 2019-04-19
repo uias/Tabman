@@ -26,8 +26,8 @@ internal class TMAutoHidingTriggerHandler {
     
     // MARK: Lifecycle
     
-    func invalidate() {
-        bar.show(animated: true, completion: nil)
+    func invalidate(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        bar.performShow(animated: animated, completion: completion)
     }
 }
 
@@ -65,8 +65,8 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     // MARK: Overrides
     
-    override func invalidate() {
-        super.invalidate()
+    override func invalidate(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        super.invalidate(animated: animated, completion: completion)
         resetDismissTimer()
     }
     
