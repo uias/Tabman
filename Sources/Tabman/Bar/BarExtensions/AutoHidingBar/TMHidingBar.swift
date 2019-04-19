@@ -10,27 +10,44 @@ import UIKit
 
 extension TMBar {
     
+    /// Create a hideable bar.
+    ///
+    /// - Parameter trigger: Trigger which causes the hide / show.
+    /// - Returns: Hiding bar.
     public func hiding(trigger: TMHidingBar.Trigger) -> TMHidingBar {
         return TMHidingBar(for: self, trigger: trigger)
     }
 }
 
+/// Bar which can be hidden using animated transitions.
+///
+/// Supports manual show/hide triggering and also automatic triggers
+/// such as time.
 open class TMHidingBar: UIView {
     
     // MARK: Types
     
+    /// Trigger that causes bar to hide.
+    ///
+    /// - time: Time based, will hide after a duration.
+    /// - manual: Manually triggered only.
     public enum Trigger {
         case time(duration: TimeInterval, interactionView: UIView)
         case manual
     }
     
-    public enum HideTransition {
+    /// Transition to perform for hide / show animations.
+    ///
+    /// - drawer: Collapse upwards like a closing drawer.
+    /// - fade: Fades in / out.
+    public enum Transition {
         case drawer
         case fade
     }
     
     // MARK: Properties
     
+    /// Bar that is embedded and hidden / shown.
     public let bar: TMBar
     private var barView: UIView {
         #if swift(>=5.0)
@@ -51,7 +68,7 @@ open class TMHidingBar: UIView {
     /// Transition to use when hiding and showing the bar.
     ///
     /// Defaults to `.drawer`.
-    open var hideTransition: HideTransition = .drawer
+    open var hideTransition: Transition = .drawer
     
     // MARK: Init
     
