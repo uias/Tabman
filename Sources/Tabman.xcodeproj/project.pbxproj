@@ -22,6 +22,7 @@
 		462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941E42111EB7C00345B52 /* TMBarView.swift */; };
 		462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */; };
 		4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4629F0E621825F21001919F2 /* GestureScrollView.swift */; };
+		462AB98C2246B1F70041DE3A /* ViewTitleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */; };
 		462F7F31217387E50036080C /* TMBarViewScrollHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */; };
 		462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F3321739D5A0036080C /* TMSystemBar.swift */; };
 		46324A78213A99250059D469 /* MockBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A77213A99250059D469 /* MockBarView.swift */; };
@@ -33,10 +34,12 @@
 		464E9095218857490096308E /* TMAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E9094218857490096308E /* TMAnimation.swift */; };
 		464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */; };
 		464E90992188853F0096308E /* TMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90982188853F0096308E /* TMTransition.swift */; };
+		467E1B7E21C2B441000BB77D /* TMHidingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467E1B7D21C2B441000BB77D /* TMHidingBar.swift */; };
 		468EDFBA2164C51200C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */; };
 		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */; };
 		46A9D28C213C3005001D9A70 /* TMBarViewLayoutGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */; };
+		46B244EA21C8399900B4D26A /* TMHidingBar+Triggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B244E921C8399900B4D26A /* TMHidingBar+Triggers.swift */; };
 		46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FDFA20BC537000E9BB7E /* TMBar.swift */; };
 		46CCBAD52174BDF600C370E1 /* TMTabItemBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAD22174BDF600C370E1 /* TMTabItemBarButton.swift */; };
 		46CCBAD62174BDF600C370E1 /* TMLabelBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CCBAD32174BDF600C370E1 /* TMLabelBarButton.swift */; };
@@ -93,6 +96,7 @@
 		462941E42111EB7C00345B52 /* TMBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarView.swift; sourceTree = "<group>"; };
 		462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewContentInsetGuides.swift; sourceTree = "<group>"; };
 		4629F0E621825F21001919F2 /* GestureScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureScrollView.swift; sourceTree = "<group>"; };
+		462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTitleViewContainer.swift; sourceTree = "<group>"; };
 		462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewScrollHandler.swift; sourceTree = "<group>"; };
 		462F7F3321739D5A0036080C /* TMSystemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMSystemBar.swift; sourceTree = "<group>"; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
@@ -105,8 +109,10 @@
 		464E9094218857490096308E /* TMAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAnimation.swift; sourceTree = "<group>"; };
 		464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewUpdateHandler.swift; sourceTree = "<group>"; };
 		464E90982188853F0096308E /* TMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTransition.swift; sourceTree = "<group>"; };
+		467E1B7D21C2B441000BB77D /* TMHidingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHidingBar.swift; sourceTree = "<group>"; };
 		46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarIndicatorContainer.swift; sourceTree = "<group>"; };
 		46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewLayoutGrid.swift; sourceTree = "<group>"; };
+		46B244E921C8399900B4D26A /* TMHidingBar+Triggers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMHidingBar+Triggers.swift"; sourceTree = "<group>"; };
 		46B7FDFA20BC537000E9BB7E /* TMBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBar.swift; sourceTree = "<group>"; };
 		46CCBAD22174BDF600C370E1 /* TMTabItemBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTabItemBarButton.swift; sourceTree = "<group>"; };
 		46CCBAD32174BDF600C370E1 /* TMLabelBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMLabelBarButton.swift; sourceTree = "<group>"; };
@@ -238,6 +244,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		467E1B7B21C2B3FF000BB77D /* BarExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				467E1B7C21C2B422000BB77D /* AutoHidingBar */,
+				462F7F3221739D5A0036080C /* SystemBar */,
+			);
+			path = BarExtensions;
+			sourceTree = "<group>";
+		};
+		467E1B7C21C2B422000BB77D /* AutoHidingBar */ = {
+			isa = PBXGroup;
+			children = (
+				467E1B7D21C2B441000BB77D /* TMHidingBar.swift */,
+				46B244E921C8399900B4D26A /* TMHidingBar+Triggers.swift */,
+			);
+			path = AutoHidingBar;
+			sourceTree = "<group>";
+		};
 		46B7FDF920BC52D000E9BB7E /* Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +275,7 @@
 				46E96310211B3A01004C7468 /* BarButton */,
 				46E96319211B3A01004C7468 /* BarIndicator */,
 				46E598ED2168FD3100D8A138 /* BarBackgroundView */,
-				462F7F3221739D5A0036080C /* SystemBar */,
+				467E1B7B21C2B3FF000BB77D /* BarExtensions */,
 				46E96334211B4AF6004C7468 /* Generic */,
 				4612BD0F20C9B7F5001A37B5 /* Utility */,
 				4613CBF0214187EE000E6766 /* Extensions */,
@@ -341,6 +365,7 @@
 				46E96335211B4B06004C7468 /* EdgeFadedView.swift */,
 				4629F0E621825F21001919F2 /* GestureScrollView.swift */,
 				46EA239B2195DB660004E0AC /* AnimateableLabel.swift */,
+				462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -557,11 +582,13 @@
 				46D8775B218B62E700C83076 /* TMChevronBarIndicator.swift in Sources */,
 				46E96327211B3A01004C7468 /* TMBarButtonCollection.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
+				462AB98C2246B1F70041DE3A /* ViewTitleViewContainer.swift in Sources */,
 				464E9095218857490096308E /* TMAnimation.swift in Sources */,
 				46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */,
 				464264DD217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift in Sources */,
 				46E96325211B3A01004C7468 /* TMBarButtonStateController.swift in Sources */,
+				46B244EA21C8399900B4D26A /* TMHidingBar+Triggers.swift in Sources */,
 				46CCBADC2174BE0900C370E1 /* TMHorizontalBarLayout.swift in Sources */,
 				462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */,
 				462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */,
@@ -584,6 +611,7 @@
 				46E96339211B7F03004C7468 /* TMBarLayoutParent.swift in Sources */,
 				4613CBF421418804000E6766 /* UIColor+Interpolation.swift in Sources */,
 				46CCBAD52174BDF600C370E1 /* TMTabItemBarButton.swift in Sources */,
+				467E1B7E21C2B441000BB77D /* TMHidingBar.swift in Sources */,
 				4612BCF220C88D24001A37B5 /* TMBar+Templates.swift in Sources */,
 				46CCBAD72174BDF600C370E1 /* TMBarButton+None.swift in Sources */,
 				46E96336211B4B06004C7468 /* EdgeFadedView.swift in Sources */,

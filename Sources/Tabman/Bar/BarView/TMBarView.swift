@@ -64,14 +64,14 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     public let backgroundView = TMBarBackgroundView(style: .blur(style: .extraLight))
     
     /// Items that are displayed in the bar.
-    public private(set) var items: [TMBarItemable]?
+    open private(set) var items: [TMBarItemable]?
     
     /// Object that acts as a data source to the BarView.
-    public weak var dataSource: TMBarDataSource?
+    open weak var dataSource: TMBarDataSource?
     /// Object that acts as a delegate to the BarView.
     ///
     /// By default this is set to the `TabmanViewController` the bar is added to.
-    public weak var delegate: TMBarDelegate?
+    open weak var delegate: TMBarDelegate?
     
     // MARK: Accessory Views
     
@@ -120,7 +120,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     /// - `.interactive`: The bar contents can be scrolled interactively.
     /// - `.swipe`: The bar contents can be scrolled through with swipe gestures.
     /// - `.none`: The bar contents can't be scrolled at all.
-    public var scrollMode: ScrollMode {
+    open var scrollMode: ScrollMode {
         set {
             scrollView.scrollMode = GestureScrollView.ScrollMode(rawValue: newValue.rawValue)!
         } get {
@@ -128,7 +128,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
-    public var fadesContentEdges: Bool {
+    open var fadesContentEdges: Bool {
         set {
             scrollViewContainer.showFade = newValue
         } get {
@@ -138,7 +138,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     /// Spacing between components in the bar, such as between the layout and accessory views.
     ///
     /// Defaults to `8.0`.
-    public var spacing: CGFloat {
+    open var spacing: CGFloat {
         set {
             layoutGrid.horizontalSpacing = newValue
         } get {
@@ -169,6 +169,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         buttons.interactionHandler = self
         scrollHandler.delegate = self
         scrollView.gestureDelegate = self
+        if #available(iOSApplicationExtension 10.0, *) {
+            #if swift(>=4.2)
+            accessibilityTraits = [.tabBar]
+            #else
+            accessibilityTraits = UIAccessibilityTraitTabBar
+            #endif
+        }
         layout(in: self)
         
         NotificationCenter.default.addObserver(self,
@@ -301,6 +308,23 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             button.populate(for: item)
             self.reloadIndicatorPosition()
         }, completion: nil)
+    }
+
+    // MARK: UIAccessibilityContainer
+
+    override open func accessibilityElementCount() -> Int {
+        return buttons.all.count
+    }
+
+    override open func accessibilityElement(at index: Int) -> Any? {
+        return buttons.all[index]
+    }
+
+    open override func index(ofAccessibilityElement element: Any) -> Int {
+        guard let item = element as? Button else {
+            return 0
+        }
+        return buttons.all.firstIndex(of: item) ?? 0
     }
 }
 

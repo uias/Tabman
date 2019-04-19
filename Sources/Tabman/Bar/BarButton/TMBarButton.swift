@@ -59,6 +59,12 @@ open class TMBarButton: UIControl {
     /// Badge View
     public let badge = TMBadgeView()
     
+    /// Whether the button should fade its alpha value when it is unselected.
+    ///
+    /// If enabled the button will interpolate between a minumum alpha of 0.5 and 1.0
+    /// depending on the current `selectionState`.
+    open var adjustsAlphaOnSelection: Bool = true
+    
     // MARK: State
     
     /// Selection state of the button.
@@ -98,6 +104,15 @@ open class TMBarButton: UIControl {
         
         layout(in: contentView)
         layoutBadge(badge, in: contentView)
+
+        accessibilityLabel = item.accessibilityLabel ?? item.title
+        accessibilityHint = item.accessibilityHint
+        #if swift(>=4.2)
+        accessibilityTraits = [.button]
+        #else
+        accessibilityTraits = UIAccessibilityTraitButton
+        #endif
+        isAccessibilityElement = true
     }
     
     // MARK: Layout
@@ -124,7 +139,12 @@ open class TMBarButton: UIControl {
         contentViewTop = contentView.topAnchor.constraint(equalTo: topAnchor)
         contentViewTrailing = trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         contentViewBottom = bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom])
+        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        
+        contentViewTop.priority = .defaultHigh
+        contentViewBottom.priority = .defaultHigh
+        
+        NSLayoutConstraint.activate([contentViewLeading, contentViewTop, contentViewTrailing, contentViewBottom, contentViewCenterY])
     }
     
     // MARK: Lifecycle
@@ -154,10 +174,30 @@ open class TMBarButton: UIControl {
     ///
     /// - Parameter selectionState: Selection state.
     open func update(for selectionState: SelectionState) {
-        let minimumAlpha: CGFloat = 0.5
-        let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
         
-        self.alpha = alpha
+        // Perform alpha update if enabled.
+        if adjustsAlphaOnSelection {
+            let minimumAlpha: CGFloat = 0.5
+            let alpha = minimumAlpha + (selectionState.rawValue * minimumAlpha)
+            self.alpha = alpha
+        }
+
+        switch selectionState {
+        case .selected:
+            #if swift(>=4.2)
+            accessibilityTraits.insert(.selected)
+            #else
+            accessibilityTraits = UIAccessibilityTraitButton | UIAccessibilityTraitSelected
+            #endif
+        case .unselected:
+            #if swift(>=4.2)
+            accessibilityTraits.remove(.selected)
+            #else
+            accessibilityTraits = UIAccessibilityTraitButton
+            #endif
+        default:
+            break
+        }
     }
 }
 

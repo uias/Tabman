@@ -117,7 +117,9 @@ open class TMLabelBarButton: TMBarButton {
         NSLayoutConstraint.activate(constraints)
         
         label.textAlignment = .center
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
         
+        adjustsAlphaOnSelection = false
         label.text = Defaults.text
         label.font = self.font
         selectedTintColor = tintColor
@@ -156,6 +158,7 @@ open class TMLabelBarButton: TMBarButton {
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
+        super.update(for: selectionState)
         
         let transitionColor = tintColor.interpolate(with: selectedTintColor,
                                                     percent: selectionState.rawValue)

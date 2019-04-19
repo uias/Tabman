@@ -129,7 +129,8 @@ public final class TMSystemBar: UIView {
             return
         }
         guard let viewController = nextViewControllerInResponderChain() else {
-            fatalError("\(type(of: self)) could not find view controller to use for layout guides.")
+            print("\(type(of: self)) could not find view controller to use for layout guides.")
+            return
         }
         hasExtendedEdges = true
         viewController.view.layoutIfNeeded()
@@ -149,8 +150,10 @@ public final class TMSystemBar: UIView {
                                           right: 0.0)
         }
         
+        let isNavigationBarNotVisible = viewController.navigationController?.isNavigationBarHidden != false
+        
         let relativeFrame = viewController.view.convert(self.frame, from: superview)
-        if relativeFrame.origin.y == safeAreaInsets.top { // Pin to top anchor
+        if relativeFrame.origin.y == safeAreaInsets.top, isNavigationBarNotVisible { // Pin to top anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -205,7 +208,8 @@ public final class TMSystemBar: UIView {
 
 extension TMSystemBar: TMBar {
     
-    public weak var dataSource: TMBarDataSource? {
+    /// :nodoc:
+    public var dataSource: TMBarDataSource? {
         get {
             return bar.dataSource
         } set {
@@ -213,6 +217,7 @@ extension TMSystemBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var delegate: TMBarDelegate? {
         get {
             return bar.delegate
@@ -221,15 +226,18 @@ extension TMSystemBar: TMBar {
         }
     }
     
+    /// :nodoc:
     public var items: [TMBarItemable]? {
         return bar.items
     }
     
+    /// :nodoc:
     public func reloadData(at indexes: ClosedRange<Int>,
                            context: TMBarReloadContext) {
         bar.reloadData(at: indexes, context: context)
     }
     
+    /// :nodoc:
     public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
         bar.update(for: pagePosition, capacity: capacity, direction: direction, animation: animation)
     }
