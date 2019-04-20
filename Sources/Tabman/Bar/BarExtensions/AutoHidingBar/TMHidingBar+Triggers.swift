@@ -64,10 +64,14 @@ internal class TMAutoHidingTimeTriggerHandler: TMAutoHidingTriggerHandler {
     
     private func resetDismissTimer() {
         timer?.invalidate()
-        if #available(iOSApplicationExtension 10.0, *) {
-            timer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false, block: { (_) in
-                self.bar.hide(animated: true, completion: nil)
-            })
-        }
+        timer = Timer.scheduledTimer(timeInterval: duration,
+                                     target: self,
+                                     selector: #selector(timerFired(_:)),
+                                     userInfo: nil,
+                                     repeats: false)
+    }
+    
+    @objc private func timerFired(_ sender: Timer) {
+        bar.hide(animated: true, completion: nil)
     }
 }
