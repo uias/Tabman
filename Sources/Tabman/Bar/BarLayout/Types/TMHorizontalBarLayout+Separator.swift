@@ -15,7 +15,7 @@ extension TMHorizontalBarLayout {
         // swiftlint:disable nesting
         
         private struct Defaults {
-            static let width: CGFloat = 0.5
+            static let width: CGFloat = 1.0
             static let contentInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
         }
         

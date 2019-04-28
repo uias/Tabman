@@ -61,6 +61,16 @@ open class TMHorizontalBarLayout: TMBarLayout {
         }
     }
     
+    private var _separatorColor: UIColor?
+    open var separatorColor: UIColor? {
+        set {
+            _separatorColor = newValue
+            separators.values.forEach({ $0.tintColor = newValue })
+        } get {
+            return separators.values.first?.tintColor ?? _separatorColor
+        }
+    }
+    
     // MARK: Lifecycle
     
     open override func layout(in view: UIView) {
@@ -86,7 +96,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
             
             var separator: SeparatorView?
             if showSeparators, button !== buttons.last {
-                separator = SeparatorView()
+                separator = makeSeparator()
             }
             
             if index >= stackView.arrangedSubviews.count { // just add
@@ -151,5 +161,11 @@ open class TMHorizontalBarLayout: TMBarLayout {
         } else {
             stackView.spacing = interButtonSpacing
         }
+    }
+    
+    private func makeSeparator() -> SeparatorView {
+        let separator = SeparatorView()
+        separator.tintColor = separatorColor
+        return separator
     }
 }
