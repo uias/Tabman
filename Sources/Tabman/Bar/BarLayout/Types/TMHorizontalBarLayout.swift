@@ -22,6 +22,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     // MARK: Properties
     internal let stackView = UIStackView()
+    internal private(set) var separators = [TMBarButton: SeparatorView]()
     
     // MARK: Customization
     
@@ -100,6 +101,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
                 }
             }
             
+            separators[button] = separator
             if separator != nil {
                 currentIndex += 2
             } else {
@@ -114,6 +116,11 @@ open class TMHorizontalBarLayout: TMBarLayout {
         for button in buttons {
             stackView.removeArrangedSubview(button)
             button.removeFromSuperview()
+            
+            if let separator = separators[button] {
+                stackView.removeArrangedSubview(separator)
+                separator.removeFromSuperview()
+            }
         }
     }
     
