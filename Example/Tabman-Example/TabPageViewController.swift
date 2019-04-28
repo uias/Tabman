@@ -52,6 +52,7 @@ class TabPageViewController: TabmanViewController {
         bar.fadesContentEdges = true
         bar.spacing = 16.0
         bar.backgroundView.style = .clear
+        bar.layout.showSeparators = true
         
         // Add a '+' button the trailing end of the bar to insert more pages.
         let plusButton = CircularBarActionButton(action: .add)

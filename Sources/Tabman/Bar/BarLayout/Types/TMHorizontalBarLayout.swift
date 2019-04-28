@@ -18,6 +18,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     private struct Defaults {
         static let interButtonSpacing: CGFloat = 16.0
         static let minimumRecommendedButtonWidth: CGFloat = 40.0
+        static let separatorWidth: CGFloat = 0.5
     }
     
     // MARK: Properties
@@ -50,6 +51,15 @@ open class TMHorizontalBarLayout: TMBarLayout {
         }
     }
     
+    open var showSeparators: Bool = false {
+        didSet {
+            guard showSeparators != oldValue else {
+                return
+            }
+            setNeedsReload()
+        }
+    }
+    
     // MARK: Lifecycle
     
     open override func layout(in view: UIView) {
@@ -77,6 +87,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
             } else {
                 stackView.insertArrangedSubview(button, at: currentIndex)
             }
+            
             currentIndex += 1
         }
     }
@@ -106,5 +117,18 @@ open class TMHorizontalBarLayout: TMBarLayout {
                       y: 0.0,
                       width: lowerView.frame.size.width + interpolation.size.width,
                       height: view.bounds.size.height)
+    }
+    
+    // MARK: Separators
+    
+    private func makeSeparatorView() -> UIView {
+        let separator = UIView()
+        
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.widthAnchor.constraint(equalToConstant: Defaults.separatorWidth).isActive = true
+        
+        separator.backgroundColor = .red
+        
+        return separator
     }
 }

@@ -20,4 +20,9 @@ internal protocol TMBarLayoutParent: TMTransitionStyleable {
     
     /// Alignment that is applied to the layout.
     var alignment: TMBarLayout.Alignment { get set }
+    
+    /// Bar layout requires a reload of its contents.
+    ///
+    /// - Parameter layout: Layout.
+    func layout(needsReload layout: TMBarLayout)
 }

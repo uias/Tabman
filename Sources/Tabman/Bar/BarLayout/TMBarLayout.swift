@@ -145,6 +145,15 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     open func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         return .zero
     }
+    
+    /// Inform that the layout requires a reload of its contents.
+    ///
+    /// - Note: This will only be applied if the layout has previously
+    /// had content provided.
+    ///
+    open func setNeedsReload() {
+        parent.layout(needsReload: self)
+    }
 }
 
 private extension TMBarLayout {
