@@ -82,13 +82,29 @@ open class TMHorizontalBarLayout: TMBarLayout {
         
         var currentIndex = index
         for button in buttons {
-            if index >= stackView.arrangedSubviews.count { // just add
-                stackView.addArrangedSubview(button)
-            } else {
-                stackView.insertArrangedSubview(button, at: currentIndex)
+            
+            var separator: SeparatorView?
+            if showSeparators {
+                separator = SeparatorView()
             }
             
-            currentIndex += 1
+            if index >= stackView.arrangedSubviews.count { // just add
+                stackView.addArrangedSubview(button)
+                if let separator = separator {
+                    stackView.addArrangedSubview(separator)
+                }
+            } else {
+                stackView.insertArrangedSubview(button, at: currentIndex)
+                if let separator = separator {
+                    stackView.insertArrangedSubview(separator, at: currentIndex + 1)
+                }
+            }
+            
+            if separator != nil {
+                currentIndex += 2
+            } else {
+                currentIndex += 1
+            }
         }
     }
     
@@ -103,12 +119,13 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
-        guard stackView.arrangedSubviews.count > range.upperBound else {
+        let buttons = stackView.arrangedSubviews.compactMap({ $0 as? TMBarButton })
+        guard buttons.count > range.upperBound else {
             return .zero
         }
         
-        let lowerView = stackView.arrangedSubviews[range.lowerBound]
-        let upperView = stackView.arrangedSubviews[range.upperBound]
+        let lowerView = buttons[range.lowerBound]
+        let upperView = buttons[range.upperBound]
         
         let progress = BarMath.localProgress(for: position)
         let interpolation = lowerView.frame.interpolate(with: upperView.frame, progress: progress)
@@ -118,17 +135,41 @@ open class TMHorizontalBarLayout: TMBarLayout {
                       width: lowerView.frame.size.width + interpolation.size.width,
                       height: view.bounds.size.height)
     }
+}
+
+extension TMHorizontalBarLayout {
     
-    // MARK: Separators
-    
-    private func makeSeparatorView() -> UIView {
-        let separator = UIView()
+    class SeparatorView: UIView {
         
-        separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.widthAnchor.constraint(equalToConstant: Defaults.separatorWidth).isActive = true
+        @available (*, unavailable)
+        override var backgroundColor: UIColor? {
+            didSet {}
+        }
         
-        separator.backgroundColor = .red
+        override var tintColor: UIColor! {
+            didSet {
+                super.backgroundColor = tintColor
+            }
+        }
         
-        return separator
+        // MARK: Init
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            initialize()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            initialize()
+        }
+        
+        private func initialize() {
+            
+            translatesAutoresizingMaskIntoConstraints = false
+            widthAnchor.constraint(equalToConstant: Defaults.separatorWidth).isActive = true
+            
+            super.backgroundColor = tintColor
+        }
     }
 }
