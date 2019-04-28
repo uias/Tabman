@@ -18,7 +18,6 @@ open class TMHorizontalBarLayout: TMBarLayout {
     private struct Defaults {
         static let interButtonSpacing: CGFloat = 16.0
         static let minimumRecommendedButtonWidth: CGFloat = 40.0
-        static let separatorWidth: CGFloat = 0.5
     }
     
     // MARK: Properties
@@ -144,53 +143,6 @@ open class TMHorizontalBarLayout: TMBarLayout {
             stackView.spacing = interButtonSpacing / 2
         } else {
             stackView.spacing = interButtonSpacing
-        }
-    }
-}
-
-extension TMHorizontalBarLayout {
-    
-    class SeparatorView: UIView {
-        
-        // MARK: Properties
-        
-        @available (*, unavailable)
-        override var backgroundColor: UIColor? {
-            didSet {}
-        }
-        
-        override var tintColor: UIColor! {
-            didSet {
-                super.backgroundColor = tintColor
-            }
-        }
-        
-        private var widthConstraint: NSLayoutConstraint?
-        var width: CGFloat = Defaults.separatorWidth {
-            didSet {
-                widthConstraint?.constant = width
-            }
-        }
-        
-        // MARK: Init
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            initialize()
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            initialize()
-        }
-        
-        private func initialize() {
-            
-            translatesAutoresizingMaskIntoConstraints = false
-            widthConstraint = widthAnchor.constraint(equalToConstant: width)
-            widthConstraint?.isActive = true
-            
-            super.backgroundColor = tintColor
         }
     }
 }
