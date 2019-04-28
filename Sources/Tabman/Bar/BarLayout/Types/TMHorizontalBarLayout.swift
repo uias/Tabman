@@ -39,7 +39,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     /// Spacing between each button.
     open var interButtonSpacing = Defaults.interButtonSpacing {
         didSet {
-            stackView.spacing = interButtonSpacing
+            reloadInterButtonSpacing()
         }
     }
     /// Distribution of internal stack view.
@@ -56,6 +56,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
             guard showSeparators != oldValue else {
                 return
             }
+            reloadInterButtonSpacing()
             setNeedsReload()
         }
     }
@@ -134,6 +135,16 @@ open class TMHorizontalBarLayout: TMBarLayout {
                       y: 0.0,
                       width: lowerView.frame.size.width + interpolation.size.width,
                       height: view.bounds.size.height)
+    }
+    
+    // MARK: Utility
+    
+    private func reloadInterButtonSpacing() {
+        if showSeparators {
+            stackView.spacing = interButtonSpacing / 2
+        } else {
+            stackView.spacing = interButtonSpacing
+        }
     }
 }
 
