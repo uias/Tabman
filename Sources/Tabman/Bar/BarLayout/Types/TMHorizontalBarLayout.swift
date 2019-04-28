@@ -141,6 +141,8 @@ extension TMHorizontalBarLayout {
     
     class SeparatorView: UIView {
         
+        // MARK: Properties
+        
         @available (*, unavailable)
         override var backgroundColor: UIColor? {
             didSet {}
@@ -149,6 +151,13 @@ extension TMHorizontalBarLayout {
         override var tintColor: UIColor! {
             didSet {
                 super.backgroundColor = tintColor
+            }
+        }
+        
+        private var widthConstraint: NSLayoutConstraint?
+        var width: CGFloat = Defaults.separatorWidth {
+            didSet {
+                widthConstraint?.constant = width
             }
         }
         
@@ -167,7 +176,8 @@ extension TMHorizontalBarLayout {
         private func initialize() {
             
             translatesAutoresizingMaskIntoConstraints = false
-            widthAnchor.constraint(equalToConstant: Defaults.separatorWidth).isActive = true
+            widthConstraint = widthAnchor.constraint(equalToConstant: width)
+            widthConstraint?.isActive = true
             
             super.backgroundColor = tintColor
         }
