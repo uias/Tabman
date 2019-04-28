@@ -375,6 +375,7 @@ extension TMBarView: TMBar {
                 buttonsToRemove.append(button)
                 items.remove(at: index)
             }
+            buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
             layout.remove(buttons: buttonsToRemove)
         }
         
