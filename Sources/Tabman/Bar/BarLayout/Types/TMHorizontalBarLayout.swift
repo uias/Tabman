@@ -84,7 +84,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
         for button in buttons {
             
             var separator: SeparatorView?
-            if showSeparators {
+            if showSeparators, button !== buttons.last {
                 separator = SeparatorView()
             }
             
