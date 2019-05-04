@@ -56,6 +56,9 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     /// Whether to display vertical separators between each button.
     ///
+    /// If set to `true`, the separators will display between each button
+    /// at intervals half way along the `interButtonSpacing` value.
+    ///
     /// Defaults to `false`.
     open var showSeparators: Bool = false {
         didSet {
