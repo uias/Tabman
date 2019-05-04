@@ -35,9 +35,13 @@ extension TMHorizontalBarLayout {
         }
         
         private var contentWidth: NSLayoutConstraint?
-        var width: CGFloat = Defaults.width {
-            didSet {
+        private var _width: CGFloat?
+        var width: CGFloat! {
+            set {
+                _width = newValue
                 contentWidth?.constant = width
+            } get {
+                return _width ?? Defaults.width
             }
         }
         
@@ -45,12 +49,16 @@ extension TMHorizontalBarLayout {
         private var contentTop: NSLayoutConstraint?
         private var contentTrailing: NSLayoutConstraint?
         private var contentBottom: NSLayoutConstraint?
-        var contentInset: UIEdgeInsets = Defaults.contentInset {
-            didSet {
+        private var _contentInset: UIEdgeInsets?
+        var contentInset: UIEdgeInsets! {
+            set {
+                _contentInset = newValue
                 contentLeading?.constant = contentInset.left
                 contentTop?.constant = contentInset.top
                 contentTrailing?.constant = contentInset.right
                 contentBottom?.constant = contentInset.bottom
+            } get {
+                return _contentInset ?? Defaults.contentInset
             }
         }
         
