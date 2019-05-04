@@ -205,6 +205,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
         let separator = SeparatorView()
         separator.tintColor = separatorColor
         separator.contentInset = separatorInset
+        separator.width = separatorWidth
         return separator
     }
 }
