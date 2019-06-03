@@ -29,6 +29,7 @@
 		46324A7A213A99860059D469 /* TabmanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A79213A99860059D469 /* TabmanViewControllerTests.swift */; };
 		46324A7C213A99E30059D469 /* MockBarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7B213A99E30059D469 /* MockBarDataSource.swift */; };
 		46324A7E213A9C700059D469 /* MockTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A7D213A9C700059D469 /* MockTabmanViewController.swift */; };
+		463EA0972275D20A0068A86C /* TMHorizontalBarLayout+Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EA0962275D20A0068A86C /* TMHorizontalBarLayout+Separator.swift */; };
 		464264DD217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264DC217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift */; };
 		464264DF217E12A20001C4AF /* TabmanViewController+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264DE217E12A20001C4AF /* TabmanViewController+Insets.swift */; };
 		464E9095218857490096308E /* TMAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E9094218857490096308E /* TMAnimation.swift */; };
@@ -104,6 +105,7 @@
 		46324A79213A99860059D469 /* TabmanViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanViewControllerTests.swift; sourceTree = "<group>"; };
 		46324A7B213A99E30059D469 /* MockBarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBarDataSource.swift; sourceTree = "<group>"; };
 		46324A7D213A9C700059D469 /* MockTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabmanViewController.swift; sourceTree = "<group>"; };
+		463EA0962275D20A0068A86C /* TMHorizontalBarLayout+Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMHorizontalBarLayout+Separator.swift"; sourceTree = "<group>"; };
 		464264DC217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageboyViewController+RelativeCurrentPosition.swift"; sourceTree = "<group>"; };
 		464264DE217E12A20001C4AF /* TabmanViewController+Insets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabmanViewController+Insets.swift"; sourceTree = "<group>"; };
 		464E9094218857490096308E /* TMAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAnimation.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				46CCBADA2174BE0900C370E1 /* TMBarLayout+None.swift */,
 				46CCBAD92174BE0900C370E1 /* TMHorizontalBarLayout.swift */,
+				463EA0962275D20A0068A86C /* TMHorizontalBarLayout+Separator.swift */,
 				46CCBADB2174BE0900C370E1 /* TMConstrainedHorizontalBarLayout.swift */,
 			);
 			path = Types;
@@ -580,6 +583,7 @@
 				46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */,
 				46E96322211B3A01004C7468 /* TMBarButtonController.swift in Sources */,
 				46D8775B218B62E700C83076 /* TMChevronBarIndicator.swift in Sources */,
+				463EA0972275D20A0068A86C /* TMHorizontalBarLayout+Separator.swift in Sources */,
 				46E96327211B3A01004C7468 /* TMBarButtonCollection.swift in Sources */,
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
 				462AB98C2246B1F70041DE3A /* ViewTitleViewContainer.swift in Sources */,
