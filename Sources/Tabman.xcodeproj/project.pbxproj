@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425FFEAC22B7838A00B01B56 /* UIView+LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425FFEAB22B7838A00B01B56 /* UIView+LayoutGuide.swift */; };
 		461196EC222004EF0033FE04 /* TMBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461196EB222004EF0033FE04 /* TMBadgeView.swift */; };
 		4611970E2221B7E70033FE04 /* UIViewController+Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */; };
 		4612BCF220C88D24001A37B5 /* TMBar+Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BCF120C88D24001A37B5 /* TMBar+Templates.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		425FFEAB22B7838A00B01B56 /* UIView+LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutGuide.swift"; sourceTree = "<group>"; };
 		461196EB222004EF0033FE04 /* TMBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBadgeView.swift; sourceTree = "<group>"; };
 		4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Tabman.swift"; sourceTree = "<group>"; };
 		4612BCF120C88D24001A37B5 /* TMBar+Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMBar+Templates.swift"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				464264DC217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift */,
 				4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */,
+				425FFEAB22B7838A00B01B56 /* UIView+LayoutGuide.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				464264DD217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift in Sources */,
 				46E96325211B3A01004C7468 /* TMBarButtonStateController.swift in Sources */,
 				46B244EA21C8399900B4D26A /* TMHidingBar+Triggers.swift in Sources */,
+				425FFEAC22B7838A00B01B56 /* UIView+LayoutGuide.swift in Sources */,
 				46CCBADC2174BE0900C370E1 /* TMHorizontalBarLayout.swift in Sources */,
 				462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */,
 				462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */,
