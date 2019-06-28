@@ -10,7 +10,7 @@ import Foundation
 
 extension UIView {
     @available(iOS 11.0, *)
-    private var crs_safeAreaLayoutGuide: UILayoutGuide? {
+    private var internalSafeAreaLayoutGuide: UILayoutGuide? {
         if self.responds(to: #selector(getter: UIView.safeAreaLayoutGuide)) == .some(true) {
             return self.safeAreaLayoutGuide
         } else {
@@ -19,22 +19,22 @@ extension UIView {
     }
     
     @available(iOS 11.0, *)
-    var crs_safeAreaTopAnchor: NSLayoutYAxisAnchor {
-        return crs_safeAreaLayoutGuide?.topAnchor ?? topAnchor
+    var safeAreaTopAnchor: NSLayoutYAxisAnchor {
+        return internalSafeAreaLayoutGuide?.topAnchor ?? topAnchor
     }
     
     @available(iOS 11.0, *)
-    var crs_safeAreaBottomAnchor: NSLayoutYAxisAnchor {
-        return crs_safeAreaLayoutGuide?.bottomAnchor ?? bottomAnchor
+    var safeAreaBottomAnchor: NSLayoutYAxisAnchor {
+        return internalSafeAreaLayoutGuide?.bottomAnchor ?? bottomAnchor
     }
     
     @available(iOS 11.0, *)
-    var crs_safeAreaTrailingAnchor: NSLayoutXAxisAnchor {
-        return crs_safeAreaLayoutGuide?.trailingAnchor ?? trailingAnchor
+    var safeAreaTrailingAnchor: NSLayoutXAxisAnchor {
+        return internalSafeAreaLayoutGuide?.trailingAnchor ?? trailingAnchor
     }
     
     @available(iOS 11.0, *)
-    var crs_safeAreaLeadingAnchor: NSLayoutXAxisAnchor {
-        return crs_safeAreaLayoutGuide?.leadingAnchor ?? leadingAnchor
+    var safeAreaLeadingAnchor: NSLayoutXAxisAnchor {
+        return internalSafeAreaLayoutGuide?.leadingAnchor ?? leadingAnchor
     }
 }

@@ -248,8 +248,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         rootContentStack.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 11, *) {
             constraints.append(contentsOf: [
-                rootContentStack.leadingAnchor.constraint(equalTo: view.crs_safeAreaLeadingAnchor),
-                rootContentStack.trailingAnchor.constraint(equalTo: view.crs_safeAreaTrailingAnchor)
+                rootContentStack.leadingAnchor.constraint(equalTo: view.safeAreaLeadingAnchor),
+                rootContentStack.trailingAnchor.constraint(equalTo: view.safeAreaTrailingAnchor)
                 ])
         } else {
             constraints.append(contentsOf: [
