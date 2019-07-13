@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
-- `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242)
+- `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243)
 - `2.3.x` Releases - [2.3.0](#230)
 - `2.2.x` Releases - [2.2.0](#220) | [2.2.1](#221)
 - `2.1.x` Releases - [2.1.0](#210) | [2.1.1](#211) | [2.1.2](#212) | [2.1.3](#213) | [2.1.4](#214)
@@ -30,6 +30,12 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.4.3](https://github.com/uias/Tabman/releases/tag/2.4.3)
+Released on 2019-07-13
+
+#### Updated
+- Add support for multiple Swift versions to Podspec.
+
 ## [2.4.2](https://github.com/uias/Tabman/releases/tag/2.4.2)
 Released on 2019-04-25
 
