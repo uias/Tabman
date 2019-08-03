@@ -22,6 +22,9 @@ public protocol TMBarItemable: class {
     /// Title of the item.
     var title: String? { get set }
     /// Image to display.
+    ///
+    /// - Note: If you want the image to be colored by tint colors when within a `TMBar`,
+    /// you must use the `.alwaysTemplate` image rendering mode.
     var image: UIImage? { get set }
     
     /// Badge value to display.

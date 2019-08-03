@@ -160,6 +160,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     
+    func layout(needsReload layout: TMBarLayout) {
+        guard let items = self.items else {
+            return
+        }
+        reloadData(at: 0 ... items.count, context: .full)
+    }
+    
     // MARK: Init
     
     public required init() {
@@ -368,6 +375,7 @@ extension TMBarView: TMBar {
                 buttonsToRemove.append(button)
                 items.remove(at: index)
             }
+            buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
             layout.remove(buttons: buttonsToRemove)
         }
         
