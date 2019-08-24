@@ -21,7 +21,7 @@ Tabman relies on a couple of dependencies, `Pageboy` and `PureLayout`. To integr
 
 - Ensure you have [Carthage](https://github.com/Carthage/Carthage) installed. If not, install via Homebrew with `brew install carthage`. 
 - Fork / Clone the `Tabman` repository. 
-- Run `carthage bootstrap --plaftorm ios`.
+- Run `carthage bootstrap --platform ios`.
 - Open `Tabman.xcworkspace` in Xcode and off you go!
 
 The `Tabman-Example` project is useful for manually testing `Tabman`, featuring positional debugging labels and visual cues for ensuring everything is running smoothly. It also provides a good platform for testing dynamically updating the appearance and style responsiveness of any updates. 😁
