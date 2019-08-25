@@ -32,6 +32,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     public enum Alignment {
         case leading
         case center
+        case overallCenter
         case trailing
     }
     
