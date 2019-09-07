@@ -6,6 +6,7 @@
 //  Copyright © 2019 UI At Six. All rights reserved.
 //
 
+import UIKit
 import Pageboy
 
 internal extension PageboyViewController {

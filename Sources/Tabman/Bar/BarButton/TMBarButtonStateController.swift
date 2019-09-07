@@ -6,7 +6,7 @@
 //  Copyright © 2019 UI At Six. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// A bar button controller that is responsible for handling the control state of buttons.
 internal final class TMBarButtonStateController: TMBarButtonController {
