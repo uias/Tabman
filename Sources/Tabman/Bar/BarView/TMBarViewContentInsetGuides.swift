@@ -54,7 +54,7 @@ internal final class TMBarViewContentInsetGuides: TMBarLayoutInsetGuides {
         barView.addLayoutGuide(trailingInset)
         
         if #available(iOS 11, *) {
-            leadingInset.leadingAnchor.constraint(equalTo: barView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            leadingInset.leadingAnchor.constraint(equalTo: barView.safeAreaLeadingAnchor).isActive = true
         } else {
             leadingInset.leadingAnchor.constraint(equalTo: barView.leadingAnchor).isActive = true
         }
@@ -65,7 +65,7 @@ internal final class TMBarViewContentInsetGuides: TMBarLayoutInsetGuides {
         content.trailingAnchor.constraint(equalTo: trailingInset.leadingAnchor).isActive = true
         
         if #available(iOS 11, *) {
-            trailingInset.trailingAnchor.constraint(equalTo: barView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            trailingInset.trailingAnchor.constraint(equalTo: barView.safeAreaTrailingAnchor).isActive = true
         } else {
             trailingInset.trailingAnchor.constraint(equalTo: barView.trailingAnchor).isActive = true
         }

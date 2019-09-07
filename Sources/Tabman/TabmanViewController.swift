@@ -254,7 +254,7 @@ extension TabmanViewController {
             topBarContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         if #available(iOS 11, *) {
-            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
+            topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: view.safeAreaTopAnchor))
         } else {
             topConstraints.append(topBarContainer.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor))
         }
@@ -269,7 +269,7 @@ extension TabmanViewController {
             bottomBarContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         if #available(iOS 11, *) {
-            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
+            bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: view.safeAreaBottomAnchor))
         } else {
             bottomConstraints.append(bottomBarContainer.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor))
         }
