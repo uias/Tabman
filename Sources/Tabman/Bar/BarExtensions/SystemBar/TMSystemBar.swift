@@ -48,7 +48,7 @@ public final class TMSystemBar: UIView {
     /// Background style of the system bar.
     ///
     /// Defaults to `.blur(style: .extraLight)`.
-    public var backgroundStyle: TMBarBackgroundView.Style = .blur(style: .extraLight) {
+    public var backgroundStyle: TMBarBackgroundView.Style {
         didSet {
             backgroundView.style = backgroundStyle
         }
@@ -76,6 +76,13 @@ public final class TMSystemBar: UIView {
     /// - Parameter bar: Bar to embed in the system bar.
     internal init(for bar: TMBar) {
         self.bar = bar
+        
+        if #available(iOS 13, *) {
+            backgroundStyle = .blur(style: .systemMaterial)
+        } else {
+            backgroundStyle = .blur(style: .extraLight)
+        }
+        
         super.init(frame: .zero)
         
         layout(in: self)
