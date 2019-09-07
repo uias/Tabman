@@ -27,5 +27,6 @@ let package = Package(
             name: "TabmanTests",
             dependencies: ["Tabman"]
         )
-    ]
+    ],
+    exclude: ["Example", "Docs", "fastlane", "Extras"]
 )
