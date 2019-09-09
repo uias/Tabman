@@ -91,6 +91,16 @@ open class TMTabItemBarButton: TMBarButton {
     }
     
     // MARK: Lifecycle
+
+    public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
+        super.init(for: item, intrinsicSuperview: intrinsicSuperview)
+
+        makeComponentConstraints(for: UIDevice.current.orientation)
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     open override func layout(in view: UIView) {
         super.layout(in: view)
