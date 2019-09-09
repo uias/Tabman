@@ -95,7 +95,9 @@ open class TMTabItemBarButton: TMBarButton {
     public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         super.init(for: item, intrinsicSuperview: intrinsicSuperview)
 
-        makeComponentConstraints(for: UIDevice.current.orientation)
+        if #available(iOS 13.0, *) {
+            makeComponentConstraints(for: UIDevice.current.orientation)
+        }
     }
 
     public required init?(coder aDecoder: NSCoder) {
