@@ -103,8 +103,9 @@ open class TMLabelBarButton: TMBarButton {
         let badgeContainerWidth = badgeContainer.widthAnchor.constraint(equalToConstant: 0.0)
         let constraints = [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            label.topAnchor.constraint(equalTo: view.topAnchor),
-            view.bottomAnchor.constraint(equalTo: label.bottomAnchor),
+            label.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
+            view.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             badgeContainerLeading,
             badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
             view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
