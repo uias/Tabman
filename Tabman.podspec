@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/uias/Tabman.git", :tag => s.version.to_s }
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
-  s.dependency 'Pageboy', '~> 3.2.3'
-  s.dependency 'AutoInsetter', '~> 1.7.2'
+  s.dependency 'Pageboy', '~> 3.4.0'
+  s.dependency 'AutoInsetter', '~> 1.8.0'
   
 end
