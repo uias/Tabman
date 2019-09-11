@@ -137,8 +137,9 @@ open class TMLabelBarButton: TMBarButton {
         badge.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             badge.leadingAnchor.constraint(equalTo: badgeContainer.leadingAnchor),
-            badge.topAnchor.constraint(equalTo: badgeContainer.topAnchor),
-            badgeContainer.bottomAnchor.constraint(equalTo: badge.bottomAnchor)
+            badge.topAnchor.constraint(greaterThanOrEqualTo: badgeContainer.topAnchor),
+            badgeContainer.bottomAnchor.constraint(greaterThanOrEqualTo: badge.bottomAnchor),
+            badge.centerYAnchor.constraint(equalTo: badgeContainer.centerYAnchor)
             ])
     }
     

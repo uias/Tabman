@@ -117,8 +117,9 @@ open class TMBadgeView: UIView {
         label.textAlignment = .center
         label.font = Defaults.font
         label.textColor = Defaults.textColor
-        tintColor = Defaults.tintColor
-        
+        tintColor = Defaults.tintColor        
+        clipsToBounds = true
+
         label.text = "."
         updateContentVisibility(for: nil)
     }
