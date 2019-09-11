@@ -25,6 +25,11 @@ open class TMBadgeView: UIView {
     private let contentView = UIView()
     private let label = UILabel()
     
+    private var labelLeading: NSLayoutConstraint!
+    private var labelTop: NSLayoutConstraint!
+    private var labelTrailing: NSLayoutConstraint!
+    private var labelBottom: NSLayoutConstraint!
+    
     /// Value to display.
     internal var value: String? {
         didSet {
@@ -64,6 +69,14 @@ open class TMBadgeView: UIView {
             contentView.backgroundColor = tintColor
         }
     }
+    /// Content Inset around the badge label.
+    ///
+    /// Defaults to `UIEdgeInsets(top: 2.0, left: 4.0, bottom: 2.0, right: 4.0)`.
+    open var contentInset: UIEdgeInsets = Defaults.contentInset {
+        didSet {
+            updateContentInset()
+        }
+    }
     
     // MARK: Init
     
@@ -88,15 +101,14 @@ open class TMBadgeView: UIView {
             bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             ])
         
-        let contentInset = Defaults.contentInset
         contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: contentInset.left),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentInset.top),
-            contentView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: contentInset.right),
-            contentView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: contentInset.bottom)
-            ])
+        
+        labelLeading = label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: contentInset.left)
+        labelTop = label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentInset.top)
+        labelTrailing = contentView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: contentInset.right)
+        labelBottom = contentView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: contentInset.bottom)
+        NSLayoutConstraint.activate([labelLeading, labelTop, labelTrailing, labelBottom])
         
         NSLayoutConstraint.activate([
             widthAnchor.constraint(greaterThanOrEqualTo: heightAnchor)
@@ -105,8 +117,9 @@ open class TMBadgeView: UIView {
         label.textAlignment = .center
         label.font = Defaults.font
         label.textColor = Defaults.textColor
-        tintColor = Defaults.tintColor
-        
+        tintColor = Defaults.tintColor        
+        clipsToBounds = true
+
         label.text = "."
         updateContentVisibility(for: nil)
     }
@@ -118,8 +131,26 @@ open class TMBadgeView: UIView {
         
         contentView.layer.cornerRadius = bounds.size.height / 2.0
     }
+}
+
+// MARK: - Constraints
+extension TMBadgeView {
     
-    // MARK: Animations
+    private func updateContentInset() {
+        guard let labelLeading = labelLeading else {
+            assertionFailure("Trying to update contentInset before constraints have been set")
+            return
+        }
+        
+        labelLeading.constant = contentInset.left
+        labelTop.constant = contentInset.top
+        labelTrailing.constant = contentInset.right
+        labelBottom.constant = contentInset.bottom
+    }
+}
+
+// MARK: - Animations
+extension TMBadgeView {
     
     private func updateContentVisibility(for value: String?) {
         switch value {
