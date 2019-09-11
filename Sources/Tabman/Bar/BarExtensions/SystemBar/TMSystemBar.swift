@@ -160,13 +160,13 @@ public final class TMSystemBar: UIView {
         let isNavigationBarNotVisible = viewController.navigationController?.isNavigationBarHidden != false
         
         let relativeFrame = viewController.view.convert(self.frame, from: superview)
-        if relativeFrame.origin.y == safeAreaInsets.top, isNavigationBarNotVisible { // Pin to top anchor
+        if ceil(relativeFrame.origin.y) == safeAreaInsets.top, isNavigationBarNotVisible { // Pin to top anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
             contentView.addArrangedSubview(makeSeparatorView())
-        } else if relativeFrame.maxY == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
+        } else if ceil(relativeFrame.maxY) == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
