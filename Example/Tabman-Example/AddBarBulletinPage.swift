@@ -164,7 +164,11 @@ private extension AddBarBulletinPage {
         bar.indicator.cornerStyle = .rounded
         bar.layout.contentInset = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
         bar.buttons.customize { (button) in
-            button.tintColor = .black
+            if #available(iOS 13, *) {
+                button.tintColor = .label
+            } else {
+                button.tintColor = .black
+            }
             button.selectedTintColor = .white
             button.contentInset.left = 8.0
             button.contentInset.right = 8.0
