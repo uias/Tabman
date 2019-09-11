@@ -147,6 +147,14 @@ open class TMLabelBarButton: TMBarButton {
             ])
     }
     
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        UIView.performWithoutAnimation {
+            update(for: selectionState)
+        }
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
         
