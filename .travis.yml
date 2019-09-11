@@ -4,7 +4,7 @@ branches:
   except:
     - gh-pages
 
-osx_image: xcode10.1
+osx_image: xcode11
 
 env:
   global:
