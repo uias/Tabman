@@ -27,7 +27,7 @@ fi
 
 if [ "$TRAVIS_BRANCH" != "" ]; then
     echo " ==> Install: jazzy"
-    gem install --no-rdoc --no-ri jazzy
+    gem install --no-document jazzy
 fi
 
 echo " ==> Generate documentation"
