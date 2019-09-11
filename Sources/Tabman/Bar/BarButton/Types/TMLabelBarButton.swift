@@ -123,9 +123,13 @@ open class TMLabelBarButton: TMBarButton {
         adjustsAlphaOnSelection = false
         label.text = Defaults.text
         label.font = self.font
-        selectedTintColor = tintColor
-        tintColor = .black
-        self.contentInset = Defaults.contentInset
+        if #available(iOS 13, *) {
+            tintColor = .label
+        } else {
+            tintColor = .black
+        }
+        selectedTintColor = .systemBlue
+        contentInset = Defaults.contentInset
         
         calculateFontIntrinsicContentSize(for: label.text)
     }
@@ -141,6 +145,14 @@ open class TMLabelBarButton: TMBarButton {
             badgeContainer.bottomAnchor.constraint(greaterThanOrEqualTo: badge.bottomAnchor),
             badge.centerYAnchor.constraint(equalTo: badgeContainer.centerYAnchor)
             ])
+    }
+    
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        UIView.performWithoutAnimation {
+            update(for: selectionState)
+        }
     }
     
     open override func layoutSubviews() {

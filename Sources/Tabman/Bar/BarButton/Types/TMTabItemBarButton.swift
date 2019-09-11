@@ -123,11 +123,25 @@ open class TMTabItemBarButton: TMBarButton {
         imageWidth.isActive = true
         imageHeight.isActive = true
         
-        selectedTintColor = tintColor
-        tintColor = .black
+        if #available(iOS 13, *) {
+            tintColor = .label
+        } else {
+            tintColor = .black
+        }
+        selectedTintColor = .systemBlue
         font = defaultFont(for: .current)
         label.text = "Item"
         label.textAlignment = .center
+        adjustsAlphaOnSelection = false
+    }
+    
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        makeComponentConstraints(for: UIDevice.current.orientation)
+
+        UIView.performWithoutAnimation {
+            update(for: selectionState)
+        }
     }
     
     open override func layoutBadge(_ badge: TMBadgeView, in view: UIView) {
@@ -163,12 +177,6 @@ open class TMTabItemBarButton: TMBarButton {
     }
     
     // MARK: Layout
-    
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        makeComponentConstraints(for: UIDevice.current.orientation)
-    }
     
     private func makeComponentConstraints(for orientation: UIDeviceOrientation) {
         guard let parent = container.superview else {
