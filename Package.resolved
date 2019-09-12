@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AutoInsetter",
+        "repositoryURL": "https://github.com/uias/AutoInsetter",
+        "state": {
+          "branch": null,
+          "revision": "c35bef3510f8c3cdb340cd19315f3063e6eb7986",
+          "version": "1.8.0"
+        }
+      },
+      {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "f4819ce2d95ac85cdf9704802f22505d79f3ec21",
+          "version": "3.4.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

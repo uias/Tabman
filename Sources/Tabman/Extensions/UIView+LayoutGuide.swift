@@ -6,7 +6,7 @@
 //  Copyright © 2019 UI At Six. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIView {
     @available(iOS 11.0, *)

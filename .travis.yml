@@ -24,9 +24,9 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J Tabman
-  - test $TRAVIS_PULL_REQUEST == "false" &&
-    test $TRAVIS_BRANCH == "master" &&
-    .scripts/update-gh-pages
+  # - test $TRAVIS_PULL_REQUEST == "false" &&
+  #   test $TRAVIS_BRANCH == "master" &&
+  #   .scripts/update-gh-pages
 
 notifications:
   email: false

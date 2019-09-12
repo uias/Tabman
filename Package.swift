@@ -28,5 +28,6 @@ let package = Package(
             name: "TabmanTests",
             dependencies: ["Tabman"]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v4, .v4_2, .v5]
 )
