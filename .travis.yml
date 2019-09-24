@@ -12,7 +12,8 @@ env:
     - UPDATE_DOCS="true"
 
 before_install:
-- brew install carthage jazzy
+- brew install carthage
+- gem install jazzy
 - bundle install
 
 #before_script:
