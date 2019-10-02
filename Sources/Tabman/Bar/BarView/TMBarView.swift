@@ -293,7 +293,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             alignmentInset = width - buttonWidth
         }
         
-        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: alignmentInset + contentInset.left, bottom: 0.0, right: contentInset.right)
+        let rightInset = alignment == .center ? alignmentInset + contentInset.right : contentInset.right
+        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: alignmentInset + contentInset.left, bottom: 0.0, right: rightInset)
         scrollView.contentInset = sanitizedContentInset
         scrollView.contentOffset.x -= sanitizedContentInset.left
         
