@@ -272,28 +272,40 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     }
 
     private func updateScrollViewContentInset() {
+        let leftAlignmentInset: CGFloat
+        let rightAlignmentInset: CGFloat
         
-        let alignmentInset: CGFloat
         switch alignment {
         case .leading:
-            alignmentInset = 0.0
+            leftAlignmentInset = 0.0
+            rightAlignmentInset = 0.0
         case .center:
-            let buttonWidth = (buttons.all.first?.bounds.size.width ?? 0.0) / 2.0
+            // Left Side Inset
+            let leftButtonWidth = (buttons.all.first?.bounds.size.width ?? 0.0) / 2.0
             var width = bounds.size.width / 2
             if #available(iOS 11, *) {
                 width -= safeAreaInsets.left
             }
-            alignmentInset = width - buttonWidth
+            leftAlignmentInset = width - leftButtonWidth
+            
+            // Right Side Inset
+            let rightButtonWidth = (buttons.all.last?.bounds.size.width ?? 0.0) / 2.0
+            width = bounds.size.width / 2
+            if #available(iOS 11, *) {
+                width -= safeAreaInsets.right
+            }
+            rightAlignmentInset = width - rightButtonWidth
         case .trailing:
             let buttonWidth = (buttons.all.first?.bounds.size.width ?? 0.0)
             var width = bounds.size.width
             if #available(iOS 11, *) {
                 width -= safeAreaInsets.left
             }
-            alignmentInset = width - buttonWidth
+            leftAlignmentInset = width - buttonWidth
+            rightAlignmentInset = 0.0
         }
         
-        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: alignmentInset + contentInset.left, bottom: 0.0, right: contentInset.right)
+        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: leftAlignmentInset + contentInset.left, bottom: 0.0, right: rightAlignmentInset + contentInset.right)
         scrollView.contentInset = sanitizedContentInset
         scrollView.contentOffset.x -= sanitizedContentInset.left
         
