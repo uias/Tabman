@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
-- `2.6.x` Releases - [2.6.0](#260) | [2.6.1](#261)
+- `2.6.x` Releases - [2.6.0](#260) | [2.6.1](#261) | [2.6.2](#262)
 - `2.5.x` Releases - [2.5.0](#250)
 - `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243)
 - `2.3.x` Releases - [2.3.0](#230)
@@ -32,6 +32,14 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.6.2](https://github.com/uias/Tabman/releases/tag/2.6.2)
+Released on 2019-10-03
+
+#### Fixed
+- Center aligned `TMBarLayout` not working for trailing buttons.
+     - by [townsendeb](https://github.com/townsendeb).
+- Center aligned `TMBarLayout` having an incorrect offset when using a non-zero `contentInset`.
+
 ## [2.6.1](https://github.com/uias/Tabman/releases/tag/2.6.1)
 Released on 2019-09-11
 
