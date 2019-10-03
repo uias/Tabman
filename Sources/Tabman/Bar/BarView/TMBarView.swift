@@ -283,6 +283,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             // Left Side Inset
             let leftButtonWidth = (buttons.all.first?.bounds.size.width ?? 0.0) / 2.0
             var width = bounds.size.width / 2
+            width -= contentInset.left
             if #available(iOS 11, *) {
                 width -= safeAreaInsets.left
             }
@@ -291,6 +292,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             // Right Side Inset
             let rightButtonWidth = (buttons.all.last?.bounds.size.width ?? 0.0) / 2.0
             width = bounds.size.width / 2
+            width -= contentInset.right
             if #available(iOS 11, *) {
                 width -= safeAreaInsets.right
             }
