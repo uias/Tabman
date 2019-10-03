@@ -12,8 +12,8 @@ env:
     - UPDATE_DOCS="true"
 
 before_install:
-- export HOMEBREW_NO_AUTO_UPDATE=1
-- brew outdated carthage || brew upgrade carthage
+- brew install carthage
+- gem install jazzy
 - bundle install
 
 #before_script:
@@ -24,9 +24,9 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J Tabman
-  # - test $TRAVIS_PULL_REQUEST == "false" &&
-  #   test $TRAVIS_BRANCH == "master" &&
-  #   .scripts/update-gh-pages
+  - test $TRAVIS_PULL_REQUEST == "false" &&
+    test $TRAVIS_BRANCH == "master" &&
+    .scripts/update-gh-pages
 
 notifications:
   email: false
