@@ -173,6 +173,12 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                    didCancelScrollToPageAt index: PageboyViewController.PageIndex,
+                                    returnToPageAt previousIndex: PageboyViewController.PageIndex) {
+    }
+    
+    /// :nodoc:
+    open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
         setNeedsInsetsUpdate(to: currentViewController)
