@@ -28,10 +28,12 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     ///
     /// - .leading: The layout will be aligned from the leading edge of the parent.
     /// - .center: The layout will be aligned from the center of the parent.
+    /// - .centerDistributed: The layout will be aligned so that its entire contents is centered in the parent if possible.
     /// - .trailing: The layout will be aligned from the trailing edge of the parent.
     public enum Alignment {
         case leading
         case center
+        case centerDistributed
         case trailing
     }
     

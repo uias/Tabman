@@ -4,7 +4,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.requires_arc = true
 
-  s.swift_versions = ['4.0', '4.1', '4.2', '5.0']
+  if s.respond_to? 'swift_versions'
+    s.swift_versions = ['4.0', '4.1', '4.2', '5.0']
+  end
 
   s.version      = "2.6.3"
   s.summary      = "A powerful paging view controller with indicator bar."

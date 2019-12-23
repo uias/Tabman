@@ -305,9 +305,20 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             }
             leftAlignmentInset = width - buttonWidth
             rightAlignmentInset = 0.0
+        case .centerDistributed:
+            // TODO - Fix this when buttons width is greater than what can be centered...
+            var width = bounds.size.width / 2
+            if #available(iOS 11, *) {
+                width -= safeAreaInsets.left
+            }
+            leftAlignmentInset = max(0.0, width - layoutGrid.frame.width / 2)
+            rightAlignmentInset = 0.0
         }
         
-        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: leftAlignmentInset + contentInset.left, bottom: 0.0, right: rightAlignmentInset + contentInset.right)
+        let sanitizedContentInset = UIEdgeInsets(top: 0.0,
+                                                 left: leftAlignmentInset + contentInset.left,
+                                                 bottom: 0.0,
+                                                 right: rightAlignmentInset + contentInset.right)
         scrollView.contentInset = sanitizedContentInset
         scrollView.contentOffset.x -= sanitizedContentInset.left
         
