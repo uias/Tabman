@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AutoInsetter
 
 extension TabmanViewController {
     

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4622FFA22167B9BB00214563 /* Randient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4622FFA12167B9BB00214563 /* Randient.framework */; };
 		468EDFBE2164C6F700C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFBC2164C6F700C27982 /* Pageboy.framework */; };
-		468EDFBF2164C6F700C27982 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFBD2164C6F700C27982 /* AutoInsetter.framework */; };
 		468EDFC22164C77500C27982 /* BLTNBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC02164C77400C27982 /* BLTNBoard.framework */; };
 		468EDFC32164C77500C27982 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC12164C77400C27982 /* SnapKit.framework */; };
 		468EDFC52164C78800C27982 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468EDFC42164C78800C27982 /* Tabman.framework */; };
@@ -105,7 +104,6 @@
 				468EDFC32164C77500C27982 /* SnapKit.framework in Frameworks */,
 				468EDFC52164C78800C27982 /* Tabman.framework in Frameworks */,
 				468EDFBE2164C6F700C27982 /* Pageboy.framework in Frameworks */,
-				468EDFBF2164C6F700C27982 /* AutoInsetter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +296,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/BLTNBoard.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Randient.framework",
@@ -308,7 +305,6 @@
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pageboy.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoInsetter.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BLTNBoard.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Randient.framework",
