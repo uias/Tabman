@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS, deprecated: 11)
 internal class InsetExecutor {
     
     let view: UIScrollView
@@ -18,10 +19,6 @@ internal class InsetExecutor {
         self.view = view
         self.calculator = calculator
         self.spec = spec
-        
-        if #available(iOS 11.0, *) {
-            view.contentInsetAdjustmentBehavior = .never
-        }
     }
     
     func execute(store: InsetStore) {

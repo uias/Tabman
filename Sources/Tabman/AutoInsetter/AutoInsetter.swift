@@ -66,24 +66,25 @@ internal final class AutoInsetter {
             if requiredInsetSpec.additionalRequiredInsets != viewController.additionalSafeAreaInsets {
                 viewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
             }
-        }
-        
-        guard viewController.shouldEvaluateEmbeddedScrollViews() else {
-            return
-        }
-        viewController.forEachEmbeddedScrollView { (scrollView) in
-            let calculator = self.makeInsetCalculator(for: scrollView, viewController: viewController)
-            let executor = InsetExecutor(view: scrollView, calculator: calculator, spec: requiredInsetSpec)
-            
-            executor.execute(store: insetStore)
-            
-            viewController.view.setNeedsLayout()
+        } else { // manual insetting on older versions.
+            guard viewController.shouldEvaluateEmbeddedScrollViews() else {
+                return
+            }
+            viewController.forEachEmbeddedScrollView { (scrollView) in
+                let calculator = self.makeInsetCalculator(for: scrollView, viewController: viewController)
+                let executor = InsetExecutor(view: scrollView, calculator: calculator, spec: requiredInsetSpec)
+    
+                executor.execute(store: insetStore)
+    
+                viewController.view.setNeedsLayout()
+            }
         }
     }
 }
 
 extension AutoInsetter {
     
+    @available(iOS, deprecated: 11)
     private func makeInsetCalculator(for scrollView: UIScrollView, viewController: UIViewController) -> InsetCalculator {
         
         if let tableView = scrollView as? UITableView {
