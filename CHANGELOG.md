@@ -40,6 +40,15 @@ Released on 2019-12-23
 - `centerDistributed` to `TMBarLayout.Alignment` to center align all bar buttons.
      - by [wwdc14](https://github.com/wwdc14).
 
+#### Updated
+- Removed [AutoInsetter](https://github.com/uias/AutoInsetter) as a dependency.
+- Child insetting logic now utilises `additionalSafeAreaInsets` only on iOS 11 and above.
+
+#### Fixed
+- [#449](https://github.com/uias/Tabman/issues/449) Infinite loop that could be caused by recursive layout calls.
+- [#487](https://github.com/uias/Tabman/pull/487) Issue where child contents could be requested to layout before being added to the view hierarchy.
+- [#478](https://github.com/uias/Tabman/issues/478) Issue where bar could fail to inset children when created dynamically for the page view controller.
+
 ---
 ## [2.6.3](https://github.com/uias/Tabman/releases/tag/2.6.3)
 Released on 2019-10-06
