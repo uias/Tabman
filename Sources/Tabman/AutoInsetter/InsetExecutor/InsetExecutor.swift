@@ -26,13 +26,11 @@ internal class InsetExecutor {
         // If content inset has changed
         if let contentInset = calculator.calculateContentInset(from: spec, store: store) {
             view.contentInset = contentInset.new
-            log("Updated contentInset: \(view.contentInset)")
             invalidateLayoutIfNeeded()
 
             // If content offset has changed
             if let contentOffset = calculator.calculateContentOffset(from: contentInset, store: store) {
                 view.contentOffset = contentOffset.new
-                log("Updated contentOffset: \(view.contentOffset)")
             }
         }
         
