@@ -8,7 +8,6 @@
 
 import UIKit
 import Pageboy
-import AutoInsetter
 
 /// A view controller which embeds a `PageboyViewController` and provides the ability to add bars which
 /// can directly manipulate, control and display the status of the page view controller. It also handles
@@ -43,7 +42,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     // MARK: Layout
     
     private var requiredInsets: Insets?
-    private let autoInsetter = AutoInsetter()
+    private let insetter = AutoInsetter()
     /// Whether to automatically adjust child view controller content insets with bar geometry.
     ///
     /// This must be set before `viewDidLoad`, setting it after this point will result in no change.
@@ -94,7 +93,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         super.viewDidLoad()
         
         if automaticallyAdjustsChildInsets {
-            autoInsetter.enable(for: self)
+            insetter.enable(for: self)
         }
         
         configureBarLayoutGuide(barLayoutGuide)
@@ -355,19 +354,8 @@ private extension TabmanViewController {
                                              duration: transition?.duration ?? 0.25)
         bar.update(for: position,
                    capacity: capacity,
-                   direction: updateDirection(for: direction),
+                   direction: direction.barUpdateDirection,
                    animation: animation)
-    }
-    
-    func updateDirection(for navigationDirection: PageboyViewController.NavigationDirection) -> TMBarUpdateDirection {
-        switch navigationDirection {
-        case .forward:
-            return .forward
-        case .neutral:
-            return .none
-        case .reverse:
-            return .reverse
-        }
     }
 }
 
@@ -379,9 +367,13 @@ internal extension TabmanViewController {
     }
     
     func setNeedsInsetsUpdate(to viewController: UIViewController?) {
+        guard viewIfLoaded?.window != nil else {
+            return
+        }
+        
         let insets = calculateRequiredInsets()
         self.requiredInsets = insets
-        
+
         barLayoutGuideTop?.constant = insets.spec.allRequiredInsets.top
         barLayoutGuideBottom?.constant = insets.spec.allRequiredInsets.bottom
 
@@ -393,7 +385,7 @@ internal extension TabmanViewController {
                 }
             }
         } else {
-            autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
+            insetter.inset(viewController, requiredInsetSpec: insets.spec)
         }
     }
 }

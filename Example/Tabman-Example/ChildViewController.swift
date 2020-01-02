@@ -9,7 +9,7 @@
 import UIKit
 import Tabman
 
-class ChildViewController: UIViewController {
+class ChildViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var promptLabel: UILabel!
@@ -36,5 +36,29 @@ class ChildViewController: UIViewController {
             }
             promptLabel.text = prompt
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = "Cell"
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: identifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
+        }
+        
+        cell.textLabel?.text = "\(indexPath.row)"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
     }
 }

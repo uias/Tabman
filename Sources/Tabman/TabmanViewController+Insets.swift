@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AutoInsetter
 
 extension TabmanViewController {
     
@@ -15,7 +14,6 @@ extension TabmanViewController {
     public struct Insets {
         
         static func `for`(tabmanViewController: TabmanViewController) -> Insets {
-            tabmanViewController.view.layoutIfNeeded()
             return Insets(tabmanViewController: tabmanViewController)
         }
         
