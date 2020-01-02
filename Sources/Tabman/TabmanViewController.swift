@@ -379,9 +379,13 @@ internal extension TabmanViewController {
     }
     
     func setNeedsInsetsUpdate(to viewController: UIViewController?) {
+        guard viewController?.viewIfLoaded?.window != nil else {
+            return
+        }
+        
         let insets = calculateRequiredInsets()
         self.requiredInsets = insets
-        
+
         barLayoutGuideTop?.constant = insets.spec.allRequiredInsets.top
         barLayoutGuideBottom?.constant = insets.spec.allRequiredInsets.bottom
 
