@@ -9,7 +9,7 @@
 import UIKit
 
 /// Specification for Auto Insetting values.
-public protocol AutoInsetSpec {
+internal protocol AutoInsetSpec {
     
     /// The insets that are required IN addition to UIKit components / safe area.
     var additionalRequiredInsets: UIEdgeInsets { get }

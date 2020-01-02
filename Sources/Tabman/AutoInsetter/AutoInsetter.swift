@@ -9,7 +9,7 @@
 import UIKit
 
 /// Engine that provides Auto Insetting to UIViewControllers.
-public final class AutoInsetter {
+internal final class AutoInsetter {
     
     // MARK: Properties
     
@@ -33,14 +33,14 @@ public final class AutoInsetter {
     
     // MARK: Init
     
-    public init() {}
+    init() {}
     
     // MARK: State
     
     /// Enable Auto Insetting for a view controller.
     ///
     /// - Parameter viewController: View controller that will provide insetting.
-    public func enable(for viewController: UIViewController?) {
+    func enable(for viewController: UIViewController?) {
         _enable(for: viewController)
     }
     
@@ -56,8 +56,8 @@ public final class AutoInsetter {
     /// - Parameters:
     ///   - viewController: view controller to inset.
     ///   - requiredInsetSpec: The required inset specification.
-    public func inset(_ viewController: UIViewController?,
-                      requiredInsetSpec: AutoInsetSpec) {
+    func inset(_ viewController: UIViewController?,
+               requiredInsetSpec: AutoInsetSpec) {
         guard let viewController = viewController, _isEnabled else {
             return
         }
