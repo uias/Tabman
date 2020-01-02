@@ -48,6 +48,7 @@
 		4670EC7F23BE09B6006FEC9B /* InsetCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC7323BE09B6006FEC9B /* InsetCalculator.swift */; };
 		4670EC8023BE09B6006FEC9B /* InsetCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC7423BE09B6006FEC9B /* InsetCalculations.swift */; };
 		4670EC8123BE09B6006FEC9B /* AutoInsetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC7523BE09B6006FEC9B /* AutoInsetSpec.swift */; };
+		4670EC8323BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC8223BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift */; };
 		467E1B7E21C2B441000BB77D /* TMHidingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467E1B7D21C2B441000BB77D /* TMHidingBar.swift */; };
 		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */; };
@@ -136,6 +137,7 @@
 		4670EC7323BE09B6006FEC9B /* InsetCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetCalculator.swift; sourceTree = "<group>"; };
 		4670EC7423BE09B6006FEC9B /* InsetCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetCalculations.swift; sourceTree = "<group>"; };
 		4670EC7523BE09B6006FEC9B /* AutoInsetSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsetSpec.swift; sourceTree = "<group>"; };
+		4670EC8223BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageboyNavigationDirection+Tabman.swift"; sourceTree = "<group>"; };
 		467E1B7D21C2B441000BB77D /* TMHidingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHidingBar.swift; sourceTree = "<group>"; };
 		46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarIndicatorContainer.swift; sourceTree = "<group>"; };
 		46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewLayoutGrid.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				4611970D2221B7E70033FE04 /* UIViewController+Tabman.swift */,
 				425FFEAB22B7838A00B01B56 /* UIView+LayoutGuide.swift */,
 				4670EC6E23BE09B6006FEC9B /* UIViewController+ScrollViewDetection.swift */,
+				4670EC8223BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				46B7FDFB20BC537000E9BB7E /* TMBar.swift in Sources */,
 				462AB98C2246B1F70041DE3A /* ViewTitleViewContainer.swift in Sources */,
 				464E9095218857490096308E /* TMAnimation.swift in Sources */,
+				4670EC8323BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift in Sources */,
 				46E96320211B3A01004C7468 /* TMBarLayout.swift in Sources */,
 				46DC3F0B2113006C0085FF37 /* TMBarViewFocusProvider.swift in Sources */,
 				464264DD217E12680001C4AF /* PageboyViewController+RelativeCurrentPosition.swift in Sources */,
