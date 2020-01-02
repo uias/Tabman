@@ -8,7 +8,6 @@
 
 import UIKit
 import Pageboy
-import AutoInsetter
 
 /// A view controller which embeds a `PageboyViewController` and provides the ability to add bars which
 /// can directly manipulate, control and display the status of the page view controller. It also handles
