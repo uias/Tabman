@@ -43,7 +43,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     // MARK: Layout
     
     private var requiredInsets: Insets?
-    private let autoInsetter = AutoInsetter()
+    private let insetter = AutoInsetter()
     /// Whether to automatically adjust child view controller content insets with bar geometry.
     ///
     /// This must be set before `viewDidLoad`, setting it after this point will result in no change.
@@ -94,7 +94,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         super.viewDidLoad()
         
         if automaticallyAdjustsChildInsets {
-            autoInsetter.enable(for: self)
+            insetter.enable(for: self)
         }
         
         configureBarLayoutGuide(barLayoutGuide)
@@ -397,7 +397,7 @@ internal extension TabmanViewController {
                 }
             }
         } else {
-            autoInsetter.inset(viewController, requiredInsetSpec: insets.spec)
+            insetter.inset(viewController, requiredInsetSpec: insets.spec)
         }
     }
 }
