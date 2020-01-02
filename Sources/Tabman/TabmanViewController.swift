@@ -368,7 +368,7 @@ internal extension TabmanViewController {
     }
     
     func setNeedsInsetsUpdate(to viewController: UIViewController?) {
-        guard viewController?.viewIfLoaded?.window != nil else {
+        guard viewIfLoaded?.window != nil else {
             return
         }
         
