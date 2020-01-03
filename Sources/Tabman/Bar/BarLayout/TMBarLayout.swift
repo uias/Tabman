@@ -17,8 +17,8 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     
     /// How to display the contents of the layout.
     ///
-    /// - intrinsic: The layout and contents will be intrinsically sized, taking up as much space as required.
-    /// - fit: The layout and it's contents will be restricted to fitting within the bounds of the bar.
+    /// - `.intrinsic`: The layout and contents will be intrinsically sized, taking up as much space as required.
+    /// - `.fit`: The layout and it's contents will be restricted to fitting within the bounds of the bar.
     public enum ContentMode {
         case intrinsic
         case fit
@@ -26,10 +26,10 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     
     /// How to align the layout in the parent.
     ///
-    /// - .leading: The layout will be aligned from the leading edge of the parent.
-    /// - .center: The layout will be aligned from the center of the parent.
-    /// - .centerDistributed: The layout will be aligned so that its entire contents is centered in the parent if possible.
-    /// - .trailing: The layout will be aligned from the trailing edge of the parent.
+    /// - `.leading`: The layout will be aligned from the leading edge of the parent.
+    /// - `.center`: The layout will be aligned from the center of the parent.
+    /// - `.centerDistributed`: The layout will be aligned so that its entire contents is centered in the parent if possible.
+    /// - `.trailing`: The layout will be aligned from the trailing edge of the parent.
     public enum Alignment {
         case leading
         case center
