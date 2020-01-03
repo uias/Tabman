@@ -40,6 +40,9 @@ internal class AnimateableLabel: UIView {
         didSet {
             textLayer.font = font
             textLayer.fontSize = font?.pointSize ?? 17.0
+            invalidateIntrinsicContentSize()
+            superview?.setNeedsLayout()
+            superview?.layoutIfNeeded()
         }
     }
     var textAlignment: NSTextAlignment? {
