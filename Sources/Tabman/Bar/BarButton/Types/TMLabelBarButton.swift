@@ -103,7 +103,7 @@ open class TMLabelBarButton: TMBarButton {
         }
     }
     
-    /// How to vertically align the label within the button.
+    /// How to vertically align the label within the button. Defaults to `.center`.
     ///
     /// - Note: This will only apply when the button is larger than
     /// the required intrinsic height. If the bar sizes itself intrinsically,
