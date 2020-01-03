@@ -163,8 +163,6 @@ open class TMLabelBarButton: TMBarButton {
         selectedTintColor = .systemBlue
         contentInset = Defaults.contentInset
         
-        backgroundColor = .red
-        
         calculateFontIntrinsicContentSize(for: label.text)
     }
     
