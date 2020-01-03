@@ -22,6 +22,14 @@ open class TMLabelBarButton: TMBarButton {
         static let badgeLeadingInset: CGFloat = 8.0
     }
     
+    // MARK: Types
+    
+    public enum VerticalAlignment {
+        case center
+        case top
+        case bottom
+    }
+    
     // MARK: Properties
     
     open override var intrinsicContentSize: CGSize {
@@ -90,6 +98,15 @@ open class TMLabelBarButton: TMBarButton {
         }
     }
     
+    open var verticalAlignment: VerticalAlignment = .center {
+        didSet {
+            updateAlignmentConstraints()
+        }
+    }
+    private var labelTopConstraint: NSLayoutConstraint?
+    private var labelCenterConstraint: NSLayoutConstraint?
+    private var labelBottomConstraint: NSLayoutConstraint?
+    
     // MARK: Lifecycle
     
     open override func layout(in view: UIView) {
@@ -101,11 +118,12 @@ open class TMLabelBarButton: TMBarButton {
         badgeContainer.translatesAutoresizingMaskIntoConstraints = false
         let badgeContainerLeading = badgeContainer.leadingAnchor.constraint(equalTo: label.trailingAnchor)
         let badgeContainerWidth = badgeContainer.widthAnchor.constraint(equalToConstant: 0.0)
+        let labelCenterConstraint = label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         let constraints = [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             label.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
             view.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            labelCenterConstraint,
             badgeContainerLeading,
             badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
             view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
@@ -114,6 +132,10 @@ open class TMLabelBarButton: TMBarButton {
         ]
         self.badgeContainerLeading = badgeContainerLeading
         self.badgeContainerWidth = badgeContainerWidth
+        
+        self.labelCenterConstraint = labelCenterConstraint
+        self.labelTopConstraint = label.topAnchor.constraint(equalTo: view.topAnchor)
+        self.labelBottomConstraint = view.bottomAnchor.constraint(equalTo: label.bottomAnchor)
         
         NSLayoutConstraint.activate(constraints)
         
@@ -130,6 +152,8 @@ open class TMLabelBarButton: TMBarButton {
         }
         selectedTintColor = .systemBlue
         contentInset = Defaults.contentInset
+        
+        backgroundColor = .red
         
         calculateFontIntrinsicContentSize(for: label.text)
     }
@@ -200,6 +224,23 @@ open class TMLabelBarButton: TMBarButton {
         let isBadgeVisible = badge.value != nil
         badgeContainerWidth?.constant =  isBadgeVisible ? badge.bounds.size.width : 0.0
         badgeContainerLeading?.constant = isBadgeVisible ? Defaults.badgeLeadingInset : 0.0
+    }
+    
+    private func updateAlignmentConstraints() {
+        switch verticalAlignment {
+        case .center:
+            labelCenterConstraint?.isActive = true
+            labelTopConstraint?.isActive = false
+            labelBottomConstraint?.isActive = false
+        case .top:
+            labelCenterConstraint?.isActive = false
+            labelTopConstraint?.isActive = true
+            labelBottomConstraint?.isActive = false
+        case .bottom:
+            labelCenterConstraint?.isActive = false
+            labelTopConstraint?.isActive = false
+            labelBottomConstraint?.isActive = true
+        }
     }
 }
 
