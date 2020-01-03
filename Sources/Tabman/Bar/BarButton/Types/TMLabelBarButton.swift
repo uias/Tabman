@@ -24,6 +24,11 @@ open class TMLabelBarButton: TMBarButton {
     
     // MARK: Types
     
+    /// Vertical alignment of the label within the bar button.
+    ///
+    /// - `.center`: Center the label vertically in the button.
+    /// - `.top`: Align the label with the top of the button.
+    /// - `.bottom`: Align the label with the bottom of the button.
     public enum VerticalAlignment {
         case center
         case top
@@ -98,6 +103,11 @@ open class TMLabelBarButton: TMBarButton {
         }
     }
     
+    /// How to vertically align the label within the button.
+    ///
+    /// - Note: This will only apply when the button is larger than
+    /// the required intrinsic height. If the bar sizes itself intrinsically,
+    /// setting this paramter will have no effect.
     open var verticalAlignment: VerticalAlignment = .center {
         didSet {
             updateAlignmentConstraints()

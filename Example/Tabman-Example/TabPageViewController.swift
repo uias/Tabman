@@ -58,10 +58,22 @@ class TabPageViewController: TabmanViewController {
         plusButton.tintColor = .white
         bar.rightAccessoryView = plusButton
         
+        let container = UIView()
+        view.addSubview(container)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 11, *) {
+            NSLayoutConstraint.activate([
+                container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                container.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                view.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+                container.heightAnchor.constraint(equalToConstant: 100.0)
+            ])
+        }
+        
         // Add the bar to the view controller - wrapping it in a `TMSystemBar`.
-        addBar(bar.systemBar(),
+        addBar(bar,
                dataSource: self,
-               at: .top)
+               at: .custom(view: container, layout: nil))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +84,7 @@ class TabPageViewController: TabmanViewController {
         bar.buttons.customize { (button) in
             button.selectedTintColor = tintColor
             button.tintColor = tintColor.withAlphaComponent(0.4)
+            button.verticalAlignment = .top
         }
         bar.indicator.tintColor = tintColor
     }
