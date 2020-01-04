@@ -17,7 +17,7 @@ Please read it before making any contributions.
 
 ## Setting up the project for development
 
-Tabman relies on a couple of dependencies, `Pageboy` and `PureLayout`. To integrate these dependencies correctly for developing for Tabman you need to do the following:
+Tabman relies on a couple of dependencies, and the example project has some also - to integrate these dependencies correctly for development you need to do the following:
 
 - Ensure you have [Carthage](https://github.com/Carthage/Carthage) installed. If not, install via Homebrew with `brew install carthage`. 
 - Fork / Clone the `Tabman` repository. 
