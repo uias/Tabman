@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "c949159e441492d94945a3d596553b02d33c27a5",
+          "version": "3.5.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
