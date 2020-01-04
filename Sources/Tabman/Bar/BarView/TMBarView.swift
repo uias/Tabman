@@ -306,7 +306,6 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             leftAlignmentInset = width - buttonWidth
             rightAlignmentInset = 0.0
         case .centerDistributed:
-            // TODO - Fix this when buttons width is greater than what can be centered...
             var width = bounds.size.width / 2
             if #available(iOS 11, *) {
                 width -= safeAreaInsets.left
