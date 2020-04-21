@@ -22,6 +22,7 @@ let package = Package(
             name: "Tabman",
             dependencies: ["Pageboy"],
             path: ".",
+            exclude: ["Sources/Tabman/Tabman.h", "Sources/Tabman/Info.plist"],
             sources: ["Sources/Tabman"]),
         .testTarget(
             name: "TabmanTests",
