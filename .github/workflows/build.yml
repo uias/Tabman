@@ -1,0 +1,13 @@
+name: Build
+on: [push]
+
+jobs:
+  Test:
+    runs-on: macOS-latest
+    steps:
+      - name: Prepare
+        run: |
+          brew install carthage
+          bundle install
+      - name: Run tests
+        run: fastlane test
