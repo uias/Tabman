@@ -5,9 +5,9 @@ jobs:
   Test:
     runs-on: macOS-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Prepare
         run: |
-          brew install carthage
           bundle install
       - name: Run tests
         run: fastlane test
