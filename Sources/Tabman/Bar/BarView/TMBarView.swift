@@ -340,7 +340,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
             button.populate(for: item)
-            self.reloadIndicatorPosition()
+            self.updateIndicatorPosition()
         }, completion: nil)
     }
 
@@ -414,7 +414,7 @@ extension TMBarView: TMBar {
         UIView.performWithoutAnimation {
             layoutIfNeeded()
             updateScrollViewContentInset()
-            reloadIndicatorPosition()
+            updateIndicatorPosition()
         }
     }
     
@@ -526,7 +526,7 @@ extension TMBarView {
         return container
     }
     
-    private func reloadIndicatorPosition() {
+    private func updateIndicatorPosition() {
         guard let indicatedPosition = self.indicatedPosition else {
             return
         }
@@ -604,7 +604,7 @@ private extension TMBarView {
             rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
         }
         
-        reloadIndicatorPosition()
+        updateIndicatorPosition()
     }
 }
 
