@@ -206,6 +206,15 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     
+    open override func didMoveToWindow() {
+        super.didMoveToWindow()
+        
+        UIView.performWithoutAnimation {
+            reloadIndicatorPosition()
+            updateEdgeFades(for: scrollView)
+        }
+    }
+    
     private func layout(in view: UIView) {
         layoutRootViews(in: view)
         
