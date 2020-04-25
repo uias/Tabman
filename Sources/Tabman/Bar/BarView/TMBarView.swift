@@ -200,19 +200,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        UIView.performWithoutAnimation {
-            reloadIndicatorPosition()
-            updateEdgeFades(for: scrollView)
-        }
+        updateIndicatorForCurrentLayout()
     }
     
     open override func didMoveToWindow() {
         super.didMoveToWindow()
         
-        UIView.performWithoutAnimation {
-            reloadIndicatorPosition()
-            updateEdgeFades(for: scrollView)
-        }
+        updateIndicatorForCurrentLayout()
     }
     
     private func layout(in view: UIView) {
@@ -413,6 +407,10 @@ extension TMBarView: TMBar {
         }
         
         self.items = items
+        updateIndicatorForCurrentLayout()
+    }
+    
+    private func updateIndicatorForCurrentLayout() {
         UIView.performWithoutAnimation {
             layoutIfNeeded()
             updateScrollViewContentInset()
