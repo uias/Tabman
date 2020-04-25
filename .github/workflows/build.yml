@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Prepare
         run: |
+          bundle update --bundler
           bundle install
       - name: Run tests
         run: fastlane test
