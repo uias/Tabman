@@ -1,10 +1,12 @@
 #!/bin/bash
 
+set -eo pipefail
+
 # ----- Configuration
 
 ORGANISATION=uias
 NAME=Tabman
-BRANCH=$([ "$TRAVIS_BRANCH" == "" ] && echo "master" || echo "$TRAVIS_BRANCH")
+BRANCH=`git branch --show-current`
 SHA=`git rev-parse --verify HEAD --short`
 REPO=`git config remote.origin.url`
 
@@ -25,18 +27,10 @@ else
     git clone --branch gh-pages "$REPO" "$CHECKOUT_PATH"
 fi
 
-if [ "$TRAVIS_BRANCH" != "" ]; then
-    echo " ==> Install: jazzy"
-    gem install --no-document jazzy
-fi
-
 echo " ==> Generate documentation"
 .scripts/generate-docs "$BRANCH" "$OUTPUT_PATH"
 
-# ----- Travis Documentation updater
-
-# Exit if not running from travis
-if [ "$TRAVIS_BRANCH" == "" ]; then exit; fi
+# ----- Documentation updater
 
 pushd "$CHECKOUT_PATH"
 
@@ -64,7 +58,7 @@ pushd "$CHECKOUT_PATH"
     git commit -m "[$BRANCH $SHA] Regenerate documentation"
 
     echo " ==> Push changes -> '$REPO'"
-    git push -q "https://$GITHUB_PAGES_TOKEN@github.com/$ORGANISATION/$NAME.git" gh-pages
+    git push -q "https://$PAGES_API_TOKEN@github.com/$ORGANISATION/$NAME.git" gh-pages
 
     echo " <== All done 👊"
 popd

@@ -11,4 +11,4 @@ jobs:
           bundle update --bundler
           bundle install
       - name: Run tests
-        run: fastlane test
+        run: bundle exec fastlane test

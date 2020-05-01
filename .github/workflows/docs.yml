@@ -1,4 +1,4 @@
-name: Docs
+name: Documentation
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
       - feature/gh-actions
 
 jobs:
-  Generate:
+  publish:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,5 +14,9 @@ jobs:
         run: |
           bundle update --bundler
           bundle install
-      - name: Publish
+      - name: Bootstrap
+        run: bundle exec fastlane bootstrap
+      - name: Publish Docs
+        env:
+          PAGES_API_TOKEN: ${{ secrets.PAGES_API_TOKEN }}
         run: ./.scripts/update-gh-pages
