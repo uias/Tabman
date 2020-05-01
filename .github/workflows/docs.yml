@@ -15,4 +15,4 @@ jobs:
           bundle update --bundler
           bundle install
       - name: Publish
-        run: ./scripts/update-gh-pages
+        run: ./.scripts/update-gh-pages
