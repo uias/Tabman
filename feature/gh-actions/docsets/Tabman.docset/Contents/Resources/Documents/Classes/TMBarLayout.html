@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>TMBarLayout Class Reference</title>
+    <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
+    <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
+    <meta charset='utf-8'>
+    <script src='../js/jquery.min.js' defer></script>
+    <script src='../js/jazzy.js' defer></script>
+  </head>
+  <body>
+
+    <a name='//apple_ref/swift/Class/TMBarLayout' class='dashAnchor'></a>
+
+    <a title='TMBarLayout Class Reference'></a>
+
+    <header class='header'>
+      <p class='header-col header-col--primary'>
+        <a class='header-link' href='../index.html'>
+          Tabman Docs
+        </a>
+         (70% documented)
+      </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='https://github.com/uias/Tabman'>
+            <img class='header-icon' src='../img/gh.png'/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='dash-feed://http%3A%2F%2Fuias%2Egithub%2Eio%2FTabman%2Ffeature%2Fgh%2Dactions%2Fdocsets%2FTabman%2Exml'>
+            <img class='header-icon' src='../img/dash.png'/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class='breadcrumbs'>
+      <a class='breadcrumb' href='../index.html'>Tabman Reference</a>
+      <img class='carat' src='../img/carat.png' />
+      TMBarLayout Class Reference
+    </p>
+
+    <div class='content-wrapper'>
+      <nav class='navigation'>
+        <ul class='nav-groups'>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Documentation.html'>Documentation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../adding-a-bar.html'>Adding a Bar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../example-projects.html'>Example Projects</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../contributing.html'>Contributing</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../changelog.html'>Changelog</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../troubleshooting.html'>Troubleshooting</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../View Controller.html'>View Controller</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController.html'>TabmanViewController</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO'>– BarLocation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TabmanViewController/Insets.html'>– Insets</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Bar.html'>Bar</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBar.html'>TMBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarView.html'>TMBarView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarItemable.html'>TMBarItemable</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarItem.html'>TMBarItem</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarDataSource.html'>TMBarDataSource</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarDelegate.html'>TMBarDelegate</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Layout.html'>Layout</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html'>TMBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO'>– ContentMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO'>– Alignment</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarLayout/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMHorizontalBarLayout.html'>TMHorizontalBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMConstrainedHorizontalBarLayout.html'>TMConstrainedHorizontalBarLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Buttons.html'>Buttons</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButton.html'>TMBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButton/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarButtonCollection.html'>TMBarButtonCollection</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMLabelBarButton.html'>TMLabelBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC17VerticalAlignmentO'>– VerticalAlignment</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBadgeView.html'>TMBadgeView</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Indicator.html'>Indicator</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator.html'>TMBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO'>– DisplayMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarIndicator/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMLineBarIndicator.html'>TMLineBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBlockBarIndicator.html'>TMBlockBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMChevronBarIndicator.html'>TMChevronBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMDotBarIndicator.html'>TMDotBarIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Animation.html'>Animation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/TMAnimation.html'>TMAnimation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Animation.html#/s:6Tabman17TMTransitionStyleO'>TMTransitionStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Classes.html'>Other Classes</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarBackgroundView.html'>TMBarBackgroundView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TMBarBackgroundView.html#/s:6Tabman19TMBarBackgroundViewC5StyleO'>– Style</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Enumerations.html'>Other Enumerations</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Other%20Enums.html#/s:6Tabman18TMBarReloadContextO'>TMBarReloadContext</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Other%20Enums.html#/s:6Tabman20TMBarUpdateDirectionO'>TMBarUpdateDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Extensions.html'>Other Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIViewController.html'>UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Other Protocols.html'>Other Protocols</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TMBarViewFocusProvider.html'>TMBarViewFocusProvider</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class='main-content'>
+
+        <section class='section'>
+          <div class='section-content'>
+            <h1>TMBarLayout</h1>
+              <div class='declaration'>
+                <div class='language'>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarLayout</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TMBarViewFocusProvider.html">TMBarViewFocusProvider</a></span><span class="p">,</span> <span class="kt">TMTransitionStyleable</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>TMBarLayout</code> dictates the way that BarButtons are displayed within a bar, handling layout and population.</p>
+
+<p>Attention: You should not directly use <code>BarLayout</code>, but instead inherit from it or use an available subclass such as <code><a href="../Classes/TMHorizontalBarLayout.html">TMHorizontalBarLayout</a></code>.</p>
+
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-content'>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Types"></a>
+                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
+                <a href="#/Types">
+                  <h3 class="section-name">Types</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC11ContentModeO"></a>
+                    <a name="//apple_ref/swift/Enum/ContentMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC11ContentModeO">ContentMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to display the contents of the layout.</p>
+
+<ul>
+<li><code>.intrinsic</code>: The layout and contents will be intrinsically sized, taking up as much space as required.</li>
+<li><code>.fit</code>: The layout and it&rsquo;s contents will be restricted to fitting within the bounds of the bar.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ContentMode</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L22-L25" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC9AlignmentO"></a>
+                    <a name="//apple_ref/swift/Enum/Alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC9AlignmentO">Alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to align the layout in the parent.</p>
+
+<ul>
+<li><code>.leading</code>: The layout will be aligned from the leading edge of the parent.</li>
+<li><code>.center</code>: The layout will be aligned from the center of the parent.</li>
+<li><code>.centerDistributed</code>: The layout will be aligned so that its entire contents is centered in the parent if possible.</li>
+<li><code>.trailing</code>: The layout will be aligned from the trailing edge of the parent.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Alignment</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L33-L38" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC4viewSo6UIViewCvp"></a>
+                    <a name="//apple_ref/swift/Property/view" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4viewSo6UIViewCvp">view</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container view which contains actual contents</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L43" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC11contentModeAC07ContentE0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/contentMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC11contentModeAC07ContentE0Ovp">contentMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The content mode in which to display the content in the layout.</p>
+
+<p>Options:</p>
+
+<ul>
+<li><code>.intrinsic</code>: The layout and contents will be intrinsically sized, taking up as much space as required.</li>
+<li><code>.fit</code>: The layout and it&rsquo;s contents will be restricted to fitting within the bounds of the bar.</li>
+</ul>
+
+<p>By default this is set to <code>.intrinsic</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">contentMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO">ContentMode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L65-L72" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC12contentInsetSo12UIEdgeInsetsVvp"></a>
+                    <a name="//apple_ref/swift/Property/contentInset" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC12contentInsetSo12UIEdgeInsetsVvp">contentInset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inset to apply to the outside of the layout.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">contentInset</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L74-L81" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC15transitionStyleAA012TMTransitionE0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/transitionStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC15transitionStyleAA012TMTransitionE0Ovp">transitionStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transition style for updating layout parameters, such as scroll offset.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">transitionStyle</span><span class="p">:</span> <span class="kt"><a href="../Animation.html#/s:6Tabman17TMTransitionStyleO">TMTransitionStyle</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L83-L89" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC9alignmentAC9AlignmentOvp"></a>
+                    <a name="//apple_ref/swift/Property/alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC9alignmentAC9AlignmentOvp">alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How to align the layout in the bar.</p>
+
+<p>Options:</p>
+
+<ul>
+<li><code>.leading</code>: The layout will be aligned from the leading edge of the parent.</li>
+<li><code>.center</code>: The layout will be aligned from the center of the parent.</li>
+<li><code>.trailing</code>: The layout will be aligned from the trailing edge of the parent.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">alignment</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO">Alignment</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L98-L104" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Lifecycle" class="dashAnchor"></a>
+                <a href="#/Lifecycle">
+                  <h3 class="section-name">Lifecycle</h3>
+                </a>
+              </div>
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC6layout2inySo6UIViewC_tF"></a>
+                    <a name="//apple_ref/swift/Method/layout(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC6layout2inySo6UIViewC_tF">layout(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Layout the <code>BarLayout</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">layout</span><span class="p">(</span><span class="k">in</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view to use as the root of the layout.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L122-L123" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC6insert7buttons2atySayAA0B6ButtonCG_SitF"></a>
+                    <a name="//apple_ref/swift/Method/insert(buttons:at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC6insert7buttons2atySayAA0B6ButtonCG_SitF">insert(buttons:at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Insert new bar buttons into the layout from a specified index.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">insert</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">],</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buttons</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The buttons to insert.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index to start inserting the buttons at.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L130-L131" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC6remove7buttonsySayAA0B6ButtonCG_tF"></a>
+                    <a name="//apple_ref/swift/Method/remove(buttons:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC6remove7buttonsySayAA0B6ButtonCG_tF">remove(buttons:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove existing bar buttons from the layout.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buttons</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The buttons to remove.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L136-L137" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC9focusArea3for8capacitySo6CGRectV12CoreGraphics7CGFloatV_SitF"></a>
+                    <a name="//apple_ref/swift/Method/focusArea(for:capacity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC9focusArea3for8capacitySo6CGRectV12CoreGraphics7CGFloatV_SitF">focusArea(for:capacity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculate the <code>focusRect</code> for the current position and capacity.</p>
+
+<p>This rect defines the area of the layout that should currently be highlighted for the selected bar button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">focusArea</span><span class="p">(</span><span class="k">for</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current position to display.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>capacity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Capacity of the bar (items).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>Calculated focus rect.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L147-L149" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC14setNeedsReloadyyF"></a>
+                    <a name="//apple_ref/swift/Method/setNeedsReload()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC14setNeedsReloadyyF">setNeedsReload()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inform that the layout requires a reload of its contents.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This will only be applied if the layout has previously
+had content provided.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setNeedsReload</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift#L156-L158" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman11TMBarLayoutC4NoneC"></a>
+                    <a name="//apple_ref/swift/Class/None" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman11TMBarLayoutC4NoneC">None</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Layout that won&rsquo;t display any visible bar buttons.</p>
+
+<p>The indicator will be visible and equally distributed in the layout width.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../Classes/TMBarLayout.html">TMBarLayout</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="../Classes/TMBarLayout/None.html" class="button">See more</a>
+                        
+                          <a href="https://github.com/uias/Tabman/tree/feature/gh-actions/Sources/Tabman/Bar/BarLayout/Types/TMBarLayout+None.swift#L16-L59" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class='footer'>
+      <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.13.3</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

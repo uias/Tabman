@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Tabman 2 Migration Guide  Reference</title>
+    <link rel='stylesheet' type='text/css' href='css/jazzy.css' />
+    <link rel='stylesheet' type='text/css' href='css/highlight.css' />
+    <meta charset='utf-8'>
+    <script src='js/jquery.min.js' defer></script>
+    <script src='js/jazzy.js' defer></script>
+  </head>
+  <body>
+
+
+    <a title='Tabman 2 Migration Guide  Reference'></a>
+
+    <header class='header'>
+      <p class='header-col header-col--primary'>
+        <a class='header-link' href='index.html'>
+          Tabman Docs
+        </a>
+         (70% documented)
+      </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='https://github.com/uias/Tabman'>
+            <img class='header-icon' src='img/gh.png'/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='dash-feed://http%3A%2F%2Fuias%2Egithub%2Eio%2FTabman%2Ffeature%2Fgh%2Dactions%2Fdocsets%2FTabman%2Exml'>
+            <img class='header-icon' src='img/dash.png'/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class='breadcrumbs'>
+      <a class='breadcrumb' href='index.html'>Tabman Reference</a>
+      <img class='carat' src='img/carat.png' />
+      Tabman 2 Migration Guide  Reference
+    </p>
+
+    <div class='content-wrapper'>
+      <nav class='navigation'>
+        <ul class='nav-groups'>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Documentation.html'>Documentation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='adding-a-bar.html'>Adding a Bar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='going-custom.html'>Going Custom</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='example-projects.html'>Example Projects</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='changelog.html'>Changelog</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='troubleshooting.html'>Troubleshooting</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='tabman-2-migration-guide.html'>Tabman 2 Migration Guide</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='View Controller.html'>View Controller</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TabmanViewController.html'>TabmanViewController</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO'>– BarLocation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TabmanViewController/Insets.html'>– Insets</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Bar.html'>Bar</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/TMBar.html'>TMBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarView.html'>TMBarView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/TMBarItemable.html'>TMBarItemable</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarItem.html'>TMBarItem</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/TMBarDataSource.html'>TMBarDataSource</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/TMBarDelegate.html'>TMBarDelegate</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMSystemBar.html'>TMSystemBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html'>TMHidingBar</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC7TriggerO'>– Trigger</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHidingBar.html#/s:6Tabman11TMHidingBarC10TransitionO'>– Transition</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Layout.html'>Layout</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout.html'>TMBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11ContentModeO'>– ContentMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO'>– Alignment</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarLayout/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMHorizontalBarLayout.html'>TMHorizontalBarLayout</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMConstrainedHorizontalBarLayout.html'>TMConstrainedHorizontalBarLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Buttons.html'>Buttons</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarButton.html'>TMBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarButton/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarButtonCollection.html'>TMBarButtonCollection</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html'>TMLabelBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC17VerticalAlignmentO'>– VerticalAlignment</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBadgeView.html'>TMBadgeView</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Indicator.html'>Indicator</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarIndicator.html'>TMBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC11DisplayModeO'>– DisplayMode</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarIndicator/None.html'>– None</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMLineBarIndicator.html'>TMLineBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBlockBarIndicator.html'>TMBlockBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMChevronBarIndicator.html'>TMChevronBarIndicator</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMDotBarIndicator.html'>TMDotBarIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Animation.html'>Animation</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Structs/TMAnimation.html'>TMAnimation</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Animation.html#/s:6Tabman17TMTransitionStyleO'>TMTransitionStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Other Classes.html'>Other Classes</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarBackgroundView.html'>TMBarBackgroundView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMBarBackgroundView.html#/s:6Tabman19TMBarBackgroundViewC5StyleO'>– Style</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Other Enumerations.html'>Other Enumerations</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Other%20Enums.html#/s:6Tabman18TMBarReloadContextO'>TMBarReloadContext</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Other%20Enums.html#/s:6Tabman20TMBarUpdateDirectionO'>TMBarUpdateDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Other Extensions.html'>Other Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Extensions/UIViewController.html'>UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='Other Protocols.html'>Other Protocols</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/TMBarViewFocusProvider.html'>TMBarViewFocusProvider</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class='main-content'>
+
+        <section class='section'>
+          <div class='section-content'>
+            
+            <h1 id='tabman-2-migration-guide' class='heading'>Tabman 2 Migration Guide</h1>
+
+<p>This document outlines the various changes required to migrate to Tabman 2 from a previous version of Tabman.</p>
+
+<p>Tabman 2 is the latest major release of Tabman; A powerful paging view controller with tab bar for iOS. Tabman 2 introduces several API-breaking changes that should be made aware of.</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 9</li>
+<li>Xcode 10</li>
+<li>Swift 4.2</li>
+</ul>
+<h2 id='what-39-s-new' class='heading'>What&rsquo;s new</h2>
+
+<ul>
+<li>Completely rebuilt bar layout engine.</li>
+<li>Ability to dynamically add and remove bars.</li>
+<li>Redesigned bar component structure with enhanced extensibility.</li>
+<li>Simplified, more powerful customization.</li>
+<li>Support for Pageboy 3, with dynamic page insertion and removal.</li>
+<li>Improved animation engine, with smoother and more configurable transitioning.</li>
+<li>Ability to add accessory views to bar.</li>
+<li>More reliable auto insetting of child view controllers.</li>
+</ul>
+<h2 id='changes' class='heading'>Changes</h2>
+<h3 id='displaying-a-bar' class='heading'>Displaying a bar</h3>
+
+<p>Previously, Tabman only supported having a single bar visible in a <code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code> at one time, this limitation no longer exists. There is also no longer a &lsquo;default&rsquo; bar that will be displayed in the view controller.</p>
+
+<p><em>This also means that defining the style and location of the bar occurs at the time of adding it to the view controller.</em></p>
+
+<p><strong>Tabman 1.x:</strong></p>
+<pre class="highlight swift"><code><span class="n">bar</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="o">.</span><span class="n">scrollingButtonBar</span>
+<span class="n">bar</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="o">.</span><span class="n">top</span>
+</code></pre>
+
+<p><strong>Tabman 2:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+<span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+</code></pre>
+
+<p><em>You can also remove a bar from the view controller just as easily using <code>removeBar(bar)</code>.</em></p>
+<h3 id='populating-a-bar' class='heading'>Populating a bar</h3>
+
+<p>Previously bar items were populated via the <code>bar.items</code> property. As seen above, when adding a bar to <code><a href="Classes/TabmanViewController.html">TabmanViewController</a></code> you now have to provide a <code><a href="Protocols/TMBarDataSource.html">TMBarDataSource</a></code> data source.</p>
+
+<p><strong>Tabman 1.x:</strong></p>
+<pre class="highlight swift"><code><span class="n">bar</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Item</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Page 1"</span><span class="p">),</span> <span class="kt">Item</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Page 2"</span><span class="p">)]</span>
+</code></pre>
+
+<p><strong>Tabman 2:</strong></p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">TMBarDataSource</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">barItem</span><span class="p">(</span><span class="k">for</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt">TMBar</span><span class="p">,</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">TMBarItemable</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">TMBarItem</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Page </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><em><code><a href="Protocols/TMBarItemable.html">TMBarItemable</a></code> also supports UIKit objects such as <code>UINavigationItem</code> and <code>UITabBarItem</code> so you can directly provide them to <code><a href="Protocols/TMBarDataSource.html">TMBarDataSource</a></code>.</em></p>
+<h3 id='customizing-a-bar' class='heading'>Customizing a bar</h3>
+
+<p>The <code>TabmanBar.Appearance</code> proxy was previously used to provide generic properties that could be applied to a <code>TabmanBar</code> to change its appearance. The issue with this is that they didn&rsquo;t always apply to all styles, layouts and were very brittle. </p>
+
+<p>Tabman now leverages generics to fix this problem, with properties on <code><a href="Classes/TMBarLayout.html">TMBarLayout</a></code>, <code><a href="Classes/TMBarButton.html">TMBarButton</a></code> and <code><a href="Classes/TMBarIndicator.html">TMBarIndicator</a></code> subclasses providing a more tailored solution.</p>
+<h4 id='indicator' class='heading'>Indicator</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.indicator.preferredStyle</code></td>
+<td>Replaced by <code><a href="Classes/TMBarIndicator.html">TMBarIndicator</a></code> type constraint.</td>
+</tr>
+<tr>
+<td><code>appearance.indicator.color</code></td>
+<td><code><a href="Classes/TMLineBarIndicator.html#/c:@M@Tabman@objc(cs)TMLineBarIndicator(py)tintColor">TMLineBarIndicator.tintColor</a></code>, <code><a href="Classes/TMChevronBarIndicator.html#/c:@M@Tabman@objc(cs)TMChevronBarIndicator(py)tintColor">TMChevronBarIndicator.tintColor</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.indicator.lineWeight</code></td>
+<td><code><a href="Classes/TMLineBarIndicator.html#/s:6Tabman18TMLineBarIndicatorC6weightAC6WeightOvp">TMLineBarIndicator.weight</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.indicator.isProgressive</code></td>
+<td><code><a href="Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC13isProgressiveSbvp">TMBarIndicator.isProgressive</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.indicator.bounces</code></td>
+<td><code><a href="Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC18overscrollBehaviorAC010OverscrollE0Ovp">TMBarIndicator.overscrollBehavior</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.indicator.compresses</code></td>
+<td><code><a href="Classes/TMBarIndicator.html#/s:6Tabman14TMBarIndicatorC18overscrollBehaviorAC010OverscrollE0Ovp">TMBarIndicator.overscrollBehavior</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.indicator.useRoundedCorners</code></td>
+<td><code><a href="Classes/TMLineBarIndicator.html#/s:6Tabman18TMLineBarIndicatorC11cornerStyleAC06CornerF0Ovp">TMLineBarIndicator.cornerStyle</a></code></td>
+</tr>
+</tbody></table>
+<h4 id='state' class='heading'>State</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.state.selectedColor</code></td>
+<td><code><a href="Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC17selectedTintColorSo7UIColorCSgvp">TMLabelBarButton.selectedTintColor</a></code> <code><a href="Classes/TMTabItemBarButton.html#/s:6Tabman18TMTabItemBarButtonC17selectedTintColorSo7UIColorCSgvp">TMTabItemBarButton.selectedTintColor</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.state.color</code></td>
+<td><code><a href="Classes/TMLabelBarButton.html#/c:@M@Tabman@objc(cs)TMLabelBarButton(py)tintColor">TMLabelBarButton.tintColor</a></code> <code><a href="Classes/TMTabItemBarButton.html#/c:@M@Tabman@objc(cs)TMTabItemBarButton(py)tintColor">TMTabItemBarButton.tintColor</a></code></td>
+</tr>
+</tbody></table>
+<h4 id='layout' class='heading'>Layout</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.layout.interItemSpacing</code></td>
+<td><code>TMHorizontalBarLayout.interItemSpacing</code></td>
+</tr>
+<tr>
+<td><code>appearance.layout.edgeInset</code></td>
+<td><code><a href="Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC12contentInsetSo12UIEdgeInsetsVvp">TMBarLayout.contentInset</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.layout.height</code></td>
+<td>Removed</td>
+</tr>
+<tr>
+<td><code>appearance.layout.itemVerticalPadding</code></td>
+<td><code><a href="Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC12contentInsetSo12UIEdgeInsetsVvp">TMBarLayout.contentInset</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.layout.itemDistribution</code></td>
+<td><code><a href="Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC11contentModeAC07ContentE0Ovp">TMBarLayout.contentMode</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.layout.minimumItemWidth</code></td>
+<td>Removed</td>
+</tr>
+<tr>
+<td><code>appearance.layout.extendBackgroundEdgeInsets</code></td>
+<td>Embed bar in <code><a href="Classes/TMSystemBar.html">TMSystemBar</a></code> using <code><a href="Protocols/TMBar.html#/s:6Tabman5TMBarPAAE9systemBarAA08TMSystemD0CyF">TMBar.systemBar()</a></code></td>
+</tr>
+</tbody></table>
+<h4 id='interaction' class='heading'>Interaction</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.interaction.isScrollEnabled</code></td>
+<td><code><a href="Classes/TMBarView.html#/s:6Tabman9TMBarViewC10scrollModeAC06ScrollE0Oyxq_q0__Gvp">TMBarView.scrollMode</a></code></td>
+</tr>
+</tbody></table>
+<h4 id='style' class='heading'>Style</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.style.background</code></td>
+<td><code><a href="Classes/TMBarView.html#/s:6Tabman9TMBarViewC010backgroundC0AA0b10BackgroundC0Cvp">TMBarView.backgroundView</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.style.showEdgeFade</code></td>
+<td><code><a href="Classes/TMBarView.html#/s:6Tabman9TMBarViewC17fadesContentEdgesSbvp">TMBarView.fadesContentEdges</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.style.imageRenderingMode</code></td>
+<td>Removed</td>
+</tr>
+</tbody></table>
+<h4 id='text' class='heading'>Text</h4>
+
+<table><thead>
+<tr>
+<th>Tabman 1.x</th>
+<th>Tabman 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>appearance.text.font</code></td>
+<td><code><a href="Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC4fontSo6UIFontCvp">TMLabelBarButton.font</a></code></td>
+</tr>
+<tr>
+<td><code>appearance.text.selectedFont</code></td>
+<td><code><a href="Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC12selectedFontSo6UIFontCSgvp">TMLabelBarButton.selectedFont</a></code></td>
+</tr>
+</tbody></table>
+<h3 id='bar-behaviors' class='heading'>Bar Behaviors</h3>
+
+<p>Previously certain behaviors (such as hiding the bar) could be configured using <code>bar.behaviors</code> - this has been removed in Tabman 2. The reason behind this is that the raw views are now exposed via the Tabman API, meaning that custom behaviors can be implemented much easier. </p>
+
+<p>For example, hiding the bar when only one item is visible:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="kt">TMBar</span><span class="o">.</span><span class="kt">ButtonBar</span><span class="p">()</span>
+    <span class="nf">addBar</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+
+    <span class="n">bar</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">items</span><span class="p">?</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class='footer'>
+      <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.13.3</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
