@@ -18,7 +18,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (70% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -159,6 +159,9 @@
                 <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html'>TMLabelBarButton</a>
               </li>
               <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC17VerticalAlignmentO'>– VerticalAlignment</a>
+              </li>
+              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
               </li>
               <li class='nav-group-task'>
@@ -255,6 +258,8 @@
 <h4 id='2-x-releases' class='heading'>2.x Releases</h4>
 
 <ul>
+<li><code>2.8.x</code> Releases - <a href="#280">2.8.0</a> | <a href="#281">2.8.1</a> | <a href="#282">2.8.2</a></li>
+<li><code>2.7.x</code> Releases - <a href="#270">2.7.0</a></li>
 <li><code>2.6.x</code> Releases - <a href="#260">2.6.0</a> | <a href="#261">2.6.1</a> | <a href="#262">2.6.2</a> | <a href="#263">2.6.3</a></li>
 <li><code>2.5.x</code> Releases - <a href="#250">2.5.0</a></li>
 <li><code>2.4.x</code> Releases - <a href="#240">2.4.0</a> | <a href="#241">2.4.1</a> | <a href="#242">2.4.2</a> | <a href="#243">2.4.3</a></li>
@@ -286,6 +291,70 @@
 <li><code>0.6.x</code> Releases - <a href="#060">0.6.0</a> | <a href="#061">0.6.1</a> | <a href="#062">0.6.2</a></li>
 <li><code>0.5.x</code> Releases - <a href="#050">0.5.0</a> | <a href="#051">0.5.1</a> | <a href="#052">0.5.2</a> | <a href="#053">0.5.3</a></li>
 <li><code>0.4.x</code> Releases - <a href="#040">0.4.0</a> | <a href="#041">0.4.1</a> | <a href="#042">0.4.2</a> | <a href="#043">0.4.3</a> | <a href="#044">0.4.4</a> | <a href="#045">0.4.5</a> | <a href="#046">0.4.6</a> | <a href="#047">0.4.7</a> | <a href="#048">0.4.8</a></li>
+</ul>
+
+<hr>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-2-8-2-2-8-2-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/2.8.2">2.8.2</a></h2>
+
+<p>Released on 2020-04-25</p>
+<h4 id='fixed' class='heading'>Fixed</h4>
+
+<ul>
+<li>Layout issues when using Right-to-left languages via <code>semanticContentAttribute</code>.</li>
+</ul>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-2-8-1-2-8-1-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/2.8.1">2.8.1</a></h2>
+
+<p>Released on 2020-04-21</p>
+<h4 id='fixed' class='heading'>Fixed</h4>
+
+<ul>
+<li>Mixed language errors caused by <code>Tabman.h</code> header in Swift PM.
+
+<ul>
+<li>by <a href="https://github.com/filiplazov">filiplazov</a></li>
+</ul></li>
+</ul>
+
+<hr>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-2-8-0-2-8-0-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/2.8.0">2.8.0</a></h2>
+
+<p>Released on 2020-01-12</p>
+<h4 id='added' class='heading'>Added</h4>
+
+<ul>
+<li><code>verticalAlignment</code> to <code><a href="Classes/TMLabelBarButton.html">TMLabelBarButton</a></code> to allow for button contents to be vertically aligned.</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed</h4>
+
+<ul>
+<li>Issue where <code><a href="Classes/TMLabelBarButton.html">TMLabelBarButton</a></code> would fail to resize correctly when using custom fonts.</li>
+</ul>
+
+<hr>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-2-7-0-2-7-0-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/2.7.0">2.7.0</a></h2>
+
+<p>Released on 2019-12-23</p>
+<h4 id='added' class='heading'>Added</h4>
+
+<ul>
+<li><code>centerDistributed</code> to <code><a href="Classes/TMBarLayout.html#/s:6Tabman11TMBarLayoutC9AlignmentO">TMBarLayout.Alignment</a></code> to center align all bar buttons.
+
+<ul>
+<li>by <a href="https://github.com/wwdc14">wwdc14</a>.</li>
+</ul></li>
+</ul>
+<h4 id='updated' class='heading'>Updated</h4>
+
+<ul>
+<li>Removed <a href="https://github.com/uias/AutoInsetter">AutoInsetter</a> as a dependency.</li>
+<li>Child insetting logic now utilises <code>additionalSafeAreaInsets</code> only on iOS 11 and above.</li>
+</ul>
+<h4 id='fixed' class='heading'>Fixed</h4>
+
+<ul>
+<li><a href="https://github.com/uias/Tabman/issues/449">#449</a> Infinite loop that could be caused by recursive layout calls.</li>
+<li><a href="https://github.com/uias/Tabman/pull/487">#487</a> Issue where child contents could be requested to layout before being added to the view hierarchy.</li>
+<li><a href="https://github.com/uias/Tabman/issues/478">#478</a> Issue where bar could fail to inset children when created dynamically for the page view controller.</li>
 </ul>
 
 <hr>
@@ -1633,7 +1702,7 @@
     </div>
     <section class='footer'>
       <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
-      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.11.2</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.13.3</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>
 </div>

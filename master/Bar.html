@@ -19,7 +19,7 @@
         <a class='header-link' href='index.html'>
           Tabman Docs
         </a>
-         (70% documented)
+         (69% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -158,6 +158,9 @@
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html'>TMLabelBarButton</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Classes/TMLabelBarButton.html#/s:6Tabman16TMLabelBarButtonC17VerticalAlignmentO'>– VerticalAlignment</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Classes/TMTabItemBarButton.html'>TMTabItemBarButton</a>
@@ -310,76 +313,6 @@ in some form, and also respond to the current page position.</p>
                 <li class="item">
                   <div class="item-heading">
                     <code>
-                    <a name="/s:6Tabman15TMBarDataSourceP"></a>
-                    <a name="//apple_ref/swift/Protocol/TMBarDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman15TMBarDataSourceP">TMBarDataSource</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Data source to a <code><a href="Protocols/TMBar.html">TMBar</a></code> that is primarily responsible for providing a bar with contents.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDataSource</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                          <a href="Protocols/TMBarDataSource.html" class="button">See more</a>
-                        
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/TMBar.swift#L12-L21" class="button">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
-                    <a name="/s:6Tabman13TMBarDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/TMBarDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Tabman13TMBarDelegateP">TMBarDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Delegate to a <code><a href="Protocols/TMBar.html">TMBar</a></code> that is primarily responsible for handling user interaction within the bar.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h5>Declaration</h5>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        
-                          <a href="Protocols/TMBarDelegate.html" class="button">See more</a>
-                        
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/TMBar.swift#L24-L33" class="button">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
-                <li class="item">
-                  <div class="item-heading">
-                    <code>
                     <a name="/s:6Tabman9TMBarViewC"></a>
                     <a name="//apple_ref/swift/Class/TMBarView" class="dashAnchor"></a>
                     <a class="token" href="#/s:6Tabman9TMBarViewC">TMBarView</a>
@@ -400,6 +333,7 @@ in the <code>TMBarView</code> type definition.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">Layout</span><span class="p">,</span> <span class="kt">Button</span><span class="p">,</span> <span class="kt">Indicator</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">TMTransitionStyleable</span><span class="p">,</span> <span class="kt">TMBarLayoutParent</span> <span class="k">where</span> <span class="kt">Layout</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarLayout.html">TMBarLayout</a></span><span class="p">,</span> <span class="kt">Button</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarButton.html">TMBarButton</a></span><span class="p">,</span> <span class="kt">Indicator</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarIndicator.html">TMBarIndicator</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMBarView</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
                       </div>
@@ -407,15 +341,11 @@ in the <code>TMBarView</code> type definition.</p>
                         
                           <a href="Classes/TMBarView.html" class="button">See more</a>
                         
-                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarView/TMBarView.swift#L22-L350" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/BarView/TMBarView.swift#L22-L363" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
                 <li class="item">
                   <div class="item-heading">
                     <code>
@@ -488,10 +418,72 @@ fully supported.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman15TMBarDataSourceP"></a>
+                    <a name="//apple_ref/swift/Protocol/TMBarDataSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman15TMBarDataSourceP">TMBarDataSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Data source to a <code><a href="Protocols/TMBar.html">TMBar</a></code> that is primarily responsible for providing a bar with contents.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDataSource</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="Protocols/TMBarDataSource.html" class="button">See more</a>
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/TMBar.swift#L12-L21" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:6Tabman13TMBarDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/TMBarDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Tabman13TMBarDelegateP">TMBarDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate to a <code><a href="Protocols/TMBar.html">TMBar</a></code> that is primarily responsible for handling user interaction within the bar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                          <a href="Protocols/TMBarDelegate.html" class="button">See more</a>
+                        
+                          <a href="https://github.com/uias/Tabman/tree/master/Sources/Tabman/Bar/TMBar.swift#L24-L33" class="button">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div class="item-heading">
                     <code>
@@ -515,6 +507,7 @@ fully supported.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TMSystemBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMSystemBar</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
                       </div>
@@ -527,10 +520,6 @@ fully supported.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
                 <li class="item">
                   <div class="item-heading">
                     <code>
@@ -555,6 +544,7 @@ such as time.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMHidingBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMHidingBar</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
                       </div>
@@ -576,7 +566,7 @@ such as time.</p>
     </div>
     <section class='footer'>
       <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
-      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.11.2</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.13.3</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>
 </div>
