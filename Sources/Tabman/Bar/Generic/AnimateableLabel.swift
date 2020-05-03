@@ -47,11 +47,7 @@ internal class AnimateableLabel: UIView {
     }
     var textAlignment: NSTextAlignment? {
         didSet {
-            #if swift(>=4.2)
             textLayer.alignmentMode = caTextLayerAlignmentMode(from: textAlignment) ?? .left
-            #else
-            textLayer.alignmentMode = caTextLayerAlignmentMode(from: textAlignment) ?? kCAAlignmentLeft
-            #endif
         }
     }
     
@@ -69,11 +65,7 @@ internal class AnimateableLabel: UIView {
     
     private func initialize() {
         
-        #if swift(>=4.2)
         textLayer.truncationMode = .end
-        #else
-        textLayer.truncationMode = kCATruncationEnd
-        #endif
         textLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(textLayer)
     }
@@ -87,7 +79,6 @@ internal class AnimateableLabel: UIView {
 
 private extension AnimateableLabel {
     
-    #if swift(>=4.2)
     func caTextLayerAlignmentMode(from alignment: NSTextAlignment?) -> CATextLayerAlignmentMode? {
         guard let alignment = alignment else {
             return nil
@@ -105,23 +96,4 @@ private extension AnimateableLabel {
             return .left
         }
     }
-    #else
-    func caTextLayerAlignmentMode(from alignment: NSTextAlignment?) -> String? {
-        guard let alignment = alignment else {
-            return nil
-        }
-        switch alignment {
-        case .center:
-            return kCAAlignmentCenter
-        case .justified:
-            return kCAAlignmentJustified
-        case .left:
-            return kCAAlignmentLeft
-        case .natural:
-            return kCAAlignmentNatural
-        case .right:
-            return kCAAlignmentRight
-        }
-    }
-    #endif
 }
