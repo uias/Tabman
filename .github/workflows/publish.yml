@@ -1,5 +1,8 @@
 name: Publish
-on: [tags]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   publish_release:
