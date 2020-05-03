@@ -3,7 +3,7 @@
     <a href="https://github.com/uias/Tabman">
         <img src="https://github.com/uias/Tabman/workflows/Build/badge.svg" />
     </a>
-    <img src="https://img.shields.io/badge/Swift-4 | 5-orange.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Swift-5-orange.svg?style=flat" />
     <a href="https://cocoapods.org/pods/Tabman">
         <img src="https://img.shields.io/cocoapods/v/Tabman.svg" alt="CocoaPods" />
     </a>
@@ -28,7 +28,7 @@
 - Automatically insets child view controller contents.
 
 ## 📋 Requirements
-Tabman requires iOS 9 or above; and is compatibile with Swift 4/5.
+Tabman requires iOS 9 or above; and is compatibile with Swift 5.
 
 ## 📲 Installation
 ### CocoaPods
