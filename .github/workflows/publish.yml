@@ -1,0 +1,18 @@
+name: Publish
+on: [tags]
+
+jobs:
+  publish_release:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare
+        run: |
+          bundle update --bundler
+          bundle install
+      - name: Publish release
+        env:
+          SLACK_URL: ${{ secrets.SLACK_URL }}
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec fastlane deploy

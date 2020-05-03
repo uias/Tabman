@@ -11,4 +11,6 @@ jobs:
           bundle update --bundler
           bundle install
       - name: Run tests
+        env:
+          SLACK_URL: ${{ secrets.SLACK_URL }}
         run: bundle exec fastlane test
