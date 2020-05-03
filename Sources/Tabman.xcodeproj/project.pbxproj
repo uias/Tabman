@@ -871,6 +871,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -893,6 +894,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
@@ -907,6 +909,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"$(SRCROOT)/../Carthage/Build/iOS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -922,6 +925,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"$(SRCROOT)/../Carthage/Build/iOS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};

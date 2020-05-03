@@ -1,0 +1,21 @@
+name: Documentation
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare
+        run: |
+          bundle update --bundler
+          bundle install
+      - name: Bootstrap
+        run: bundle exec fastlane bootstrap
+      - name: Publish Docs
+        env:
+          PAGES_API_TOKEN: ${{ secrets.PAGES_API_TOKEN }}
+        run: ./.scripts/update-gh-pages

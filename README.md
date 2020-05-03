@@ -1,8 +1,7 @@
 ![](Docs/img/tm_logo.png)
-
 <p align="center">
-    <a href="https://travis-ci.org/uias/Tabman">
-        <img src="https://travis-ci.org/uias/Tabman.svg?branch=master" />
+    <a href="https://github.com/uias/Tabman">
+        <img src="https://github.com/uias/Tabman/workflows/Build/badge.svg" />
     </a>
     <img src="https://img.shields.io/badge/Swift-4 | 5-orange.svg?style=flat" />
     <a href="https://cocoapods.org/pods/Tabman">

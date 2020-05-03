@@ -1,0 +1,19 @@
+name: Build
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+
+jobs:
+  Test:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare
+        run: |
+          bundle update --bundler
+          bundle install
+      - name: Run tests
+        env:
+          SLACK_URL: ${{ secrets.SLACK_URL }}
+        run: bundle exec fastlane test
