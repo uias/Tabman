@@ -17,5 +17,5 @@ jobs:
         run: bundle exec fastlane bootstrap
       - name: Publish Docs
         env:
-          PAGES_API_TOKEN: ${{ secrets.PAGES_API_TOKEN }}
+          GITHUB_API_TOKEN: ${{ secrets.GH_UIAS_TOKEN }}
         run: ./.scripts/update-gh-pages

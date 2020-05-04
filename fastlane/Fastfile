@@ -31,7 +31,7 @@ platform :ios do
     # Push new Github release
     github_release = set_github_release(
       repository_name: "uias/Tabman",
-      api_token: ENV["GITHUB_TOKEN"],
+      api_token: ENV["GITHUB_API_TOKEN"],
       name: version,
       tag_name: version,
       description: "#{version} release.",

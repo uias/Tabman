@@ -58,7 +58,7 @@ pushd "$CHECKOUT_PATH"
     git commit -m "[$BRANCH $SHA] Regenerate documentation"
 
     echo " ==> Push changes -> '$REPO'"
-    git push -q "https://$PAGES_API_TOKEN@github.com/$ORGANISATION/$NAME.git" gh-pages
+    git push -q "https://$GITHUB_API_TOKEN@github.com/$ORGANISATION/$NAME.git" gh-pages
 
     echo " <== All done 👊"
 popd

@@ -17,5 +17,5 @@ jobs:
         env:
           SLACK_URL: ${{ secrets.SLACK_URL }}
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_API_TOKEN: ${{ secrets.GH_UIAS_TOKEN }}
         run: bundle exec fastlane deploy
