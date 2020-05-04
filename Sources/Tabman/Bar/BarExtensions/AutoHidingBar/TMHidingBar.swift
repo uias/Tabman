@@ -50,14 +50,7 @@ open class TMHidingBar: UIView {
     /// Bar that is embedded and hidden / shown.
     public let bar: TMBar
     private var barView: UIView {
-        #if swift(>=5.0)
         return bar
-        #else
-        guard let view = self.bar as? UIView else {
-            fatalError("Could not find barView")
-        }
-        return view
-        #endif
     }
     private var barViewTopPin: NSLayoutConstraint?
 

@@ -177,11 +177,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         scrollHandler.delegate = self
         scrollView.gestureDelegate = self
         if #available(iOS 10.0, *) {
-            #if swift(>=4.2)
             accessibilityTraits = [.tabBar]
-            #else
-            accessibilityTraits = UIAccessibilityTraitTabBar
-            #endif
         }
         layout(in: self)
         

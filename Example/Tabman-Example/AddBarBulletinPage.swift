@@ -89,15 +89,9 @@ final class AddBarBulletinPage: BLTNPageItem {
         guard let type = barTypeButtons[sender] else {
             return
         }
-        let barView: UIView
-        #if swift(>=5.0)
-        barView = sender.bar
-        #else
-        barView = sender.bar as! UIView
-        #endif
         tabViewController.addBarInteractively(makeBar(for: type),
                                               dataSource: barDataSource,
-                                              estimatedBarSize: barView.bounds.size)
+                                              estimatedBarSize: sender.bar.bounds.size)
         
         manager?.dismissBulletin()
     }

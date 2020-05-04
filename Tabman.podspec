@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   if s.respond_to? 'swift_versions'
-    s.swift_versions = ['4.0', '4.1', '4.2', '5.0']
+    s.swift_versions = ['5.0']
   end
 
   s.version      = "2.8.2"

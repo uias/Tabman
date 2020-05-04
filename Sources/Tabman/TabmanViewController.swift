@@ -209,21 +209,13 @@ extension TabmanViewController {
     public func addBar(_ bar: TMBar,
                        dataSource: TMBarDataSource,
                        at location: BarLocation) {
-        #if swift(>=5.0)
-        let barView = bar
-        #else
-        guard let barView = bar as? UIView else {
-            fatalError("Bar is expected to inherit from UIView")
-        }
-        #endif
-        
         bar.dataSource = dataSource
         bar.delegate = self
         
         if bars.contains(where: { $0 === bar }) == false {
             bars.append(bar)
         }
-        layoutView(barView, at: location)
+        layoutView(bar, at: location)
         
         updateBar(bar, to: relativeCurrentPosition, animated: false)
         
@@ -241,11 +233,7 @@ extension TabmanViewController {
         }
         
         bars.remove(at: index)
-        #if swift(>=5.0)
         bar.removeFromSuperview()
-        #else
-        (bar as? UIView)?.removeFromSuperview()
-        #endif
     }
     
     private func layoutContainers(in view: UIView) {
