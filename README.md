@@ -254,7 +254,7 @@ There are also example projects that showcase custom layouts and such:
 - [**Tinderbar**](https://github.com/uias/Tinderbar) - Tinder iOS app layout built with Tabman.
 
 ## 📐 Content Insetting
-Tabman uses [AutoInsetter](https://github.com/uias/AutoInsetter) to automatically adjust any content in its child view controllers so that it displays correctly beneath any visible bars. It provides the following behaviors:
+Tabman automatically adjusts any content in its child view controllers so that it displays correctly beneath any visible bars. It provides the following behaviors:
 
 - Updates `contentInset` and `contentOffset` appropriately for any `UIScrollView` or derived subclass found in the child view controller's subviews.
 - Sets `additionalSafeAreaInsets` to reflect the required safe areas including the bar contents. Any views constrained to the safe area in the child view controller will be laid out correctly (**Only available in iOS 11 and above.**)
