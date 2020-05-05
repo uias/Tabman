@@ -18,4 +18,6 @@ extension TMBar {
     public typealias TabBar = TMBarView<TMConstrainedHorizontalBarLayout, TMTabItemBarButton, TMBarIndicator.None>
     /// Bar which features only a line indicator, and no buttons.
     public typealias LineBar = TMBarView<TMBarLayout.None, TMBarButton.None, TMLineBarIndicator>
+    
+    public typealias ModernBar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMPillBarIndicator>
 }
