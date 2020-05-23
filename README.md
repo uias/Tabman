@@ -3,18 +3,12 @@
     <a href="https://github.com/uias/Tabman">
         <img src="https://github.com/uias/Tabman/workflows/Build/badge.svg" />
     </a>
-    <img src="https://img.shields.io/badge/Swift-5-orange.svg?style=flat" />
-    <a href="https://cocoapods.org/pods/Tabman">
-        <img src="https://img.shields.io/cocoapods/v/Tabman.svg" alt="CocoaPods" />
-    </a>
-	<a href="https://cocoapods.org/pods/Tabman">
-        <img src="https://img.shields.io/cocoapods/p/Tabman.svg" alt="Platforms" />
-    </a>
-	<a href="https://github.com/Carthage/Carthage">
-        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
-    </a>
+    <img src="https://img.shields.io/badge/Swift-5-orange?logo=Swift&logoColor=white" />
 	<a href="https://github.com/uias/Tabman/releases">
         <img src="https://img.shields.io/github/release/uias/Tabman.svg" />
+    </a>
+    <a href="https://swift.org/package-manager/">
+        <img src="https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg" />
     </a>
 </p>
 
@@ -31,8 +25,12 @@
 Tabman requires iOS 9 or above; and is compatibile with Swift 5.
 
 ## 📲 Installation
+
+### Swift Package Manager
+Tabman is compatible with [Swift Package Manager](https://swift.org/package-manager) and can be integrated via Xcode.
+
 ### CocoaPods
-Tabman is available through [CocoaPods](http://cocoapods.org):
+Tabman is also available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
 pod 'Tabman', '~> 2.9'
