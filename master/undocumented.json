@@ -1,635 +1,635 @@
 {
   "warnings": [
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
       "line": 21,
       "symbol": "TMBarBackgroundView.Style.clear",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
       "line": 22,
       "symbol": "TMBarBackgroundView.Style.flat(color:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
       "line": 23,
       "symbol": "TMBarBackgroundView.Style.blur(style:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
       "line": 24,
       "symbol": "TMBarBackgroundView.Style.custom(view:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarBackgroundView/TMBarBackgroundView.swift",
       "line": 50,
       "symbol": "TMBarBackgroundView.init(style:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
       "line": 83,
       "symbol": "TMBadgeView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
       "line": 88,
       "symbol": "TMBadgeView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
       "line": 129,
       "symbol": "TMBadgeView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
       "line": 22,
       "symbol": "TMBarButton.SelectionState",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
       "line": 96,
       "symbol": "TMBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButton.swift",
       "line": 192,
       "symbol": "TMBarButton.SelectionState",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButtonCollection.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/TMBarButtonCollection.swift",
       "line": 16,
       "symbol": "TMBarButtonCollection.Customization",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMBarButton+None.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMBarButton+None.swift",
       "line": 21,
       "symbol": "TMBarButton.None.isHidden",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 33,
       "symbol": "TMLabelBarButton.VerticalAlignment.center",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 34,
       "symbol": "TMLabelBarButton.VerticalAlignment.top",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 35,
       "symbol": "TMLabelBarButton.VerticalAlignment.bottom",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 40,
       "symbol": "TMLabelBarButton.intrinsicContentSize",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 182,
       "symbol": "TMLabelBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
       "line": 190,
       "symbol": "TMLabelBarButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
       "line": 103,
       "symbol": "TMTabItemBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
       "line": 138,
       "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
       "line": 35,
       "symbol": "TMHidingBar.Trigger.time(duration:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
       "line": 36,
       "symbol": "TMHidingBar.Trigger.manual",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
       "line": 44,
       "symbol": "TMHidingBar.Transition.drawer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
       "line": 45,
       "symbol": "TMHidingBar.Transition.fade",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/AutoHidingBar/TMHidingBar.swift",
       "line": 78,
       "symbol": "TMHidingBar.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
       "line": 28,
       "symbol": "TMSystemBar.bar",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
       "line": 66,
       "symbol": "TMSystemBar.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarExtensions/SystemBar/TMSystemBar.swift",
       "line": 123,
       "symbol": "TMSystemBar.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 22,
       "symbol": "TMBarIndicator.DisplayMode.top",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 23,
       "symbol": "TMBarIndicator.DisplayMode.bottom",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 24,
       "symbol": "TMBarIndicator.DisplayMode.fill",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 27,
       "symbol": "TMBarIndicator.OverscrollBehavior",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 56,
       "symbol": "TMBarIndicator.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 61,
       "symbol": "TMBarIndicator.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 66,
       "symbol": "TMBarIndicator.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/TMBarIndicator.swift",
       "line": 77,
       "symbol": "TMBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift",
       "line": 25,
       "symbol": "TMBarIndicator.None.isHidden",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift",
       "line": 35,
       "symbol": "TMBarIndicator.None.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
       "line": 16,
       "symbol": "TMBlockBarIndicator.CornerStyle",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
       "line": 46,
       "symbol": "TMBlockBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBlockBarIndicator.swift",
       "line": 52,
       "symbol": "TMBlockBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
       "line": 16,
       "symbol": "TMChevronBarIndicator.Size",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
       "line": 61,
       "symbol": "TMChevronBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
       "line": 84,
       "symbol": "TMChevronBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
       "line": 16,
       "symbol": "TMDotBarIndicator.Size",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
       "line": 37,
       "symbol": "TMDotBarIndicator.size",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
       "line": 54,
       "symbol": "TMDotBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
       "line": 77,
       "symbol": "TMDotBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
       "line": 16,
       "symbol": "TMLineBarIndicator.Weight",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
       "line": 23,
       "symbol": "TMLineBarIndicator.CornerStyle",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
       "line": 76,
       "symbol": "TMLineBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
       "line": 86,
       "symbol": "TMLineBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
       "line": 109,
       "symbol": "TMBarItem.isAccessibilityElement",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 23,
       "symbol": "TMBarLayout.ContentMode.intrinsic",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 24,
       "symbol": "TMBarLayout.ContentMode.fit",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 34,
       "symbol": "TMBarLayout.Alignment.leading",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 35,
       "symbol": "TMBarLayout.Alignment.center",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 36,
       "symbol": "TMBarLayout.Alignment.centerDistributed",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 37,
       "symbol": "TMBarLayout.Alignment.trailing",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 49,
       "symbol": "TMBarLayout.layoutGuide",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
       "line": 107,
       "symbol": "TMBarLayout.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 26,
       "symbol": "TMBarView.BarButtonCustomization",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 28,
       "symbol": "TMBarView.ScrollMode",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 172,
       "symbol": "TMBarView.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 190,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 196,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 202,
       "symbol": "TMBarView.didMoveToWindow()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 345,
       "symbol": "TMBarView.accessibilityElementCount()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 349,
       "symbol": "TMBarView.accessibilityElement(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
       "line": 353,
       "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 41,
       "symbol": "TMBarReloadContext.full",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 42,
       "symbol": "TMBarReloadContext.insertion",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 43,
       "symbol": "TMBarReloadContext.deletion",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 52,
       "symbol": "TMBarUpdateDirection.none",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 53,
       "symbol": "TMBarUpdateDirection.forward",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMBar.swift",
       "line": 54,
       "symbol": "TMBarUpdateDirection.reverse",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
       "line": 17,
       "symbol": "TMTransitionStyle.progressive",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
       "line": 18,
       "symbol": "TMTransitionStyle.snap",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/Bar/TMTransition.swift",
       "line": 19,
       "symbol": "TMTransitionStyle.none",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
       "line": 48,
       "symbol": "TabmanViewController.Insets.init(barInsets:safeAreaInsets:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
       "line": 55,
       "symbol": "TabmanViewController.Insets.makeSafeAreaInsets(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 28,
       "symbol": "TabmanViewController.BarLocation.top",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 29,
       "symbol": "TabmanViewController.BarLocation.bottom",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 30,
       "symbol": "TabmanViewController.BarLocation.navigationItem(item:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 31,
       "symbol": "TabmanViewController.BarLocation.custom(view:layout:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 76,
       "symbol": "TabmanViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 81,
       "symbol": "TabmanViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 92,
       "symbol": "TabmanViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/runners/2.169.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
+      "file": "/Users/runner/runners/2.262.1/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 103,
       "symbol": "TabmanViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/runner/runners/2.169.1/work/Tabman/Tabman"
+  "source_directory": "/Users/runner/runners/2.262.1/work/Tabman/Tabman"
 }
