@@ -146,6 +146,10 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     
+    /// Background color used for indicator container view
+    /// This color won't appear if displayMode is .fill
+    open var indicatorContainerColor: UIColor = .clear
+    
     // MARK: TMBarLayoutParent
     
     var contentInset: UIEdgeInsets = .zero {
@@ -502,6 +506,7 @@ extension TMBarView {
     /// - Returns: Indicator container.
     private func container(for indicator: Indicator) -> TMBarIndicatorContainer<Indicator> {
         let container = TMBarIndicatorContainer(for: indicator)
+        container.backgroundColor = indicatorContainerColor
         switch indicator.displayMode {
         case .top:
             layoutGrid.addTopSubview(container)
