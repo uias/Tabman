@@ -45,6 +45,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     private var rootContainerBottom: NSLayoutConstraint!
     
     private var indicatorLayoutHandler: TMBarIndicatorLayoutHandler?
+    private var indicatorContainer: TMBarIndicatorContainer<Indicator>!
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
@@ -148,7 +149,11 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     
     /// Background color used for indicator container view
     /// This color won't appear if displayMode is .fill
-    open var indicatorContainerColor: UIColor = .clear
+    open var indicatorContainerColor: UIColor = .clear {
+        didSet {
+            indicatorContainer.backgroundColor = indicatorContainerColor
+        }
+    }
     
     // MARK: TMBarLayoutParent
     
@@ -238,7 +243,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             ])
         
         layout.layout(parent: self, insetGuides: contentInsetGuides)
-        self.indicatorLayoutHandler = container(for: indicator).layoutHandler
+        self.indicatorContainer = container(for: indicator)
+        self.indicatorLayoutHandler = indicatorContainer.layoutHandler
     }
     
     private func layoutRootViews(in view: UIView) {
