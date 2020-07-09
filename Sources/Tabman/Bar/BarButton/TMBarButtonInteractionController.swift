@@ -16,8 +16,8 @@ internal protocol TMBarButtonInteractionHandler: class {
 }
 
 /// A bar button controller that is responsbile for handling interaction that occurs in bar buttons.
-internal final class TMBarButtonInteractionController: TMBarButtonController {
-    
+internal final class TMBarButtonInteractionController: TMBarButtonController, Hashable, Equatable {
+
     // MARK: Properties
     
     private weak var handler: TMBarButtonInteractionHandler?
@@ -46,5 +46,18 @@ internal final class TMBarButtonInteractionController: TMBarButtonController {
         handler?.barButtonInteraction(controller: self,
                                       didHandlePressOf: sender,
                                       at: index)
+    }
+
+    func hash(into hasher: inout Hasher) {
+    }
+
+    static func ==(lhs: TMBarButtonInteractionController, rhs: TMBarButtonInteractionController) -> Bool {
+        if lhs === rhs {
+            return true
+        }
+        if type(of: lhs) != type(of: rhs) {
+            return false
+        }
+        return true
     }
 }
