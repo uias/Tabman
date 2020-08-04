@@ -93,7 +93,7 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
         return nil
     }
 
-    func barItem(for tabViewController: TabmanViewController, at index: Int) -> TMBarItemable {
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         let title = "Page \(index)"
         return TMBarItem(title: title)
     }
