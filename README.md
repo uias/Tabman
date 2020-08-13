@@ -174,8 +174,8 @@ As you will most likely dealing with more than one button, you can modify the wh
 
 ```swift
 bar.buttons.customize { (button) in
-	button.color = .orange
-	button.selectedColor = .red
+	button.tintColor = .orange
+	button.selectedTintColor = .red
 }
 ```
 
