@@ -37,21 +37,21 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 83,
+      "line": 86,
       "symbol": "TMBadgeView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 88,
+      "line": 91,
       "symbol": "TMBadgeView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 129,
+      "line": 132,
       "symbol": "TMBadgeView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -121,28 +121,28 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 182,
+      "line": 184,
       "symbol": "TMLabelBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 190,
+      "line": 192,
       "symbol": "TMLabelBarButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 103,
+      "line": 105,
       "symbol": "TMTabItemBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 138,
+      "line": 140,
       "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -268,7 +268,7 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMBarIndicator+None.swift",
-      "line": 35,
+      "line": 36,
       "symbol": "TMBarIndicator.None.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -429,7 +429,7 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarLayout/TMBarLayout.swift",
-      "line": 107,
+      "line": 111,
       "symbol": "TMBarLayout.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -450,49 +450,49 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 172,
+      "line": 175,
       "symbol": "TMBarView.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 190,
+      "line": 193,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 196,
+      "line": 199,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 202,
+      "line": 205,
       "symbol": "TMBarView.didMoveToWindow()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 345,
+      "line": 348,
       "symbol": "TMBarView.accessibilityElementCount()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 349,
+      "line": 352,
       "symbol": "TMBarView.accessibilityElement(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 353,
+      "line": 356,
       "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
