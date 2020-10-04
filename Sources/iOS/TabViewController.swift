@@ -13,6 +13,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
 
     // MARK: Properties
     
+    /// View controllers that will be displayed in page view controller.
     private lazy var viewControllers: [UIViewController] = [
         ChildViewController(page: 1),
         ChildViewController(page: 2),
@@ -26,10 +27,13 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set PageboyViewControllerDataSource dataSource to configure page view controller.
         dataSource = self
         
+        // Create a bar
         let bar = TMBarView.ButtonBar()
         
+        // Customize bar properties including layout and other styling.
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
         bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
@@ -37,32 +41,34 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         bar.fadesContentEdges = true
         bar.spacing = 16.0
         
+        // Set tint colors for the bar buttons and indicator.
         bar.buttons.customize {
             $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
             $0.selectedTintColor = .tabmanForeground
         }
         bar.indicator.tintColor = .tabmanForeground
         
+        // Add bar to the view - as a .systemBar() to add UIKit style system background views.
         addBar(bar.systemBar(), dataSource: self, at: .top)
     }
 
     // MARK: PageboyViewControllerDataSource
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        viewControllers.count
+        viewControllers.count // How many view controllers to display in the page view controller.
     }
     
     func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
-        viewControllers[index]
+        viewControllers[index] // View controller to display at a specific index for the page view controller.
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        nil
+        nil // Default page to display in the page view controller (nil equals default/first index).
     }
     
     // MARK: TMBarDataSource
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        return TMBarItem(title: "Page No. \(index + 1)")
+        return TMBarItem(title: "Page No. \(index + 1)") // Item to display for a specific index in the bar.
     }
 }
