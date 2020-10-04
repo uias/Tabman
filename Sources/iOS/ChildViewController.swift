@@ -38,5 +38,7 @@ class ChildViewController: UIViewController {
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         label.text = "Page \(page)"
+        label.font = .systemFont(ofSize: 20.0, weight: .medium)
+        label.textColor = .lightText
     }
 }

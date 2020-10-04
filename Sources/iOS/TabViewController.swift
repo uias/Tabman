@@ -1,6 +1,6 @@
 //
 //  TabViewController.swift
-//  iOS
+//  Example
 //
 //  Created by Merrick Sapsford on 04/10/2020.
 //
@@ -25,7 +25,6 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         
         dataSource = self
         
@@ -37,6 +36,12 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
         bar.spacing = 16.0
+        
+        bar.buttons.customize {
+            $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
+            $0.selectedTintColor = .tabmanForeground
+        }
+        bar.indicator.tintColor = .tabmanForeground
         
         addBar(bar.systemBar(), dataSource: self, at: .top)
     }

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  iOS
+//  Example
 //
 //  Created by Merrick Sapsford on 04/10/2020.
 //
@@ -14,8 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        let gradientColors: [UIColor] = [.tabmanPrimary, .tabmanSecondary]
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TabViewController()
+        window?.rootViewController = GradientBackgroundViewController(embedding: TabViewController(), colors: gradientColors)
         window?.makeKeyAndVisible()
         
         return true
