@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lDd-Mq-5ZS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Qht-aY-2nS">
+            <objects>
+                <viewController id="lDd-Mq-5ZS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aaK-3l-cee"/>
+                        <viewControllerLayoutGuide type="bottom" id="wrn-Qe-dTH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ra-pe-Kc8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_logo_launch" translatesAutoresizingMaskIntoConstraints="NO" id="McC-Pd-DnC">
+                                <rect key="frame" x="0.0" y="398" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aLF-8c-Ulg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tabman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ir6-9p-pt7">
+                                <rect key="frame" x="136" y="422.5" width="142.5" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3V0-8P-luk"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ir6-9p-pt7" firstAttribute="centerY" secondItem="1Ra-pe-Kc8" secondAttribute="centerY" id="QGM-N7-qTz"/>
+                            <constraint firstItem="McC-Pd-DnC" firstAttribute="leading" secondItem="1Ra-pe-Kc8" secondAttribute="leading" id="R7e-Ey-IaU"/>
+                            <constraint firstAttribute="trailing" secondItem="McC-Pd-DnC" secondAttribute="trailing" id="Xop-BB-UAm"/>
+                            <constraint firstItem="McC-Pd-DnC" firstAttribute="centerY" secondItem="1Ra-pe-Kc8" secondAttribute="centerY" id="Yai-JR-sVg"/>
+                            <constraint firstItem="Ir6-9p-pt7" firstAttribute="centerX" secondItem="1Ra-pe-Kc8" secondAttribute="centerX" id="cm0-K8-bk6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBc-Lc-HTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_logo_launch" width="375" height="100"/>
+    </resources>
+</document>
