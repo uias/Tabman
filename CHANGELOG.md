@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
+#### 3.x Releases
+- `3.0.x` Releases - [3.0.0](#300)
+
 #### 2.x Releases
 - `2.9.x` Releases - [2.9.0](#290) | [2.9.1](#291)
 - `2.8.x` Releases - [2.8.0](#280) | [2.8.1](#281) | [2.8.2](#282)
@@ -33,6 +36,13 @@ All notable changes to this project will be documented in this file.
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
+
+---
+## [3.0.0](https://github.com/uias/Tabman/releases/tag/3.0.0)
+Released on TBD
+
+#### Updated
+- `delegate` is now `unavailable` on `TabmanViewController`.
 
 ---
 ## [2.9.1](https://github.com/uias/Tabman/releases/tag/2.9.1)
