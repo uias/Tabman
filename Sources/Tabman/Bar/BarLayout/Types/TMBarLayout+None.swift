@@ -20,10 +20,11 @@ extension TMBarLayout {
         //swiftlint:disable unused_setter_value
         @available(*, unavailable)
         public override var contentMode: TMBarLayout.ContentMode {
+            get {
+                return super.contentMode
+            }
             set {
                 fatalError("\(type(of: self)) does not support updating contentMode")
-            } get {
-                return super.contentMode
             }
         }
         

@@ -14,17 +14,17 @@ extension UINavigationItem: TMBarItemable {
     //swiftlint:disable unused_setter_value
 
     public var image: UIImage? {
-        set {}
         get {
             return nil
         }
+        set {}
     }
     
     public var badgeValue: String? {
-        set {}
         get {
             return nil
         }
+        set {}
     }
 }
 

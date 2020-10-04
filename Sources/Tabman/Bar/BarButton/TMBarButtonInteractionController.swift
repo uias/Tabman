@@ -51,7 +51,7 @@ internal final class TMBarButtonInteractionController: TMBarButtonController, Ha
     func hash(into hasher: inout Hasher) {
     }
 
-    static func ==(lhs: TMBarButtonInteractionController, rhs: TMBarButtonInteractionController) -> Bool {
+    static func == (lhs: TMBarButtonInteractionController, rhs: TMBarButtonInteractionController) -> Bool {
         if lhs === rhs {
             return true
         }

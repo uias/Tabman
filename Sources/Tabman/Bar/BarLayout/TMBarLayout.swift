@@ -72,19 +72,21 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     }
     /// Inset to apply to the outside of the layout.
     open var contentInset: UIEdgeInsets {
+        get {
+            return parent.contentInset
+        }
         set {
             insetGuides.insets = newValue
             parent.contentInset = newValue
-        } get {
-            return parent.contentInset
         }
     }
     /// Transition style for updating layout parameters, such as scroll offset.
     public var transitionStyle: TMTransitionStyle {
+        get {
+            return parent.transitionStyle
+        }
         set {
             parent.transitionStyle = newValue
-        } get {
-            return parent.transitionStyle
         }
     }
     /**
@@ -96,12 +98,14 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
      - `.trailing`: The layout will be aligned from the trailing edge of the parent.
      */
     public var alignment: Alignment {
-        set {
-            parent.alignment = newValue
-        } get {
+        get {
             return parent.alignment
         }
+        set {
+            parent.alignment = newValue
+        }
     }
+    
     // MARK: Init
     
     public required init() {}
