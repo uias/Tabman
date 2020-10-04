@@ -49,7 +49,6 @@
 		4670EC8123BE09B6006FEC9B /* AutoInsetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC7523BE09B6006FEC9B /* AutoInsetSpec.swift */; };
 		4670EC8323BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC8223BE1182006FEC9B /* PageboyNavigationDirection+Tabman.swift */; };
 		467E1B7E21C2B441000BB77D /* TMHidingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467E1B7D21C2B441000BB77D /* TMHidingBar.swift */; };
-		468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F101C1EAEA2730090980C /* Pageboy.framework */; };
 		46A9D28A213C145D001D9A70 /* TMBarIndicatorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D289213C145D001D9A70 /* TMBarIndicatorContainer.swift */; };
 		46A9D28C213C3005001D9A70 /* TMBarViewLayoutGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9D28B213C3005001D9A70 /* TMBarViewLayoutGrid.swift */; };
 		46B244EA21C8399900B4D26A /* TMHidingBar+Triggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B244E921C8399900B4D26A /* TMHidingBar+Triggers.swift */; };
@@ -179,7 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468EDFBB2164C51200C27982 /* Pageboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +766,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -832,7 +829,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
