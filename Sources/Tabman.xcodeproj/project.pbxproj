@@ -37,6 +37,7 @@
 		464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */; };
 		464E90992188853F0096308E /* TMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90982188853F0096308E /* TMTransition.swift */; };
 		465F976E2529C375003A5AEE /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = 465F976D2529C375003A5AEE /* Pageboy */; };
+		46697EE924604E7F00475138 /* TMPillBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46697EE824604E7F00475138 /* TMPillBarIndicator.swift */; };
 		46697EEB246054EE00475138 /* TMHorizontalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46697EEA246054EE00475138 /* TMHorizontalInsets.swift */; };
 		4670EC7623BE09B6006FEC9B /* InsetExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6723BE09B6006FEC9B /* InsetExecutor.swift */; };
 		4670EC7723BE09B6006FEC9B /* AutoInsetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6823BE09B6006FEC9B /* AutoInsetter.swift */; };
@@ -125,6 +126,7 @@
 		464E9094218857490096308E /* TMAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAnimation.swift; sourceTree = "<group>"; };
 		464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewUpdateHandler.swift; sourceTree = "<group>"; };
 		464E90982188853F0096308E /* TMTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTransition.swift; sourceTree = "<group>"; };
+		46697EE824604E7F00475138 /* TMPillBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMPillBarIndicator.swift; sourceTree = "<group>"; };
 		46697EEA246054EE00475138 /* TMHorizontalInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHorizontalInsets.swift; sourceTree = "<group>"; };
 		4670EC6723BE09B6006FEC9B /* InsetExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetExecutor.swift; sourceTree = "<group>"; };
 		4670EC6823BE09B6006FEC9B /* AutoInsetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInsetter.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				46D8775A218B62E700C83076 /* TMChevronBarIndicator.swift */,
 				462203422191EB9B008CD536 /* TMBlockBarIndicator.swift */,
 				46F608862193231500E2BD14 /* TMDotBarIndicator.swift */,
+				46697EE824604E7F00475138 /* TMPillBarIndicator.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				46E96325211B3A01004C7468 /* TMBarButtonStateController.swift in Sources */,
 				4670EC7C23BE09B6006FEC9B /* TableViewInsetCalculator.swift in Sources */,
 				46B244EA21C8399900B4D26A /* TMHidingBar+Triggers.swift in Sources */,
+				46697EE924604E7F00475138 /* TMPillBarIndicator.swift in Sources */,
 				425FFEAC22B7838A00B01B56 /* UIView+LayoutGuide.swift in Sources */,
 				46CCBADC2174BE0900C370E1 /* TMHorizontalBarLayout.swift in Sources */,
 				462941EB2111EB7C00345B52 /* TMBarView.swift in Sources */,
