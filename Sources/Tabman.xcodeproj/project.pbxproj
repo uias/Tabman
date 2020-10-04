@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,7 @@
 		464E9095218857490096308E /* TMAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E9094218857490096308E /* TMAnimation.swift */; };
 		464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */; };
 		464E90992188853F0096308E /* TMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90982188853F0096308E /* TMTransition.swift */; };
+		465F976E2529C375003A5AEE /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = 465F976D2529C375003A5AEE /* Pageboy */; };
 		4670EC7623BE09B6006FEC9B /* InsetExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6723BE09B6006FEC9B /* InsetExecutor.swift */; };
 		4670EC7723BE09B6006FEC9B /* AutoInsetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6823BE09B6006FEC9B /* AutoInsetter.swift */; };
 		4670EC7823BE09B6006FEC9B /* DefaultInsetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6A23BE09B6006FEC9B /* DefaultInsetStore.swift */; };
@@ -178,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465F976E2529C375003A5AEE /* Pageboy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +524,9 @@
 			dependencies = (
 			);
 			name = Tabman;
+			packageProductDependencies = (
+				465F976D2529C375003A5AEE /* Pageboy */,
+			);
 			productName = Tabman;
 			productReference = D62AC0B21E5733810020B8AE /* Tabman.framework */;
 			productType = "com.apple.product-type.framework";
@@ -575,6 +580,9 @@
 				Base,
 			);
 			mainGroup = D62AC0A81E5733810020B8AE;
+			packageReferences = (
+				465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */,
+			);
 			productRefGroup = D62AC0B31E5733810020B8AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -840,7 +848,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -862,12 +871,17 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -885,12 +899,17 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tabman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 2.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tabman;
 				PRODUCT_NAME = Tabman;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
@@ -902,7 +921,12 @@
 				DEVELOPMENT_TEAM = "";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = TabmanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"$(SRCROOT)/../Carthage/Build/iOS\"";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"\"$(SRCROOT)/../Carthage/Build/iOS\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -918,7 +942,12 @@
 				DEVELOPMENT_TEAM = "";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = TabmanTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"$(SRCROOT)/../Carthage/Build/iOS\"";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"\"$(SRCROOT)/../Carthage/Build/iOS\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapsford.TabmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -956,6 +985,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Pageboy";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		465F976D2529C375003A5AEE /* Pageboy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */;
+			productName = Pageboy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D62AC0A91E5733810020B8AE /* Project object */;
 }
