@@ -432,8 +432,10 @@ extension TMBarView: TMBar {
         
         // Update indicator
         handler.update(component: indicator) { (context) in
-            self.indicatorLayoutHandler?.update(for: context.focusRect.rect(isProgressive: self.indicator.isProgressive,
-                                                                            overscrollBehavior: self.indicator.overscrollBehavior)) // Update indicator layout
+            let focusRect = context.focusRect.rect(isProgressive: self.indicator.isProgressive,
+                                                   overscrollBehavior: self.indicator.overscrollBehavior)
+            self.indicatorLayoutHandler?.update(for: focusRect,
+                                                additionalContentInset: self.indicator.additionalContentInset) // Update indicator layout
             self.indicator.superview?.layoutIfNeeded()
         }
         

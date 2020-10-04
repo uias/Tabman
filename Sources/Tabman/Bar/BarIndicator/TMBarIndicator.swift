@@ -51,6 +51,11 @@ open class TMBarIndicator: UIView, TMTransitionStyleable {
     /// Style of transition to use when updating the indicator.
     public var transitionStyle: TMTransitionStyle = .progressive
     
+    /// Additional insets that are required around the indicator.
+    open var additionalContentInset: TMHorizontalInsets {
+        return .zero
+    }
+    
     // MARK: Init
     
     public required init() {

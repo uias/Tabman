@@ -26,8 +26,8 @@ internal final class TMBarIndicatorLayoutHandler {
     
     // MARK: Updates
     
-    func update(for rect: CGRect) {
-        self.leading?.constant = rect.minX
-        self.width?.constant = rect.size.width
+    func update(for rect: CGRect, additionalContentInset: TMHorizontalInsets) {
+        self.leading?.constant = rect.minX - additionalContentInset.left
+        self.width?.constant = rect.size.width + (additionalContentInset.left + additionalContentInset.right)
     }
 }
