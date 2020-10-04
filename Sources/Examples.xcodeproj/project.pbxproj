@@ -13,6 +13,7 @@
 		46B4876E2529C557007CCFF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4876C2529C557007CCFF2 /* LaunchScreen.storyboard */; };
 		46B487762529C590007CCFF2 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B487752529C590007CCFF2 /* Tabman.framework */; };
 		46B487772529C590007CCFF2 /* Tabman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46B487752529C590007CCFF2 /* Tabman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46B4877B2529C6FE007CCFF2 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		46B4876D2529C557007CCFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46B4876F2529C557007CCFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B487752529C590007CCFF2 /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				46B487612529C556007CCFF2 /* AppDelegate.swift */,
 				46B487652529C556007CCFF2 /* TabViewController.swift */,
+				46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */,
 				46B487792529C5C1007CCFF2 /* Resources */,
 			);
 			path = iOS;
@@ -178,6 +181,7 @@
 			files = (
 				46B487662529C556007CCFF2 /* TabViewController.swift in Sources */,
 				46B487622529C556007CCFF2 /* AppDelegate.swift in Sources */,
+				46B4877B2529C6FE007CCFF2 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
