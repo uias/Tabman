@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Sources/../Tabman.xcconfig">
+   </FileRef>
+   <FileRef
+      location = "group:Sources/Examples.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Sources/Tabman.xcodeproj">
    </FileRef>
 </Workspace>
