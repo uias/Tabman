@@ -51,20 +51,22 @@ open class TMLabelBarButton: TMBarButton {
     private var badgeContainerWidth: NSLayoutConstraint?
     
     open override var contentInset: UIEdgeInsets {
+        get {
+            return super.contentInset
+        }
         set {
             super.contentInset = newValue
             calculateFontIntrinsicContentSize(for: text)
-        } get {
-            return super.contentInset
         }
     }
     
     /// Text to display in the button.
     open var text: String? {
+        get {
+            return label.text
+        }
         set {
             label.text = newValue
-        } get {
-            return label.text
         }
     }
     /// Color of the text when unselected / normal.

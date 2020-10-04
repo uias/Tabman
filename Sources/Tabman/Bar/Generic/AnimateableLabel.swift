@@ -26,14 +26,15 @@ internal class AnimateableLabel: UIView {
         }
     }
     var textColor: UIColor! {
-        set {
-            let textColor = newValue ?? .black
-            textLayer.foregroundColor = textColor.cgColor
-        } get {
+        get {
             if let color = textLayer.foregroundColor {
                 return UIColor(cgColor: color)
             }
             return .black
+        }
+        set {
+            let textColor = newValue ?? .black
+            textLayer.foregroundColor = textColor.cgColor
         }
     }
     var font: UIFont? {

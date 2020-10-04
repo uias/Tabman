@@ -27,10 +27,11 @@ internal final class TMBarViewLayoutGrid: UIView {
     }()
     
     var horizontalSpacing: CGFloat {
+        get {
+            return horizontalStack.spacing
+        }
         set {
             horizontalStack.spacing = newValue
-        } get {
-            return horizontalStack.spacing
         }
     }
     

@@ -55,11 +55,12 @@ open class TMTabItemBarButton: TMBarButton {
     }
     /// Size of the image view.
     open var imageViewSize: CGSize {
+        get {
+            return CGSize(width: imageWidth.constant, height: imageHeight.constant)
+        }
         set {
             imageWidth.constant = newValue.width
             imageHeight.constant = newValue.height
-        } get {
-            return CGSize(width: imageWidth.constant, height: imageHeight.constant)
         }
     }
     /// Font of the text label.
@@ -70,10 +71,11 @@ open class TMTabItemBarButton: TMBarButton {
     }
     /// Content Mode for the image view.
     open var imageContentMode: UIView.ContentMode {
+        get {
+            return imageView.contentMode
+        }
         set {
             imageView.contentMode = newValue
-        } get {
-            return imageView.contentMode
         }
     }
     /// Whether to shrink the image view when unselected.

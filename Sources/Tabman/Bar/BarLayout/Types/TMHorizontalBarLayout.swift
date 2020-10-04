@@ -45,10 +45,11 @@ open class TMHorizontalBarLayout: TMBarLayout {
     }
     /// Distribution of internal stack view.
     private var buttonDistribution: UIStackView.Distribution {
+        get {
+            return stackView.distribution
+        }
         set {
             stackView.distribution = newValue
-        } get {
-            return stackView.distribution
         }
     }
     
@@ -75,11 +76,12 @@ open class TMHorizontalBarLayout: TMBarLayout {
     ///
     /// Defaults to the system tint color.
     open var separatorColor: UIColor? {
+        get {
+            return separators.values.first?.tintColor ?? _separatorColor
+        }
         set {
             _separatorColor = newValue
             separators.values.forEach({ $0.tintColor = newValue })
-        } get {
-            return separators.values.first?.tintColor ?? _separatorColor
         }
     }
     private var _separatorInset: UIEdgeInsets?
@@ -92,11 +94,12 @@ open class TMHorizontalBarLayout: TMBarLayout {
     ///
     /// Defaults to `UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)`.
     open var separatorInset: UIEdgeInsets? {
+        get {
+            return separators.values.first?.contentInset ?? _separatorInset
+        }
         set {
             _separatorInset = newValue
             separators.values.forEach({ $0.contentInset = newValue })
-        } get {
-            return separators.values.first?.contentInset ?? _separatorInset
         }
     }
     private var _separatorWidth: CGFloat?
@@ -104,11 +107,12 @@ open class TMHorizontalBarLayout: TMBarLayout {
     ///
     /// Defaults to `1.0`.
     open var separatorWidth: CGFloat? {
+        get {
+            return separators.values.first?.width ?? _separatorWidth
+        }
         set {
             _separatorWidth = newValue
             separators.values.forEach({ $0.width = newValue })
-        } get {
-            return separators.values.first?.width ?? _separatorWidth
         }
     }
     

@@ -21,13 +21,14 @@ internal final class AutoInsetter {
     /// Whether auto-insetting is enabled.
     @available(*, deprecated, message: "Use enable(for:)")
     public var isEnabled: Bool {
+        get {
+            return _isEnabled
+        }
         set {
             if newValue {
                 _enable(for: nil)
             }
-        } get {
-            return _isEnabled
-        }
+        } 
     }
     private var _isEnabled: Bool = false
     

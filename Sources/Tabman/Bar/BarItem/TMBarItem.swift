@@ -58,17 +58,17 @@ extension TMBarItemable {
     //swiftlint:disable unused_setter_value
 
     public var accessibilityLabel: String? {
-        set {}
         get {
             return nil
         }
+        set {}
     }
     
     public var accessibilityHint: String? {
-        set {}
         get {
             return nil
         }
+        set {}
     }
 }
 

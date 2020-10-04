@@ -41,26 +41,29 @@ open class TMBadgeView: UIView {
     }
     /// Attributed value to display.
     internal var attributedValue: NSAttributedString? {
+        get {
+            return label.attributedText
+        }
         set {
             label.attributedText = newValue
-        } get {
-            return label.attributedText
         }
     }
     /// Font for the label.
     open var font: UIFont {
+        get {
+            return label.font
+        }
         set {
             label.font = newValue
-        } get {
-            return label.font
         }
     }
     /// Text color of the label.
     open var textColor: UIColor {
+        get {
+            return label.textColor
+        }
         set {
             label.textColor = newValue
-        } get {
-            return label.textColor
         }
     }
     /// Tint which is used as background color.

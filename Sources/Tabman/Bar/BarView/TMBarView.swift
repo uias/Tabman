@@ -121,28 +121,31 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     /// - `.swipe`: The bar contents can be scrolled through with swipe gestures.
     /// - `.none`: The bar contents can't be scrolled at all.
     open var scrollMode: ScrollMode {
+        get {
+            return ScrollMode(rawValue: scrollView.scrollMode.rawValue)!
+        }
         set {
             scrollView.scrollMode = GestureScrollView.ScrollMode(rawValue: newValue.rawValue)!
-        } get {
-            return ScrollMode(rawValue: scrollView.scrollMode.rawValue)!
         }
     }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
     open var fadesContentEdges: Bool {
+        get {
+            return scrollViewContainer.showFade
+        }
         set {
             scrollViewContainer.showFade = newValue
-        } get {
-            return scrollViewContainer.showFade
         }
     }
     /// Spacing between components in the bar, such as between the layout and accessory views.
     ///
     /// Defaults to `8.0`.
     open var spacing: CGFloat {
+        get {
+            return layoutGrid.horizontalSpacing
+        }
         set {
             layoutGrid.horizontalSpacing = newValue
-        } get {
-            return layoutGrid.horizontalSpacing
         }
     }
     
