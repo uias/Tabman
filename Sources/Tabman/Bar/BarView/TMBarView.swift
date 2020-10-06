@@ -351,13 +351,7 @@ extension TMBarView: TMBar {
         var items = self.items ?? [TMBarItemable]()
         
         switch context {
-        case .full, .insertion:
-            
-            if context == .full && buttons.all.count > 0 { // remove existing buttons
-                layout.remove(buttons: buttons.all)
-                buttons.all.removeAll()
-            }
-            
+        case .insertion:
             var newButtons = [Button]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let item = dataSource.barItem(for: self, at: index)
@@ -370,6 +364,17 @@ extension TMBarView: TMBar {
             }
             
             buttons.all.insert(contentsOf: newButtons, at: indexes.lowerBound)
+            layout.insert(buttons: newButtons, at: indexes.lowerBound)
+        
+        case .full:
+            if buttons.all.isEmpty == false { // remove existing buttons
+                layout.remove(buttons: buttons.all)
+                buttons.all.removeAll()
+            }
+            
+            items = indexes.map({ dataSource.barItem(for: self, at: $0) })
+            let newButtons = makeButtons(for: items, includeInfiniteOrdering: config.isInfinite)
+            buttons.all = newButtons
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
@@ -467,6 +472,25 @@ extension TMBarView: TMBar {
         
         scrollViewContainer.leadingFade = leadingOffsetRatio
         scrollViewContainer.trailingFade = trailingOffsetRatio
+    }
+}
+
+// MARK: - Buttons
+extension TMBarView {
+    
+    private func makeButtons(for items: [TMBarItemable], includeInfiniteOrdering: Bool) -> [Button] {
+        var buttons = [Button]()
+        let repeatCount: Int = includeInfiniteOrdering ? 3 : 1
+        
+        for _ in 0 ..< repeatCount {
+            buttons.append(contentsOf: items.map({
+                let button = Button(for: $0, intrinsicSuperview: self)
+                button.populate(for: $0)
+                button.update(for: .unselected)
+                return button
+            }))
+        }
+        return buttons
     }
 }
 
