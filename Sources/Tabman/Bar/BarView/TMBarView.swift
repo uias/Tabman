@@ -363,6 +363,8 @@ extension TMBarView: TMBar {
                 newButtons.append(button)
             }
             
+            // TODO - Figure out insertion with infinite
+            
             buttons.all.insert(contentsOf: newButtons, at: indexes.lowerBound)
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
         
@@ -384,6 +386,9 @@ extension TMBarView: TMBar {
                 buttonsToRemove.append(button)
                 items.remove(at: index)
             }
+            
+            // TODO - Figure out deletion with infinite
+            
             buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
             layout.remove(buttons: buttonsToRemove)
         }
