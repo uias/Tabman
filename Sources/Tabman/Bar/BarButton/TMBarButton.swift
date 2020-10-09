@@ -29,6 +29,8 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
+    /// Item index that the bar button represents.
+    internal var itemIndex: Int!
     
     private weak var intrinsicSuperview: UIView?
     private let contentView = UIView()

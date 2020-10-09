@@ -358,6 +358,7 @@ extension TMBarView: TMBar {
                 items.insert(item, at: index)
                 
                 let button = Button(for: item, intrinsicSuperview: self)
+                button.itemIndex = index
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)
@@ -488,9 +489,10 @@ extension TMBarView {
         let repeatCount: Int = includeInfiniteOrdering ? 3 : 1
         
         for _ in 0 ..< repeatCount {
-            buttons.append(contentsOf: items.map({
-                let button = Button(for: $0, intrinsicSuperview: self)
-                button.populate(for: $0)
+            buttons.append(contentsOf: items.enumerated().map({ (index, item) in
+                let button = Button(for: item, intrinsicSuperview: self)
+                button.itemIndex = index
+                button.populate(for: item)
                 button.update(for: .unselected)
                 return button
             }))
