@@ -46,6 +46,7 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
     
     private weak var barView: TMBarView<Layout, Button, Indicator>!
     private let position: CGFloat
+    private let offset: CGFloat
     private let capacity: Int
     private let direction: TMBarUpdateDirection
     private let animation: TMAnimation
@@ -56,11 +57,13 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
     
     init(for barView: TMBarView<Layout, Button, Indicator>,
          at position: CGFloat,
+         offset: CGFloat,
          capacity: Int,
          direction: TMBarUpdateDirection,
          expectedAnimation: TMAnimation) {
         self.barView = barView
         self.position = position
+        self.offset = offset
         self.capacity = capacity
         self.direction = direction
         self.animation = expectedAnimation
@@ -152,6 +155,7 @@ internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarBu
     ///   - capacity: Capacity.
     /// - Returns: Focus area.
     private func makeFocusArea(for position: CGFloat, capacity: Int) -> CGRect {
+        let position = offset + position
         let focusArea = barView.layoutGrid.convert(barView.layout.focusArea(for: position, capacity: capacity),
                                              from: barView.layout.view)
         self.focusArea = focusArea

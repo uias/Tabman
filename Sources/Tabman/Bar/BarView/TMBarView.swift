@@ -420,6 +420,7 @@ extension TMBarView: TMBar {
         
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
+                                             offset: CGFloat(isInfinite ? 5 : 0), // TODO
                                              capacity: buttons.all.capacity,
                                              direction: direction,
                                              expectedAnimation: animation)
