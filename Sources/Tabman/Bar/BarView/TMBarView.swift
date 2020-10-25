@@ -73,6 +73,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     /// By default this is set to the `TabmanViewController` the bar is added to.
     open weak var delegate: TMBarDelegate?
     
+    open var isInfinite: Bool = false
+    
     // MARK: Accessory Views
     
     /// View to display on the left (or leading) edge of the bar.
@@ -376,7 +378,7 @@ extension TMBarView: TMBar {
             }
             
             items = indexes.map({ dataSource.barItem(for: self, at: $0) })
-            let newButtons = makeButtons(for: items, includeInfiniteOrdering: config.isInfinite)
+            let newButtons = makeButtons(for: items, includeInfiniteOrdering: isInfinite)
             buttons.all = newButtons
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             

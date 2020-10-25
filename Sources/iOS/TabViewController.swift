@@ -48,6 +48,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         }
         bar.indicator.tintColor = .tabmanForeground
         
+        // TODO - Remove
+        isInfiniteScrollEnabled = true
+        
         // Add bar to the view - as a .systemBar() to add UIKit style system background views.
         addBar(bar.systemBar(), dataSource: self, at: .top)
     }

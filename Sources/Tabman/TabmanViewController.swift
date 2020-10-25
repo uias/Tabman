@@ -125,6 +125,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     // MARK: Pageboy
     
     /// :nodoc:
+    open override var isInfiniteScrollEnabled: Bool {
+        didSet {
+            bars.forEach({ $0.isInfinite = isInfiniteScrollEnabled })
+        }
+    }
+    
+    /// :nodoc:
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
         bars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
@@ -216,6 +223,7 @@ extension TabmanViewController {
                        at location: BarLocation) {
         bar.dataSource = dataSource
         bar.delegate = self
+        bar.isInfinite = isInfiniteScrollEnabled
         
         if bars.contains(where: { $0 === bar }) == false {
             bars.append(bar)

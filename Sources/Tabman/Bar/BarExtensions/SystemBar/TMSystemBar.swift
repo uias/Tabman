@@ -221,6 +221,16 @@ extension TMSystemBar: TMBar {
     }
     
     /// :nodoc:
+    public var isInfinite: Bool {
+        get {
+            bar.isInfinite
+        }
+        set {
+            bar.isInfinite = newValue
+        }
+    }
+    
+    /// :nodoc:
     public var items: [TMBarItemable]? {
         return bar.items
     }
