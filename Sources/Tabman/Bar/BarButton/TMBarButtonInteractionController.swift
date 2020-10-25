@@ -40,12 +40,9 @@ internal final class TMBarButtonInteractionController: TMBarButtonController, Ha
     // MARK: Actions
     
     @objc private func barButtonPressed(_ sender: TMBarButton) {
-        guard let index = barButtons.firstIndex(where: { $0.object === sender }) else {
-            return
-        }
         handler?.barButtonInteraction(controller: self,
                                       didHandlePressOf: sender,
-                                      at: index)
+                                      at: sender.itemIndex)
     }
 
     func hash(into hasher: inout Hasher) {
