@@ -357,7 +357,12 @@ extension TMBarView: TMBar {
         var items = self.items ?? [TMBarItemable]()
         
         switch context {
-        case .insertion:
+        case .full, .insertion:
+            if context == .full && buttons.all.isEmpty == false { // remove existing buttons
+                layout.remove(buttons: buttons.all)
+                buttons.all.removeAll()
+            }
+            
             var newButtons = [Button]()
             for index in indexes.lowerBound ... indexes.upperBound {
                 let item = dataSource.barItem(for: self, at: index)
@@ -370,20 +375,7 @@ extension TMBarView: TMBar {
                 newButtons.append(button)
             }
             
-            // TODO - Figure out insertion with infinite
-            
             buttons.all.insert(contentsOf: newButtons, at: indexes.lowerBound)
-            layout.insert(buttons: newButtons, at: indexes.lowerBound)
-        
-        case .full:
-            if buttons.all.isEmpty == false { // remove existing buttons
-                layout.remove(buttons: buttons.all)
-                buttons.all.removeAll()
-            }
-            
-            items = indexes.map({ dataSource.barItem(for: self, at: $0) })
-            let newButtons = makeButtons(for: items, includeInfiniteOrdering: isInfinite)
-            buttons.all = newButtons
             layout.insert(buttons: newButtons, at: indexes.lowerBound)
             
         case .deletion:
@@ -393,8 +385,6 @@ extension TMBarView: TMBar {
                 buttonsToRemove.append(button)
                 items.remove(at: index)
             }
-            
-            // TODO - Figure out deletion with infinite
             
             buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
             layout.remove(buttons: buttonsToRemove)
@@ -420,7 +410,7 @@ extension TMBarView: TMBar {
         
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
-                                             offset: CGFloat(isInfinite ? 5 : 0), // TODO
+                                             offset: 0, //CGFloat(isInfinite ? 5 : 0), // TODO
                                              capacity: buttons.all.capacity,
                                              direction: direction,
                                              expectedAnimation: animation)
@@ -484,26 +474,6 @@ extension TMBarView: TMBar {
         
         scrollViewContainer.leadingFade = leadingOffsetRatio
         scrollViewContainer.trailingFade = trailingOffsetRatio
-    }
-}
-
-// MARK: - Buttons
-extension TMBarView {
-    
-    private func makeButtons(for items: [TMBarItemable], includeInfiniteOrdering: Bool) -> [Button] {
-        var buttons = [Button]()
-        let repeatCount: Int = includeInfiniteOrdering ? 3 : 1
-        
-        for _ in 0 ..< repeatCount {
-            buttons.append(contentsOf: items.enumerated().map({ (index, item) in
-                let button = Button(for: item, intrinsicSuperview: self)
-                button.itemIndex = index
-                button.populate(for: item)
-                button.update(for: .unselected)
-                return button
-            }))
-        }
-        return buttons
     }
 }
 
