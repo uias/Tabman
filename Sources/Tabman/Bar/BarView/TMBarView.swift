@@ -413,7 +413,6 @@ extension TMBarView: TMBar {
     }
     
     public func update(for position: CGFloat,
-                       capacity: Int,
                        direction: TMBarUpdateDirection,
                        animation: TMAnimation) {
         self.indicatedPosition = position
@@ -421,7 +420,7 @@ extension TMBarView: TMBar {
         
         let handler = TMBarViewUpdateHandler(for: self,
                                              at: position,
-                                             capacity: capacity,
+                                             capacity: buttons.all.capacity,
                                              direction: direction,
                                              expectedAnimation: animation)
         
@@ -541,7 +540,6 @@ extension TMBarView {
             return
         }
         update(for: indicatedPosition,
-               capacity: buttons.all.count,
                direction: .none,
                animation: TMAnimation(isEnabled: true,
                                                duration: TMBarViewDefaults.animationDuration))

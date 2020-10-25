@@ -242,8 +242,8 @@ extension TMSystemBar: TMBar {
     }
     
     /// :nodoc:
-    public func update(for pagePosition: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
-        bar.update(for: pagePosition, capacity: capacity, direction: direction, animation: animation)
+    public func update(for pagePosition: CGFloat, direction: TMBarUpdateDirection, animation: TMAnimation) {
+        bar.update(for: pagePosition, direction: direction, animation: animation)
     }
 }
 

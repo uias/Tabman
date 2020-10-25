@@ -237,8 +237,8 @@ extension TMHidingBar: TMBar {
     }
     
     /// :nodoc:
-    public func update(for position: CGFloat, capacity: Int, direction: TMBarUpdateDirection, animation: TMAnimation) {
-        bar.update(for: position, capacity: capacity, direction: direction, animation: animation)
+    public func update(for position: CGFloat, direction: TMBarUpdateDirection, animation: TMAnimation) {
+        bar.update(for: position, direction: direction, animation: animation)
         
         triggerHandler?.invalidate()
     }
