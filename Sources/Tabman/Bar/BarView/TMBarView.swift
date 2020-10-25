@@ -73,7 +73,11 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     /// By default this is set to the `TabmanViewController` the bar is added to.
     open weak var delegate: TMBarDelegate?
     
-    open var isInfinite: Bool = false
+    open var isInfinite: Bool = false {
+        didSet {
+            // TODO - Handle reloading buttons when this is set.
+        }
+    }
     
     // MARK: Accessory Views
     
