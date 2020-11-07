@@ -5,20 +5,9 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Bootstrap dependencies"
-  lane :bootstrap do
-    carthage(
-      command: "bootstrap",
-      platform: "iOS"
-    )
-    sh("bundle exec pod repo update")
-  end
-
   desc "Run unit tests and check library"
   lane :test do
-    bootstrap
     scan(workspace: "Tabman.xcworkspace", scheme: "Tabman", clean: true)
-    #pod_lib_lint(verbose: false, allow_warnings: true)
   end
 
   desc "Deploy a new version to CocoaPods and GitHub"
