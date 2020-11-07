@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Nghia Nguyen on 6/17/19.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2020 UI At Six. All rights reserved.
 //
 
 import UIKit
