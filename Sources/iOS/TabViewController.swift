@@ -49,6 +49,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         bar.indicator.tintColor = .tabmanForeground
         
         isInfiniteScrollEnabled = true
+        // TODO - Remove these
+        bar.leadingAccessoryView = DummyAccessoryView(isTrailing: false)
+        bar.trailingAccessoryView = DummyAccessoryView(isTrailing: true)
         
         // Add bar to the view - as a .systemBar() to add UIKit style system background views.
         addBar(bar.systemBar(), dataSource: self, at: .top)
@@ -72,5 +75,26 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: "Page No. \(index + 1)") // Item to display for a specific index in the bar.
+    }
+}
+
+// TODO - Remove
+class DummyAccessoryView: UIView {
+    
+    let isTrailing: Bool
+    
+    init(isTrailing: Bool) {
+        self.isTrailing = isTrailing
+        super.init(frame: .zero)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    private func commonInit() {
+        widthAnchor.constraint(equalTo: heightAnchor).isActive = true
+        backgroundColor = isTrailing ? .red : .green
     }
 }

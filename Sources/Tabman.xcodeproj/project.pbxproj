@@ -24,6 +24,7 @@
 		462941F52112012300345B52 /* TMBarViewContentInsetGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */; };
 		4629F0E721825F21001919F2 /* GestureScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4629F0E621825F21001919F2 /* GestureScrollView.swift */; };
 		462AB98C2246B1F70041DE3A /* ViewTitleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */; };
+		462CE12A2556B593007B3450 /* TMBarAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462CE1292556B593007B3450 /* TMBarAccessoryView.swift */; };
 		462F7F31217387E50036080C /* TMBarViewScrollHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */; };
 		462F7F3421739D5A0036080C /* TMSystemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F7F3321739D5A0036080C /* TMSystemBar.swift */; };
 		46324A78213A99250059D469 /* MockBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46324A77213A99250059D469 /* MockBarView.swift */; };
@@ -111,6 +112,7 @@
 		462941F42112012300345B52 /* TMBarViewContentInsetGuides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarViewContentInsetGuides.swift; sourceTree = "<group>"; };
 		4629F0E621825F21001919F2 /* GestureScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureScrollView.swift; sourceTree = "<group>"; };
 		462AB98B2246B1F70041DE3A /* ViewTitleViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTitleViewContainer.swift; sourceTree = "<group>"; };
+		462CE1292556B593007B3450 /* TMBarAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarAccessoryView.swift; sourceTree = "<group>"; };
 		462F7F30217387E50036080C /* TMBarViewScrollHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBarViewScrollHandler.swift; sourceTree = "<group>"; };
 		462F7F3321739D5A0036080C /* TMSystemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMSystemBar.swift; sourceTree = "<group>"; };
 		462F85DA201B33AE00C3D4D4 /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = BarView;
 			sourceTree = "<group>";
 		};
+		462CE1282556B55C007B3450 /* BarAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				462CE1292556B593007B3450 /* TMBarAccessoryView.swift */,
+			);
+			path = BarAccessoryView;
+			sourceTree = "<group>";
+		};
 		462F7F3221739D5A0036080C /* SystemBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +364,7 @@
 				46E96310211B3A01004C7468 /* BarButton */,
 				46E96319211B3A01004C7468 /* BarIndicator */,
 				46E598ED2168FD3100D8A138 /* BarBackgroundView */,
+				462CE1282556B55C007B3450 /* BarAccessoryView */,
 				467E1B7B21C2B3FF000BB77D /* BarExtensions */,
 				46E96334211B4AF6004C7468 /* Generic */,
 				4612BD0F20C9B7F5001A37B5 /* Utility */,
@@ -696,6 +707,7 @@
 				462F7F31217387E50036080C /* TMBarViewScrollHandler.swift in Sources */,
 				4612BD1120C9B851001A37B5 /* BarMath.swift in Sources */,
 				46CCBAE32174BE1900C370E1 /* TMLineBarIndicator.swift in Sources */,
+				462CE12A2556B593007B3450 /* TMBarAccessoryView.swift in Sources */,
 				46CCBAD62174BDF600C370E1 /* TMLabelBarButton.swift in Sources */,
 				4670EC7F23BE09B6006FEC9B /* InsetCalculator.swift in Sources */,
 				46CCBADD2174BE0900C370E1 /* TMBarLayout+None.swift in Sources */,

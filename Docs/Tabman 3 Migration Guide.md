@@ -15,3 +15,7 @@ TODO
 
 ## API Changes
 - `TabmanViewController.delegate` is now `unavailable` and can not be used.
+- `leftAccessoryView` is now `leadingAccessoryView` in `TMBarView`.
+- `leftPinnedAccessoryView` is now `leadingPinnedAccessoryView` in `TMBarView`.
+- `rightAccessoryView` is now `trailingAccessoryView` in `TMBarView`.
+- `rightPinnedAccessoryView` is now `trailingPinnedAccessoryView` in `TMBarView`.

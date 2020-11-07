@@ -48,7 +48,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     private var indicatedPosition: CGFloat?
     private lazy var contentInsetGuides = TMBarViewContentInsetGuides(for: self)
     
-    private var accessoryViews = [AccessoryLocation: UIView]()
+    private var accessoryViews = [TMBarAccessoryView.Location: UIView]()
     
     // MARK: Components
     
@@ -75,38 +75,38 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     
     // MARK: Accessory Views
     
-    /// View to display on the left (or leading) edge of the bar.
+    /// View to display on the leading edge of the bar.
     ///
     /// This view is within the scroll view and is subject to scroll off-screen
     /// with bar contents.
-    open var leftAccessoryView: UIView? {
+    open var leadingAccessoryView: TMBarAccessoryView? {
         didSet {
-            setAccessoryView(leftAccessoryView, at: .leading)
+            updateAccessoryView(to: leadingAccessoryView, at: .leading)
         }
     }
-    /// View to display on the left (or leading) edge of the bar.
+    /// View to display on the leading edge of the bar.
     ///
     /// This view is not part of the scrollable bar contents and will be visible at all times.
-    open var leftPinnedAccessoryView: UIView? {
+    open var leadingPinnedAccessoryView: TMBarAccessoryView? {
         didSet {
-            setAccessoryView(leftPinnedAccessoryView, at: .leadingPinned)
+            updateAccessoryView(to: leadingPinnedAccessoryView, at: .leadingPinned)
         }
     }
-    /// View to display on the right (or trailing) edge of the bar.
+    /// View to display on the trailing edge of the bar.
     ///
     /// This view is within the scroll view and is subject to scroll off-screen
     /// with bar contents.
-    open var rightAccessoryView: UIView? {
+    open var trailingAccessoryView: TMBarAccessoryView? {
         didSet {
-            setAccessoryView(rightAccessoryView, at: .trailing)
+            updateAccessoryView(to: trailingAccessoryView, at: .trailing)
         }
     }
-    /// View to display on the right (or trailing) edge of the bar.
+    /// View to display on the trailing edge of the bar.
     ///
     /// This view is not part of the scrollable bar contents and will be visible at all times.
-    open var rightPinnedAccessoryView: UIView? {
+    open var trailingPinnedAccessoryView: TMBarAccessoryView? {
         didSet {
-            setAccessoryView(rightPinnedAccessoryView, at: .trailingPinned)
+            updateAccessoryView(to: trailingPinnedAccessoryView, at: .trailingPinned)
         }
     }
     
@@ -197,13 +197,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        updateIndicatorForCurrentLayout()
+        updateIndicatorPositionForLayoutUpdates()
     }
     
     open override func didMoveToWindow() {
         super.didMoveToWindow()
         
-        updateIndicatorForCurrentLayout()
+        updateIndicatorPositionForLayoutUpdates()
     }
     
     private func layout(in view: UIView) {
@@ -390,10 +390,10 @@ extension TMBarView: TMBar {
         }
         
         self.items = items
-        updateIndicatorForCurrentLayout()
+        updateIndicatorPositionForLayoutUpdates()
     }
     
-    private func updateIndicatorForCurrentLayout() {
+    private func updateIndicatorPositionForLayoutUpdates() {
         UIView.performWithoutAnimation {
             layoutIfNeeded()
             updateScrollViewContentInset()
@@ -543,30 +543,23 @@ extension TMBarView: TMBarButtonInteractionHandler, GestureScrollViewGestureDele
 // MARK: - Accessory View Management
 private extension TMBarView {
 
-    enum AccessoryLocation: String, CaseIterable {
-        case leading
-        case leadingPinned
-        case trailing
-        case trailingPinned
-    }
-    
-    func setAccessoryView(_ view: UIView?,
-                          at location: AccessoryLocation) {
-        cleanUpOldAccessoryView(at: location)
+    func updateAccessoryView(to view: UIView?,
+                             at location: TMBarAccessoryView.Location) {
+        removeAccessoryView(at: location)
         addAccessoryView(view, at: location)
     }
     
-    private func accessoryView(at location: AccessoryLocation) -> UIView? {
+    private func accessoryView(at location: TMBarAccessoryView.Location) -> UIView? {
         return accessoryViews[location]
     }
     
-    private func cleanUpOldAccessoryView(at location: AccessoryLocation) {
+    private func removeAccessoryView(at location: TMBarAccessoryView.Location) {
         let view = accessoryView(at: location)
         view?.removeFromSuperview()
         accessoryViews[location] = nil
     }
     
-    private func addAccessoryView(_ view: UIView?, at location: AccessoryLocation) {
+    private func addAccessoryView(_ view: UIView?, at location: TMBarAccessoryView.Location) {
         guard let view = view else {
             return
         }
