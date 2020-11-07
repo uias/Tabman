@@ -53,28 +53,19 @@ internal final class TMBarViewContentInsetGuides: TMBarLayoutInsetGuides {
         barView.addLayoutGuide(content)
         barView.addLayoutGuide(trailingInset)
         
-        if #available(iOS 11, *) {
-            leadingInset.leadingAnchor.constraint(equalTo: barView.safeAreaLeadingAnchor).isActive = true
-        } else {
-            leadingInset.leadingAnchor.constraint(equalTo: barView.leadingAnchor).isActive = true
-        }
-        leadingInset.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
+        leadingWidth = leadingInset.widthAnchor.constraint(equalToConstant: insets.left)
+        trailingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.right)
         
-        content.leadingAnchor.constraint(equalTo: leadingInset.trailingAnchor).isActive = true
-        content.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
-        content.trailingAnchor.constraint(equalTo: trailingInset.leadingAnchor).isActive = true
-        
-        if #available(iOS 11, *) {
-            trailingInset.trailingAnchor.constraint(equalTo: barView.safeAreaTrailingAnchor).isActive = true
-        } else {
-            trailingInset.trailingAnchor.constraint(equalTo: barView.trailingAnchor).isActive = true
-        }
-        trailingInset.topAnchor.constraint(equalTo: barView.topAnchor).isActive = true
-        
-        self.leadingWidth = leadingInset.widthAnchor.constraint(equalToConstant: insets.left)
-        self.trailingWidth = trailingInset.widthAnchor.constraint(equalToConstant: insets.right)
-        
-        leadingWidth.isActive = true
-        trailingWidth.isActive = true
+        NSLayoutConstraint.activate([
+            leadingInset.leadingAnchor.constraint(equalTo: barView.safeAreaLeadingAnchor),
+            leadingInset.topAnchor.constraint(equalTo: barView.topAnchor),
+            content.leadingAnchor.constraint(equalTo: leadingInset.trailingAnchor),
+            content.topAnchor.constraint(equalTo: barView.topAnchor),
+            content.trailingAnchor.constraint(equalTo: trailingInset.leadingAnchor),
+            trailingInset.trailingAnchor.constraint(equalTo: barView.safeAreaTrailingAnchor),
+            trailingInset.topAnchor.constraint(equalTo: barView.topAnchor),
+            leadingWidth,
+            trailingWidth
+        ])
     }
 }
