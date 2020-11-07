@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/11/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2020 UI At Six. All rights reserved.
 //
 
 import UIKit
