@@ -47,7 +47,6 @@ internal final class AutoInsetter {
     
     private func _enable(for viewController: UIViewController?) {
         _isEnabled = true
-        viewController?.automaticallyAdjustsScrollViewInsets = false
     }
     
     // MARK: Insetting
@@ -63,37 +62,9 @@ internal final class AutoInsetter {
             return
         }
         
-        if #available(iOS 11, *) {
-            if requiredInsetSpec.additionalRequiredInsets != viewController.additionalSafeAreaInsets {
-                viewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
-            }
-        } else { // manual insetting on older versions.
-            guard viewController.shouldEvaluateEmbeddedScrollViews() else {
-                return
-            }
-            viewController.forEachEmbeddedScrollView { (scrollView) in
-                let calculator = self.makeInsetCalculator(for: scrollView, viewController: viewController)
-                let executor = InsetExecutor(view: scrollView, calculator: calculator, spec: requiredInsetSpec)
-    
-                executor.execute(store: insetStore)
-    
-                viewController.view.setNeedsLayout()
-            }
+        if requiredInsetSpec.additionalRequiredInsets != viewController.additionalSafeAreaInsets {
+            viewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
         }
-    }
-}
-
-extension AutoInsetter {
-    
-    @available(iOS, deprecated: 11)
-    private func makeInsetCalculator(for scrollView: UIScrollView, viewController: UIViewController) -> InsetCalculator {
-        
-        if let tableView = scrollView as? UITableView {
-            return TableViewInsetCalculator(view: tableView, viewController: viewController)
-        } else if let collectionView = scrollView as? UICollectionView {
-            return CollectionViewInsetCalculator(view: collectionView, viewController: viewController)
-        }
-        return ScrollViewInsetCalculator(view: scrollView, viewController: viewController)
     }
 }
 
