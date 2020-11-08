@@ -40,7 +40,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     // MARK: Properties
     
     /// Container view which contains actual contents
-    public let view = UIView()
+    public let view = TMBarLayoutView()
     /// The parent of the layout.
     private weak var parent: TMBarLayoutParent!
     
@@ -106,6 +106,24 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         }
     }
     
+    public var leadingAccessoryView: TMBarAccessoryView? {
+        didSet {
+            oldValue?.removeFromSuperview()
+            if let leadingAccessoryView = leadingAccessoryView {
+                addAccessoryView(leadingAccessoryView, to: view.container(.leadingAccessory))
+            }
+        }
+    }
+    
+    public var trailingAccessoryView: TMBarAccessoryView? {
+        didSet {
+            oldValue?.removeFromSuperview()
+            if let trailingAccessoryView = trailingAccessoryView {
+                addAccessoryView(trailingAccessoryView, to: view.container(.trailingAccessory))
+            }
+        }
+    }
+    
     // MARK: Init
     
     public required init() {}
@@ -117,7 +135,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         self.parent = parent
         self.insetGuides = insetGuides
 
-        layout(in: view)
+        layout(in: view.container(.main))
     }
     
     /// Layout the `BarLayout`.
@@ -176,5 +194,21 @@ private extension TMBarLayout {
         default:
             widthConstraint?.isActive = false
         }
+    }
+}
+
+
+// MARK: - Accessory Views
+extension TMBarLayout {
+    
+    private func addAccessoryView(_ view: TMBarAccessoryView, to container: UIView) {
+        container.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            view.topAnchor.constraint(equalTo: container.topAnchor),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            container.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }

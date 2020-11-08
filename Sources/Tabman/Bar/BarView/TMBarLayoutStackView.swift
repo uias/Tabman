@@ -1,5 +1,5 @@
 //
-//  TMBarViewLayoutGrid.swift
+//  TMBarLayoutStackView.swift
 //  Tabman
 //
 //  Created by Merrick Sapsford on 02/09/2018.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// 'Grid' view containig vertical / horizontal stack views.
-internal final class TMBarViewLayoutGrid: UIView {
+/// Layout stack view for use within a bar view.
+internal final class TMBarLayoutStackView: UIView {
     
     // MARK: Properties
     
@@ -19,21 +19,6 @@ internal final class TMBarViewLayoutGrid: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    private let horizontalStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    var horizontalSpacing: CGFloat {
-        get {
-            return horizontalStack.spacing
-        }
-        set {
-            horizontalStack.spacing = newValue
-        }
-    }
     
     // MARK: Init
     
@@ -66,8 +51,7 @@ internal final class TMBarViewLayoutGrid: UIView {
             verticalStack.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         
-        verticalStack.addArrangedSubview(horizontalStack)
-        horizontalStack.addArrangedSubview(view)
+        verticalStack.addArrangedSubview(view)
     }
     
     // MARK: Layout
@@ -78,13 +62,5 @@ internal final class TMBarViewLayoutGrid: UIView {
     
     func addBottomSubview(_ view: UIView) {
         verticalStack.addArrangedSubview(view)
-    }
-    
-    func addLeadingSubview(_ view: UIView) {
-        horizontalStack.insertArrangedSubview(view, at: 0)
-    }
-    
-    func addTrailingSubview(_ view: UIView) {
-        horizontalStack.addArrangedSubview(view)
     }
 }
