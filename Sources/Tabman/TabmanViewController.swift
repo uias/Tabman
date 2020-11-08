@@ -76,6 +76,13 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         didSet {}
     }
     
+    /// :nodoc:
+    open override var isInfiniteScrollEnabled: Bool {
+        didSet {
+            bars.forEach({ $0.isInfinite = isInfiniteScrollEnabled })
+        }
+    }
+    
     // MARK: Init
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -216,6 +223,7 @@ extension TabmanViewController {
                        at location: BarLocation) {
         bar.dataSource = dataSource
         bar.delegate = self
+        bar.isInfinite = isInfiniteScrollEnabled
         
         if bars.contains(where: { $0 === bar }) == false {
             bars.append(bar)

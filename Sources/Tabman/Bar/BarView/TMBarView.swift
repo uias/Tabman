@@ -149,6 +149,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     
+    open var isInfinite: Bool = false
+    
     // MARK: TMBarLayoutParent
     
     var contentInset: UIEdgeInsets = .zero {

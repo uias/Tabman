@@ -75,6 +75,9 @@ public protocol TMBar: BaseTMBar where Self: UIView {
     /// Items that are currently displayed in the bar.
     var items: [TMBarItemable]? { get }
     
+    /// Whether the bar is infinite.
+    var isInfinite: Bool { get set }
+    
     /// Reload the data within the bar.
     ///
     /// - Parameters:
