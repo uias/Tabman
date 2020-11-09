@@ -22,7 +22,7 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     // MARK: Properties
     
-    internal let stackView = UIStackView()
+    internal let mainStackView = UIStackView()
     internal private(set) var separators = [TMBarButton: SeparatorView]()
     
     // MARK: Customization
@@ -46,10 +46,10 @@ open class TMHorizontalBarLayout: TMBarLayout {
     /// Distribution of internal stack view.
     private var buttonDistribution: UIStackView.Distribution {
         get {
-            return stackView.distribution
+            return mainStackView.distribution
         }
         set {
-            stackView.distribution = newValue
+            mainStackView.distribution = newValue
         }
     }
     
@@ -117,71 +117,90 @@ open class TMHorizontalBarLayout: TMBarLayout {
     }
     
     // MARK: Lifecycle
-    
-    open override func layout(in view: UIView) {
-        super.layout(in: view)
+
+    open override func layout(in view: UIView, area: TMBarLayout.LayoutArea) {
+        super.layout(in: view, area: area)
         
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
-        
-        stackView.spacing = interButtonSpacing
-    }
-    
-    open override func insert(buttons: [TMBarButton], at index: Int) {
-        super.insert(buttons: buttons, at: index)
-        
-        var currentIndex = index
-        for button in buttons {
+        switch area {
+        case .main:
+            view.addSubview(mainStackView)
+            mainStackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                mainStackView.topAnchor.constraint(equalTo: view.topAnchor),
+                mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                ])
             
-            var separator: SeparatorView?
-            if showSeparators, button !== buttons.last {
-                separator = makeSeparator()
-            }
+            mainStackView.spacing = interButtonSpacing
             
-            if index >= stackView.arrangedSubviews.count { // just add
-                stackView.addArrangedSubview(button)
-                if let separator = separator {
-                    stackView.addArrangedSubview(separator)
-                }
-            } else {
-                stackView.insertArrangedSubview(button, at: currentIndex)
-                if let separator = separator {
-                    stackView.insertArrangedSubview(separator, at: currentIndex + 1)
-                }
-            }
-            
-            separators[button] = separator
-            if separator != nil {
-                currentIndex += 2
-            } else {
-                currentIndex += 1
-            }
+        default:
+            break
         }
     }
     
-    open override func remove(buttons: [TMBarButton]) {
-        super.remove(buttons: buttons)
+    open override func insert(buttons: [TMBarButton], at index: Int, in area: TMBarLayout.LayoutArea) {
+        super.insert(buttons: buttons, at: index, in: area)
         
-        for button in buttons {
-            stackView.removeArrangedSubview(button)
-            button.removeFromSuperview()
-            
-            if let separator = separators[button] {
-                stackView.removeArrangedSubview(separator)
-                separator.removeFromSuperview()
+        switch area {
+        case .main:
+            var currentIndex = index
+            for button in buttons {
+                
+                var separator: SeparatorView?
+                if showSeparators, button !== buttons.last {
+                    separator = makeSeparator()
+                }
+                
+                if index >= mainStackView.arrangedSubviews.count { // just add
+                    mainStackView.addArrangedSubview(button)
+                    if let separator = separator {
+                        mainStackView.addArrangedSubview(separator)
+                    }
+                } else {
+                    mainStackView.insertArrangedSubview(button, at: currentIndex)
+                    if let separator = separator {
+                        mainStackView.insertArrangedSubview(separator, at: currentIndex + 1)
+                    }
+                }
+                
+                separators[button] = separator
+                if separator != nil {
+                    currentIndex += 2
+                } else {
+                    currentIndex += 1
+                }
             }
+            
+        default:
+            break
+        }
+    }
+    
+    open override func remove(buttons: [TMBarButton], from area: TMBarLayout.LayoutArea) {
+        super.remove(buttons: buttons, from: area)
+        
+        switch area {
+        
+        case .main:
+            for button in buttons {
+                mainStackView.removeArrangedSubview(button)
+                button.removeFromSuperview()
+                
+                if let separator = separators[button] {
+                    mainStackView.removeArrangedSubview(separator)
+                    separator.removeFromSuperview()
+                }
+            }
+            
+        default:
+            break
         }
     }
     
     open override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
-        let buttons = stackView.arrangedSubviews.compactMap({ $0 as? TMBarButton })
+        let buttons = mainStackView.arrangedSubviews.compactMap({ $0 as? TMBarButton })
         guard buttons.count > range.upperBound else {
             return .zero
         }
@@ -202,9 +221,9 @@ open class TMHorizontalBarLayout: TMBarLayout {
     
     private func reloadInterButtonSpacing() {
         if showSeparators {
-            stackView.spacing = interButtonSpacing / 2
+            mainStackView.spacing = interButtonSpacing / 2
         } else {
-            stackView.spacing = interButtonSpacing
+            mainStackView.spacing = interButtonSpacing
         }
     }
     

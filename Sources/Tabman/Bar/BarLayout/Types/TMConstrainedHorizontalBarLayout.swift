@@ -48,22 +48,33 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
             guard oldValue != visibleButtonCount else {
                 return
             }
-            constrain(views: stackView.arrangedSubviews, for: visibleButtonCount)
+            constrain(views: mainStackView.arrangedSubviews, for: visibleButtonCount)
         }
+    }
+    
+    // MARK: Init
+    
+    /// :nodoc:
+    public required init() {
+        super.init()
+        
+        super.interButtonSpacing = 0.0
     }
     
     // MARK: Lifecycle
     
-    open override func layout(in view: UIView) {
-        super.layout(in: view)
-        super.interButtonSpacing = 0.0
-    }
-    
-    open override func insert(buttons: [TMBarButton], at index: Int) {
-        super.insert(buttons: buttons, at: index)
+    open override func insert(buttons: [TMBarButton], at index: Int, in area: TMBarLayout.LayoutArea) {
+        super.insert(buttons: buttons, at: index, in: area)
         
-        // Constrain button widths to visible count on insertion
-        constrain(views: stackView.arrangedSubviews, for: visibleButtonCount)
+        
+        switch area {
+        case .main:
+            // Constrain button widths to visible count on insertion
+            constrain(views: mainStackView.arrangedSubviews, for: visibleButtonCount)
+            
+        default:
+            break
+        }
     }
 }
 

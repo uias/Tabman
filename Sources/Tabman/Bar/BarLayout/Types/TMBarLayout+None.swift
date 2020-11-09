@@ -28,19 +28,18 @@ extension TMBarLayout {
             }
         }
         
-        // MARK: Lifecycle
+        // MARK: Init
         
-        public override func layout(in view: UIView) {
-            super.layout(in: view)
+        /// :nodoc:
+        public required init() {
+            super.init()
+            
             super.contentMode = .fit
         }
         
-        public override func insert(buttons: [TMBarButton], at index: Int) {
-        }
+        // MARK: Lifecycle
         
-        public override func remove(buttons: [TMBarButton]) {
-        }
-        
+        /// :nodoc:
         public override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
             guard capacity != 0 else {
                 return .zero

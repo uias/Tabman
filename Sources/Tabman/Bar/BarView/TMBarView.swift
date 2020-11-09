@@ -359,7 +359,7 @@ extension TMBarView: TMBar {
         case .full, .insertion:
             
             if context == .full && buttons.all.count > 0 { // remove existing buttons
-                layout.remove(buttons: buttons.all)
+                layout.remove(buttons: buttons.all, from: .main) // TODO - Other areas
                 buttons.all.removeAll()
             }
             
@@ -375,7 +375,7 @@ extension TMBarView: TMBar {
             }
             
             buttons.all.insert(contentsOf: newButtons, at: indexes.lowerBound)
-            layout.insert(buttons: newButtons, at: indexes.lowerBound)
+            layout.insert(buttons: newButtons, at: indexes.lowerBound, in: .main) // TODO - Other areas
             
         case .deletion:
             var buttonsToRemove = [Button]()
@@ -385,7 +385,8 @@ extension TMBarView: TMBar {
                 items.remove(at: index)
             }
             buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
-            layout.remove(buttons: buttonsToRemove)
+            
+            layout.remove(buttons: buttonsToRemove, from: .main) // TODO - Other areas
         }
         
         self.items = items

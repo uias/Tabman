@@ -14,8 +14,19 @@ Tabman 3 is the latest major release of Tabman; A powerful paging view controlle
 TODO
 
 ## API Changes
-- `TabmanViewController.delegate` is now `unavailable` and can not be used.
+
+### TMBarView
 - `leftAccessoryView` is now `leadingAccessoryView` in `TMBarView`.
 - `leftPinnedAccessoryView` is now `leadingPinnedAccessoryView` in `TMBarView`.
 - `rightAccessoryView` is now `trailingAccessoryView` in `TMBarView`.
 - `rightPinnedAccessoryView` is now `trailingPinnedAccessoryView` in `TMBarView`.
+
+### TMBarLayout
+TODO - Area explanation.
+
+- `layout(in view: UIView)` has been replaced by `layout(in view: UIView, area: LayoutArea)`.
+- `insert(buttons: [TMBarButton], at index: Int)` has been replaced by `insert(buttons: [TMBarButton], at index: Int, in area: LayoutArea)`.
+- `remove(buttons: [TMBarButton])` has been replaced by `remove(buttons: [TMBarButton], from area: LayoutArea)`.
+
+### Other
+- `TabmanViewController.delegate` is now `unavailable` and can not be used.

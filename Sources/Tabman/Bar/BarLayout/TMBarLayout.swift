@@ -37,6 +37,17 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
         case trailing
     }
     
+    /// Area of the layout.
+    ///
+    /// - `.main`: Main interactable area where buttons exist.
+    /// - `.leadingAuxiliary`: Area leading `.main` area which is used for non-interactable buttons to support infinite bar behavior.
+    /// - `.trailingAuxiliary`: Area trailing `.main` area which is used for non-interactable buttons to support infinite bar behavior.
+    public enum LayoutArea {
+        case main
+        case leadingAuxiliary
+        case trailingAuxiliary
+    }
+    
     // MARK: Properties
     
     /// Container view which contains actual contents
@@ -134,28 +145,32 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
                          insetGuides: TMBarLayoutInsetGuides) {
         self.parent = parent
         self.insetGuides = insetGuides
-
-        layout(in: view.container(.main))
+        
+        layout(in: view.container(.main), area: .main)
+        layout(in: view.container(.leadingAuxiliary), area: .leadingAuxiliary)
+        layout(in: view.container(.trailingAuxiliary), area: .trailingAuxiliary)
     }
     
-    /// Layout the `BarLayout`.
-    ///
-    /// - Parameter view: The view to use as the root of the layout.
-    open func layout(in view: UIView) {
-    }
-    
-    /// Insert new bar buttons into the layout from a specified index.
-    ///
+    /// Layout the contents of the `BarLayout` for an area.
     /// - Parameters:
-    ///   - buttons: The buttons to insert.
-    ///   - index: The index to start inserting the buttons at.
-    open func insert(buttons: [TMBarButton], at index: Int) {
+    ///   - view: View to layout.
+    ///   - area: Area for the current view.
+    open func layout(in view: UIView, area: LayoutArea) {
     }
-
-    /// Remove existing bar buttons from the layout.
-    ///
-    /// - Parameter buttons: The buttons to remove.
-    open func remove(buttons: [TMBarButton]) {
+    
+    /// Insert new buttons into the layout at an index for a specific area.
+    /// - Parameters:
+    ///   - buttons: Buttons to insert.
+    ///   - index: Index to start inserting buttons at.
+    ///   - area: Area to insert the buttons into.
+    open func insert(buttons: [TMBarButton], at index: Int, in area: LayoutArea) {
+    }
+    
+    /// Remove existing buttons from the layout for a specific area.
+    /// - Parameters:
+    ///   - buttons: Buttons to remove.
+    ///   - area: Area to remove the buttons from.
+    open func remove(buttons: [TMBarButton], from area: LayoutArea) {
     }
 
     /// Calculate the `focusRect` for the current position and capacity.
