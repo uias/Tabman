@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 @testable import Tabman
 import Pageboy
 

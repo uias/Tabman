@@ -7,6 +7,7 @@
 //
 
 import Tabman
+import UIKit
 import Pageboy
 
 class MockTabmanViewController: TabmanViewController {

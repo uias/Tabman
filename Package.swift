@@ -23,10 +23,17 @@ let package = Package(
             dependencies: ["Pageboy"],
             path: ".",
             exclude: ["Sources/Tabman/Tabman.h", "Sources/Tabman/Info.plist"],
-            sources: ["Sources/Tabman"]),
+            sources: ["Sources/Tabman"],
+            linkerSettings: [
+                .linkedFramework("UIKit")
+            ]
+        ),
         .testTarget(
             name: "TabmanTests",
-            dependencies: ["Tabman"]
+            dependencies: ["Tabman"],
+            linkerSettings: [
+                .linkedFramework("UIKit")
+            ]
         )
     ],
     swiftLanguageVersions: [.v5]
