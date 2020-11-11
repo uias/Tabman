@@ -372,7 +372,7 @@ extension TMBarView: TMBar {
                 let item = dataSource.barItem(for: self, at: index)
                 items.insert(item, at: index)
                 
-                let button = Button(for: item, intrinsicSuperview: self)
+                let button = Button(for: item, index: index, intrinsicSuperview: self)
                 button.populate(for: item)
                 button.update(for: .unselected)
                 newButtons.append(button)

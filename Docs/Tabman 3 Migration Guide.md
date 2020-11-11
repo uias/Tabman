@@ -28,5 +28,9 @@ TODO - Area explanation.
 - `insert(buttons: [TMBarButton], at index: Int)` has been replaced by `insert(buttons: [TMBarButton], at index: Int, in area: LayoutArea)`.
 - `remove(buttons: [TMBarButton])` has been replaced by `remove(buttons: [TMBarButton], from area: LayoutArea)`.
 
+### TMBarButton
+- `TMBarButton` initializer now requires `index` parameter (`TMBarButton.init(for item: TMBarItemable, index: Int, intrinsicSuperview: UIView?)`).
+- `TMBarButton` now has an `index` property.
+
 ### Other
 - `TabmanViewController.delegate` is now `unavailable` and can not be used.

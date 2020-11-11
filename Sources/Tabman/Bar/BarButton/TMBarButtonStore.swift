@@ -106,7 +106,7 @@ private extension Collection where Iterator.Element: TMBarButton {
     
     func deepCopy() -> [Iterator.Element] {
         return map({ (original) in
-            let new = type(of: original).init(for: original.item, intrinsicSuperview: original.intrinsicSuperview)
+            let new = type(of: original).init(for: original.item, index: original.index, intrinsicSuperview: original.intrinsicSuperview)
             new.populate(for: original.item)
             new.update(for: original.selectionState)
             return new

@@ -29,6 +29,8 @@ open class TMBarButton: UIControl {
     
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
+    /// Index of the item that the button represents.
+    public let index: Int
     
     private(set) weak var intrinsicSuperview: UIView?
     private let contentView = UIView()
@@ -85,9 +87,11 @@ open class TMBarButton: UIControl {
     ///
     /// - Parameters:
     ///   - item: Item to create the bar button for.
+    ///   - index: Index of the item that the button represents.
     ///   - intrinsicSuperview: View that can be notified whenever any intrinsic layout changes occur.
-    public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
+    public required init(for item: TMBarItemable, index: Int, intrinsicSuperview: UIView?) {
         self.item = item
+        self.index = index
         self.intrinsicSuperview = intrinsicSuperview
         super.init(frame: .zero)
         initialize()
