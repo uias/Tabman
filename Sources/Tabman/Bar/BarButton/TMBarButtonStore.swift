@@ -39,18 +39,17 @@ internal final class TMBarButtonStore<BarButton: TMBarButton> {
     
     @discardableResult
     func remove(_ collection: [BarButton]) -> [Update] {
+        let collection = collection.map({ $0.index })
         var updates = [Update]()
         if let main = remove(collection, from: .main) {
             updates.append(main)
         }
-        
-        if let leadingAuxiliary = areas[.leadingAuxiliary], !leadingAuxiliary.isEmpty {
-            // TODO - Remove leadingAuxiliary matches
+        if let leadingAuxiliary = remove(collection, from: .leadingAuxiliary) {
+            updates.append(leadingAuxiliary)
         }
-        if let trailingAuxiliary = areas[.trailingAuxiliary], !trailingAuxiliary.isEmpty {
-            // TODO - Remove trailingAuxiliary matches
+        if let trailingAuxiliary = remove(collection, from: .trailingAuxiliary) {
+            updates.append(trailingAuxiliary)
         }
-        
         return updates
     }
     
@@ -76,12 +75,16 @@ internal final class TMBarButtonStore<BarButton: TMBarButton> {
         return Update(area: area, index: index, buttons: collection)
     }
     
-    private func remove(_ collection: [BarButton], from area: Area) -> Update? {
+    private func remove(_ indexes: [Int], from area: Area) -> Update? {
         guard areas[area] != nil else {
             return nil
         }
-        areas[area]?.removeAll(where: { collection.contains($0) })
-        return Update(area: area, index: nil, buttons: collection)
+        let matches = areas[area]?.filter({ indexes.contains($0.index) }) ?? []
+        guard !matches.isEmpty else {
+            return nil
+        }
+        areas[area]?.removeAll(where: { matches.contains($0) })
+        return Update(area: area, index: nil, buttons: matches)
     }
     
     private func removeAll(from area: Area) -> Update? {
