@@ -30,7 +30,7 @@ open class TMBarButton: UIControl {
     /// Bar Item that is associated with the button.
     public let item: TMBarItemable
     
-    private weak var intrinsicSuperview: UIView?
+    private(set) weak var intrinsicSuperview: UIView?
     private let contentView = UIView()
     private var contentViewLeading: NSLayoutConstraint!
     private var contentViewTop: NSLayoutConstraint!

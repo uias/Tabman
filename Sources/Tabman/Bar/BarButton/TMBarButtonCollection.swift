@@ -17,6 +17,8 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
     
     // MARK: Buttons
     
+    lazy var store = TMBarButtonStore()
+    
     /// All bar buttons.
     public internal(set) var all = [BarButton]() {
         didSet {
@@ -87,6 +89,8 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
     public func `for`(items: TMBarItemable...) -> [BarButton] {
         return items.compactMap({ self.for(item: $0) })
     }
+    
+    // MARK: TMBarButtonStoreDelegate
 }
 
 extension TMBarButtonCollection: TMBarButtonInteractionHandler {
