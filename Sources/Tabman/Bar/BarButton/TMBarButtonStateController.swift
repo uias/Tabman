@@ -13,12 +13,12 @@ internal final class TMBarButtonStateController: TMBarButtonController {
     
     // MARK: Properties
     
-    private weak var selectedButton: TMBarButton? {
+    private var selectedButtons: [TMBarButton]? {
         didSet {
-            if oldValue !== selectedButton {
-                oldValue?.selectionState = .unselected
+            if oldValue != selectedButtons {
+                oldValue?.forEach({ $0.selectionState = .unselected })
             }
-            selectedButton?.selectionState = .selected
+            selectedButtons?.forEach({ $0.selectionState = .selected })
         }
     }
     
@@ -32,27 +32,28 @@ internal final class TMBarButtonStateController: TMBarButtonController {
     // MARK: Update
     
     func update(for position: CGFloat, direction: TMBarUpdateDirection) {
+        let barButtons = self.barButtons.compactMap({ $0.object })
         let capacity = barButtons.count
         let range = BarMath.localIndexRange(for: position, minimum: 0, maximum: capacity - 1)
         guard barButtons.count > range.upperBound else {
             return
         }
         
-        let lowerButton = barButtons[range.lowerBound].object
-        let upperButton = barButtons[range.upperBound].object
+        let lowerButtons = barButtons.filter({ $0.index == range.lowerBound })
+        let upperButtons = barButtons.filter({ $0.index == range.upperBound })
         
-        let targetButton = direction != .reverse ? upperButton : lowerButton
-        let oldTargetButton = direction != .reverse ? lowerButton : upperButton
+        let targetButtons = direction != .reverse ? upperButtons : lowerButtons
+        let oldTargetButtons = direction != .reverse ? lowerButtons : upperButtons
         
         let progress = BarMath.localProgress(for: position)
         let directionalProgress = direction != .reverse ? progress : 1.0 - progress
         
-        guard targetButton !== oldTargetButton else {
-            self.selectedButton = targetButton
+        guard targetButtons.first !== oldTargetButtons.first else {
+            self.selectedButtons = targetButtons
             return
         }
         
-        targetButton?.selectionState = .from(rawValue: directionalProgress)
-        oldTargetButton?.selectionState = .from(rawValue: 1.0 - directionalProgress)
+        targetButtons.forEach({ $0.selectionState = .from(rawValue: directionalProgress) })
+        oldTargetButtons.forEach({ $0.selectionState = .from(rawValue: 1.0 - directionalProgress) })
     }
 }

@@ -17,17 +17,12 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
     
     // MARK: Buttons
     
-    lazy var store = TMBarButtonStore()
+    let store = TMBarButtonStore<BarButton>()
     
     /// All bar buttons.
     public internal(set) var all = [BarButton]() {
         didSet {
-            self.stateController = TMBarButtonStateController(for: all)
-            self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
             
-            for button in all {
-                customization?(button)
-            }
         }
     }
     
@@ -45,16 +40,6 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
     
     /// Style to use when transitioning between buttons.
     public var transitionStyle: TMTransitionStyle = .progressive
-    
-    // MARK: Init
-    
-    internal init() {
-        self.stateController = TMBarButtonStateController(for: all)
-        self.interactionController = TMBarButtonInteractionController(for: all, handler: self)
-    }
-    
-    // MARK: Customization
-
     /**
      Customize the bar buttons that are added to the bar.
      
@@ -67,6 +52,17 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
         all.forEach { (button) in
             customize(button)
         }
+    }
+    
+    // MARK: Init
+    
+    internal init() {
+        reloadForButtonStoreUpdate()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(buttonStoreDidUpdate(_:)),
+                                               name: TMBarButtonStore.didUpdateNotification,
+                                               object: nil)
     }
     
     // MARK: Utility
@@ -90,7 +86,24 @@ public final class TMBarButtonCollection<BarButton: TMBarButton>: TMTransitionSt
         return items.compactMap({ self.for(item: $0) })
     }
     
-    // MARK: TMBarButtonStoreDelegate
+    // MARK: State
+    
+    private func reloadForButtonStoreUpdate() {
+        let buttons = store.all
+        stateController = TMBarButtonStateController(for: buttons)
+        interactionController = TMBarButtonInteractionController(for: buttons, handler: self)
+        
+        buttons.forEach({ customization?($0) })
+    }
+    
+    // MARK: Notifications
+    
+    @objc private func buttonStoreDidUpdate(_ notification: Notification) {
+        guard notification.object as AnyObject === store else {
+            return
+        }
+        reloadForButtonStoreUpdate()
+    }
 }
 
 extension TMBarButtonCollection: TMBarButtonInteractionHandler {

@@ -10,6 +10,10 @@ import UIKit
 
 internal final class TMBarButtonStore<BarButton: TMBarButton> {
     
+    static var didUpdateNotification: Notification.Name {
+        Notification.Name("com.uias.tabman.TMBarButtonStore.didUpdate")
+    }
+    
     typealias Area = TMBarLayout.LayoutArea
     
     struct Update {
@@ -22,6 +26,10 @@ internal final class TMBarButtonStore<BarButton: TMBarButton> {
     
     private var areas = [Area: [BarButton]]()
     
+    var all: [BarButton] {
+        return areas.values.reduce([], +)
+    }
+    
     // MARK: Lifecycle
     
     @discardableResult
@@ -32,6 +40,10 @@ internal final class TMBarButtonStore<BarButton: TMBarButton> {
         if isInfinite {
             updates.append(insert(contentsOf: collection.deepCopy(), at: index, in: .leadingAuxiliary))
             updates.append(insert(contentsOf: collection.deepCopy(), at: index, in: .trailingAuxiliary))
+        }
+        
+        if !updates.isEmpty {
+            NotificationCenter.default.post(name: TMBarButtonStore.didUpdateNotification, object: self)
         }
         
         return updates
@@ -50,6 +62,11 @@ internal final class TMBarButtonStore<BarButton: TMBarButton> {
         if let trailingAuxiliary = remove(collection, from: .trailingAuxiliary) {
             updates.append(trailingAuxiliary)
         }
+        
+        if !updates.isEmpty {
+            NotificationCenter.default.post(name: TMBarButtonStore.didUpdateNotification, object: self)
+        }
+        
         return updates
     }
     
