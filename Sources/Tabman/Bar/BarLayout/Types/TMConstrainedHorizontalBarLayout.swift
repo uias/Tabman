@@ -48,7 +48,8 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
             guard oldValue != visibleButtonCount else {
                 return
             }
-            constrain(views: mainStackView.arrangedSubviews, for: visibleButtonCount)
+            let stackViews = Array(self.stackViews.values)
+            constrainArrangedSubviews(in: stackViews, for: visibleButtonCount)
         }
     }
     
@@ -70,7 +71,8 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
         switch area {
         case .main:
             // Constrain button widths to visible count on insertion
-            constrain(views: mainStackView.arrangedSubviews, for: visibleButtonCount)
+            let stackViews = Array(self.stackViews.values)
+            constrainArrangedSubviews(in: stackViews, for: visibleButtonCount)
             
         default:
             break
@@ -79,6 +81,10 @@ open class TMConstrainedHorizontalBarLayout: TMHorizontalBarLayout {
 }
 
 private extension TMConstrainedHorizontalBarLayout {
+    
+    func constrainArrangedSubviews(in stackViews: [UIStackView], for maximumCount: Int) {
+        stackViews.forEach({ constrain(views: $0.arrangedSubviews, for: maximumCount) })
+    }
     
     func constrain(views: [UIView], for maximumCount: Int) {
         if let oldConstraints = viewWidthConstraints {
