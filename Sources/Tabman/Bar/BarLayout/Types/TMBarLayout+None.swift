@@ -17,7 +17,7 @@ extension TMBarLayout {
         
         // MARK: Properties
         
-        //swiftlint:disable unused_setter_value
+        // swiftlint:disable unused_setter_value
         @available(*, unavailable)
         public override var contentMode: TMBarLayout.ContentMode {
             get {

@@ -21,7 +21,7 @@ extension TMBarIndicator {
             return .fill
         }
         
-        //swiftlint:disable unused_setter_value
+        // swiftlint:disable unused_setter_value
         public override var isHidden: Bool {
             get {
                 return super.isHidden

@@ -14,7 +14,6 @@ opt_in_rules:
 #- missing_docs
 - overridden_super_call
 - private_outlet
-- redundant_nil_coalesing
 #- switch_case_on_newline
 
 excluded:
