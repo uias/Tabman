@@ -158,13 +158,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     
     var contentInset: UIEdgeInsets = .zero {
         didSet {
-            updateScrollViewContentInset()
+            updateScrollViewContentInsetForAlignment()
         }
     }
     
     var alignment: TMBarLayout.Alignment = .leading {
         didSet {
-            updateScrollViewContentInset()
+            updateScrollViewContentInsetForAlignment()
         }
     }
     
@@ -266,7 +266,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         ])
     }
 
-    private func updateScrollViewContentInset() {
+    private func updateScrollViewContentInsetForAlignment() {
         let leftAlignmentInset: CGFloat
         let rightAlignmentInset: CGFloat
         
@@ -399,7 +399,7 @@ extension TMBarView: TMBar {
     private func updateIndicatorPositionForLayoutUpdates() {
         UIView.performWithoutAnimation {
             layoutIfNeeded()
-            updateScrollViewContentInset()
+            updateScrollViewContentInsetForAlignment()
             updateIndicatorPosition()
         }
     }
