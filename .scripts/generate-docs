@@ -14,7 +14,7 @@ echo "Using jazzy: $JAZZY"
 # ----- Commandline options
 
 if [ "$BRANCH" == "" ]; then
-  BRANCH=$([ "$1" == "" ] && echo "master" || echo "$1")
+  BRANCH=$([ "$1" == "" ] && echo "main" || echo "$1")
 fi
 
 if [ "$OUTPUT_PATH" == "" ]; then

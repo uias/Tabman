@@ -24,7 +24,7 @@ platform :ios do
       name: version,
       tag_name: version,
       description: "#{version} release.",
-      commitish: "master"
+      commitish: "main"
     )
 
     # Push spec

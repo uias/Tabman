@@ -5,7 +5,7 @@ on:
       - 'gh-pages'
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   Test:

@@ -73,7 +73,7 @@ class TabViewController: TabmanViewController {
 }
 ```
 
-**When adding a bar, you can choose to add it to the predefined areas (`.top`, `.bottom`, `.navigationItem(item:)`) or to a custom view with `.custom(view:layout:)`. For more information, read the [Adding a Bar](https://uias.github.io/Tabman/master/adding-a-bar.html) guide.**
+**When adding a bar, you can choose to add it to the predefined areas (`.top`, `.bottom`, `.navigationItem(item:)`) or to a custom view with `.custom(view:layout:)`. For more information, read the [Adding a Bar](https://uias.github.io/Tabman/main/adding-a-bar.html) guide.**
 
 4) Configure your data sources.
 
@@ -123,7 +123,7 @@ Tabman provides numerous, easy to use template styles out of the box:
 
 ![](Docs/img/bar_styles.png)
 
-These are all available as types of `TMBar` in [TMBar+Templates](https://github.com/uias/Tabman/blob/master/Sources/Tabman/Bar/TMBar%2BTemplates.swift).
+These are all available as types of `TMBar` in [TMBar+Templates](https://github.com/uias/Tabman/blob/main/Sources/Tabman/Bar/TMBar%2BTemplates.swift).
 
 ```swift
 let bar = TMBar.ButtonBar()
@@ -150,7 +150,7 @@ bar.transitionStyle = .snap
 - `scrollMode` - What type of interactive scrolling to allow.
 - `fadesContentEdges` - Whether to fade the edges of the bar contents as it goes off-screen.
 
-**More: [**TMBarView Docs**](https://uias.github.io/Tabman/master/Bar.html)**
+**More: [**TMBarView Docs**](https://uias.github.io/Tabman/main/Bar.html)**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. Look here if you want to change things such as button spacing, content insets and other layout'y things.
@@ -165,7 +165,7 @@ bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right:
 - `transitionStyle` - How the layout should perform transition animations.
 - `alignment` - How the layout should be aligned in the bar.
 
-**More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
+**More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/main/Layout.html)**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -187,7 +187,7 @@ bar.buttons.customize { (button) in
 - `transitionStyle` (`TMBarButtonCollection`) - How the buttons should should perform transition animations.
 - `badge` - `TMBadgeView` that displays `badgeValue` from bar item.
 
-**More: [**TMBarButton Docs**](https://uias.github.io/Tabman/master/Buttons.html)**
+**More: [**TMBarButton Docs**](https://uias.github.io/Tabman/main/Buttons.html)**
 
 #### TMBarIndicator
 Lastly is `TMBarIndicator` - which indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
@@ -202,7 +202,7 @@ bar.indicator.weight = .heavy
 - `isProgressive` - Whether the indicator should act progressively when transitioning through page indexes.
 - `transitionStyle` - How the indicator should should perform transition animations.
 
-**More: [**TMBarIndicator Docs**](https://uias.github.io/Tabman/master/Indicator.html)**
+**More: [**TMBarIndicator Docs**](https://uias.github.io/Tabman/main/Indicator.html)**
 
 ## 🎨 Advanced Customization
 Tabman provides the complete freedom to mix-and-match the built-in components; and also define your own.
@@ -245,7 +245,7 @@ let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ### Going Completely Custom
 As replacing the type of layout, button or indicator is as easy as above; you have the ability to define your own subclasses without too much of a headache.
 
-[**Custom Tabman Components**](https://uias.github.io/Tabman/master/going-custom.html)
+[**Custom Tabman Components**](https://uias.github.io/Tabman/main/going-custom.html)
 
 There are also example projects that showcase custom layouts and such:
 
@@ -264,7 +264,7 @@ Auto insetting can be **disabled** by setting `automaticallyAdjustsChildInsets` 
 *Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](https://uias.github.io/Tabman/master/troubleshooting.html).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](https://uias.github.io/Tabman/main/troubleshooting.html).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 

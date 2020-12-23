@@ -81,7 +81,7 @@ class CustomBarLayout: TMBarLayout {
 Implementing the above functions should provide the flexibility to create any type of layout, and handle all the required `TMBarView` lifecycle events with ease.
 
 ### Examples
-- [**TinderBarLayout**](https://github.com/uias/Tinderbar/blob/master/Sources/Tinderbar/Bars/TinderBar/TinderBarLayout.swift) - Layout for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
+- [**TinderBarLayout**](https://github.com/uias/Tinderbar/blob/main/Sources/Tinderbar/Bars/TinderBar/TinderBarLayout.swift) - Layout for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
 
 ## Custom Bar Buttons
 Bar buttons are the indiviual interactable buttons that appear in the bar, and allow the user to directly manipulate the indicated position.
@@ -166,7 +166,7 @@ override func update(for selectionState: TMBarButton.SelectionState) {
 *If you call `super.update(for: selectionState)` a default state is provided - the bar buttons will transition between alpha of 0.5 and 1.0 depending on the state.*
 
 ### Examples
-- [**TinderBarButton**](https://github.com/uias/Tinderbar/blob/master/Sources/Tinderbar/Bars/TinderBar/TinderBarButton.swift) - Buttons for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
+- [**TinderBarButton**](https://github.com/uias/Tinderbar/blob/main/Sources/Tinderbar/Bars/TinderBar/TinderBarButton.swift) - Buttons for the main navigation bar in the Tinder iOS app, emulated in [Tinderbar](https://github.com/uias/Tinderbar).
 
 ## Custom Bar Indicator
 The bar indicator is a view that simply displays the current position in the bar, and is not expected to provide any interaction.
