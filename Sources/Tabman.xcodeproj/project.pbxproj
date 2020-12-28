@@ -39,7 +39,6 @@
 		464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90962188724D0096308E /* TMBarViewUpdateHandler.swift */; };
 		464E90992188853F0096308E /* TMTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E90982188853F0096308E /* TMTransition.swift */; };
 		464E9C28255BB69E0011602F /* TMBarButtonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E9C27255BB69E0011602F /* TMBarButtonStore.swift */; };
-		465F976E2529C375003A5AEE /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = 465F976D2529C375003A5AEE /* Pageboy */; };
 		4670EC7623BE09B6006FEC9B /* InsetExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6723BE09B6006FEC9B /* InsetExecutor.swift */; };
 		4670EC7723BE09B6006FEC9B /* AutoInsetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6823BE09B6006FEC9B /* AutoInsetter.swift */; };
 		4670EC7823BE09B6006FEC9B /* DefaultInsetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670EC6A23BE09B6006FEC9B /* DefaultInsetStore.swift */; };
@@ -84,6 +83,7 @@
 		D62AC0BC1E5733810020B8AE /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62AC0B21E5733810020B8AE /* Tabman.framework */; };
 		D62AC0C31E5733810020B8AE /* Tabman.h in Headers */ = {isa = PBXBuildFile; fileRef = D62AC0B51E5733810020B8AE /* Tabman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D62AC0F51E5733FE0020B8AE /* TabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AC0F41E5733FE0020B8AE /* TabmanViewController.swift */; };
+		E86EE196259A3C530081FE73 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = E86EE195259A3C530081FE73 /* Pageboy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				465F976E2529C375003A5AEE /* Pageboy in Frameworks */,
+				E86EE196259A3C530081FE73 /* Pageboy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,7 @@
 			);
 			name = Tabman;
 			packageProductDependencies = (
-				465F976D2529C375003A5AEE /* Pageboy */,
+				E86EE195259A3C530081FE73 /* Pageboy */,
 			);
 			productName = Tabman;
 			productReference = D62AC0B21E5733810020B8AE /* Tabman.framework */;
@@ -608,7 +608,7 @@
 			);
 			mainGroup = D62AC0A81E5733810020B8AE;
 			packageReferences = (
-				465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */,
+				E86EE194259A3C530081FE73 /* XCRemoteSwiftPackageReference "Pageboy" */,
 			);
 			productRefGroup = D62AC0B31E5733810020B8AE /* Products */;
 			projectDirPath = "";
@@ -1023,20 +1023,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */ = {
+		E86EE194259A3C530081FE73 /* XCRemoteSwiftPackageReference "Pageboy" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uias/Pageboy";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.1;
+				branch = "feature/infinite-scroll-behavior";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		465F976D2529C375003A5AEE /* Pageboy */ = {
+		E86EE195259A3C530081FE73 /* Pageboy */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 465F976C2529C375003A5AEE /* XCRemoteSwiftPackageReference "Pageboy" */;
+			package = E86EE194259A3C530081FE73 /* XCRemoteSwiftPackageReference "Pageboy" */;
 			productName = Pageboy;
 		};
 /* End XCSwiftPackageProductDependency section */

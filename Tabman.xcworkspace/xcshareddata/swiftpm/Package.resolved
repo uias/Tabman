@@ -5,9 +5,9 @@
         "package": "Pageboy",
         "repositoryURL": "https://github.com/uias/Pageboy",
         "state": {
-          "branch": null,
-          "revision": "34ecb6e7c4e0e07494960ab2f7cc9a02293915a6",
-          "version": "3.6.2"
+          "branch": "feature/infinite-scroll-behavior",
+          "revision": "151a48da38277144ff9371d30de841d7f30f7fe6",
+          "version": null
         }
       }
     ]
