@@ -82,6 +82,10 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
             bars.forEach({ $0.isInfinite = isInfiniteScrollEnabled })
         }
     }
+    @available(*, unavailable)
+    open override var normalizesInfiniteScrollPositions: Bool {
+        didSet {}
+    }
     
     // MARK: Init
     
@@ -97,6 +101,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     private func commonInit() {
         super.delegate = self
+        super.normalizesInfiniteScrollPositions = false
     }
     
     // MARK: Lifecycle
