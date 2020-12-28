@@ -41,7 +41,7 @@ internal struct TMBarViewFocusRect {
         self.rect = rect
         self.maxRect = maxRect
         self.position = position
-        self.capacity = CGFloat(capacity - 1) // Rect capacity is actually zero indexed
+        self.capacity = max(0.0, CGFloat(capacity - 1)) // Rect capacity is actually zero indexed
         self.layoutDirection = layoutDirection
     }
     
