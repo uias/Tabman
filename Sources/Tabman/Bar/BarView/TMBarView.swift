@@ -345,19 +345,25 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
 
     // MARK: UIAccessibilityContainer
 
+    private var allAccessibilityElements: [UIView] {
+        let accessoryElements = AccessoryLocation.allCases.compactMap { accessoryViews[$0] }
+        let buttonElements = buttons.all.compactMap { $0 as UIView }
+        return accessoryElements + buttonElements
+    }
+
     override open func accessibilityElementCount() -> Int {
-        return buttons.all.count
+        return allAccessibilityElements.count
     }
 
     override open func accessibilityElement(at index: Int) -> Any? {
-        return buttons.all[index]
+        return allAccessibilityElements[index]
     }
 
     open override func index(ofAccessibilityElement element: Any) -> Int {
-        guard let item = element as? Button else {
+        guard let item = element as? UIView else {
             return 0
         }
-        return buttons.all.firstIndex(of: item) ?? 0
+        return allAccessibilityElements.firstIndex(where: { $0 === item }) ?? 0
     }
 }
 
@@ -563,7 +569,7 @@ extension TMBarView: TMBarButtonInteractionHandler, GestureScrollViewGestureDele
 // MARK: - Accessory View Management
 private extension TMBarView {
 
-    enum AccessoryLocation: String {
+    enum AccessoryLocation: String, CaseIterable {
         case leading
         case leadingPinned
         case trailing
