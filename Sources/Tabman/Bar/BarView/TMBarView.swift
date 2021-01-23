@@ -327,7 +327,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     // MARK: UIAccessibilityContainer
 
     private var allAccessibilityElements: [UIView] {
-        let accessoryElements = AccessoryLocation.allCases.compactMap { accessoryViews[$0] }
+        let accessoryElements = TMBarAccessoryView.Location.allCases.compactMap { accessoryViews[$0] }
         let buttonElements = buttons.all.compactMap { $0 as UIView }
         return accessoryElements + buttonElements
     }
