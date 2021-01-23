@@ -478,21 +478,21 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 348,
+      "line": 354,
       "symbol": "TMBarView.accessibilityElementCount()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 352,
+      "line": 358,
       "symbol": "TMBarView.accessibilityElement(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 356,
+      "line": 362,
       "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
