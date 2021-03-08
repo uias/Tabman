@@ -17,7 +17,7 @@ open class TMLabelBarButton: TMBarButton {
     
     private struct Defaults {
         static let contentInset = UIEdgeInsets(top: 12.0, left: 0.0, bottom: 12.0, right: 0.0)
-        static let font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+        static let font = UIFont.preferredFont(forTextStyle: .headline)
         static let text = "Item"
         static let badgeLeadingInset: CGFloat = 8.0
     }
@@ -102,6 +102,18 @@ open class TMLabelBarButton: TMBarButton {
                 return
             }
             label.font = selectedFont
+        }
+    }
+    /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
+    ///
+    /// Defaults to `false`.
+    @available(iOS 11, *)
+    open var adjustsFontForContentSizeCategory: Bool {
+        get {
+            label.adjustsFontForContentSizeCategory
+        }
+        set {
+            label.adjustsFontForContentSizeCategory = newValue
         }
     }
     

@@ -39,11 +39,7 @@ internal class AnimateableLabel: UIView {
     }
     var font: UIFont? {
         didSet {
-            textLayer.font = font
-            textLayer.fontSize = font?.pointSize ?? 17.0
-            invalidateIntrinsicContentSize()
-            superview?.setNeedsLayout()
-            superview?.layoutIfNeeded()
+            reloadTextLayerForCurrentFont()
         }
     }
     var textAlignment: NSTextAlignment? {
@@ -52,29 +48,70 @@ internal class AnimateableLabel: UIView {
         }
     }
     
+    private var _adjustsFontForContentSizeCategory = false
+    /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
+    ///
+    /// Defaults to `false`.
+    @available(iOS 11, *)
+    var adjustsFontForContentSizeCategory: Bool {
+        get {
+            _adjustsFontForContentSizeCategory
+        }
+        set {
+            _adjustsFontForContentSizeCategory = newValue
+            reloadTextLayerForCurrentFont()
+        }
+    }
+    
     // MARK: Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        commonInit()
     }
     
-    private func initialize() {
+    private func commonInit() {
         
         textLayer.truncationMode = .end
         textLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(textLayer)
     }
     
+    // MARK: Lifecycle
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         textLayer.frame = bounds
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if #available(iOS 10, *) {
+            guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else {
+                return
+            }
+            reloadTextLayerForCurrentFont()
+        }
+    }
+    
+    private func reloadTextLayerForCurrentFont() {
+        if #available(iOS 11, *), adjustsFontForContentSizeCategory, let font = font, let textStyle = font.fontDescriptor.object(forKey: .textStyle) as? UIFont.TextStyle {
+            let font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
+            textLayer.font = font
+            textLayer.fontSize = font.pointSize
+        } else {
+            textLayer.font = font
+            textLayer.fontSize = font?.pointSize ?? 17.0
+        }
+        invalidateIntrinsicContentSize()
+        superview?.setNeedsLayout()
+        superview?.layoutIfNeeded()
     }
 }
 

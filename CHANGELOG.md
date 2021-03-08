@@ -36,6 +36,14 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.11.0](https://github.com/uias/Tabman/releases/tag/2.11.0)
+Released on 2021-03-XX
+
+#### Added
+- Support for Dynamic Type to `TMLabelBarButton` with `adjustsFontForContentSizeCategory`.
+- Support for Dynamic Type to `TMTabItemBarButton` with `adjustsFontForContentSizeCategory`.
+
+---
 ## [2.10.0](https://github.com/uias/Tabman/releases/tag/2.10.0)
 Released on 2021-01-23
 

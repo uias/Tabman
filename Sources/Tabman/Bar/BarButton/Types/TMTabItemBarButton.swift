@@ -69,6 +69,18 @@ open class TMTabItemBarButton: TMBarButton {
             label.font = font
         }
     }
+    /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
+    ///
+    /// Defaults to `false`.
+    @available(iOS 11, *)
+    open var adjustsFontForContentSizeCategory: Bool {
+        get {
+            label.adjustsFontForContentSizeCategory
+        }
+        set {
+            label.adjustsFontForContentSizeCategory = newValue
+        }
+    }
     /// Content Mode for the image view.
     open var imageContentMode: UIView.ContentMode {
         get {
@@ -92,7 +104,7 @@ open class TMTabItemBarButton: TMBarButton {
         }
     }
     
-    // MARK: Lifecycle
+    // MARK: Init
 
     public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         super.init(for: item, intrinsicSuperview: intrinsicSuperview)
@@ -105,6 +117,8 @@ open class TMTabItemBarButton: TMBarButton {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: Lifecycle
     
     open override func layout(in view: UIView) {
         super.layout(in: view)
@@ -263,13 +277,17 @@ open class TMTabItemBarButton: TMBarButton {
             ])
         
         // Label / Image
+        let labelTrailing = container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding)
+        labelTrailing.priority = .init(999)
+        let imageViewLeading = imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: imagePadding)
+        imageViewLeading.priority = .init(999)
         constraints.append(contentsOf: [
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
             imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: imagePadding),
+            imageViewLeading,
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
             label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: labelPadding),
-            container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
+            labelTrailing,
             label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
             ])
         
@@ -288,9 +306,9 @@ extension TMTabItemBarButton {
     private func defaultFont(for device: UIDevice) -> UIFont {
         switch device.userInterfaceIdiom {
         case .pad:
-            return UIFont.systemFont(ofSize: 14.0, weight: .medium)
+            return UIFont.preferredFont(forTextStyle: .caption1)
         default:
-            return UIFont.systemFont(ofSize: 10.0, weight: .medium)
+            return UIFont.preferredFont(forTextStyle: .caption2)
         }
     }
 }
