@@ -277,13 +277,17 @@ open class TMTabItemBarButton: TMBarButton {
             ])
         
         // Label / Image
+        let labelTrailing = container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding)
+        labelTrailing.priority = .init(999)
+        let imageViewLeading = imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: imagePadding)
+        imageViewLeading.priority = .init(999)
         constraints.append(contentsOf: [
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
             imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor, constant: imagePadding),
+            imageViewLeading,
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
             label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: labelPadding),
-            container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
+            labelTrailing,
             label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
             ])
         
