@@ -302,9 +302,9 @@ extension TMTabItemBarButton {
     private func defaultFont(for device: UIDevice) -> UIFont {
         switch device.userInterfaceIdiom {
         case .pad:
-            return UIFont.systemFont(ofSize: 14.0, weight: .medium)
+            return UIFont.preferredFont(forTextStyle: .caption1)
         default:
-            return UIFont.systemFont(ofSize: 10.0, weight: .medium)
+            return UIFont.preferredFont(forTextStyle: .caption2)
         }
     }
 }
