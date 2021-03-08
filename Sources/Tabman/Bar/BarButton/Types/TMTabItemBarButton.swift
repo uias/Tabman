@@ -69,6 +69,18 @@ open class TMTabItemBarButton: TMBarButton {
             label.font = font
         }
     }
+    /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
+    ///
+    /// Defaults to `false`.
+    @available(iOS 10, *)
+    open var adjustsFontForContentSizeCategory: Bool {
+        get {
+            label.adjustsFontForContentSizeCategory
+        }
+        set {
+            label.adjustsFontForContentSizeCategory = newValue
+        }
+    }
     /// Content Mode for the image view.
     open var imageContentMode: UIView.ContentMode {
         get {
@@ -92,7 +104,7 @@ open class TMTabItemBarButton: TMBarButton {
         }
     }
     
-    // MARK: Lifecycle
+    // MARK: Init
 
     public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         super.init(for: item, intrinsicSuperview: intrinsicSuperview)
@@ -105,6 +117,8 @@ open class TMTabItemBarButton: TMBarButton {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: Lifecycle
     
     open override func layout(in view: UIView) {
         super.layout(in: view)

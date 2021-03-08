@@ -104,6 +104,18 @@ open class TMLabelBarButton: TMBarButton {
             label.font = selectedFont
         }
     }
+    /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
+    ///
+    /// Defaults to `false`.
+    @available(iOS 10, *)
+    open var adjustsFontForContentSizeCategory: Bool {
+        get {
+            label.adjustsFontForContentSizeCategory
+        }
+        set {
+            label.adjustsFontForContentSizeCategory = newValue
+        }
+    }
     
     /// How to vertically align the label within the button. Defaults to `.center`.
     ///
