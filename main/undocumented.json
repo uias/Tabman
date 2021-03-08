@@ -121,28 +121,28 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 184,
+      "line": 196,
       "symbol": "TMLabelBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 192,
+      "line": 204,
       "symbol": "TMLabelBarButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 105,
+      "line": 117,
       "symbol": "TMTabItemBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 140,
+      "line": 154,
       "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
