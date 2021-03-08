@@ -45,6 +45,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         bar.buttons.customize {
             $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
             $0.selectedTintColor = .tabmanForeground
+            $0.font = UIFont.preferredFont(forTextStyle: .headline)
+            if #available(iOS 10, *) {
+                $0.adjustsFontForContentSizeCategory = true
+            }
         }
         bar.indicator.tintColor = .tabmanForeground
         
