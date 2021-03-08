@@ -56,21 +56,22 @@ internal class AnimateableLabel: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        commonInit()
     }
     
-    private func initialize() {
+    private func commonInit() {
         
         textLayer.truncationMode = .end
         textLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(textLayer)
     }
     
+    // MARK: Lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
         
