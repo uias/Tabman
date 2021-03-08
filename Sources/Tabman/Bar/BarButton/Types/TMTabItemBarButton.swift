@@ -72,7 +72,7 @@ open class TMTabItemBarButton: TMBarButton {
     /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
     ///
     /// Defaults to `false`.
-    @available(iOS 10, *)
+    @available(iOS 11, *)
     open var adjustsFontForContentSizeCategory: Bool {
         get {
             label.adjustsFontForContentSizeCategory

@@ -52,7 +52,7 @@ internal class AnimateableLabel: UIView {
     /// A Boolean that indicates whether the object automatically updates its font when the device's content size category changes.
     ///
     /// Defaults to `false`.
-    @available(iOS 10, *)
+    @available(iOS 11, *)
     var adjustsFontForContentSizeCategory: Bool {
         get {
             _adjustsFontForContentSizeCategory
