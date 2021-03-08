@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
+- `2.11.x` Releases - [2.11.0](#2110)
 - `2.10.x` Releases - [2.10.0](#2100)
 - `2.9.x` Releases - [2.9.0](#290) | [2.9.1](#291)
 - `2.8.x` Releases - [2.8.0](#280) | [2.8.1](#281) | [2.8.2](#282)
@@ -37,7 +38,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 ## [2.11.0](https://github.com/uias/Tabman/releases/tag/2.11.0)
-Released on 2021-03-XX
+Released on 2021-03-08
 
 #### Added
 - Support for Dynamic Type to `TMLabelBarButton` with `adjustsFontForContentSizeCategory`.
