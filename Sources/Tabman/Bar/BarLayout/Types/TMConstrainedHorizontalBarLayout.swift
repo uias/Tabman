@@ -75,10 +75,13 @@ private extension TMConstrainedHorizontalBarLayout {
         }
         
         var constraints = [NSLayoutConstraint]()
-        let multiplier = 1.0 / CGFloat(min(maximumCount, views.count))
-        for view in views {
+        let itemViews = views.filter { !($0 is SeparatorView) }
+        let multiplier = 1.0 / CGFloat(min(maximumCount, itemViews.count))
+        let separatorWidth = self.separatorWidth ?? 0
+        for view in itemViews {
             constraints.append(view.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor,
-                                                           multiplier: multiplier))
+                                                           multiplier: multiplier,
+                                                           constant: -separatorWidth))
         }
         NSLayoutConstraint.activate(constraints)
         self.viewWidthConstraints = constraints
