@@ -27,6 +27,7 @@ open class TMTabItemBarButton: TMBarButton {
     private let container = UIView()
     private let label = AnimateableLabel()
     private let imageView = UIImageView()
+    private let selectedImageView = UIImageView()
     
     private var imageWidth: NSLayoutConstraint!
     private var imageHeight: NSLayoutConstraint!
@@ -38,6 +39,7 @@ open class TMTabItemBarButton: TMBarButton {
     /// Tint color of the button when unselected / normal.
     open override var tintColor: UIColor! {
         didSet {
+            imageView.tintColor = tintColor
             if !isSelected {
                 imageView.tintColor = tintColor
                 label.textColor = tintColor
@@ -47,8 +49,8 @@ open class TMTabItemBarButton: TMBarButton {
     /// Tint color of the button when selected.
     open var selectedTintColor: UIColor! {
         didSet {
+            selectedImageView.tintColor = selectedTintColor
             if isSelected {
-                imageView.tintColor = selectedTintColor
                 label.textColor = selectedTintColor
             }
         }
@@ -88,6 +90,7 @@ open class TMTabItemBarButton: TMBarButton {
         }
         set {
             imageView.contentMode = newValue
+            selectedImageView.contentMode = newValue
         }
     }
     /// Whether to shrink the image view when unselected.
@@ -125,10 +128,12 @@ open class TMTabItemBarButton: TMBarButton {
         
         view.addSubview(container)
         container.addSubview(imageView)
+        container.addSubview(selectedImageView)
         container.addSubview(label)
         
         container.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        selectedImageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -176,19 +181,20 @@ open class TMTabItemBarButton: TMBarButton {
         
         label.text = item.title
         imageView.image = item.image
+        selectedImageView.image = item.selectedImage ?? item.image
     }
     
     open override func update(for selectionState: TMBarButton.SelectionState) {
         super.update(for: selectionState)
         
-        let transitionColor = tintColor.interpolate(with: selectedTintColor,
-                                                percent: selectionState.rawValue)
-        imageView.tintColor = transitionColor
-        label.textColor = transitionColor
+        selectedImageView.alpha = selectionState.rawValue
+        imageView.alpha = 1 - selectionState.rawValue
+        label.textColor = tintColor.interpolate(with: selectedTintColor, percent: selectionState.rawValue)
         
         if shrinksImageWhenUnselected {
             let interpolatedScale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.shrunkenImageScale))
             imageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
+            selectedImageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
         }
     }
     
@@ -243,11 +249,17 @@ open class TMTabItemBarButton: TMBarButton {
             ])
         
         // Label / Image
+        let labelViewLeading = label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: labelPadding)
+        labelViewLeading.priority = .init(999)
         constraints.append(contentsOf: [
             imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: imagePadding),
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
+            selectedImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            selectedImageView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            selectedImageView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+            selectedImageView.heightAnchor.constraint(equalTo: imageView.heightAnchor),
             container.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: imagePadding),
-            label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: labelPadding),
+            labelViewLeading,
             label.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor, constant: labelPadding),
             container.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: labelPadding),
             container.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor, constant: labelPadding),
@@ -284,6 +296,10 @@ open class TMTabItemBarButton: TMBarButton {
         constraints.append(contentsOf: [
             imageView.topAnchor.constraint(equalTo: container.topAnchor, constant: imagePadding),
             imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            selectedImageView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            selectedImageView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            selectedImageView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+            selectedImageView.heightAnchor.constraint(equalTo: imageView.heightAnchor),
             imageViewLeading,
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Defaults.labelTopPadding),
             label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: labelPadding),

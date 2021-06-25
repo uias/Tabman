@@ -16,6 +16,7 @@
 		46B4877B2529C6FE007CCFF2 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */; };
 		46B4877F2529C9DB007CCFF2 /* GradientBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4877E2529C9DB007CCFF2 /* GradientBackgroundViewController.swift */; };
 		46B487832529CBE6007CCFF2 /* UIColor+Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B487822529CBE6007CCFF2 /* UIColor+Tabman.swift */; };
+		840F58D126867B09008FE109 /* BarButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F58D026867B09008FE109 /* BarButtonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		46B4877E2529C9DB007CCFF2 /* GradientBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundViewController.swift; sourceTree = "<group>"; };
 		46B487822529CBE6007CCFF2 /* UIColor+Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Tabman.swift"; sourceTree = "<group>"; };
+		840F58D026867B09008FE109 /* BarButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				46B487612529C556007CCFF2 /* AppDelegate.swift */,
 				46B487652529C556007CCFF2 /* TabViewController.swift */,
+				840F58D026867B09008FE109 /* BarButtonViewController.swift */,
 				46B4877A2529C6FE007CCFF2 /* ChildViewController.swift */,
 				46B4877D2529C9CD007CCFF2 /* Extras */,
 				46B487792529C5C1007CCFF2 /* Resources */,
@@ -197,6 +200,7 @@
 				46B487662529C556007CCFF2 /* TabViewController.swift in Sources */,
 				46B487832529CBE6007CCFF2 /* UIColor+Tabman.swift in Sources */,
 				46B487622529C556007CCFF2 /* AppDelegate.swift in Sources */,
+				840F58D126867B09008FE109 /* BarButtonViewController.swift in Sources */,
 				46B4877B2529C6FE007CCFF2 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

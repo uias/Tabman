@@ -27,6 +27,9 @@ public protocol TMBarItemable: class {
     /// you must use the `.alwaysTemplate` image rendering mode.
     var image: UIImage? { get set }
     
+    /// Image for the selected state.
+    var selectedImage: UIImage? { get set }
+    
     /// Badge value to display.
     var badgeValue: String? { get set }
 
@@ -82,7 +85,14 @@ open class TMBarItem: TMBarItemable {
             setNeedsUpdate()
         }
     }
+    
     open var image: UIImage?  {
+        didSet {
+            setNeedsUpdate()
+        }
+    }
+    
+    open var selectedImage: UIImage?  {
         didSet {
             setNeedsUpdate()
         }
@@ -116,7 +126,7 @@ open class TMBarItem: TMBarItemable {
     ///   - title: Title of the item.
     ///   - badgeValue: Badge value to display.
     public convenience init(title: String, badgeValue: String? = nil) {
-        self.init(with: title, image: nil, badgeValue: badgeValue)
+        self.init(with: title, image: nil, selectedImage: nil, badgeValue: badgeValue)
     }
     
     /// Create an Item with an image.
@@ -125,7 +135,17 @@ open class TMBarItem: TMBarItemable {
     ///   - image: Image of the item.
     ///   - badgeValue: Badge value to display.
     public convenience init(image: UIImage, badgeValue: String? = nil) {
-        self.init(with: nil, image: image, badgeValue: badgeValue)
+        self.init(with: nil, image: image, selectedImage: nil, badgeValue: badgeValue)
+    }
+    
+    /// Create an Item with an image.
+    ///
+    /// - Parameters:
+    ///   - image: Image of the item.
+    ///   - selectedImage: Image of the item for selected state.
+    ///   - badgeValue: Badge value to display.
+    public convenience init(image: UIImage, selectedImage: UIImage, badgeValue: String? = nil) {
+        self.init(with: nil, image: image, selectedImage: nil, badgeValue: badgeValue)
     }
     
     /// Create an Item with a title and an image.
@@ -135,12 +155,24 @@ open class TMBarItem: TMBarItemable {
     ///   - image: Image of the item.
     ///   - badgeValue: Badge value to display.
     public convenience init(title: String, image: UIImage, badgeValue: String? = nil) {
-        self.init(with: title, image: image, badgeValue: badgeValue)
+        self.init(with: title, image: image, selectedImage: nil, badgeValue: badgeValue)
     }
     
-    private init(with title: String?, image: UIImage?, badgeValue: String?) {
+    /// Create an Item with a title and an image.
+    ///
+    /// - Parameters:
+    ///   - title: Title of the item.
+    ///   - image: Image of the item.
+    ///   - selectedImage: Image of the item for selected state.
+    ///   - badgeValue: Badge value to display.
+    public convenience init(title: String, image: UIImage, selectedImage: UIImage, badgeValue: String? = nil) {
+        self.init(with: title, image: image, selectedImage: selectedImage, badgeValue: badgeValue)
+    }
+    
+    private init(with title: String?, image: UIImage?, selectedImage: UIImage?, badgeValue: String?) {
         self.title = title
         self.image = image
+        self.selectedImage = selectedImage
         self.badgeValue = badgeValue
     }
 }
