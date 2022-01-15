@@ -23,11 +23,13 @@ public protocol TMBarItemable: AnyObject {
     var title: String? { get set }
     /// Image to display.
     ///
-    /// - Note: If you want the image to be colored by tint colors when within a `TMBar`,
-    /// you must use the `.alwaysTemplate` image rendering mode.
+    /// - Note: If you want the image to be colored by tint colors when within a `TMBar`, you must use the `.alwaysTemplate` image rendering mode.
+    /// - Warning: The usage of this property is dependent on the type of `TMBarButton` within the bar.
     var image: UIImage? { get set }
     
     /// Image for the selected state.
+    ///
+    /// - Warning: The usage of this property is dependent on the type of `TMBarButton` within the bar.
     var selectedImage: UIImage? { get set }
     
     /// Badge value to display.
@@ -133,19 +135,10 @@ open class TMBarItem: TMBarItemable {
     ///
     /// - Parameters:
     ///   - image: Image of the item.
+    ///   - selectedImage: Image of the item when selected.
     ///   - badgeValue: Badge value to display.
-    public convenience init(image: UIImage, badgeValue: String? = nil) {
-        self.init(with: nil, image: image, selectedImage: nil, badgeValue: badgeValue)
-    }
-    
-    /// Create an Item with an image.
-    ///
-    /// - Parameters:
-    ///   - image: Image of the item.
-    ///   - selectedImage: Image of the item for selected state.
-    ///   - badgeValue: Badge value to display.
-    public convenience init(image: UIImage, selectedImage: UIImage, badgeValue: String? = nil) {
-        self.init(with: nil, image: image, selectedImage: nil, badgeValue: badgeValue)
+    public convenience init(image: UIImage, selectedImage: UIImage? = nil, badgeValue: String? = nil) {
+        self.init(with: nil, image: image, selectedImage: selectedImage, badgeValue: badgeValue)
     }
     
     /// Create an Item with a title and an image.
@@ -153,19 +146,9 @@ open class TMBarItem: TMBarItemable {
     /// - Parameters:
     ///   - title: Title of the item.
     ///   - image: Image of the item.
+    ///   - selectedImage: Image of the item when selected.
     ///   - badgeValue: Badge value to display.
-    public convenience init(title: String, image: UIImage, badgeValue: String? = nil) {
-        self.init(with: title, image: image, selectedImage: nil, badgeValue: badgeValue)
-    }
-    
-    /// Create an Item with a title and an image.
-    ///
-    /// - Parameters:
-    ///   - title: Title of the item.
-    ///   - image: Image of the item.
-    ///   - selectedImage: Image of the item for selected state.
-    ///   - badgeValue: Badge value to display.
-    public convenience init(title: String, image: UIImage, selectedImage: UIImage, badgeValue: String? = nil) {
+    public convenience init(title: String, image: UIImage, selectedImage: UIImage? = nil, badgeValue: String? = nil) {
         self.init(with: title, image: image, selectedImage: selectedImage, badgeValue: badgeValue)
     }
     
