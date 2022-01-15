@@ -1,15 +1,15 @@
 //
-//  TabViewController.swift
-//  Example
+//  TabItemBarExampleViewController.swift
+//  Example iOS
 //
-//  Created by Merrick Sapsford on 04/10/2020.
+//  Created by Divyesh Makwana on 6/25/21.
 //
 
 import UIKit
 import Tabman
 import Pageboy
 
-class TabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
+class TabItemBarExampleViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
 
     // MARK: Properties
     
@@ -31,14 +31,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         dataSource = self
         
         // Create a bar
-        let bar = TMBarView.ButtonBar()
+        let bar = TMBarView<TMConstrainedHorizontalBarLayout, TMTabItemBarButton, TMBarIndicator.None>()
         
         // Customize bar properties including layout and other styling.
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
-        bar.layout.interButtonSpacing = 24.0
-        bar.indicator.weight = .light
-        bar.indicator.cornerStyle = .eliptical
-        bar.fadesContentEdges = true
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 4.0, right: 8.0)
         bar.spacing = 16.0
         
         // Set tint colors for the bar buttons and indicator.
@@ -72,6 +68,27 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     // MARK: TMBarDataSource
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        return TMBarItem(title: "Page No. \(index + 1)") // Item to display for a specific index in the bar.
+        return TMBarItem(title: "Page No. \(index + 1)", image: UIImage.star ?? UIImage(), selectedImage: UIImage.starFilled ?? UIImage())
+    }
+}
+
+
+// MARK: - Star Image Extensions
+extension UIImage {
+    
+    class var star: UIImage? {
+        if #available(iOS 13.0, *) {
+            return UIImage(systemName: "star")
+        } else {
+            return nil
+        }
+    }
+    
+    class var starFilled: UIImage? {
+        if #available(iOS 13.0, *) {
+            return UIImage(systemName: "star.fill")
+        } else {
+            return nil
+        }
     }
 }

@@ -1,15 +1,15 @@
 //
-//  BarButtonViewController.swift
-//  Example iOS
+//  ButtonBarExampleViewController.swift
+//  Example
 //
-//  Created by Divyesh Makwana on 6/25/21.
+//  Created by Merrick Sapsford on 04/10/2020.
 //
 
 import UIKit
 import Tabman
 import Pageboy
 
-class BarButtonViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
+class ButtonBarExampleViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
 
     // MARK: Properties
     
@@ -31,10 +31,11 @@ class BarButtonViewController: TabmanViewController, PageboyViewControllerDataSo
         dataSource = self
         
         // Create a bar
-        let bar = TMBarView<TMConstrainedHorizontalBarLayout, TMTabItemBarButton, TMLineBarIndicator>()
+        let bar = TMBarView.ButtonBar()
         
         // Customize bar properties including layout and other styling.
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 4.0, right: 16.0)
+        bar.layout.interButtonSpacing = 24.0
         bar.indicator.weight = .light
         bar.indicator.cornerStyle = .eliptical
         bar.fadesContentEdges = true
@@ -71,27 +72,6 @@ class BarButtonViewController: TabmanViewController, PageboyViewControllerDataSo
     // MARK: TMBarDataSource
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-        return TMBarItem(title: "Page No. \(index + 1)", image: UIImage.star ?? UIImage(), selectedImage: UIImage.starFilled ?? UIImage())
-    }
-}
-
-
-// MARK: - Star Image Extensions
-extension UIImage {
-    
-    class var star: UIImage? {
-        if #available(iOS 13.0, *) {
-            return UIImage(systemName: "star")
-        } else {
-            return nil
-        }
-    }
-    
-    class var starFilled: UIImage? {
-        if #available(iOS 13.0, *) {
-            return UIImage(systemName: "star.fill")
-        } else {
-            return nil
-        }
+        return TMBarItem(title: "Page No. \(index + 1)") // Item to display for a specific index in the bar.
     }
 }
