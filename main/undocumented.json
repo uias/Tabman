@@ -373,7 +373,7 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarItem/TMBarItem.swift",
-      "line": 119,
+      "line": 121,
       "symbol": "TMBarItem.isAccessibilityElement",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
