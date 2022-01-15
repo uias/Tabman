@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
+- `2.12.x` Releases - [2.12.0](#2120)
 - `2.11.x` Releases - [2.11.0](#2110) | [2.11.1](#2111)
 - `2.10.x` Releases - [2.10.0](#2100)
 - `2.9.x` Releases - [2.9.0](#290) | [2.9.1](#291)
@@ -37,6 +38,17 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.12.0](https://github.com/uias/Tabman/releases/tag/2.12.0)
+Released on 2022-01-15
+
+#### Added
+- [#580](https://github.com/uias/Tabman/pull/580) Support for `selectedImage` to `TMTabItemBarButton` and `TMBarItem`.
+     - by [divyeshmakwana96](https://github.com/divyeshmakwana96)
+
+#### Fixed
+- [#584](https://github.com/uias/Tabman/pull/584) Buttons incorrectly setting selected state on interactive scroll.
+     - by [nikitapankiv](https://github.com/nikitapankiv)
+
 ## [2.11.1](https://github.com/uias/Tabman/releases/tag/2.11.1)
 Released on 2021-03-30
 
