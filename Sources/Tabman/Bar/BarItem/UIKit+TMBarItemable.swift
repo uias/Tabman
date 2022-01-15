@@ -20,6 +20,13 @@ extension UINavigationItem: TMBarItemable {
         set {}
     }
     
+    public var selectedImage: UIImage? {
+        get {
+            return nil
+        }
+        set {}
+    }
+    
     public var badgeValue: String? {
         get {
             return nil
