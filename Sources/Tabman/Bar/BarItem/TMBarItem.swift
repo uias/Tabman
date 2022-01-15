@@ -17,7 +17,7 @@ internal let TMBarItemableNeedsUpdateNotification = Notification.Name(rawValue: 
 /// Tabman adds extensions to UIKit components to natively support `TMBarItemable`, such as `UINavigationItem` and
 /// `UITabBarItem`. Therefore for example, simply returning a `UIViewController` `navigationItem` as a `TMBarItemable` is
 /// fully supported.
-public protocol TMBarItemable: class {
+public protocol TMBarItemable: AnyObject {
     
     /// Title of the item.
     var title: String? { get set }

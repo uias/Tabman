@@ -9,7 +9,7 @@
 import UIKit
 
 /// Object that provides layout guides for bar layout insets.
-internal protocol TMBarLayoutInsetGuides: class {
+internal protocol TMBarLayoutInsetGuides: AnyObject {
     
     /// The leading inset guide for the layout.
     var leadingInset: UILayoutGuide { get }

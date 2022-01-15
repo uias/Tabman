@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal protocol TMBarButtonInteractionHandler: class {
+internal protocol TMBarButtonInteractionHandler: AnyObject {
     
     func barButtonInteraction(controller: TMBarButtonInteractionController,
                               didHandlePressOf button: TMBarButton,

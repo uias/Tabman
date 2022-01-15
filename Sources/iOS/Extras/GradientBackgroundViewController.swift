@@ -66,7 +66,7 @@ private final class GradientView: UIView {
         return nil
     }
     
-    var colors: [UIColor]? = nil {
+    var colors: [UIColor]? {
         didSet {
             var colorRefs = [CGColor]()
             for color in colors ?? [] {
@@ -76,7 +76,7 @@ private final class GradientView: UIView {
         }
     }
     
-    var locations: [Double]? = nil {
+    var locations: [Double]? {
         didSet {
             var locationNumbers = [NSNumber]()
             for location in locations ?? [] {

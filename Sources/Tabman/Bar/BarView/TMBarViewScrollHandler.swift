@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal protocol TMBarViewScrollHandlerDelegate: class {
+internal protocol TMBarViewScrollHandlerDelegate: AnyObject {
     
     func barViewScrollHandler(_ handler: TMBarViewScrollHandler,
                               didReceiveUpdated contentOffset: CGPoint,

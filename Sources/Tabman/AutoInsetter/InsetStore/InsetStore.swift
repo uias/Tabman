@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol InsetStore: class {
+protocol InsetStore: AnyObject {
     
     func store(contentInset: UIEdgeInsets, for view: UIScrollView)
     func store(contentOffset: CGPoint, for view: UIScrollView)
