@@ -240,7 +240,7 @@ GEM
       sassc (~> 2.1)
       sqlite3 (~> 1.3)
       xcinvoke (~> 0.3.0)
-    jmespath (1.5.0)
+    jmespath (1.6.1)
     json (2.6.1)
     jwt (2.3.0)
     kramdown (2.3.1)
