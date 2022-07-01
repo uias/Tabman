@@ -21,23 +21,42 @@ internal extension UIColor {
         var greenA: CGFloat = 0.0
         var blueA: CGFloat = 0.0
         var alphaA: CGFloat = 0.0
-        guard colorA.getRed(&redA, green: &greenA, blue: &blueA, alpha: &alphaA) else {
-            return nil
-        }
         
         var redB: CGFloat = 0.0
         var greenB: CGFloat = 0.0
         var blueB: CGFloat = 0.0
         var alphaB: CGFloat = 0.0
-        guard colorB.getRed(&redB, green: &greenB, blue: &blueB, alpha: &alphaB) else {
-            return nil
+        
+        var iRed: CGFloat { CGFloat(redA + percent * (redB - redA)) }
+        var iBlue: CGFloat { CGFloat(blueA + percent * (blueB - blueA)) }
+        var iGreen: CGFloat { CGFloat(greenA + percent * (greenB - greenA)) }
+        var iAlpha: CGFloat { CGFloat(alphaA + percent * (alphaB - alphaA)) }
+        var interpolatedColor: UIColor { UIColor(red: iRed, green: iGreen, blue: iBlue, alpha: iAlpha) }
+        
+        if #available(iOS 13, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                traitCollection.performAsCurrent {
+                    guard colorA.getRed(&redA, green: &greenA, blue: &blueA, alpha: &alphaA) else {
+                        return
+                    }
+                    
+                    guard colorB.getRed(&redB, green: &greenB, blue: &blueB, alpha: &alphaB) else {
+                        return
+                    }
+                }
+                
+                return interpolatedColor
+            })
+        } else {
+            guard colorA.getRed(&redA, green: &greenA, blue: &blueA, alpha: &alphaA) else {
+                return nil
+            }
+            
+            guard colorB.getRed(&redB, green: &greenB, blue: &blueB, alpha: &alphaB) else {
+                return nil
+            }
+            
+            return interpolatedColor
         }
-        
-        let iRed = CGFloat(redA + percent * (redB - redA))
-        let iBlue = CGFloat(blueA + percent * (blueB - blueA))
-        let iGreen = CGFloat(greenA + percent * (greenB - greenA))
-        let iAlpha = CGFloat(alphaA + percent * (alphaB - alphaA))
-        
-        return UIColor(red: iRed, green: iGreen, blue: iBlue, alpha: iAlpha)
     }
 }
