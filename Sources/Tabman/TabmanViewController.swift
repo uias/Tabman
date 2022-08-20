@@ -71,20 +71,25 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     private var barLayoutGuideTop: NSLayoutConstraint?
     private var barLayoutGuideBottom: NSLayoutConstraint?
     
+    @available(*, unavailable)
+    open override var delegate: PageboyViewControllerDelegate? {
+        didSet {}
+    }
+    
     // MARK: Init
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        initialize()
+        commonInit()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initialize()
+        commonInit()
     }
     
-    private func initialize() {
-        delegate = self
+    private func commonInit() {
+        super.delegate = self
     }
     
     // MARK: Lifecycle
