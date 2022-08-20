@@ -112,7 +112,9 @@ open class TMTabItemBarButton: TMBarButton {
     public required init(for item: TMBarItemable, intrinsicSuperview: UIView?) {
         super.init(for: item, intrinsicSuperview: intrinsicSuperview)
 
-        if #available(iOS 13.0, *) {
+        // On iOS 13 the system dynamically adjusts tab bar item layouts based on orientation -
+        // Tabman mimics this here.
+        if #available(iOS 13, *) {
             makeComponentConstraints(for: UIDevice.current.orientation)
         }
     }

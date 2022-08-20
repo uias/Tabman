@@ -22,7 +22,7 @@
 - Automatically insets child view controller contents.
 
 ## 📋 Requirements
-Tabman requires iOS 9 or above; and is compatibile with Swift 5.
+Tabman requires iOS 11 or above; and is compatibile with Swift 5.
 
 ## 📲 Installation
 
@@ -40,7 +40,7 @@ pod 'Tabman', '~> 2.13'
 Tabman is also available through [Carthage](https://github.com/Carthage/Carthage):
 
 ```ogdl
-github "uias/Tabman" ~> 2.13
+github "uias/Tabman" ~> 3.0
 ```
 
 ## 🚀 Usage
