@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Pageboy",
-        "repositoryURL": "https://github.com/uias/Pageboy",
-        "state": {
-          "branch": null,
-          "revision": "34ecb6e7c4e0e07494960ab2f7cc9a02293915a6",
-          "version": "3.6.2"
-        }
+  "pins" : [
+    {
+      "identity" : "pageboy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Pageboy",
+      "state" : {
+        "revision" : "34ecb6e7c4e0e07494960ab2f7cc9a02293915a6",
+        "version" : "3.6.2"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
