@@ -34,7 +34,11 @@ internal class AnimateableLabel: UIView {
         }
         set {
             let textColor = newValue ?? .black
-            textLayer.foregroundColor = textColor.cgColor
+            if #available(iOS 13, *) {
+                textLayer.foregroundColor = textColor.resolvedColor(with: traitCollection).cgColor
+            } else {
+                textLayer.foregroundColor = textColor.cgColor
+            }
         }
     }
     var font: UIFont? {
