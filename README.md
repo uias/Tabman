@@ -33,7 +33,7 @@ Tabman is compatible with [Swift Package Manager](https://swift.org/package-mana
 Tabman is also available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod 'Tabman', '~> 2.13'
+pod 'Tabman', '~> 3.0'
 ```
 
 ### Carthage
