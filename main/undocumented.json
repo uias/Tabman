@@ -135,14 +135,14 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 120,
+      "line": 122,
       "symbol": "TMTabItemBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 159,
+      "line": 161,
       "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -457,42 +457,42 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 193,
+      "line": 191,
       "symbol": "TMBarView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 199,
+      "line": 197,
       "symbol": "TMBarView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 205,
+      "line": 203,
       "symbol": "TMBarView.didMoveToWindow()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 354,
+      "line": 332,
       "symbol": "TMBarView.accessibilityElementCount()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 358,
+      "line": 336,
       "symbol": "TMBarView.accessibilityElement(at:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarView/TMBarView.swift",
-      "line": 362,
+      "line": 340,
       "symbol": "TMBarView.index(ofAccessibilityElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -568,13 +568,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController+Insets.swift",
-      "line": 55,
-      "symbol": "TabmanViewController.Insets.makeSafeAreaInsets(for:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
       "line": 28,
       "symbol": "TabmanViewController.BarLocation.top",
@@ -604,28 +597,28 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 76,
+      "line": 81,
       "symbol": "TabmanViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 81,
+      "line": 86,
       "symbol": "TabmanViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 92,
+      "line": 97,
       "symbol": "TabmanViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/TabmanViewController.swift",
-      "line": 103,
+      "line": 108,
       "symbol": "TabmanViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
