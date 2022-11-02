@@ -43,9 +43,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 ## [3.0.0](https://github.com/uias/Tabman/releases/tag/3.0.0)
-Released on TBD
+Released on 2022-11-02
+
+#### Added
+- Support for Xcode 14.
 
 #### Updated
+- Tabman now requires iOS 11 or newer.
 - `delegate` is now `unavailable` on `TabmanViewController`.
 
 ---

@@ -6,12 +6,12 @@ Tabman 3 is the latest major release of Tabman; A powerful paging view controlle
 
 ## Requirements
 - iOS 11
-- Xcode 12
+- Xcode 12 or newer
 - Swift 5
 
 ## What's new
-
-TODO
+- Added support for Xcode 14.
+- Updated minimum deployment target to iOS 11.
 
 ## API Changes
 - `TabmanViewController.delegate` is now `unavailable` and can not be used.
