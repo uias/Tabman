@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Tabman",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v11)
     ],
     products: [
         .library(
@@ -13,7 +13,7 @@ let package = Package(
             targets: ["Tabman"])
     ],
     dependencies: [
-        .package(url: "https://github.com/uias/Pageboy", from: "3.6.0")
+        .package(url: "https://github.com/uias/Pageboy", from: "4.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
