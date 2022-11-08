@@ -41,9 +41,7 @@ class TabItemBarExampleViewController: TabmanViewController, PageboyViewControll
         bar.buttons.customize {
             $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
             $0.selectedTintColor = .tabmanForeground
-            if #available(iOS 11, *) {
-                $0.adjustsFontForContentSizeCategory = true
-            }
+            $0.adjustsFontForContentSizeCategory = true
         }
         bar.indicator.tintColor = .tabmanForeground
         
@@ -77,7 +75,7 @@ class TabItemBarExampleViewController: TabmanViewController, PageboyViewControll
 extension UIImage {
     
     class var star: UIImage? {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13, *) {
             return UIImage(systemName: "star")
         } else {
             return nil
@@ -85,7 +83,7 @@ extension UIImage {
     }
     
     class var starFilled: UIImage? {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13, *) {
             return UIImage(systemName: "star.fill")
         } else {
             return nil
