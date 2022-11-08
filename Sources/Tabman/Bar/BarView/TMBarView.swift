@@ -246,21 +246,23 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         constraints.append(contentsOf: [
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            view.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor)
             ])
         
         rootContentStack.axis = .horizontal
         view.addSubview(rootContentStack)
         rootContentStack.translatesAutoresizingMaskIntoConstraints = false
-        self.rootContainerTop = rootContentStack.topAnchor.constraint(equalTo: view.topAnchor)
-        self.rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContentStack.bottomAnchor)
-        NSLayoutConstraint.activate([
+        rootContainerTop = rootContentStack.topAnchor.constraint(equalTo: view.topAnchor)
+        rootContainerBottom = view.bottomAnchor.constraint(equalTo: rootContentStack.bottomAnchor)
+        constraints.append(contentsOf: [
             rootContentStack.leadingAnchor.constraint(equalTo: view.safeAreaLeadingAnchor),
             rootContainerTop,
             rootContentStack.trailingAnchor.constraint(equalTo: view.safeAreaTrailingAnchor),
             rootContainerBottom
         ])
+
+        NSLayoutConstraint.activate(constraints)
     }
 
     private func updateScrollViewContentInset() {
