@@ -43,7 +43,10 @@ All notable changes to this project will be documented in this file.
 
 ---
 ## [3.0.1](https://github.com/uias/Tabman/releases/tag/3.0.1)
-Released on 2022-
+Released on 2022-11-08
+
+#### Fixed
+- [#605](https://github.com/uias/Tabman/issues/605) Issue where `TMBarView.backgroundView` would not be visible due to broken layout constraints.
 
 ## [3.0.0](https://github.com/uias/Tabman/releases/tag/3.0.0)
 Released on 2022-11-02
