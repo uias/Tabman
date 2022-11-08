@@ -45,9 +45,7 @@ class ButtonBarExampleViewController: TabmanViewController, PageboyViewControlle
         bar.buttons.customize {
             $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
             $0.selectedTintColor = .tabmanForeground
-            if #available(iOS 11, *) {
-                $0.adjustsFontForContentSizeCategory = true
-            }
+            $0.adjustsFontForContentSizeCategory = true
         }
         bar.indicator.tintColor = .tabmanForeground
         
