@@ -15,7 +15,6 @@
 		4613CBF2214187EE000E6766 /* CGRect+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */; };
 		4613CBF421418804000E6766 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF321418804000E6766 /* UIColor+Interpolation.swift */; };
 		4613CBF821418839000E6766 /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF621418839000E6766 /* WeakContainer.swift */; };
-		4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */; };
 		46196A4E2179C7BB00B51D0F /* TMBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196A4D2179C7BB00B51D0F /* TMBarItem.swift */; };
 		46196A502179C7C800B51D0F /* UIKit+TMBarItemable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46196A4F2179C7C800B51D0F /* UIKit+TMBarItemable.swift */; };
 		462203432191EB9B008CD536 /* TMBlockBarIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462203422191EB9B008CD536 /* TMBlockBarIndicator.swift */; };
@@ -102,7 +101,6 @@
 		4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Interpolation.swift"; sourceTree = "<group>"; };
 		4613CBF321418804000E6766 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
 		4613CBF621418839000E6766 /* WeakContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
-		4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DefaultTintColor.swift"; sourceTree = "<group>"; };
 		46196A4D2179C7BB00B51D0F /* TMBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMBarItem.swift; sourceTree = "<group>"; };
 		46196A4F2179C7C800B51D0F /* UIKit+TMBarItemable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+TMBarItemable.swift"; sourceTree = "<group>"; };
 		462203422191EB9B008CD536 /* TMBlockBarIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBlockBarIndicator.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				4613CBF1214187EE000E6766 /* CGRect+Interpolation.swift */,
 				4613CBF321418804000E6766 /* UIColor+Interpolation.swift */,
-				4613CBF921418868000E6766 /* UIView+DefaultTintColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 				4670EC7E23BE09B6006FEC9B /* CollectionViewInsetCalculator.swift in Sources */,
 				464E90972188724D0096308E /* TMBarViewUpdateHandler.swift in Sources */,
 				462203432191EB9B008CD536 /* TMBlockBarIndicator.swift in Sources */,
-				4613CBFA21418868000E6766 /* UIView+DefaultTintColor.swift in Sources */,
 				4670EC7D23BE09B6006FEC9B /* ScrollViewInsetCalculator.swift in Sources */,
 				46EA239C2195DB660004E0AC /* AnimateableLabel.swift in Sources */,
 				4670EC8123BE09B6006FEC9B /* AutoInsetSpec.swift in Sources */,
