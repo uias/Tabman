@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.swift_versions = ['5.0']
   end
 
-  s.version      = "3.0.1"
+  s.version      = "3.0.2"
   s.summary      = "A powerful paging view controller with indicator bar."
   s.description  = <<-DESC
             Tabman is a highly customisable, powerful and extendable paging view controller with indicator bar.
