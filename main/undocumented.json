@@ -37,29 +37,29 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 69,
-      "symbol": "TMBadgeView.tintColorDidChange()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 83,
+      "line": 84,
       "symbol": "TMBadgeView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 88,
+      "line": 89,
       "symbol": "TMBadgeView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 129,
+      "line": 130,
       "symbol": "TMBadgeView.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
+      "line": 136,
+      "symbol": "TMBadgeView.tintColorDidChange()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -128,29 +128,43 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 196,
+      "line": 192,
       "symbol": "TMLabelBarButton.traitCollectionDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
-      "line": 204,
+      "line": 200,
       "symbol": "TMLabelBarButton.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMLabelBarButton.swift",
+      "line": 239,
+      "symbol": "TMLabelBarButton.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 122,
+      "line": 116,
       "symbol": "TMTabItemBarButton.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
-      "line": 161,
+      "line": 155,
       "symbol": "TMTabItemBarButton.traitCollectionDidChange(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Types/TMTabItemBarButton.swift",
+      "line": 197,
+      "symbol": "TMTabItemBarButton.tintColorDidChange()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -310,14 +324,21 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
-      "line": 61,
+      "line": 59,
       "symbol": "TMChevronBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
-      "line": 84,
+      "line": 80,
+      "symbol": "TMChevronBarIndicator.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMChevronBarIndicator.swift",
+      "line": 87,
       "symbol": "TMChevronBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -338,14 +359,21 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
-      "line": 54,
+      "line": 52,
       "symbol": "TMDotBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
-      "line": 77,
+      "line": 73,
+      "symbol": "TMDotBarIndicator.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMDotBarIndicator.swift",
+      "line": 80,
       "symbol": "TMDotBarIndicator.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -366,15 +394,22 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
-      "line": 76,
+      "line": 74,
       "symbol": "TMLineBarIndicator.layout(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
-      "line": 86,
+      "line": 84,
       "symbol": "TMLineBarIndicator.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarIndicator/Types/TMLineBarIndicator.swift",
+      "line": 92,
+      "symbol": "TMLineBarIndicator.tintColorDidChange()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
