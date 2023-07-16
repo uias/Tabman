@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 3.x Releases
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302)
 
 #### 2.x Releases
 - `2.13.x` Releases - [2.13.0](#2130)
@@ -42,6 +42,13 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [3.0.2](https://github.com/uias/Tabman/releases/tag/3.0.2)
+Released on 2023-07-16
+
+#### Fixed
+- [#615](https://github.com/uias/Tabman/issues/615) Issue where Tabman components would not respond to `tintColor` changes correctly.
+     - by [mlmorgan](https://github.com/mlmorgan)
+
 ## [3.0.1](https://github.com/uias/Tabman/releases/tag/3.0.1)
 Released on 2022-11-08
 
