@@ -38,9 +38,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     /// Color of the line.
     open override var tintColor: UIColor! {
-        didSet {
-            backgroundColor = tintColor
-        }
+        didSet {}
     }
     /// Weight of the line.
     ///
@@ -89,6 +87,11 @@ open class TMLineBarIndicator: TMBarIndicator {
         superview?.layoutIfNeeded()
         layer.cornerRadius = cornerStyle.cornerRadius(for: weight.rawValue,
                                                       in: bounds)
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        backgroundColor = tintColor
     }
 }
 

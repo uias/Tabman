@@ -44,9 +44,7 @@ open class TMDotBarIndicator: TMBarIndicator {
     }
     /// Color of the dot.
     open override var tintColor: UIColor! {
-        didSet {
-            dotLayer.fillColor = tintColor.cgColor
-        }
+        didSet {}
     }
     
     // MARK: Lifecycle
@@ -70,6 +68,11 @@ open class TMDotBarIndicator: TMBarIndicator {
         
         dotLayer.fillColor = tintColor.cgColor
         dotContainer.layer.addSublayer(dotLayer)
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        dotLayer.fillColor = tintColor.cgColor
     }
     
     // MARK: Layout
