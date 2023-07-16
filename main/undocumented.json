@@ -37,21 +37,28 @@
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 86,
+      "line": 69,
+      "symbol": "TMBadgeView.tintColorDidChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
+      "line": 83,
       "symbol": "TMBadgeView.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 91,
+      "line": 88,
       "symbol": "TMBadgeView.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Tabman/Tabman/Sources/Tabman/Bar/BarButton/Badge/TMBadgeView.swift",
-      "line": 132,
+      "line": 129,
       "symbol": "TMBadgeView.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
