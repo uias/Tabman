@@ -38,13 +38,7 @@ open class TMTabItemBarButton: TMBarButton {
     
     /// Tint color of the button when unselected / normal.
     open override var tintColor: UIColor! {
-        didSet {
-            imageView.tintColor = tintColor
-            if !isSelected {
-                imageView.tintColor = tintColor
-                label.textColor = tintColor
-            }
-        }
+        didSet {}
     }
     /// Tint color of the button when selected.
     open var selectedTintColor: UIColor! {
@@ -197,6 +191,16 @@ open class TMTabItemBarButton: TMBarButton {
             let interpolatedScale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.shrunkenImageScale))
             imageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
             selectedImageView.transform = CGAffineTransform(scaleX: interpolatedScale, y: interpolatedScale)
+        }
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        
+        imageView.tintColor = tintColor
+        if !isSelected {
+            imageView.tintColor = tintColor
+            label.textColor = tintColor
         }
     }
     
