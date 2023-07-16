@@ -66,11 +66,8 @@ open class TMBadgeView: UIView {
             label.textColor = newValue
         }
     }
-    /// Tint which is used as background color.
-    open override var tintColor: UIColor! {
-        didSet {
-            contentView.backgroundColor = tintColor
-        }
+    open override func tintColorDidChange() {
+        contentView.backgroundColor = tintColor
     }
     /// Content Inset around the badge label.
     ///
