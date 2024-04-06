@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
@@ -21,9 +21,9 @@ let package = Package(
         .target(
             name: "Tabman",
             dependencies: ["Pageboy"],
-            path: ".",
-            exclude: ["Sources/Tabman/Tabman.h", "Sources/Tabman/Info.plist"],
-            sources: ["Sources/Tabman"],
+            path: "Sources/Tabman",
+            exclude: ["Tabman.h", "Info.plist", "PrivacyInfo.xcprivacy"],
+            resources: [.process("PrivacyInfo.xcprivacy")],
             linkerSettings: [
                 .linkedFramework("UIKit")
             ]
