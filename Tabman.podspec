@@ -22,6 +22,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/uias/Tabman.git", :tag => s.version.to_s }
   s.source_files = "Sources/Tabman/**/*.{h,m,swift}"
 
+  s.resource_bundles = {'Tabman' => ['Sources/Tabman/PrivacyInfo.xcprivacy']}
+
   s.dependency 'Pageboy', '~> 4.1.0'
   
 end
