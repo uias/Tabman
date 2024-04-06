@@ -22,7 +22,7 @@
 - Automatically insets child view controller contents.
 
 ## 📋 Requirements
-Tabman requires iOS 11 or above; and is compatibile with Swift 5.
+Tabman requires iOS 12 or above; and is compatibile with Swift 5.
 
 ## 📲 Installation
 
@@ -33,14 +33,14 @@ Tabman is compatible with [Swift Package Manager](https://swift.org/package-mana
 Tabman is also available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod 'Tabman', '~> 3.0'
+pod 'Tabman', '~> 3.1'
 ```
 
 ### Carthage
 Tabman is also available through [Carthage](https://github.com/Carthage/Carthage):
 
 ```ogdl
-github "uias/Tabman" ~> 3.0
+github "uias/Tabman" ~> 3.1
 ```
 
 ## 🚀 Usage
