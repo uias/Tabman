@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name         = "Tabman"
-  s.platform     = :ios, "11.0"
+  s.platform     = :ios, "12.0"
   s.requires_arc = true
 
   if s.respond_to? 'swift_versions'
