@@ -6,8 +6,11 @@ on:
 
 jobs:
   publish:
-    runs-on: macOS-latest
+    runs-on: macOS-14
     steps:
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
       - uses: actions/checkout@v2
       - name: Prepare
         run: |
