@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
 
   s.resource_bundles = {'Tabman' => ['Sources/Tabman/PrivacyInfo.xcprivacy']}
 
-  s.dependency 'Pageboy', '~> 4.1.0'
+  s.dependency 'Pageboy', '~> 4.2.0'
   
 end
