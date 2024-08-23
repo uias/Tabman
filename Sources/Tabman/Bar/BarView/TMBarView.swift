@@ -345,6 +345,10 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
         return allAccessibilityElements.firstIndex(where: { $0 === item }) ?? 0
     }
+
+    open func barViewDidScroll(scrollView: UIScrollView) {
+        updateEdgeFades(for: scrollView)
+    }
 }
 
 // MARK: - Bar
@@ -595,6 +599,6 @@ extension TMBarView: TMBarViewScrollHandlerDelegate {
                               didReceiveUpdated contentOffset: CGPoint,
                               from scrollView: UIScrollView) {
         
-        updateEdgeFades(for: scrollView)
+        barViewDidScroll(scrollView: scrollView)
     }
 }

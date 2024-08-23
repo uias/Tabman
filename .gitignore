@@ -67,3 +67,4 @@ fastlane/test_output
 # IntelliJ
 
 .idea/
+.DS_Store
