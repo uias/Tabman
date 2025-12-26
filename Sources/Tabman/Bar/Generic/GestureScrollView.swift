@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol GestureScrollViewGestureDelegate: AnyObject {
-    
+@MainActor protocol GestureScrollViewGestureDelegate: AnyObject {
     func scrollView(_ scrollView: GestureScrollView,
                     didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction)
 }

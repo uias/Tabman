@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class TMAutoHidingTriggerHandler {
+@MainActor internal class TMAutoHidingTriggerHandler {
     
     // MARK: Properties
     

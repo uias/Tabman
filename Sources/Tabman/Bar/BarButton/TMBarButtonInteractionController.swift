@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal protocol TMBarButtonInteractionHandler: AnyObject {
+@MainActor internal protocol TMBarButtonInteractionHandler: AnyObject {
     
     func barButtonInteraction(controller: TMBarButtonInteractionController,
                               didHandlePressOf button: TMBarButton,
@@ -48,10 +48,10 @@ internal final class TMBarButtonInteractionController: TMBarButtonController, Ha
                                       at: index)
     }
 
-    func hash(into hasher: inout Hasher) {
+    nonisolated func hash(into hasher: inout Hasher) {
     }
 
-    static func == (lhs: TMBarButtonInteractionController, rhs: TMBarButtonInteractionController) -> Bool {
+    nonisolated static func == (lhs: TMBarButtonInteractionController, rhs: TMBarButtonInteractionController) -> Bool {
         if lhs === rhs {
             return true
         }

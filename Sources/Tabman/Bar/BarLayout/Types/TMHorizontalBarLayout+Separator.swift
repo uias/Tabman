@@ -23,7 +23,7 @@ extension TMHorizontalBarLayout {
         
         private let content = UIView()
         
-        @available (*, unavailable)
+        @available(*, unavailable)
         override var backgroundColor: UIColor? {
             didSet {}
         }

@@ -9,8 +9,8 @@
 import UIKit
 
 /// Engine that provides Auto Insetting to UIViewControllers.
-internal final class AutoInsetter {
-    
+@MainActor internal final class AutoInsetter {
+
     // MARK: Properties
     
     private var currentContentInsets = [UIScrollView: UIEdgeInsets]()
