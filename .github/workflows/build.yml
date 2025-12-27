@@ -3,12 +3,13 @@ on:
   push:
   pull_request:
     branches-ignore:
-      - 'gh-pages'
+      - "gh-pages"
 
 jobs:
   Test:
-    runs-on: macOS-14
+    runs-on: macOS-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable

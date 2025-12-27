@@ -2,16 +2,16 @@ name: Publish
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   publish_release:
-    runs-on: macOS-14
+    runs-on: macOS-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
-      - uses: actions/checkout@v2
       - name: Prepare
         run: |
           bundle update --bundler
