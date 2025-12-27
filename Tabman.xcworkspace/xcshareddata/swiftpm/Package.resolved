@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Pageboy",
       "state" : {
-        "revision" : "adce5f6e6e5501296a0828b5358190b7ec7a8b7e",
-        "version" : "5.0.0"
+        "revision" : "d522ccd03a87db72bf9b2df52808522134139001",
+        "version" : "5.0.1"
       }
     }
   ],

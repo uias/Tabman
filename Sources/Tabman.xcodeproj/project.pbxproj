@@ -1003,7 +1003,7 @@
 			repositoryURL = "https://github.com/uias/Pageboy";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
