@@ -11,16 +11,17 @@ import UIKit
 @testable import Tabman
 import Pageboy
 
+@MainActor
 class TabmanViewControllerTests: XCTestCase {
     
     var viewController: TabmanViewController!
     var barDataSource: TMBarDataSource!
     
     // MARK: Set Up
-    
-    override func setUp() {
-        super.setUp()
-        
+
+    override func setUp() async throws {
+        try await super.setUp()
+
         self.viewController = MockTabmanViewController()
         self.barDataSource = MockBarDataSource()
         
@@ -30,8 +31,8 @@ class TabmanViewControllerTests: XCTestCase {
         viewController.view.layoutIfNeeded()
     }
     
-    override func tearDown() {
-        super.tearDown()
+    override func tearDown() async throws {
+        try await super.tearDown()
         
         self.viewController = nil
         self.barDataSource = nil
