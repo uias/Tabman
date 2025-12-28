@@ -262,7 +262,8 @@
             <h1>None</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../../Classes/TMBarLayout.html">TMBarLayout</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">None</span> <span class="p">:</span> <span class="kt"><a href="../../Classes/TMBarLayout.html">TMBarLayout</a></span></code></pre>
 
                 </div>
               </div>
@@ -303,7 +304,8 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">layout</span><span class="p">(</span><span class="k">in</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">layout</span><span class="p">(</span><span class="k">in</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -333,7 +335,8 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">insert</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">],</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">insert</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">],</span> <span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -363,7 +366,8 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../../Classes/TMBarButton.html">TMBarButton</a></span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -393,7 +397,8 @@
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">focusArea</span><span class="p">(</span><span class="k">for</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">focusArea</span><span class="p">(</span><span class="k">for</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
 
                         </div>
                       </div>
@@ -413,7 +418,7 @@
     </div>
     <section class='footer'>
       <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
-      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.14.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.15.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>
 </div>

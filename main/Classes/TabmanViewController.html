@@ -262,7 +262,8 @@
             <h1>TabmanViewController</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TabmanViewController</span> <span class="p">:</span> <span class="kt">PageboyViewController</span><span class="p">,</span> <span class="kt">PageboyViewControllerDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols/TMBarDelegate.html">TMBarDelegate</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">TabmanViewController</span> <span class="p">:</span> <span class="kt">PageboyViewController</span><span class="p">,</span> <span class="kt">PageboyViewControllerDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols/TMBarDelegate.html">TMBarDelegate</a></span></code></pre>
 
                 </div>
               </div>
@@ -355,7 +356,8 @@ automatic insetting of child view controller contents.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">bars</span><span class="p">:</span> <span class="p">[</span><span class="n">any</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">bars</span><span class="p">:</span> <span class="p">[</span><span class="n">any</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -400,7 +402,8 @@ Default is <code>true</code>.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">automaticallyAdjustsChildInsets</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">automaticallyAdjustsChildInsets</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -436,7 +439,8 @@ their own insets.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">barInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">barInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -468,7 +472,8 @@ obstructed by bars.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">barLayoutGuide</span><span class="p">:</span> <span class="kt">UILayoutGuide</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">let</span> <span class="nv">barLayoutGuide</span><span class="p">:</span> <span class="kt">UILayoutGuide</span></code></pre>
 
                         </div>
                       </div>
@@ -514,7 +519,8 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">calculateRequiredInsets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TabmanViewController/Insets.html">Insets</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">calculateRequiredInsets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TabmanViewController/Insets.html">Insets</a></span></code></pre>
 
                         </div>
                       </div>
@@ -549,7 +555,8 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Insets</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Insets</span></code></pre>
 
                         </div>
                       </div>
@@ -593,7 +600,8 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addBar</span><span class="p">(</span><span class="n">_</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">,</span>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">addBar</span><span class="p">(</span><span class="n">_</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">,</span>
                    <span class="nv">dataSource</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBarDataSource.html">TMBarDataSource</a></span><span class="p">,</span>
                    <span class="n">at</span> <span class="nv">location</span><span class="p">:</span> <span class="kt"><a href="../Classes/TabmanViewController.html#/s:6Tabman0A14ViewControllerC11BarLocationO">BarLocation</a></span><span class="p">)</span></code></pre>
 
@@ -644,7 +652,7 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/main/Sources/Tabman/TabmanViewController.swift#L214-L230" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/main/Sources/Tabman/TabmanViewController.swift#L217-L233" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -669,7 +677,8 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeBar</span><span class="p">(</span><span class="n">_</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeBar</span><span class="p">(</span><span class="n">_</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TMBar.html">TMBar</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -694,7 +703,7 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
                       </div>
                       <div class="slightly-smaller">
                         
-                          <a href="https://github.com/uias/Tabman/tree/main/Sources/Tabman/TabmanViewController.swift#L235-L242" class="button">Show on GitHub</a>
+                          <a href="https://github.com/uias/Tabman/tree/main/Sources/Tabman/TabmanViewController.swift#L238-L245" class="button">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -708,7 +717,7 @@ take advantage of automatic insets updates for all Tabman&rsquo;s pages during i
     </div>
     <section class='footer'>
       <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
-      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.14.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.15.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>
 </div>

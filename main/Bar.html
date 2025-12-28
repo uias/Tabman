@@ -305,7 +305,8 @@ in some form, and also respond to the current page position.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBar</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">BaseTMBar</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBar</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">BaseTMBar</span></code></pre>
 
                         </div>
                       </div>
@@ -340,7 +341,8 @@ in the <code>TMBarView</code> type definition.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">Layout</span><span class="p">,</span> <span class="kt">Button</span><span class="p">,</span> <span class="kt">Indicator</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">TMTransitionStyleable</span><span class="p">,</span> <span class="kt">TMBarLayoutParent</span> <span class="k">where</span> <span class="kt">Layout</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarLayout.html">TMBarLayout</a></span><span class="p">,</span> <span class="kt">Button</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarButton.html">TMBarButton</a></span><span class="p">,</span> <span class="kt">Indicator</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarIndicator.html">TMBarIndicator</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarView</span><span class="o">&lt;</span><span class="kt">Layout</span><span class="p">,</span> <span class="kt">Button</span><span class="p">,</span> <span class="kt">Indicator</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="kt">TMTransitionStyleable</span><span class="p">,</span> <span class="kt">TMBarLayoutParent</span> <span class="k">where</span> <span class="kt">Layout</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarLayout.html">TMBarLayout</a></span><span class="p">,</span> <span class="kt">Button</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarButton.html">TMBarButton</a></span><span class="p">,</span> <span class="kt">Indicator</span> <span class="p">:</span> <span class="kt"><a href="Classes/TMBarIndicator.html">TMBarIndicator</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMBarView</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
@@ -380,7 +382,8 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarItemable</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarItemable</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -413,7 +416,8 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarItem</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TMBarItemable.html">TMBarItemable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMBarItem</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TMBarItemable.html">TMBarItemable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -446,7 +450,8 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDataSource</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDataSource</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -479,7 +484,8 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TMBarDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -514,7 +520,8 @@ fully supported.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TMSystemBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TMSystemBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMSystemBar</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
@@ -551,7 +558,8 @@ such as time.</p>
                         <h5>Declaration</h5>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMHidingBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">TMHidingBar</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">TMHidingBar</span><span class="p">:</span> <span class="kt"><a href="Protocols/TMBar.html">TMBar</a></span></code></pre>
 
                         </div>
@@ -574,7 +582,7 @@ such as time.</p>
     </div>
     <section class='footer'>
       <p>© 2018 <a class="link" href="https://github.com/uias" target="_blank" rel="external">UI At Six</a>. All rights reserved.</p>
-      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.14.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.15.4</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>
 </div>
