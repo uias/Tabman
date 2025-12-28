@@ -9,8 +9,8 @@
 import UIKit
 
 /// Layout handler that updates a `TMBarIndicator` layout constraints for a new focus rect.
-internal final class TMBarIndicatorLayoutHandler {
-    
+@MainActor struct TMBarIndicatorLayoutHandler {
+
     // MARK: Properties
     
     private let leading: NSLayoutConstraint?

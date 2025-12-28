@@ -8,16 +8,16 @@
 
 import UIKit
 
-internal protocol TMBarViewScrollHandlerDelegate: AnyObject {
-    
+@MainActor internal protocol TMBarViewScrollHandlerDelegate: AnyObject {
+
     func barViewScrollHandler(_ handler: TMBarViewScrollHandler,
                               didReceiveUpdated contentOffset: CGPoint,
                               from scrollView: UIScrollView)
 }
 
 /// Handler which interprets raw `UIScrollViewDelegate` events and provides updates via `TMBarViewScrollHandlerDelegate`.
-internal final class TMBarViewScrollHandler: NSObject {
-    
+@MainActor internal final class TMBarViewScrollHandler: NSObject {
+
     weak var delegate: TMBarViewScrollHandlerDelegate?
     
     init(for scrollView: UIScrollView) {
@@ -27,7 +27,6 @@ internal final class TMBarViewScrollHandler: NSObject {
 }
 
 extension TMBarViewScrollHandler: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.barViewScrollHandler(self, didReceiveUpdated: scrollView.contentOffset, from: scrollView)
     }

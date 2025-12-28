@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS, deprecated: 11)
-internal class InsetExecutor {
+@MainActor internal class InsetExecutor {
     
     let view: UIScrollView
     let calculator: InsetCalculator

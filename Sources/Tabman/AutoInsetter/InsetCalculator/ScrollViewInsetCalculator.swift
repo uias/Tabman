@@ -53,7 +53,7 @@ internal class ScrollViewInsetCalculator: ViewInsetCalculator<UIScrollView> {
     
     override func calculateScrollIndicatorInsets(from spec: AutoInsetSpec) -> UIEdgeInsets? {
         let scrollIndicatorInsets = makeContentAndScrollIndicatorInsets(from: spec)
-        guard scrollIndicatorInsets != view.scrollIndicatorInsets else {
+        guard scrollIndicatorInsets != view.verticalScrollIndicatorInsets else {
             return nil
         }
         return scrollIndicatorInsets

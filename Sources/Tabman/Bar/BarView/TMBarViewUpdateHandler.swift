@@ -12,7 +12,7 @@ import UIKit
 ///
 /// Interprets and calculates appropriate values for updates dependent on component animation styles. All components which use
 /// this must conform to `TMAnimateable`.
-internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator> {
+@MainActor internal final class TMBarViewUpdateHandler<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarIndicator> {
     
     /// Context which describes the current positional and focus values for the bar view.
     struct Context {

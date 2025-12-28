@@ -9,7 +9,6 @@
 import UIKit
 
 internal class TableViewInsetCalculator: ViewInsetCalculator<UITableView> {
-    
     override func calculateContentInset(from spec: AutoInsetSpec, store: InsetStore) -> ContentInsetCalculation? {
         let previous = store.contentInset(for: view) ?? .zero
         let allRequiredInsets = spec.allRequiredInsets
@@ -89,7 +88,7 @@ internal class TableViewInsetCalculator: ViewInsetCalculator<UITableView> {
         // UITableViewController
         guard isScrollViewController == false else {
             let scrollIndicatorInsets = allRequiredInsets
-            guard view.scrollIndicatorInsets != scrollIndicatorInsets else {
+            guard view.verticalScrollIndicatorInsets != scrollIndicatorInsets else {
                 return nil
             }
             return scrollIndicatorInsets
@@ -112,7 +111,7 @@ internal class TableViewInsetCalculator: ViewInsetCalculator<UITableView> {
         let bottomInset = abs(min(bottomInsetMinY - relativeFrame.maxY, 0.0))
         
         let scrollIndicatorInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-        guard view.scrollIndicatorInsets != scrollIndicatorInsets else {
+        guard view.verticalScrollIndicatorInsets != scrollIndicatorInsets else {
             return nil
         }
         return scrollIndicatorInsets

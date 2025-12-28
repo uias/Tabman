@@ -9,8 +9,8 @@
 import UIKit
 
 /// Data source to a `TMBar` that is primarily responsible for providing a bar with contents.
-public protocol TMBarDataSource: AnyObject {
-    
+@MainActor public protocol TMBarDataSource: AnyObject {
+
     /// Provide a `BarItem` for an index in the bar.
     ///
     /// - Parameters:
@@ -21,8 +21,8 @@ public protocol TMBarDataSource: AnyObject {
 }
 
 /// Delegate to a `TMBar` that is primarily responsible for handling user interaction within the bar.
-public protocol TMBarDelegate: AnyObject {
-    
+@MainActor public protocol TMBarDelegate: AnyObject {
+
     /// Bar requires scrolling to a new page following a user interaction.
     ///
     /// - Parameters:
@@ -56,7 +56,7 @@ public enum TMBarUpdateDirection {
 
 /// `BaseTMBar` is a base protocol of AnyObject to avoid Swift compiler error
 /// :nodoc:
-public protocol BaseTMBar: AnyObject { }
+@MainActor public protocol BaseTMBar: AnyObject { }
 
 /// `TMBar` is a protocol that is constrained to `UIView` types. Conforming view types can be added to
 /// and displayed in a `TabmanViewController`.

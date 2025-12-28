@@ -11,8 +11,8 @@ import UIKit
 extension TabmanViewController {
     
     /// Object containing inset data that is required for all bars in a `TabmanViewController`.
-    public struct Insets {
-        
+    @MainActor public struct Insets {
+
         static func `for`(_ viewController: TabmanViewController) -> Insets {
             return Insets(viewController: viewController)
         }

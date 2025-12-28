@@ -14,8 +14,9 @@ platform :ios do
   lane :deploy do
     test
 
-    podspec = "Tabman.podspec"
-    version = version_get_podspec(path: podspec)
+    # Compose .xcconfig file path
+    configuration = Xcodeproj::Config.new("../Tabman.xcconfig")
+    version = configuration.attributes['TM_VERSION']
 
     # Push new Github release
     github_release = set_github_release(
@@ -26,9 +27,6 @@ platform :ios do
       description: "#{version} release.",
       commitish: "main"
     )
-
-    # Push spec
-    pod_push(allow_warnings: true, verbose: true)
 
     slack(
       message: "Tabman v#{version} released!" 
