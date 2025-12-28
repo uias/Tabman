@@ -263,6 +263,11 @@
 
 <p>All notable changes to this project will be documented in this file.
 <code>Tabman</code> adheres to <a href="http://semver.org/">Semantic Versioning</a>.</p>
+<h4 id='4-x-releases' class='heading'>4.x Releases</h4>
+
+<ul>
+<li><code>4.0.x</code> Releases - <a href="#400">4.0.0</a></li>
+</ul>
 <h4 id='3-x-releases' class='heading'>3.x Releases</h4>
 
 <ul>
@@ -291,7 +296,7 @@
 <h4 id='1-x-releases' class='heading'>1.x Releases</h4>
 
 <ul>
-<li><code>1.10.x</code> Releases - <a href="#1100">1.10.0</a> |  <a href="#1101">1.10.1</a> | <a href="#1102">1.1.0.2</a></li>
+<li><code>1.10.x</code> Releases - <a href="#1100">1.10.0</a> | <a href="#1101">1.10.1</a> | <a href="#1102">1.1.0.2</a></li>
 <li><code>1.9.x</code> Releases - <a href="#190">1.9.0</a> | <a href="#191">1.9.1</a> | <a href="#192">1.9.2</a></li>
 <li><code>1.8.x</code> Releases - <a href="#180">1.8.0</a> | <a href="#181">1.8.1</a> | <a href="#182">1.8.2</a></li>
 <li><code>1.7.x</code> Releases - <a href="#170">1.7.0</a></li>
@@ -311,6 +316,21 @@
 <li><code>0.6.x</code> Releases - <a href="#060">0.6.0</a> | <a href="#061">0.6.1</a> | <a href="#062">0.6.2</a></li>
 <li><code>0.5.x</code> Releases - <a href="#050">0.5.0</a> | <a href="#051">0.5.1</a> | <a href="#052">0.5.2</a> | <a href="#053">0.5.3</a></li>
 <li><code>0.4.x</code> Releases - <a href="#040">0.4.0</a> | <a href="#041">0.4.1</a> | <a href="#042">0.4.2</a> | <a href="#043">0.4.3</a> | <a href="#044">0.4.4</a> | <a href="#045">0.4.5</a> | <a href="#046">0.4.6</a> | <a href="#047">0.4.7</a> | <a href="#048">0.4.8</a></li>
+</ul>
+
+<hr>
+<h2 id='a-href-https-github-com-uias-tabman-releases-tag-4-0-0-4-0-0-a' class='heading'><a href="https://github.com/uias/Tabman/releases/tag/4.0.0">4.0.0</a></h2>
+
+<p>Released on 2025-12-28</p>
+<h4 id='added' class='heading'>Added</h4>
+
+<ul>
+<li>Support for Swift 6.</li>
+</ul>
+<h4 id='updated' class='heading'>Updated</h4>
+
+<ul>
+<li>Tabman now requires iOS 14 or above.</li>
 </ul>
 
 <hr>
@@ -336,7 +356,7 @@
 <h4 id='updated' class='heading'>Updated</h4>
 
 <ul>
-<li>Pageboy now requires iOS 12 or tvOS 12.</li>
+<li>Tabman now requires iOS 12.</li>
 </ul>
 
 <hr>
@@ -777,7 +797,7 @@
 <ul>
 <li>Make <code><a href="Classes/TMHorizontalBarLayout.html">TMHorizontalBarLayout</a></code> properties <code>open</code>.</li>
 <li>Make <code><a href="Classes/TMConstrainedHorizontalBarLayout.html">TMConstrainedHorizontalBarLayout</a></code> properties <code>open</code>.</li>
-<li>Make <code><a href="Classes/TMLabelBarButton.html">TMLabelBarButton</a></code>  <code>open</code>.</li>
+<li>Make <code><a href="Classes/TMLabelBarButton.html">TMLabelBarButton</a></code> <code>open</code>.</li>
 <li>Make <code><a href="Classes/TMTabItemBarButton.html">TMTabItemBarButton</a></code> <code>open</code>.</li>
 </ul>
 <h4 id='fixed' class='heading'>Fixed</h4>
@@ -1057,7 +1077,7 @@
 <ul>
 <li>by <a href="https://github.com/msaps">msaps</a>.</li>
 </ul></li>
-<li>Auto Insetting now takes account of relative subview positioning. 
+<li>Auto Insetting now takes account of relative subview positioning.
 
 <ul>
 <li>by <a href="https://github.com/msaps">msaps</a>.</li>
@@ -1281,7 +1301,7 @@
 <h4 id='added' class='heading'>Added</h4>
 
 <ul>
-<li>Support for <code>additionalSafeAreaInsets</code> for child view controllers. 
+<li>Support for <code>additionalSafeAreaInsets</code> for child view controllers.
 
 <ul>
 <li>by <a href="https://github.com/msaps">msaps</a>.</li>
@@ -1723,7 +1743,7 @@
 
 <ul>
 <li>Added Carthage support <a href="https://github.com/uias/Tabman/issues/30">#30</a>.</li>
-<li>Added automatic child view controller insetting behaviour <a href="https://github.com/uias/Tabman/issues/43">#43</a>. 
+<li>Added automatic child view controller insetting behaviour <a href="https://github.com/uias/Tabman/issues/43">#43</a>.
 
 <ul>
 <li>This will automatically inset any <code>UIScrollView</code> content that is present in child view controllers to appear correctly with <code>TabmanBar</code>.</li>
@@ -1799,7 +1819,7 @@
 <h4 id='fixed' class='heading'>Fixed</h4>
 
 <ul>
-<li>Fix issue where <code>requiredContentInset</code> property on <code>TabmanViewController.bar</code> would consistently have incorrect values. 
+<li>Fix issue where <code>requiredContentInset</code> property on <code>TabmanViewController.bar</code> would consistently have incorrect values.
 
 <ul>
 <li>Partial fix for <a href="https://github.com/uias/Tabman/issues/42">#42</a> - automatic insetting for child view controllers still under development.</li>
