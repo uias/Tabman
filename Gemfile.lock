@@ -126,7 +126,7 @@ GEM
       ffi (>= 1.15.0)
       logger
     excon (0.112.0)
-    faraday (1.10.4)
+    faraday (1.10.5)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
