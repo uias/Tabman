@@ -1,13 +1,13 @@
 {
-  "originHash" : "a758ccf717fdfdb86f09136097e776d790bde8518689cbfe41619ea2215ecb20",
+  "originHash" : "1a2774f2b9a19abf85b7a496f11f0a878f46aa87c0360293fe1b0648a5c233b1",
   "pins" : [
     {
       "identity" : "pageboy",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Pageboy",
       "state" : {
-        "revision" : "d522ccd03a87db72bf9b2df52808522134139001",
-        "version" : "5.0.1"
+        "revision" : "293e7860ac0eafabd7301cad5fe69bdabde56102",
+        "version" : "5.0.2"
       }
     }
   ],
