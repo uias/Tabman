@@ -276,7 +276,7 @@ GEM
       sqlite3 (~> 1.3)
       xcinvoke (~> 0.3.0)
     jmespath (1.6.2)
-    json (2.19.3)
+    json (2.19.9)
     jwt (2.10.3)
       base64
     kramdown (2.5.2)
